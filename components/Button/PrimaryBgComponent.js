@@ -7,9 +7,7 @@ import {globalStyles} from '../../constants/GlobalStyles';
 import BgHeader from './BgHeader';
 // import { useTheme } from '../../constants/Theme/ThemeProvider';
 import ProgressHeader from './ProgressComponent';
-import { ScreenLeftorRight } from '../../constants/Size';
-
-
+import {ScreenLeftorRight, ScreenToporBottom} from '../../constants/Size';
 
 const PrimaryBgComponent = props => {
   // const { theme, toggleTheme } = useTheme();
@@ -21,29 +19,31 @@ const PrimaryBgComponent = props => {
         // backgroundColor: "red",
         backgroundColor: props.primaryBgColor,
       }}>
-    {props.BgHeader}
-     
-    <ScrollView>
-      <View
-        style={{
-          paddingLeft: ScreenLeftorRight,
-          paddingRight: ScreenLeftorRight,
-          paddingBottom: actuatedNormalize(24),
-         paddingTop: actuatedNormalize(24),
-          // backgroundColor: Colors.primaryBgColor,
-        }}>
-        {/* what  ever component i can add here  */}
-        {props.children}
-      </View>
+      {props.BgHeader}
+
+      <ScrollView>
+        <View
+          style={{
+            paddingLeft: ScreenLeftorRight,
+            paddingRight: ScreenLeftorRight,
+            paddingBottom: ScreenToporBottom,
+            paddingTop: ScreenToporBottom,
+            // backgroundColor: Colors.primaryBgColor,
+          }}>
+          {/* what  ever component i can add here  */}
+          {props.children}
+        </View>
       </ScrollView>
-      <View style={ props.ButtonContainer
-      //   {
-      //    paddingLeft: actuatedNormalize(16),
-      //    paddingRight: actuatedNormalize(16),
-      //    paddingBottom: actuatedNormalize(24),
-      //    paddingTop: actuatedNormalize(24),
-      // }
-      }>
+      <View
+        style={
+          props.ButtonContainer
+          //   {
+          //    paddingLeft: actuatedNormalize(16),
+          //    paddingRight: actuatedNormalize(16),
+          //    paddingBottom: actuatedNormalize(24),
+          //    paddingTop: actuatedNormalize(24),
+          // }
+        }>
         {props.PrimaryButton}
         {props.SecondaryButton}
         {props.BottomButton}

@@ -64,12 +64,13 @@ TextComponentStory.argTypes = {
 
 export const TextInputComponentStory = args => <TextInputComponent {...args} />;
 TextInputComponentStory.args = {
-  title: 'Primary Button',
-  color: 'blue',
-  textColor: 'white',
+  //title: 'Primary Button',
+  //color: 'blue',
+  textColor: 'blue',
   isTooltiprequired: false,
   label: 'Label',
   sarlabel: '',
+  //editable: false,
   isCurrencySwitch: true,
   //placeHolder: 'Currency',
   switchOnPress: null,

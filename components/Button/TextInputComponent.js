@@ -84,7 +84,7 @@ const TextInputComponent = props => {
                 // paddingBottom:TextInputBottom,
                 fontFamily: Fonts.Regular_En,
                 fontSize: actuatedNormalize(14),
-                color: theme.primaryTextColor,
+                color: props.textColor,
               },
               props.labelStyle,
             ]}>
@@ -108,11 +108,12 @@ const TextInputComponent = props => {
         </View>
       ) : null}
 
-      <View style={{flexDirection: 'row'}}>
+      <View style={{flexDirection: 'row', marginTop: textTop}}>
         <LinearGradient
           colors={customStyle}
           start={{x: 0, y: 0}}
           end={{x: 0, y: 1}}
+          editable={false}
           style={[customStyle1, props.inputStyle]}>
           <View
             style={[
