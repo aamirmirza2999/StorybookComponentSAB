@@ -1,23 +1,35 @@
-import { I18nManager, StyleSheet, Text, TextInput, View, Platform } from 'react-native';
-import React, { useState } from 'react';
-import { SabLogo,ErrorIcon } from '../../constants/SvgLocations';
-import { actuatedNormalize } from '../../constants/PixelScaling';
-import { globalStyles } from '../../constants/GlobalStyles';
+import {
+  I18nManager,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Platform,
+} from 'react-native';
+import React, {useState} from 'react';
+import {SabLogo, ErrorIcon} from '../../constants/SvgLocations';
+import {actuatedNormalize} from '../../constants/PixelScaling';
+import {globalStyles} from '../../constants/GlobalStyles';
 import LinearGradient from 'react-native-linear-gradient';
 import Fonts from '../../constants/Fonts';
 import TextComponent from './TextComponent';
 // import Colors from '../../constants/Colors';
-import { useTheme } from '../../constants/Theme/ThemeProvider';
-import {InfoIcon} from '../../constants/SvgLocations'
+import {useTheme} from '../../constants/Theme/ThemeProvider';
+import {InfoIcon} from '../../constants/SvgLocations';
 import CurrencySwitch from './CurrencySwitch';
-import { ComponentBottomPadding, TextInputBottom, inputVertical, textTop, } from '../../constants/Size';
+import {
+  ComponentBottomPadding,
+  TextInputBottom,
+  inputVertical,
+  textTop,
+} from '../../constants/Size';
 
 let menuTextColor = '#000000';
 
-const TextInputComponent = (props) => {
-  console.log("hhhhh",props);
-  const { theme, toggleTheme } = useTheme();
-  console.log("theme99999",theme)
+const TextInputComponent = props => {
+  console.log('hhhhh', props);
+  const {theme, toggleTheme} = useTheme();
+  console.log('theme99999', theme);
 
   const [username, setUsername] = useState('');
   const [isFocused, setIsFocused] = useState(false);
@@ -43,7 +55,7 @@ const TextInputComponent = (props) => {
         padding: props.editable === false ? null : 2,
       };
 
-  const handleTextChange = (text) => {
+  const handleTextChange = text => {
     setUsername(text);
     if (props.onChangeText) {
       props.onChangeText(text);
@@ -53,27 +65,29 @@ const TextInputComponent = (props) => {
   return (
     <View
       style={{
-        paddingBottom:ComponentBottomPadding
+        paddingBottom: ComponentBottomPadding,
         //marginTop: actuatedNormalize(24),
-      }}
-    >
+      }}>
       {props.label ? (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TextComponent 
-          // style={globalStyles.inputLabelStyle}
-          style={[
-            {
-            //fontSize: '14px',
-            // flexDirection: 'row',
-            // justifyContent: 'center',
-            // paddingBottom:TextInputBottom,
-            fontFamily:Fonts.Regular_En,
-            fontSize: actuatedNormalize(14),
-            color: theme.primaryTextColor,
-          },
-          props.labelStyle
-        ]}
-          >
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          <TextComponent
+            // style={globalStyles.inputLabelStyle}
+            style={[
+              {
+                //fontSize: '14px',
+                // flexDirection: 'row',
+                // justifyContent: 'center',
+                // paddingBottom:TextInputBottom,
+                fontFamily: Fonts.Regular_En,
+                fontSize: actuatedNormalize(14),
+                color: theme.primaryTextColor,
+              },
+              props.labelStyle,
+            ]}>
             {props.label}
             {props.mandatory ? (
               <TextComponent
@@ -85,148 +99,141 @@ const TextInputComponent = (props) => {
                     lineHeight: 15,
                   },
                   props.mandatoryStyle,
-                ]}
-              >
+                ]}>
                 {' *'}
               </TextComponent>
-              
             ) : null}
           </TextComponent>
-          {props.isTooltiprequired?
-          <InfoIcon/>
-          :null}
+          {props.isTooltiprequired ? <InfoIcon /> : null}
         </View>
       ) : null}
-      
-      
-      <View style={{flexDirection:'row', marginTop:textTop}}>
-      <LinearGradient
-        colors={customStyle}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0, y: 1 }}
-        style={[customStyle1, props.inputStyle]}
-      >
-        <View
-          style={[
-            styles.billDetailInputBorderWhite,
-            { backgroundColor: 'transparent',
-            width:props.isCurrencySwitch?"65%":"100%"
-          },
-            props.inputStyle,
-          ]}
-        >
-          {!username && (
-            <View
-              style={[
-                {
-                  position: 'absolute',
-                  top: 0,
-                  bottom: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  left: inputVertical,
-                },
-                props.arabicplaceholdertext,
-              ]}
-            >
-              <TextComponent
-                numberOfLines={1}
-                ellipsizeMode="tail"
+
+      <View style={{flexDirection: 'row'}}>
+        <LinearGradient
+          colors={customStyle}
+          start={{x: 0, y: 0}}
+          end={{x: 0, y: 1}}
+          style={[customStyle1, props.inputStyle]}>
+          <View
+            style={[
+              styles.billDetailInputBorderWhite,
+              {
+                backgroundColor: 'transparent',
+                width: props.isCurrencySwitch ? '65%' : '100%',
+              },
+              props.inputStyle,
+            ]}>
+            {!username && (
+              <View
                 style={[
-                  styles.defaultTextStyle,
                   {
-                    color: theme.textInputColor,
-                    width: '100%',
-                    fontFamily: Fonts.Light_En,
-                    fontSize: actuatedNormalize(12),
+                    position: 'absolute',
+                    top: 0,
+                    bottom: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    left: inputVertical,
+                  },
+                  props.arabicplaceholdertext,
+                ]}>
+                <TextComponent
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={[
+                    styles.defaultTextStyle,
+                    {
+                      color: theme.textInputColor,
+                      width: '100%',
+                      fontFamily: Fonts.Light_En,
+                      fontSize: actuatedNormalize(12),
+                    },
+                    props.textstyle,
+                    props.placeholderStyleRTL,
+                  ]}>
+                  {props.placeHolder}
+                </TextComponent>
+              </View>
+            )}
+            <View style={{width: '80%'}}>
+              <TextInput
+                style={[
+                  globalStyles.billDetailInputView,
+                  {
+                    fontFamily:
+                      username === ''
+                        ? I18nManager.isRTL
+                          ? Fonts.Regular_En
+                          : Fonts.Regular_En
+                        : I18nManager.isRTL
+                        ? Fonts.Bold_En
+                        : Fonts.Bold_En,
                   },
                   props.textstyle,
-                  props.placeholderStyleRTL,
                 ]}
-              >
-                {props.placeHolder}
-              </TextComponent>
+                value={username}
+                testID={props.testID}
+                accessibilityLabel={props.accessibilityLabel}
+                keyboardType={props.keyboardType}
+                textAlign={
+                  props.isRunLTR
+                    ? null
+                    : I18nManager.isRTL === true
+                    ? 'right'
+                    : 'left'
+                }
+                maxLength={props.maxLength}
+                minLength={props.minLength}
+                onChangeText={handleTextChange}
+                editable={props.editable}
+                autoCapitalize={props.autoCapitalize}
+                autoCorrect={props.autoCorrect}
+                ref={props.inputRef}
+                selectTextOnFocus={false}
+                contextMenuHidden={
+                  props.contextMenuHidden ? props.contextMenuHidden : false
+                }
+                errorMsg={props.errorMsg}
+                sarlabel={props.sarlabel}
+                sarlabelstyle={props.sarlabelstyle}
+                returnKeyType={Platform.OS === 'ios' ? 'done' : 'next'}
+                secureTextEntry={props.secureTextEntry}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+              />
             </View>
-          )}
-        <View style={{width:'80%'}}>
-          <TextInput
-            style={[
-              globalStyles.billDetailInputView,
-              {
-                fontFamily:
-                  username === ''
-                    ? I18nManager.isRTL
-                      ? Fonts.Regular_En
-                      : Fonts.Regular_En
-                    : I18nManager.isRTL
-                    ? Fonts.Bold_En
-                    : Fonts.Bold_En,
-              },
-              props.textstyle,
-            ]}
-            value={username}
-            testID={props.testID}
-            accessibilityLabel={props.accessibilityLabel}
-            keyboardType={props.keyboardType}
-            textAlign={
-              props.isRunLTR
-                ? null
-                : I18nManager.isRTL === true
-                ? 'right'
-                : 'left'
-            }
-            maxLength={props.maxLength}
-            minLength={props.minLength}
-            onChangeText={handleTextChange}
-            editable={props.editable}
-            autoCapitalize={props.autoCapitalize}
-            autoCorrect={props.autoCorrect}
-            ref={props.inputRef}
-            selectTextOnFocus={false}
-            contextMenuHidden={
-              props.contextMenuHidden ? props.contextMenuHidden : false
-            }
-            errorMsg={props.errorMsg}
-            sarlabel={props.sarlabel}
-            sarlabelstyle={props.sarlabelstyle}
-            returnKeyType={Platform.OS === 'ios' ? 'done' : 'next'}
-            secureTextEntry={props.secureTextEntry}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-          />
+            {props.sarlabel && !props.errorMsg ? (
+              <TextComponent
+                style={[
+                  {
+                    alignSelf: 'center',
+                    color: theme.menuTextColor,
+                    fontSize: actuatedNormalize(14),
+                    Fonts: I18nManager.isRTL
+                      ? Fonts.Regular_Ar
+                      : Fonts.Regular_En,
+                  },
+                  [props.sarlabelstyle],
+                ]}>
+                {props.sarlabel}
+              </TextComponent>
+            ) : null}
+            {props.errorMsg ? (
+              <ErrorIcon style={{alignSelf: 'center'}} />
+            ) : null}
           </View>
-          {(props.sarlabel && !props.errorMsg) ? (
-         
-            <TextComponent style={[{ alignSelf:'center', color: theme.menuTextColor, fontSize:actuatedNormalize(14) ,
-            Fonts: I18nManager.isRTL ? Fonts.Regular_Ar : Fonts.Regular_En
-            },[props.sarlabelstyle], ]}>
-              {props.sarlabel}
-            </TextComponent>
-         
-          ) : null}
-          {props.errorMsg?
-          <ErrorIcon
-          style={{alignSelf:'center',}}
+        </LinearGradient>
+        {props.isCurrencySwitch ? (
+          <CurrencySwitch
+            initial={props.switchinitial}
+            onPress={props.switchOnPress}
+            options={props.switchOptions}
+            SwitchStyle={props.SwitchStyle}
+            selectedColor={props.switchselectedColor}
+            buttonColor={props.switchbuttonColor}
+            textColor={props.switchtextColor}
+            backgroundColor={props.switchbackgroundColor}
           />
-          : null
-          }
-         
-        </View>
-        
-      </LinearGradient>
-      {props.isCurrencySwitch?
-      <CurrencySwitch
-      initial={props.switchinitial}
-      onPress={props.switchOnPress}
-      options={props.switchOptions}
-      SwitchStyle={props.SwitchStyle}
-      selectedColor={props.switchselectedColor}
-      buttonColor={props.switchbuttonColor}
-      textColor={props.switchtextColor}
-      backgroundColor={props.switchbackgroundColor}
-      />
-      :null}
-      
+        ) : null}
       </View>
       {props.errorMsg ? (
         <Text style={styles.errorText}>{props.errorMsg}</Text>
@@ -244,7 +251,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginVertical: 10,
     paddingHorizontal: 10,
-    paddingBottom:actuatedNormalize(24)
+    paddingBottom: actuatedNormalize(24),
   },
   defaultTextStyle: {
     // fontFamily: Fonts.universlTStd,
@@ -292,7 +299,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: actuatedNormalize(13),
     paddingRight: actuatedNormalize(5),
-    
+
     justifyContent: 'space-between',
   },
   billDetailInputView: {
@@ -300,9 +307,7 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
     //height: actuatedNormalize(44),
     fontSize: actuatedNormalize(14),
-    fontFamily: I18nManager.isRTL
-      ? Fonts.Bold_En
-      : Fonts.Bold_En,
+    fontFamily: I18nManager.isRTL ? Fonts.Bold_En : Fonts.Bold_En,
   },
   billDetailInputStyle: {
     fontSize: actuatedNormalize(18),
@@ -312,9 +317,7 @@ const styles = StyleSheet.create({
     color: '#d22630',
     fontSize: actuatedNormalize(12),
     marginTop: actuatedNormalize(8),
-    fontFamily: I18nManager.isRTL
-      ? Fonts.Light_Ar
-      : Fonts.Regular_En,
+    fontFamily: I18nManager.isRTL ? Fonts.Light_Ar : Fonts.Regular_En,
   },
   billDetailCurrencyStyle: {
     fontSize: actuatedNormalize(11),

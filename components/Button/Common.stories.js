@@ -34,34 +34,6 @@ BgHeaderStory.args = {
 BgHeaderStory.argTypes = {
   textColor: {control: 'color'},
 };
-export const LogoComponentStory = args => <LogoComponent {...args} />;
-LogoComponentStory.args = {
-  enableLogo: true,
-};
-
-export const PrimaryBgComponentStory = args => <PrimaryBgComponent {...args} />;
-PrimaryBgComponentStory.args = {
-  title: 'Primary Button',
-  color: 'blue',
-  textColor: 'white',
-  primaryBgColor: '',
-};
-
-// export const PrimaryButtonStory = args => <PrimaryButtonComponent {...args} />;
-// PrimaryButtonStory.args = {
-//   textColor: 'white',
-//   icon:false,
-//   disabled:false,
-//   PrimaryButtonBgClr:"#db0011",
-//   label:"submit"
-// };
-
-// export const SecondaryButtonStory = args => <SecondaryButtonComponent {...args} />;
-// SecondaryButtonStory.args = {
-//   title: 'Primary Button',
-//   color: 'blue',
-//   textColor: 'white',
-// };
 
 export const TextComponentStory = args => <TextComponent {...args} />;
 TextComponentStory.args = {
@@ -99,6 +71,7 @@ TextInputComponentStory.args = {
   label: 'Label',
   sarlabel: '',
   isCurrencySwitch: true,
+  //placeHolder: 'Currency',
   switchOnPress: null,
   SwitchStyle: null,
   switchinitial: 0,
@@ -119,6 +92,33 @@ TextInputComponentStory.args = {
     },
   ],
 };
+
+export const LogoComponentStory = args => <LogoComponent {...args} />;
+LogoComponentStory.args = {
+  enableLogo: true,
+};
+
+export const PrimaryBgComponentStory = args => <PrimaryBgComponent {...args} />;
+PrimaryBgComponentStory.args = {
+  title: 'Primary Button',
+  primaryBgColor: 'red',
+};
+
+// export const PrimaryButtonStory = args => <PrimaryButtonComponent {...args} />;
+// PrimaryButtonStory.args = {
+//   textColor: 'white',
+//   icon:false,
+//   disabled:false,
+//   PrimaryButtonBgClr:"#db0011",
+//   label:"submit"
+// };
+
+// export const SecondaryButtonStory = args => <SecondaryButtonComponent {...args} />;
+// SecondaryButtonStory.args = {
+//   title: 'Primary Button',
+//   color: 'blue',
+//   textColor: 'white',
+// };
 
 export const ButtonComponentStory = args => <ButtonComponent {...args} />;
 
