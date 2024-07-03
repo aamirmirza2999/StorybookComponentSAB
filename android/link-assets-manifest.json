@@ -1,0 +1,73 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Univers Arabic forHSBC Bold.ttf",
+      "sha1": "6b0cb24a9599ac1e88a8a56d4a2c30decce87afe"
+    },
+    {
+      "path": "assets/fonts/Univers Arabic forHSBC Light.ttf",
+      "sha1": "3bebfe09f126cf3c5a1bc663d127f6908ff00847"
+    },
+    {
+      "path": "assets/fonts/Univers Arabic forHSBC Thin.ttf",
+      "sha1": "8e7200c80a55b4ab4db246da68dde60f2a425386"
+    },
+    {
+      "path": "assets/fonts/Univers Arabic forHSBC.ttf",
+      "sha1": "b8158794a562cb9055dcd1aa2ee7e826e4ffaeb9"
+    },
+    {
+      "path": "assets/fonts/Univers0.ttf",
+      "sha1": "2e65e8450505b66829ea4f7de1ba5be5b625436b"
+    },
+    {
+      "path": "assets/fonts/UniversArabicforHSBCBold.ttf",
+      "sha1": "6b0cb24a9599ac1e88a8a56d4a2c30decce87afe"
+    },
+    {
+      "path": "assets/fonts/UniversArabicforHSBCLight.ttf",
+      "sha1": "3bebfe09f126cf3c5a1bc663d127f6908ff00847"
+    },
+    {
+      "path": "assets/fonts/UniversLTStd-Bold.ttf",
+      "sha1": "6c71cbf60e16e397a7e264b65d92e9ba04197fde"
+    },
+    {
+      "path": "assets/fonts/UniversLTStd-Light.ttf",
+      "sha1": "2e65e8450505b66829ea4f7de1ba5be5b625436b"
+    },
+    {
+      "path": "assets/fonts/UniversLTStd-LightObl.ttf",
+      "sha1": "7092c6469b82304ad5422774499a591a60d4b59b"
+    },
+    {
+      "path": "assets/fonts/UniversLTStd.ttf",
+      "sha1": "c862078202e6db7cf09bc5e88b5db165d39e6082"
+    },
+    {
+      "path": "assets/fonts/UniversNextforHSBC-Bold.ttf",
+      "sha1": "5545acb43ff7ecb6d934e9d43aa769ae987b0955"
+    },
+    {
+      "path": "assets/fonts/UniversNextforHSBC-BoldTwo.ttf",
+      "sha1": "551c7f745d258042f9c8245d09bbafdf47a09ba9"
+    },
+    {
+      "path": "assets/fonts/UniversNextforHSBC-Light.ttf",
+      "sha1": "a3616e1ca92ceb11353092f065de17a33be08567"
+    },
+    {
+      "path": "assets/fonts/UniversNextforHSBC-Medium.ttf",
+      "sha1": "bc071271e7841de78beab4f0483cdfd8e7d2df72"
+    },
+    {
+      "path": "assets/fonts/UniversNextforHSBC-Regular.ttf",
+      "sha1": "1a1968210b359178ac0e50964b6efac47138e622"
+    },
+    {
+      "path": "assets/fonts/UniversNextforHSBC-Thin.ttf",
+      "sha1": "c920be8d4e37f75b0de8a9a6e79b262ad65d377a"
+    }
+  ]
+}
