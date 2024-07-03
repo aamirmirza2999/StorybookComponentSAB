@@ -29,6 +29,7 @@ import {
 import dropdownPopup from './dropdownPopup';
 import { globalStyles } from '../../constants/GlobalStyles';
 import {DropdownArrow,ErrorIcon} from '../../constants/SvgLocations'
+import { ComponentBottomPadding, ScreenToporBottom, TextInputBottom, inputVertical, textTop } from '../../constants/Size';
 
 
 let IosSpecific = Platform.OS === 'ios' ?0 : 0;
@@ -113,7 +114,7 @@ class DropdownComponent extends Component {
     return (
       <>
         <View style={{
-        paddingBottom:actuatedNormalize(24)
+        paddingBottom:ComponentBottomPadding
         //marginTop: actuatedNormalize(24),
       }}>
         {this.props.label ? (
@@ -126,6 +127,7 @@ class DropdownComponent extends Component {
             // flexDirection: 'row',
             // justifyContent: 'center',
             fontFamily:Fonts.Regular_En,
+            // paddingBottom:TextInputBottom,
             fontSize: actuatedNormalize(14),
             color: '#000000',
           },
@@ -251,7 +253,7 @@ const styles = StyleSheet.create({
   subContainer: {
     flex: 1,
     paddingTop: actuatedNormalize(81),
-    marginHorizontal: actuatedNormalize(15),
+    marginHorizontal: inputVertical,
   },
   optionsContainer: {
     flexDirection: 'row',
@@ -288,10 +290,10 @@ const styles = StyleSheet.create({
     lineHeight: actuatedNormalize(20),
   },
   inputBoxContainer: {
-    marginTop: actuatedNormalize(8),
+    marginTop: textTop,
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: actuatedNormalize(15),
+    paddingHorizontal: inputVertical,
     width: '100%',
     flexDirection: 'row',
     borderWidth: 1,

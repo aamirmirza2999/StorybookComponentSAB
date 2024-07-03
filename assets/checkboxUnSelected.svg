@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <filter id="8fszzs1oia" width="329.2%" height="329.2%" x="-114.6%" y="-72.9%" filterUnits="objectBoundingBox">
+            <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="7.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+        </filter>
+        <filter id="sdvmehqeyc" width="241.7%" height="241.7%" x="-70.8%" y="-29.2%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"/>
+            <feOffset dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0.721568627 0 0 0 0 0.709803922 0 0 0 1 0"/>
+        </filter>
+        <linearGradient id="m05yp788dd" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#00847f" />
+            <stop offset="100%" stop-color="#00847f"/>
+        </linearGradient>
+        <rect id="jyg72mga1b" width="24" height="24" x="0" y="0" rx="5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g fill-rule="nonzero" transform="translate(-10 -331) translate(0 316) translate(10 15)">
+                        <use fill="none" filter="url(#8fszzs1oia)" xlink:href="#jyg72mga1b"/>
+                        <use fill="none" xlink:href="#jyg72mga1b"/>
+                        <use fill="none" filter="url(#sdvmehqeyc)" xlink:href="#jyg72mga1b"/>
+                        <rect width="23" height="23" x=".5" y=".5" stroke="url(#m05yp788dd)" stroke-linejoin="square" rx="5"/>
+                    </g>
+                  
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

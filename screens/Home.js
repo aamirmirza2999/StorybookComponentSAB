@@ -27,6 +27,7 @@ import {globalStyles} from '../constants/GlobalStyles';
 import {useTranslation} from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SvgIconList from '../constants/SvgIconList';
+import {ComponentBottomPadding, ScreenLeftorRight, ScreenToporBottom, textTop} from '../constants/Size';
 
 const Home = props => {
   const navigation = useNavigation();
@@ -94,10 +95,10 @@ const Home = props => {
     <>
       <PrimaryBgComponent
         ButtonContainer={{
-          paddingLeft: actuatedNormalize(16),
-          paddingRight: actuatedNormalize(16),
-          paddingBottom: actuatedNormalize(24),
-          paddingTop: actuatedNormalize(24),
+          paddingLeft: ScreenLeftorRight,
+          paddingRight: ScreenLeftorRight,
+          paddingBottom:ScreenToporBottom,
+          paddingTop: ScreenToporBottom,
         }}
         primaryBgColor={theme.primaryBgColor}
         PrimaryButton={
@@ -109,13 +110,18 @@ const Home = props => {
             label={t('initialLang:submit')}
           />
         }
-        SecondaryButton={<SecondaryButton label={t('initialLang:register1')} />}
+        SecondaryButton={
+          <SecondaryButton
+            label={t('initialLang:register1')}
+            // SecondaryButtonBgClr={"red"}
+          />
+        }
         BgHeader={
           <BgHeader
             title={t('initialLang:RegisterOnline')}
             customSvg={true}
             backButtonIsRequired={true}
-            color={theme.primaryWhiteColor}
+            textColor={theme.primaryWhiteColor}
           />
         }>
         <View
@@ -123,7 +129,7 @@ const Home = props => {
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}>
-          <LogoComponent changeTheme={toggleTheme} />
+          <LogoComponent enableLogo={true} changeTheme={toggleTheme} />
           <TouchableOpacity
             onPress={() => changeLanguage(language == 'en' ? 'ar' : 'en')}>
             <SvgIconList
@@ -139,7 +145,7 @@ const Home = props => {
           style={{
             color: theme.primaryTextColor,
             fontSize: actuatedNormalize(20),
-            marginTop: actuatedNormalize(24),
+            marginTop: ComponentBottomPadding,
           }}>
           {t('initialLang:welcome')}
         </TextComponent>
@@ -148,7 +154,7 @@ const Home = props => {
           style={{
             color: theme.primaryTextColor,
             fontSize: actuatedNormalize(14),
-            marginTop: actuatedNormalize(8),
+            marginTop: textTop,
           }}>
           {t('initialLang:lifestyle')}
         </TextComponent>
@@ -173,6 +179,7 @@ const Home = props => {
           <TouchableOpacity
             onPress={() => navigation.navigate('PassWord')}
             style={{
+              
               alignSelf: 'flex-end',
             }}>
             <TextComponent
@@ -180,7 +187,7 @@ const Home = props => {
               style={{
                 color: theme.primaryTextColor,
                 fontSize: actuatedNormalize(12),
-                marginTop: actuatedNormalize(24),
+                marginTop: ComponentBottomPadding,
               }}>
               {t('initialLang:forgot')}
             </TextComponent>

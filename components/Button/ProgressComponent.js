@@ -58,6 +58,7 @@ const ProgressHeader = (props) => {
             <View style={[styles.headerTextContainer, props.headerTextContainer]}>
               
             </View>
+            {props.ProgressHeader?
             <View style={[styles.headerBarContainer, props.headerBarContainer]}>
                 {arrTotal.map((item, index) => {
                     return (
@@ -68,6 +69,7 @@ const ProgressHeader = (props) => {
                     )
                 })}
             </View>
+            :null}
         </View>
     )
 }

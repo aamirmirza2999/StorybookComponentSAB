@@ -9,5 +9,11 @@ export {default as DropdownArrow} from '../assets/dropdownarrow.svg';
 export {default as InfoIcon} from '../assets/InfoNew.svg';
 export {default as ChangeLang} from '../assets/icon_international.svg';
 export {default as ErrorIcon} from '../assets/erroricon.svg';
+export {default as CheckboxUnSelected} from '../assets/checkboxUnSelected.svg';
+export {default as CheckboxSelected1} from '../assets/checkbox.svg';
+export {default as RadioSelect} from '../assets/radioButtonsSelected.svg';
+export {default as RadioUnSelect} from '../assets/Radiounselectnew.svg';
+export {default as RedSelected} from '../assets/checkboxSelected_red.svg';
+export {default as RedUnSelected} from '../assets/checkboxUnSelected_red.svg';
 
 

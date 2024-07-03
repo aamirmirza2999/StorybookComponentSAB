@@ -10,6 +10,7 @@ import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import {InfoIcon} from '../../constants/SvgLocations'
 import CurrencySwitch from './CurrencySwitch';
+import { ComponentBottomPadding, TextInputBottom, inputVertical, textTop, } from '../../constants/Size';
 
 let menuTextColor = '#000000';
 
@@ -27,14 +28,14 @@ const TextInputComponent = (props) => {
   const customStyle1 = isFocused
     ? {
         height: actuatedNormalize(44),
-        marginTop: actuatedNormalize(8),
+        // marginTop: actuatedNormalize(8),
         borderRadius: actuatedNormalize(8),
         borderWidth: 1,
         borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
       }
     : {
         height: actuatedNormalize(44),
-        marginTop: actuatedNormalize(8),
+        // marginTop: actuatedNormalize(8),
         borderRadius: actuatedNormalize(8),
         borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
         backgroundColor: 'transparent',
@@ -52,7 +53,7 @@ const TextInputComponent = (props) => {
   return (
     <View
       style={{
-        paddingBottom:actuatedNormalize(24)
+        paddingBottom:ComponentBottomPadding
         //marginTop: actuatedNormalize(24),
       }}
     >
@@ -65,6 +66,7 @@ const TextInputComponent = (props) => {
             //fontSize: '14px',
             // flexDirection: 'row',
             // justifyContent: 'center',
+            // paddingBottom:TextInputBottom,
             fontFamily:Fonts.Regular_En,
             fontSize: actuatedNormalize(14),
             color: theme.primaryTextColor,
@@ -97,7 +99,7 @@ const TextInputComponent = (props) => {
       ) : null}
       
       
-      <View style={{flexDirection:'row'}}>
+      <View style={{flexDirection:'row', marginTop:textTop}}>
       <LinearGradient
         colors={customStyle}
         start={{ x: 0, y: 0 }}
@@ -122,7 +124,7 @@ const TextInputComponent = (props) => {
                   bottom: 0,
                   alignItems: 'center',
                   justifyContent: 'center',
-                  left: actuatedNormalize(16),
+                  left: inputVertical,
                 },
                 props.arabicplaceholdertext,
               ]}
@@ -290,6 +292,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: actuatedNormalize(13),
     paddingRight: actuatedNormalize(5),
+    
     justifyContent: 'space-between',
   },
   billDetailInputView: {

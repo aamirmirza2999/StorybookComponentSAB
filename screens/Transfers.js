@@ -23,6 +23,8 @@ import {globalStyles} from '../constants/GlobalStyles';
 import DropdownComponent from '../components/Button/DropdownComponent';
 import {useTheme} from '../constants/Theme/ThemeProvider';
 import BottomButton from '../components/Button/BottomButton';
+import CheckboxComponent from '../components/Button/CheckboxComponent';
+import { textTop } from '../constants/Size';
 
 const Transfers = props => {
   const {theme, toggleTheme} = useTheme();
@@ -33,6 +35,7 @@ const Transfers = props => {
   const [droperrorMsg, setdropErrorMsg] = useState('');
   const [drope2rrorMsg, setdrop2ErrorMsg] = useState('');
   const [enableButton, setenableButton] = useState(true);
+  const [check, setCheck] = useState(false);
 
   const TransferTimingData = [
     {
@@ -102,7 +105,9 @@ const Transfers = props => {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const handletnc = value => {
+    setCheck(value);
+  };
   const handleChange = (value, name) => {
     console.log('value and name>>>>>>>', value, name, state);
     if (value == null) {
@@ -147,11 +152,11 @@ const Transfers = props => {
     <>
       <PrimaryBgComponent
         ProgressHeader={true}
+        primaryBgColor={theme.primaryBgColor}
         currentStep={1}
         totalStep={3}
         currentStepColor={'#db0011'}
         RemainingStepColor={'#eeeeee'}
-        primaryBgColor={theme.primaryBgColor}
         BottomButton={
           <BottomButton
             show={true}
@@ -167,9 +172,26 @@ const Transfers = props => {
             title={'Make a Transfer'}
             customSvg={true}
             backButtonIsRequired={true}
-            color={theme.primaryWhiteColor}
+            textColor={theme.primaryWhiteColor}
+
+            // color={theme.primaryWhiteColor}
           />
         }>
+        <View
+          style={{
+            // paddingHorizontal:actuatedNormalize(16),
+            // paddingTop:actuatedNormalize(24),
+            paddingBottom: actuatedNormalize(24),
+          }}>
+          <ProgressHeader
+            ProgressHeader={true}
+            currentStep={1}
+            totalStep={3}
+            currentStepColor={'#db0011'}
+            RemainingStepColor={'#eeeeee'}
+          />
+        </View>
+
         <View style={globalStyles.ScreenMainContainer}>
           <TextInputComponent
             label="Transfer Amount"
@@ -211,6 +233,7 @@ const Transfers = props => {
               globalStyles.TextComponentLabelstyle,
               {
                 color: theme.primaryTextColor,
+                
               },
             ]}>
             Transfer Details
@@ -220,6 +243,7 @@ const Transfers = props => {
               globalStyles.TextComponentDisclaimerstyle,
               {
                 color: theme.primaryTextColor,
+                marginTop:textTop
               },
             ]}>
             Please note all fields marked with * are mandatory
@@ -258,7 +282,7 @@ const Transfers = props => {
             value={state.formData.reasontransferOpt.value}
             errorMsg={droperrorMsg}
           />
-          <TextComponent
+          {/* <TextComponent
             style={[
               globalStyles.TextComponentDisclaimerstyle,
               {
@@ -267,7 +291,7 @@ const Transfers = props => {
             ]}>
             Choose the reason "other purpose" if you want to add more details to
             Recipient Bank.
-          </TextComponent>
+          </TextComponent> */}
           <DropdownComponent
             header={'Please Select Transfer Timing'}
             textstyle={globalStyles.TextInputComponenttextstyle}
@@ -279,6 +303,7 @@ const Transfers = props => {
             value={state.formData.transfertimingOpt.value}
             errorMsg={drope2rrorMsg}
           />
+          
 
           <TextInputComponent
             inputStyle={{width: '100%'}}
@@ -289,6 +314,32 @@ const Transfers = props => {
             onChangeText={handleUsernameChange}
             errorMsg={errorMsg}
           />
+          <View style={{flexDirection: 'row'}}>
+            <CheckboxComponent
+              value={check}
+              onPress={handletnc}
+              // icon={true}
+              // iconCheck={()=> <CheckboxSelected />}
+              // iconUnCheck={()=> <CheckboxUnSelected1 />}
+            />
+            <TextComponent
+              style={[
+                globalStyles.tncTextStyle,
+                {
+                  marginTop: actuatedNormalize(10),
+                  color: theme.primaryTextColor,
+                },
+              ]}>
+              I Agree To The{' '}
+              <TextComponent
+                style={[
+                  globalStyles.tncTextStyle,
+                  {textDecorationLine: 'underline'},
+                ]}>
+                Terms & Conditions
+              </TextComponent>
+            </TextComponent>
+          </View>
         </View>
       </PrimaryBgComponent>
     </>

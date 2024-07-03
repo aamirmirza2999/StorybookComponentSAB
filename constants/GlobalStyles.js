@@ -2,6 +2,7 @@ import { I18nManager } from "react-native";
 // import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
+import { ComponentBottomPadding, TextInputBottom } from "./Size";
 
  export const globalStyles ={
     svgStyle :{
@@ -10,7 +11,7 @@ import { actuatedNormalize } from "./PixelScaling";
     },
     inputLabelStyle:{
         fontSize: '14px',
-        paddingBottom:actuatedNormalize(8),
+        paddingBottom:TextInputBottom,
         // flexDirection: 'row',
         // justifyContent: 'center',
         fontFamily:Fonts.Regular_En,
@@ -37,10 +38,10 @@ import { actuatedNormalize } from "./PixelScaling";
           ? Fonts.Bold_Ar
           : Fonts.Bold_En,
           // color: Colors.primaryTextColor,
-          paddingBottom:actuatedNormalize(8)
+          paddingBottom:TextInputBottom
       },
       TextComponentDisclaimerstyle:{
-        paddingBottom:actuatedNormalize(24),
+        paddingBottom:ComponentBottomPadding,
         fontSize:actuatedNormalize(14),
         fontFamily: I18nManager.isRTL
           ? Fonts.Light_Ar
@@ -59,6 +60,12 @@ import { actuatedNormalize } from "./PixelScaling";
       inititalStyle:{
         marginHorizontal:16,
         marginVertical:24
+      },
+      tncTextStyle:{
+        fontFamily: I18nManager.isRTL
+        ? Fonts.Bold_Ar
+        : Fonts.Bold_En,
+        fontSize:actuatedNormalize(14),
       }
       
      

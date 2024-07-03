@@ -15,7 +15,7 @@ import SvgIconList from '../../constants/SvgIconList';
 import TextInputComponent from './TextInputComponent';
 import TextComponent from './TextComponent';
 import SquareSVG from './SvgHeader';
-import { PrimaryButtonNew } from './ButtonComponent';
+import {PrimaryButtonNew} from './ButtonComponent';
 // import Colors from '../../constants/Colors';
 
 // Get device dimensions
@@ -74,9 +74,10 @@ const styles = StyleSheet.create({
     // paddingRight: actuatedNormalize(20),
   },
 });
-const BgHeader = props => (
-  
-  <View style={styles.SliderContainer}>
+const BgHeader = (props) => {
+  console.log("props>>>>1111",props)
+  return (
+    <View style={styles.SliderContainer}>
     <StatusBar
       animated
       backgroundColor={'#263a52'}
@@ -98,12 +99,12 @@ const BgHeader = props => (
           />
         ) : null}
       </TouchableOpacity>
+
       <TextComponent
         fontWeight={'Bold'}
-        style={{
-          color: props.color,
-          fontSize: actuatedNormalize(14),
-        }}>
+        textColor={props.textColor}
+        style={{fontSize: actuatedNormalize(14),color:props.textColor}}
+      >
         {props.title}
       </TextComponent>
       <TouchableOpacity>
@@ -116,8 +117,11 @@ const BgHeader = props => (
         ) : null}
       </TouchableOpacity>
     </View>
-   
   </View>
-);
+  )
+}
+
+
+
 
 export default BgHeader;

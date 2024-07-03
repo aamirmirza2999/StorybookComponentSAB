@@ -1,10 +1,4 @@
-import {
-  I18nManager,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {I18nManager, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {SabLogo} from '../../constants/SvgLocations';
 import {actuatedNormalize} from '../../constants/PixelScaling';
@@ -12,7 +6,7 @@ import {globalStyles} from '../../constants/GlobalStyles';
 // import Colors from '../../constants/Colors';
 import TextComponent from './TextComponent';
 import Fonts from '../../constants/Fonts';
-import {useTheme} from '../../constants/Theme/ThemeProvider';
+import { useTheme } from '../../constants/Theme/ThemeProvider';
 
 // const PrimaryButton = () => {
 //   return (
@@ -34,10 +28,10 @@ import {useTheme} from '../../constants/Theme/ThemeProvider';
 // export default PrimaryButton;
 
 const PrimaryButton = props => {
-  console.log('props>>>>', props);
+  console.log("props>>>>",props)
   // const {colors} = useTheme();
   // let theme = colors;
-  const {theme, toggleTheme} = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   let Component = TouchableOpacity;
   return (
@@ -49,14 +43,14 @@ const PrimaryButton = props => {
       style={[
         styles.PrimaryButtonContainer,
         props.PrimaryButtonContainer,
-        {
-          backgroundColor: props.disabled
-            ? theme.disablebtnColor
-            : props.PrimaryButtonBgClr,
-        },
+        {backgroundColor: props.disabled ? theme.disablebtnColor : props.PrimaryButtonBgClr},
         props.PrimaryButtonContainer,
       ]}
-      onPress={props.disabled ? () => {} : () => props.onPress()}
+      onPress={
+        props.disabled
+          ? () => {}
+          : () => props.onPress()
+      }
       disabled={props.disabled}>
       {props.icon && (
         <View
@@ -78,24 +72,25 @@ const PrimaryButton = props => {
           props.disabled
             ? () => {}
             : () => {
-                //props.debounceEvent(props.onPress);
-                props.onPress;
+                props.debounceEvent(props.onPress);
               }
         }
         style={[
           styles.PrimaryButtonTxt,
           I18nManager.isRTL
             ? {
-                color: props.textColor,
+              color: props.textColor,
                 bottom:
                   Platform.OS === 'ios'
                     ? actuatedNormalize(3)
                     : actuatedNormalize(2),
               }
             : {
-                color: props.textColor,
-              },
+              color: props.textColor,
+
+            },
           props.PrimaryButtonTxt,
+          
         ]}
         {...props.labelProps}>
         {props.label}
@@ -105,6 +100,7 @@ const PrimaryButton = props => {
 };
 // export const PrimaryButtonNew = PrimaryNew;
 export default PrimaryButton;
+
 
 const styles = StyleSheet.create({
   PrimaryButtonContainer: {
@@ -117,7 +113,7 @@ const styles = StyleSheet.create({
   },
   PrimaryButtonTxt: {
     fontSize: actuatedNormalize(16),
-    fontFamily: Fonts.Regular_En,
+    fontFamily:Fonts.Regular_En,
     // textTransform: "capitalize",
   },
 });

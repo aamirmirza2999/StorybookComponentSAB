@@ -10,6 +10,8 @@ import TextComponent from './TextComponent';
 import TextInputComponent from './TextInputComponent';
 import BottomButton from './BottomButton';
 import DropdownComponent from './DropdownComponent';
+import ProgressHeader from './ProgressComponent';
+import CheckboxComponent from './CheckboxComponent';
 
 export default {
   title: 'components/EntireComponents',
@@ -24,17 +26,17 @@ export default {
 export const BgHeaderStory = args => <BgHeaderComponent {...args} />;
 BgHeaderStory.args = {
   title: 'Primary Button',
-  color: '#ffffff',
-  //textColor: 'white',
+  // color: 'white',
+  textColor: 'red',
   backButtonIsRequired: true,
   closeButtonIsRequired: false,
 };
-
+BgHeaderStory.argTypes = {
+  textColor: {control: 'color'},
+};
 export const LogoComponentStory = args => <LogoComponent {...args} />;
 LogoComponentStory.args = {
-  title: 'Primary Button',
-  color: 'blue',
-  textColor: 'white',
+  enableLogo: true,
 };
 
 export const PrimaryBgComponentStory = args => <PrimaryBgComponent {...args} />;
@@ -43,35 +45,28 @@ PrimaryBgComponentStory.args = {
   color: 'blue',
   textColor: 'white',
   primaryBgColor: '',
-  ProgressHeader: true,
-  currentStep: 1,
-  totalStep: 3,
-  currentStepColor: '#db0011',
-  RemainingStepColor: '#eeeeee',
 };
 
-export const PrimaryButtonStory = args => <PrimaryButtonComponent {...args} />;
-PrimaryButtonStory.args = {
-  textColor: 'white',
-  icon: false,
-  disabled: false,
-  PrimaryButtonBgClr: '#db0011',
-  label: 'submit',
-};
+// export const PrimaryButtonStory = args => <PrimaryButtonComponent {...args} />;
+// PrimaryButtonStory.args = {
+//   textColor: 'white',
+//   icon:false,
+//   disabled:false,
+//   PrimaryButtonBgClr:"#db0011",
+//   label:"submit"
+// };
 
-export const SecondaryButtonStory = args => (
-  <SecondaryButtonComponent {...args} />
-);
-SecondaryButtonStory.args = {
-  title: 'Primary Button',
-  color: 'blue',
-  textColor: 'white',
-};
+// export const SecondaryButtonStory = args => <SecondaryButtonComponent {...args} />;
+// SecondaryButtonStory.args = {
+//   title: 'Primary Button',
+//   color: 'blue',
+//   textColor: 'white',
+// };
 
 export const TextComponentStory = args => <TextComponent {...args} />;
 TextComponentStory.args = {
   children: 'SAB RMB',
-  color: 'blue',
+  textColor: 'blue',
   fontSize: 16,
   fontWeight: 'Regular',
   onPress: null,
@@ -81,7 +76,7 @@ TextComponentStory.args = {
 
 TextComponentStory.argTypes = {
   children: {control: 'text'},
-  color: {control: 'color'},
+  textColor: {control: 'color'},
   fontSize: {control: 'number'},
   fontWeight: {
     control: 'select',
@@ -130,19 +125,25 @@ export const ButtonComponentStory = args => <ButtonComponent {...args} />;
 ButtonComponentStory.args = {
   enablePrimary: true,
   enableSecondary: true,
-  textColor: 'white',
+  // textColor: "yellow",
+  textColor: '#1d262c',
+  secondaryTextColor: 'red',
+  // secondaryTextColor: '#1d262c',
   icon: false,
   disabled: false,
   PrimaryButtonBgClr: '#db0011',
+  // SecondaryButtonBgClr: 'pink',
+  SecondaryButtonBgClr: 'ivory',
   label: 'submit',
 };
 ButtonComponentStory.argTypes = {
   enablePrimary: {control: 'boolean'},
   enableSecondary: {control: 'boolean'},
   textColor: {control: 'color'},
-  icon: {control: 'boolean'},
+  secondaryTextColor: {control: 'color'},
   disabled: {control: 'boolean'},
   PrimaryButtonBgClr: {control: 'color'},
+  SecondaryButtonBgClr: {control: 'color'},
   label: {control: 'text'},
 };
 
@@ -176,4 +177,19 @@ BottomButtonStory.args = {
   limitamount2: '150,000.00',
   onPress: null,
   label: 'submit',
+};
+
+export const ProgressHeaderStory = args => <ProgressHeader {...args} />;
+ProgressHeaderStory.args = {
+  ProgressHeader: true,
+  currentStep: 1,
+  totalStep: 3,
+  currentStepColor: '#db0011',
+  RemainingStepColor: '#eeeeee',
+};
+
+export const CheckboxComponentStory = args => <CheckboxComponent {...args} />;
+CheckboxComponentStory.args = {
+  value: true,
+  onPress: null,
 };

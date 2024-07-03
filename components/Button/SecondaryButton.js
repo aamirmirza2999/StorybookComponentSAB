@@ -17,7 +17,7 @@ import { useTheme } from '../../constants/Theme/ThemeProvider';
 const SecondaryButton = props => {
   
   const { theme, toggleTheme } = useTheme();
-  console.log("theme33333",theme)
+  console.log("theme33333",props)
 
 
   let Component = props.requiredNativeTouchableOpacity
@@ -31,7 +31,10 @@ const SecondaryButton = props => {
       }
       style={[
         styles.secondaryButtonContainerInvert,
+        
         {
+          backgroundColor: props.SecondaryButtonBgClr,
+          // backgroundColor: "#ffff",
           borderColor: props.disabled
             ? Colors.secondaryButtonBorderDisabled
             : theme.secondaryButtonBorder,
@@ -52,7 +55,7 @@ const SecondaryButton = props => {
         }
         style={[
           styles.secondaryButtonInvert,
-          {color: theme.primaryTextColor, opacity: props.disabled ? 0.5 : 1},
+          {color:  props.secondaryTextColor ?props.secondaryTextColor :theme.primaryTextColor, opacity: props.disabled ? 0.5 : 1},
           I18nManager.isRTL
             ? {
                 bottom:

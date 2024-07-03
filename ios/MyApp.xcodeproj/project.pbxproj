@@ -8,29 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MyAppTests.m */; };
-		019B62CB2DB24606A104676B /* Univers Arabic forHSBC Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D07A97F98C4F18BFA8C11C /* Univers Arabic forHSBC Thin.ttf */; };
-		0C094B49DA2A4079B3AE2989 /* Univers0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B10E2C49E47EA8456AB81 /* Univers0.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-MyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MyApp.a */; };
-		0F11B668CCE9447DA6434BDD /* UniversNextforHSBC-BoldTwo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91848D0E03EB4A438C2DD601 /* UniversNextforHSBC-BoldTwo.ttf */; };
-		124F16DD9EF84BBDA3B07C9B /* UniversNextforHSBC-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD5DDD9230B04E4C8ED98FA2 /* UniversNextforHSBC-Light.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		13CB6456EC294E68B7B24160 /* UniversArabicforHSBCLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E25AE9DF87E34D3D8FB5BF95 /* UniversArabicforHSBCLight.ttf */; };
-		268A75C93DA1415EA6D1B613 /* Univers Arabic forHSBC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57ACB5AD58384417A8050CAC /* Univers Arabic forHSBC.ttf */; };
-		322862AE10FB40048A4B674E /* UniversNextforHSBC-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5149EF82D6544B79BC8FAFE /* UniversNextforHSBC-Thin.ttf */; };
-		3ECFF37AE5124BD9BD03BBAB /* UniversArabicforHSBCBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 169B7C676B5F4B689EB2C0A5 /* UniversArabicforHSBCBold.ttf */; };
-		43AE1BC6A47147CBB32ECF89 /* UniversNextforHSBC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92D586E755A24506B207B012 /* UniversNextforHSBC-Medium.ttf */; };
-		7313CEBC693443E9A4869925 /* UniversNextforHSBC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E359D7CA75194DE2AB7334EA /* UniversNextforHSBC-Bold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-MyApp-MyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MyApp-MyAppTests.a */; };
-		7BCE88DC4A6B47FD81FADF94 /* UniversLTStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3B70512994BEAB7967341 /* UniversLTStd-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		94069D6A4F074AA3BAEC32BF /* UniversLTStd-LightObl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B882CA7D182C442D8816A32A /* UniversLTStd-LightObl.ttf */; };
-		A212098DE3BC4BD199FCE7C3 /* UniversLTStd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB88D144765481DAC74683F /* UniversLTStd.ttf */; };
-		A69BB63331294501BCC28AF1 /* UniversNextforHSBC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82BC862C861B478BBEADD440 /* UniversNextforHSBC-Regular.ttf */; };
 		BB9C1673A45E4A409E1626A2 /* Univers Arabic forHSBC Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BDE30D2918845F5BAE242E3 /* Univers Arabic forHSBC Bold.ttf */; };
 		E80540A7208448F7A3D90576 /* Univers Arabic forHSBC Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12414A87E29E41F7BE7A1B53 /* Univers Arabic forHSBC Light.ttf */; };
+		019B62CB2DB24606A104676B /* Univers Arabic forHSBC Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16D07A97F98C4F18BFA8C11C /* Univers Arabic forHSBC Thin.ttf */; };
+		268A75C93DA1415EA6D1B613 /* Univers Arabic forHSBC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57ACB5AD58384417A8050CAC /* Univers Arabic forHSBC.ttf */; };
+		0C094B49DA2A4079B3AE2989 /* Univers0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B10E2C49E47EA8456AB81 /* Univers0.ttf */; };
+		3ECFF37AE5124BD9BD03BBAB /* UniversArabicforHSBCBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 169B7C676B5F4B689EB2C0A5 /* UniversArabicforHSBCBold.ttf */; };
+		13CB6456EC294E68B7B24160 /* UniversArabicforHSBCLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E25AE9DF87E34D3D8FB5BF95 /* UniversArabicforHSBCLight.ttf */; };
+		7BCE88DC4A6B47FD81FADF94 /* UniversLTStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3B70512994BEAB7967341 /* UniversLTStd-Bold.ttf */; };
 		F3B3DC16BA7342BFA6266699 /* UniversLTStd-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09AC01855711470D9F525A4D /* UniversLTStd-Light.ttf */; };
+		94069D6A4F074AA3BAEC32BF /* UniversLTStd-LightObl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B882CA7D182C442D8816A32A /* UniversLTStd-LightObl.ttf */; };
+		A212098DE3BC4BD199FCE7C3 /* UniversLTStd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB88D144765481DAC74683F /* UniversLTStd.ttf */; };
+		7313CEBC693443E9A4869925 /* UniversNextforHSBC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E359D7CA75194DE2AB7334EA /* UniversNextforHSBC-Bold.ttf */; };
+		0F11B668CCE9447DA6434BDD /* UniversNextforHSBC-BoldTwo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91848D0E03EB4A438C2DD601 /* UniversNextforHSBC-BoldTwo.ttf */; };
+		124F16DD9EF84BBDA3B07C9B /* UniversNextforHSBC-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD5DDD9230B04E4C8ED98FA2 /* UniversNextforHSBC-Light.ttf */; };
+		43AE1BC6A47147CBB32ECF89 /* UniversNextforHSBC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92D586E755A24506B207B012 /* UniversNextforHSBC-Medium.ttf */; };
+		A69BB63331294501BCC28AF1 /* UniversNextforHSBC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82BC862C861B478BBEADD440 /* UniversNextforHSBC-Regular.ttf */; };
+		322862AE10FB40048A4B674E /* UniversNextforHSBC-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5149EF82D6544B79BC8FAFE /* UniversNextforHSBC-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,37 +47,37 @@
 		00E356EE1AD99517003FC87E /* MyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAppTests.m; sourceTree = "<group>"; };
-		09AC01855711470D9F525A4D /* UniversLTStd-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversLTStd-Light.ttf"; path = "../assets/fonts/UniversLTStd-Light.ttf"; sourceTree = "<group>"; };
-		12414A87E29E41F7BE7A1B53 /* Univers Arabic forHSBC Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Univers Arabic forHSBC Light.ttf"; path = "../assets/fonts/Univers Arabic forHSBC Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MyApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MyApp/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyApp/main.m; sourceTree = "<group>"; };
-		169B7C676B5F4B689EB2C0A5 /* UniversArabicforHSBCBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = UniversArabicforHSBCBold.ttf; path = ../assets/fonts/UniversArabicforHSBCBold.ttf; sourceTree = "<group>"; };
-		16D07A97F98C4F18BFA8C11C /* Univers Arabic forHSBC Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Univers Arabic forHSBC Thin.ttf"; path = "../assets/fonts/Univers Arabic forHSBC Thin.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-MyApp-MyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyApp-MyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BDE30D2918845F5BAE242E3 /* Univers Arabic forHSBC Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Univers Arabic forHSBC Bold.ttf"; path = "../assets/fonts/Univers Arabic forHSBC Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-MyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.debug.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.debug.xcconfig"; sourceTree = "<group>"; };
-		4E8B10E2C49E47EA8456AB81 /* Univers0.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Univers0.ttf; path = ../assets/fonts/Univers0.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
-		57ACB5AD58384417A8050CAC /* Univers Arabic forHSBC.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Univers Arabic forHSBC.ttf"; path = "../assets/fonts/Univers Arabic forHSBC.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-MyApp-MyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-MyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82BC862C861B478BBEADD440 /* UniversNextforHSBC-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversNextforHSBC-Regular.ttf"; path = "../assets/fonts/UniversNextforHSBC-Regular.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MyApp-MyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		8EB88D144765481DAC74683F /* UniversLTStd.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = UniversLTStd.ttf; path = ../assets/fonts/UniversLTStd.ttf; sourceTree = "<group>"; };
-		91848D0E03EB4A438C2DD601 /* UniversNextforHSBC-BoldTwo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversNextforHSBC-BoldTwo.ttf"; path = "../assets/fonts/UniversNextforHSBC-BoldTwo.ttf"; sourceTree = "<group>"; };
-		92D586E755A24506B207B012 /* UniversNextforHSBC-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversNextforHSBC-Medium.ttf"; path = "../assets/fonts/UniversNextforHSBC-Medium.ttf"; sourceTree = "<group>"; };
-		9EC3B70512994BEAB7967341 /* UniversLTStd-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversLTStd-Bold.ttf"; path = "../assets/fonts/UniversLTStd-Bold.ttf"; sourceTree = "<group>"; };
-		B882CA7D182C442D8816A32A /* UniversLTStd-LightObl.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversLTStd-LightObl.ttf"; path = "../assets/fonts/UniversLTStd-LightObl.ttf"; sourceTree = "<group>"; };
-		CD5DDD9230B04E4C8ED98FA2 /* UniversNextforHSBC-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversNextforHSBC-Light.ttf"; path = "../assets/fonts/UniversNextforHSBC-Light.ttf"; sourceTree = "<group>"; };
-		E25AE9DF87E34D3D8FB5BF95 /* UniversArabicforHSBCLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = UniversArabicforHSBCLight.ttf; path = ../assets/fonts/UniversArabicforHSBCLight.ttf; sourceTree = "<group>"; };
-		E359D7CA75194DE2AB7334EA /* UniversNextforHSBC-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversNextforHSBC-Bold.ttf"; path = "../assets/fonts/UniversNextforHSBC-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F5149EF82D6544B79BC8FAFE /* UniversNextforHSBC-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "UniversNextforHSBC-Thin.ttf"; path = "../assets/fonts/UniversNextforHSBC-Thin.ttf"; sourceTree = "<group>"; };
+		2BDE30D2918845F5BAE242E3 /* Univers Arabic forHSBC Bold.ttf */ = {isa = PBXFileReference; name = "Univers Arabic forHSBC Bold.ttf"; path = "../assets/fonts/Univers Arabic forHSBC Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		12414A87E29E41F7BE7A1B53 /* Univers Arabic forHSBC Light.ttf */ = {isa = PBXFileReference; name = "Univers Arabic forHSBC Light.ttf"; path = "../assets/fonts/Univers Arabic forHSBC Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		16D07A97F98C4F18BFA8C11C /* Univers Arabic forHSBC Thin.ttf */ = {isa = PBXFileReference; name = "Univers Arabic forHSBC Thin.ttf"; path = "../assets/fonts/Univers Arabic forHSBC Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		57ACB5AD58384417A8050CAC /* Univers Arabic forHSBC.ttf */ = {isa = PBXFileReference; name = "Univers Arabic forHSBC.ttf"; path = "../assets/fonts/Univers Arabic forHSBC.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E8B10E2C49E47EA8456AB81 /* Univers0.ttf */ = {isa = PBXFileReference; name = "Univers0.ttf"; path = "../assets/fonts/Univers0.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		169B7C676B5F4B689EB2C0A5 /* UniversArabicforHSBCBold.ttf */ = {isa = PBXFileReference; name = "UniversArabicforHSBCBold.ttf"; path = "../assets/fonts/UniversArabicforHSBCBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E25AE9DF87E34D3D8FB5BF95 /* UniversArabicforHSBCLight.ttf */ = {isa = PBXFileReference; name = "UniversArabicforHSBCLight.ttf"; path = "../assets/fonts/UniversArabicforHSBCLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9EC3B70512994BEAB7967341 /* UniversLTStd-Bold.ttf */ = {isa = PBXFileReference; name = "UniversLTStd-Bold.ttf"; path = "../assets/fonts/UniversLTStd-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		09AC01855711470D9F525A4D /* UniversLTStd-Light.ttf */ = {isa = PBXFileReference; name = "UniversLTStd-Light.ttf"; path = "../assets/fonts/UniversLTStd-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B882CA7D182C442D8816A32A /* UniversLTStd-LightObl.ttf */ = {isa = PBXFileReference; name = "UniversLTStd-LightObl.ttf"; path = "../assets/fonts/UniversLTStd-LightObl.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8EB88D144765481DAC74683F /* UniversLTStd.ttf */ = {isa = PBXFileReference; name = "UniversLTStd.ttf"; path = "../assets/fonts/UniversLTStd.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E359D7CA75194DE2AB7334EA /* UniversNextforHSBC-Bold.ttf */ = {isa = PBXFileReference; name = "UniversNextforHSBC-Bold.ttf"; path = "../assets/fonts/UniversNextforHSBC-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		91848D0E03EB4A438C2DD601 /* UniversNextforHSBC-BoldTwo.ttf */ = {isa = PBXFileReference; name = "UniversNextforHSBC-BoldTwo.ttf"; path = "../assets/fonts/UniversNextforHSBC-BoldTwo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD5DDD9230B04E4C8ED98FA2 /* UniversNextforHSBC-Light.ttf */ = {isa = PBXFileReference; name = "UniversNextforHSBC-Light.ttf"; path = "../assets/fonts/UniversNextforHSBC-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		92D586E755A24506B207B012 /* UniversNextforHSBC-Medium.ttf */ = {isa = PBXFileReference; name = "UniversNextforHSBC-Medium.ttf"; path = "../assets/fonts/UniversNextforHSBC-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		82BC862C861B478BBEADD440 /* UniversNextforHSBC-Regular.ttf */ = {isa = PBXFileReference; name = "UniversNextforHSBC-Regular.ttf"; path = "../assets/fonts/UniversNextforHSBC-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F5149EF82D6544B79BC8FAFE /* UniversNextforHSBC-Thin.ttf */ = {isa = PBXFileReference; name = "UniversNextforHSBC-Thin.ttf"; path = "../assets/fonts/UniversNextforHSBC-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,30 +140,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6B18DDD2E3424C8DACE0A12A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2BDE30D2918845F5BAE242E3 /* Univers Arabic forHSBC Bold.ttf */,
-				12414A87E29E41F7BE7A1B53 /* Univers Arabic forHSBC Light.ttf */,
-				16D07A97F98C4F18BFA8C11C /* Univers Arabic forHSBC Thin.ttf */,
-				57ACB5AD58384417A8050CAC /* Univers Arabic forHSBC.ttf */,
-				4E8B10E2C49E47EA8456AB81 /* Univers0.ttf */,
-				169B7C676B5F4B689EB2C0A5 /* UniversArabicforHSBCBold.ttf */,
-				E25AE9DF87E34D3D8FB5BF95 /* UniversArabicforHSBCLight.ttf */,
-				9EC3B70512994BEAB7967341 /* UniversLTStd-Bold.ttf */,
-				09AC01855711470D9F525A4D /* UniversLTStd-Light.ttf */,
-				B882CA7D182C442D8816A32A /* UniversLTStd-LightObl.ttf */,
-				8EB88D144765481DAC74683F /* UniversLTStd.ttf */,
-				E359D7CA75194DE2AB7334EA /* UniversNextforHSBC-Bold.ttf */,
-				91848D0E03EB4A438C2DD601 /* UniversNextforHSBC-BoldTwo.ttf */,
-				CD5DDD9230B04E4C8ED98FA2 /* UniversNextforHSBC-Light.ttf */,
-				92D586E755A24506B207B012 /* UniversNextforHSBC-Medium.ttf */,
-				82BC862C861B478BBEADD440 /* UniversNextforHSBC-Regular.ttf */,
-				F5149EF82D6544B79BC8FAFE /* UniversNextforHSBC-Thin.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +182,31 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		6B18DDD2E3424C8DACE0A12A /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				2BDE30D2918845F5BAE242E3 /* Univers Arabic forHSBC Bold.ttf */,
+				12414A87E29E41F7BE7A1B53 /* Univers Arabic forHSBC Light.ttf */,
+				16D07A97F98C4F18BFA8C11C /* Univers Arabic forHSBC Thin.ttf */,
+				57ACB5AD58384417A8050CAC /* Univers Arabic forHSBC.ttf */,
+				4E8B10E2C49E47EA8456AB81 /* Univers0.ttf */,
+				169B7C676B5F4B689EB2C0A5 /* UniversArabicforHSBCBold.ttf */,
+				E25AE9DF87E34D3D8FB5BF95 /* UniversArabicforHSBCLight.ttf */,
+				9EC3B70512994BEAB7967341 /* UniversLTStd-Bold.ttf */,
+				09AC01855711470D9F525A4D /* UniversLTStd-Light.ttf */,
+				B882CA7D182C442D8816A32A /* UniversLTStd-LightObl.ttf */,
+				8EB88D144765481DAC74683F /* UniversLTStd.ttf */,
+				E359D7CA75194DE2AB7334EA /* UniversNextforHSBC-Bold.ttf */,
+				91848D0E03EB4A438C2DD601 /* UniversNextforHSBC-BoldTwo.ttf */,
+				CD5DDD9230B04E4C8ED98FA2 /* UniversNextforHSBC-Light.ttf */,
+				92D586E755A24506B207B012 /* UniversNextforHSBC-Medium.ttf */,
+				82BC862C861B478BBEADD440 /* UniversNextforHSBC-Regular.ttf */,
+				F5149EF82D6544B79BC8FAFE /* UniversNextforHSBC-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -541,11 +542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 278ZVZASU9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -558,10 +555,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sabb.enterprise.mobilebanking;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "SABB Enterprise MobileBanking";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -574,11 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 278ZVZASU9;
 				INFOPLIST_FILE = MyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,10 +581,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sabb.enterprise.mobilebanking;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "SABB Enterprise MobileBanking";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -632,7 +621,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -660,7 +649,6 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -668,10 +656,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -708,7 +693,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -728,7 +713,6 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -736,10 +720,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -1,24 +1,39 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import PrimaryBgComponent from './PrimaryBgComponent';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
-import { globalStyles } from '../../constants/GlobalStyles';
+import {globalStyles} from '../../constants/GlobalStyles';
 
-const ButtonComponent = props => {
+const ButtonComponent = ({  enablePrimary,
+  enableSecondary,
+  textColor,
+  icon,
+  disabled,
+  PrimaryButtonBgClr,
+  SecondaryButtonBgClr,
+  secondaryTextColor,
+  label}) => {
   let enableButton = false;
   return (
     <View style={globalStyles.inititalStyle}>
-      {props.enablePrimary ? (
+      {enablePrimary ? (
         <PrimaryButton
-          disabled={props.disabled || enableButton}
-          label={props.label}
-          textColor={props.textColor}
-          icon={props.icon}
-          PrimaryButtonBgClr={props.PrimaryButtonBgClr}
+          disabled={disabled || enableButton}
+          label={label}
+          textColor={textColor}
+          icon={icon}
+          PrimaryButtonBgClr={PrimaryButtonBgClr}
         />
       ) : null}
-      {props.enableSecondary ? <SecondaryButton label={'Register'} onPress={''} /> : null}
+      {enableSecondary ? (
+        <SecondaryButton
+          label={'Register'}
+          onPress={''}
+          secondaryTextColor={secondaryTextColor}
+          SecondaryButtonBgClr={SecondaryButtonBgClr}
+        />
+      ) : null}
     </View>
   );
 };

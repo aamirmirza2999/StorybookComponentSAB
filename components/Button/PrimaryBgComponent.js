@@ -7,6 +7,9 @@ import {globalStyles} from '../../constants/GlobalStyles';
 import BgHeader from './BgHeader';
 // import { useTheme } from '../../constants/Theme/ThemeProvider';
 import ProgressHeader from './ProgressComponent';
+import { ScreenLeftorRight } from '../../constants/Size';
+
+
 
 const PrimaryBgComponent = props => {
   // const { theme, toggleTheme } = useTheme();
@@ -15,49 +18,32 @@ const PrimaryBgComponent = props => {
     <View
       style={{
         flex: 1,
-        backgroundColor: 'red',
+        // backgroundColor: "red",
         backgroundColor: props.primaryBgColor,
       }}>
-      {props.BgHeader}
-      {props.ProgressHeader ? (
-        <View
-          style={{
-            paddingHorizontal: actuatedNormalize(16),
-            paddingTop: actuatedNormalize(24),
-            paddingBottom: actuatedNormalize(24),
-            backgroundColor: 'red',
-          }}>
-          <ProgressHeader
-            currentStep={props.currentStep}
-            totalStep={props.totalStep}
-            currentStepColor={props.currentStepColor}
-            RemainingStepColor={props.RemainingStepColor}
-          />
-        </View>
-      ) : null}
-      <ScrollView>
-        <View
-          style={{
-            paddingLeft: actuatedNormalize(16),
-            paddingRight: actuatedNormalize(16),
-            paddingBottom: actuatedNormalize(24),
-            paddingTop: actuatedNormalize(24),
-            // backgroundColor: Colors.primaryBgColor,
-          }}>
-          {/* what  ever component i can add here  */}
-          {props.children}
-        </View>
-      </ScrollView>
+    {props.BgHeader}
+     
+    <ScrollView>
       <View
-        style={
-          props.ButtonContainer
-          //   {
-          //    paddingLeft: actuatedNormalize(16),
-          //    paddingRight: actuatedNormalize(16),
-          //    paddingBottom: actuatedNormalize(24),
-          //    paddingTop: actuatedNormalize(24),
-          // }
-        }>
+        style={{
+          paddingLeft: ScreenLeftorRight,
+          paddingRight: ScreenLeftorRight,
+          paddingBottom: actuatedNormalize(24),
+         paddingTop: actuatedNormalize(24),
+          // backgroundColor: Colors.primaryBgColor,
+        }}>
+        {/* what  ever component i can add here  */}
+        {props.children}
+      </View>
+      </ScrollView>
+      <View style={ props.ButtonContainer
+      //   {
+      //    paddingLeft: actuatedNormalize(16),
+      //    paddingRight: actuatedNormalize(16),
+      //    paddingBottom: actuatedNormalize(24),
+      //    paddingTop: actuatedNormalize(24),
+      // }
+      }>
         {props.PrimaryButton}
         {props.SecondaryButton}
         {props.BottomButton}
