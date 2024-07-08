@@ -48,16 +48,16 @@ import {
 } from "./SvgLocations";
 import AesUtil from "./AesUtil";
 import RNSecureKeyStore, { ACCESSIBLE } from "react-native-secure-key-store";
-import { store } from "../redux/store/Store";
+// import { store } from "../redux/store/Store";
 import i18n from "../config/I18n";
 import * as ApiEndpoints from "../api/ApiEndpoints";
 import PngLocations from "../constants/PngLocations";
 import { CordovaDeviceID } from '../containers/NativeHelper/MyNativeModule';
 import { sha512 } from 'react-native-sha512';
 import CryptoJS from "crypto-js";
-import {
-   setPerformanceApiStatus
-} from '../redux/actions/performance/PerformanceAction'
+// import {
+//    setPerformanceApiStatus
+// } from '../redux/actions/performance/PerformanceAction'
 import moment from "moment";
 
 const CommonHelper = {

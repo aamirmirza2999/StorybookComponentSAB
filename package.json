@@ -13,6 +13,8 @@
     "storybook:android": "STORYBOOK_ENABLED=true react-native run-android",
     "storybook-generate": "sb-rn-get-stories --config-path .ondevice",
     "storybook:web": "storybook dev -p 6006",
+    "release": "npm install --force && export NODE_OPTIONS=--max_old_space_size=8192 && cd android/ && ./gradlew clean && cd .. && STORYBOOK_ENABLED=true npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle  && cd android/ && ./gradlew assembleRelease",
+    "debug": "git pull && npm install --force && cd android/ && ./gradlew clean && cd .. &&  npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res  && cd android/ && ./gradlew assembleDebug",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -33,9 +35,9 @@
     "react-native-iphone-x-helper": "^1.3.1",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-raw-bottom-sheet": "^2.2.0",
-    "react-native-bouncy-checkbox": "^1.0.8",
     "react-native-restart": "^0.0.27",
     "react-native-safe-area-context": "^4.2.4",
+    "react-native-bouncy-checkbox": "^1.0.8",
     "react-native-screens": "^3.13.1",
     "react-native-svg": "^15.2.0",
     "react-native-svg-transformer": "^1.4.0",

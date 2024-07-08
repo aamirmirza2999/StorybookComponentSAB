@@ -6,11 +6,11 @@ import {
 } from '../ApiImportCommon'
 // import { dispatch } from '../../navigation/NavigationService';
 // import { CommonActions } from '@react-navigation/native';
-import {
-    setlogoutErrorScreenShown,
-    sessionAlertEvent,
-    setInvalidSession
-} from '../../redux/actions/common/CommonAction'
+// import {
+//     setlogoutErrorScreenShown,
+//     sessionAlertEvent,
+//     setInvalidSession
+// } from '../../redux/actions/common/CommonAction'
 
 
 export const SessionValidator = (response) => {

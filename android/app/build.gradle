@@ -89,6 +89,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+         release {
+           storeFile file("sabbmobile.keystore")
+           storePassword "sabbmobile"
+           keyAlias "sabbmobile"
+           keyPassword "sabbmobile"       
+       }
     }
     buildTypes {
         debug {

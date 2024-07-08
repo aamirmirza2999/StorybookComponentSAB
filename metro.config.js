@@ -31,7 +31,8 @@ const config = {
       );
 
       if (
-        process.env.STORYBOOK_ENABLED !== "true" &&
+        // process.env.STORYBOOK_ENABLED !== "true" &&
+        false &&
         defaultResolveResult?.filePath?.includes?.(".ondevice/")
       ) {
         return {

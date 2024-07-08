@@ -12,7 +12,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 //import ThemeHOC from '../../theme/ThemeHOC';
 import TextComponent from './TextComponent';
