@@ -10,7 +10,10 @@ import React, {useState} from 'react';
 import {SabLogo, ErrorIcon} from '../../constants/SvgLocations';
 import {actuatedNormalize} from '../../constants/PixelScaling';
 import {globalStyles} from '../../constants/GlobalStyles';
-import LinearGradient from 'react-native-linear-gradient';
+// import LinearGradient from 'react-native-linear-gradient';
+// import LinearGradient from '../../webLinerGradiant/index';
+import LinearGradient from '../../utils/Linear-Gradient'
+
 import Fonts from '../../constants/Fonts';
 import TextComponent from './TextComponent';
 // import Colors from '../../constants/Colors';

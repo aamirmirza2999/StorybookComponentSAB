@@ -1,4 +1,4 @@
-import {I18nManager, StyleSheet, Text, TouchableOpacity, View,Animated,Easing,KeyboardAvoidingView} from 'react-native';
+import {I18nManager, StyleSheet, Text, TouchableOpacity,Platform, View,Animated,Easing,KeyboardAvoidingView} from 'react-native';
 import React, { useState, useEffect } from 'react'
 import {actuatedNormalize} from '../../constants/PixelScaling';
 import TextComponent from './TextComponent';
