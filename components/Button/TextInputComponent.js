@@ -146,7 +146,7 @@ const TextInputComponent = props => {
                   style={[
                     styles.defaultTextStyle,
                     {
-                      color: theme.textInputColor,
+                      color: theme.primaryColor3,
                       width: '100%',
                       fontFamily: Fonts.Light_En,
                       fontSize: actuatedNormalize(12),

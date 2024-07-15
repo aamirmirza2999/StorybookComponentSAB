@@ -36,7 +36,7 @@ const Home = props => {
   const [enableButton, setenableButton] = useState(true);
   const {theme, toggleTheme} = useTheme();
   const [language, setlanguage] = useState('en');
-  console.log(theme.secondaryButtonBorder);
+  console.log("ggggggg",theme);
   const {t} = useTranslation();
 
   const handleUsernameChange = text => {
@@ -100,7 +100,7 @@ const Home = props => {
           paddingBottom:ScreenToporBottom,
           paddingTop: ScreenToporBottom,
         }}
-        primaryBgColor={theme.primaryBgColor}
+        primaryBgColor={theme.primaryColor}
         PrimaryButton={
           <PrimaryButton
             onPress={HandleSubmit}
@@ -108,6 +108,7 @@ const Home = props => {
             disabled={enableButton}
             PrimaryButtonBgClr={theme.PrimaryButtonBgClr}
             label={t('initialLang:submit')}
+            {...props}
           />
         }
         SecondaryButton={
@@ -121,7 +122,7 @@ const Home = props => {
             title={t('initialLang:RegisterOnline')}
             customSvg={true}
             backButtonIsRequired={true}
-            textColor={theme.primaryWhiteColor}
+            textColor={theme.SecondaryColor1}
           />
         }>
         <View
@@ -143,7 +144,7 @@ const Home = props => {
         <TextComponent
           fontWeight={'Bold'}
           style={{
-            color: theme.primaryTextColor,
+            color:theme.primaryColor1,
             fontSize: actuatedNormalize(20),
             marginTop: ComponentBottomPadding,
           }}>
@@ -152,7 +153,7 @@ const Home = props => {
         <TextComponent
           fontWeight={'Light'}
           style={{
-            color: theme.primaryTextColor,
+            color: theme.primaryColor1,
             fontSize: actuatedNormalize(14),
             marginTop: textTop,
           }}>
@@ -185,7 +186,7 @@ const Home = props => {
             <TextComponent
               fontWeight={'Bold'}
               style={{
-                color: theme.primaryTextColor,
+                color: theme.primaryColor,
                 fontSize: actuatedNormalize(12),
                 marginTop: ComponentBottomPadding,
               }}>

@@ -1,13 +1,12 @@
 export const darkTheme = {
-  primaryTextColor: '#ffffff',  // primaryclr1
-  errorMsgClr: '#db0011', //secclr
-  textInputColor: "#eaeaea", //primaryclr3
-  primaryBgColor:  "#0f1721", //primaryclr
-  primaryWhiteColor: "rgba(255, 255, 255, 0.1)", //primaryclr2
-  disablebtnColor: "rgba(255, 255, 255, 0.3)",// secclr3
-  secondaryButtonBorder: '#ffffff', //secclr1
-  secondaryButtonBorderDisabled: "rgba(255,255,255,0.5)", //secclr2
+  primaryColor1: '#ffffff',
+  SecondaryColor: '#db0011', 
+  primaryColor3: "#eaeaea", 
+  primaryColor:  "#0f1721", 
+  primaryColor2: "rgba(255, 255, 255, 0.1)", 
+  SecondaryColor3: "rgba(255, 255, 255, 0.3)",
+  SecondaryColor1: '#ffffff',
+  SecondaryColor2: "rgba(255,255,255,0.5)", 
   PrimaryButtonBgClr: "#db0011",
-
   };
   

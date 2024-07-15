@@ -232,7 +232,7 @@ const Transfers = props => {
             style={[
               globalStyles.TextComponentLabelstyle,
               {
-                color: theme.primaryTextColor,
+                color: theme.primaryColor1,
                 
               },
             ]}>
@@ -242,7 +242,7 @@ const Transfers = props => {
             style={[
               globalStyles.TextComponentDisclaimerstyle,
               {
-                color: theme.primaryTextColor,
+                color: theme.primaryColor1,
                 marginTop:textTop
               },
             ]}>
@@ -327,7 +327,7 @@ const Transfers = props => {
                 globalStyles.tncTextStyle,
                 {
                   marginTop: actuatedNormalize(10),
-                  color: theme.primaryTextColor,
+                  color: theme.primaryColor1,
                 },
               ]}>
               I Agree To The{' '}

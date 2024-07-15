@@ -101,7 +101,7 @@ const PassWord = props => {
         <TextComponent
           fontWeight={'Bold'}
           style={{
-            color: theme.primaryTextColor,
+            color: theme.primaryColor1,
             fontSize: actuatedNormalize(20),
             marginTop: ComponentBottomPadding,
           }}>
@@ -110,7 +110,7 @@ const PassWord = props => {
         <TextComponent
           fontWeight={'Light'}
           style={{
-            color: theme.primaryTextColor,
+            color: theme.primaryColor1,
             fontSize: actuatedNormalize(14),
             marginTop: textTop,
           }}>
@@ -143,7 +143,7 @@ const PassWord = props => {
             <TextComponent
               fontWeight={'Bold'}
               style={{
-                color: theme.primaryTextColor,
+                color: theme.primaryColor1,
                 fontSize: actuatedNormalize(12),
                 marginTop: ComponentBottomPadding,
               }}>
