@@ -25,6 +25,7 @@ import {useTheme} from '../constants/Theme/ThemeProvider';
 import BottomButton from '../components/Button/BottomButton';
 import CheckboxComponent from '../components/Button/CheckboxComponent';
 import { textTop } from '../constants/Size';
+import BottomSheetComponent from '../components/Button/BottomSheetComponent';
 
 const Transfers = props => {
   const {theme, toggleTheme} = useTheme();
@@ -36,6 +37,7 @@ const Transfers = props => {
   const [drope2rrorMsg, setdrop2ErrorMsg] = useState('');
   const [enableButton, setenableButton] = useState(true);
   const [check, setCheck] = useState(false);
+  const [showpopup ,setPopup] =useState(false)
 
   const TransferTimingData = [
     {
@@ -139,13 +141,14 @@ const Transfers = props => {
   };
 
   const GoToHome = () => {
-    if (state.formData.reasontransferOpt.value === '') {
-      setdropErrorMsg('Select Value');
-    } else if (state.formData.transfertimingOpt.value === '') {
-      setdrop2ErrorMsg('Select Value');
-    } else {
-      navigation.navigate('Home');
-    }
+    setPopup(true)
+    // if (state.formData.reasontransferOpt.value === '') {
+    //   setdropErrorMsg('Select Value');
+    // } else if (state.formData.transfertimingOpt.value === '') {
+    //   setdrop2ErrorMsg('Select Value');
+    // } else {
+    //   navigation.navigate('Home');
+    // }
     // navigation.navigate('PassWord')
   };
   return (
@@ -177,6 +180,16 @@ const Transfers = props => {
             // color={theme.primaryWhiteColor}
           />
         }>
+          {showpopup?
+          <BottomSheetComponent
+          Show={showpopup}
+          bottomReached={()=>{setPopup(false)}}
+          BottomSheetContent={
+            <View>
+              <TextComponent >This is the bottom sheet content</TextComponent>
+            </View>
+          }
+        />:null}
         <View
           style={{
             // paddingHorizontal:actuatedNormalize(16),
@@ -190,6 +203,7 @@ const Transfers = props => {
             currentStepColor={'#db0011'}
             RemainingStepColor={'#eeeeee'}
           />
+          
         </View>
 
         <View style={globalStyles.ScreenMainContainer}>
@@ -314,6 +328,7 @@ const Transfers = props => {
             onChangeText={handleUsernameChange}
             errorMsg={errorMsg}
           />
+          
           <View style={{flexDirection: 'row'}}>
             <CheckboxComponent
               value={check}
@@ -341,6 +356,9 @@ const Transfers = props => {
             </TextComponent>
           </View>
         </View>
+        
+
+     
       </PrimaryBgComponent>
     </>
   );
