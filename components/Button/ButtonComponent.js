@@ -6,6 +6,7 @@ import SecondaryButton from './SecondaryButton';
 import {globalStyles} from '../../constants/GlobalStyles';
 
 const ButtonComponent = ({  enablePrimary,
+  enablefirstPrimary,
   enableSecondary,
   textColor,
   icon,
@@ -16,7 +17,10 @@ const ButtonComponent = ({  enablePrimary,
   label}) => {
   let enableButton = false;
   return (
+    
     <View style={globalStyles.inititalStyle}>
+      {enablefirstPrimary?
+      <View>
       {enablePrimary ? (
         <PrimaryButton
           disabled={disabled || enableButton}
@@ -34,6 +38,27 @@ const ButtonComponent = ({  enablePrimary,
           SecondaryButtonBgClr={SecondaryButtonBgClr}
         />
       ) : null}
+      </View>:
+       <View>
+       {enableSecondary ? (
+         <SecondaryButton
+           label={'Register'}
+           onPress={''}
+           secondaryTextColor={secondaryTextColor}
+           SecondaryButtonBgClr={SecondaryButtonBgClr}
+         />
+       ) : null}
+       {enablePrimary ? (
+         <PrimaryButton
+           disabled={disabled || enableButton}
+           label={label}
+           textColor={textColor}
+           icon={icon}
+           PrimaryButtonBgClr={PrimaryButtonBgClr}
+         />
+       ) : null}
+       </View>
+      }
     </View>
   );
 };

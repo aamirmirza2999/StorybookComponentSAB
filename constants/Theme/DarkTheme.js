@@ -10,6 +10,8 @@ export const darkTheme = {
   SecondaryColor1: '#ffffff',
   SecondaryColor2: "rgba(255,255,255,0.5)", 
   PrimaryButtonBgClr: "#db0011",
+  optionbg: "rgba(0,0,0,0.8)",
+  optiontxt: "rgb(155,159,168)",
 
 
    //PRIMARY COLORS:

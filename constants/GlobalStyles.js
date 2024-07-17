@@ -5,6 +5,20 @@ import { actuatedNormalize } from "./PixelScaling";
 import { ComponentBottomPadding, TextInputBottom } from "./Size";
 
  export const globalStyles ={
+  optioncontainer:{
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:"center",
+    borderRadius:actuatedNormalize(8),
+    padding:actuatedNormalize(8)
+  },
+  optioncontainertxt:{
+    alignSelf:"center",
+    fontSize:actuatedNormalize(12),
+    lineHeight:actuatedNormalize(16),
+    fontFamily:Fonts.Regular_En,
+    //paddingBottom:TextInputBottom
+  },
     svgStyle :{
         width: '80',
         height: '40',

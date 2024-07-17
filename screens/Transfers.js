@@ -16,6 +16,7 @@ import {
 } from '../constants/CommonImport';
 import PrimaryBgComponent from '../components/Button/PrimaryBgComponent';
 import TextInputComponent from '../components/Button/TextInputComponent';
+import OptionButton  from '../components/OptionButton';
 import PrimaryButton from '../components/Button/PrimaryButton';
 import {useNavigation} from '@react-navigation/native';
 import ProgressHeader from '../components/Button/ProgressComponent';
@@ -140,6 +141,10 @@ const Transfers = props => {
     }
   };
 
+  // const handlechange=()=>{
+  //   alert("hello")
+  // }
+
   const GoToHome = () => {
     setPopup(true)
     // if (state.formData.reasontransferOpt.value === '') {
@@ -205,6 +210,26 @@ const Transfers = props => {
           />
           
         </View>
+        {/* <View
+          style={{
+                alignItems:"flex-end"
+          }}
+        >
+            <OptionButton
+              testID={"optionHome"}
+              accessibilityLabel={"optionHome"}
+              onPress={handlechange}
+                  containerStyle={{ 
+                        width:"45%"
+                  }}
+                  containertxt={{
+                  paddingBottom:actuatedNormalize(3)
+                  }}
+                  enableArrow={true}
+                label={"Change Account"}
+            
+            ></OptionButton>
+        </View> */}
 
         <View style={globalStyles.ScreenMainContainer}>
           <TextInputComponent

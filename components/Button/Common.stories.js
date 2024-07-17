@@ -10,6 +10,7 @@ import TextComponent from './TextComponent';
 import TextInputComponent from './TextInputComponent';
 import BottomButton from './BottomButton';
 import DropdownComponent from './DropdownComponent';
+import OptionButton from '../OptionButton';
 import ProgressHeader from './ProgressComponent';
 import CheckboxComponent from './CheckboxComponent';
 
@@ -124,6 +125,7 @@ PrimaryBgComponentStory.args = {
 export const ButtonComponentStory = args => <ButtonComponent {...args} />;
 
 ButtonComponentStory.args = {
+  enablefirstPrimary:true,
   enablePrimary: true,
   enableSecondary: true,
   // textColor: "yellow",
@@ -193,4 +195,12 @@ export const CheckboxComponentStory = args => <CheckboxComponent {...args} />;
 CheckboxComponentStory.args = {
   value: true,
   onPress: null,
+};
+export const OptionButtonComponentStory = args => <OptionButton {...args} />;
+OptionButtonComponentStory.args = {
+ BgColor:"#eeeeee",
+ enableArrow:true,
+ // BgColor={"#eeeeee"}
+  label:"View Virtual card"
+
 };

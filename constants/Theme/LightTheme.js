@@ -8,6 +8,8 @@ export const lightTheme = {
   SecondaryColor1: '#ffffff', //secclr1
   SecondaryColor2: "rgba(255,255,255,0.5)", 
   PrimaryButtonBgClr: "#db0011",
+  optionbg: "rgba(179,177,179,0.2)",
+  optiontxt: "rgb(38,58,82)",
 
   //PRIMARY COLORS:
 
