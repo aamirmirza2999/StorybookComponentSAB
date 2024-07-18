@@ -82,6 +82,12 @@ import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
         ? Fonts.Bold_Ar
         : Fonts.Bold_En,
         fontSize:actuatedNormalize(14),
+      },
+      DividerStyle:{
+        backgroundColor: "rgba(118, 118, 118, 0.2)",
+        height: 1,
+        overflow: "hidden",
+        alignSelf: "stretch"
       }
       
      

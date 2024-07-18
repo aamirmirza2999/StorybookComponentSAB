@@ -13,6 +13,7 @@ import DropdownComponent from './DropdownComponent';
 import OptionButton from '../OptionButton';
 import ProgressHeader from './ProgressComponent';
 import CheckboxComponent from './CheckboxComponent';
+import Divider from './Divider';
 
 export default {
   title: 'components/EntireComponents',
@@ -203,4 +204,9 @@ OptionButtonComponentStory.args = {
  // BgColor={"#eeeeee"}
   label:"View Virtual card"
 
+};
+export const DividerComponentStory = args => <Divider {...args} />;
+DividerComponentStory.args = {
+  backgroundColor: "blue",
+  height: 5,
 };
