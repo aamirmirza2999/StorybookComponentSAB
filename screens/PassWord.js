@@ -20,7 +20,7 @@ import PrimaryButton from '../components/Button/PrimaryButton';
 import SecondaryButton from '../components/Button/SecondaryButton';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../constants/Theme/ThemeProvider';
-import { ComponentBottomPadding, ScreenLeftorRight, ScreenToporBottom, textTop } from '../constants/Size';
+import { spacingS, spacingM, spacingXS } from '../constants/Size';
 import { useTranslation } from 'react-i18next';
 
 const PassWord = props => {
@@ -73,10 +73,10 @@ const PassWord = props => {
     <>
       <PrimaryBgComponent
        ButtonContainer={{
-        paddingLeft: ScreenLeftorRight,
-        paddingRight: ScreenLeftorRight,
-        paddingBottom:ScreenToporBottom,
-        paddingTop: ScreenToporBottom,
+        paddingLeft: spacingS,
+        paddingRight: spacingS,
+        paddingBottom:spacingM,
+        paddingTop: spacingM,
       }}
       primaryBgColor={theme.primaryBgColor}
 
@@ -101,18 +101,18 @@ const PassWord = props => {
         <TextComponent
           fontWeight={'Bold'}
           style={{
-            color: theme.primaryColor1,
+            color: theme.primaryblack,
             fontSize: actuatedNormalize(20),
-            marginTop: ComponentBottomPadding,
+            marginTop: spacingM,
           }}>
           Welcome
         </TextComponent>
         <TextComponent
           fontWeight={'Light'}
           style={{
-            color: theme.primaryColor1,
+            color: theme.primaryblack,
             fontSize: actuatedNormalize(14),
-            marginTop: textTop,
+            marginTop: spacingXS,
           }}>
           Banking that fits your lifestyle
         </TextComponent>
@@ -143,9 +143,9 @@ const PassWord = props => {
             <TextComponent
               fontWeight={'Bold'}
               style={{
-                color: theme.primaryColor1,
+                color: theme.primaryblack,
                 fontSize: actuatedNormalize(12),
-                marginTop: ComponentBottomPadding,
+                marginTop: spacingM,
               }}>
               Forgot Username?
             </TextComponent>

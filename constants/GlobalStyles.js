@@ -2,22 +2,24 @@ import { I18nManager } from "react-native";
 // import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
-import { ComponentBottomPadding, TextInputBottom } from "./Size";
+import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
+  radiusXS,radiusS,radiusM,radiusL,radiusXL
+} from "./Size";
 
  export const globalStyles ={
   optioncontainer:{
     flexDirection:"row",
     justifyContent:"center",
     alignItems:"center",
-    borderRadius:actuatedNormalize(8),
-    padding:actuatedNormalize(8)
+    borderRadius:radiusS,
+    padding:spacingXS
   },
   optioncontainertxt:{
     alignSelf:"center",
     fontSize:actuatedNormalize(12),
     lineHeight:actuatedNormalize(16),
     fontFamily:Fonts.Regular_En,
-    //paddingBottom:TextInputBottom
+    //paddingBottom:spacingXS
   },
     svgStyle :{
         width: '80',
@@ -25,7 +27,7 @@ import { ComponentBottomPadding, TextInputBottom } from "./Size";
     },
     inputLabelStyle:{
         fontSize: '14px',
-        paddingBottom:TextInputBottom,
+        paddingBottom:spacingXS,
         // flexDirection: 'row',
         // justifyContent: 'center',
         fontFamily:Fonts.Regular_En,
@@ -52,10 +54,10 @@ import { ComponentBottomPadding, TextInputBottom } from "./Size";
           ? Fonts.Bold_Ar
           : Fonts.Bold_En,
           // color: Colors.primaryTextColor,
-          paddingBottom:TextInputBottom
+          paddingBottom:spacingXS
       },
       TextComponentDisclaimerstyle:{
-        paddingBottom:ComponentBottomPadding,
+        paddingBottom:spacingM,
         fontSize:actuatedNormalize(14),
         fontFamily: I18nManager.isRTL
           ? Fonts.Light_Ar
@@ -72,8 +74,8 @@ import { ComponentBottomPadding, TextInputBottom } from "./Size";
 
       },
       inititalStyle:{
-        marginHorizontal:16,
-        marginVertical:24
+        marginHorizontal:spacingS,
+        marginVertical:spacingM
       },
       tncTextStyle:{
         fontFamily: I18nManager.isRTL

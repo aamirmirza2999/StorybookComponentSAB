@@ -27,7 +27,7 @@ import {globalStyles} from '../constants/GlobalStyles';
 import {useTranslation} from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SvgIconList from '../constants/SvgIconList';
-import {ComponentBottomPadding, ScreenLeftorRight, ScreenToporBottom, textTop} from '../constants/Size';
+import {spacingM, spacingS,  spacingXS} from '../constants/Size';
 
 const Home = props => {
   const navigation = useNavigation();
@@ -95,10 +95,10 @@ const Home = props => {
     <>
       <PrimaryBgComponent
         ButtonContainer={{
-          paddingLeft: ScreenLeftorRight,
-          paddingRight: ScreenLeftorRight,
-          paddingBottom:ScreenToporBottom,
-          paddingTop: ScreenToporBottom,
+          paddingLeft: spacingS,
+          paddingRight: spacingS,
+          paddingBottom:spacingM,
+          paddingTop: spacingM,
         }}
         primaryBgColor={theme.primaryColor}
         PrimaryButton={
@@ -106,7 +106,7 @@ const Home = props => {
             onPress={HandleSubmit}
             textColor={'white'}
             disabled={enableButton}
-            PrimaryButtonBgClr={theme.PrimaryButtonBgClr}
+            PrimaryButtonBgClr={theme.primaryredstatic}
             label={t('initialLang:submit')}
             {...props}
           />
@@ -122,7 +122,7 @@ const Home = props => {
             title={t('initialLang:RegisterOnline')}
             customSvg={true}
             backButtonIsRequired={true}
-            textColor={theme.SecondaryColor1}
+            textColor={theme.primarywhitestatic}
           />
         }>
         <View
@@ -144,18 +144,18 @@ const Home = props => {
         <TextComponent
           fontWeight={'Bold'}
           style={{
-            color:theme.primaryColor1,
+            color:theme.primaryblack,
             fontSize: actuatedNormalize(20),
-            marginTop: ComponentBottomPadding,
+            marginTop: spacingM,
           }}>
           {t('initialLang:welcome')}
         </TextComponent>
         <TextComponent
           fontWeight={'Light'}
           style={{
-            color: theme.primaryColor1,
+            color: theme.primaryblack,
             fontSize: actuatedNormalize(14),
-            marginTop: textTop,
+            marginTop: spacingXS,
           }}>
           {t('initialLang:lifestyle')}
         </TextComponent>
@@ -186,9 +186,9 @@ const Home = props => {
             <TextComponent
               fontWeight={'Bold'}
               style={{
-                color: theme.primaryColor,
+                color: theme.primaryblack,
                 fontSize: actuatedNormalize(12),
-                marginTop: ComponentBottomPadding,
+                marginTop: spacingM,
               }}>
               {t('initialLang:forgot')}
             </TextComponent>

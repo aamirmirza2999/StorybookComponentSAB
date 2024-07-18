@@ -25,7 +25,7 @@ import DropdownComponent from '../components/Button/DropdownComponent';
 import {useTheme} from '../constants/Theme/ThemeProvider';
 import BottomButton from '../components/Button/BottomButton';
 import CheckboxComponent from '../components/Button/CheckboxComponent';
-import { textTop } from '../constants/Size';
+import { spacingXS } from '../constants/Size';
 import BottomSheetComponent from '../components/Button/BottomSheetComponent';
 
 const Transfers = props => {
@@ -160,10 +160,9 @@ const Transfers = props => {
     <>
       <PrimaryBgComponent
         ProgressHeader={true}
-        primaryBgColor={theme.primaryBgColor}
         currentStep={1}
         totalStep={3}
-        currentStepColor={'#db0011'}
+        currentStepColor={theme.primaryredstatic}
         RemainingStepColor={'#eeeeee'}
         BottomButton={
           <BottomButton
@@ -180,7 +179,7 @@ const Transfers = props => {
             title={'Make a Transfer'}
             customSvg={true}
             backButtonIsRequired={true}
-            textColor={theme.primaryWhiteColor}
+            textColor={theme.primarywhitestatic}
 
             // color={theme.primaryWhiteColor}
           />
@@ -191,7 +190,7 @@ const Transfers = props => {
           bottomReached={()=>{setPopup(false)}}
           BottomSheetContent={
             <View>
-              <TextComponent >This is the bottom sheet content</TextComponent>
+              <TextComponent>This is the bottom sheet content</TextComponent>
             </View>
           }
         />:null}
@@ -271,7 +270,7 @@ const Transfers = props => {
             style={[
               globalStyles.TextComponentLabelstyle,
               {
-                color: theme.primaryColor1,
+                color: theme.primaryblack,
                 
               },
             ]}>
@@ -281,8 +280,8 @@ const Transfers = props => {
             style={[
               globalStyles.TextComponentDisclaimerstyle,
               {
-                color: theme.primaryColor1,
-                marginTop:textTop
+                color: theme.primaryblack,
+                marginTop:spacingXS
               },
             ]}>
             Please note all fields marked with * are mandatory
@@ -367,7 +366,7 @@ const Transfers = props => {
                 globalStyles.tncTextStyle,
                 {
                   marginTop: actuatedNormalize(10),
-                  color: theme.primaryColor1,
+                  color: theme.primaryblack,
                 },
               ]}>
               I Agree To The{' '}
