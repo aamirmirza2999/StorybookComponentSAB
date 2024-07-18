@@ -112,13 +112,16 @@ import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
       textAlign: "center",
       lineHeight:actuatedNormalize(21),
       fontSize:actuatedNormalize(16),
-      fontFamily: "Univers Next for HSBC",
-      
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
   },
   primaryTextSmall: {
     fontSize:actuatedNormalize(14),
     lineHeight:actuatedNormalize(18),
-    fontFamily: "Univers Next for HSBC",
+    fontFamily: I18nManager.isRTL
+    ? Fonts.Regular_Ar
+    : Fonts.Regular_En,
     textAlign: "center",
 },
 secondaryFlexBoxLarge: {
@@ -150,7 +153,9 @@ quickActionButtonTxt:{
     fontSize:actuatedNormalize(12),
     paddingBottom:spacingXS,
     lineHeight:actuatedNormalize(16),
-    fontFamily: "Univers Next for HSBC",
+    fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
     textAlign: "center",
     marginTop:spacingXS
 },
@@ -167,7 +172,10 @@ quickActionButtonTxt1:{
   fontSize: actuatedNormalize(14),
   lineHeight: actuatedNormalize(18),
   textAlign: "left",
-  marginLeft:spacingXS
+  marginLeft:spacingXS,
+  fontFamily: I18nManager.isRTL
+  ? Fonts.Regular_Ar
+  : Fonts.Regular_En,
 },
 quickActionButtonBox2:{
   borderRadius: radiusS,
@@ -181,7 +189,9 @@ quickActionButtonTxt2:{
  // alignSelf: "stretch",
 fontSize:actuatedNormalize(12),
 lineHeight:actuatedNormalize(16),
-fontFamily: "Univers Next for HSBC",
+fontFamily: I18nManager.isRTL
+? Fonts.Regular_Ar
+: Fonts.Regular_En,
 //textAlign: "left"
 },
       
