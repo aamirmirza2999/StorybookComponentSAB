@@ -408,7 +408,7 @@ const addCommaToNumber = (data) => {
                 <PrimaryButton
                    onPress={props.onPress}
                    textColor={'white'}
-                   PrimaryButtonBgClr={theme.PrimaryButtonBgClr}
+                   PrimaryButtonBgClr={theme.primaryredstatic}
                    label={props.label}
                 />
 
