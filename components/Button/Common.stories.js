@@ -14,6 +14,9 @@ import OptionButton from '../OptionButton';
 import ProgressHeader from './ProgressComponent';
 import CheckboxComponent from './CheckboxComponent';
 import Divider from './Divider';
+import MainButton from '../NewButton/MainButton';
+import SvgIconList from '../../constants/SvgIconList';
+
 
 export default {
   title: 'components/EntireComponents',
@@ -209,4 +212,28 @@ export const DividerComponentStory = args => <Divider {...args} />;
 DividerComponentStory.args = {
   backgroundColor: "blue",
   height: 5,
+};
+export const MainButtonComponentStory = args => <MainButton {...args} />;
+MainButtonComponentStory.args = {
+ label:"Action",
+ enablePrimaryLarge:true, 
+ enablePrimarySmall:false,
+ enablePrimaryLargeBlack:false,
+ enablePrimaryLargeSmall:false,
+ enableSecondaryBorderBlack:false,
+ enableSecondaryBorderRed:false,
+ preloginRedButton:false,
+ preloginBlackButton:false,
+ disabled:false,
+ quickActionButton:false,
+ quickActionButtonIcon:<SvgIconList
+                        icon="AccountAction"
+                        width={24}
+                        height={24}
+                        //transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
+                      />,
+  quickActionButtonLabel:"Button",
+  quickActionButtonType:1
+ 
+ 
 };

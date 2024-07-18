@@ -88,7 +88,103 @@ import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
         height: 1,
         overflow: "hidden",
         alignSelf: "stretch"
-      }
+      },
+      primaryFlexBoxLarge: {
+    		paddingBottom:actuatedNormalize(13),
+    		paddingTop:actuatedNormalize(11),
+    		borderRadius: radiusS,
+    		justifyContent: "center",
+    		flexDirection: "row",
+    		paddingHorizontal:spacingS,
+    		alignItems: "center",
+    		//flex: 1
+  	},
+    primaryFlexBoxSmall: {
+      borderRadius:radiusS,
+      paddingHorizontal:spacingS,
+      paddingVertical:actuatedNormalize(7),
+      justifyContent: "center",
+      flexDirection: "row",
+      alignItems: "center",
+
+  },
+    primaryTextLarge: {
+      textAlign: "center",
+      lineHeight:actuatedNormalize(21),
+      fontSize:actuatedNormalize(16),
+      fontFamily: "Univers Next for HSBC",
       
+  },
+  primaryTextSmall: {
+    fontSize:actuatedNormalize(14),
+    lineHeight:actuatedNormalize(18),
+    fontFamily: "Univers Next for HSBC",
+    textAlign: "center",
+},
+secondaryFlexBoxLarge: {
+  borderRadius:radiusS,
+  borderStyle:"solid",
+  borderWidth: 1,
+  paddingHorizontal:spacingS,
+  paddingTop:actuatedNormalize(11),
+  paddingBottom:actuatedNormalize(13),
+},
+preloginRedButton:{
+  paddingHorizontal:spacingL,
+  paddingVertical:actuatedNormalize(9),
+  justifyContent: "center",
+  alignItems: "center"
+},
+quickActionButtonBox:{
+  borderRadius:radiusS,
+  alignSelf:"center",
+  alignItems: "center",
+  justifyContent: "center",
+  paddingHorizontal:spacingXXS,
+  paddingVertical:actuatedNormalize(12),
+  overflow: "hidden"
+},
+quickActionButtonTxt:{
+    alignSelf: "stretch",
+    width:actuatedNormalize(110),
+    fontSize:actuatedNormalize(12),
+    paddingBottom:spacingXS,
+    lineHeight:actuatedNormalize(16),
+    fontFamily: "Univers Next for HSBC",
+    textAlign: "center",
+    marginTop:spacingXS
+},
+quickActionButtonBox1:{
+  borderRadius:radiusS,
+  overflow: "hidden",
+  flexDirection: "row",
+  paddingHorizontal:spacingS,
+  paddingVertical:spacingXS,
+  alignItems: "center",
+  alignSelf:"center",
+},
+quickActionButtonTxt1:{
+  fontSize: actuatedNormalize(14),
+  lineHeight: actuatedNormalize(18),
+  textAlign: "left",
+  marginLeft:spacingXS
+},
+quickActionButtonBox2:{
+  borderRadius: radiusS,
+  flexDirection: "row",
+  alignItems: "flex-start",
+  //justifyContent: "center",
+  padding:actuatedNormalize(12),
+  //alignItems:"flex-start"
+},
+quickActionButtonTxt2:{
+ // alignSelf: "stretch",
+fontSize:actuatedNormalize(12),
+lineHeight:actuatedNormalize(16),
+fontFamily: "Univers Next for HSBC",
+//textAlign: "left"
+},
+      
+   
      
  }
