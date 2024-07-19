@@ -19,6 +19,7 @@ const MainButton = (props) => {
 						props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALarge'
 						}
 						onPress={props.onPress}
+						disabled={props.disabled}
 					>
             		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
                   		 <TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
@@ -34,6 +35,7 @@ const MainButton = (props) => {
 					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
 					}
 					onPress={props.onPress}
+					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
 					<TextComponent style={[{color: theme.primarywhite},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
@@ -49,6 +51,7 @@ const MainButton = (props) => {
 					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALargeBlack'
 					}
 					onPress={props.onPress}
+					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
 					<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
@@ -64,6 +67,7 @@ const MainButton = (props) => {
 					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTABlackSmall'
 					}
 					onPress={props.onPress}
+					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
 					<TextComponent style={[{color: theme.primarywhite},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
@@ -79,6 +83,7 @@ const MainButton = (props) => {
 					props.accessibilityLabel ? props.accessibilityLabel : 'secondaryCTABB'
 					}
 					onPress={props.onPress}
+					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryblack,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
 					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryblack},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
@@ -94,6 +99,7 @@ const MainButton = (props) => {
 					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTARB'
 					}
 					onPress={props.onPress}
+					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryred,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
 					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryred},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
@@ -108,6 +114,7 @@ const MainButton = (props) => {
 						props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALarge'
 						}
 						onPress={props.onPress}
+						disabled={props.disabled}
 					>
             		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
                   		 <TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
@@ -123,6 +130,7 @@ const MainButton = (props) => {
 					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALargeBlack'
 					}
 					onPress={props.onPress}
+					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
 					<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
