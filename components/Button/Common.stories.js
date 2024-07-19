@@ -16,7 +16,7 @@ import CheckboxComponent from './CheckboxComponent';
 import Divider from './Divider';
 import MainButton from '../NewButton/MainButton';
 import SvgIconList from '../../constants/SvgIconList';
-
+import Paginator from './Paginator';
 
 export default {
   title: 'components/EntireComponents',
@@ -212,6 +212,11 @@ export const DividerComponentStory = args => <Divider {...args} />;
 DividerComponentStory.args = {
   backgroundColor: "blue",
   height: 5,
+};
+export const PaginatorComponentStory = args => <Paginator {...args} />;
+PaginatorComponentStory.args = {
+  value: true,
+  onPress: null,
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {

@@ -6,6 +6,7 @@ import Home from '../Home';
 import PassWord from '../PassWord';
 import Transfers
  from '../Transfers';
+ import Paginatorscreendisplay from '../Paginatorscreendisplay';
 const SettingsStack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
@@ -23,6 +24,11 @@ const HomeStack = () => {
       <SettingsStack.Screen
         name="Transfers"
         component={Transfers}
+        options={{headerShown: false}}
+      />
+       <SettingsStack.Screen
+        name="Paginatorscreendisplay"
+        component={Paginatorscreendisplay}
         options={{headerShown: false}}
       />
     </SettingsStack.Navigator>

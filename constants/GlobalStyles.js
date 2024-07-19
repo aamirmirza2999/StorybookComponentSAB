@@ -194,7 +194,37 @@ fontFamily: I18nManager.isRTL
 : Fonts.Regular_En,
 //textAlign: "left"
 },
-      
+   //Paginator
+   activeDot: {
+    width:actuatedNormalize(16),
+    height: actuatedNormalize(3),
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: '#000000',
+    paddingHorizontal:spacingXS
+  },
+    
+  subactiveDot: {
+    width:actuatedNormalize(40),
+    height: actuatedNormalize(3),
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: '#db0011',
+  }, 
+
+  inactiveDot: {
+    width:actuatedNormalize(16),
+    height:actuatedNormalize (3),
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: 'black',
+  },
+  subinactiveDot: {
+    width:actuatedNormalize(16),
+    height: actuatedNormalize(3),
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: '#000000',
+  },
+  // paginationContainer: {
+//   paddingVertical: 10,
+// },    
    
      
  }
