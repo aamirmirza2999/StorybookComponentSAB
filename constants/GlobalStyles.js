@@ -199,7 +199,6 @@ fontFamily: I18nManager.isRTL
     width:actuatedNormalize(16),
     height: actuatedNormalize(3),
     borderRadius: actuatedNormalize(100),
-    backgroundColor: '#000000',
     paddingHorizontal:spacingXS
   },
     
@@ -214,7 +213,6 @@ fontFamily: I18nManager.isRTL
     width:actuatedNormalize(16),
     height:actuatedNormalize (3),
     borderRadius: actuatedNormalize(100),
-    backgroundColor: 'black',
   },
   subinactiveDot: {
     width:actuatedNormalize(16),
