@@ -4,6 +4,7 @@ import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from "../Button/TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
+import SvgIconList from "../../constants/SvgIconList";
 
 const MainButton = (props) => {
 	const { theme } = useTheme();
@@ -189,12 +190,42 @@ const MainButton = (props) => {
 			
 				</Component>:null}
 
+				{/* Link Button */}
+
+				{props.linkButton?
+					<Component
+						testID={props.testID ? props.testID : 'linkButton'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'linkButton'
+						}
+						onPress={props.onPress}>
+							<View
+							style={{
+								flexDirection: "row",
+								alignItems:"center"
+							}}
+							>
+								<TextComponent
+								style={[props.linkType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primaryred}]}
+								>{props.label}</TextComponent>
+								<SvgIconList
+								icon="Iconright"
+								width={actuatedNormalize(25)}
+								height={actuatedNormalize(25)}
+								/>
+
+							</View>
+			
+						</Component>:
+						
+				null}
+
 </>	
 			);
 };
 
 const styles = StyleSheet.create({
-  
+
   });
 
 export default MainButton;

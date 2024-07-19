@@ -15,7 +15,7 @@ export {default as RadioSelect} from '../assets/radioButtonsSelected.svg';
 export {default as RadioUnSelect} from '../assets/Radiounselectnew.svg';
 export {default as RedSelected} from '../assets/checkboxSelected_red.svg';
 export {default as RedUnSelected} from '../assets/checkboxUnSelected_red.svg';
-export {default as IconChevRight} from '../assets/icon_chevron_right.svg';
+export {default as IconChevRight} from '../assets/right.svg';
 export {default as AccountAction} from '../assets/account_actions.svg';
 
 

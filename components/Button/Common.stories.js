@@ -45,7 +45,8 @@ TextComponentStory.args = {
   children: 'SAB RMB',
   textColor: 'blue',
   fontSize: 16,
-  fontWeight: 'Regular',
+  fontFamily: 'Regular',
+  fontWeight: '600',
   onPress: null,
   numberOfLines: 1,
   textTransform: 'none',
@@ -55,9 +56,13 @@ TextComponentStory.argTypes = {
   children: {control: 'text'},
   textColor: {control: 'color'},
   fontSize: {control: 'number'},
-  fontWeight: {
+  fontFamily: {
     control: 'select',
     options: ['Bold', 'Regular', 'Light'],
+  },
+  fontWeight: {
+    control: 'select',
+    options: ["null",'normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900']
   },
   onPress: {action: 'pressed'},
   numberOfLines: {control: 'number'},
@@ -237,10 +242,10 @@ MainButtonComponentStory.args = {
                         icon="AccountAction"
                         width={24}
                         height={24}
-                        //transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
                       />,
   quickActionButtonLabel:"Button",
-  quickActionButtonType:1
- 
+  quickActionButtonType:1,
+  linkButton:false,
+  linkType:"large", // small/large
  
 };
