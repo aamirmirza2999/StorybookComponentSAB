@@ -24,13 +24,14 @@ const TextComponent = (props) => {
           color: props.textColor, // Changed from props.color to props.textColor
           fontSize: props.fontSize,
           fontFamily:
-            props.fontWeight === 'Bold'
-              ? Fonts.Bold_En
-              : props.fontWeight === 'Regular'
-              ? Fonts.Regular_En
-              : props.fontWeight === 'Light'
-              ? Fonts.Light_En
-              : Fonts.Regular_En,
+            props.fontFamily === 'Bold'
+              ? Fonts.Bold
+              : props.fontFamily === 'Regular'
+              ? Fonts.Regular
+              : props.fontFamily === 'Light'
+              ? Fonts.Light
+              : Fonts.Regular,
+          fontWeight : props.fontWeight === "null"? null : props.fontWeight
         },
         props.style,
       ]}
@@ -48,7 +49,6 @@ const TextComponent = (props) => {
 const styles = {
   defaultTextStyle: {
     textAlign: 'left',
-    fontWeight: Platform.OS === 'ios' ? null : '600',
   },
 };
 
