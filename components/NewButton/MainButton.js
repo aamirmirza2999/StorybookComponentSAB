@@ -20,8 +20,8 @@ const MainButton = (props) => {
 						}
 						onPress={props.onPress}
 					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"}, globalStyles.primaryFlexBoxLarge]}>			
-                  		 <TextComponent style={[{color: theme.primarywhite}, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+            		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
+                  		 <TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
 					</Component>:null}
 			
@@ -35,8 +35,8 @@ const MainButton = (props) => {
 					}
 					onPress={props.onPress}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"}, globalStyles.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarywhite}, globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
+					<TextComponent style={[{color: theme.primarywhite},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -50,8 +50,8 @@ const MainButton = (props) => {
 					}
 					onPress={props.onPress}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"}, globalStyles.primaryFlexBoxLarge]}>			
-					<TextComponent style={[{color: theme.primarywhite}, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
+					<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -65,8 +65,8 @@ const MainButton = (props) => {
 					}
 					onPress={props.onPress}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"}, globalStyles.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarywhite}, globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
+					<TextComponent style={[{color: theme.primarywhite},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -80,8 +80,8 @@ const MainButton = (props) => {
 					}
 					onPress={props.onPress}
 				>
-				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryblack,alignSelf:"flex-start"}, globalStyles.secondaryFlexBoxLarge]}>			
-					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryblack}, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryblack,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
+					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryblack},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -95,8 +95,8 @@ const MainButton = (props) => {
 					}
 					onPress={props.onPress}
 				>
-				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryred,alignSelf:"flex-start"}, globalStyles.secondaryFlexBoxLarge]}>			
-					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryred}, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryred,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
+					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryred},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -109,8 +109,8 @@ const MainButton = (props) => {
 						}
 						onPress={props.onPress}
 					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"}, globalStyles.preloginRedButton]}>			
-                  		 <TextComponent style={[{color: theme.primarywhite}, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+            		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
+                  		 <TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
 					</Component>:null}
 
@@ -124,8 +124,8 @@ const MainButton = (props) => {
 					}
 					onPress={props.onPress}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"}, globalStyles.preloginRedButton]}>			
-					<TextComponent style={[{color: theme.primarywhite}, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
+					<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -141,7 +141,7 @@ const MainButton = (props) => {
 				>
 					{props.quickActionButtonType===1?
 					<View
-					style={[globalStyles.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
+					style={[props.quickActionButtonBox,globalStyles.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
 					>
 						<View
 							style={{
@@ -150,16 +150,16 @@ const MainButton = (props) => {
 						>
 							{props.quickActionButtonIcon}
 						</View>
-						<TextComponent style={[globalStyles.quickActionButtonTxt,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+						<TextComponent style={[props.quickActionButtonTxt,globalStyles.quickActionButtonTxt,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 					</View>
 					:null}
 
 				    {props.quickActionButtonType===2?
 								<View
-								style={[globalStyles.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
+								style={[props.quickActionButtonBox1,globalStyles.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
 								>
 										{props.quickActionButtonIcon}
-									<TextComponent style={[globalStyles.quickActionButtonTxt1,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+									<TextComponent style={[props.quickActionButtonTxt1,globalStyles.quickActionButtonTxt1,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 								</View>
 					:null}
 
@@ -171,18 +171,15 @@ const MainButton = (props) => {
 						}}
 						>
 								<View
-								style={[globalStyles.quickActionButtonBox2,{backgroundColor: theme.stylesblockbg}]}
+								style={[props.quickActionButtonBox2,globalStyles.quickActionButtonBox2,{backgroundColor: theme.stylesblockbg}]}
 								>
 										{props.quickActionButtonIcon}
 								</View>
-								<TextComponent style={[globalStyles.quickActionButtonTxt2,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+								<TextComponent style={[props.quickActionButtonTxt2,globalStyles.quickActionButtonTxt2,{color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 							</View>
 					:null}
 			
 				</Component>:null}
-
-				
-
 
 </>	
 			);
