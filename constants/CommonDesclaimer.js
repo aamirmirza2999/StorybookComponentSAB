@@ -5,7 +5,7 @@ import {Exclamatorylogin} from "../constants/SvgLocations"
 import { useTheme } from '../theme/ThemeProvider'
 import TextComponent from '../components/common/TextComponent'
 import Fonts from './Fonts'
-import { ScreenLeftorRight } from './Size'
+import { spacingS } from './Size'
 
 const CommonDesclaimer = (props) => {
   const { t } = props;
@@ -15,7 +15,7 @@ const CommonDesclaimer = (props) => {
     <View
     style={{
       // alignItems: "center",
-      marginTop: ScreenLeftorRight,
+      marginTop: spacingS,
       paddingHorizontal: actuatedNormalize(14),
       paddingVertical: actuatedNormalize(12),
       // marginLeft: actuatedNormalize(15),
@@ -25,7 +25,7 @@ const CommonDesclaimer = (props) => {
       borderRadius: actuatedNormalize(8),
       borderWidth: actuatedNormalize(2),
       borderColor: "#ffcf70",
-      marginBottom: ScreenLeftorRight
+      marginBottom: spacingS
     }}
   >
     <View style={{ flexDirection: "row" }}>

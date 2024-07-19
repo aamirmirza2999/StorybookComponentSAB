@@ -21,10 +21,9 @@ import {useTheme} from '../../constants/Theme/ThemeProvider';
 import {InfoIcon} from '../../constants/SvgLocations';
 import CurrencySwitch from './CurrencySwitch';
 import {
-  ComponentBottomPadding,
-  TextInputBottom,
-  inputVertical,
-  textTop,
+  spacingM,
+  spacingS,
+  spacingXS,
 } from '../../constants/Size';
 
 let menuTextColor = '#000000';
@@ -68,7 +67,7 @@ const TextInputComponent = props => {
   return (
     <View
       style={{
-        paddingBottom: ComponentBottomPadding,
+        paddingBottom: spacingM,
         //marginTop: actuatedNormalize(24),
       }}>
       {props.label ? (
@@ -84,7 +83,7 @@ const TextInputComponent = props => {
                 //fontSize: '14px',
                 // flexDirection: 'row',
                 // justifyContent: 'center',
-                // paddingBottom:TextInputBottom,
+                // paddingBottom:spacingXS,
                 fontFamily: Fonts.Regular_En,
                 fontSize: actuatedNormalize(14),
                 color: props.textColor,
@@ -111,7 +110,7 @@ const TextInputComponent = props => {
         </View>
       ) : null}
 
-      <View style={{flexDirection: 'row', marginTop: textTop}}>
+      <View style={{flexDirection: 'row', marginTop: spacingXS}}>
         <LinearGradient
           colors={customStyle}
           start={{x: 0, y: 0}}
@@ -136,7 +135,7 @@ const TextInputComponent = props => {
                     bottom: 0,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    left: inputVertical,
+                    left: spacingS,
                   },
                   props.arabicplaceholdertext,
                 ]}>

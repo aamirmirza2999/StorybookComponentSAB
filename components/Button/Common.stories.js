@@ -13,6 +13,10 @@ import DropdownComponent from './DropdownComponent';
 import OptionButton from '../OptionButton';
 import ProgressHeader from './ProgressComponent';
 import CheckboxComponent from './CheckboxComponent';
+import Divider from './Divider';
+import MainButton from '../NewButton/MainButton';
+import SvgIconList from '../../constants/SvgIconList';
+import Paginator from './Paginator';
 
 export default {
   title: 'components/EntireComponents',
@@ -208,4 +212,38 @@ OptionButtonComponentStory.args = {
  // BgColor={"#eeeeee"}
   label:"View Virtual card"
 
+};
+export const DividerComponentStory = args => <Divider {...args} />;
+DividerComponentStory.args = {
+  backgroundColor: "blue",
+  height: 5,
+};
+export const PaginatorComponentStory = args => <Paginator {...args} />;
+PaginatorComponentStory.args = {
+  value: true,
+  onPress: null,
+};
+export const MainButtonComponentStory = args => <MainButton {...args} />;
+MainButtonComponentStory.args = {
+ label:"Action",
+ enablePrimaryLarge:true, 
+ enablePrimarySmall:false,
+ enablePrimaryLargeBlack:false,
+ enablePrimaryLargeSmall:false,
+ enableSecondaryBorderBlack:false,
+ enableSecondaryBorderRed:false,
+ preloginRedButton:false,
+ preloginBlackButton:false,
+ disabled:false,
+ quickActionButton:false,
+ quickActionButtonIcon:<SvgIconList
+                        icon="AccountAction"
+                        width={24}
+                        height={24}
+                      />,
+  quickActionButtonLabel:"Button",
+  quickActionButtonType:1,
+  linkButton:false,
+  linkType:"large", // small/large
+ 
 };

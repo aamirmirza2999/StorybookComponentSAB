@@ -72,7 +72,7 @@ const PrimaryButton = props => {
           props.disabled
             ? () => {}
             : () => {
-                props.debounceEvent(props.onPress);
+               (props.onPress);
               }
         }
         style={[

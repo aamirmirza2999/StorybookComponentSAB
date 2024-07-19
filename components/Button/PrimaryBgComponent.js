@@ -7,7 +7,7 @@ import {globalStyles} from '../../constants/GlobalStyles';
 import BgHeader from './BgHeader';
 // import { useTheme } from '../../constants/Theme/ThemeProvider';
 import ProgressHeader from './ProgressComponent';
-import {ScreenLeftorRight, ScreenToporBottom} from '../../constants/Size';
+import {spacingS, spacingM} from '../../constants/Size';
 
 const PrimaryBgComponent = props => {
   // const { theme, toggleTheme } = useTheme();
@@ -24,10 +24,10 @@ const PrimaryBgComponent = props => {
       <ScrollView>
         <View
           style={{
-            paddingLeft: ScreenLeftorRight,
-            paddingRight: ScreenLeftorRight,
-            paddingBottom: ScreenToporBottom,
-            paddingTop: ScreenToporBottom,
+            paddingLeft: spacingS,
+            paddingRight: spacingS,
+            paddingBottom: spacingM,
+            paddingTop: spacingM,
             // backgroundColor: Colors.primaryBgColor,
           }}>
           {/* what  ever component i can add here  */}

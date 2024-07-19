@@ -17,7 +17,7 @@ import CommonHelper from './CommonHelper';
 import Fonts from './Fonts';
 import TextComponent from '../components/common/TextComponent';
 import { useTheme } from '../theme/ThemeProvider';
-import { ScreenLeftorRight } from './Size';
+import { spacingS } from './Size';
 // import {
 //     actuatedNormalize
 //   } from '../../../constants/PixelScaling'
@@ -54,7 +54,7 @@ const CommonToAccountDetailComponent = (props) => {
 style={{
   flex: 1,
   flexDirection: "row",
-  marginTop: ScreenLeftorRight,
+  marginTop: spacingS,
   marginBottom: actuatedNormalize(8),
   // marginLeft: actuatedNormalize(16),
   // marginRight: actuatedNormalize(16),

@@ -5,7 +5,7 @@ import TextComponent from './TextComponent';
 import Fonts from '../../constants/Fonts';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import PrimaryButton from './PrimaryButton';
-import { ScreenLeftorRight } from '../../constants/Size';
+import { spacingS } from '../../constants/Size';
 
 const BottomButton = props => {
   console.log("props>>>>",props)
@@ -163,8 +163,8 @@ const addCommaToNumber = (data) => {
                 style={{
                   flex: 1,
                   flexDirection: "row",
-                  marginLeft: ScreenLeftorRight,
-                  marginRight: ScreenLeftorRight,
+                  marginLeft: spacingS,
+                  marginRight: spacingS,
                 }}
               >
                 <View
@@ -237,7 +237,7 @@ const addCommaToNumber = (data) => {
                 ) : (
                   <View
                     style={{
-                      marginLeft: ScreenLeftorRight,
+                      marginLeft: spacingS,
                       flex: 1,
                       height: actuatedNormalize(25),
                       flexDirection: "row",
@@ -306,8 +306,8 @@ const addCommaToNumber = (data) => {
                       flex: 1,
                       flexDirection: "row",
                       marginTop: actuatedNormalize(10),
-                      marginLeft: ScreenLeftorRight,
-                      marginRight: ScreenLeftorRight,
+                      marginLeft: spacingS,
+                      marginRight: spacingS,
                     }}
                   >
                     <View
@@ -404,11 +404,11 @@ const addCommaToNumber = (data) => {
                 </View>
               
            
-              <View style={{ paddingHorizontal: ScreenLeftorRight, paddingBottom: actuatedNormalize(27) , marginTop:actuatedNormalize(15) }}>
+              <View style={{ paddingHorizontal: spacingS, paddingBottom: actuatedNormalize(27) , marginTop:actuatedNormalize(15) }}>
                 <PrimaryButton
                    onPress={props.onPress}
                    textColor={'white'}
-                   PrimaryButtonBgClr={theme.PrimaryButtonBgClr}
+                   PrimaryButtonBgClr={theme.primaryredstatic}
                    label={props.label}
                 />
 
