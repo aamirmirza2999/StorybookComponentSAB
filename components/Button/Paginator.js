@@ -21,7 +21,7 @@ const subdata = [
    
   ];
 
-const Paginator = () => {
+const Paginator = (props) => {
     const { theme } = useTheme();
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -34,6 +34,7 @@ const Paginator = () => {
 
   return (
     <>
+    {props.carousel?
     <View style={styles.container}>
       <Carousel
         data={data}
@@ -52,6 +53,9 @@ const Paginator = () => {
         containerStyle={globalStyles.paginationContainer}
       />
     </View>
+    :null
+}
+{props.subcarousel?
     <View style={styles.container}>
       <Carousel
         data={subdata}
@@ -70,6 +74,7 @@ const Paginator = () => {
         containerStyle={globalStyles.paginationContainer}
       />
     </View>
+    :null}
     </>
   );
 };

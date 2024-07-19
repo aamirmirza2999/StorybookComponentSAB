@@ -222,6 +222,8 @@ export const PaginatorComponentStory = args => <Paginator {...args} />;
 PaginatorComponentStory.args = {
   value: true,
   onPress: null,
+  carousel:true,
+  subcarousel:true,
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
