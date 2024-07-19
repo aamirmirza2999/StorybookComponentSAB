@@ -194,6 +194,22 @@ fontFamily: I18nManager.isRTL
 : Fonts.Regular_En,
 //textAlign: "left"
 },
+linkTextsmall:{
+  fontSize:actuatedNormalize(12),
+lineHeight:actuatedNormalize(16),
+fontFamily: I18nManager.isRTL
+? Fonts.Regular_Ar
+: Fonts.Regular_En,
+textAlign: "left"
+},
+linkTextlarge:{
+  fontSize:actuatedNormalize(14),
+lineHeight:actuatedNormalize(18),
+fontFamily: I18nManager.isRTL
+? Fonts.Regular_Ar
+: Fonts.Regular_En,
+textAlign: "left"
+},
    //Paginator
    activeDot: {
     width:actuatedNormalize(16),

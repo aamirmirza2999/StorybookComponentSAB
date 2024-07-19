@@ -235,10 +235,10 @@ MainButtonComponentStory.args = {
                         icon="AccountAction"
                         width={24}
                         height={24}
-                        //transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
                       />,
   quickActionButtonLabel:"Button",
-  quickActionButtonType:1
- 
+  quickActionButtonType:1,
+  linkButton:false,
+  linkType:"large", // small/large
  
 };
