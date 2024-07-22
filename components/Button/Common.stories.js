@@ -17,6 +17,7 @@ import Divider from './Divider';
 import MainButton from '../NewButton/MainButton';
 import SvgIconList from '../../constants/SvgIconList';
 import Paginator from './Paginator';
+import ProgressIndicator from './ProgressIndicator';
 
 export default {
   title: 'components/EntireComponents',
@@ -248,4 +249,12 @@ MainButtonComponentStory.args = {
   linkButton:false,
   linkType:"large", // small/large
  
+};
+
+export const ProgressBarIndicator = args => <ProgressIndicator {...args} />;
+ProgressBarIndicator.args = {
+  ProgressIndicator: true,
+  currentStep: 2,  
+  currentStepColor: '#db0011',
+  RemainingStepColor: '#eee',
 };

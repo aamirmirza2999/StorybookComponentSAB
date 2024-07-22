@@ -27,6 +27,7 @@ import BottomButton from '../components/Button/BottomButton';
 import CheckboxComponent from '../components/Button/CheckboxComponent';
 import { spacingXS } from '../constants/Size';
 import BottomSheetComponent from '../components/Button/BottomSheetComponent';
+ import ProgressIndicator from '../components/Button/ProgressIndicator';
 
 const Transfers = props => {
   const {theme, toggleTheme} = useTheme();
@@ -380,6 +381,13 @@ const Transfers = props => {
             </TextComponent>
           </View>
         </View>
+
+        <ProgressIndicator
+            ProgressIndicator={true}
+            currentStep={2}            
+            currentStepColor={'#db0011'}
+            RemainingStepColor={'#eee'}
+          />
         
 
      
