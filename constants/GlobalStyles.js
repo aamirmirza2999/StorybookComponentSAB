@@ -355,6 +355,18 @@ togglelabel:{
       fontFamily: I18nManager.isRTL
       ? Fonts.Regular_Ar
       : Fonts.Regular_En,
+    },
+    floatingButton:{
+      borderRadius: radiusS,
+      backgroundColor: "#db0011",
+      //alignSelf:"center",
+     // marginTop:7,
+      width:actuatedNormalize(56),
+      height: actuatedNormalize(56),
+      overflow: "hidden",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center"
     }
         
       

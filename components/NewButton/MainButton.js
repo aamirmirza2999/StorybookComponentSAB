@@ -5,7 +5,7 @@ import TextComponent from "../Button/TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import SvgIconList from "../../constants/SvgIconList";
-import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow } from "../../constants/SvgLocations";
+import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary } from "../../constants/SvgLocations";
 
 const MainButton = (props) => {
 	const { theme } = useTheme();
@@ -220,6 +220,29 @@ const MainButton = (props) => {
 						</Component>:
 						
 				null}
+
+					{/* Floating Button */}
+
+					{props.floatingButton?
+					<Component
+						testID={props.testID ? props.testID : 'floatingButton'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'floatingButton'
+						}
+						onPress={props.onPress}>
+						<View
+						style={[globalStyles.floatingButton]}>
+							<AddBenefiary
+							width={actuatedNormalize(32)}
+							height={actuatedNormalize(32)}
+							/>
+
+						</View>
+			
+						</Component>:
+						
+				null}
+
 
 					{/* List Button */}
 

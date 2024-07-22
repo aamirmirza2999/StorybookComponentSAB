@@ -268,8 +268,10 @@ MainButtonComponentStory.args = {
   quickActionButtonType:1,
   linkButton:false,
   linkType:"large", // small/large
-  listButton:true,
-  listButtonType:1
+  listButton:false,
+  listButtonType:1,
+  floatingButton:true,
+  onPress:null
 };
 
 export const ProgressBarIndicator = args => <ProgressIndicator {...args} />;

@@ -22,6 +22,9 @@ export {default as Toggleunselect} from '../assets/toggleUnselect.svg'
 export {default as RightArrowBlackLarge} from '../assets/rightLargeBlack.svg';
 export {default as RightArrowBlackSmall} from '../assets/rightSmallBlack.svg';
 export {default as RightRedArrow} from '../assets/rightRedLarge.svg';
+export {default as AddBenefiary} from '../assets/add_beneficiary.svg';
+
+
 
 
 
