@@ -6,22 +6,23 @@ import { useTheme } from "../../constants/Theme/ThemeProvider";
 
 const { width: screenWidth } = Dimensions.get('window');
 
-const data = [
-  { title: 'Item 1', text: 'Text 1' },
-  { title: 'Item 2', text: 'Text 2' },
-  { title: 'Item 3', text: 'Text 3' },
-  { title: 'Item 4', text: 'Text 4' },
-  { title: 'Item 5', text: 'Text 5' },
-];
+// const data = [
+//   { title: 'Item 1', text: 'Text 1' },
+//   { title: 'Item 2', text: 'Text 2' },
+//   { title: 'Item 3', text: 'Text 3' },
+//   { title: 'Item 4', text: 'Text 4' },
+//   { title: 'Item 5', text: 'Text 5' },
+// ];
 
-const subdata = [
-    { title: 'Item 1', text: 'Text 1' },
-    { title: 'Item 2', text: 'Text 2' },
-    { title: 'Item 3', text: 'Text 3' },
+// const subdata = [
+//     { title: 'Item 1', text: 'Text 1' },
+//     { title: 'Item 2', text: 'Text 2' },
+//     { title: 'Item 3', text: 'Text 3' },
    
-  ];
+//   ];
 
 const Paginator = (props) => {
+  console.log("data..11111",props)
     const { theme } = useTheme();
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -34,17 +35,17 @@ const Paginator = (props) => {
 
   return (
     <>
-    {props.carousel?
+    
     <View style={styles.container}>
       <Carousel
-        data={data}
+        data={props.data}
         renderItem={renderItem}
         sliderWidth={screenWidth}
         itemWidth={screenWidth}
         onSnapToItem={(index) => setActiveIndex(index)}
       />
       <Pagination
-        dotsLength={data.length}
+        dotsLength={props.data.length}
         activeDotIndex={activeIndex}
         dotStyle={[globalStyles.activeDot,{color: theme.primaryblack}]}
         inactiveDotStyle={[globalStyles.inactiveDot,{color: theme.primaryblack}]}
@@ -53,19 +54,18 @@ const Paginator = (props) => {
         containerStyle={globalStyles.paginationContainer}
       />
     </View>
-    :null
-}
-{props.subcarousel?
+
+
     <View style={styles.container}>
       <Carousel
-        data={subdata}
+        data={props.subdata}
         renderItem={renderItem}
         sliderWidth={screenWidth}
         itemWidth={screenWidth}
         onSnapToItem={(index) => setActiveIndex(index)}
       />
       <Pagination
-        dotsLength={subdata.length}
+        dotsLength={props.subdata.length}
         activeDotIndex={activeIndex}
         dotStyle={[globalStyles.subactiveDot,{color: theme.primaryred}]}
         inactiveDotStyle={[globalStyles.subinactiveDot,{color: theme.primaryblack}]}
@@ -74,7 +74,7 @@ const Paginator = (props) => {
         containerStyle={globalStyles.paginationContainer}
       />
     </View>
-    :null}
+    
     </>
   );
 };

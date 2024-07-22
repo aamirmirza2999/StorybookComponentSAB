@@ -236,6 +236,15 @@ textAlign: "left"
     borderRadius: actuatedNormalize(100),
     backgroundColor: '#000000',
   },
+  // paginationContainer: {
+//   paddingVertical: 10,
+// }, 
+//Toggle
+togglelabel:{
+  fontFamily: I18nManager.isRTL
+? Fonts.Regular_Ar
+: Fonts.Regular_En,
+} ,
  
   badgestatus: {
     flex: 1,
