@@ -17,6 +17,7 @@ export {default as RedSelected} from '../assets/checkboxSelected_red.svg';
 export {default as RedUnSelected} from '../assets/checkboxUnSelected_red.svg';
 export {default as IconChevRight} from '../assets/right.svg';
 export {default as AccountAction} from '../assets/account_actions.svg';
-
+export {default as Toggle} from '../assets/toggleswitch.svg';
+export {default as Toggleunselect} from '../assets/toggleUnselect.svg'
 
 

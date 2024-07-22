@@ -17,7 +17,21 @@ import Divider from './Divider';
 import MainButton from '../NewButton/MainButton';
 import SvgIconList from '../../constants/SvgIconList';
 import Paginator from './Paginator';
+import Toggleswitch from './Toggleswitch';
+const data = [
+  { title: 'Item 1', text: 'Text 1' },
+  { title: 'Item 2', text: 'Text 2' },
+  { title: 'Item 3', text: 'Text 3' },
+  { title: 'Item 4', text: 'Text 4' },
+  { title: 'Item 5', text: 'Text 5' },
+];
 
+const subdata = [
+    { title: 'Item 1', text: 'Text 1' },
+    { title: 'Item 2', text: 'Text 2' },
+    { title: 'Item 3', text: 'Text 3' },
+   
+  ];
 export default {
   title: 'components/EntireComponents',
 };
@@ -221,9 +235,15 @@ DividerComponentStory.args = {
 export const PaginatorComponentStory = args => <Paginator {...args} />;
 PaginatorComponentStory.args = {
   value: true,
+  data:data,
+  subdata:subdata,
   onPress: null,
-  carousel:true,
-  subcarousel:true,
+ 
+ 
+};
+export const ToggleComponentStory = args => <Toggleswitch {...args} />;
+ToggleComponentStory.args = {
+  value: true,
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {

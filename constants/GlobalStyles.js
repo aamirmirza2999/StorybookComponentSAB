@@ -238,7 +238,13 @@ textAlign: "left"
   },
   // paginationContainer: {
 //   paddingVertical: 10,
-// },    
+// }, 
+//Toggle
+togglelabel:{
+  fontFamily: I18nManager.isRTL
+? Fonts.Regular_Ar
+: Fonts.Regular_En,
+}   
    
      
  }
