@@ -244,7 +244,25 @@ togglelabel:{
   fontFamily: I18nManager.isRTL
 ? Fonts.Regular_Ar
 : Fonts.Regular_En,
-}   
-   
+} ,
+ 
+  badgestatus: {
+    flex: 1,
+    width: "100%"
+  },
+  badgenotification: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+    notificationbadgetext: {
+      lineHeight: 17,
+      fontFamily: "Univers Next for HSBC",
+      textAlign: "center",
+      fontSize: 12,
+      padding:actuatedNormalize(spacingXXS)
+  },
+        
+      
      
  }

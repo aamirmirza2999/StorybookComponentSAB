@@ -14,6 +14,19 @@ const TextComponent = (props) => {
     return false;
   };
 
+  const transformText = (text, transformType) => {
+    switch (transformType) {
+      case 'capitalize':
+        return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+      case 'uppercase':
+        return text.toUpperCase();
+      case 'lowercase':
+        return text.toLowerCase();
+      default:
+        return text;
+    }
+  };
+
   return (
     <Text
       testID={props.testID}
@@ -41,7 +54,7 @@ const TextComponent = (props) => {
       selectable={false}
       suppressHighlighting={true} // iOS highlight issue fix
     >
-      {props.children}
+      {transformText(props.children, props.textTransform)}
     </Text>
   );
 };
