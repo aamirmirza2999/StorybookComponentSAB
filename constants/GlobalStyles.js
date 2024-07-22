@@ -262,6 +262,100 @@ togglelabel:{
       fontSize: 12,
       padding:actuatedNormalize(spacingXXS)
   },
+  listButtonSmall:{
+    borderRadius: radiusS,
+    //width: "100%",
+    overflow: "hidden",
+    paddingHorizontal:spacingS,
+    paddingVertical: spacingXS,
+    alignItems: "center",
+    alignSelf:"center",
+    flexDirection: "row",
+    //flex: 1
+  },
+  listButtonLarge:{
+    borderRadius: radiusS,
+    //width: "100%",
+    overflow: "hidden",
+    paddingHorizontal:spacingS,
+    paddingVertical: spacingS,
+    alignItems: "center",
+    alignSelf:"center",
+    flexDirection: "row",
+    //flex: 1
+  },
+  listButtonTxtSmall:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+    alignSelf: "center",
+    fontSize: actuatedNormalize(14),
+    lineHeight: actuatedNormalize(18),
+    textAlign: "left",
+    fontFamily: I18nManager.isRTL
+    ? Fonts.Regular_Ar
+    : Fonts.Regular_En,
+  },
+  listButtonTxtLarge:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+      alignSelf: "center",
+      fontSize: actuatedNormalize(16),
+      lineHeight: actuatedNormalize(21),
+      textAlign: "left",
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+  },
+  listButtonDashboard:{
+    borderRadius: radiusS,
+    //width: "100%",
+    overflow: "hidden",
+    paddingHorizontal:spacingS,
+    paddingVertical: spacingS,
+    alignItems: "center",
+    justifyContent:"center",
+    alignSelf:"center",
+    flexDirection: "row",
+  },
+  listButtonDashboard1:{
+    borderRadius: radiusS,
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "stretch",
+    flexDirection: "row",
+    padding:spacingS,
+    //alignSelf:"flex-start",
+  },
+  listButtonTxt:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+      alignSelf: "center",
+      fontSize: actuatedNormalize(14),
+      lineHeight: actuatedNormalize(15),
+      textAlign: "left",
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+  },
+  listButtonTxt1:{
+  
+    justifyContent: "center",
+    //alignItems: "flex-end",
+  
+      alignSelf: "center",
+      fontSize: actuatedNormalize(14),
+      lineHeight: actuatedNormalize(15),
+      textAlign: "left",
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+    }
         
       
      

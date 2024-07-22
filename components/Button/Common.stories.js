@@ -249,7 +249,7 @@ ToggleComponentStory.args = {
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
  label:"Action",
- enablePrimaryLarge:true, 
+ enablePrimaryLarge:false, 
  enablePrimarySmall:false,
  enablePrimaryLargeBlack:false,
  enablePrimaryLargeSmall:false,
@@ -259,7 +259,7 @@ MainButtonComponentStory.args = {
  preloginBlackButton:false,
  disabled:false,
  quickActionButton:false,
- quickActionButtonIcon:<SvgIconList
+ Icon:<SvgIconList
                         icon="AccountAction"
                         width={24}
                         height={24}
@@ -268,7 +268,8 @@ MainButtonComponentStory.args = {
   quickActionButtonType:1,
   linkButton:false,
   linkType:"large", // small/large
- 
+  listButton:true,
+  listButtonType:1
 };
 
 export const ProgressBarIndicator = args => <ProgressIndicator {...args} />;
