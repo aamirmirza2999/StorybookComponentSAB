@@ -236,9 +236,24 @@ textAlign: "left"
     borderRadius: actuatedNormalize(100),
     backgroundColor: '#000000',
   },
-  // paginationContainer: {
-//   paddingVertical: 10,
-// },    
-   
+ 
+  badgestatus: {
+    flex: 1,
+    width: "100%"
+  },
+  badgenotification: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+    notificationbadgetext: {
+      lineHeight: 17,
+      fontFamily: "Univers Next for HSBC",
+      textAlign: "center",
+      fontSize: 12,
+      padding:actuatedNormalize(spacingXXS)
+  },
+        
+      
      
  }
