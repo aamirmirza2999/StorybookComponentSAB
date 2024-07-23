@@ -416,6 +416,21 @@ togglelabel:{
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center"
+    },
+    boldTextFamily:{
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Bold_Ar
+      : Fonts.Bold_En,
+    },
+    regularTextFamily:{
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+    },
+    lightTextFamily:{
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Light_Ar
+      : Fonts.Light_En,
     }
         
       
