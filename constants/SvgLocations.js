@@ -25,6 +25,8 @@ export {default as RightRedArrow} from '../assets/rightRedLarge.svg';
 export {default as AddBenefiary} from '../assets/add_beneficiary.svg';
 
 
+export {default as RightArrow} from '../assets/right.svg';
+export {default as InfoIconRed} from '../assets/info.svg';
 
 
 

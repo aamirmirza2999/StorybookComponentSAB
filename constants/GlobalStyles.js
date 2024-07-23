@@ -260,7 +260,6 @@ togglelabel:{
       fontFamily: "Univers Next for HSBC",
       textAlign: "center",
       fontSize: 12,
-      padding:actuatedNormalize(spacingXXS)
   },
   listButtonSmall:{
     borderRadius: radiusS,

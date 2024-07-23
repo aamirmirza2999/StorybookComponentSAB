@@ -1,6 +1,6 @@
 import React from 'react';
 import { actuatedNormalize } from './PixelScaling';
-import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,IconChevRight,AccountAction } from './SvgLocations';
+import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,IconChevRight,AccountAction,RightArrow ,InfoIconRed} from './SvgLocations';
 
 const SvgIconList = ({ icon, width, height  ,transform}) => {
   switch (icon) {
@@ -28,7 +28,7 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
         );
         case 'Iconright':
           return (
-            <IconChevRight
+            <RightArrow
               width={width}
               height={height}
             />
@@ -44,6 +44,14 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
         case 'AccountAction':
           return (
             <AccountAction
+              width={width}
+              height={height}
+
+            />
+          );
+          case 'InfoIconRed':
+          return (
+            <InfoIconRed
               width={width}
               height={height}
 
