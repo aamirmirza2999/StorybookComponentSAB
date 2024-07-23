@@ -431,7 +431,50 @@ togglelabel:{
       fontFamily: I18nManager.isRTL
       ? Fonts.Light_Ar
       : Fonts.Light_En,
-    }
+    },
+    imageButton:{
+      borderRadius: radiusS,
+        borderStyle: "solid",
+        borderColor: "#000",
+        borderWidth: 1,
+        alignSelf:"center",
+      
+        //width: "100%",
+        //height: 48,
+        padding:spacingXS,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        //minWidth: 48
+      },
+       segmenttabStyle:{
+            borderWidth:0,
+            backgroundColor: "rgba(118, 118, 118, 0.2)",
+          },
+          segmentactiveTabStyle:{
+            shadowColor: "rgba(0, 0, 0, 0.15)",
+            shadowOffset: {
+            width: 0,
+            height: 2
+            },
+            shadowRadius: 6,
+            elevation: 6,
+            shadowOpacity: 1,
+            borderRadius: 8,
+            backgroundColor: "#fff",
+            paddingVertical: 8,
+            paddingHorizontal: 16,
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          segmenttabTextStyle:{
+            fontSize: 14,
+            lineHeight: 18,
+            fontFamily: "Univers Next for HSBC",
+            color: "#000",
+            textAlign: "center"
+          }        
+      
         
       
      
