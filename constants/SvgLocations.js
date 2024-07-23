@@ -19,5 +19,14 @@ export {default as IconChevRight} from '../assets/right.svg';
 export {default as AccountAction} from '../assets/account_actions.svg';
 export {default as Toggle} from '../assets/toggleswitch.svg';
 export {default as Toggleunselect} from '../assets/toggleUnselect.svg'
+export {default as RightArrowBlackLarge} from '../assets/rightLargeBlack.svg';
+export {default as RightArrowBlackSmall} from '../assets/rightSmallBlack.svg';
+export {default as RightRedArrow} from '../assets/rightRedLarge.svg';
+export {default as AddBenefiary} from '../assets/add_beneficiary.svg';
+
+
+export {default as RightArrow} from '../assets/right.svg';
+export {default as InfoIconRed} from '../assets/info.svg';
+
 
 

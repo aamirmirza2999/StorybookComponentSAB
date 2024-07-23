@@ -260,7 +260,6 @@ togglelabel:{
       fontFamily: "Univers Next for HSBC",
       textAlign: "center",
       fontSize: 12,
-      padding:actuatedNormalize(spacingXXS)
   },
   //Radio button
   iconOverflowContainerRadio1: {
@@ -312,6 +311,113 @@ togglelabel:{
     paddingBottom:spacingXS,
      color: 'red'
   },      
+  listButtonSmall:{
+    borderRadius: radiusS,
+    //width: "100%",
+    overflow: "hidden",
+    paddingHorizontal:spacingS,
+    paddingVertical: spacingXS,
+    alignItems: "center",
+    alignSelf:"center",
+    flexDirection: "row",
+    //flex: 1
+  },
+  listButtonLarge:{
+    borderRadius: radiusS,
+    //width: "100%",
+    overflow: "hidden",
+    paddingHorizontal:spacingS,
+    paddingVertical: spacingS,
+    alignItems: "center",
+    alignSelf:"center",
+    flexDirection: "row",
+    //flex: 1
+  },
+  listButtonTxtSmall:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+    alignSelf: "center",
+    fontSize: actuatedNormalize(14),
+    lineHeight: actuatedNormalize(18),
+    textAlign: "left",
+    fontFamily: I18nManager.isRTL
+    ? Fonts.Regular_Ar
+    : Fonts.Regular_En,
+  },
+  listButtonTxtLarge:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+      alignSelf: "center",
+      fontSize: actuatedNormalize(16),
+      lineHeight: actuatedNormalize(21),
+      textAlign: "left",
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+  },
+  listButtonDashboard:{
+    borderRadius: radiusS,
+    //width: "100%",
+    overflow: "hidden",
+    paddingHorizontal:spacingS,
+    paddingVertical: spacingS,
+    alignItems: "center",
+    justifyContent:"center",
+    alignSelf:"center",
+    flexDirection: "row",
+  },
+  listButtonDashboard1:{
+    borderRadius: radiusS,
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "stretch",
+    flexDirection: "row",
+    padding:spacingS,
+    //alignSelf:"flex-start",
+  },
+  listButtonTxt:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+      alignSelf: "center",
+      fontSize: actuatedNormalize(14),
+      lineHeight: actuatedNormalize(15),
+      textAlign: "left",
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+  },
+  listButtonTxt1:{
+  
+    justifyContent: "center",
+    //alignItems: "flex-end",
+  
+      alignSelf: "center",
+      fontSize: actuatedNormalize(14),
+      lineHeight: actuatedNormalize(15),
+      textAlign: "left",
+      fontFamily: I18nManager.isRTL
+      ? Fonts.Regular_Ar
+      : Fonts.Regular_En,
+    },
+    floatingButton:{
+      borderRadius: radiusS,
+      backgroundColor: "#db0011",
+      //alignSelf:"center",
+     // marginTop:7,
+      width:actuatedNormalize(56),
+      height: actuatedNormalize(56),
+      overflow: "hidden",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+        
       
      
  }

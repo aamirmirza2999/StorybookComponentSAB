@@ -5,6 +5,7 @@ import TextComponent from "../Button/TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import SvgIconList from "../../constants/SvgIconList";
+import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary } from "../../constants/SvgLocations";
 
 const MainButton = (props) => {
 	const { theme } = useTheme();
@@ -157,7 +158,7 @@ const MainButton = (props) => {
 							marginTop: actuatedNormalize(8),
 							}}
 						>
-							{props.quickActionButtonIcon}
+							{props.Icon}
 						</View>
 						<TextComponent style={[props.quickActionButtonTxt,globalStyles.quickActionButtonTxt,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 					</View>
@@ -167,7 +168,7 @@ const MainButton = (props) => {
 								<View
 								style={[props.quickActionButtonBox1,globalStyles.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
 								>
-										{props.quickActionButtonIcon}
+										{props.Icon}
 									<TextComponent style={[props.quickActionButtonTxt1,globalStyles.quickActionButtonTxt1,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 								</View>
 					:null}
@@ -182,7 +183,7 @@ const MainButton = (props) => {
 								<View
 								style={[props.quickActionButtonBox2,globalStyles.quickActionButtonBox2,{backgroundColor: theme.stylesblockbg}]}
 								>
-										{props.quickActionButtonIcon}
+										{props.Icon}
 								</View>
 								<TextComponent style={[props.quickActionButtonTxt2,globalStyles.quickActionButtonTxt2,{color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 							</View>
@@ -216,6 +217,96 @@ const MainButton = (props) => {
 
 							</View>
 			
+						</Component>:
+						
+				null}
+
+					{/* Floating Button */}
+
+					{props.floatingButton?
+					<Component
+						testID={props.testID ? props.testID : 'floatingButton'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'floatingButton'
+						}
+						onPress={props.onPress}>
+						<View
+						style={[globalStyles.floatingButton]}>
+							<AddBenefiary
+							width={actuatedNormalize(32)}
+							height={actuatedNormalize(32)}
+							/>
+
+						</View>
+			
+						</Component>:
+						
+				null}
+
+
+					{/* List Button */}
+
+					{props.listButton?
+					<Component
+						testID={props.testID ? props.testID : 'listButton'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'listButton'
+						}
+						onPress={props.onPress}>
+
+						{props.listButtonType===1|| props.listButtonType===2?
+
+						<View
+						style={[props.listButtonType===1?globalStyles.listButtonSmall:globalStyles.listButtonLarge,{backgroundColor:theme.stylesblockbg}]}>
+							<View>
+								{props.Icon}
+							</View>
+						
+								<TextComponent
+								style={[props.listButtonType===1?globalStyles.listButtonTxtSmall:globalStyles.listButtonTxtLarge,{color:theme.primaryblack}]}
+								>{props.label}</TextComponent>
+						
+							<View>
+								{props.listButtonType===1?
+								<RightArrowBlackSmall
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></RightArrowBlackSmall>:null}
+								{props.listButtonType===2?
+								<RightArrowBlackLarge
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></RightArrowBlackLarge>:null}
+								</View>
+							</View>
+						:
+						props.listButtonType===3?
+						<View style={[globalStyles.listButtonDashboard,{backgroundColor:theme.stylesblockbg}]}>
+						<TextComponent
+						style={[globalStyles.listButtonTxt,{color:theme.primaryblack}]}
+						>{props.label}</TextComponent>
+						<RightRedArrow
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></RightRedArrow>
+						</View>:
+					<View
+					style={[globalStyles.listButtonDashboard1,{backgroundColor:theme.stylesblockbg}]}
+					>
+						<RightRedArrow
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								style={{
+									transform: [{ rotate:  "90deg"  }],
+									marginRight:actuatedNormalize(8)
+							}}
+								></RightRedArrow>
+						<TextComponent
+							style={[globalStyles.listButtonTxt1,{color:theme.primaryblack}]}
+						>{props.label}</TextComponent>
+					</View>
+						}
+						
 						</Component>:
 						
 				null}

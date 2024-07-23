@@ -27,6 +27,9 @@ import BottomButton from '../components/Button/BottomButton';
 import CheckboxComponent from '../components/Button/CheckboxComponent';
 import { spacingXS } from '../constants/Size';
 import BottomSheetComponent from '../components/Button/BottomSheetComponent';
+ import ProgressIndicator from '../components/Button/ProgressIndicator';
+import ListComponent from '../components/Button/ListComponent';
+import NotificationBadge from '../components/Button/NotificationBadge';
 
 const Transfers = props => {
   const {theme, toggleTheme} = useTheme();
@@ -40,26 +43,28 @@ const Transfers = props => {
   const [check, setCheck] = useState(false);
   const [showpopup ,setPopup] =useState(false)
 
-  const TransferTimingData = [
+  const ListData = [
     {
-      label: 'Now',
-      value: 'Now',
+      id:"1",
+      Header:'Hello',
+      sublabel:"Hi"
     },
     {
-      label: 'Later',
-      value: 'Later',
-    },
-  ];
-  const ReasonTransferData = [
-    {
-      label: 'Investment Purpose',
-      value: 'Investment Purpose',
+      id:"2",
+      Header:'Hello',
+      sublabel:"Hi"
     },
     {
-      label: 'Pay Loan',
-      value: 'Pay Loan',
+      id:"3",
+      Header:'Hello',
+      sublabel:"Hi"
     },
-  ];
+    {
+      id:"4",
+      Header:'Hello',
+      sublabel:"Hi"
+    }
+  ]
   const initialState = {
     formData: {
       transfertimingOpt: {
@@ -353,6 +358,34 @@ const Transfers = props => {
             onChangeText={handleUsernameChange}
             errorMsg={errorMsg}
           />
+          {ListData.map((item)=>{
+            return(
+              <ListComponent
+              // onPress={}
+              Header={item.Header}
+              SubText={item.sublabel}
+              IconFirst={"InfoIconRed"}
+              IconFirstwidth={actuatedNormalize(24)}
+              IconFirstheight={actuatedNormalize(24)}
+              IconSecond={"Iconright"}
+              IconSecondwidth={actuatedNormalize(18)}
+              IconSecondheight={actuatedNormalize(18)}
+              SubcomponentItem={
+                  <NotificationBadge
+                  backgroundColor={"#ffbb33"}
+                  width={actuatedNormalize(20)}
+                  height={actuatedNormalize(20)}
+                  fontSize={actuatedNormalize(12)}
+                  color={"#000"}
+                  BadgeText={item.id}
+                  />
+              }
+              />
+            )
+
+          })}
+          
+          
           
           <View style={{flexDirection: 'row'}}>
             <CheckboxComponent
@@ -381,6 +414,13 @@ const Transfers = props => {
             </TextComponent>
           </View>
         </View>
+
+        <ProgressIndicator
+            ProgressIndicator={true}
+            currentStep={2}            
+            currentStepColor={'#db0011'}
+            RemainingStepColor={'#eee'}
+          />
         
 
      
