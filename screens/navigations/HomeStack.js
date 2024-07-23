@@ -7,6 +7,7 @@ import PassWord from '../PassWord';
 import Transfers
  from '../Transfers';
  import Paginatorscreendisplay from '../Paginatorscreendisplay';
+ import RadioBtn from '../Radiobtn';
 const SettingsStack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
@@ -31,6 +32,16 @@ const HomeStack = () => {
         component={Paginatorscreendisplay}
         options={{headerShown: false}}
       />
+       <SettingsStack.Screen
+        name="RadioBtn"
+        component={RadioBtn}
+        options={{headerShown: false}}
+      />
+       {/* <SettingsStack.Screen
+        name="Disclaimerdesign"
+        component={Disclaimerdesign}
+        options={{headerShown: false}}
+      /> */}
     </SettingsStack.Navigator>
   );
 };

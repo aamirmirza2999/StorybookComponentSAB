@@ -18,6 +18,7 @@ import MainButton from '../NewButton/MainButton';
 import SvgIconList from '../../constants/SvgIconList';
 import Paginator from './Paginator';
 import Toggleswitch from './Toggleswitch';
+import RadioButton from '../RadioButton';
 const data = [
   { title: 'Item 1', text: 'Text 1' },
   { title: 'Item 2', text: 'Text 2' },
@@ -32,6 +33,8 @@ const subdata = [
     { title: 'Item 3', text: 'Text 3' },
    
   ];
+
+  
 export default {
   title: 'components/EntireComponents',
 };
@@ -244,6 +247,14 @@ PaginatorComponentStory.args = {
 export const ToggleComponentStory = args => <Toggleswitch {...args} />;
 ToggleComponentStory.args = {
   value: true,
+};
+
+export const RadioComponentStory = args => <RadioButton {...args} />;
+RadioComponentStory.args = {
+  value: true,
+ 
+     onPress:null,
+
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {

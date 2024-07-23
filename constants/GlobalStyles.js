@@ -262,7 +262,56 @@ togglelabel:{
       fontSize: 12,
       padding:actuatedNormalize(spacingXXS)
   },
-        
+  //Radio button
+  iconOverflowContainerRadio1: {
+    backgroundColor: '#FFFFFF',
+    marginTop:spacingXS,
+    borderRadius: 5,
+    shadowColor: "#40d3d1",
+    borderColor:"green",
+    width:"80%",
+    borderWidth:1,
+    marginHorizontal: spacingS,
+    //  paddingBottom:ComponentBottomPadding,
+
+    
+  },
+  iconOverflowContainerRadio2: {
+    backgroundColor: '#FFFFFF',
+    // marginTop:20,
+    borderRadius: 5,
+    shadowColor: "#40d3d1",
+    borderColor:"green",
+    width:"80%",
+    borderWidth:1,
+   paddingBottom:spacingXS,
+   marginHorizontal: spacingS,
+
+    
+  },
+  iconOverflowContainerRadio3: {
+    backgroundColor: '#FFFFFF',
+    marginTop:spacingXS,
+     borderRadius: 5,
+    shadowColor: "#40d3d1",
+    borderColor:"green",
+    width:"45%",
+    borderWidth:1,
+    // marginHorizontal: inputVertical,
+    
+    
+    
+  },
+  Radiobtnv2:{
+    flexDirection:"row",
+    justifyContent:"space-evenly",
+    alignItems:"center"
+  },
+  Radiobtnerrmsg:{
+    marginHorizontal: spacingS,
+    paddingBottom:spacingXS,
+     color: 'red'
+  },      
       
      
  }
