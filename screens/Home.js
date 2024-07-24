@@ -28,7 +28,8 @@ import {useTranslation} from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SvgIconList from '../constants/SvgIconList';
 import {spacingM, spacingS,  spacingXS} from '../constants/Size';
-import Toggleswitch from '../components/Button/Toggleswitch'
+import Toggleswitch from '../components/Button/Toggleswitch';
+// import Avatarcomponent from '../components/Button/Avatarcomponent';
 const Home = props => {
   const navigation = useNavigation();
   const [username, setUsername] = useState('');
@@ -195,6 +196,7 @@ const Home = props => {
           </TouchableOpacity>
         </View>
         <Toggleswitch/>
+        {/* <Avatarcomponent/> */}
       </PrimaryBgComponent>
     </>
   );

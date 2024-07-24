@@ -3,7 +3,7 @@ import { I18nManager } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft
 } from "./Size";
 
  export const globalStyles ={
@@ -417,6 +417,83 @@ togglelabel:{
       alignItems: "center",
       justifyContent: "center"
     },
+    //Avathar
+    path3Icon: {
+      position: "absolute",
+      top: -6,
+      left: -41,
+      width: 172,
+      height: 134,
+      display: "none",
+      opacity: 0.03,
+      zIndex: 0
+  },
+  jm: {
+    fontSize: 20,
+    lineHeight: 25,
+    fontWeight: "700",
+    fontFamily: I18nManager.isRTL
+          ? Fonts.Bold_Ar
+          : Fonts.Bold_En,
+    color: "#db0011",
+    textAlign: "left",
+    zIndex: 1
+},
+jm3:{
+  fontSize: 12,
+lineHeight: 16,
+fontFamily: I18nManager.isRTL
+          ? Fonts.Bold_Ar
+          : Fonts.Bold_En,
+color: "#db0011",
+textAlign: "left"
+},
+jm2:{
+  fontSize: 14,
+  lineHeight: 18,
+  fontFamily: I18nManager.isRTL
+          ? Fonts.Bold_Ar
+          : Fonts.Bold_En,
+  color: "#db0011",
+  textAlign: "left",
+  zIndex: 1
+},
+typefilledElementsinitials: {
+  borderRadius: 100,
+  backgroundColor: "#fbe5e7",
+  flex: 1,
+  overflow: "hidden",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: 16,
+ position: "absolute",
+  left: 91,
+},
+
+  Addbeneavatar: {
+  borderRadius: 8,
+  backgroundColor: "#DB0011",
+  overflow: "hidden",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  marginLeft:avatarRightandLeft,
+  marginRight:avatarRightandLeft,
+  height:avatarHeight
+  },
+  splitavatar:{
+    borderRadius: 8,
+  borderColor: "#000000",
+  borderWidth:1,
+  overflow: "hidden",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  marginLeft:avatarRightandLeft,
+  marginRight:avatarRightandLeft,
+  height:avatarHeight
+  },
     boldTextFamily:{
       fontFamily: I18nManager.isRTL
       ? Fonts.Bold_Ar

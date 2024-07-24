@@ -172,8 +172,8 @@ const Transfers = props => {
         BottomButton={
           <BottomButton
             show={true}
-            // onPress={() => props.navigation.navigate('Paginatorscreendisplay')}    
-            onPress={() => props.navigation.navigate('RadioBtn')}        
+            onPress={() => props.navigation.navigate('Paginatorscreendisplay')}    
+            // onPress={() => props.navigation.navigate('RadioBtn')}        
             label={'proceed'}
             TotalAmount={'10.00'}
             limitamount1={'150,000.00'}
