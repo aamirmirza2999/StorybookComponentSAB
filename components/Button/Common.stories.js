@@ -281,7 +281,12 @@ MainButtonComponentStory.args = {
   linkType:"large", // small/large
   listButton:false,
   listButtonType:1,
-  floatingButton:true,
+  floatingButton:false,
+  enableprimary:false,
+  enableSecondary:false,
+  enableImageButton:false,
+  segmentButton:true,
+  data:["First", "Second", "Third"],
   onPress:null
 };
 

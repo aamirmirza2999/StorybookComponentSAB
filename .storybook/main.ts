@@ -13,4 +13,19 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  webpackFinal: async (config) => {
+    // Exclude SVGs from the default file-loader rule
+    const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test('.svg'));
+    if (fileLoaderRule) {
+      fileLoaderRule.exclude = /\.svg$/;
+    }
+
+    // Add new rule for handling SVGs with @svgr/webpack
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
 };

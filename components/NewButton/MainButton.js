@@ -1,18 +1,44 @@
-import * as React from "react";
+import React,{useState} from 'react'
 import {Text, StyleSheet, View, Image,TouchableOpacity} from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from "../Button/TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import SvgIconList from "../../constants/SvgIconList";
-import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary } from "../../constants/SvgLocations";
+import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary,RightRedArrow1, Split } from "../../constants/SvgLocations";
+import SegmentedControlTab from "react-native-segmented-control-tab";
 
 const MainButton = (props) => {
 	const { theme } = useTheme();
+	const [selectedIndex, SetselectedIndex] = useState(0);
     let Component = TouchableOpacity;
+
+	const handleIndexChange = (value) => {
+		SetselectedIndex(value);
+	  };
   	
   	return (
     	<>
+		{props.segmentButton?
+		<View
+		style={{
+			marginTop:actuatedNormalize(10)
+		}}
+		>
+		 <SegmentedControlTab
+		  tabsContainerStyle={{
+		 marginHorizontal:actuatedNormalize(10),
+		  }}
+		  tabStyle={globalStyles.segmenttabStyle}
+		  activeTabStyle={globalStyles.segmentactiveTabStyle}
+		  tabTextStyle={globalStyles.segmenttabTextStyle}
+		  activeTabTextStyle={globalStyles.segmenttabTextStyle}
+          values={props.data}
+          selectedIndex={selectedIndex}
+          onTabPress={handleIndexChange}
+        />
+		</View>
+		:null}
 		{/* Primary Large Button Red Background */}
       			{props.enablePrimaryLarge?
 					<Component
@@ -209,11 +235,10 @@ const MainButton = (props) => {
 								<TextComponent
 								style={[props.linkType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primaryred}]}
 								>{props.label}</TextComponent>
-								<SvgIconList
-								icon="Iconright"
-								width={actuatedNormalize(25)}
-								height={actuatedNormalize(25)}
-								/>
+							<RightRedArrow1
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></RightRedArrow1>
 
 							</View>
 			
@@ -243,6 +268,55 @@ const MainButton = (props) => {
 						
 				null}
 
+				{/*  Button Group */}
+
+				{props.enableprimary?
+						<Component
+						style={{
+							marginHorizontal:actuatedNormalize(16),
+							marginVertical:actuatedNormalize(16)
+						}}
+							testID={props.testID ? props.testID : 'primaryCTA'}
+							accessibilityLabel={
+							props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
+							}
+							onPress={props.onPress}>
+						
+						<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge,]}>			
+						<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+						</View>
+							</Component>:null}
+
+					{props.enableSecondary?		
+
+					<Component
+							style={{
+								marginHorizontal:actuatedNormalize(16)
+							}}
+								testID={props.testID ? props.testID : 'floatingButton'}
+								accessibilityLabel={
+								props.accessibilityLabel ? props.accessibilityLabel : 'floatingButton'
+								}
+								onPress={props.onPress}>
+							
+							<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryblack,},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
+						<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryblack},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+					</View>
+					</Component>:null}
+				
+				{props.enableImageButton?				
+				<Component>
+					<View
+					style={globalStyles.imageButton}
+					>
+						<Split
+						width={actuatedNormalize(24)}
+						height={actuatedNormalize(24)}
+						
+						></Split>
+					</View>
+				</Component>:null}
+					
 
 					{/* List Button */}
 

@@ -53,13 +53,13 @@
 
 // export default AppEntryPoint;
 
-import React, { Suspense } from 'react';
-import { LogBox, StyleSheet, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import React, {Suspense} from 'react';
+import {LogBox, StyleSheet, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 import HomeStack from './screens/navigations/HomeStack';
-import { ThemeProvider } from './constants/Theme/ThemeProvider';
+import {ThemeProvider} from './constants/Theme/ThemeProvider';
 import i18n from './locales/i18n';
-import { I18nextProvider } from 'react-i18next';
+import {I18nextProvider} from 'react-i18next';
 
 const styles = StyleSheet.create({
   container: {
@@ -74,7 +74,7 @@ function App() {
   LogBox.ignoreAllLogs();
   return (
     <ThemeProvider>
-      <View style={{ flex: 1 }}>
+      <View style={{flex: 1}}>
         <NavigationContainer>
           <I18nextProvider i18n={i18n}>
             <Suspense fallback="loading">
@@ -89,8 +89,8 @@ function App() {
 
 let AppEntryPoint = App;
 
-if (!process.env.STORYBOOK_ENABLED) {
-  const AppEntry = require('./.ondevice').default; 
+if (process.env.STORYBOOK_ENABLED) {
+  const AppEntry = require('./.ondevice').default;
   AppEntryPoint = () => (
     <ThemeProvider>
       <AppEntry />

@@ -1,31 +1,27 @@
 import React from 'react';
 import { View, Text, I18nManager, Platform } from 'react-native';
 import Fonts from '../../constants/Fonts';
-import { actuatedNormalize } from '../../constants/PixelScaling';
+import { globalStyles } from '../../constants/GlobalStyles';
 
 const TextComponent = (props) => {
-  console.log('propsnewwww', props);
-  let textLabel = props.children;
 
-  const isUpperCase = () => {
-    if (typeof textLabel === 'string' && textLabel?.includes(' ')) {
-      return textLabel === textLabel.toUpperCase();
+  const fontsFamily = (fontFamily) => {
+    switch (fontFamily){
+      case "Bold" :{
+        return globalStyles.boldTextFamily
+      }
+      case "Regular" :{
+        return globalStyles.regularTextFamily
+      }
+      case "Light" :{
+        return globalStyles.lightTextFamily
+      }
+      default :{
+        return globalStyles.regularTextFamily
+      }
     }
-    return false;
-  };
+  }
 
-  const transformText = (text, transformType) => {
-    switch (transformType) {
-      case 'capitalize':
-        return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-      case 'uppercase':
-        return text.toUpperCase();
-      case 'lowercase':
-        return text.toLowerCase();
-      default:
-        return text;
-    }
-  };
 
   return (
     <Text
@@ -36,25 +32,18 @@ const TextComponent = (props) => {
         {
           color: props.textColor, // Changed from props.color to props.textColor
           fontSize: props.fontSize,
-          fontFamily:
-            props.fontFamily === 'Bold'
-              ? Fonts.Bold
-              : props.fontFamily === 'Regular'
-              ? Fonts.Regular
-              : props.fontFamily === 'Light'
-              ? Fonts.Light
-              : Fonts.Regular,
-          fontWeight : props.fontWeight === "null"? null : props.fontWeight
+          fontWeight : props.fontWeight === "null"? null : props.fontWeight,
+          textTransform : props.textTransform || "none"
         },
+        fontsFamily(props.fontFamily),//added a function thatwill take fonts from global style based on props.fontFamily
         props.style,
       ]}
       onPress={props.onPress}
       numberOfLines={props.numberOfLines}
-      textTransform={props.textTransform}
       selectable={false}
       suppressHighlighting={true} // iOS highlight issue fix
     >
-      {transformText(props.children, props.textTransform)}
+      {props.children}
     </Text>
   );
 };

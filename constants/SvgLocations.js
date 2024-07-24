@@ -24,9 +24,12 @@ export { default as AvatarIconwhite} from '../assets/profile';
 export {default as RightArrowBlackLarge} from '../assets/rightLargeBlack.svg';
 export {default as RightArrowBlackSmall} from '../assets/rightSmallBlack.svg';
 export {default as RightRedArrow} from '../assets/rightRedLarge.svg';
+export {default as RightRedArrow1} from '../assets/rightRed.svg';
 export {default as AddBenefiary} from '../assets/add_beneficiary.svg';
 export {default as EditIcon} from '../assets/document_edit.svg';
 export {default as SplitIcon} from '../assets/split.svg';
+export {default as Split}from '../assets/split.svg'
+
 export {default as RightArrow} from '../assets/right.svg';
 export {default as InfoIconRed} from '../assets/info.svg';
 
