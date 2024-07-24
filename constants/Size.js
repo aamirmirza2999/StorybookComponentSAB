@@ -33,4 +33,7 @@ export const progressIndicatorStep1Width = actuatedNormalize(85)
 export const progressIndicatorStep2Width = actuatedNormalize(170)
 export const progressIndicatorStep3Width = actuatedNormalize(255)
 
-
+//Avatar
+ 
+export const avatarHeight = actuatedNormalize(48)
+export const avatarRightandLeft = actuatedNormalize(150)
