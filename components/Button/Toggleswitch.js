@@ -1,6 +1,5 @@
 import { View, TouchableOpacity, Switch ,StyleSheet} from 'react-native'
 import React,{useState} from 'react'
-import ToggleSwitch from 'toggle-switch-react-native';
 import { globalStyles } from '../../constants/GlobalStyles'
  import { useTheme } from '../../constants/Theme/ThemeProvider';
 import TextComponent from './TextComponent'
@@ -18,18 +17,17 @@ const Toggleswitch = (props) => {
   return (
 
     <View style={styles.container}>
-    {/* <TextComponent style={styles.text}>Toggle Switch Example</TextComponent> */}
-    <ToggleSwitch
-      isOn={isOn}
-      onColor="#00847F"
-      offColor="#767676"
-      label="Toggle Me"
-      labelStyle={globalStyles.togglelabel}
-      size="large"
-      onToggle={toggleSwitch}
-      
-    />
-    {/* <TextComponent style={styles.text}>Switch is {isOn ? 'ON' : 'OFF'}</TextComponent> */}
+      <Switch
+        testID={props.testID}
+        accessibilityLabel={props.accessibilityLabel}
+        trackColor={{
+          true: theme.toggleOn,
+          false: theme.toggleOff,
+        }}
+        thumbColor="#FFF"
+        onValueChange={toggleSwitch}
+        value={isOn}
+      />
   </View>
     
    
