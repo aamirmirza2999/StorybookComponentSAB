@@ -20,6 +20,7 @@ import Paginator from './Paginator';
 import ProgressIndicator from './ProgressIndicator';
 import Toggleswitch from './Toggleswitch';
 import RadioButton from '../RadioButton';
+import TooltipComponent from './TooltipComponent';
 const data = [
   { title: 'Item 1', text: 'Text 1' },
   { title: 'Item 2', text: 'Text 2' },
@@ -296,4 +297,40 @@ ProgressBarIndicator.args = {
   currentStep: 2,  
   currentStepColor: '#db0011',
   RemainingStepColor: '#eee',
+};
+
+export const TooltipComponentStory = args => <TooltipComponent {...args} />;
+TooltipComponentStory.args = {
+  // children: 'prompt text',
+  textColor: 'black',
+  // fontSize: 16,
+  arrowMarginLeft: 0,
+  arrowMarginTop: 0,
+  fontFamily: 'Regular',
+  placement: 'bottom',
+  // onPress: null,
+  // numberOfLines: 1,
+  textTransform: 'none',
+};
+
+TooltipComponentStory.argTypes = {
+  // children: {control: 'text'},
+  textColor: {control: 'color'},
+  // fontSize: {control: 'number'},
+  arrowMarginLeft: {control: 'number'},
+  arrowMarginTop: {control: 'number'},
+  fontFamily: {
+    control: 'select',
+    options: ['Bold', 'Regular', 'Light'],
+  },
+  placement: {
+    control: 'select',
+    options: ["bottom" , "top" , "left" , "right" ]
+  },
+  // onPress: {action: 'pressed'},
+  // numberOfLines: {control: 'number'},
+  textTransform: {
+    control: 'select',
+    options: ['none', 'capitalize', 'uppercase', 'lowercase'],
+  },
 };

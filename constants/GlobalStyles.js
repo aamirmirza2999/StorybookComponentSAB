@@ -473,7 +473,28 @@ togglelabel:{
             fontFamily: "Univers Next for HSBC",
             color: "#000",
             textAlign: "center"
-          }        
+          },
+          tooltipContainerStyle: {
+            borderRadius: actuatedNormalize(2),
+            padding: spacingXS,
+            backgroundColor: "#fbfcfe",
+            shadowColor: "rgba(0, 0, 0, 0.15)",
+            shadowOffset: {
+                width: actuatedNormalize(0),
+                height: actuatedNormalize(2)
+            },
+            shadowRadius: radiusS,
+            elevation: spacingXS,
+            shadowOpacity: actuatedNormalize(1),
+            // marginHorizontal:16
+        },        
+        tooltipText: {
+          fontSize: actuatedNormalize(14),
+          lineHeight: actuatedNormalize(22),
+          fontFamily: "Roboto-Regular",
+          color: "#000",
+          textAlign: "left"
+      },
       
         
       
