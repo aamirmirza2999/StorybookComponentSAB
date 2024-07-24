@@ -1,10 +1,10 @@
-import { View, TouchableOpacity, Switch ,StyleSheet} from 'react-native'
+import { View, TouchableOpacity,StyleSheet} from 'react-native'
 import React,{useState} from 'react'
 import { globalStyles } from '../../constants/GlobalStyles'
  import { useTheme } from '../../constants/Theme/ThemeProvider';
 import TextComponent from './TextComponent'
 // import Fonts from '../constants/Fonts';
-
+import { Switch } from 'react-native-switch';
 const Toggleswitch = (props) => {
 
   const { theme,  } = useTheme();
@@ -18,16 +18,28 @@ const Toggleswitch = (props) => {
 
     <View style={styles.container}>
       <Switch
-        testID={props.testID}
-        accessibilityLabel={props.accessibilityLabel}
-        trackColor={{
-          true: theme.toggleOn,
-          false: theme.toggleOff,
-        }}
-        thumbColor="#FFF"
-        onValueChange={toggleSwitch}
-        value={isOn}
-      />
+    value={isOn}
+    onValueChange={toggleSwitch}
+    disabled={false}
+    activeText={'On'}
+    inActiveText={'Off'}
+    circleSize={35}
+    barHeight={40}
+    circleBorderWidth={1}
+    backgroundActive={'#00847F'}
+    backgroundInactive={'#767676'}
+    circleActiveColor={'#ffffff'}
+    circleInActiveColor={'#ffffff'}
+    changeValueImmediately={true} // if rendering inside circle, change state immediately or wait for animation to complete
+    innerCircleStyle={{ alignItems: "center", justifyContent: "center" }} 
+    outerCircleStyle={{}} // style for outer animated circle
+    renderActiveText={false}
+    renderInActiveText={false}
+    switchLeftPx={2} 
+    switchRightPx={2} 
+    switchWidthMultiplier={2} 
+    switchBorderRadius={30} 
+  />
   </View>
     
    
@@ -39,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5fcff',
+    padding: 20,
   },
  
 });
