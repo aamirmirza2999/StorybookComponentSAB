@@ -96,7 +96,7 @@ const Home = props => {
   };
   return (
     <>
-    <SnackBar
+    {/* <SnackBar
       label={"Tag created successfully"}
       backgroundColor={"#f9f2f3"}
       borderColor={"#e5b2b5"}
@@ -104,7 +104,7 @@ const Home = props => {
       width={actuatedNormalize(24)}
       height={actuatedNormalize(24)}
       ></Success>}
-    ></SnackBar>
+    ></SnackBar> */}
       <PrimaryBgComponent
         ButtonContainer={{
           paddingLeft: spacingS,
