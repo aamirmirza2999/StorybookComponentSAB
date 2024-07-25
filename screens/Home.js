@@ -29,6 +29,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import SvgIconList from '../constants/SvgIconList';
 import {spacingM, spacingS,  spacingXS} from '../constants/Size';
 import Toggleswitch from '../components/Button/Toggleswitch';
+import SnackBar from '../components/SnackBar/SnackBar';
+import { Success } from '../constants/SvgLocations';
 // import Avatarcomponent from '../components/Button/Avatarcomponent';
 const Home = props => {
   const navigation = useNavigation();
@@ -94,6 +96,15 @@ const Home = props => {
   };
   return (
     <>
+    <SnackBar
+      label={"Tag created successfully"}
+      backgroundColor={"#f9f2f3"}
+      borderColor={"#e5b2b5"}
+      Icon={<Success
+      width={actuatedNormalize(24)}
+      height={actuatedNormalize(24)}
+      ></Success>}
+    ></SnackBar>
       <PrimaryBgComponent
         ButtonContainer={{
           paddingLeft: spacingS,

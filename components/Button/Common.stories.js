@@ -22,6 +22,11 @@ import Toggleswitch from './Toggleswitch';
 import RadioButton from '../RadioButton';
 import Avatarcomponent from './Avatarcomponent';
 import TooltipComponent from './TooltipComponent';
+import SnackBar from '../SnackBar/SnackBar';
+
+import { Close,Success } from '../../constants/SvgLocations';
+import { actuatedNormalize } from '../../constants/PixelScaling';
+
 const data = [
   { title: 'Item 1', text: 'Text 1' },
   { title: 'Item 2', text: 'Text 2' },
@@ -311,6 +316,23 @@ ProgressBarIndicator.args = {
   currentStepColor: '#db0011',
   RemainingStepColor: '#eee',
 };
+export const SnackBarStory = args => <SnackBar {...args} />;
+SnackBarStory.args = {
+  label:"Tag created successfully",
+  backgroundColor:"#f9f2f3",
+  borderColor:"#e5b2b5",
+  Icon:<Success
+  width={actuatedNormalize(24)}
+  height={actuatedNormalize(24)}
+  ></Success>,
+  onPress:null
+};
+
+SnackBarStory.argTypes = {
+  backgroundColor: {control: 'color'},
+  borderColor:{control:'color'},
+}
+
 
 export const TooltipComponentStory = args => <TooltipComponent {...args} />;
 TooltipComponentStory.args = {

@@ -32,6 +32,9 @@ export {default as Split}from '../assets/split.svg'
 
 export {default as RightArrow} from '../assets/right.svg';
 export {default as InfoIconRed} from '../assets/info.svg';
+export {default as Close} from '../assets/close.svg';
+export {default as Success} from '../assets/success.svg';
+export {default as Cancel} from '../assets/cancel.svg';
 
 
 

@@ -540,17 +540,19 @@ typefilledElementsinitials: {
             shadowRadius: 6,
             elevation: 6,
             shadowOpacity: 1,
-            borderRadius: 8,
+            borderRadius: radiusS,
             backgroundColor: "#fff",
-            paddingVertical: 8,
-            paddingHorizontal: 16,
+            paddingVertical: spacingXS,
+            paddingHorizontal: spacingS,
             alignItems: "center",
             justifyContent: "center",
           },
           segmenttabTextStyle:{
-            fontSize: 14,
-            lineHeight: 18,
-            fontFamily: "Univers Next for HSBC",
+            fontSize: actuatedNormalize(14),
+            lineHeight: actuatedNormalize(18),
+            fontFamily: I18nManager.isRTL
+            ? Fonts.Regular_Ar
+            : Fonts.Regular_En,
             color: "#000",
             textAlign: "center"
           },
@@ -575,8 +577,34 @@ typefilledElementsinitials: {
           color: "#000",
           textAlign: "left"
       },
-      
-        
+      snackbarContainer:{
+      backgroundColor: "#e5f2f2",
+      borderStyle: "solid",
+      borderColor: "#99cecc",
+      borderWidth: 1,
+     // width: "100%",
+     margin:10,
+      paddingVertical: spacingS,
+      flexDirection: "row", 
+      paddingHorizontal: spacingS,
+      borderRadius: radiusS
+      },
+      snackbarBox:{
+        paddingTop: 3,
+        paddingBottom: spacingXXS,
+        marginLeft: spacingS,
+        flex: 1
+      },
+      snackBarLabel:{
+        alignSelf: "stretch",
+        color: "#000",
+        textAlign: "left",
+        fontFamily: I18nManager.isRTL
+        ? Fonts.Regular_Ar
+        : Fonts.Regular_En,
+        lineHeight: actuatedNormalize(18),
+        fontSize:actuatedNormalize(14)
+      }
       
      
  }
