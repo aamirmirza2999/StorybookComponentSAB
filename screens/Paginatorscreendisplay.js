@@ -20,7 +20,7 @@ import {
   import DropdownComponent from '../components/Button/DropdownComponent';
   import {useTheme} from '../constants/Theme/ThemeProvider';
   import Paginator from '../components/Button/Paginator';
-
+import Avatarcomponent from '../components/Button/Avatarcomponent';
   
   const Paginatorscreendisplay = props => {
     const data = [
@@ -50,7 +50,10 @@ import {
   subdata={subdata}
   />
     
-</View>          
+</View>   
+<View>
+<Avatarcomponent/>
+  </View>       
       </>
     );
   };

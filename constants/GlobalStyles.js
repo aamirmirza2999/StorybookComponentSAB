@@ -428,6 +428,11 @@ togglelabel:{
       opacity: 0.03,
       zIndex: 0
   },
+  avatar: {
+    width: 32,
+    height: 32,
+    paddingHorizontal:spacingS,
+},
   jm: {
     fontSize: 20,
     lineHeight: 25,
@@ -439,15 +444,7 @@ togglelabel:{
     textAlign: "left",
     zIndex: 1
 },
-jm3:{
-  fontSize: 12,
-lineHeight: 16,
-fontFamily: I18nManager.isRTL
-          ? Fonts.Bold_Ar
-          : Fonts.Bold_En,
-color: "#db0011",
-textAlign: "left"
-},
+
 jm2:{
   fontSize: 14,
   lineHeight: 18,
@@ -458,17 +455,22 @@ jm2:{
   textAlign: "left",
   zIndex: 1
 },
+jm3:{
+  fontSize: 12,
+lineHeight: 16,
+fontFamily: I18nManager.isRTL
+          ? Fonts.Bold_Ar
+          : Fonts.Bold_En,
+color: "#db0011",
+textAlign: "left"
+},
 typefilledElementsinitials: {
   borderRadius: 100,
   backgroundColor: "#fbe5e7",
   flex: 1,
-  overflow: "hidden",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
   padding: 16,
  position: "absolute",
-  left: 91,
+ 
 },
 
   Addbeneavatar: {
@@ -480,7 +482,8 @@ typefilledElementsinitials: {
   justifyContent: "center",
   marginLeft:avatarRightandLeft,
   marginRight:avatarRightandLeft,
-  height:avatarHeight
+  height:avatarHeight,
+  top:10
   },
   splitavatar:{
     borderRadius: 8,

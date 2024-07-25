@@ -20,6 +20,7 @@ import Paginator from './Paginator';
 import ProgressIndicator from './ProgressIndicator';
 import Toggleswitch from './Toggleswitch';
 import RadioButton from '../RadioButton';
+import Avatarcomponent from './Avatarcomponent';
 const data = [
   { title: 'Item 1', text: 'Text 1' },
   { title: 'Item 2', text: 'Text 2' },
@@ -255,6 +256,18 @@ RadioComponentStory.args = {
   value: true,
  
      onPress:null,
+
+};
+export const AvatarComponentStory = args => <Avatarcomponent {...args} />;
+AvatarComponentStory.args = {
+  value: true,
+  onPress:null,
+  avatarblack:true,
+  avatarwhite:true,
+  avatarsplit:true,
+  avatarassbene:true,
+  avataredit:true,
+  avatarname:true
 
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;
