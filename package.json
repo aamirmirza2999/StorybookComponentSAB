@@ -45,6 +45,7 @@
     "react-native-svg-transformer": "^1.4.0",
     "react-native-switch": "^1.5.1",
     "react-native-switch-selector": "^2.3.0",
+    "react-native-walkthrough-tooltip": "^1.6.0",
     "react-native-web": "^0.19.10",
     "styled-components": "^6.1.11"
   },
