@@ -76,46 +76,7 @@ const AccordianMenu = (props) => {
 }
 
 const styles = StyleSheet.create({
-  menuFlexBox: {
-    alignItems: "center",
-    alignSelf: "stretch"
-    },
-    iconoutlinehomeLayout: {
-    height: 24,
-    width: 24
-    },
-    menu: {
-    fontSize: 14,
-    lineHeight: 18,
-    fontFamily: "Univers Next for HSBC",
-    color: "#000",
-    textAlign: "left",
-    display: "flex",
-    marginLeft: 8,
-    flex: 1,
-    alignItems: "center"
-    },
-    iconchevrondown: {
-    marginLeft: 8
-    },
-    accordionTitle: {
-    flexDirection: "row"
-    },
-    menuWrapper: {
-    alignSelf: "stretch",
-    justifyContent: "center",
-    alignItems: "flex-end"
-    },
-    typeCountcollapsed: {
-    borderRadius: 8,
-    backgroundColor: "#f2f3f4",
-    width: "100%",
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    justifyContent: "center",
-    alignItems: "flex-end",
-    flex: 1
-    }
+ 
 });
 
 export default AccordianMenu;
