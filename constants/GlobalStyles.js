@@ -604,6 +604,53 @@ typefilledElementsinitials: {
         : Fonts.Regular_En,
         lineHeight: actuatedNormalize(18),
         fontSize:actuatedNormalize(14)
+      },
+      AccordianMenuContainer:{
+        borderRadius: radiusS,
+        backgroundColor: "#f2f3f4",
+       // width: "100%",
+        paddingHorizontal: spacingS,
+        paddingVertical: spacingXS,
+        marginHorizontal:actuatedNormalize(10),
+        marginVertical:actuatedNormalize(10)
+      },
+      AccordianMenuTitleBox:{
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row"
+      },
+      AccordianTitleText:{
+        fontSize: actuatedNormalize(14),
+        lineHeight: actuatedNormalize(18),
+        fontFamily: I18nManager.isRTL
+        ? Fonts.Regular_Ar
+        : Fonts.Regular_En,
+        color: "#000",
+        textAlign: "left",
+        display: "flex",
+        marginLeft: spacingXS,
+        flex: 1,
+        alignItems: "center",
+        //alignItems: "center",
+        alignSelf: "center"
+      },
+      AccordianSubMenuConatiner:{
+        backgroundColor: "#f2f3f4",
+        paddingLeft: spacingL,
+        paddingTop: spacingS,
+        paddingRight: spacingXS,
+        paddingBottom: spacingS
+      },
+      AccordianSubTitleText:{
+        flex: 1,
+        fontSize: actuatedNormalize(12),
+        lineHeight: actuatedNormalize(17),
+        fontFamily: I18nManager.isRTL
+        ? Fonts.Regular_Ar
+        : Fonts.Regular_En,
+        color: "#000",
+        textAlign: "left"
+
       }
       
      

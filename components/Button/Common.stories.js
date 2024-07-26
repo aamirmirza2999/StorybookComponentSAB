@@ -23,6 +23,7 @@ import RadioButton from '../RadioButton';
 import Avatarcomponent from './Avatarcomponent';
 import TooltipComponent from './TooltipComponent';
 import SnackBar from '../SnackBar/SnackBar';
+import AccordianMenu from '../Accordian/AccordianMenu';
 
 import { Close,Success } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
@@ -316,6 +317,26 @@ ProgressBarIndicator.args = {
   currentStepColor: '#db0011',
   RemainingStepColor: '#eee',
 };
+
+export const AccordianStory = args => <AccordianMenu {...args} />;
+AccordianStory.args = {
+ HeaderText:"Home",
+ subData:[
+  {
+    title: 'Transfer',
+    key: 0,
+  },
+  {
+    title: 'Umlaty',
+    key: 2,
+  },
+  {
+    title: 'PFM',
+    key:3
+  },
+]
+};
+
 export const SnackBarStory = args => <SnackBar {...args} />;
 SnackBarStory.args = {
   label:"Tag created successfully",

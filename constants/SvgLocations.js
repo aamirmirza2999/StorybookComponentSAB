@@ -35,6 +35,7 @@ export {default as InfoIconRed} from '../assets/info.svg';
 export {default as Close} from '../assets/close.svg';
 export {default as Success} from '../assets/success.svg';
 export {default as Cancel} from '../assets/cancel.svg';
+export {default as Home} from '../assets/home.svg'
 
 
 
