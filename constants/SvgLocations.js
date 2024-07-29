@@ -37,5 +37,9 @@ export {default as Success} from '../assets/success.svg';
 export {default as Cancel} from '../assets/cancel.svg';
 export {default as Home} from '../assets/home.svg'
 
+export {default as LiveChat} from '../assets/livechat.svg';
+
+
+
 
 

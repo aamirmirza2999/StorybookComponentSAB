@@ -7,7 +7,7 @@ import {globalStyles} from '../../constants/GlobalStyles';
 import BgHeader from './BgHeader';
 // import { useTheme } from '../../constants/Theme/ThemeProvider';
 import ProgressHeader from './ProgressComponent';
-import {spacingS, spacingM} from '../../constants/Size';
+import {spacingS, spacingM, spacingL} from '../../constants/Size';
 
 const PrimaryBgComponent = props => {
   // const { theme, toggleTheme } = useTheme();
@@ -27,10 +27,10 @@ const PrimaryBgComponent = props => {
             paddingLeft: spacingS,
             paddingRight: spacingS,
             paddingBottom: spacingM,
-            paddingTop: spacingM,
+            paddingTop: spacingL,
             // backgroundColor: Colors.primaryBgColor,
           }}>
-          {/* what  ever component i can add here  */}
+         
           {props.children}
         </View>
       </ScrollView>
