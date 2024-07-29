@@ -32,9 +32,9 @@ const TooltipComponent = (props) => {
         <View style={globalStyles.badgenotification}>
             <Tooltip
                 isVisible={true}
-                contentStyle={globalStyles.tooltipContainerStyle}
+                contentStyle={[globalStyles.tooltipContainerStyle,{backgroundColor: props.tooltipColor}]}
                 arrowStyle={[{ marginLeft: actuatedNormalize(props.arrowMarginLeft || 0), marginTop: actuatedNormalize(props.arrowMarginTop || 0) }]}
-                backgroundColor="#fff"
+                backgroundColor={props.backgroundColor}
                 childContentSpacing={actuatedNormalize(0)}
                 useReactNativeModal={false}
                 // showChildInTooltip={true}

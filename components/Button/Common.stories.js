@@ -359,6 +359,8 @@ export const TooltipComponentStory = args => <TooltipComponent {...args} />;
 TooltipComponentStory.args = {
   // children: 'prompt text',
   textColor: 'black',
+  backgroundColor: "white",
+  tooltipColor: "#fbfcfe",
   // fontSize: 16,
   arrowMarginLeft: 0,
   arrowMarginTop: 0,
@@ -372,6 +374,8 @@ TooltipComponentStory.args = {
 TooltipComponentStory.argTypes = {
   // children: {control: 'text'},
   textColor: {control: 'color'},
+  backgroundColor: {control: 'color'},
+  tooltipColor: {control: 'color'},
   // fontSize: {control: 'number'},
   arrowMarginLeft: {control: 'number'},
   arrowMarginTop: {control: 'number'},
