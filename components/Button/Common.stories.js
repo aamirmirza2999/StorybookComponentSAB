@@ -1,5 +1,6 @@
 // stories/MyButton.stories.js
 import BgHeaderComponent from './BgHeader';
+import PostLoginHeader from './PostLoginHeader';
 import ButtonComponent from './ButtonComponent';
 import DarkLightToggle from './DarkLightToggle';
 import LogoComponent from './LogoComponent';
@@ -59,12 +60,25 @@ BgHeaderStory.args = {
   title: 'Primary Button',
   // color: 'white',
   textColor: 'red',
-  backButtonIsRequired: true,
-  closeButtonIsRequired: false,
+  enableBackButton: true,
+  enableCloseButton: false,
 };
 BgHeaderStory.argTypes = {
   textColor: {control: 'color'},
 };
+export const PostLoginHeaderStory = args => <PostLoginHeader {...args} />;
+PostLoginHeaderStory.args = {
+  title: 'Primary Button',
+  TextColor: 'white',
+  enableBackButton: true,
+  enableCloseButton: false,
+  hideHeader:false,
+  enableLivechat:true
+};
+BgHeaderStory.argTypes = {
+  textColor: {control: 'color'},
+};
+
 
 export const TextComponentStory = args => <TextComponent {...args} />;
 TextComponentStory.args = {

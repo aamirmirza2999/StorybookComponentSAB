@@ -5,9 +5,11 @@ import {
   TouchableOpacity,
   View,
   Platform,
+  ScrollView
 } from 'react-native';
 import React, {useState, useReducer} from 'react';
 import BgHeader from '../components/Button/BgHeader';
+import PostLoginHeader from '../components/Button/PostLoginHeader'
 import {
   Colors,
   TextComponent,
@@ -30,6 +32,7 @@ import BottomSheetComponent from '../components/Button/BottomSheetComponent';
  import ProgressIndicator from '../components/Button/ProgressIndicator';
 import ListComponent from '../components/Button/ListComponent';
 import NotificationBadge from '../components/Button/NotificationBadge';
+import SvgIconList from '../constants/SvgIconList';
 
 const Transfers = props => {
   const {theme, toggleTheme} = useTheme();
@@ -181,11 +184,44 @@ const Transfers = props => {
           />
         }
         BgHeader={
-          <BgHeader
+          <PostLoginHeader
             title={'Make a Transfer'}
+            TextColor={'white'}
             customSvg={true}
-            backButtonIsRequired={true}
+            enableBackButton={true}
+            enableCloseButton={true}
             textColor={theme.primarywhitestatic}
+            multiplesvgRequired={false}
+           // enableLivechat={true}
+           multiplesvgUI={
+            <>
+              <TouchableOpacity
+              testID={"svgRequired"}
+              accessibilityLabel={"svgRequired"}
+              // style={[styles.IconViewStyle2,{
+                
+              // }, props.IconViewStyle2]}
+              // onPress={
+              //  () => {(() => props.svgFunc()) }
+                
+              // }
+              >
+              <SvgIconList
+              icon="backIcon"
+              width={actuatedNormalize(25)}
+              height={actuatedNormalize(25)}
+              transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
+            />
+              </TouchableOpacity>
+            <SvgIconList
+            icon="backIcon"
+            width={actuatedNormalize(25)}
+            height={actuatedNormalize(25)}
+            transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
+          />
+          
+          </>
+            }
 
             // color={theme.primaryWhiteColor}
           />
@@ -204,7 +240,7 @@ const Transfers = props => {
           style={{
             // paddingHorizontal:actuatedNormalize(16),
             // paddingTop:actuatedNormalize(24),
-            paddingBottom: actuatedNormalize(24),
+            //paddingBottom: actuatedNormalize(24),
           }}>
           <ProgressHeader
             ProgressHeader={true}
@@ -414,7 +450,7 @@ const Transfers = props => {
             </TextComponent>
           </View>
         </View>
-
+        
         <ProgressIndicator
             ProgressIndicator={true}
             currentStep={2}            
