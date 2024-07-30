@@ -29,6 +29,7 @@ import TabsComponent from './TabsComponent';
 
 import { Close,Success } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
+import PasswordStrength from '../PasswordStrength/PasswordStrength';
 
 const data = [
   { title: 'Item 1', text: 'Text 1' },
@@ -368,6 +369,13 @@ SnackBarStory.argTypes = {
   backgroundColor: {control: 'color'},
   borderColor:{control:'color'},
 }
+
+export const PasswordStrengthStory = args => <PasswordStrength {...args} />;
+PasswordStrengthStory.args = {
+  password:"hsbc1234",
+  module:'Prelogin',
+  label:"Password Strength"
+};
 
 
 export const TooltipComponentStory = args => <TooltipComponent {...args} />;

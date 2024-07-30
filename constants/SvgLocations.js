@@ -39,6 +39,9 @@ export {default as Home} from '../assets/home.svg'
 
 export {default as LiveChat} from '../assets/livechat.svg';
 
+export {default as Check} from '../assets/check.svg';
+export {default as Cross} from '../assets/cross.svg';
+
 
 
 

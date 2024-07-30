@@ -15,87 +15,87 @@ export const darkTheme = {
    //PRIMARY COLORS:
 
    primarybackground: "#1E2E42",
-   primaryblack:"#FFFFFF",
-   primaryblackstatic:"#000000",
-   primarygray:"#FFFFFF",
-   primaryred:"#FFFFFF",
-   primaryredstatic:"#DB0011",
-   primaryredtonal:"rgba(219, 0, 17, 0.1)",
-   primarywhite:"#FFFFFF",
-   primarywhitestatic:"#FFFFFF",
+   primarycolor:"#FFFFFF",
+   primarycolorstatic:"#000000",
+   primarycolor2:"#FFFFFF",
+   primarycolor3:"#FFFFFF",
+   primarycolor3static:"#DB0011",
+   primarycolor3tonal:"rgba(219, 0, 17, 0.1)",
+   primarycolor4:"#FFFFFF",
+   primarycolor4static:"#FFFFFF",
    primaryinvert:"#000000",
-   primaryblacknav:"rgba(255, 255, 255, 0.6)",
+   primarycolornav:"rgba(255, 255, 255, 0.6)",
  
    // PRIMARY GREY COLORS:
  
-   primarygray100:"rgba(255, 255, 255, 0.6)",
-   primarygray90:"rgba(255, 255, 255, 0.5)",
-   primarygray80:"rgba(255, 255, 255, 0.45)",
-   primarygray70:"rgba(255, 255, 255, 0.4)",
-   primarygray60:"rgba(255, 255, 255, 0.35)",
-   primarygray50:"rgba(255, 255, 255, 0.3)",
-   primarygray40:"rgba(255, 255, 255, 0.25)",
-   primarygray30:"rgba(255, 255, 255, 0.2)",
-   primarygray20:"rgba(255, 255, 255, 0.15)",
-   primarygray10:"rgba(255, 255, 255, 0.1)",
+   primarycolor2_100:"rgba(255, 255, 255, 0.6)",
+   primarycolor2_90:"rgba(255, 255, 255, 0.5)",
+   primarycolor2_80:"rgba(255, 255, 255, 0.45)",
+   primarycolor2_70:"rgba(255, 255, 255, 0.4)",
+   primarycolor2_60:"rgba(255, 255, 255, 0.35)",
+   primarycolor2_50:"rgba(255, 255, 255, 0.3)",
+   primarycolor2_40:"rgba(255, 255, 255, 0.25)",
+   primarycolor2_30:"rgba(255, 255, 255, 0.2)",
+   primarycolor2_20:"rgba(255, 255, 255, 0.15)",
+   primarycolor2_10:"rgba(255, 255, 255, 0.1)",
  
  
    //COMPLIMENTARY COLORS
  
-   complimentaryred1:"#E31E22",
-   complimentaryred2:"#BA1110",
-   complimentaryred3:"#730014",
+   complimentaryprimarycolor3_1:"#E31E22",
+   complimentaryprimarycolor3_2:"#BA1110",
+   complimentaryprimarycolor3_3:"#730014",
  
    // TEXT COLORS:
  
-   textblack:"rgba(255, 255, 255, 0.8)",
-   textgray:"rgba(255, 255, 255, 0.6)",
-   textgray2:"rgba(255, 255, 255, 0.3)",
-   textsilver:"rgba(255, 255, 255, 0.15)",
-   textwhite:"#000000",
-   textred:"#FF0014",
+   primarytextcolor:"rgba(255, 255, 255, 0.8)",
+   primarytextcolor2:"rgba(255, 255, 255, 0.6)",
+   primarytextcolor2_2:"rgba(255, 255, 255, 0.3)",
+   primarytextcolor5:"rgba(255, 255, 255, 0.15)",
+   primarytextcolor4:"#000000",
+   primarytextcolor3:"#FF0014",
  
    //STYLES COLORS:
  
    stylesbgshades:"rgba(245, 245, 245, 0.15)",
    stylesblockbg:"rgba(255, 255, 255, 0.6)",
    stylesbackground2:"#0F1721",
-   stylessecondarygreen:"#00B8B5",
-   styleslightgray:"rgba(255, 255, 255, 0.1)",
-   stylesredpressed:"#E96670",
-   stylesblackpressed:"#666666",
+   stylessecondarycolor6:"#00B8B5",
+   stylescolor7:"rgba(255, 255, 255, 0.1)",
+   stylescolor3pressed:"#E96670",
+   stylescolorpressed:"#666666",
  
    //SECONDARY COLORS:
  
-   secondaryyellow:"#E8E012",
-   secondaryorange:"#E6B012",
-   secondarybluegreen:"#00847F",
-   secondaryblue:"#6699C2",
-   secondarypurple:"#7878B0",
-   secondarycoldgreen:"#A3BDAD",
-   secondarylightgreen:"rgba(163, 217, 99, 0.8)",
+   secondarycolor8:"#E8E012",
+   secondarycolor9:"#E6B012",
+   secondarycolor10:"#00847F",
+   secondarycolor11:"#6699C2",
+   secondarycolor12:"#7878B0",
+   secondarycolor13:"#A3BDAD",
+   secondarycolor14:"rgba(163, 217, 99, 0.8)",
  
    //EXTRA COLORS:
     
-   extrasverylightgray:"rgba(255, 255, 255, 0.2)",
+   extrasverycolor7:"rgba(255, 255, 255, 0.2)",
    extrastransparent:"rgba(255, 255, 255, 0.0001)",
  
    //RAG COLORS:
  
-   ragred:"#A8000B",
-   ragamber:"#FFBB33",
-   raggreen:"#00847F",
+   ragcolor3:"#A8000B",
+   ragcolor15:"#FFBB33",
+   ragcolor6:"#00847F",
    ragneutral:"#305A85",
-   ragredtint:"#F9F2F3",
-   ragambertint:"#FFF8EA",
-   raggreentint:"#E5F2F2",
+   ragcolor3tint:"#F9F2F3",
+   ragcolor15tint:"#FFF8EA",
+   ragcolor6tint:"#E5F2F2",
    ragneutraltint:"#EBEFF4",
  
    //STROKE COLORS:
  
-   strokeredtint:"#E5B2B5",
-   strokeambertint:"#FFCF70",
-   strokegreentint:"#99CECC",
+   strokecolor3tint:"#E5B2B5",
+   strokecolor15tint:"#FFCF70",
+   strokecolor6tint:"#99CECC",
    strokeneutraltint:"#ACBDCE"
   };
   
