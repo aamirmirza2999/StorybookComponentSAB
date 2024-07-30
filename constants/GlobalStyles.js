@@ -3,7 +3,7 @@ import { I18nManager } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17
 } from "./Size";
 
  export const globalStyles ={
@@ -535,7 +535,7 @@ typefilledElementsinitials: {
             shadowColor: "rgba(0, 0, 0, 0.15)",
             shadowOffset: {
             width: 0,
-            height: 2
+            height: S2
             },
             shadowRadius: 6,
             elevation: 6,
@@ -582,15 +582,14 @@ typefilledElementsinitials: {
       borderStyle: "solid",
       borderColor: "#99cecc",
       borderWidth: 1,
-     // width: "100%",
-     margin:10,
+      margin:S10,
       paddingVertical: spacingS,
       flexDirection: "row", 
       paddingHorizontal: spacingS,
       borderRadius: radiusS
       },
       snackbarBox:{
-        paddingTop: 3,
+        paddingTop: S3,
         paddingBottom: spacingXXS,
         marginLeft: spacingS,
         flex: 1
@@ -602,8 +601,8 @@ typefilledElementsinitials: {
         fontFamily: I18nManager.isRTL
         ? Fonts.Regular_Ar
         : Fonts.Regular_En,
-        lineHeight: actuatedNormalize(18),
-        fontSize:actuatedNormalize(14)
+        lineHeight: S18,
+        fontSize:S14
       },
       AccordianMenuContainer:{
         borderRadius: radiusS,
@@ -611,8 +610,8 @@ typefilledElementsinitials: {
        // width: "100%",
         paddingHorizontal: spacingS,
         paddingVertical: spacingXS,
-        marginHorizontal:actuatedNormalize(10),
-        marginVertical:actuatedNormalize(10)
+        marginHorizontal:S10,
+        marginVertical:S10
       },
       AccordianMenuTitleBox:{
         justifyContent: "center",
@@ -620,8 +619,8 @@ typefilledElementsinitials: {
         flexDirection: "row"
       },
       AccordianTitleText:{
-        fontSize: actuatedNormalize(14),
-        lineHeight: actuatedNormalize(18),
+        fontSize: S14,
+        lineHeight:S18,
         fontFamily: I18nManager.isRTL
         ? Fonts.Regular_Ar
         : Fonts.Regular_En,
@@ -643,8 +642,8 @@ typefilledElementsinitials: {
       },
       AccordianSubTitleText:{
         flex: 1,
-        fontSize: actuatedNormalize(12),
-        lineHeight: actuatedNormalize(17),
+        fontSize:S12,
+        lineHeight: S17,
         fontFamily: I18nManager.isRTL
         ? Fonts.Regular_Ar
         : Fonts.Regular_En,
