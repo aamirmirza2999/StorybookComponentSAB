@@ -3,7 +3,7 @@ import { I18nManager } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25, S8
 } from "./Size";
 
  export const globalStyles ={
@@ -650,7 +650,52 @@ typefilledElementsinitials: {
         color: "#000",
         textAlign: "left"
 
-      }
+      },
+      pwdbarStyle:{
+        width: "31%",
+        height: S4,
+        marginTop:S5,
+        backgroundColor: "#FFFFFF80",
+        marginHorizontal:S3,
+        borderRadius:S5
+      },
+      pwdpostbarStyle: {
+        width: "21.3%",
+        height: S5,
+        marginTop: S10,
+        right: S17,
+        backgroundColor: "#DFDFDE",
+        marginHorizontal: S3
+      },
+      pwdtextContainer: {
+        alignItems: 'center',
+        width: '100%',
+        marginTop:S10,
+        paddingRight: S25,
+      },
+      pwdmeterContainer: {
+        alignItems: 'center',
+        height: S5,
+        flexDirection: 'row',
+        width: '100%',
+        marginTop: S8,
+      },
+      pwdlabel2: {
+        fontSize:S12,
+        color: "#626469",
+         lineHeight:S18,
+      },
+      pwdlabel: {
+        fontSize:S12,
+        color: '#000000',
+        lineHeight:S18,
+        letterSpacing: 0
+      },
+      pwdpostlabel2: {
+        fontSize: S14,
+        marginLeft: S10,
+        color: "#5C6F7C"
+      },
       
      
  }

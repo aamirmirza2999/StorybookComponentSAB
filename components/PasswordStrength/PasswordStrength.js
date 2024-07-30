@@ -3,6 +3,7 @@ import { View, StyleSheet, Image, I18nManager } from 'react-native';
 import TextComponent from '../Button/TextComponent';
 import { Cross,Check } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
+import { globalStyles } from '../../constants/GlobalStyles';
 
 class PasswordStrength extends Component {
 
@@ -20,13 +21,13 @@ class PasswordStrength extends Component {
     let password = this.props.password;
 
     if (this.props.module === "Prelogin") {
-      barstyle = styles.barStyle
-      policystyle = styles.label2
+      barstyle = globalStyles.pwdbarStyle
+      policystyle = globalStyles.pwdlabel2
     }
 
     if (this.props.module === "Postlogin") {
-      barstyle = styles.postbarStyle
-      policystyle = styles.postlabel2
+      barstyle = globalStyles.pwdpostbarStyle
+      policystyle = globalStyles.pwdpostlabel2
     }
 
     if (password.length >= 8) {
@@ -99,22 +100,22 @@ class PasswordStrength extends Component {
     return (
       <View style={styles.container}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-          {password.length !== 0 ? <TextComponent style={[styles.label, { color: "#000000" }]}>{this.props.label}</TextComponent> : null}
+          {password.length !== 0 ? <TextComponent style={[globalStyles.pwdlabel, { color: "#000000" }]}>{this.props.label}</TextComponent> : null}
         </View>
         {password.length !== 0 ?
-          <View style={styles.meterContainer}>
+          <View style={globalStyles.pwdmeterContainer}>
             {score >= 0 || score === 1 ?
-              <View style={[barstyle, { backgroundColor: score >= 0 || score === 1 ? "#a8000b" : "" }]} />
+              <View style={[globalStyles.pwdbarStyle, { backgroundColor: score >= 0 || score === 1 ? "#a8000b" : "" }]} />
               : <></>}
             {score >= 2 ?
-              <View style={[barstyle, { backgroundColor: score >= 2 ? "#ffbb33" : "" }]} /> : <></>}
+              <View style={[globalStyles.pwdbarStyle, { backgroundColor: score >= 2 ? "#ffbb33" : "" }]} /> : <></>}
             {score >= 3 ?
-              <View style={[barstyle, { backgroundColor: score >= 3 ? '#00847f' : "" }]} /> : <></>}
+              <View style={[globalStyles.pwdbarStyle, { backgroundColor: score >= 3 ? '#00847f' : "" }]} /> : <></>}
             {/* <TextComponent style={{ top: actuatedNormalize(13), color: barColor, right: actuatedNormalize(70), fontSize: actuatedNormalize(12), fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBClight : Fonts.universlTStd }}>{t(label)}</TextComponent> */}
           </View> : null}
 
         {pwdpolicy === true ?
-          <View style={styles.textContainer}>
+          <View style={globalStyles.pwdtextContainer}>
             <View style={{ flexDirection: 'row', marginVertical: actuatedNormalize(7), }}>
               <View style={{ width: '7%', top: I18nManager.isRTL ? actuatedNormalize(4) : actuatedNormalize(2)  }}>
                 {minLen ? <Check width={actuatedNormalize(18)} height={actuatedNormalize(18)}/> : <Cross width={actuatedNormalize(18)} height={actuatedNormalize(18)}/>}
@@ -147,90 +148,6 @@ class PasswordStrength extends Component {
 }
 
 const styles = StyleSheet.create({
-  barStyle: {
-    width: "31%",
-    height: 4,
-    marginTop: actuatedNormalize(5),
-    // right: actuatedNormalize(20),
-   backgroundColor: "#FFFFFF80",
-    marginHorizontal: 3,
-    borderRadius:actuatedNormalize(5)
-  },
-  postbarStyle: {
-    width: "21.3%",
-    height: 5,
-    marginTop: 10,
-    right: 17,
-    backgroundColor: "#DFDFDE",
-    marginHorizontal: 3
-  },
-  textContainer: {
-    alignItems: 'center',
-    width: '100%',
-    marginTop: actuatedNormalize(10),
-    paddingRight: actuatedNormalize(25),
-    // backgroundColor:'green'
-  },
-  meterContainer: {
-    alignItems: 'center',
-    // backgroundColor: '#f6f7fb',
-    height: 5,
-    // borderWidth: 0.1,
-    // borderRadius: 7.5,
-    // borderColor: '#c8c8c8',
-    // backgroundColor:'yellow',
-    flexDirection: 'row',
-    width: '100%',
-    //  height: 20,
-    marginTop: 8,
-    // left: 18,
-  },
-  label2: {
-    fontSize: actuatedNormalize(12),
-    //fontFamily: I18nManager.isRTL
-    //? Fonts.UniversArabicForHSBC_Regular
-    // : Fonts.UniversNextforHSBC_Regular,
-    color: "#626469",
-    // fontSize: 12,
-    // marginLeft: 10,
-    // color: "#626469",
-     lineHeight: actuatedNormalize(18),
-    // letterSpacing: 0,
-    // fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBClight : Fonts.universLTStd
-  },
-  label: {
-    fontSize: actuatedNormalize(12),
-    color: '#000000',
-    //fontFamily: Fonts.UniversArabicForHSBC_Regular,
-    lineHeight: actuatedNormalize(18),
-    letterSpacing: 0
-  },
-  postlabel2: {
-    fontSize: 14,
-    marginLeft: 10,
-    color: "#5C6F7C"
-  },
-  verificationIcon: {
-    color: '#BBBBBB',
-    alignSelf: 'flex-start'
-  },
-  verificationSection: {
-    flexDirection: 'row',
-    // justifyContent: 'center',
-    alignItems: 'center',
-    // alignSelf: 'flex-start',
-    marginVertical: 5,
-    // flexDirection: 'row',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // alignSelf: 'flex-start',
-    // paddingLeft: 8,
-    //  marginHorizontal: 8
-  },
-  textStyle: {
-    marginLeft: 20,
-    fontSize: 14,
-  },
   container: {
     flex: 1,
     alignItems: 'center',
