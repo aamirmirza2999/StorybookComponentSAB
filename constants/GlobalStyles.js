@@ -1,10 +1,13 @@
-import { I18nManager } from "react-native";
+import { I18nManager, Dimensions } from "react-native";
 // import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
   radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft
 } from "./Size";
+
+
+const deviceHeight = Dimensions.get('window').height;
 
  export const globalStyles ={
   optioncontainer:{
@@ -651,6 +654,41 @@ typefilledElementsinitials: {
         color: "#000",
         textAlign: "left"
 
+      },
+      tabBarLabel: {
+        alignSelf: "center",
+        lineHeight: I18nManager.isRTL? actuatedNormalize(20) : actuatedNormalize(18), 
+        fontSize: actuatedNormalize(14),
+      },
+      tabBarContainer: {
+        flex: 1,
+        backgroundColor: '#fbfcfe',
+      },
+      tabBarComponent:{
+        height: deviceHeight,
+        backgroundColor: '#fbfcfe',
+        marginHorizontal: spacingS
+      },
+      renderTabBarView: {
+        marginLeft: spacingXS,
+        marginRight: spacingXS,
+      },
+      tabBarIndicatorStyle: {
+        backgroundColor: "#eeeeee",
+        height: "75%",
+        borderRadius: radiusS,
+        justifyContent: "center",
+        bottom: spacingXS,
+      },
+      tabBarStyle: {
+        backgroundColor: '#fbfcfe',
+        elevation: 0,
+        // borderColor: "rgba(179,177,179,0.25)",
+        shadowOpacity: 0
+      },
+      tabBarIndicatorContainerStyle: {
+        alignSelf: 'center',
+        bottom: -1
       }
       
      

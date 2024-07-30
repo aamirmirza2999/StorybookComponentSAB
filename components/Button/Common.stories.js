@@ -25,6 +25,7 @@ import Avatarcomponent from './Avatarcomponent';
 import TooltipComponent from './TooltipComponent';
 import SnackBar from '../SnackBar/SnackBar';
 import AccordianMenu from '../Accordian/AccordianMenu';
+import TabsComponent from './TabsComponent';
 
 import { Close,Success } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
@@ -403,6 +404,37 @@ TooltipComponentStory.argTypes = {
   },
   // onPress: {action: 'pressed'},
   // numberOfLines: {control: 'number'},
+  textTransform: {
+    control: 'select',
+    options: ['none', 'capitalize', 'uppercase', 'lowercase'],
+  },
+};
+
+export const TabsComponentStory = args => <TabsComponent {...args} />;
+TabsComponentStory.args = {
+  // children: 'prompt text',
+  numberOfTabs: 2,
+  scrollEnabled: true,
+  tabWidth: 90,
+  textColor: 'black',
+  fontFamily: 'Regular',
+  fontWeight: '600',
+  textTransform: 'none',
+};
+
+TabsComponentStory.argTypes = {
+  // children: {control: 'text'},
+  numberOfTabs: {control: 'number'},
+  tabWidth: {control: 'number'},
+  textColor: {control: 'color'},
+  fontFamily: {
+    control: 'select',
+    options: ['Bold', 'Regular', 'Light'],
+  },
+  fontWeight: {
+    control: 'select',
+    options: ["null",'normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900']
+  },
   textTransform: {
     control: 'select',
     options: ['none', 'capitalize', 'uppercase', 'lowercase'],
