@@ -1,10 +1,13 @@
-import { I18nManager } from "react-native";
+import { I18nManager, Dimensions } from "react-native";
 // import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25, S8
 } from "./Size";
+
+
+const deviceHeight = Dimensions.get('window').height;
 
  export const globalStyles ={
   optioncontainer:{
@@ -535,7 +538,7 @@ typefilledElementsinitials: {
             shadowColor: "rgba(0, 0, 0, 0.15)",
             shadowOffset: {
             width: 0,
-            height: 2
+            height: S2
             },
             shadowRadius: 6,
             elevation: 6,
@@ -582,15 +585,14 @@ typefilledElementsinitials: {
       borderStyle: "solid",
       borderColor: "#99cecc",
       borderWidth: 1,
-     // width: "100%",
-     margin:10,
+      margin:S10,
       paddingVertical: spacingS,
       flexDirection: "row", 
       paddingHorizontal: spacingS,
       borderRadius: radiusS
       },
       snackbarBox:{
-        paddingTop: 3,
+        paddingTop: S3,
         paddingBottom: spacingXXS,
         marginLeft: spacingS,
         flex: 1
@@ -602,8 +604,8 @@ typefilledElementsinitials: {
         fontFamily: I18nManager.isRTL
         ? Fonts.Regular_Ar
         : Fonts.Regular_En,
-        lineHeight: actuatedNormalize(18),
-        fontSize:actuatedNormalize(14)
+        lineHeight: S18,
+        fontSize:S14
       },
       AccordianMenuContainer:{
         borderRadius: radiusS,
@@ -611,8 +613,8 @@ typefilledElementsinitials: {
        // width: "100%",
         paddingHorizontal: spacingS,
         paddingVertical: spacingXS,
-        marginHorizontal:actuatedNormalize(10),
-        marginVertical:actuatedNormalize(10)
+        marginHorizontal:S10,
+        marginVertical:S10
       },
       AccordianMenuTitleBox:{
         justifyContent: "center",
@@ -620,8 +622,8 @@ typefilledElementsinitials: {
         flexDirection: "row"
       },
       AccordianTitleText:{
-        fontSize: actuatedNormalize(14),
-        lineHeight: actuatedNormalize(18),
+        fontSize: S14,
+        lineHeight:S18,
         fontFamily: I18nManager.isRTL
         ? Fonts.Regular_Ar
         : Fonts.Regular_En,
@@ -643,8 +645,8 @@ typefilledElementsinitials: {
       },
       AccordianSubTitleText:{
         flex: 1,
-        fontSize: actuatedNormalize(12),
-        lineHeight: actuatedNormalize(17),
+        fontSize:S12,
+        lineHeight: S17,
         fontFamily: I18nManager.isRTL
         ? Fonts.Regular_Ar
         : Fonts.Regular_En,
@@ -733,7 +735,87 @@ typefilledElementsinitials: {
       paddingHorizontal: 16,
       borderRadius: 8,
       flex: 1
-  }
+  },
+      tabBarLabel: {
+        alignSelf: "center",
+        lineHeight: I18nManager.isRTL? actuatedNormalize(20) : actuatedNormalize(18), 
+        fontSize: actuatedNormalize(14),
+      },
+      tabBarContainer: {
+        flex: 1,
+        backgroundColor: '#fbfcfe',
+      },
+      tabBarComponent:{
+        height: deviceHeight,
+        backgroundColor: '#fbfcfe',
+        marginHorizontal: spacingS
+      },
+      renderTabBarView: {
+        marginLeft: spacingXS,
+        marginRight: spacingXS,
+      },
+      tabBarIndicatorStyle: {
+        backgroundColor: "#eeeeee",
+        height: "75%",
+        borderRadius: radiusS,
+        justifyContent: "center",
+        bottom: spacingXS,
+      },
+      tabBarStyle: {
+        backgroundColor: '#fbfcfe',
+        elevation: 0,
+        // borderColor: "rgba(179,177,179,0.25)",
+        shadowOpacity: 0
+      },
+      tabBarIndicatorContainerStyle: {
+        alignSelf: 'center',
+        bottom: -1
+      },
+      pwdbarStyle:{
+        width: "31%",
+        height: S4,
+        marginTop:S5,
+        backgroundColor: "#FFFFFF80",
+        marginHorizontal:S3,
+        borderRadius:S5
+      },
+      pwdpostbarStyle: {
+        width: "21.3%",
+        height: S5,
+        marginTop: S10,
+        right: S17,
+        backgroundColor: "#DFDFDE",
+        marginHorizontal: S3
+      },
+      pwdtextContainer: {
+        alignItems: 'center',
+        width: '100%',
+        marginTop:S10,
+        paddingRight: S25,
+      },
+      pwdmeterContainer: {
+        alignItems: 'center',
+        height: S5,
+        flexDirection: 'row',
+        width: '100%',
+        marginTop: S8,
+      },
+      pwdlabel2: {
+        fontSize:S12,
+        color: "#626469",
+         lineHeight:S18,
+      },
+      pwdlabel: {
+        fontSize:S12,
+        color: '#000000',
+        lineHeight:S18,
+        letterSpacing: 0
+      },
+      pwdpostlabel2: {
+        fontSize: S14,
+        marginLeft: S10,
+        color: "#5C6F7C"
+      },
       
      
  }

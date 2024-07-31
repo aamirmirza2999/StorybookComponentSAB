@@ -12,87 +12,87 @@ export const lightTheme = {
   //PRIMARY COLORS:
 
   primarybackground: "#1E2E42",
-  primaryblack:"#000000",
-  primaryblackstatic:"#000000",
-  primarygray:"#D7D8D6",
-  primaryred:"#DB0011",
-  primaryredstatic:"#DB0011",
-  primaryredtonal:"rgba(219, 0, 17, 0.1)",
-  primarywhite:"#FFFFFF",
-  primarywhitestatic:"#FFFFFF",
+  primarycolor:"#000000", //primaryblack
+  primarycolorstatic:"#000000", //primaryblackstatic
+  primarycolor2:"#D7D8D6", //primarygray
+  primarycolor3:"#DB0011", //primaryred
+  primarycolor3static:"#DB0011", //primaryredstatic
+  primarycolor3tonal:"rgba(219, 0, 17, 0.1)", //primaryredtonal
+  primarycolor4:"#FFFFFF", //primarywhite
+  primarycolor4static:"#FFFFFF", //primarywhitestatic
   primaryinvert:"#FFFFFF",
-  primaryblacknav:"#000000",
+  primarycolornav:"#000000", //primaryblacknav
 
   // PRIMARY GREY COLORS:
 
-  primarygray100:"#767676",
-  primarygray90:"rgba(118, 118, 118, 0.9)",
-  primarygray80:"rgba(118, 118, 118, 0.8)",
-  primarygray70:"rgba(118, 118, 118, 0.7)",
-  primarygray60:"rgba(118, 118, 118, 0.6)",
-  primarygray50:"rgba(118, 118, 118, 0.5)",
-  primarygray40:"rgba(118, 118, 118, 0.4)",
-  primarygray30:"rgba(118, 118, 118, 0.3)",
-  primarygray20:"rgba(118, 118, 118, 0.2)",
-  primarygray10:"rgba(118, 118, 118, 0.1)",
+  primarycolor2_100:"#767676",
+  primarycolor2_90:"rgba(118, 118, 118, 0.9)",
+  primarycolor2_80:"rgba(118, 118, 118, 0.8)",
+  primarycolor2_70:"rgba(118, 118, 118, 0.7)",
+  primarycolor2_60:"rgba(118, 118, 118, 0.6)",
+  primarycolor2_50:"rgba(118, 118, 118, 0.5)",
+  primarycolor2_40:"rgba(118, 118, 118, 0.4)",
+  primarycolor2_30:"rgba(118, 118, 118, 0.3)",
+  primarycolor2_20:"rgba(118, 118, 118, 0.2)",
+  primarycolor2_10:"rgba(118, 118, 118, 0.1)",
 
 
   //COMPLIMENTARY COLORS
 
-  complimentaryred1:"#E31E22",
-  complimentaryred2:"#BA1110",
-  complimentaryred3:"#730014",
+  complimentaryprimarycolor3_1:"#E31E22", //complimentaryred1
+  complimentaryprimarycolor3_2:"#BA1110",//complimentaryred2
+  complimentaryprimarycolor3_3:"#730014",//complimentaryred3
 
   // TEXT COLORS:
 
-  textblack:"#333333",
-  textgray:"#767676",
-  textgray2:"#B2B2B2",
-  textsilver:"#D7D8D6",
-  textwhite:"#FFFFFF",
-  textred:"#DB0011",
+  primarytextcolor:"#333333", //textblack
+  primarytextcolor2:"#767676", //textgray
+  primarytextcolor2_2:"#B2B2B2", //textgray2
+  primarytextcolor5:"#D7D8D6", //textsilver
+  primarytextcolor4:"#FFFFFF", //textwhite
+  primarytextcolor3:"#DB0011", //textred
 
   //STYLES COLORS:
 
   stylesbgshades:"rgba(245, 245, 245, 0.5)",
   stylesblockbg:"#F2F3F4",
   stylesbackground2:"#FBFCFE",
-  stylessecondarygreen:"#00B8B5",
-  styleslightgray:"#EEEEEE",
-  stylesredpressed:"#E96670",
-  stylesblackpressed:"#666666",
+  stylessecondarycolor6:"#00B8B5", //stylessecondarygreen
+  stylescolor7:"#EEEEEE", //styleslightgray
+  stylescolor3pressed:"#E96670", //stylesredpressed
+  stylescolorpressed:"#666666", //stylesblackpressed
 
   //SECONDARY COLORS:
 
-  secondaryyellow:"#E8E012",
-  secondaryorange:"#E6B012",
-  secondarybluegreen:"#00847F",
-  secondaryblue:"#6699C2",
-  secondarypurple:"#7878B0",
-  secondarycoldgreen:"#A3BDAD",
-  secondarylightgreen:"rgba(163, 217, 99, 0.8)",
+  secondarycolor8:"#E8E012", //secondaryyellow
+  secondarycolor9:"#E6B012", //secondaryorange
+  secondarycolor10:"#00847F", //secondarybluegreen
+  secondarycolor11:"#6699C2", //secondaryblue
+  secondarycolor12:"#7878B0", //secondarypurple
+  secondarycolor13:"#A3BDAD", //secondarycoldgreen
+  secondarycolor14:"rgba(163, 217, 99, 0.8)", //secondarylightgreen
 
   //EXTRA COLORS:
    
-  extrasverylightgray:"#FAFAFA",
+  extrasverycolor7:"#FAFAFA", //extrasverylightgray
   extrastransparent:"rgba(255, 255, 255, 0.0001)",
 
   //RAG COLORS:
 
-  ragred:"#A8000B",
-  ragamber:"#FFBB33",
-  raggreen:"#00847F",
+  ragcolor3:"#A8000B", //ragred
+  ragcolor15:"#FFBB33", //ragamber
+  ragcolor6:"#00847F", //raggreen
   ragneutral:"#305A85",
-  ragredtint:"#F9F2F3",
-  ragambertint:"#FFF8EA",
-  raggreentint:"#E5F2F2",
+  ragcolor3tint:"#F9F2F3", //ragredtint
+  ragcolor15tint:"#FFF8EA", //ragambertint
+  ragcolor6tint:"#E5F2F2", //raggreentint
   ragneutraltint:"#EBEFF4",
 
   //STROKE COLORS:
 
-  strokeredtint:"#E5B2B5",
-  strokeambertint:"#FFCF70",
-  strokegreentint:"#99CECC",
+  strokecolor3tint:"#E5B2B5", //strokeredtint
+  strokecolor15tint:"#FFCF70", //strokeambertint
+  strokecolor6tint:"#99CECC", //strokegreentint
   strokeneutraltint:"#ACBDCE"
 
   };
