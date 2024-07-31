@@ -452,7 +452,7 @@ TabsComponentStory.argTypes = {
 
 export const MainHeaderStory = args => <MainHeader {...args} />;
 MainHeaderStory.args = {
-  bgColor:"red"
+  bgColor:"#263a52"
 };
 MainHeaderStory.argTypes = {
   bgColor: {control: 'color'},

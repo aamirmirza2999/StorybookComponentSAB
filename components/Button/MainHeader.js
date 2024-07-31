@@ -7,9 +7,7 @@ import {
     Platform,
     I18nManager
 } from 'react-native'
-import  {
-    SvgXml
-} from 'react-native-svg'
+import SvgXml from './SvgXml'
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { getBottomSpace , getStatusBarHeight } from 'react-native-iphone-x-helper-2'
 import {actuatedNormalize} from '../../constants/PixelScaling';
