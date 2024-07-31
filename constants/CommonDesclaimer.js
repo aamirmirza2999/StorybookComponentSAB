@@ -47,9 +47,7 @@ const CommonDesclaimer = (props) => {
             color:theme.blackClr,
             fontSize: actuatedNormalize(14),
             lineHeight: actuatedNormalize(20),
-            fontFamily: I18nManager.isRTL
-              ? Fonts.UniversArabicForHSBC_Regular
-              : Fonts.UniversNextforHSBC_Regular,
+            fontFamily: Fonts.Regular,
           }}
         >
          { props.disclaimerTitle}

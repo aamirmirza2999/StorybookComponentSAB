@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   PrimaryButtonTxt: {
     fontSize: actuatedNormalize(16),
-    fontFamily:Fonts.Regular_En,
+    fontFamily: Fonts.Regular,
     // textTransform: "capitalize",
   },
 });

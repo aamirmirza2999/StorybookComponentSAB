@@ -133,9 +133,7 @@ class dropdownPopup extends Component {
                         style={{
                           fontSize: actuatedNormalize(18),
                           lineHeight: actuatedNormalize(24),
-                          fontFamily: I18nManager.isRTL
-                              ? Fonts.universArabicforHSBCbold
-                              : Fonts.universLTStd_bold,
+                          fontFamily: Fonts.Bold,
                           color: "#000000",
                           textTransform:"capitalize"
 
@@ -234,7 +232,7 @@ class dropdownPopup extends Component {
 }
 const styles = StyleSheet.create({
   defaultTextStyle: {
-    fontFamily: Fonts.universlTStd,
+    fontFamily: Fonts.Regular,
   },
   errorstyle: {
     color: 'red',
@@ -284,9 +282,7 @@ const styles = StyleSheet.create({
   bankNameTxt: {
     fontSize: actuatedNormalize(16),
     color: '#1D262C',
-    fontFamily: I18nManager.isRTL
-        ? Fonts.universArabicforHSBClight
-        : Fonts.universlTStd,
+    fontFamily: Fonts.Regular,
     textAlign: I18nManager.isRTL ? 'left' : 'left',
     lineHeight: Platform.OS === "ios" && I18nManager.isRTL ? actuatedNormalize(30) : null,
 

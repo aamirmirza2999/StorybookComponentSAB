@@ -84,7 +84,7 @@ const TextInputComponent = props => {
                 // flexDirection: 'row',
                 // justifyContent: 'center',
                 // paddingBottom:spacingXS,
-                fontFamily: Fonts.Regular_En,
+                fontFamily: Fonts.Regular,
                 fontSize: actuatedNormalize(14),
                 color: props.textColor,
               },
@@ -96,7 +96,7 @@ const TextInputComponent = props => {
                 style={[
                   {
                     fontSize: actuatedNormalize(14),
-                    fontFamily: Fonts.Regular_En,
+                    fontFamily: Fonts.Regular,
                     color: theme.astrik,
                     lineHeight: 15,
                   },
@@ -147,7 +147,7 @@ const TextInputComponent = props => {
                     {
                       color: theme.primaryColor3,
                       width: '100%',
-                      fontFamily: Fonts.Light_En,
+                      fontFamily: Fonts.Light,
                       fontSize: actuatedNormalize(12),
                     },
                     props.textstyle,
@@ -164,12 +164,8 @@ const TextInputComponent = props => {
                   {
                     fontFamily:
                       username === ''
-                        ? I18nManager.isRTL
-                          ? Fonts.Regular_En
-                          : Fonts.Regular_En
-                        : I18nManager.isRTL
-                        ? Fonts.Bold_En
-                        : Fonts.Bold_En,
+                        ?  Fonts.Regular
+                        :  Fonts.Bold,
                   },
                   props.textstyle,
                 ]}
@@ -211,9 +207,7 @@ const TextInputComponent = props => {
                     alignSelf: 'center',
                     color: theme.menuTextColor,
                     fontSize: actuatedNormalize(14),
-                    Fonts: I18nManager.isRTL
-                      ? Fonts.Regular_Ar
-                      : Fonts.Regular_En,
+                    Fonts: Fonts.Regular,
                   },
                   [props.sarlabelstyle],
                 ]}>
@@ -310,7 +304,7 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
     //height: actuatedNormalize(44),
     fontSize: actuatedNormalize(14),
-    fontFamily: I18nManager.isRTL ? Fonts.Bold_En : Fonts.Bold_En,
+    fontFamily:Fonts.Bold,
   },
   billDetailInputStyle: {
     fontSize: actuatedNormalize(18),
@@ -320,7 +314,7 @@ const styles = StyleSheet.create({
     color: '#d22630',
     fontSize: actuatedNormalize(12),
     marginTop: actuatedNormalize(8),
-    fontFamily: I18nManager.isRTL ? Fonts.Light_Ar : Fonts.Regular_En,
+    fontFamily: Fonts.Light,
   },
   billDetailCurrencyStyle: {
     fontSize: actuatedNormalize(11),

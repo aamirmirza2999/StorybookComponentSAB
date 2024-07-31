@@ -57,17 +57,17 @@ export default {
 //   color: 'blue',
 //   textColor: 'white',
 // };
-export const BgHeaderStory = args => <BgHeaderComponent {...args} />;
-BgHeaderStory.args = {
-  title: 'Primary Button',
-  // color: 'white',
-  textColor: 'red',
-  enableBackButton: true,
-  enableCloseButton: false,
-};
-BgHeaderStory.argTypes = {
-  textColor: {control: 'color'},
-};
+// export const BgHeaderStory = args => <BgHeaderComponent {...args} />;
+// BgHeaderStory.args = {
+//   title: 'Primary Button',
+//   // color: 'white',
+//   textColor: 'red',
+//   enableBackButton: true,
+//   enableCloseButton: false,
+// };
+// BgHeaderStory.argTypes = {
+//   textColor: {control: 'color'},
+// };
 export const PostLoginHeaderStory = args => <PostLoginHeader {...args} />;
 PostLoginHeaderStory.args = {
   title: 'Primary Button',
@@ -77,7 +77,7 @@ PostLoginHeaderStory.args = {
   hideHeader:false,
   enableLivechat:true
 };
-BgHeaderStory.argTypes = {
+PostLoginHeaderStory.argTypes = {
   textColor: {control: 'color'},
 };
 

@@ -98,7 +98,7 @@ const styles = {
     },
     headerTxt: {
         fontSize: actuatedNormalize(20),
-        fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBCbold :Fonts.universLTStd_bold,
+        fontFamily:Fonts.Bold,
         color: "#F8F8F8",
         textAlign:I18nManager.isRTL? 'left' : "left",
         lineHeight:actuatedNormalize(24),
@@ -106,7 +106,7 @@ const styles = {
     headerstep: {
         fontSize: actuatedNormalize(14),
         color: "#D1D1C8",
-        fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBClight: Fonts.universlTStd,
+        fontFamily: Fonts.Regular,
         position: 'absolute',
         
     },

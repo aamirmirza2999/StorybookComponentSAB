@@ -89,6 +89,6 @@ const styles = StyleSheet.create({
     fontSize: actuatedNormalize(16),
     color: "#ffffff",
     //lineHeight: actuatedNormalize(23),
-    fontFamily: Fonts.Regular_En,
+    fontFamily: Fonts.Regular,
   },
 });
