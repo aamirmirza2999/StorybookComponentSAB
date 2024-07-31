@@ -31,6 +31,7 @@ import {spacingM, spacingS,  spacingXS} from '../constants/Size';
 import Toggleswitch from '../components/Button/Toggleswitch';
 import SnackBar from '../components/SnackBar/SnackBar';
 import { Success } from '../constants/SvgLocations';
+import EmptystateNote from '../components/Button/EmptystateNote';
 // import Avatarcomponent from '../components/Button/Avatarcomponent';
 const Home = props => {
   const navigation = useNavigation();
@@ -207,6 +208,7 @@ const Home = props => {
           </TouchableOpacity>
         </View>
         <Toggleswitch/>
+        <EmptystateNote/>
         {/* <Avatarcomponent/> */}
       </PrimaryBgComponent>
     </>

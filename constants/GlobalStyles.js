@@ -651,7 +651,89 @@ typefilledElementsinitials: {
         color: "#000",
         textAlign: "left"
 
-      }
+      },
+    
+     //EmptyStateNote
+     
+  wrapperFlexBox: {
+      justifyContent: "center",
+      alignItems: "center"
+  },
+  actionTypo: {
+      textAlign: "center",
+      fontFamily: "Univers Next for HSBC"
+  },
+  ragIcon: {
+      width: 68,
+      height: 68,
+      overflow: "hidden",
+     marginLeft:120
+  },
+  welcomeBack: {
+      fontWeight: "700",
+      color: "#000",
+      lineHeight: 21,
+      fontSize: 16,
+      fontFamily: "Univers Next for HSBC",
+      flex: 1
+  },
+  title: {
+      flexDirection: "row",
+      alignSelf: "stretch"
+  },
+  enterYourUsername: {
+      fontSize: 14,
+      lineHeight: 18,
+      color: "#767676",
+      marginTop: 8,
+      alignSelf: "stretch"
+  },
+  content: {
+      marginTop: 16,
+      alignSelf: "stretch",
+  },
+  action: {
+      color: "#fff",
+      lineHeight: 21,
+      fontSize: 16,
+      fontFamily: "Univers Next for HSBC"
+  },
+  wrapper1: {
+      height: 24,
+      flexDirection: "row"
+  },
+  wrapper: {
+      flexDirection: "row"
+  },
+  primary: {
+      backgroundColor: "#db0011",
+      paddingTop: 11,
+      paddingBottom: 13,
+      minWidth: 128,
+      flexDirection: "row",
+      paddingHorizontal: 16,
+      borderRadius: 8,
+      flex: 1,
+      justifyContent: "center"
+  },
+  mainbutton: {
+      maxWidth: 311,
+      flexDirection: "row",
+      marginTop: 16,
+      width: "100%"
+  },
+  emptystate: {
+      backgroundColor: "#fff",
+      paddingVertical: 24,
+      alignItems: "center",
+      paddingHorizontal: 16,
+      overflow: "hidden",
+      width: "100%",
+      borderRadius: 8,
+      paddingHorizontal: 16,
+      borderRadius: 8,
+      flex: 1
+  }
       
      
  }
