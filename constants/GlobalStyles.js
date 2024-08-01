@@ -1,4 +1,4 @@
-import { I18nManager, Dimensions } from "react-native";
+import { I18nManager, Dimensions, Platform } from "react-native";
 // import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
@@ -678,6 +678,11 @@ typefilledElementsinitials: {
         borderRadius: radiusS,
         justifyContent: "center",
         bottom: spacingXS,
+        ...(Platform.OS === "web" && {
+        height: actuatedNormalize(24), // Using height for consistent sizing
+        position: "absolute",
+        top: actuatedNormalize(-12), // Adjust top to ensure borderRadius is not cut off
+        })
       },
       tabBarStyle: {
         backgroundColor: '#fbfcfe',
