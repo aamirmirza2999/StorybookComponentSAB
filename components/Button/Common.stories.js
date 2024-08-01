@@ -30,7 +30,7 @@ import TabsComponent from './TabsComponent';
 import { Close,Success } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import PasswordStrength from '../PasswordStrength/PasswordStrength';
-
+import EmptystateNote from './EmptystateNote';
 const data = [
   { title: 'Item 1', text: 'Text 1' },
   { title: 'Item 2', text: 'Text 2' },
@@ -291,6 +291,13 @@ AvatarComponentStory.args = {
   avatarassbene:true,
   avataredit:true,
   avatarname:true
+
+};
+export const EmptyStateComponentStory = args => <EmptystateNote {...args} />;
+EmptyStateComponentStory.args = {
+  value: true,
+  onPress:null,
+  
 
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;

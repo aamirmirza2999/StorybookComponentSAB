@@ -3,7 +3,7 @@ import { I18nManager, Dimensions } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25, S8
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S700,S68, S11, S13, S16
 } from "./Size";
 
 
@@ -236,7 +236,7 @@ togglelabel:{
   },
     notificationbadgetext: {
       lineHeight: 17,
-      fontFamily: "Univers Next for HSBC",
+      fontFamily: Fonts.Regular,
       textAlign: "center",
       fontSize: 12,
   },
@@ -407,7 +407,7 @@ togglelabel:{
   jm: {
     fontSize: 20,
     lineHeight: 25,
-    fontWeight: "700",
+    fontWeight: S700,
     fontFamily: Fonts.Bold,
     color: "#db0011",
     textAlign: "left",
@@ -611,79 +611,79 @@ typefilledElementsinitials: {
   },
   actionTypo: {
       textAlign: "center",
-      fontFamily: "Univers Next for HSBC"
+      fontFamily: Fonts.Regular
   },
   ragIcon: {
-      width: 68,
-      height: 68,
+      width: S68,
+      height: S68,
       overflow: "hidden",
      marginLeft:120
   },
   welcomeBack: {
-      fontWeight: "700",
+      fontWeight: S700,
       color: "#000",
-      lineHeight: 21,
-      fontSize: 16,
-      fontFamily: "Univers Next for HSBC",
-      flex: 1
+      lineHeight: S21,
+      fontSize: spacingS,
+      fontFamily: Fonts.Regular,
+      flex: 1,
+      marginRight:S10
   },
   title: {
       flexDirection: "row",
-      alignSelf: "stretch"
   },
   enterYourUsername: {
-      fontSize: 14,
-      lineHeight: 18,
+      fontSize: S14,
+      lineHeight: S18,
       color: "#767676",
-      marginTop: 8,
-      alignSelf: "stretch"
+      marginTop: spacingXS,
+      alignSelf: "stretch",
+      fontFamily: Fonts.Regular,
+      textAlign: "center"
   },
   content: {
-      marginTop: 16,
+      marginTop: spacingS,
       alignSelf: "stretch",
   },
   action: {
       color: "#fff",
-      lineHeight: 21,
-      fontSize: 16,
-      fontFamily: "Univers Next for HSBC"
+      lineHeight: S21,
+      fontSize: S16,
+      fontFamily: Fonts.Regular,
   },
   wrapper1: {
-      height: 24,
-      flexDirection: "row"
+      // height: 24,
+      // flexDirection: "row"
   },
   wrapper: {
       flexDirection: "row"
   },
   primary: {
       backgroundColor: "#db0011",
-      paddingTop: 11,
-      paddingBottom: 13,
-      minWidth: 128,
+      paddingTop: S11,
+      paddingBottom: S13,
       flexDirection: "row",
-      paddingHorizontal: 16,
-      borderRadius: 8,
+      borderRadius: spacingXS,
       flex: 1,
       justifyContent: "center"
   },
   mainbutton: {
-      maxWidth: 311,
+      maxWidth: actuatedNormalize(300),
       flexDirection: "row",
-      marginTop: 16,
-      width: "100%"
+      marginTop: spacingS,
   },
   emptystate: {
       backgroundColor: "#fff",
-      paddingVertical: 24,
+      paddingVertical: spacingM,
       alignItems: "center",
-      paddingHorizontal: 16,
+      paddingHorizontal: spacingS,
       overflow: "hidden",
       width: "100%",
-      borderRadius: 8,
-      paddingHorizontal: 16,
-      borderRadius: 8,
+      borderRadius: spacingXS,
+      paddingHorizontal: spacingS,
+      borderRadius: spacingXS,
       flex: 1
   },
+  //emptystate end
       tabBarLabel: {
         alignSelf: "center",
         lineHeight: I18nManager.isRTL? actuatedNormalize(20) : actuatedNormalize(18), 

@@ -139,7 +139,7 @@ export const S97 = actuatedNormalize(97)
 export const S98 = actuatedNormalize(98)
 export const S99 = actuatedNormalize(99)
 export const S100 = actuatedNormalize(100)
-
+export const S700 = actuatedNormalize(700)
 
 
 
