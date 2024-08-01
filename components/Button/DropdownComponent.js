@@ -126,7 +126,7 @@ class DropdownComponent extends Component {
            // fontSize: '14px',
             // flexDirection: 'row',
             // justifyContent: 'center',
-            fontFamily:Fonts.Regular_En,
+            fontFamily: Fonts.Regular,
             // paddingBottom:spacingXS,
             fontSize: actuatedNormalize(14),
             color: '#000000',
@@ -140,7 +140,7 @@ class DropdownComponent extends Component {
                 style={[
                   {
                     fontSize: actuatedNormalize(14),
-                    fontFamily: Fonts.Regular_En,
+                    fontFamily: Fonts.Regular,
                     color: "red",
                     lineHeight: 15,
                   },
@@ -198,10 +198,8 @@ class DropdownComponent extends Component {
               style={[styles.defaultTextStyle, { color: "#000000",
                  fontSize: actuatedNormalize(14),
                 opacity: this.props.disabled === true ? 0.5 : null ,
-                fontFamily:this.props.value === ''|| this.props.value === null || this.props.value === undefined  ? I18nManager.isRTL ? Fonts.UniversArabicForHSBC_Regular : Fonts.UniversNextforHSBC_Regular :
-                I18nManager.isRTL
-                ? Fonts.UniversArabicForHSBC_Bold
-                : Fonts.UniversNextforHSBC_Bold,
+                fontFamily:this.props.value === ''|| this.props.value === null || this.props.value === undefined  ? Fonts.Regular :
+                 Fonts.Bold,
               }, this.props.textInputProps]}>{this.props.customvalue?this.props.customvalue:labelValue}</TextComponent>
            
            {this.props.errorMsg ?
@@ -283,9 +281,7 @@ const styles = StyleSheet.create({
   bankNameTxt: {
     fontSize: actuatedNormalize(14),
     color: '#1D262C',
-    fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+    fontFamily:Fonts.Regular,
     textAlign: I18nManager.isRTL ? 'left' : 'left',
     lineHeight: actuatedNormalize(20),
   },
@@ -319,7 +315,7 @@ const styles = StyleSheet.create({
     top: I18nManager.isRTL ? actuatedNormalize(5): actuatedNormalize(5),
     marginBottom: I18nManager.isRTL ? actuatedNormalize(5): actuatedNormalize(5),
     letterSpacing: 0,
-    fontFamily: I18nManager.isRTL ? Fonts.Regular_Ar : Fonts.Regular_En,
+    fontFamily:Fonts.Regular,
   },
 });
 

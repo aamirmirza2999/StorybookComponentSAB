@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25, S8
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S700,S68, S11, S13, S16
 } from "./Size";
 
 
@@ -21,7 +21,7 @@ const deviceHeight = Dimensions.get('window').height;
     alignSelf:"center",
     fontSize:actuatedNormalize(12),
     lineHeight:actuatedNormalize(16),
-    fontFamily:Fonts.Regular_En,
+    fontFamily:Fonts.Regular,
     //paddingBottom:spacingXS
   },
     svgStyle :{
@@ -33,7 +33,7 @@ const deviceHeight = Dimensions.get('window').height;
         paddingBottom:spacingXS,
         // flexDirection: 'row',
         // justifyContent: 'center',
-        fontFamily:Fonts.Regular_En,
+        fontFamily:Fonts.Regular,
         fontSize: actuatedNormalize(14),
         // color: Colors.primaryTextColor,
     },
@@ -43,9 +43,7 @@ const deviceHeight = Dimensions.get('window').height;
         justifyContent: 'center',
         height: actuatedNormalize(44),
         fontSize: actuatedNormalize(14),
-        fontFamily: I18nManager.isRTL
-          ? Fonts.Bold_Ar
-          : Fonts.Bold_En,
+        fontFamily: Fonts.Bold,
       },
       screenInitialStyle:{
       
@@ -53,18 +51,14 @@ const deviceHeight = Dimensions.get('window').height;
       },
       TextComponentLabelstyle:{
         fontSize:actuatedNormalize(16),
-        fontFamily: I18nManager.isRTL
-          ? Fonts.Bold_Ar
-          : Fonts.Bold_En,
+        fontFamily: Fonts.Bold,
           // color: Colors.primaryTextColor,
           paddingBottom:spacingXS
       },
       TextComponentDisclaimerstyle:{
         paddingBottom:spacingM,
         fontSize:actuatedNormalize(14),
-        fontFamily: I18nManager.isRTL
-          ? Fonts.Light_Ar
-          : Fonts.Light_En,
+        fontFamily: Fonts.Light,
           // color: Colors.primaryTextColor,
       },
       TextInputComponenttextstyle:{
@@ -81,9 +75,7 @@ const deviceHeight = Dimensions.get('window').height;
         marginVertical:spacingM
       },
       tncTextStyle:{
-        fontFamily: I18nManager.isRTL
-        ? Fonts.Bold_Ar
-        : Fonts.Bold_En,
+        fontFamily: Fonts.Bold,
         fontSize:actuatedNormalize(14),
       },
       DividerStyle:{
@@ -115,16 +107,12 @@ const deviceHeight = Dimensions.get('window').height;
       textAlign: "center",
       lineHeight:actuatedNormalize(21),
       fontSize:actuatedNormalize(16),
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+      fontFamily:Fonts.Regular,
   },
   primaryTextSmall: {
     fontSize:actuatedNormalize(14),
     lineHeight:actuatedNormalize(18),
-    fontFamily: I18nManager.isRTL
-    ? Fonts.Regular_Ar
-    : Fonts.Regular_En,
+    fontFamily:Fonts.Regular,
     textAlign: "center",
 },
 secondaryFlexBoxLarge: {
@@ -156,9 +144,7 @@ quickActionButtonTxt:{
     fontSize:actuatedNormalize(12),
     paddingBottom:spacingXS,
     lineHeight:actuatedNormalize(16),
-    fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+    fontFamily:Fonts.Regular,
     textAlign: "center",
     marginTop:spacingXS
 },
@@ -176,9 +162,7 @@ quickActionButtonTxt1:{
   lineHeight: actuatedNormalize(18),
   textAlign: "left",
   marginLeft:spacingXS,
-  fontFamily: I18nManager.isRTL
-  ? Fonts.Regular_Ar
-  : Fonts.Regular_En,
+  fontFamily:Fonts.Regular,
 },
 quickActionButtonBox2:{
   borderRadius: radiusS,
@@ -192,25 +176,19 @@ quickActionButtonTxt2:{
  // alignSelf: "stretch",
 fontSize:actuatedNormalize(12),
 lineHeight:actuatedNormalize(16),
-fontFamily: I18nManager.isRTL
-? Fonts.Regular_Ar
-: Fonts.Regular_En,
+fontFamily:Fonts.Regular,
 //textAlign: "left"
 },
 linkTextsmall:{
   fontSize:actuatedNormalize(12),
 lineHeight:actuatedNormalize(16),
-fontFamily: I18nManager.isRTL
-? Fonts.Regular_Ar
-: Fonts.Regular_En,
+fontFamily:Fonts.Regular,
 textAlign: "left"
 },
 linkTextlarge:{
   fontSize:actuatedNormalize(14),
 lineHeight:actuatedNormalize(18),
-fontFamily: I18nManager.isRTL
-? Fonts.Regular_Ar
-: Fonts.Regular_En,
+fontFamily:Fonts.Regular,
 textAlign: "left"
 },
    //Paginator
@@ -244,9 +222,7 @@ textAlign: "left"
 // }, 
 //Toggle
 togglelabel:{
-  fontFamily: I18nManager.isRTL
-? Fonts.Regular_Ar
-: Fonts.Regular_En,
+  fontFamily:Fonts.Regular,
 } ,
  
   badgestatus: {
@@ -260,7 +236,7 @@ togglelabel:{
   },
     notificationbadgetext: {
       lineHeight: 17,
-      fontFamily: "Univers Next for HSBC",
+      fontFamily: Fonts.Regular,
       textAlign: "center",
       fontSize: 12,
   },
@@ -345,9 +321,7 @@ togglelabel:{
     fontSize: actuatedNormalize(14),
     lineHeight: actuatedNormalize(18),
     textAlign: "left",
-    fontFamily: I18nManager.isRTL
-    ? Fonts.Regular_Ar
-    : Fonts.Regular_En,
+    fontFamily:Fonts.Regular,
   },
   listButtonTxtLarge:{
     width: actuatedNormalize(279),
@@ -358,9 +332,7 @@ togglelabel:{
       fontSize: actuatedNormalize(16),
       lineHeight: actuatedNormalize(21),
       textAlign: "left",
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+      fontFamily:Fonts.Regular,
   },
   listButtonDashboard:{
     borderRadius: radiusS,
@@ -391,9 +363,7 @@ togglelabel:{
       fontSize: actuatedNormalize(14),
       lineHeight: actuatedNormalize(15),
       textAlign: "left",
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+      fontFamily:Fonts.Regular,
   },
   listButtonTxt1:{
   
@@ -404,9 +374,7 @@ togglelabel:{
       fontSize: actuatedNormalize(14),
       lineHeight: actuatedNormalize(15),
       textAlign: "left",
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+      fontFamily:Fonts.Regular,
     },
     floatingButton:{
       borderRadius: radiusS,
@@ -439,10 +407,8 @@ togglelabel:{
   jm: {
     fontSize: 20,
     lineHeight: 25,
-    fontWeight: "700",
-    fontFamily: I18nManager.isRTL
-          ? Fonts.Bold_Ar
-          : Fonts.Bold_En,
+    fontWeight: S700,
+    fontFamily: Fonts.Bold,
     color: "#db0011",
     textAlign: "left",
     zIndex: 1
@@ -451,9 +417,7 @@ togglelabel:{
 jm2:{
   fontSize: 14,
   lineHeight: 18,
-  fontFamily: I18nManager.isRTL
-          ? Fonts.Bold_Ar
-          : Fonts.Bold_En,
+  fontFamily: Fonts.Bold,
   color: "#db0011",
   textAlign: "left",
   zIndex: 1
@@ -461,9 +425,7 @@ jm2:{
 jm3:{
   fontSize: 12,
 lineHeight: 16,
-fontFamily: I18nManager.isRTL
-          ? Fonts.Bold_Ar
-          : Fonts.Bold_En,
+fontFamily: Fonts.Bold,
 color: "#db0011",
 textAlign: "left"
 },
@@ -501,19 +463,13 @@ typefilledElementsinitials: {
   height:avatarHeight
   },
     boldTextFamily:{
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Bold_Ar
-      : Fonts.Bold_En,
+      fontFamily: Fonts.Bold,
     },
     regularTextFamily:{
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Regular_Ar
-      : Fonts.Regular_En,
+      fontFamily:Fonts.Regular,
     },
     lightTextFamily:{
-      fontFamily: I18nManager.isRTL
-      ? Fonts.Light_Ar
-      : Fonts.Light_En,
+      fontFamily: Fonts.Light,
     },
     imageButton:{
       borderRadius: radiusS,
@@ -553,9 +509,7 @@ typefilledElementsinitials: {
           segmenttabTextStyle:{
             fontSize: actuatedNormalize(14),
             lineHeight: actuatedNormalize(18),
-            fontFamily: I18nManager.isRTL
-            ? Fonts.Regular_Ar
-            : Fonts.Regular_En,
+            fontFamily:Fonts.Regular,
             color: "#000",
             textAlign: "center"
           },
@@ -601,9 +555,7 @@ typefilledElementsinitials: {
         alignSelf: "stretch",
         color: "#000",
         textAlign: "left",
-        fontFamily: I18nManager.isRTL
-        ? Fonts.Regular_Ar
-        : Fonts.Regular_En,
+        fontFamily:Fonts.Regular,
         lineHeight: S18,
         fontSize:S14
       },
@@ -624,9 +576,7 @@ typefilledElementsinitials: {
       AccordianTitleText:{
         fontSize: S14,
         lineHeight:S18,
-        fontFamily: I18nManager.isRTL
-        ? Fonts.Regular_Ar
-        : Fonts.Regular_En,
+        fontFamily:Fonts.Regular,
         color: "#000",
         textAlign: "left",
         display: "flex",
@@ -647,13 +597,93 @@ typefilledElementsinitials: {
         flex: 1,
         fontSize:S12,
         lineHeight: S17,
-        fontFamily: I18nManager.isRTL
-        ? Fonts.Regular_Ar
-        : Fonts.Regular_En,
+        fontFamily:Fonts.Regular,
         color: "#000",
         textAlign: "left"
 
       },
+    
+     //EmptyStateNote
+     
+  wrapperFlexBox: {
+      justifyContent: "center",
+      alignItems: "center"
+  },
+  actionTypo: {
+      textAlign: "center",
+      fontFamily: Fonts.Regular
+  },
+  ragIcon: {
+      width: S68,
+      height: S68,
+      overflow: "hidden",
+     marginLeft:120
+  },
+  welcomeBack: {
+      fontWeight: S700,
+      color: "#000",
+      lineHeight: S21,
+      fontSize: spacingS,
+      fontFamily: Fonts.Regular,
+      flex: 1,
+      marginRight:S10
+  },
+  title: {
+      flexDirection: "row",
+  },
+  enterYourUsername: {
+      fontSize: S14,
+      lineHeight: S18,
+      color: "#767676",
+      marginTop: spacingXS,
+      alignSelf: "stretch",
+      fontFamily: Fonts.Regular,
+      textAlign: "center"
+  },
+  content: {
+      marginTop: spacingS,
+      alignSelf: "stretch",
+  },
+  action: {
+      color: "#fff",
+      lineHeight: S21,
+      fontSize: S16,
+      fontFamily: Fonts.Regular,
+  },
+  wrapper1: {
+      // height: 24,
+      // flexDirection: "row"
+  },
+  wrapper: {
+      flexDirection: "row"
+  },
+  primary: {
+      backgroundColor: "#db0011",
+      paddingTop: S11,
+      paddingBottom: S13,
+      flexDirection: "row",
+      borderRadius: spacingXS,
+      flex: 1,
+      justifyContent: "center"
+  },
+  mainbutton: {
+      maxWidth: actuatedNormalize(300),
+      flexDirection: "row",
+      marginTop: spacingS,
+  },
+  emptystate: {
+      backgroundColor: "#fff",
+      paddingVertical: spacingM,
+      alignItems: "center",
+      paddingHorizontal: spacingS,
+      overflow: "hidden",
+      width: "100%",
+      borderRadius: spacingXS,
+      paddingHorizontal: spacingS,
+      borderRadius: spacingXS,
+      flex: 1
+  },
+  //emptystate end
       tabBarLabel: {
         alignSelf: "center",
         lineHeight: I18nManager.isRTL? actuatedNormalize(20) : actuatedNormalize(18), 

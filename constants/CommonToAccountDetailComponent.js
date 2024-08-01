@@ -82,9 +82,7 @@ style={{
       color: theme.menuTextColor,
       fontSize: actuatedNormalize(14),
       textAlign: "left",
-      fontFamily: I18nManager.isRTL
-        ? Fonts.UniversArabicForHSBC_Bold
-        : Fonts.UniversNextforHSBC_Bold,
+      fontFamily: Fonts.Bold,
         textTransform:"capitalize",
     }}
   >
@@ -108,9 +106,7 @@ style={[
 <View style={[styles.optionSubContainer2]}>
     <TextComponent
       style={{
-        fontFamily: I18nManager.isRTL
-          ? Fonts.UniversArabicForHSBC_Regular
-          : Fonts.UniversNextforHSBC_Medium,
+        fontFamily:Fonts.Regular,
         fontSize: actuatedNormalize(14),
         color: theme.menuTextColor,
         textTransform:"capitalize",
@@ -126,9 +122,7 @@ style={[
         : Platform.OS === "ios" ? actuatedNormalize(7) : actuatedNormalize(7)
     }}>
       <TextComponent style={{
-        fontFamily: I18nManager.isRTL
-          ? Fonts.UniversArabicForHSBC_Regular
-          : Fonts.UniversNextforHSBC_Regular,
+        fontFamily:Fonts.Regular,
         fontSize: actuatedNormalize(12),
         color: "#767676",
         textTransform:"capitalize"
@@ -145,9 +139,7 @@ style={[
         : Platform.OS === "ios" ? actuatedNormalize(7) : actuatedNormalize(7)
     }}>
       <TextComponent style={{
-        fontFamily: I18nManager.isRTL
-          ? Fonts.UniversArabicForHSBC_Regular
-          : Fonts.UniversNextforHSBC_Regular,
+        fontFamily:Fonts.Regular,
         fontSize: actuatedNormalize(12),
         color: "#767676",
       //   textTransform:"capitalize"
@@ -164,9 +156,7 @@ style={[
         : Platform.OS === "ios" ? actuatedNormalize(7) : actuatedNormalize(7)
     }}>
       <TextComponent style={{
-        fontFamily: I18nManager.isRTL
-          ? Fonts.UniversArabicForHSBC_Regular
-          : Fonts.UniversNextforHSBC_Regular,
+        fontFamily:Fonts.Regular,
         fontSize: actuatedNormalize(12),
         color: "#767676",
       //   textTransform:"capitalize"
@@ -215,7 +205,7 @@ subContainer1Sub: {
 fromLabel1: {
     fontSize: actuatedNormalize(16),
     color: "#263a52",
-    fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBClight : Fonts.universlTStd,
+    fontFamily:Fonts.Regular,
 },
 fromLabel2: {
     fontSize: actuatedNormalize(14),
@@ -233,20 +223,20 @@ fromLabelSubContainer: {
 fromLabelAmount: {
     fontSize: actuatedNormalize(18),
     color: "#1d262c",
-    fontFamily: Fonts.universLTStd_bold
+    fontFamily: Fonts.Bold
 },
 fromLabelCurrency: {
     fontSize: actuatedNormalize(11),
     marginLeft: actuatedNormalize(5),
     top: Platform.OS === "ios" ? -1 : -2,
     color: "#1d262c",
-    fontFamily: Fonts.universLTStd_light
+    fontFamily: Fonts.Light
 },
 fromTextStyle: {
     fontSize: actuatedNormalize(14),
     color: "#000000",
     opacity: Platform.OS==="ios"? 0.7 : 0.5,
-    fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBCbold : Fonts.universLTStd_bold,
+    fontFamily:  Fonts.Bold,
 },
 optionHorizontal: {
     width: '100%',

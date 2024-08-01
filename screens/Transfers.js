@@ -276,13 +276,13 @@ const Transfers = props => {
           <TextInputComponent
             label="Transfer Amount"
             labelStyle={{
-              fontFamily: I18nManager.isRTL ? Fonts.Bold_Ar : Fonts.Bold_En,
+              fontFamily:Fonts.Bold,
               fontSize: actuatedNormalize(16),
             }}
             mandatory={false}
             placeHolder="0.00"
             textstyle={{
-              fontFamily: I18nManager.isRTL ? Fonts.Bold_Ar : Fonts.Bold_En,
+              fontFamily:  Fonts.Bold,
               fontSize: actuatedNormalize(16),
             }}
             value={username}

@@ -30,6 +30,8 @@ import TabsComponent from './TabsComponent';
 import { Close,Success } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import PasswordStrength from '../PasswordStrength/PasswordStrength';
+import EmptystateNote from './EmptystateNote';
+import MainHeader from './MainHeader';
 
 const data = [
   { title: 'Item 1', text: 'Text 1' },
@@ -57,17 +59,17 @@ export default {
 //   color: 'blue',
 //   textColor: 'white',
 // };
-export const BgHeaderStory = args => <BgHeaderComponent {...args} />;
-BgHeaderStory.args = {
-  title: 'Primary Button',
-  // color: 'white',
-  textColor: 'red',
-  enableBackButton: true,
-  enableCloseButton: false,
-};
-BgHeaderStory.argTypes = {
-  textColor: {control: 'color'},
-};
+// export const BgHeaderStory = args => <BgHeaderComponent {...args} />;
+// BgHeaderStory.args = {
+//   title: 'Primary Button',
+//   // color: 'white',
+//   textColor: 'red',
+//   enableBackButton: true,
+//   enableCloseButton: false,
+// };
+// BgHeaderStory.argTypes = {
+//   textColor: {control: 'color'},
+// };
 export const PostLoginHeaderStory = args => <PostLoginHeader {...args} />;
 PostLoginHeaderStory.args = {
   title: 'Primary Button',
@@ -77,7 +79,7 @@ PostLoginHeaderStory.args = {
   hideHeader:false,
   enableLivechat:true
 };
-BgHeaderStory.argTypes = {
+PostLoginHeaderStory.argTypes = {
   textColor: {control: 'color'},
 };
 
@@ -293,6 +295,13 @@ AvatarComponentStory.args = {
   avatarname:true
 
 };
+export const EmptyStateComponentStory = args => <EmptystateNote {...args} />;
+EmptyStateComponentStory.args = {
+  value: true,
+  onPress:null,
+  
+
+};
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
  label:"Action",
@@ -447,4 +456,12 @@ TabsComponentStory.argTypes = {
     control: 'select',
     options: ['none', 'capitalize', 'uppercase', 'lowercase'],
   },
+};
+
+export const MainHeaderStory = args => <MainHeader {...args} />;
+MainHeaderStory.args = {
+  bgColor:"#263a52"
+};
+MainHeaderStory.argTypes = {
+  bgColor: {control: 'color'},
 };

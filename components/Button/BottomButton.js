@@ -177,9 +177,7 @@ const addCommaToNumber = (data) => {
                 >
                   <TextComponent
                     style={{
-                      fontFamily: I18nManager.isRTL
-                      ? Fonts.Regular_Ar
-                      : Fonts.Regular_En,
+                      fontFamily: Fonts.Regular,
                       fontSize: actuatedNormalize(14),
                       color: "#ffffff",
                     }}
@@ -201,7 +199,7 @@ const addCommaToNumber = (data) => {
                  
                     <TextComponent
                       style={{
-                        fontFamily: I18nManager.isRTL ? Fonts.Bold_Ar : Fonts.Bold_En,
+                        fontFamily: Fonts.Bold ,
                         fontSize: actuatedNormalize(16),
                         color: "#ffffff",
                         lineHeight:actuatedNormalize(24)
@@ -224,9 +222,7 @@ const addCommaToNumber = (data) => {
                           },
                         }),
                         marginLeft: actuatedNormalize(3.5),
-                        fontFamily: I18nManager.isRTL
-                        ? Fonts.Regular_Ar
-                        : Fonts.Regular_En,
+                        fontFamily: Fonts.Regular,
                         fontSize: actuatedNormalize(12),
                         color: "#ffffff",
                       }}
@@ -247,7 +243,7 @@ const addCommaToNumber = (data) => {
                   >
                     <TextComponent
                       style={{
-                        fontFamily: I18nManager.isRTL ? Fonts.Bold_Ar : Fonts.Bold_En,
+                        fontFamily:Fonts.Bold,
                         fontSize: actuatedNormalize(16),
                         color: "#ffffff",
                         lineHeight:actuatedNormalize(24)
@@ -270,9 +266,7 @@ const addCommaToNumber = (data) => {
                           },
                         }),
                          marginLeft: actuatedNormalize(3.5),
-                        fontFamily: I18nManager.isRTL
-                        ? Fonts.Regular_Ar
-                        : Fonts.Regular_En,
+                        fontFamily: Fonts.Regular,
                         fontSize: actuatedNormalize(12),
                         color: "#ffffff",
                       }}
@@ -323,9 +317,7 @@ const addCommaToNumber = (data) => {
                             color: "white",
                             lineHeight: actuatedNormalize(16),
                             fontSize: actuatedNormalize(12),
-                            fontFamily: I18nManager.isRTL
-                            ? Fonts.Regular_Ar
-                            : Fonts.Regular_En,
+                            fontFamily: Fonts.Regular,
                           }}
                         >
                          {props.limitamount1}
@@ -335,9 +327,7 @@ const addCommaToNumber = (data) => {
                             color: "white",
                             lineHeight: actuatedNormalize(16),
                             fontSize: actuatedNormalize(12),
-                            fontFamily: I18nManager.isRTL
-                            ? Fonts.Regular_Ar
-                            : Fonts.Regular_En,
+                            fontFamily: Fonts.Regular,
                           }}
                         >
                           {" "}
@@ -348,9 +338,7 @@ const addCommaToNumber = (data) => {
                             color: "white",
                             lineHeight: actuatedNormalize(16),
                             fontSize: actuatedNormalize(12),
-                            fontFamily: I18nManager.isRTL
-                            ? Fonts.Regular_Ar
-                            : Fonts.Regular_En,
+                            fontFamily: Fonts.Regular,
                           }}
                         >
                           {" "}
@@ -361,9 +349,7 @@ const addCommaToNumber = (data) => {
                             color: "white",
                             lineHeight: actuatedNormalize(16),
                             fontSize: actuatedNormalize(12),
-                            fontFamily: I18nManager.isRTL
-                            ? Fonts.Regular_Ar
-                            : Fonts.Regular_En,
+                            fontFamily:Fonts.Regular,
                           }}
                         >
                           {" "}
@@ -374,9 +360,7 @@ const addCommaToNumber = (data) => {
                             color: "white",
                             lineHeight: actuatedNormalize(16),
                             fontSize: actuatedNormalize(12),
-                            fontFamily: I18nManager.isRTL
-                            ? Fonts.Regular_Ar
-                            : Fonts.Regular_En,
+                            fontFamily: Fonts.Regular,
                           }}
                         >
                           {" "}
@@ -389,9 +373,7 @@ const addCommaToNumber = (data) => {
                             color: "white",
                             lineHeight: actuatedNormalize(16),
                             fontSize: actuatedNormalize(12),
-                            fontFamily: I18nManager.isRTL
-                            ? Fonts.Regular_Ar
-                            : Fonts.Regular_En,
+                            fontFamily: Fonts.Regular,
                           }}
                         >
                           {" "}
@@ -453,18 +435,16 @@ const styles = StyleSheet.create({
         fontSize: actuatedNormalize(16),
         color: "#ffffff",
         lineHeight:actuatedNormalize(24),
-        fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBClight : Fonts.universlTStd,
+        fontFamily: Fonts.Regular,
     },
     amountSty: {
         fontSize: actuatedNormalize(16), color: "#ffffff",
-        fontFamily: Fonts.universLTStd_bold,
+        fontFamily: Fonts.Bold,
 
     },
     currencySty: {
         fontSize: actuatedNormalize(12), color: "#ffffff",
-        fontFamily: Fonts.universLTStd_light,
-        // top: Platform.OS === "ios" ? 0 :
-        //     I18nManager.isRTL ? -4 : -4
+        fontFamily: Fonts.Light,
     },
     totalAmountContent2: {
         flexDirection: 'row',
@@ -479,15 +459,10 @@ const styles = StyleSheet.create({
 
     },
 
-    // buttonContainer: {
-    //     alignItems: 'center',
-    //     height: actuatedNormalize(56),
-    //     justifyContent: 'center'
-    // },
     buttonTxt: {
        
         fontSize: actuatedNormalize(16),
-        fontFamily: I18nManager.isRTL ? Fonts.universArabicforHSBClight : Fonts.universlTStd,
+        fontFamily: Fonts.Regular,
         color: "#ffffff",
         ...Platform.select({
             ios: {

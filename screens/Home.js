@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import BgHeader from '../components/Button/BgHeader';
 import LogoComponent from '../components/Button/LogoComponent';
 import i18n from '../locales/i18n';
@@ -21,26 +21,29 @@ import PrimaryBgComponent from '../components/Button/PrimaryBgComponent';
 import TextInputComponent from '../components/Button/TextInputComponent';
 import PrimaryButton from '../components/Button/PrimaryButton';
 import SecondaryButton from '../components/Button/SecondaryButton';
-import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../constants/Theme/ThemeProvider';
-import {globalStyles} from '../constants/GlobalStyles';
-import {useTranslation} from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
+import { useTheme } from '../constants/Theme/ThemeProvider';
+import { globalStyles } from '../constants/GlobalStyles';
+import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SvgIconList from '../constants/SvgIconList';
-import {spacingM, spacingS,  spacingXS} from '../constants/Size';
+import { spacingM, spacingS, spacingXS } from '../constants/Size';
 import Toggleswitch from '../components/Button/Toggleswitch';
 import SnackBar from '../components/SnackBar/SnackBar';
 import { Success } from '../constants/SvgLocations';
+import EmptystateNote from '../components/Button/EmptystateNote';
+import MainHeader from '../components/Button/MainHeader';
+
 // import Avatarcomponent from '../components/Button/Avatarcomponent';
 const Home = props => {
   const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [enableButton, setenableButton] = useState(true);
-  const {theme, toggleTheme} = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [language, setlanguage] = useState('en');
-  console.log("ggggggg",theme);
-  const {t} = useTranslation();
+  console.log("ggggggg", theme);
+  const { t } = useTranslation();
 
   const handleUsernameChange = text => {
     setUsername(text);
@@ -96,7 +99,7 @@ const Home = props => {
   };
   return (
     <>
-    {/* <SnackBar
+      {/* <SnackBar
       label={"Tag created successfully"}
       backgroundColor={"#f9f2f3"}
       borderColor={"#e5b2b5"}
@@ -109,7 +112,7 @@ const Home = props => {
         ButtonContainer={{
           paddingLeft: spacingS,
           paddingRight: spacingS,
-          paddingBottom:spacingM,
+          paddingBottom: spacingM,
           paddingTop: spacingM,
         }}
         primaryBgColor={theme.primaryColor}
@@ -126,15 +129,32 @@ const Home = props => {
         SecondaryButton={
           <SecondaryButton
             label={t('initialLang:register1')}
-            // SecondaryButtonBgClr={"red"}
+          // SecondaryButtonBgClr={"red"}
           />
         }
         BgHeader={
-          <BgHeader
-            title={t('initialLang:RegisterOnline')}
-            customSvg={true}
-            backButtonIsRequired={true}
-            textColor={theme.primarywhitestatic}
+          <MainHeader
+            bgColor={"#263a52"}
+            children={
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingHorizontal: spacingS
+                }}>
+                <LogoComponent enableLogo={true} changeTheme={toggleTheme} />
+                <TouchableOpacity
+                  style={{}}
+                  onPress={() => changeLanguage(language == 'en' ? 'ar' : 'en')}>
+                  <SvgIconList
+                    icon="ChangeLang"
+                    width={actuatedNormalize(25)}
+                    height={actuatedNormalize(25)}
+                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                  />
+                </TouchableOpacity>
+              </View>
+            }
           />
         }>
         <View
@@ -142,21 +162,13 @@ const Home = props => {
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}>
-          <LogoComponent enableLogo={true} changeTheme={toggleTheme} />
-          <TouchableOpacity
-            onPress={() => changeLanguage(language == 'en' ? 'ar' : 'en')}>
-            <SvgIconList
-              icon="ChangeLang"
-              width={actuatedNormalize(25)}
-              height={actuatedNormalize(25)}
-              transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
-            />
-          </TouchableOpacity>
+
+
         </View>
         <TextComponent
           fontWeight={'Bold'}
           style={{
-            color:theme.primaryblack,
+            color: theme.primaryblack,
             fontSize: actuatedNormalize(20),
             marginTop: spacingM,
           }}>
@@ -183,7 +195,7 @@ const Home = props => {
             label={t('initialLang:Username')}
             placeHolder={t('initialLang:Username')}
             value={username}
-            inputStyle={{width: '100%'}}
+            inputStyle={{ width: '100%' }}
             onChangeText={handleUsernameChange}
             errorMsg={errorMsg}
           />
@@ -192,7 +204,7 @@ const Home = props => {
           <TouchableOpacity
             onPress={() => navigation.navigate('PassWord')}
             style={{
-              
+
               alignSelf: 'flex-end',
             }}>
             <TextComponent
@@ -206,7 +218,8 @@ const Home = props => {
             </TextComponent>
           </TouchableOpacity>
         </View>
-        <Toggleswitch/>
+        <Toggleswitch />
+        <EmptystateNote />
         {/* <Avatarcomponent/> */}
       </PrimaryBgComponent>
     </>
