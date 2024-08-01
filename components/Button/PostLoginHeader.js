@@ -10,15 +10,15 @@ import {
   SafeAreaView
 } from 'react-native';
 import {actuatedNormalize} from '../../constants/PixelScaling';
-import {SvgXml} from 'react-native-svg';
+import SvgXml from './SvgXml'
 import {BackArrowNew, CloseIconNew} from '../../constants/SvgLocations';
 import SvgIconList from '../../constants/SvgIconList';
 import TextInputComponent from './TextInputComponent';
 import TextComponent from './TextComponent';
-import SquareSVG from './SvgHeader';
 import {PrimaryButtonNew} from './ButtonComponent';
 import { useNavigation} from "@react-navigation/native";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 
 
@@ -30,6 +30,9 @@ const deviceWidth = Dimensions.get('window').width;
 const deviceheight = Dimensions.get('window').height - IosSpecific;
 const svgWidth = Number(deviceWidth) + 2;
 const svgHeight = Number((deviceheight - iosMargin) / 8 - 0);
+
+// SVG DIMENSIONS
+const svgHeight2 = Number(((deviceheight-iosMargin) / 5 ) - getStatusBarHeight())
 
 
 
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection:"row",
     top:actuatedNormalize(16)
-   // marginBottom: I18nManager.isRTL ? actuatedNormalize(0) : actuatedNormalize(5)
+   
   },
   column3: {
     flexDirection:'row',
@@ -83,6 +86,17 @@ const styles = StyleSheet.create({
   },
   
 });
+const xml1 = `<svg width=${Platform.OS== "ios" ? svgWidth+actuatedNormalize(50) : svgWidth + actuatedNormalize(100)} height=${svgHeight2+1} preserveAspectRatio="none" viewBox="${I18nManager.isRTL? 0 : 1} 0 ${Platform.OS== "ios" ? I18nManager.isRTL? svgWidth-actuatedNormalize(30):svgWidth+actuatedNormalize(20) : I18nManager.isRTL?svgWidth-actuatedNormalize(50):svgWidth+actuatedNormalize(50)} ${svgHeight2}" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity=".1" fill-rule="evenodd" clip-rule="evenodd" d="M-319 254.848 468.5 0 206 518.485l-525-263.637z" fill="#F5F5F5" fill-opacity=".5"/>
+<path opacity=".08" fill-rule="evenodd" clip-rule="evenodd" d="M-221.5 43.94V536.06h480l-480-492.122z" fill="#F5F5F5" fill-opacity=".5"/>
+<path opacity=".12" fill-rule="evenodd" clip-rule="evenodd" d="M-4 395.455 378.5 87.879l315 386.666L-4 395.455z" fill="#F5F5F5" fill-opacity=".5"/>
+</svg>`
+
+export const Background = () => {
+  return (
+      <SvgXml style={{flex:1, width: '100%', backgroundColor: "#263a52"}} xml={xml1} />
+  )
+}
 const PostLoginHeader = (props) => {
  // const navigation = useNavigation();
  const { colors, isDark } = useTheme();
@@ -111,7 +125,7 @@ const PostLoginHeader = (props) => {
             ...StyleSheet.absoluteFill,
           }}
         >
-            <SquareSVG
+            <Background
             bgColor = {props.bgColor ? props.bgColor : "#263a52"}
           />
          

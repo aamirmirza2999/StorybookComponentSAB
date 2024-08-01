@@ -31,6 +31,8 @@ import { Close,Success } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import PasswordStrength from '../PasswordStrength/PasswordStrength';
 import EmptystateNote from './EmptystateNote';
+import MainHeader from './MainHeader';
+
 const data = [
   { title: 'Item 1', text: 'Text 1' },
   { title: 'Item 2', text: 'Text 2' },
@@ -454,4 +456,12 @@ TabsComponentStory.argTypes = {
     control: 'select',
     options: ['none', 'capitalize', 'uppercase', 'lowercase'],
   },
+};
+
+export const MainHeaderStory = args => <MainHeader {...args} />;
+MainHeaderStory.args = {
+  bgColor:"#263a52"
+};
+MainHeaderStory.argTypes = {
+  bgColor: {control: 'color'},
 };
