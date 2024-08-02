@@ -29,10 +29,10 @@ const MainButton = (props) => {
 		  tabsContainerStyle={{
 		 marginHorizontal:actuatedNormalize(10),
 		  }}
-		  tabStyle={globalStyles.segmenttabStyle}
-		  activeTabStyle={globalStyles.segmentactiveTabStyle}
-		  tabTextStyle={globalStyles.segmenttabTextStyle}
-		  activeTabTextStyle={globalStyles.segmenttabTextStyle}
+		  tabStyle={[globalStyles.segmenttabStyle,{ backgroundColor: theme.primarycolor2_20,}]}
+		  activeTabStyle={[globalStyles.segmentactiveTabStyle,{shadowColor: "rgba(0, 0, 0, 0.15)",backgroundColor:theme.primarycolor4,}]}
+		  tabTextStyle={[globalStyles.segmenttabTextStyle,{color: "#000"}]}
+		  activeTabTextStyle={[globalStyles.segmenttabTextStyle,{color: "#000"}]}
           values={props.data}
           selectedIndex={selectedIndex}
           onTabPress={handleIndexChange}
@@ -259,7 +259,7 @@ const MainButton = (props) => {
 						}
 						onPress={props.onPress}>
 						<View
-						style={[globalStyles.floatingButton]}>
+						style={[globalStyles.floatingButton,{ backgroundColor:theme.primarycolor3,}]}>
 							<AddBenefiary
 							width={actuatedNormalize(32)}
 							height={actuatedNormalize(32)}
@@ -310,7 +310,7 @@ const MainButton = (props) => {
 				{props.enableImageButton?				
 				<Component>
 					<View
-					style={globalStyles.imageButton}
+					style={[globalStyles.imageButton,{borderColor: "#000",}]}
 					>
 						<Split
 						width={actuatedNormalize(24)}

@@ -378,9 +378,6 @@ togglelabel:{
     },
     floatingButton:{
       borderRadius: radiusS,
-      backgroundColor: "#db0011",
-      //alignSelf:"center",
-     // marginTop:7,
       width:S56,
       height:S56,
       overflow: "hidden",
@@ -474,7 +471,6 @@ typefilledElementsinitials: {
     imageButton:{
       borderRadius: radiusS,
         borderStyle: "solid",
-        borderColor: "#000",
         borderWidth: 1,
         alignSelf:"center",
       
@@ -488,10 +484,8 @@ typefilledElementsinitials: {
       },
        segmenttabStyle:{
             borderWidth:0,
-            backgroundColor: "rgba(118, 118, 118, 0.2)",
           },
           segmentactiveTabStyle:{
-            shadowColor: "rgba(0, 0, 0, 0.15)",
             shadowOffset: {
             width: 0,
             height: S2
@@ -500,7 +494,6 @@ typefilledElementsinitials: {
             elevation: 6,
             shadowOpacity: 1,
             borderRadius: radiusS,
-            backgroundColor: "#fff",
             paddingVertical: spacingXS,
             paddingHorizontal: spacingS,
             alignItems: "center",
@@ -510,7 +503,6 @@ typefilledElementsinitials: {
             fontSize:S14,
             lineHeight: S18,
             fontFamily:Fonts.Regular,
-            color: "#000",
             textAlign: "center"
           },
           tooltipContainerStyle: {
@@ -535,9 +527,9 @@ typefilledElementsinitials: {
           textAlign: "left"
       },
       snackbarContainer:{
-      backgroundColor: "#e5f2f2",
+     // backgroundColor: "#e5f2f2",
       borderStyle: "solid",
-      borderColor: "#99cecc",
+     // borderColor: "#99cecc",
       borderWidth: 1,
       margin:S10,
       paddingVertical: spacingS,
@@ -553,7 +545,6 @@ typefilledElementsinitials: {
       },
       snackBarLabel:{
         alignSelf: "stretch",
-        color: "#000",
         textAlign: "left",
         fontFamily:Fonts.Regular,
         lineHeight: S18,
@@ -561,8 +552,6 @@ typefilledElementsinitials: {
       },
       AccordianMenuContainer:{
         borderRadius: radiusS,
-        backgroundColor: "#f2f3f4",
-       // width: "100%",
         paddingHorizontal: spacingS,
         paddingVertical: spacingXS,
         marginHorizontal:S10,
@@ -577,7 +566,6 @@ typefilledElementsinitials: {
         fontSize: S14,
         lineHeight:S18,
         fontFamily:Fonts.Regular,
-        color: "#000",
         textAlign: "left",
         display: "flex",
         marginLeft: spacingXS,
@@ -587,7 +575,6 @@ typefilledElementsinitials: {
         alignSelf: "center"
       },
       AccordianSubMenuConatiner:{
-        backgroundColor: "#f2f3f4",
         paddingLeft: spacingL,
         paddingTop: spacingS,
         paddingRight: spacingXS,
@@ -598,7 +585,6 @@ typefilledElementsinitials: {
         fontSize:S12,
         lineHeight: S17,
         fontFamily:Fonts.Regular,
-        color: "#000",
         textAlign: "left"
 
       },
@@ -728,7 +714,6 @@ typefilledElementsinitials: {
         width: "31%",
         height: S4,
         marginTop:S5,
-        backgroundColor: "#FFFFFF80",
         marginHorizontal:S3,
         borderRadius:S5
       },
@@ -737,7 +722,7 @@ typefilledElementsinitials: {
         height: S5,
         marginTop: S10,
         right: S17,
-        backgroundColor: "#DFDFDE",
+        //backgroundColor: "#DFDFDE",
         marginHorizontal: S3
       },
       pwdtextContainer: {
@@ -755,19 +740,19 @@ typefilledElementsinitials: {
       },
       pwdlabel2: {
         fontSize:S12,
-        color: "#626469",
+       // color: "#626469",
          lineHeight:S18,
       },
       pwdlabel: {
         fontSize:S12,
-        color: '#000000',
+        //color: '#000000',
         lineHeight:S18,
         letterSpacing: 0
       },
       pwdpostlabel2: {
         fontSize: S14,
         marginLeft: S10,
-        color: "#5C6F7C"
+        //color: "#5C6F7C"
       },
       
      
