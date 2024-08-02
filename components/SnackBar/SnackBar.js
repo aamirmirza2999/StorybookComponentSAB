@@ -115,7 +115,7 @@ class SnackBar extends Component {
         <View style={[globalStyles.snackbarContainer,{backgroundColor:this.props.backgroundColor,borderColor:this.props.borderColor}]}>
             {this.props.Icon}
             <View style={[globalStyles.snackbarBox]}>
-             <TextComponent style={[globalStyles.snackBarLabel]}>{this.props.label}</TextComponent>
+             <TextComponent style={[globalStyles.snackBarLabel,{color: "#000"},]}>{this.props.label}</TextComponent>
             </View>
             <TouchableOpacity
              onPress={this.props.onPress}>

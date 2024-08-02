@@ -11,10 +11,12 @@ import { RightRedArrow1,Home } from '../../constants/SvgLocations';
 import Divider from '../Button/Divider';
 import TextComponent from '../Button/TextComponent';
 import { globalStyles } from '../../constants/GlobalStyles';
+import { useTheme } from '../../constants/Theme/ThemeProvider';
 
 
 const AccordianMenu = (props) => {
   const [collapsed, setCollapsed] = useState(true);
+  const { theme } = useTheme();
 
  const toggleExpanded = () => {
   setCollapsed(!collapsed)
@@ -31,11 +33,11 @@ const AccordianMenu = (props) => {
  
     return (
 
-        <View style={globalStyles.AccordianMenuContainer}>
+        <View style={[globalStyles.AccordianMenuContainer,{backgroundColor:theme.stylesblockbg,}]}>
           <TouchableOpacity onPress={props.subData?toggleExpanded:titlePressed}>   
              <View style={globalStyles.AccordianMenuTitleBox}>
                <Home style={{ height: 24, width: 24}}/>
-               <TextComponent style={globalStyles.AccordianTitleText}>
+               <TextComponent style={[globalStyles.AccordianTitleText,{ color: "#000",}]}>
                    {props.HeaderText}
                 </TextComponent>
                 {props.subData?
@@ -50,9 +52,9 @@ const AccordianMenu = (props) => {
               <TouchableOpacity
                 onPress={()=>subDataPressed(item.title)}
               >
-                <View style={globalStyles.AccordianSubMenuConatiner}>
+                <View style={[globalStyles.AccordianSubMenuConatiner,{backgroundColor:theme.stylesblockbg,}]}>
                   <TextComponent
-                    style={globalStyles.AccordianSubTitleText}
+                    style={[globalStyles.AccordianSubTitleText,{ color:theme.primarycolor}]}
                   >
                   {item.title}
                   </TextComponent>

@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S700,S68, S11, S13, S16
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2,S700, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S7,S9,S15,S68, S11, S13, S16, S56
 } from "./Size";
 
 
@@ -85,8 +85,8 @@ const deviceHeight = Dimensions.get('window').height;
         alignSelf: "stretch"
       },
       primaryFlexBoxLarge: {
-    		paddingBottom:actuatedNormalize(13),
-    		paddingTop:actuatedNormalize(11),
+    		paddingBottom:S13,
+    		paddingTop:S11,
     		borderRadius: radiusS,
     		justifyContent: "center",
     		flexDirection: "row",
@@ -97,7 +97,7 @@ const deviceHeight = Dimensions.get('window').height;
     primaryFlexBoxSmall: {
       borderRadius:radiusS,
       paddingHorizontal:spacingS,
-      paddingVertical:actuatedNormalize(7),
+      paddingVertical:S7,
       justifyContent: "center",
       flexDirection: "row",
       alignItems: "center",
@@ -105,13 +105,13 @@ const deviceHeight = Dimensions.get('window').height;
   },
     primaryTextLarge: {
       textAlign: "center",
-      lineHeight:actuatedNormalize(21),
-      fontSize:actuatedNormalize(16),
+      lineHeight:S21,
+      fontSize:S16,
       fontFamily:Fonts.Regular,
   },
   primaryTextSmall: {
-    fontSize:actuatedNormalize(14),
-    lineHeight:actuatedNormalize(18),
+    fontSize:S14,
+    lineHeight:S18,
     fontFamily:Fonts.Regular,
     textAlign: "center",
 },
@@ -120,12 +120,12 @@ secondaryFlexBoxLarge: {
   borderStyle:"solid",
   borderWidth: 1,
   paddingHorizontal:spacingS,
-  paddingTop:actuatedNormalize(11),
-  paddingBottom:actuatedNormalize(13),
+  paddingTop:S11,
+  paddingBottom:S13,
 },
 preloginRedButton:{
   paddingHorizontal:spacingL,
-  paddingVertical:actuatedNormalize(9),
+  paddingVertical:S9,
   justifyContent: "center",
   alignItems: "center"
 },
@@ -135,15 +135,15 @@ quickActionButtonBox:{
   alignItems: "center",
   justifyContent: "center",
   paddingHorizontal:spacingXXS,
-  paddingVertical:actuatedNormalize(12),
+  paddingVertical:S12,
   overflow: "hidden"
 },
 quickActionButtonTxt:{
     alignSelf: "stretch",
     width:actuatedNormalize(110),
-    fontSize:actuatedNormalize(12),
+    fontSize:S12,
     paddingBottom:spacingXS,
-    lineHeight:actuatedNormalize(16),
+    lineHeight:S16,
     fontFamily:Fonts.Regular,
     textAlign: "center",
     marginTop:spacingXS
@@ -158,8 +158,8 @@ quickActionButtonBox1:{
   alignSelf:"center",
 },
 quickActionButtonTxt1:{
-  fontSize: actuatedNormalize(14),
-  lineHeight: actuatedNormalize(18),
+  fontSize:S14,
+  lineHeight: S18,
   textAlign: "left",
   marginLeft:spacingXS,
   fontFamily:Fonts.Regular,
@@ -169,13 +169,13 @@ quickActionButtonBox2:{
   flexDirection: "row",
   alignItems: "flex-start",
   //justifyContent: "center",
-  padding:actuatedNormalize(12),
+  padding:S12
   //alignItems:"flex-start"
 },
 quickActionButtonTxt2:{
  // alignSelf: "stretch",
-fontSize:actuatedNormalize(12),
-lineHeight:actuatedNormalize(16),
+fontSize:S12,
+lineHeight:S16,
 fontFamily:Fonts.Regular,
 //textAlign: "left"
 },
@@ -318,8 +318,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
     alignSelf: "center",
-    fontSize: actuatedNormalize(14),
-    lineHeight: actuatedNormalize(18),
+    fontSize: S14,
+    lineHeight: S18,
     textAlign: "left",
     fontFamily:Fonts.Regular,
   },
@@ -329,8 +329,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: actuatedNormalize(16),
-      lineHeight: actuatedNormalize(21),
+      fontSize: S16,
+      lineHeight: S21,
       textAlign: "left",
       fontFamily:Fonts.Regular,
   },
@@ -360,8 +360,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: actuatedNormalize(14),
-      lineHeight: actuatedNormalize(15),
+      fontSize: S14,
+      lineHeight:S15,
       textAlign: "left",
       fontFamily:Fonts.Regular,
   },
@@ -371,18 +371,15 @@ togglelabel:{
     //alignItems: "flex-end",
   
       alignSelf: "center",
-      fontSize: actuatedNormalize(14),
-      lineHeight: actuatedNormalize(15),
+      fontSize: S14,
+      lineHeight: S15,
       textAlign: "left",
       fontFamily:Fonts.Regular,
     },
     floatingButton:{
       borderRadius: radiusS,
-      backgroundColor: "#db0011",
-      //alignSelf:"center",
-     // marginTop:7,
-      width:actuatedNormalize(56),
-      height: actuatedNormalize(56),
+      width:S56,
+      height:S56,
       overflow: "hidden",
       flexDirection: "row",
       alignItems: "center",
@@ -474,7 +471,6 @@ typefilledElementsinitials: {
     imageButton:{
       borderRadius: radiusS,
         borderStyle: "solid",
-        borderColor: "#000",
         borderWidth: 1,
         alignSelf:"center",
       
@@ -488,10 +484,8 @@ typefilledElementsinitials: {
       },
        segmenttabStyle:{
             borderWidth:0,
-            backgroundColor: "rgba(118, 118, 118, 0.2)",
           },
           segmentactiveTabStyle:{
-            shadowColor: "rgba(0, 0, 0, 0.15)",
             shadowOffset: {
             width: 0,
             height: S2
@@ -500,17 +494,15 @@ typefilledElementsinitials: {
             elevation: 6,
             shadowOpacity: 1,
             borderRadius: radiusS,
-            backgroundColor: "#fff",
             paddingVertical: spacingXS,
             paddingHorizontal: spacingS,
             alignItems: "center",
             justifyContent: "center",
           },
           segmenttabTextStyle:{
-            fontSize: actuatedNormalize(14),
-            lineHeight: actuatedNormalize(18),
+            fontSize:S14,
+            lineHeight: S18,
             fontFamily:Fonts.Regular,
-            color: "#000",
             textAlign: "center"
           },
           tooltipContainerStyle: {
@@ -539,9 +531,9 @@ typefilledElementsinitials: {
           textAlign: "left"
       },
       snackbarContainer:{
-      backgroundColor: "#e5f2f2",
+     // backgroundColor: "#e5f2f2",
       borderStyle: "solid",
-      borderColor: "#99cecc",
+     // borderColor: "#99cecc",
       borderWidth: 1,
       margin:S10,
       paddingVertical: spacingS,
@@ -557,7 +549,6 @@ typefilledElementsinitials: {
       },
       snackBarLabel:{
         alignSelf: "stretch",
-        color: "#000",
         textAlign: "left",
         fontFamily:Fonts.Regular,
         lineHeight: S18,
@@ -565,8 +556,6 @@ typefilledElementsinitials: {
       },
       AccordianMenuContainer:{
         borderRadius: radiusS,
-        backgroundColor: "#f2f3f4",
-       // width: "100%",
         paddingHorizontal: spacingS,
         paddingVertical: spacingXS,
         marginHorizontal:S10,
@@ -581,7 +570,6 @@ typefilledElementsinitials: {
         fontSize: S14,
         lineHeight:S18,
         fontFamily:Fonts.Regular,
-        color: "#000",
         textAlign: "left",
         display: "flex",
         marginLeft: spacingXS,
@@ -591,7 +579,6 @@ typefilledElementsinitials: {
         alignSelf: "center"
       },
       AccordianSubMenuConatiner:{
-        backgroundColor: "#f2f3f4",
         paddingLeft: spacingL,
         paddingTop: spacingS,
         paddingRight: spacingXS,
@@ -602,7 +589,6 @@ typefilledElementsinitials: {
         fontSize:S12,
         lineHeight: S17,
         fontFamily:Fonts.Regular,
-        color: "#000",
         textAlign: "left"
 
       },
@@ -624,7 +610,7 @@ typefilledElementsinitials: {
      marginLeft:120
   },
   welcomeBack: {
-      fontWeight: S700,
+     fontWeight: S700,
       color: "#000",
       lineHeight: S21,
       fontSize: spacingS,
@@ -732,7 +718,6 @@ typefilledElementsinitials: {
         width: "31%",
         height: S4,
         marginTop:S5,
-        backgroundColor: "#FFFFFF80",
         marginHorizontal:S3,
         borderRadius:S5
       },
@@ -741,7 +726,7 @@ typefilledElementsinitials: {
         height: S5,
         marginTop: S10,
         right: S17,
-        backgroundColor: "#DFDFDE",
+        //backgroundColor: "#DFDFDE",
         marginHorizontal: S3
       },
       pwdtextContainer: {
@@ -755,23 +740,23 @@ typefilledElementsinitials: {
         height: S5,
         flexDirection: 'row',
         width: '100%',
-        marginTop: S8,
+        marginTop: spacingXS,
       },
       pwdlabel2: {
         fontSize:S12,
-        color: "#626469",
+       // color: "#626469",
          lineHeight:S18,
       },
       pwdlabel: {
         fontSize:S12,
-        color: '#000000',
+        //color: '#000000',
         lineHeight:S18,
         letterSpacing: 0
       },
       pwdpostlabel2: {
         fontSize: S14,
         marginLeft: S10,
-        color: "#5C6F7C"
+        //color: "#5C6F7C"
       },
       
      
