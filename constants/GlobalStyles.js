@@ -526,7 +526,11 @@ typefilledElementsinitials: {
             elevation: spacingXS,
             shadowOpacity: actuatedNormalize(1),
             // marginHorizontal:16
-        },        
+        },   
+        tooltipArrowSize:{
+          width: spacingS, 
+          height: spacingXS
+        },     
         tooltipText: {
           fontSize: actuatedNormalize(14),
           lineHeight: actuatedNormalize(22),
