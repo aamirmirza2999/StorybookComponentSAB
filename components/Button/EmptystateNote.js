@@ -3,26 +3,27 @@ import {Image, StyleSheet, Text, View} from "react-native";
 import { Warning } from "../../constants/SvgLocations";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from "./TextComponent";
+import { useTheme } from "../../constants/Theme/ThemeProvider";
 const EmptystateNote = () => {
-  	
+	const {theme, toggleTheme} = useTheme();
   	return (
         <>
-    		<View style={[globalStyles.emptystate]}>
+    		<View style={[globalStyles.emptystate,{backgroundColor: theme.primarycolor4}]}>
                 <View style={[globalStyles.primarySpaceBlock]}>
                 <View  style={[globalStyles.ragIcon]} > 
                 <Warning/>
                 </View>
       			<View style={[globalStyles.content, globalStyles.wrapperFlexBox]}>
         				<View style={globalStyles.title}>
-          					<TextComponent style={[globalStyles.welcomeBack, globalStyles.actionTypo]}>Headline</TextComponent>
+          					<TextComponent style={[globalStyles.welcomeBack, globalStyles.actionTypo,{color:theme.primarycolor}]}>Headline</TextComponent>
         				</View>
-        				<Text style={[globalStyles.enterYourUsername, globalStyles.actionTypo]}>Content to come here in as many lines as required.</Text>
+        				<Text style={[globalStyles.enterYourUsername, globalStyles.actionTypo,{color: theme.primarycolor2_100}]}>Content to come here in as many lines as required.</Text>
       			</View>
       			<View style={globalStyles.mainbutton}>
-        				<View style={[globalStyles.primary, globalStyles.wrapperFlexBox]}>
+        				<View style={[globalStyles.primary, globalStyles.wrapperFlexBox,{backgroundColor: theme.primarycolor3}]}>
           					<View style={[globalStyles.wrapper, globalStyles.wrapperFlexBox]}>
             						<View style={[globalStyles.wrapper1, globalStyles.wrapperFlexBox]}>
-              							<Text style={[globalStyles.action, globalStyles.actionTypo]}>Action</Text>
+              							<TextComponent style={[globalStyles.action, globalStyles.actionTypo,{color: theme.primarycolor4}]}>Action</TextComponent>
             						</View>
           					</View>
         				</View>

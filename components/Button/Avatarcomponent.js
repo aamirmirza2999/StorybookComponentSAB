@@ -36,7 +36,7 @@ import TextComponent from './TextComponent';
   <SplitIcon/>
    </View>:null}
    {props.avatarassbene? 
-   <View style={globalStyles.Addbeneavatar}>
+   <View style={[globalStyles.Addbeneavatar,{backgroundColor:theme.primarycolor3  }]}>
    <AddBenefiary/>
    </View> : null}
    {props.avataredit? 
@@ -45,15 +45,15 @@ import TextComponent from './TextComponent';
    </View> : null }
    {props.avatarname? 
    <View style={{flexDirection:"row",}}>
-   <View style={[globalStyles.typefilledElementsinitials,]}>
+   <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
    {/* <Image style={globalStyles.path3Icon} resizeMode="cover" source="Path 3.png" /> */}
-      			<TextComponent style={globalStyles.jm}>JM</TextComponent>
+      			<TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>JM</TextComponent>
     		</View>
-        <View style={[globalStyles.typefilledElementsinitials,{marginLeft:65}]}>
-      			<TextComponent style={globalStyles.jm2}>JM</TextComponent>
+        <View style={[globalStyles.typefilledElementsinitials,{marginLeft:65,backgroundColor: "#fbe5e7"}]}>
+      			<TextComponent style={[globalStyles.jm2,{color:theme.primarycolor3}]}>JM</TextComponent>
     		</View>
-       <View style={[globalStyles.typefilledElementsinitials,{marginLeft:125}]}>
-      			<TextComponent style={globalStyles.jm3}>JM</TextComponent>
+       <View style={[globalStyles.typefilledElementsinitials,{marginLeft:125,  backgroundColor: "#fbe5e7"}]}>
+      			<TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>JM</TextComponent>
     		</View>
 </View>  
 :null}

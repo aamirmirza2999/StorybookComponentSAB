@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S700,S68, S11, S13, S16
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S700,S68, S11, S13, S16,progressIndicatorStep2Width, S100, S32, S20
 } from "./Size";
 
 
@@ -242,11 +242,9 @@ togglelabel:{
   },
   //Radio button
   iconOverflowContainerRadio1: {
-    backgroundColor: '#FFFFFF',
     marginTop:spacingXS,
     borderRadius: 5,
     shadowColor: "#40d3d1",
-    borderColor:"green",
     width:"80%",
     borderWidth:1,
     marginHorizontal: spacingS,
@@ -255,11 +253,9 @@ togglelabel:{
     
   },
   iconOverflowContainerRadio2: {
-    backgroundColor: '#FFFFFF',
     // marginTop:20,
     borderRadius: 5,
     shadowColor: "#40d3d1",
-    borderColor:"green",
     width:"80%",
     borderWidth:1,
    paddingBottom:spacingXS,
@@ -268,11 +264,10 @@ togglelabel:{
     
   },
   iconOverflowContainerRadio3: {
-    backgroundColor: '#FFFFFF',
+    // backgroundColor: '#FFFFFF',
     marginTop:spacingXS,
      borderRadius: 5,
     shadowColor: "#40d3d1",
-    borderColor:"green",
     width:"45%",
     borderWidth:1,
     // marginHorizontal: inputVertical,
@@ -400,47 +395,42 @@ togglelabel:{
       zIndex: 0
   },
   avatar: {
-    width: 32,
-    height: 32,
+    width: S32,
+    height: S32,
     paddingHorizontal:spacingS,
 },
   jm: {
-    fontSize: 20,
-    lineHeight: 25,
+    fontSize: S20,
+    lineHeight: spacingM,
     fontWeight: S700,
     fontFamily: Fonts.Bold,
-    color: "#db0011",
     textAlign: "left",
     zIndex: 1
 },
 
 jm2:{
-  fontSize: 14,
-  lineHeight: 18,
+  fontSize: S14,
+  lineHeight: S18,
   fontFamily: Fonts.Bold,
-  color: "#db0011",
   textAlign: "left",
   zIndex: 1
 },
 jm3:{
-  fontSize: 12,
-lineHeight: 16,
+  fontSize: S12,
+lineHeight: spacingS,
 fontFamily: Fonts.Bold,
-color: "#db0011",
 textAlign: "left"
 },
 typefilledElementsinitials: {
-  borderRadius: 100,
-  backgroundColor: "#fbe5e7",
+  borderRadius: S100,
   flex: 1,
-  padding: 16,
+  padding: spacingS,
  position: "absolute",
  
 },
 
   Addbeneavatar: {
-  borderRadius: 8,
-  backgroundColor: "#DB0011",
+  borderRadius: radiusS,
   overflow: "hidden",
   flexDirection: "row",
   alignItems: "center",
@@ -451,8 +441,8 @@ typefilledElementsinitials: {
   top:10
   },
   splitavatar:{
-    borderRadius: 8,
-  borderColor: "#000000",
+    borderRadius: radiusS,
+  // borderColor: "#000000",
   borderWidth:1,
   overflow: "hidden",
   flexDirection: "row",
@@ -616,12 +606,12 @@ typefilledElementsinitials: {
   ragIcon: {
       width: S68,
       height: S68,
-      overflow: "hidden",
-     marginLeft:120
+   justifyContent:"center",
+   alignItems:"center",
+   marginHorizontal:120
   },
   welcomeBack: {
       fontWeight: S700,
-      color: "#000",
       lineHeight: S21,
       fontSize: spacingS,
       fontFamily: Fonts.Regular,
@@ -634,7 +624,6 @@ typefilledElementsinitials: {
   enterYourUsername: {
       fontSize: S14,
       lineHeight: S18,
-      color: "#767676",
       marginTop: spacingXS,
       alignSelf: "stretch",
       fontFamily: Fonts.Regular,
@@ -645,7 +634,6 @@ typefilledElementsinitials: {
       alignSelf: "stretch",
   },
   action: {
-      color: "#fff",
       lineHeight: S21,
       fontSize: S16,
       fontFamily: Fonts.Regular,
@@ -658,7 +646,6 @@ typefilledElementsinitials: {
       flexDirection: "row"
   },
   primary: {
-      backgroundColor: "#db0011",
       paddingTop: S11,
       paddingBottom: S13,
       flexDirection: "row",
@@ -672,11 +659,9 @@ typefilledElementsinitials: {
       marginTop: spacingS,
   },
   emptystate: {
-      backgroundColor: "#fff",
       paddingVertical: spacingM,
       alignItems: "center",
       paddingHorizontal: spacingS,
-      overflow: "hidden",
       width: "100%",
       borderRadius: spacingXS,
       paddingHorizontal: spacingS,

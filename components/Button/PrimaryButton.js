@@ -43,7 +43,7 @@ const PrimaryButton = props => {
       style={[
         styles.PrimaryButtonContainer,
         props.PrimaryButtonContainer,
-        {backgroundColor: props.disabled ? theme.SecondaryColor3 : props.PrimaryButtonBgClr},
+        {backgroundColor: !props.disabled ? theme.primarycolor3: props.PrimaryButtonBgClr},
         props.PrimaryButtonContainer,
       ]}
       onPress={
