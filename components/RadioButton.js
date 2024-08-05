@@ -18,6 +18,7 @@ import {
     RadioSelect,
     RadioUnSelect,
   } from '../constants/SvgLocations';
+  import Fonts from '../constants/CommonImport';
   // import { ComponentBottomPadding, TextInputBottom ,ScreenToporBottom,ScreenLeftorRight,inputVertical} from "./Size";
   const RadioButton = props => {
     const {theme, toggleTheme} = useTheme();
@@ -70,7 +71,7 @@ import {
         text="Yes"
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
-        textStyle={{ fontFamily: "JosefinSans-Regular",textDecorationLine: 'none' }}
+        textStyle={{ fontFamily:'Regular',textDecorationLine: 'none' }}
         isChecked={selected === 'radio1'}
         onPress={() => handlePress('radio1')}      
         iconComponent={selected === 'radio1' ? <RadioSelect/> : <RadioUnSelect/>}
@@ -85,7 +86,7 @@ import {
         text="No"
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
-        textStyle={{ fontFamily: "JosefinSans-Regular",textDecorationLine: 'none' }}
+        textStyle={{ fontFamily: 'Regular',textDecorationLine: 'none' }}
         isChecked={selected === 'radio2'}
         onPress={() => handlePress('radio2')}        
         iconComponent={selected === 'radio2' ? <RadioSelect/> : <RadioUnSelect/>}
@@ -103,7 +104,7 @@ import {
         text="Option1"
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
-        textStyle={{ fontFamily: "JosefinSans-Regular",textDecorationLine: 'none' }}
+        textStyle={{ fontFamily: "Regular",textDecorationLine: 'none' }}
         isChecked={selectedd === 'radio1'}
         onPress={() => handlePress1('radio1')}   
         iconComponent={selectedd === 'radio1' ?  <RadioSelect/> : <RadioUnSelect/>}
@@ -118,7 +119,7 @@ import {
         text="Option2"
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
-        textStyle={{ fontFamily: "JosefinSans-Regular",textDecorationLine: 'none' }}
+        textStyle={{ fontFamily: "Regular",textDecorationLine: 'none' }}
         isChecked={selectedd === 'radio2'}
         onPress={() => handlePress1('radio2')}   
         iconComponent={selectedd === 'radio2' ?  <RadioSelect/> : <RadioUnSelect/>}

@@ -203,7 +203,7 @@ textAlign: "left"
     width:actuatedNormalize(40),
     height: actuatedNormalize(3),
     borderRadius: actuatedNormalize(100),
-    backgroundColor: '#db0011',
+    // backgroundColor: '#db0011',
   }, 
 
   inactiveDot: {
@@ -215,7 +215,7 @@ textAlign: "left"
     width:actuatedNormalize(16),
     height: actuatedNormalize(3),
     borderRadius: actuatedNormalize(100),
-    backgroundColor: '#000000',
+    // backgroundColor: '#000000',
   },
   // paginationContainer: {
 //   paddingVertical: 10,
@@ -244,7 +244,7 @@ togglelabel:{
   iconOverflowContainerRadio1: {
     marginTop:spacingXS,
     borderRadius: 5,
-    shadowColor: "#40d3d1",
+    // shadowColor: "#40d3d1",
     width:"80%",
     borderWidth:1,
     marginHorizontal: spacingS,
@@ -255,7 +255,7 @@ togglelabel:{
   iconOverflowContainerRadio2: {
     // marginTop:20,
     borderRadius: 5,
-    shadowColor: "#40d3d1",
+    // shadowColor: "#40d3d1",
     width:"80%",
     borderWidth:1,
    paddingBottom:spacingXS,
@@ -267,7 +267,7 @@ togglelabel:{
     // backgroundColor: '#FFFFFF',
     marginTop:spacingXS,
      borderRadius: 5,
-    shadowColor: "#40d3d1",
+    // shadowColor: "#40d3d1",
     width:"45%",
     borderWidth:1,
     // marginHorizontal: inputVertical,
@@ -283,7 +283,7 @@ togglelabel:{
   Radiobtnerrmsg:{
     marginHorizontal: spacingS,
     paddingBottom:spacingXS,
-     color: 'red'
+    //  color: 'red'
   },      
   listButtonSmall:{
     borderRadius: radiusS,

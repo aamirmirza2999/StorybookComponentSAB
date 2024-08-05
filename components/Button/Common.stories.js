@@ -279,8 +279,7 @@ ToggleComponentStory.args = {
 export const RadioComponentStory = args => <RadioButton {...args} />;
 RadioComponentStory.args = {
   value: true,
- 
-     onPress:null,
+   onPress:null,
 
 };
 export const AvatarComponentStory = args => <Avatarcomponent {...args} />;

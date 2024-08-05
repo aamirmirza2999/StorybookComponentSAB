@@ -47,8 +47,8 @@ const Paginator = (props) => {
       <Pagination
         dotsLength={props.data.length}
         activeDotIndex={activeIndex}
-        dotStyle={[globalStyles.activeDot,{color: theme.primaryblack}]}
-        inactiveDotStyle={[globalStyles.inactiveDot,{color: theme.primaryblack}]}
+        dotStyle={[globalStyles.activeDot,{backgroundColor: theme.primarycolor}]}
+        inactiveDotStyle={[globalStyles.inactiveDot,{backgroundColor: theme.primarycolor}]}
         inactiveDotOpacity={0.4}
         inactiveDotScale={1}
         containerStyle={globalStyles.paginationContainer}
@@ -67,8 +67,8 @@ const Paginator = (props) => {
       <Pagination
         dotsLength={props.subdata.length}
         activeDotIndex={activeIndex}
-        dotStyle={[globalStyles.subactiveDot,{color: theme.primaryred}]}
-        inactiveDotStyle={[globalStyles.subinactiveDot,{color: theme.primaryblack}]}
+        dotStyle={[globalStyles.subactiveDot,{backgroundColor: theme.primarycolor3}]}
+        inactiveDotStyle={[globalStyles.subinactiveDot,{backgroundColor: theme.primarycolor}]}
         inactiveDotOpacity={0.4}
         inactiveDotScale={1}
         containerStyle={globalStyles.paginationContainer}
