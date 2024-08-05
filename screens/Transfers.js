@@ -29,7 +29,6 @@ import BottomButton from '../components/Button/BottomButton';
 import CheckboxComponent from '../components/Button/CheckboxComponent';
 import { spacingXS } from '../constants/Size';
 import BottomSheetComponent from '../components/Button/BottomSheetComponent';
- import ProgressIndicator from '../components/Button/ProgressIndicator';
 import ListComponent from '../components/Button/ListComponent';
 import NotificationBadge from '../components/Button/NotificationBadge';
 import SvgIconList from '../constants/SvgIconList';
@@ -451,13 +450,7 @@ const Transfers = props => {
           </View>
         </View>
         
-        <ProgressIndicator
-            ProgressIndicator={true}
-            currentStep={2}            
-            currentStepColor={'#db0011'}
-            RemainingStepColor={'#eee'}
-          />
-        
+      
 
      
       </PrimaryBgComponent>

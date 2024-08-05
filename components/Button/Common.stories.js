@@ -18,7 +18,6 @@ import Divider from './Divider';
 import MainButton from '../NewButton/MainButton';
 import SvgIconList from '../../constants/SvgIconList';
 import Paginator from './Paginator';
-import ProgressIndicator from './ProgressIndicator';
 import Toggleswitch from './Toggleswitch';
 import RadioButton from '../RadioButton';
 import Avatarcomponent from './Avatarcomponent';
@@ -26,6 +25,7 @@ import TooltipComponent from './TooltipComponent';
 import SnackBar from '../SnackBar/SnackBar';
 import AccordianMenu from '../Accordian/AccordianMenu';
 import TabsComponent from './TabsComponent';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 import { Close,Success,GreyInfo} from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
@@ -345,14 +345,6 @@ height={actuatedNormalize(16)}
   onPress:null
 };
 
-export const ProgressBarIndicator = args => <ProgressIndicator {...args} />;
-ProgressBarIndicator.args = {
-  ProgressIndicator: true,
-  currentStep: 2,  
-  currentStepColor: '#db0011',
-  RemainingStepColor: '#eee',
-};
-
 export const AccordianStory = args => <AccordianMenu {...args} />;
 AccordianStory.args = {
  HeaderText:"Home",
@@ -474,4 +466,18 @@ MainHeaderStory.args = {
 };
 MainHeaderStory.argTypes = {
   bgColor: {control: 'color'},
+};
+
+export const ProgressBarStory = args => <ProgressBar {...args} />;
+ProgressBarStory.args = {
+  unfilledColor:"#eee",
+  color:"#db0011",
+  progress:0.6,
+  testID:"transferhis_progressbar",
+  accessibilityLabel:"transferhis_progressbar"
+};
+ProgressBarStory.argTypes = {
+  color:{control: 'color'},
+  unfilledColor:{control: 'color'},
+  progress: {control: 'number'},
 };
