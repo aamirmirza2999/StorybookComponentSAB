@@ -29,10 +29,10 @@ const MainButton = (props) => {
 		  tabsContainerStyle={{
 		 marginHorizontal:actuatedNormalize(10),
 		  }}
-		  tabStyle={globalStyles.segmenttabStyle}
-		  activeTabStyle={globalStyles.segmentactiveTabStyle}
-		  tabTextStyle={globalStyles.segmenttabTextStyle}
-		  activeTabTextStyle={globalStyles.segmenttabTextStyle}
+		  tabStyle={[globalStyles.segmenttabStyle,{ backgroundColor: theme.primarycolor2_20,}]}
+		  activeTabStyle={[globalStyles.segmentactiveTabStyle,{shadowColor: "rgba(0, 0, 0, 0.15)",backgroundColor:theme.primarycolor4,}]}
+		  tabTextStyle={[globalStyles.segmenttabTextStyle,{color: "#000"}]}
+		  activeTabTextStyle={[globalStyles.segmenttabTextStyle,{color: "#000"}]}
           values={props.data}
           selectedIndex={selectedIndex}
           onTabPress={handleIndexChange}
@@ -49,8 +49,8 @@ const MainButton = (props) => {
 						onPress={props.onPress}
 						disabled={props.disabled}
 					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
-                  		 <TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
+                  		 <TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
 					</Component>:null}
 			
@@ -65,8 +65,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarywhite},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
+					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -81,8 +81,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
-					<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
+					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -97,8 +97,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarywhite},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
+					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -113,8 +113,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryblack,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
-					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryblack},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
+					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -129,8 +129,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryred,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
-					<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryred},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor3,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
+					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor3},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -144,8 +144,8 @@ const MainButton = (props) => {
 						onPress={props.onPress}
 						disabled={props.disabled}
 					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
-                  		 <TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
+                  		 <TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
 					</Component>:null}
 
@@ -160,8 +160,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryblack,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
-					<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
+					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -229,13 +229,16 @@ const MainButton = (props) => {
 							<View
 							style={{
 								flexDirection: "row",
-								alignItems:"center"
+								alignItems:"center",
 							}}
 							>
 								<TextComponent
-								style={[props.linkType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primaryred}]}
+								style={[props.linkType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
 								>{props.label}</TextComponent>
 							<RightRedArrow1
+							style={{
+								marginTop:actuatedNormalize(2)
+							}}
 							width={actuatedNormalize(24)}
 							height={actuatedNormalize(24)}
 							></RightRedArrow1>
@@ -256,7 +259,7 @@ const MainButton = (props) => {
 						}
 						onPress={props.onPress}>
 						<View
-						style={[globalStyles.floatingButton]}>
+						style={[globalStyles.floatingButton,{ backgroundColor:theme.primarycolor3,}]}>
 							<AddBenefiary
 							width={actuatedNormalize(32)}
 							height={actuatedNormalize(32)}
@@ -282,8 +285,8 @@ const MainButton = (props) => {
 							}
 							onPress={props.onPress}>
 						
-						<View style={[{	backgroundColor:props.disabled?theme.primarygray30:theme.primaryred,}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge,]}>			
-						<TextComponent style={[{color: theme.primarywhite},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+						<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge,]}>			
+						<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 						</View>
 							</Component>:null}
 
@@ -299,15 +302,15 @@ const MainButton = (props) => {
 								}
 								onPress={props.onPress}>
 							
-							<View style={[{	backgroundColor:theme.textwhite,borderColor:props.disabled?theme.primarygray30: theme.primaryblack,},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
-						<TextComponent style={[{color:props.disabled?theme.primarygray30: theme.primaryblack},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
+						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 					</View>
 					</Component>:null}
 				
 				{props.enableImageButton?				
 				<Component>
 					<View
-					style={globalStyles.imageButton}
+					style={[globalStyles.imageButton,{borderColor: "#000",}]}
 					>
 						<Split
 						width={actuatedNormalize(24)}
