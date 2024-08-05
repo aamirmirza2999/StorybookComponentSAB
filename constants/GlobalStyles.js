@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2,S700, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S8,S7,S9,S15,S68, S11, S13, S16, S56
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2,S700, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S32,S7,S9,S15,S68, S11, S13, S16, S56,S20,S100
 } from "./Size";
 
 

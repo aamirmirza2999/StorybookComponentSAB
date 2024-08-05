@@ -299,6 +299,9 @@ export const EmptyStateComponentStory = args => <EmptystateNote {...args} />;
 EmptyStateComponentStory.args = {
   value: true,
   onPress:null,
+  Headtext:"Header",
+  SubText:"Content to come here in as many lines as required",
+  Action:"Action"
   
 
 };

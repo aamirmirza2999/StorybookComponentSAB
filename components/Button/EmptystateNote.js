@@ -4,7 +4,7 @@ import { Warning } from "../../constants/SvgLocations";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from "./TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
-const EmptystateNote = () => {
+const EmptystateNote = (props) => {
 	const {theme, toggleTheme} = useTheme();
   	return (
         <>
@@ -15,15 +15,15 @@ const EmptystateNote = () => {
                 </View>
       			<View style={[globalStyles.content, globalStyles.wrapperFlexBox]}>
         				<View style={globalStyles.title}>
-          					<TextComponent style={[globalStyles.welcomeBack, globalStyles.actionTypo,{color:theme.primarycolor}]}>Headline</TextComponent>
+          					<TextComponent style={[globalStyles.welcomeBack, globalStyles.actionTypo,{color:theme.primarycolor}]}>{props.Headtext}</TextComponent>
         				</View>
-        				<Text style={[globalStyles.enterYourUsername, globalStyles.actionTypo,{color: theme.primarycolor2_100}]}>Content to come here in as many lines as required.</Text>
+        				<Text style={[globalStyles.enterYourUsername, globalStyles.actionTypo,{color: theme.primarycolor2_100}]}>{props.SubText}.</Text>
       			</View>
       			<View style={globalStyles.mainbutton}>
         				<View style={[globalStyles.primary, globalStyles.wrapperFlexBox,{backgroundColor: theme.primarycolor3}]}>
           					<View style={[globalStyles.wrapper, globalStyles.wrapperFlexBox]}>
             						<View style={[globalStyles.wrapper1, globalStyles.wrapperFlexBox]}>
-              							<TextComponent style={[globalStyles.action, globalStyles.actionTypo,{color: theme.primarycolor4}]}>Action</TextComponent>
+              							<TextComponent style={[globalStyles.action, globalStyles.actionTypo,{color: theme.primarycolor4}]}>{props.Action}</TextComponent>
             						</View>
           					</View>
         				</View>
