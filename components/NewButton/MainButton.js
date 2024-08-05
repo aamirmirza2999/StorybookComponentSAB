@@ -5,7 +5,7 @@ import TextComponent from "../Button/TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import SvgIconList from "../../constants/SvgIconList";
-import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary,RightRedArrow1, Split } from "../../constants/SvgLocations";
+import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary,RightRedArrow1, Split, GreyInfo } from "../../constants/SvgLocations";
 import SegmentedControlTab from "react-native-segmented-control-tab";
 
 const MainButton = (props) => {
@@ -289,6 +289,38 @@ const MainButton = (props) => {
 						<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 						</View>
 							</Component>:null}
+
+			{/* Chips */}
+				{props.chips?
+				<Component
+					style={{
+						marginHorizontal:actuatedNormalize(16),
+						marginVertical:actuatedNormalize(16)
+					}}
+						testID={props.testID ? props.testID : 'chips'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'chips'
+						}
+					onPress={props.onPress}>
+					{props.chipsType==="large"||props.chipsType==="small"?
+						<View style={[{	backgroundColor:props.chipsBackgroudColor,borderColor:props.chipsBorderColor,alignSelf:"flex-start"},props.chipsType==="large"?props.chipsButtonLarge:props.chipsButtonSmall,props.chipsType==="large"?globalStyles.chipsButtonLarge:globalStyles.chipsButtonSmall]}>			
+                  		 <TextComponent style={[{color: theme.primarycolor},props.chipsType==="large"?props.chipsTextLarge:props.chipsTextSmall,props.chipsType==="large"?globalStyles.chipsTextLarge:globalStyles.chipsTextSmall]}>{props.label}</TextComponent>
+        			</View>
+							
+					:
+						<View
+						style={{
+							flexDirection:"row",
+							alignItems:"center",
+							justifyContent:"center"
+						}}
+						>
+						{props.Icon}
+						<TextComponent style={[globalStyles.chipsTextSmall,{color: theme.primarycolor}]}>{props.label}</TextComponent>
+						</View>
+					}
+						</Component>	:null}
+
 
 					{props.enableSecondary?		
 

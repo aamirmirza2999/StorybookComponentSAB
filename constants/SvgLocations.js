@@ -42,7 +42,7 @@ export {default as LiveChat} from '../assets/livechat.svg';
 
 export {default as Check} from '../assets/check.svg';
 export {default as Cross} from '../assets/cross.svg';
-
+export {default as GreyInfo} from '../assets/infoGrey.svg';
 
 
 
