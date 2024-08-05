@@ -775,8 +775,48 @@ typefilledElementsinitials: {
         fontFamily: Fonts.Regular,
         textAlign: "left",
         marginLeft: spacingXXS
-      }
-
+      },
+//............
+wrapper: {
+  borderRadius: 100,
+  borderStyle: "solid",
+  borderColor:" #00847f",
+  borderWidth: 1,
+  width: 20,
+  height: 20,
+  marginHorizontal:16,
+  bottom:-20
+  },
+  wrapper1: {
+    backgroundColor: "#00847f",
+    width: 14,
+    height: 14,
+    borderRadius: 100
+    },
+    wrappers: {
+    borderStyle: "solid",
+    borderColor: "#00847f",
+    borderWidth: 1,
+    width: 20,
+    height: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 100,
+    flexDirection: "row"
+    },
+    statechecked: {
+   bottom:-25,
+   left:16
+    },
+    wrapper2: {
+      borderRadius: 100,
+      backgroundColor:" rgba(118, 118, 118, 0.3)",
+      borderStyle: "solid",
+      borderColor: "#767676",
+      borderWidth: 1,
+      width: 20,
+      height: 20
+      },
       
      
  }

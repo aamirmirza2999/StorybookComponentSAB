@@ -66,9 +66,9 @@ import {
        <View style={[globalStyles.iconOverflowContainerRadio1,{backgroundColor:theme.primarycolor4,borderColor:theme.secondarycolor10,}]}>
      <BouncyCheckbox
         size={25}
-        fillColor={theme.primarywhite}
-        unfillColor={theme.primarywhite}
-        text="Yes"
+        fillColor={theme.primarycolor4}
+        unfillColor={theme.primarycolor4}
+        text={props.textlabel}
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
         textStyle={{ fontFamily:'Regular',textDecorationLine: 'none' }}
@@ -81,9 +81,9 @@ import {
 
       <BouncyCheckbox
         size={25}
-        fillColor={theme.primarywhite}
-        unfillColor={theme.primarywhite}
-        text="No"
+        fillColor={theme.primarycolor4}
+        unfillColor={theme.primarycolor4}
+        text={props.textlabel2}
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
         textStyle={{ fontFamily: 'Regular',textDecorationLine: 'none' }}
@@ -92,16 +92,16 @@ import {
         iconComponent={selected === 'radio2' ? <RadioSelect/> : <RadioUnSelect/>}
       />
     </View> 
-    {errorMsg ? <TextComponent style={{marginHorizontal: 16, color: 'red' }}>{errorMsg}</TextComponent> : null}
+    {errorMsg ? <TextComponent style={{marginHorizontal: 16, color: 'red' }}>{props.errorMsg}</TextComponent> : null}
     </View>   
     <View style={[globalStyles.Radiobtnv2]}>
     <View style={[globalStyles.iconOverflowContainerRadio3,{backgroundColor:theme.primarycolor4,borderColor:theme.secondarycolor10,}]}>
 
      <BouncyCheckbox
         size={25}
-        fillColor={theme.primarywhite}
-        unfillColor={theme.primarywhite}
-        text="Option1"
+        fillColor={theme.primarycolor4}
+        unfillColor={theme.primarycolor4}
+        text={props.textlabel}
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
         textStyle={{ fontFamily: "Regular",textDecorationLine: 'none' }}
@@ -114,9 +114,9 @@ import {
 <View style={[globalStyles.iconOverflowContainerRadio3,{backgroundColor:theme.primarycolor4,borderColor:theme.secondarycolor10,}]}>
       <BouncyCheckbox
         size={25}
-        fillColor={theme.primarywhite}
-        unfillColor={theme.primarywhite}
-        text="Option2"
+        fillColor={theme.primarycolor4}
+        unfillColor={theme.primarycolor4}
+        text={props.textlabel2}
         iconStyle={{ borderColor: "white" }}
         innerIconStyle={{ borderWidth: 2 }}
         textStyle={{ fontFamily: "Regular",textDecorationLine: 'none' }}
@@ -125,8 +125,18 @@ import {
         iconComponent={selectedd === 'radio2' ?  <RadioSelect/> : <RadioUnSelect/>}
       />
     </View> 
-    </View>   
-   
+    </View> 
+    <View style={{flexDirection:"column"}}> 
+   <View style={[globalStyles.wrapper]}/>
+   <View style={[globalStyles.statechecked]}>
+<View style={[globalStyles.wrappers]}>
+<View style={[globalStyles.wrapper1]} />
+</View>
+</View>
+<View style={[globalStyles.statechecked]}>
+<View style={[globalStyles.wrapper2]} />
+</View>
+</View>
       </>
     );
   };

@@ -49,6 +49,7 @@ const subdata = [
   ];
 
   
+  
 export default {
   title: 'components/EntireComponents',
 };
@@ -280,6 +281,9 @@ export const RadioComponentStory = args => <RadioButton {...args} />;
 RadioComponentStory.args = {
   value: true,
    onPress:null,
+   errorMsg:"Please select a value to continue",
+   textlabel:"Yes",
+   textlabel2:"No"
 
 };
 export const AvatarComponentStory = args => <Avatarcomponent {...args} />;
