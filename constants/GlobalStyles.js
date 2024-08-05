@@ -743,6 +743,40 @@ typefilledElementsinitials: {
         marginLeft: S10,
         //color: "#5C6F7C"
       },
+      chipsButtonLarge:{
+        borderRadius: radiusXS,
+        borderStyle: "solid",
+        borderWidth: 0.5,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: spacingXS
+      },
+      chipsTextLarge:{
+        fontSize: S14,
+        lineHeight: S18,
+        fontFamily: Fonts.Regular,
+        textAlign: "left",
+        marginLeft: spacingXXS
+      },
+      chipsButtonSmall:{
+        borderRadius: radiusXS,
+        borderStyle: "solid",
+        borderWidth: 0.5,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingHorizontal: spacingXS,
+        paddingVertical: S2
+      },
+      chipsTextSmall:{
+        fontSize: S12,
+        lineHeight: S16,
+        fontFamily: Fonts.Regular,
+        textAlign: "left",
+        marginLeft: spacingXXS
+      }
+
       
      
  }

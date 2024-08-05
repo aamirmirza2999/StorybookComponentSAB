@@ -27,7 +27,7 @@ import SnackBar from '../SnackBar/SnackBar';
 import AccordianMenu from '../Accordian/AccordianMenu';
 import TabsComponent from './TabsComponent';
 
-import { Close,Success } from '../../constants/SvgLocations';
+import { Close,Success,GreyInfo} from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import PasswordStrength from '../PasswordStrength/PasswordStrength';
 import EmptystateNote from './EmptystateNote';
@@ -317,11 +317,15 @@ MainButtonComponentStory.args = {
  preloginBlackButton:false,
  disabled:false,
  quickActionButton:false,
- Icon:<SvgIconList
-                        icon="AccountAction"
-                        width={24}
-                        height={24}
-                      />,
+//  Icon:<SvgIconList
+//                         icon="AccountAction"
+//                         width={24}
+//                         height={24}
+//                       />,
+Icon:	<GreyInfo
+width={actuatedNormalize(16)}
+height={actuatedNormalize(16)}
+/>,
   quickActionButtonLabel:"Button",
   quickActionButtonType:1,
   linkButton:false,
@@ -332,8 +336,12 @@ MainButtonComponentStory.args = {
   enableprimary:false,
   enableSecondary:false,
   enableImageButton:false,
-  segmentButton:true,
+  segmentButton:false,
   data:["First", "Second", "Third"],
+  chips:true,
+  chipsBackgroudColor:"#e5f2f2",
+  chipsBorderColor:"#99cecc",
+  chipsType:"small",//small/large/icon
   onPress:null
 };
 
