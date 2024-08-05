@@ -110,7 +110,8 @@ const TextInputComponent = props => {
         </View>
       ) : null}
 
-      <View style={{flexDirection: 'row', marginTop: spacingXS}}>
+      <View style={{flexDirection: 'row', marginTop: spacingXS, alignItems:'center',
+        justifyContent:'center'}}>
         <LinearGradient
           colors={customStyle}
           start={{x: 0, y: 0}}

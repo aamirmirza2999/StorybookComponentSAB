@@ -26,13 +26,6 @@ export const radiusL = actuatedNormalize(16)
 export const radiusXL = actuatedNormalize(24)
 
 
-// Progress Indicator Size
-
-export const progressIndicatorBarHeight = actuatedNormalize(4)
-export const progressIndicatorStep1Width = actuatedNormalize(85)
-export const progressIndicatorStep2Width = actuatedNormalize(170)
-export const progressIndicatorStep3Width = actuatedNormalize(255)
-
 //Avatar
  
 export const avatarHeight = actuatedNormalize(48)

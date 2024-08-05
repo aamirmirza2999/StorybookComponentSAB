@@ -20,6 +20,7 @@ import {
   actuatedNormalizeVertical,
 } from '../../constants/PixelScaling';
 import RBSheet from "react-native-raw-bottom-sheet";
+import BottomSheetComponent from './BottomSheetComponent';
 
 
 let IosSpecific = Platform.OS === 'ios' ?0 : 0;
@@ -37,7 +38,7 @@ class dropdownPopup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
+      modal: true,
       searchText:'',
       searchResult:undefined
     };
@@ -79,41 +80,16 @@ class dropdownPopup extends Component {
     return (
         <>
 
-          <RBSheet
-              ref={(ref) => {
-                this.RBSheetModal = ref;
-              }}
-              height={deviceHeight - actuatedNormalize(170)}
-              minClosingHeight={0}
-              animationType={"slide"}
-              openDuration={500} closeDuration={250}
-              
-              dragFromTopOnly={true}
-              closeOnDragDown={true}
-              closeOnPressMask={true}
-              closeOnPressBack={true}
-              onClose={() => {
-                this.props.handleClose()
-              }}
-              customStyles={{
-                container: {
-                  width: deviceWidth,
-                  backgroundColor:"#ffffff",
-                  borderTopLeftRadius: actuatedNormalize(20),
-                  borderTopRightRadius: actuatedNormalize(20),
-                },
-                wrapper: {
-                  backgroundColor:this.props.blurfalse?"transparent": "rgba(38, 58, 82, 0.7)",
-                },
-                draggableIcon: {
-                  backgroundColor: "#eaeaea",
-                  borderRadius: 5,
-                  height: 4,
-                  width: actuatedNormalize(42),
-                  marginTop: actuatedNormalize(15),
-                },
-              }}>
-            <ScrollView bounces={true} style={{}}>
+               <BottomSheetComponent
+
+              Show={this.state.modal}
+              panelHeight={deviceHeight - actuatedNormalize(300)}
+          bottomReached={()=>{this.props.handleClose()}}
+          BottomSheetContent={
+            <ScrollView bounces={true} 
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            style={{}}>
               <View style={{ flex: 1 ,
                 paddingBottom:actuatedNormalize(50)
                 }}>
@@ -136,9 +112,6 @@ class dropdownPopup extends Component {
                           fontFamily: Fonts.Bold,
                           color: "#000000",
                           textTransform:"capitalize"
-
-
-                         
                         }}>
                       {this.props.header}
                     </TextComponent>
@@ -224,7 +197,9 @@ class dropdownPopup extends Component {
                 </View>
               </View>
             </ScrollView>
-          </RBSheet>
+             }
+             />
+        
 
         </>
     );
