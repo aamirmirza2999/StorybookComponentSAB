@@ -122,7 +122,7 @@ TextInputComponentStory.args = {
   //color: 'blue',
   textColor: 'blue',
   isTooltiprequired: false,
-  label: 'Label',
+  label: '',
   sarlabel: '',
   //editable: false,
   isCurrencySwitch: true,

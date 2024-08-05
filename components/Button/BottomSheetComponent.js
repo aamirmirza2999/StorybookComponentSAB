@@ -26,7 +26,7 @@ const BottomSheetComponent = (props) => {
         draggable={true}
         dragOnContent={true}
         //useNativeDriver={true}
-        //height={300}
+        height={props.panelHeight}
         onClose={panelHide}
         customStyles={{
           wrapper: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   sheetContent: {
     flex: 1,
-    alignItems: 'center'
+    //alignItems: 'center'
   },
 
 });
