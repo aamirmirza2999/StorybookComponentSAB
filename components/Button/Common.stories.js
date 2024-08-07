@@ -125,6 +125,8 @@ TextInputComponentStory.args = {
   isTooltiprequired: false,
   label: '',
   sarlabel: '',
+  secureTextEntry:false,
+  isPassInput:false,
   //editable: false,
   isCurrencySwitch: true,
   //placeHolder: 'Currency',

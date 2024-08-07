@@ -4,6 +4,8 @@ export {default as SabLogo} from '../assets/SabLogo.svg';
 export {default as CloseIconNew} from '../assets/icon_close.svg';
 export {default as EyeOpen} from '../assets/eyeopen.svg';
 export {default as EyeClose} from '../assets/eyeclose.svg';
+export { default as EyeOpendark } from "../assets/eyeopendark.svg";
+export { default as EyeClosedark } from "../assets/eyeclosedark.svg";
 export {default as AddBene} from '../assets/icon_add_beneficiary.svg';
 export {default as DropdownArrow} from '../assets/dropdownarrow.svg';
 export {default as InfoIcon} from '../assets/InfoNew.svg';
@@ -43,6 +45,7 @@ export {default as LiveChat} from '../assets/livechat.svg';
 export {default as Check} from '../assets/check.svg';
 export {default as Cross} from '../assets/cross.svg';
 export {default as GreyInfo} from '../assets/infoGrey.svg';
+
 
 
 
