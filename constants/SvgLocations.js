@@ -46,6 +46,8 @@ export {default as Check} from '../assets/check.svg';
 export {default as Cross} from '../assets/cross.svg';
 export {default as GreyInfo} from '../assets/infoGrey.svg';
 
+export {default as WhiteInfo} from '../assets/infowhite';
+
 
 
 

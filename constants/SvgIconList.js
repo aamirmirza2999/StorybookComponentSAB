@@ -1,6 +1,6 @@
 import React from 'react';
 import { actuatedNormalize } from './PixelScaling';
-import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed} from './SvgLocations';
+import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo} from './SvgLocations';
 
 const SvgIconList = ({ icon, width, height  ,transform}) => {
   switch (icon) {
@@ -60,6 +60,14 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
           case 'LiveChat':
           return (
             <LiveChat
+              width={width}
+              height={height}
+
+            />
+          );
+          case 'WhiteInfo':
+          return (
+            <WhiteInfo
               width={width}
               height={height}
 
