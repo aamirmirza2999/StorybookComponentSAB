@@ -6,7 +6,7 @@ import Fonts from '../../constants/Fonts';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import PrimaryButton from './PrimaryButton';
 import { spacingS } from '../../constants/Size';
-
+import { globalStyles } from '../../constants/GlobalStyles';
 const BottomButton = props => {
   console.log("props>>>>",props)
   const { theme, toggleTheme } = useTheme();
@@ -135,52 +135,19 @@ const addCommaToNumber = (data) => {
           
         >
           <Animated.View
-            style={{
-              height: "auto",
-              backgroundColor: "#263a52",
-              borderTopLeftRadius:actuatedNormalize(8),
-              borderTopRightRadius: actuatedNormalize(8),
-             // position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: 0,
-              transform: [{
-                translateY:
-                    bottomViewAnimation.bounceValue,
-            }],
-            opacity: bottomViewAnimation.opacityValue, 
-            }}
+            style={[globalStyles.animatedview]}
           >
             <View
-              style={{
-                marginTop: actuatedNormalize(20),
-                height: actuatedNormalize(30),
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              style={[globalStyles.overalldesign]}
             >
               <View
-                style={{
-                  flex: 1,
-                  flexDirection: "row",
-                  marginLeft: spacingS,
-                  marginRight: spacingS,
-                }}
+                style={[globalStyles.firstview]}
               >
                 <View
-                  style={{
-                    flex: 1,
-                    height: actuatedNormalize(25),
-                    justifyContent: "center",
-                    alignItems: "flex-start",
-                  }}
+                  style={[globalStyles.overview]}
                 >
                   <TextComponent
-                    style={{
-                      fontFamily: Fonts.Regular,
-                      fontSize: actuatedNormalize(14),
-                      color: "#ffffff",
-                    }}
+                    style={[globalStyles.totalamount,{color:theme.primarycolor4}]}
                   >
                    Total Amount
                   </TextComponent>
@@ -232,44 +199,15 @@ const addCommaToNumber = (data) => {
                   </View>
                 ) : (
                   <View
-                    style={{
-                      marginLeft: spacingS,
-                      flex: 1,
-                      height: actuatedNormalize(25),
-                      flexDirection: "row",
-                      justifyContent: "flex-end",
-                      alignItems: "center",
-                    }}
+                    style={[globalStyles.amount,{color:theme.primarycolor4}]}
                   >
                     <TextComponent
-                      style={{
-                        fontFamily:Fonts.Bold,
-                        fontSize: actuatedNormalize(16),
-                        color: "#ffffff",
-                        lineHeight:actuatedNormalize(24)
-                      }}
+                      style={[globalStyles.totalamt,{color:theme.primarycolor4}]}
                     >
                      {props.TotalAmount}
                     </TextComponent>
                     <TextComponent
-                      style={{
-                        ...Platform.select({
-                          ios: {
-                            top: I18nManager.isRTL
-                              ? actuatedNormalize(1)
-                              : actuatedNormalize(2),
-                          },
-                          android: {
-                            top: I18nManager.isRTL
-                              ? actuatedNormalize(4)
-                              : actuatedNormalize(2),
-                          },
-                        }),
-                         marginLeft: actuatedNormalize(3.5),
-                        fontFamily: Fonts.Regular,
-                        fontSize: actuatedNormalize(12),
-                        color: "#ffffff",
-                      }}
+                      style={[globalStyles.sartext,{color:theme.primarycolor4}]}
                     >
                       SAR
                     </TextComponent>
@@ -279,89 +217,48 @@ const addCommaToNumber = (data) => {
             </View>
           
                 <View
-                  style={{
-                    marginLeft: actuatedNormalize(15),
-                    marginRight: actuatedNormalize(15),
-                    height: 2,
-                    backgroundColor: "rgba(179,177,179,0.2)",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  style={[globalStyles.divider]}
                 ></View>
-
                 <View
-                  style={{
-                    width: "100%",
-                    height: actuatedNormalize(40),
-                  }}
-                >
+                    style={[globalStyles.text]}
+                  >
                   <View
-                    style={{
-                      flex: 1,
-                      flexDirection: "row",
-                      marginTop: actuatedNormalize(10),
-                      marginLeft: spacingS,
-                      marginRight: spacingS,
-                    }}
+                    style={[globalStyles.textview]}
                   >
                     <View
                       style={{
                        
                         alignItems: "flex-start",
+
                       }}
                     >
                                 
                       <TextComponent>
                         <TextComponent
-                          style={{
-                            color: "white",
-                            lineHeight: actuatedNormalize(16),
-                            fontSize: actuatedNormalize(12),
-                            fontFamily: Fonts.Regular,
-                          }}
+                          style={[globalStyles.bottombtntext ,{color:theme.primarycolor4}]}
                         >
-                         {props.limitamount1}
+                         {props.limitamount1} SAR left Of {props.limitamount2} SAR Payment Limit
                         </TextComponent>
-                        <TextComponent
-                          style={{
-                            color: "white",
-                            lineHeight: actuatedNormalize(16),
-                            fontSize: actuatedNormalize(12),
-                            fontFamily: Fonts.Regular,
-                          }}
+                        {/* <TextComponent
+                          style={[globalStyles.bottombtntext ,{color:theme.primarycolor4}]}
                         >
                           {" "}
                           SAR
                         </TextComponent>
                         <TextComponent
-                          style={{
-                            color: "white",
-                            lineHeight: actuatedNormalize(16),
-                            fontSize: actuatedNormalize(12),
-                            fontFamily: Fonts.Regular,
-                          }}
+                          style={[globalStyles.bottombtntext ,{color:theme.primarycolor4}]}
                         >
                           {" "}
                          left Of
                         </TextComponent>
                         <TextComponent
-                          style={{
-                            color: "white",
-                            lineHeight: actuatedNormalize(16),
-                            fontSize: actuatedNormalize(12),
-                            fontFamily:Fonts.Regular,
-                          }}
+                          style={[globalStyles.bottombtntext ,{color:theme.primarycolor4}]}
                         >
                           {" "}
                           {props.limitamount2}
                         </TextComponent>
                         <TextComponent
-                          style={{
-                            color: "white",
-                            lineHeight: actuatedNormalize(16),
-                            fontSize: actuatedNormalize(12),
-                            fontFamily: Fonts.Regular,
-                          }}
+                          style={[globalStyles.bottombtntext ,{color:theme.primarycolor4}]}
                         >
                           {" "}
                           {
@@ -369,24 +266,18 @@ const addCommaToNumber = (data) => {
                           }
                         </TextComponent>
                         <TextComponent
-                          style={{
-                            color: "white",
-                            lineHeight: actuatedNormalize(16),
-                            fontSize: actuatedNormalize(12),
-                            fontFamily: Fonts.Regular,
-                          }}
+                          style={[globalStyles.bottombtntext ,{color:theme.primarycolor4}]}
                         >
                           {" "}
                         Payment Limit
-                        </TextComponent>
+                        </TextComponent> */}
                       </TextComponent>
   
                     </View>
                   </View>
-                </View>
-              
+              </View>
            
-              <View style={{ paddingHorizontal: spacingS, paddingBottom: actuatedNormalize(27) , marginTop:actuatedNormalize(15) }}>
+              <View style={[globalStyles.bottombtn]}>
                 <PrimaryButton
                    onPress={props.onPress}
                    textColor={'white'}
@@ -398,7 +289,7 @@ const addCommaToNumber = (data) => {
 
 
           </Animated.View>
-        
+       
         </KeyboardAvoidingView>
        
 
@@ -409,72 +300,4 @@ const addCommaToNumber = (data) => {
 export default BottomButton;
 
 
-const styles = StyleSheet.create({
-    TotalAmountMainContainer: {
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        paddingHorizontal: actuatedNormalize(20),
-        backgroundColor: "#263a52",
-        paddingTop: actuatedNormalize(23),
-        borderTopLeftRadius:actuatedNormalize(8),
-        borderTopRightRadius: actuatedNormalize(8),
-        //paddingBottom: actuatedNormalize(20)
 
-    },
-    totalAmountContent1: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        borderBottomWidth: 1,
-        borderBottomColor: "rgba(179,177,179,0.25)",
-        paddingBottom:  actuatedNormalize(14),
-        alignItems: 'baseline'
-    },
-    totalAmountLabelSty: {
-        fontSize: actuatedNormalize(16),
-        color: "#ffffff",
-        lineHeight:actuatedNormalize(24),
-        fontFamily: Fonts.Regular,
-    },
-    amountSty: {
-        fontSize: actuatedNormalize(16), color: "#ffffff",
-        fontFamily: Fonts.Bold,
-
-    },
-    currencySty: {
-        fontSize: actuatedNormalize(12), color: "#ffffff",
-        fontFamily: Fonts.Light,
-    },
-    totalAmountContent2: {
-        flexDirection: 'row',
-        alignItems: 'baseline',
-        paddingTop: actuatedNormalize(10),
-
-    },
-
-    bottomOptionContainer: {
-        height: actuatedNormalize(56),
-       
-
-    },
-
-    buttonTxt: {
-       
-        fontSize: actuatedNormalize(16),
-        fontFamily: Fonts.Regular,
-        color: "#ffffff",
-        ...Platform.select({
-            ios: {
-                marginTop: I18nManager.isRTL ? -actuatedNormalize(10) : 0
-            },
-            android: {
-                marginTop: I18nManager.isRTL ? -actuatedNormalize(5) : 0
-            }
-        }),
-    },
-    limitTextSty:{
-        color: "#ffffff",
-        fontSize:actuatedNormalize(12)
-    }
-})

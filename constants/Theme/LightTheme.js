@@ -76,7 +76,7 @@ export const lightTheme = {
    
   extrasverycolor7:"#FAFAFA", //extrasverylightgray
   extrastransparent:"rgba(255, 255, 255, 0.0001)",
-
+  extrablue:"#263A52",
   //RAG COLORS:
 
   ragcolor3:"#A8000B", //ragred

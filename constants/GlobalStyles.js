@@ -818,5 +818,108 @@ wrapper: {
       height: 20
       },
       
-     
+// bottom button
+  bottombtn:{
+    paddingHorizontal: spacingS, 
+    paddingBottom: actuatedNormalize(27) ,
+     marginTop:actuatedNormalize(15)
+  }  ,
+  bottombtntext:{
+    lineHeight: actuatedNormalize(16),
+    fontSize: actuatedNormalize(12),
+    fontFamily: Fonts.Regular,
+  } ,
+  textview:{
+    flex: 1,
+    flexDirection: "row",
+    marginTop: actuatedNormalize(10),
+    marginLeft: spacingS,
+    marginRight: spacingS,
+
+  },
+  text:{
+    width: "100%",
+    height: actuatedNormalize(40),
+  },
+  divider:{
+    marginLeft: actuatedNormalize(16),
+    marginRight: actuatedNormalize(16),
+    height: 2,
+    backgroundColor: "rgba(179,177,179,0.2)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  sartext:{
+    ...Platform.select({
+      ios: {
+        top: I18nManager.isRTL
+          ? actuatedNormalize(1)
+          : actuatedNormalize(2),
+      },
+      android: {
+        top: I18nManager.isRTL
+          ? actuatedNormalize(4)
+          : actuatedNormalize(2),
+      },
+    }),
+     marginLeft: actuatedNormalize(3.5),
+    fontFamily: Fonts.Regular,
+    fontSize: actuatedNormalize(12),
+    lineHeight: 16,
+    textAlign: "left",
+    flexDirection:"flex-end",
+    marginTop:actuatedNormalize(-19)
+
+  },
+  totalamt:{
+    fontFamily:Fonts.Bold,
+    fontSize: actuatedNormalize(16),
+    lineHeight:actuatedNormalize(24),
+    fontWeight: "700",
+    textAlign: "left",
+    marginTop:actuatedNormalize(-20)
+
+  },
+  amount:{
+    marginLeft: spacingS,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+
+  },
+  totalamount:{
+    fontFamily: Fonts.Regular,
+    fontSize: actuatedNormalize(14),
+   lineHeight: 18,
+   textAlign: "left",
+   flexDirection:"flex-start",
+   marginTop:actuatedNormalize(-17)
+
+  },
+  overview:{
+    flex: 1,
+    height: actuatedNormalize(25),
+    justifyContent: "center",
+    alignItems: "flex-start",
+  },
+  firstview:{
+    flex: 1,
+    flexDirection: "row",
+    marginLeft: spacingS,
+    marginRight: spacingS,
+  },
+  overalldesign:{
+    marginTop: actuatedNormalize(20),
+    height: actuatedNormalize(30),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  animatedview:{
+    height: "auto",
+    backgroundColor: "#263a52",
+    borderTopLeftRadius:actuatedNormalize(8),
+    borderTopRightRadius: actuatedNormalize(8),
+ 
+  },   
  }
