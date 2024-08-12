@@ -5,11 +5,12 @@ import {
   TextInput,
   View,
   Platform,
+  TouchableOpacity
 } from 'react-native';
-import React, {useState} from 'react';
-import {SabLogo, ErrorIcon} from '../../constants/SvgLocations';
-import {actuatedNormalize} from '../../constants/PixelScaling';
-import {globalStyles} from '../../constants/GlobalStyles';
+import React, { useState } from 'react';
+import { SabLogo, ErrorIcon } from '../../constants/SvgLocations';
+import { actuatedNormalize } from '../../constants/PixelScaling';
+import { globalStyles } from '../../constants/GlobalStyles';
 // import LinearGradient from 'react-native-linear-gradient';
 // import LinearGradient from '../../webLinerGradiant/index';
 import LinearGradient from '../../utils/Linear-Gradient'
@@ -17,20 +18,21 @@ import LinearGradient from '../../utils/Linear-Gradient'
 import Fonts from '../../constants/Fonts';
 import TextComponent from './TextComponent';
 // import Colors from '../../constants/Colors';
-import {useTheme} from '../../constants/Theme/ThemeProvider';
-import {InfoIcon} from '../../constants/SvgLocations';
+import { useTheme } from '../../constants/Theme/ThemeProvider';
+import { InfoIcon } from '../../constants/SvgLocations';
 import CurrencySwitch from './CurrencySwitch';
 import {
   spacingM,
   spacingS,
   spacingXS,
 } from '../../constants/Size';
+import { EyeOpen, EyeClose, EyeOpendark, EyeClosedark } from '../../constants/SvgLocations'
 
 let menuTextColor = '#000000';
 
 const TextInputComponent = props => {
   console.log('hhhhh', props);
-  const {theme, toggleTheme} = useTheme();
+  const { theme, isDark } = useTheme()
   console.log('theme99999', theme);
 
   const [username, setUsername] = useState('');
@@ -41,21 +43,21 @@ const TextInputComponent = props => {
     : ['#ffffff', '#ffffff'];
   const customStyle1 = isFocused
     ? {
-        height: actuatedNormalize(44),
-        // marginTop: actuatedNormalize(8),
-        borderRadius: actuatedNormalize(8),
-        borderWidth: 1,
-        borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
-      }
+      height: actuatedNormalize(44),
+      // marginTop: actuatedNormalize(8),
+      borderRadius: actuatedNormalize(8),
+      borderWidth: 1,
+      borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
+    }
     : {
-        height: actuatedNormalize(44),
-        // marginTop: actuatedNormalize(8),
-        borderRadius: actuatedNormalize(8),
-        borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
-        backgroundColor: 'transparent',
-        borderWidth: 1,
-        padding: props.editable === false ? null : 2,
-      };
+      height: actuatedNormalize(44),
+      // marginTop: actuatedNormalize(8),
+      borderRadius: actuatedNormalize(8),
+      borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
+      backgroundColor: 'transparent',
+      borderWidth: 1,
+      padding: props.editable === false ? null : 2,
+    };
 
   const handleTextChange = text => {
     setUsername(text);
@@ -63,6 +65,50 @@ const TextInputComponent = props => {
       props.onChangeText(text);
     }
   };
+
+  let icon = () => {
+    if (props.secureTextEntry === false) {
+      return (
+        (isDark ? (
+          <EyeOpendark
+            width={actuatedNormalize(19)}
+            height={actuatedNormalize(19)}
+            style={props.imgstyle}
+            right={actuatedNormalize(10)}
+          />
+        ) : (
+          <EyeOpen
+            width={actuatedNormalize(19)}
+            height={actuatedNormalize(19)}
+            style={props.imgstyle}
+            right={actuatedNormalize(10)}
+          />
+        )
+
+        ))
+    }
+    else {
+      return (
+        (isDark ? (
+          <EyeClosedark
+            width={actuatedNormalize(19)}
+            height={actuatedNormalize(19)}
+            style={props.imgstyle}
+            right={actuatedNormalize(10)}
+          />
+        ) : (
+          <EyeClose
+            width={actuatedNormalize(19)}
+            height={actuatedNormalize(19)}
+            style={props.imgstyle}
+            right={actuatedNormalize(10)}
+          />
+        )
+
+        ))
+    }
+
+  }
 
   return (
     <View
@@ -110,12 +156,14 @@ const TextInputComponent = props => {
         </View>
       ) : null}
 
-      <View style={{flexDirection: 'row', marginTop: spacingXS, alignItems:'center',
-        justifyContent:'center'}}>
+      <View style={{
+        flexDirection: 'row', marginTop: spacingXS, alignItems: 'center',
+        justifyContent: 'center'
+      }}>
         <LinearGradient
           colors={customStyle}
-          start={{x: 0, y: 0}}
-          end={{x: 0, y: 1}}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 0, y: 1 }}
           editable={false}
           style={[customStyle1, props.inputStyle]}>
           <View
@@ -158,15 +206,15 @@ const TextInputComponent = props => {
                 </TextComponent>
               </View>
             )}
-            <View style={{width: '80%'}}>
+            <View style={{ width: '80%' }}>
               <TextInput
                 style={[
                   globalStyles.billDetailInputView,
                   {
                     fontFamily:
                       username === ''
-                        ?  Fonts.Regular
-                        :  Fonts.Bold,
+                        ? Fonts.Regular
+                        : Fonts.Bold,
                   },
                   props.textstyle,
                 ]}
@@ -178,8 +226,8 @@ const TextInputComponent = props => {
                   props.isRunLTR
                     ? null
                     : I18nManager.isRTL === true
-                    ? 'right'
-                    : 'left'
+                      ? 'right'
+                      : 'left'
                 }
                 maxLength={props.maxLength}
                 minLength={props.minLength}
@@ -200,6 +248,7 @@ const TextInputComponent = props => {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
               />
+
             </View>
             {props.sarlabel && !props.errorMsg ? (
               <TextComponent
@@ -216,8 +265,16 @@ const TextInputComponent = props => {
               </TextComponent>
             ) : null}
             {props.errorMsg ? (
-              <ErrorIcon style={{alignSelf: 'center'}} />
+              <ErrorIcon style={{ alignSelf: 'center' }} />
             ) : null}
+            { props.isPassInput?
+              (<TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center' }} onPress={props.ontoggle}>
+
+                {
+                  icon()
+
+                }
+              </TouchableOpacity>):null}
           </View>
         </LinearGradient>
         {props.isCurrencySwitch ? (
@@ -305,7 +362,7 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
     //height: actuatedNormalize(44),
     fontSize: actuatedNormalize(14),
-    fontFamily:Fonts.Bold,
+    fontFamily: Fonts.Bold,
   },
   billDetailInputStyle: {
     fontSize: actuatedNormalize(18),

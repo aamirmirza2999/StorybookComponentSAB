@@ -33,6 +33,8 @@ import SnackBar from '../components/SnackBar/SnackBar';
 import { Success } from '../constants/SvgLocations';
 import EmptystateNote from '../components/Button/EmptystateNote';
 import MainHeader from '../components/Button/MainHeader';
+import CardsComponent from '../components/Button/CardsComponent'
+
 
 // import Avatarcomponent from '../components/Button/Avatarcomponent';
 const Home = props => {
@@ -218,6 +220,20 @@ const Home = props => {
             </TextComponent>
           </TouchableOpacity>
         </View>
+        <CardsComponent
+        CardImage={require("../assets/cardColorDarkBlue.png")}
+        CardName={"SAB Signature Visa Credit Card"}
+        LimitDetailsRequired={true}
+        statusBgColor={"#f9f2f3"}
+        statusborderColor={"#e5b2b5"}
+        CardStatus={"Active"}
+        CardNumber={"4272-2201-0114-9091"}
+        currency={"SAR"}
+        AvailableLimit={"81,986.90"}
+        CreditLimit={"84,900.00"}
+        progress={"0.8"}
+
+        />
         <Toggleswitch />
         <EmptystateNote />
         {/* <Avatarcomponent/> */}
