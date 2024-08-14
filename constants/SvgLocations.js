@@ -48,6 +48,9 @@ export {default as GreyInfo} from '../assets/infoGrey.svg';
 
 export {default as WhiteInfo} from '../assets/infowhite.svg';
 
+export {default as BlackArrow} from '../assets/arrowblack.svg';
+export {default as SearchIcon} from '../assets/search.svg';
+export {default as NotificationIcon} from '../assets/notifications.svg';
 
 
 

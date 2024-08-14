@@ -137,27 +137,12 @@ const Home = props => {
         BgHeader={
           <MainHeader
             bgColor={"#263a52"}
-            children={
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  paddingHorizontal: spacingS
-                }}>
-                <LogoComponent enableLogo={true} changeTheme={toggleTheme} />
-                <TouchableOpacity
-                  style={{}}
-                  onPress={() => changeLanguage(language == 'en' ? 'ar' : 'en')}>
-                  <SvgIconList
-                    icon="ChangeLang"
-                    width={actuatedNormalize(25)}
-                    height={actuatedNormalize(25)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                  />
-                </TouchableOpacity>
-              </View>
-            }
-          />
+            enableLogo={true}
+            changeTheme={toggleTheme}
+            LanguageSwitchReq = {true}
+            changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}
+           
+            />
         }>
         <View
           style={{

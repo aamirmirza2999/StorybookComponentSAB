@@ -1,6 +1,7 @@
 import React from 'react';
 import { actuatedNormalize } from './PixelScaling';
-import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo} from './SvgLocations';
+import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
+  BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack} from './SvgLocations';
 
 const SvgIconList = ({ icon, width, height  ,transform}) => {
   switch (icon) {
@@ -73,6 +74,46 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
 
             />
           );
+          case 'BlackArrow':
+          return (
+            <BlackArrow
+              width={width}
+              height={height}
+
+            />
+          );
+          case 'BlackClose':
+          return (
+            <Close
+              width={width}
+              height={height}
+
+            />
+          );
+          case 'SearchIcon':
+            return (
+              <SearchIcon
+                width={width}
+                height={height}
+  
+              />
+            );
+            case 'NotificationIcon':
+              return (
+                <NotificationIcon
+                  width={width}
+                  height={height}
+    
+                />
+              );
+              case 'AvatarIconblack':
+                return (
+                  <AvatarIconblack
+                    width={width}
+                    height={height}
+      
+                  />
+                );
     default:
       return null;
   }

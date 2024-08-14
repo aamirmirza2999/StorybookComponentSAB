@@ -29,7 +29,7 @@ const iosMargin = Platform.OS === 'ios' ? 50 : 0; // 90
 const deviceWidth = Dimensions.get('window').width;
 const deviceheight = Dimensions.get('window').height - IosSpecific;
 const svgWidth = Number(deviceWidth) + 2;
-const svgHeight = Number((deviceheight - iosMargin) / 8 - 0);
+const svgHeight = Number((deviceheight - iosMargin) / 12 - 0);
 
 // SVG DIMENSIONS
 const svgHeight2 = Number(((deviceheight-iosMargin) / 5 ) - getStatusBarHeight())
@@ -92,11 +92,11 @@ const xml1 = `<svg width=${Platform.OS== "ios" ? svgWidth+actuatedNormalize(50) 
 <path opacity=".12" fill-rule="evenodd" clip-rule="evenodd" d="M-4 395.455 378.5 87.879l315 386.666L-4 395.455z" fill="#F5F5F5" fill-opacity=".5"/>
 </svg>`
 
-export const Background = () => {
-  return (
-      <SvgXml style={{flex:1, width: '100%', backgroundColor: "#263a52"}} xml={xml1} />
-  )
-}
+// export const Background = () => {
+//   return (
+//       <SvgXml style={{flex:1, width: '100%', backgroundColor: "#263a52"}} xml={xml1} />
+//   )
+// }
 const PostLoginHeader = (props) => {
  // const navigation = useNavigation();
  const { colors, isDark } = useTheme();
@@ -105,12 +105,12 @@ const PostLoginHeader = (props) => {
     <>
     <View style={{
       backgroundColor: props.bgColor ? props.bgColor : "#263a52",     
-      height: Platform.OS === "android" ? 0 : 0,
+      //height: Platform.OS === "android" ? 0 : 0,
     }}>
        <SafeAreaView>
     <StatusBar
       animated
-      backgroundColor={'#263a52'}
+      backgroundColor={'transparent'}
       barStyle={'default'}
       translucent={true}
     />
@@ -125,9 +125,9 @@ const PostLoginHeader = (props) => {
             ...StyleSheet.absoluteFill,
           }}
         >
-            <Background
+            {/* <Background
             bgColor = {props.bgColor ? props.bgColor : "#263a52"}
-          />
+          /> */}
          
         </View>
 
@@ -147,7 +147,7 @@ const PostLoginHeader = (props) => {
               }
             >
              <SvgIconList
-            icon="backIcon"
+            icon="BlackArrow"
             width={actuatedNormalize(25)}
             height={actuatedNormalize(25)}
             transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
@@ -165,8 +165,9 @@ const PostLoginHeader = (props) => {
               numberOfLines={1}
               ellipsizeMode="tail"
               style={{
-                color: props.TextColor,
-                fontSize: actuatedNormalize(14),
+                color: "#000",
+                fontWeight: "700",
+                fontSize: actuatedNormalize(17),
                 // fontFamily: I18nManager.isRTL
                 //   ? Fonts.UniversArabicForHSBC_Regular
                 //   : Fonts.UniversNextforHSBC_Medium,
@@ -220,7 +221,7 @@ const PostLoginHeader = (props) => {
               justifyContent:'center',
               }}>
               <SvgIconList
-               icon="closeIcon"
+               icon="BlackClose"
                width={actuatedNormalize(25)}
                height={actuatedNormalize(25)}
            

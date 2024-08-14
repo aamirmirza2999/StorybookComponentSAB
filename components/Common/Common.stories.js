@@ -471,7 +471,15 @@ TabsComponentStory.argTypes = {
 
 export const MainHeaderStory = args => <MainHeader {...args} />;
 MainHeaderStory.args = {
-  bgColor:"#263a52"
+  bgColor:"#263a52",
+  enableLogo:true,
+  isAccountTypeReq:true,
+  SearchIconReq:true,
+  NotificationIconReq:true,
+  AvatarIconReq:true,
+  LanguageSwitchReq:false,
+  AccountType:'Premier'
+
 };
 MainHeaderStory.argTypes = {
   bgColor: {control: 'color'},
