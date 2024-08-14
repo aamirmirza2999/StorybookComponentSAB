@@ -7,7 +7,7 @@ import {
     Platform,
   } from 'react-native';
   import React, {useState, useReducer} from 'react';
-  import BgHeader from '../components/Button/BgHeader';
+  import BgHeader from '../components/Common/BgHeader';
   import {
     Colors,
     TextComponent,
@@ -15,12 +15,12 @@ import {
     Fonts,
   } from '../constants/CommonImport';
   import {useNavigation} from '@react-navigation/native';
-  import ProgressHeader from '../components/Button/ProgressComponent';
+  import ProgressHeader from '../components/Common/ProgressComponent';
   import {globalStyles} from '../constants/GlobalStyles';
-  import DropdownComponent from '../components/Button/DropdownComponent';
+  import DropdownComponent from '../components/Common/DropdownComponent';
   import {useTheme} from '../constants/Theme/ThemeProvider';
-  import Paginator from '../components/Button/Paginator';
-import Avatarcomponent from '../components/Button/Avatarcomponent';
+  import Paginator from '../components/Common/Paginator';
+import Avatarcomponent from '../components/Common/Avatarcomponent';
   
   const Paginatorscreendisplay = props => {
     const data = [

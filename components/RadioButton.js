@@ -7,7 +7,7 @@ import {
     Platform,
   } from 'react-native';
   import React, {useState, useEffect} from 'react';
-  import BgHeader from '../components/Button/BgHeader';
+  import BgHeader from './Common/BgHeader';
   import {
     TextComponent,
   } from '../constants/CommonImport';

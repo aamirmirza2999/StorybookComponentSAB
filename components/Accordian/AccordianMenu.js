@@ -8,8 +8,8 @@ import {
 import Collapsible from 'react-native-collapsible';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { RightRedArrow1,Home } from '../../constants/SvgLocations';
-import Divider from '../Button/Divider';
-import TextComponent from '../Button/TextComponent';
+import Divider from '../Common/Divider';
+import TextComponent from '../Common/TextComponent';
 import { globalStyles } from '../../constants/GlobalStyles';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 

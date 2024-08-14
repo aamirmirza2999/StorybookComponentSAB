@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, I18nManager } from 'react-native';
-import TextComponent from '../Button/TextComponent';
+import TextComponent from '../Common/TextComponent';
 import { Cross,Check } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { globalStyles } from '../../constants/GlobalStyles';

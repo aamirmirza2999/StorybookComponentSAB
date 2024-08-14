@@ -17,7 +17,7 @@ import { actuatedNormalize } from '../../constants/PixelScaling';
 
 const { height, width } = Dimensions.get('window');
 import { Close } from '../../constants/SvgLocations';
-import TextComponent from '../Button/TextComponent';
+import TextComponent from '../Common/TextComponent';
 
 //snack bar will be dismmised if user swipes beyound DISMISS_THRESHOLD% of screen width
 const DISMISS_THRESHOLD = 0.5;

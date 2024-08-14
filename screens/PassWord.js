@@ -6,18 +6,18 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import BgHeader from '../components/Button/BgHeader';
-import LogoComponent from '../components/Button/LogoComponent';
+import BgHeader from '../components/Common/BgHeader';
+import LogoComponent from '../components/Common/LogoComponent';
 import {
   // Colors,
   TextComponent,
   actuatedNormalize,
   Fonts,
 } from '../constants/CommonImport';
-import PrimaryBgComponent from '../components/Button/PrimaryBgComponent';
-import TextInputComponent from '../components/Button/TextInputComponent';
-import PrimaryButton from '../components/Button/PrimaryButton';
-import SecondaryButton from '../components/Button/SecondaryButton';
+import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
+import TextInputComponent from '../components/Common/TextInputComponent';
+import PrimaryButton from '../components/Common/PrimaryButton';
+import SecondaryButton from '../components/Common/SecondaryButton';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../constants/Theme/ThemeProvider';
 import { spacingS, spacingM, spacingXS } from '../constants/Size';

@@ -1,6 +1,6 @@
 import { View, TouchableOpacity } from 'react-native'
 import React from 'react'
-import TextComponent from './Button/TextComponent'
+import TextComponent from './Common/TextComponent'
 import { actuatedNormalize } from '../constants/PixelScaling'
 import SvgIconList from '../constants/SvgIconList'
 import { globalStyles } from '../constants/GlobalStyles'

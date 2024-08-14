@@ -7,23 +7,23 @@ import {
     Platform,
   } from 'react-native';
   import React, {useState, useReducer} from 'react';
-  import BgHeader from '../components/Button/BgHeader';
+  import BgHeader from '../components/Common/BgHeader';
   import {
     Colors,
     TextComponent,
     actuatedNormalize,
     Fonts,
   } from '../constants/CommonImport';
-  import PrimaryBgComponent from '../components/Button/PrimaryBgComponent';
-  import TextInputComponent from '../components/Button/TextInputComponent';
-  import PrimaryButton from '../components/Button/PrimaryButton';
+  import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
+  import TextInputComponent from '../components/Common/TextInputComponent';
+  import PrimaryButton from '../components/Common/PrimaryButton';
   import {useNavigation} from '@react-navigation/native';
-  import ProgressHeader from '../components/Button/ProgressComponent';
+  import ProgressHeader from '../components/Common/ProgressComponent';
   import {globalStyles} from '../constants/GlobalStyles';
-  import DropdownComponent from '../components/Button/DropdownComponent';
+  import DropdownComponent from '../components/Common/DropdownComponent';
   import {useTheme} from '../constants/Theme/ThemeProvider';
-  import BottomButton from '../components/Button/BottomButton';
-  import CheckboxComponent from '../components/Button/CheckboxComponent';
+  import BottomButton from '../components/Common/BottomButton';
+  import CheckboxComponent from '../components/Common/CheckboxComponent';
   import { textTop } from '../constants/Size';
   import BouncyCheckbox from 'react-native-bouncy-checkbox';
   import {

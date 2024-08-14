@@ -7,8 +7,8 @@ import {
   View,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import BgHeader from '../components/Button/BgHeader';
-import LogoComponent from '../components/Button/LogoComponent';
+import BgHeader from '../components/Common/BgHeader';
+import LogoComponent from '../components/Common/LogoComponent';
 import i18n from '../locales/i18n';
 import RNRestart from 'react-native-restart';
 import {
@@ -17,10 +17,10 @@ import {
   actuatedNormalize,
   Fonts,
 } from '../constants/CommonImport';
-import PrimaryBgComponent from '../components/Button/PrimaryBgComponent';
-import TextInputComponent from '../components/Button/TextInputComponent';
-import PrimaryButton from '../components/Button/PrimaryButton';
-import SecondaryButton from '../components/Button/SecondaryButton';
+import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
+import TextInputComponent from '../components/Common/TextInputComponent';
+import PrimaryButton from '../components/Common/PrimaryButton';
+import SecondaryButton from '../components/Common/SecondaryButton';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../constants/Theme/ThemeProvider';
 import { globalStyles } from '../constants/GlobalStyles';
@@ -28,12 +28,12 @@ import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SvgIconList from '../constants/SvgIconList';
 import { spacingM, spacingS, spacingXS } from '../constants/Size';
-import Toggleswitch from '../components/Button/Toggleswitch';
+import Toggleswitch from '../components/Common/Toggleswitch';
 import SnackBar from '../components/SnackBar/SnackBar';
 import { Success } from '../constants/SvgLocations';
-import EmptystateNote from '../components/Button/EmptystateNote';
-import MainHeader from '../components/Button/MainHeader';
-import CardsComponent from '../components/Button/CardsComponent'
+import EmptystateNote from '../components/Common/EmptystateNote';
+import MainHeader from '../components/Common/MainHeader';
+import CardsComponent from '../components/Common/CardsComponent'
 
 
 // import Avatarcomponent from '../components/Button/Avatarcomponent';

@@ -8,29 +8,29 @@ import {
   ScrollView
 } from 'react-native';
 import React, {useState, useReducer} from 'react';
-import BgHeader from '../components/Button/BgHeader';
-import PostLoginHeader from '../components/Button/PostLoginHeader'
+import BgHeader from '../components/Common/BgHeader';
+import PostLoginHeader from '../components/Common/PostLoginHeader'
 import {
   Colors,
   TextComponent,
   actuatedNormalize,
   Fonts,
 } from '../constants/CommonImport';
-import PrimaryBgComponent from '../components/Button/PrimaryBgComponent';
-import TextInputComponent from '../components/Button/TextInputComponent';
+import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
+import TextInputComponent from '../components/Common/TextInputComponent';
 import OptionButton  from '../components/OptionButton';
-import PrimaryButton from '../components/Button/PrimaryButton';
+import PrimaryButton from '../components/Common/PrimaryButton';
 import {useNavigation} from '@react-navigation/native';
-import ProgressHeader from '../components/Button/ProgressComponent';
+import ProgressHeader from '../components/Common/ProgressComponent';
 import {globalStyles} from '../constants/GlobalStyles';
-import DropdownComponent from '../components/Button/DropdownComponent';
+import DropdownComponent from '../components/Common/DropdownComponent';
 import {useTheme} from '../constants/Theme/ThemeProvider';
-import BottomButton from '../components/Button/BottomButton';
-import CheckboxComponent from '../components/Button/CheckboxComponent';
+import BottomButton from '../components/Common/BottomButton';
+import CheckboxComponent from '../components/Common/CheckboxComponent';
 import { spacingXS } from '../constants/Size';
-import BottomSheetComponent from '../components/Button/BottomSheetComponent';
-import ListComponent from '../components/Button/ListComponent';
-import NotificationBadge from '../components/Button/NotificationBadge';
+import BottomSheetComponent from '../components/Common/BottomSheetComponent';
+import ListComponent from '../components/Common/ListComponent';
+import NotificationBadge from '../components/Common/NotificationBadge';
 import SvgIconList from '../constants/SvgIconList';
 
 const Transfers = props => {
