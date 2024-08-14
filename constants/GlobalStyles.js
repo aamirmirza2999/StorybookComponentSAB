@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2,S700, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S32,S7,S9,S15,S68, S11, S13, S16, S56,S20,S100
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2,S700, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S32,S7,S9,S15,S68, S11, S13, S16, S56,S20,S100, S22
 } from "./Size";
 
 
@@ -85,8 +85,7 @@ const deviceHeight = Dimensions.get('window').height;
         alignSelf: "stretch"
       },
       primaryFlexBoxLarge: {
-    		paddingBottom:S13,
-    		paddingTop:S11,
+    		paddingVertical:spacingXS,
     		borderRadius: radiusS,
     		justifyContent: "center",
     		flexDirection: "row",
@@ -94,24 +93,49 @@ const deviceHeight = Dimensions.get('window').height;
     		alignItems: "center",
     		//flex: 1
   	},
+    badgeNotification:{
+      borderRadius: S100,
+      backgroundColor: "#ffbb33",
+      //flex: 1,
+      width: S15,
+      height: S15,
+      marginLeft:spacingXS
+    },
+    badgeNotification1:{
+      top: -55,
+      left: 21,
+      borderRadius: 100,
+      backgroundColor: "#ffbb33",
+      width: 16,
+      height: 16,
+      zIndex: 2
+    },
+    badgeTxt:{
+      fontSize: S10,
+      lineHeight: S14,
+      fontFamily: "Univers Next for HSBC",
+      color: "#000",
+      textAlign: "center",
+      alignSelf:"center"
+    },
     primaryFlexBoxSmall: {
       borderRadius:radiusS,
       paddingHorizontal:spacingS,
-      paddingVertical:S7,
+      paddingVertical:spacingXXS,
       justifyContent: "center",
       flexDirection: "row",
       alignItems: "center",
-
   },
     primaryTextLarge: {
       textAlign: "center",
-      lineHeight:S21,
-      fontSize:S16,
-      fontFamily:Fonts.Regular,
+      fontWeight: "700",
+      lineHeight:S22,
+      fontSize:S15,
+      fontFamily:Fonts.Bold,
   },
   primaryTextSmall: {
-    fontSize:S14,
-    lineHeight:S18,
+    fontSize:S13,
+    lineHeight:S17,
     fontFamily:Fonts.Regular,
     textAlign: "center",
 },
@@ -120,8 +144,7 @@ secondaryFlexBoxLarge: {
   borderStyle:"solid",
   borderWidth: 1,
   paddingHorizontal:spacingS,
-  paddingTop:S11,
-  paddingBottom:S13,
+ paddingVertical:spacingXS
 },
 preloginRedButton:{
   paddingHorizontal:spacingL,
@@ -135,15 +158,15 @@ quickActionButtonBox:{
   alignItems: "center",
   justifyContent: "center",
   paddingHorizontal:spacingXXS,
-  paddingVertical:S12,
+  paddingVertical:spacingXS,
   overflow: "hidden"
 },
 quickActionButtonTxt:{
     alignSelf: "stretch",
     width:actuatedNormalize(110),
-    fontSize:S12,
+    fontSize:S14,
     paddingBottom:spacingXS,
-    lineHeight:S16,
+    lineHeight:S18,
     fontFamily:Fonts.Regular,
     textAlign: "center",
     marginTop:spacingXS
@@ -169,7 +192,8 @@ quickActionButtonBox2:{
   flexDirection: "row",
   alignItems: "flex-start",
   //justifyContent: "center",
-  padding:S12
+ paddingHorizontal:spacingXS,
+ paddingVertical:spacingXXS
   //alignItems:"flex-start"
 },
 quickActionButtonTxt2:{
@@ -177,7 +201,7 @@ quickActionButtonTxt2:{
 fontSize:S12,
 lineHeight:S16,
 fontFamily:Fonts.Regular,
-//textAlign: "left"
+textAlign: "center"
 },
 linkTextsmall:{
   fontSize:actuatedNormalize(12),
@@ -186,8 +210,8 @@ fontFamily:Fonts.Regular,
 textAlign: "left"
 },
 linkTextlarge:{
-  fontSize:actuatedNormalize(14),
-lineHeight:actuatedNormalize(18),
+  fontSize:S17,
+lineHeight:S22,
 fontFamily:Fonts.Regular,
 textAlign: "left"
 },
@@ -301,11 +325,18 @@ togglelabel:{
     //width: "100%",
     overflow: "hidden",
     paddingHorizontal:spacingS,
-    paddingVertical: spacingS,
+    paddingVertical: spacingXS,
     alignItems: "center",
     alignSelf:"center",
     flexDirection: "row",
     //flex: 1
+  },
+  listButtonSecondTxt:{
+    fontSize: 14,
+    lineHeight: 18,
+    fontFamily: "Univers Next for HSBC",
+    color: "#767676",
+   // textAlign: "left",
   },
   listButtonTxtSmall:{
     width: actuatedNormalize(279),
@@ -313,8 +344,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
     alignSelf: "center",
-    fontSize: S14,
-    lineHeight: S18,
+    fontSize: S15,
+    lineHeight: S22,
     textAlign: "left",
     fontFamily:Fonts.Regular,
   },
@@ -328,6 +359,17 @@ togglelabel:{
       lineHeight: S21,
       textAlign: "left",
       fontFamily:Fonts.Regular,
+  },
+  listButtonTxtLargeHeadline:{
+    width: actuatedNormalize(279),
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+      alignSelf: "center",
+      fontSize: S16,
+      lineHeight: S21,
+      textAlign: "left",
+      fontFamily:Fonts.Bold,
   },
   listButtonDashboard:{
     borderRadius: radiusS,
@@ -355,8 +397,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: S14,
-      lineHeight:S15,
+      fontSize: S15,
+      lineHeight:S22,
       textAlign: "left",
       fontFamily:Fonts.Regular,
   },
@@ -366,8 +408,8 @@ togglelabel:{
     //alignItems: "flex-end",
   
       alignSelf: "center",
-      fontSize: S14,
-      lineHeight: S15,
+      fontSize: S15,
+      lineHeight: S22,
       textAlign: "left",
       fontFamily:Fonts.Regular,
     },
@@ -463,14 +505,10 @@ typefilledElementsinitials: {
         borderStyle: "solid",
         borderWidth: 1,
         alignSelf:"center",
-      
-        //width: "100%",
-        //height: 48,
         padding:spacingXS,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        //minWidth: 48
       },
        segmenttabStyle:{
             borderWidth:0,

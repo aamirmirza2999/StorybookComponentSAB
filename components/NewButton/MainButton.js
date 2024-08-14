@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {Text, StyleSheet, View, Image,TouchableOpacity} from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
-import TextComponent from "../Common/TextComponent";
+import TextComponent from "../Button/TextComponent";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import SvgIconList from "../../constants/SvgIconList";
@@ -19,7 +19,7 @@ const MainButton = (props) => {
   	
   	return (
     	<>
-		{props.segmentButton?
+		{/* {props.segmentButton?
 		<View
 		style={{
 			marginTop:actuatedNormalize(10)
@@ -38,7 +38,7 @@ const MainButton = (props) => {
           onTabPress={handleIndexChange}
         />
 		</View>
-		:null}
+		:null} */}
 		{/* Primary Large Button Red Background */}
       			{props.enablePrimaryLarge?
 					<Component
@@ -49,8 +49,8 @@ const MainButton = (props) => {
 						onPress={props.onPress}
 						disabled={props.disabled}
 					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
-                  		 <TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge, props.primaryFlexBoxLarge]}>			
+                  		 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
 					</Component>:null}
 			
@@ -65,8 +65,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
+					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -81,8 +81,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge]}>			
-					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
+					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -97,8 +97,8 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.primaryFlexBoxSmall,globalStyles.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextSmall,globalStyles.primaryTextSmall]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
+					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
@@ -113,13 +113,13 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
-					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
 
 			{/* Secondary Large Button Red Border */}
-
+{/* 
 				{props.enableSecondaryBorderRed?
 					<Component
 					testID={props.testID ? props.testID : 'primaryCTARB'}
@@ -132,10 +132,10 @@ const MainButton = (props) => {
 				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor3,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
 					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor3},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
-				</Component>:null}
+				</Component>:null} */}
 
 			{/* Prelogin Red Background Button */}
-				{props.preloginRedButton?
+				{/* {props.preloginRedButton?
 					<Component
 						testID={props.testID ? props.testID : 'primaryCTALarge'}
 						accessibilityLabel={
@@ -147,11 +147,11 @@ const MainButton = (props) => {
             		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
                   		 <TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
-					</Component>:null}
+					</Component>:null} */}
 
 			{/* Prelogin Black Background Button */}
 			
-					{props.preloginBlackButton?
+					{/* {props.preloginBlackButton?
 					<Component
 					testID={props.testID ? props.testID : 'primaryCTALargeBlack'}
 					accessibilityLabel={
@@ -163,7 +163,7 @@ const MainButton = (props) => {
 				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
 					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
-				</Component>:null}
+				</Component>:null} */}
 
 				{/* Quick Action Button */}
 			
@@ -177,7 +177,7 @@ const MainButton = (props) => {
 				>
 					{props.quickActionButtonType===1?
 					<View
-					style={[props.quickActionButtonBox,globalStyles.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
+					style={[globalStyles.quickActionButtonBox,props.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
 					>
 						<View
 							style={{
@@ -186,16 +186,23 @@ const MainButton = (props) => {
 						>
 							{props.Icon}
 						</View>
-						<TextComponent style={[props.quickActionButtonTxt,globalStyles.quickActionButtonTxt,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+						<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
 					</View>
 					:null}
 
 				    {props.quickActionButtonType===2?
 								<View
-								style={[props.quickActionButtonBox1,globalStyles.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
+								style={[globalStyles.quickActionButtonBox1,props.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
 								>
 										{props.Icon}
-									<TextComponent style={[props.quickActionButtonTxt1,globalStyles.quickActionButtonTxt1,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+								
+									<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+									<View
+									style={[globalStyles.badgeNotification,props.badgeNotification,{}]}
+									>
+									<TextComponent
+									style={[globalStyles.badgeTxt,props.badgeTxt]}
+									>{props.listNotificationCount}</TextComponent></View>
 								</View>
 					:null}
 
@@ -207,11 +214,19 @@ const MainButton = (props) => {
 						}}
 						>
 								<View
-								style={[props.quickActionButtonBox2,globalStyles.quickActionButtonBox2,{backgroundColor: theme.stylesblockbg}]}
+								style={[globalStyles.quickActionButtonBox2,props.quickActionButtonBox2,{backgroundColor: theme.stylesblockbg}]}
 								>
 										{props.Icon}
 								</View>
-								<TextComponent style={[props.quickActionButtonTxt2,globalStyles.quickActionButtonTxt2,{color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+								<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+							
+							<View
+							style={[globalStyles.badgeNotification1,props.badgeNotification1]}
+							>
+								<TextComponent
+									style={[globalStyles.badgeTxt,props.badgeTxt]}
+									>{props.listNotificationCount}</TextComponent>
+							</View>
 							</View>
 					:null}
 			
@@ -251,7 +266,7 @@ const MainButton = (props) => {
 
 					{/* Floating Button */}
 
-					{props.floatingButton?
+					{/* {props.floatingButton?
 					<Component
 						testID={props.testID ? props.testID : 'floatingButton'}
 						accessibilityLabel={
@@ -269,7 +284,7 @@ const MainButton = (props) => {
 			
 						</Component>:
 						
-				null}
+				null} */}
 
 				{/*  Button Group */}
 
@@ -285,8 +300,8 @@ const MainButton = (props) => {
 							}
 							onPress={props.onPress}>
 						
-						<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, props.primaryFlexBoxLarge,globalStyles.primaryFlexBoxLarge,]}>			
-						<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge, globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+						<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
+						<TextComponent style={[{color: theme.primarycolor4}, globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
 						</View>
 							</Component>:null}
 
@@ -334,15 +349,15 @@ const MainButton = (props) => {
 								}
 								onPress={props.onPress}>
 							
-							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
-						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
+							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
 					</View>
 					</Component>:null}
 				
 				{props.enableImageButton?				
 				<Component>
 					<View
-					style={[globalStyles.imageButton,{borderColor: "#000",}]}
+					style={[globalStyles.imageButton,props.imageButton,{borderColor: "#000",}]}
 					>
 						<Split
 						width={actuatedNormalize(24)}
@@ -366,14 +381,24 @@ const MainButton = (props) => {
 						{props.listButtonType===1|| props.listButtonType===2?
 
 						<View
-						style={[props.listButtonType===1?globalStyles.listButtonSmall:globalStyles.listButtonLarge,{backgroundColor:theme.stylesblockbg}]}>
+						style={[props.listButtonType===1?globalStyles.listButtonSmall:globalStyles.listButtonLarge,{backgroundColor:theme.stylesblockbg},props.listButton]}>
 							<View>
 								{props.Icon}
 							</View>
-						
+						<View
+						style={{
+							//backgroundColor:"yellow",
+							flexDirection:"column"
+						}}
+						>	
+							<TextComponent
+								style={[globalStyles.listButtonTxtLargeHeadline,,props.listButtonTxt,{color:theme.primaryblack}]}
+								>{props.listHeadlLine}</TextComponent>
 								<TextComponent
-								style={[props.listButtonType===1?globalStyles.listButtonTxtSmall:globalStyles.listButtonTxtLarge,{color:theme.primaryblack}]}
-								>{props.label}</TextComponent>
+								style={[globalStyles.listButtonTxtLarge,,props.listButtonTxt,{color:theme.primarycolor2_100}]}
+								>{props.listDescription}</TextComponent>
+						</View>
+
 						
 							<View>
 								{props.listButtonType===1?
@@ -390,9 +415,9 @@ const MainButton = (props) => {
 							</View>
 						:
 						props.listButtonType===3?
-						<View style={[globalStyles.listButtonDashboard,{backgroundColor:theme.stylesblockbg}]}>
+						<View style={[globalStyles.listButtonDashboard,props.listButtonDashboard,{backgroundColor:theme.stylesblockbg}]}>
 						<TextComponent
-						style={[globalStyles.listButtonTxt,{color:theme.primaryblack}]}
+						style={[globalStyles.listButtonTxt,props.listButtonTxt,{color:theme.primaryblack}]}
 						>{props.label}</TextComponent>
 						<RightRedArrow
 								width={actuatedNormalize(24)}
@@ -400,7 +425,7 @@ const MainButton = (props) => {
 								></RightRedArrow>
 						</View>:
 					<View
-					style={[globalStyles.listButtonDashboard1,{backgroundColor:theme.stylesblockbg}]}
+					style={[globalStyles.listButtonDashboard1,props.listButtonDashboard1,{backgroundColor:theme.stylesblockbg}]}
 					>
 						<RightRedArrow
 								width={actuatedNormalize(24)}
@@ -411,7 +436,7 @@ const MainButton = (props) => {
 							}}
 								></RightRedArrow>
 						<TextComponent
-							style={[globalStyles.listButtonTxt1,{color:theme.primaryblack}]}
+							style={[globalStyles.listButtonTxt1,props.listButtonTxt1,{color:theme.primaryblack}]}
 						>{props.label}</TextComponent>
 					</View>
 						}

@@ -318,32 +318,35 @@ MainButtonComponentStory.args = {
  enablePrimaryLargeBlack:false,
  enablePrimaryLargeSmall:false,
  enableSecondaryBorderBlack:false,
- enableSecondaryBorderRed:false,
- preloginRedButton:false,
- preloginBlackButton:false,
+// enableSecondaryBorderRed:false,
+// preloginRedButton:false,
+ //preloginBlackButton:false,
  disabled:false,
  quickActionButton:false,
-//  Icon:<SvgIconList
-//                         icon="AccountAction"
-//                         width={24}
-//                         height={24}
-//                       />,
-Icon:	<GreyInfo
-width={actuatedNormalize(16)}
-height={actuatedNormalize(16)}
-/>,
+  Icon:<SvgIconList
+                         icon="AccountAction"
+                         width={24}
+                         height={24}
+                      />,
+// Icon:	<GreyInfo
+// width={actuatedNormalize(16)}
+// height={actuatedNormalize(16)}
+// />,
   quickActionButtonLabel:"Button",
   quickActionButtonType:1,
   linkButton:false,
   linkType:"large", // small/large
   listButton:false,
   listButtonType:1,
-  floatingButton:false,
+  listHeadlLine:"HeadLine",
+  listDescription:"Lorem IPsum",
+  listNotificationCount:1,
+ // floatingButton:false,
   enableprimary:false,
   enableSecondary:false,
   enableImageButton:false,
-  segmentButton:false,
-  data:["First", "Second", "Third"],
+  //segmentButton:false,
+ // data:["First", "Second", "Third"],
   chips:true,
   chipsBackgroudColor:"#e5f2f2",
   chipsBorderColor:"#99cecc",
