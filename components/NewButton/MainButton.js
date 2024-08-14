@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {Text, StyleSheet, View, Image,TouchableOpacity} from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
-import TextComponent from "../Button/TextComponent";
+import TextComponent from '../Common/TextComponent';
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import SvgIconList from "../../constants/SvgIconList";
