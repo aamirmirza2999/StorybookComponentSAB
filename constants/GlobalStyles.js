@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,fontXSmall,fontSmall,fontSmallMedium,fontMedium,fontMediumLarge,fontLarge,fontXLarge,fontXXLarge,fontXLG,fontXXLG,lineHeightXSmall,lineHeightSmall,lineHeightSmallMedium,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, lineHeightXXSmall, fontXXSmall,lineHeightMedium,lineHeightMediumLarge,lineHeightLarge,lineHeightXLarge,lineHeightXXLarge,lineHeightXLG,lineHeightXXLG,
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, lineHeightXXSmall, fontXXSmall,lineHeightMedium,lineHeightMediumLarge,lineHeightLarge,lineHeightXLarge,lineHeightXXLarge,lineHeightXLG,lineHeightXXLG, fontWeightBold,
 } from "./Size";
 
 
@@ -62,7 +62,7 @@ const deviceHeight = Dimensions.get('window').height;
           // color: Colors.primaryTextColor,
       },
       TextInputComponenttextstyle:{
-        fontWeight:'bold',
+        fontWeight:fontWeightBold,
         fontSize:actuatedNormalize(16)
       },
       NoneditableInputstyle:{
@@ -128,7 +128,7 @@ const deviceHeight = Dimensions.get('window').height;
   },
     primaryTextLarge: {
       textAlign: "center",
-      fontWeight: "700",
+      fontWeight: fontWeightBold,
       lineHeight:lineHeightLarge,
       fontSize:fontMediumLarge,
       fontFamily:Fonts.Bold,
@@ -441,7 +441,7 @@ togglelabel:{
   jm: {
     fontSize: fontXLarge,
     lineHeight: spacingM,
-    fontWeight: actuatedNormalize(700),
+    fontWeight: fontWeightBold,
     fontFamily: Fonts.Bold,
     textAlign: "left",
     zIndex: 1
@@ -639,7 +639,7 @@ typefilledElementsinitials: {
    marginHorizontal:120
   },
   welcomeBack: {
-      fontWeight: actuatedNormalize(700),
+      fontWeight:fontWeightBold,
       lineHeight: actuatedNormalize(21),
       fontSize: spacingS,
       fontFamily: Fonts.Regular,
@@ -913,7 +913,7 @@ wrapper: {
     fontFamily:Fonts.Bold,
     fontSize: actuatedNormalize(16),
     lineHeight:actuatedNormalize(24),
-    fontWeight: "700",
+    fontWeight: fontWeightBold,
     textAlign: "left",
     marginTop:actuatedNormalize(-20)
 
