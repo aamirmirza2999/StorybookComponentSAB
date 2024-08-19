@@ -2,28 +2,14 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 // import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
-import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, S2,S700, S10, S3, S18, S14, S12, S17, S4, S5, S25,S21, S32,S7,S9,S15,S68, S11, S13, S16, S56,S20,S100, S22
+import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,fontXSmall,fontSmall,fontSmallMedium,fontMedium,fontMediumLarge,fontLarge,fontXLarge,fontXXLarge,fontXLG,fontXXLG,lineHeightXSmall,lineHeightSmall,lineHeightSmallMedium,
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, lineHeightXXSmall, fontXXSmall,lineHeightMedium,lineHeightMediumLarge,lineHeightLarge,lineHeightXLarge,lineHeightXXLarge,lineHeightXLG,lineHeightXXLG, fontWeightBold,
 } from "./Size";
 
 
 const deviceHeight = Dimensions.get('window').height;
 
  export const globalStyles ={
-  optioncontainer:{
-    flexDirection:"row",
-    justifyContent:"center",
-    alignItems:"center",
-    borderRadius:radiusS,
-    padding:spacingXS
-  },
-  optioncontainertxt:{
-    alignSelf:"center",
-    fontSize:actuatedNormalize(12),
-    lineHeight:actuatedNormalize(16),
-    fontFamily:Fonts.Regular,
-    //paddingBottom:spacingXS
-  },
     svgStyle :{
         width: '80',
         height: '40',
@@ -43,7 +29,7 @@ const deviceHeight = Dimensions.get('window').height;
         justifyContent: 'center',
         height: actuatedNormalize(44),
         fontSize: actuatedNormalize(14),
-        fontFamily: Fonts.Bold,
+        fontFamily: Fonts.HSBC,
       },
       screenInitialStyle:{
       
@@ -51,18 +37,18 @@ const deviceHeight = Dimensions.get('window').height;
       },
       TextComponentLabelstyle:{
         fontSize:actuatedNormalize(16),
-        fontFamily: Fonts.Bold,
+        fontFamily: Fonts.HSBC,
           // color: Colors.primaryTextColor,
           paddingBottom:spacingXS
       },
       TextComponentDisclaimerstyle:{
         paddingBottom:spacingM,
         fontSize:actuatedNormalize(14),
-        fontFamily: Fonts.Light,
+        fontFamily: Fonts.HSBC,
           // color: Colors.primaryTextColor,
       },
       TextInputComponenttextstyle:{
-        fontWeight:'bold',
+        fontWeight:fontWeightBold,
         fontSize:actuatedNormalize(16)
       },
       NoneditableInputstyle:{
@@ -75,7 +61,7 @@ const deviceHeight = Dimensions.get('window').height;
         marginVertical:spacingM
       },
       tncTextStyle:{
-        fontFamily: Fonts.Bold,
+        fontFamily: Fonts.HSBC,
         fontSize:actuatedNormalize(14),
       },
       DividerStyle:{
@@ -85,20 +71,23 @@ const deviceHeight = Dimensions.get('window').height;
         alignSelf: "stretch"
       },
       primaryFlexBoxLarge: {
-    		paddingVertical:spacingXS,
-    		borderRadius: radiusS,
+       // margin:8,
+        paddingTop:actuatedNormalize(11),
+        paddingBottom:actuatedNormalize(13),
+    		borderRadius:radiusS,
     		justifyContent: "center",
     		flexDirection: "row",
     		paddingHorizontal:spacingS,
     		alignItems: "center",
+        minWidth: 128
     		//flex: 1
   	},
     badgeNotification:{
-      borderRadius: S100,
+      borderRadius: actuatedNormalize(100),
       backgroundColor: "#ffbb33",
       //flex: 1,
-      width: S15,
-      height: S15,
+      width: actuatedNormalize(15),
+      height: actuatedNormalize(15),
       marginLeft:spacingXS
     },
     badgeNotification1:{
@@ -111,8 +100,8 @@ const deviceHeight = Dimensions.get('window').height;
       zIndex: 2
     },
     badgeTxt:{
-      fontSize: S10,
-      lineHeight: S14,
+      fontSize: fontXXSmall,
+      lineHeight: lineHeightXXSmall,
       fontFamily: "Univers Next for HSBC",
       color: "#000",
       textAlign: "center",
@@ -121,21 +110,22 @@ const deviceHeight = Dimensions.get('window').height;
     primaryFlexBoxSmall: {
       borderRadius:radiusS,
       paddingHorizontal:spacingS,
-      paddingVertical:spacingXXS,
+      paddingVertical:actuatedNormalize(7),
       justifyContent: "center",
       flexDirection: "row",
       alignItems: "center",
+      minWidth: 60
   },
     primaryTextLarge: {
       textAlign: "center",
-      fontWeight: "700",
-      lineHeight:S22,
-      fontSize:S15,
+      fontWeight: fontWeightBold,
+      lineHeight:lineHeightLarge,
+      fontSize:fontMediumLarge,
       fontFamily:Fonts.Bold,
   },
   primaryTextSmall: {
-    fontSize:S13,
-    lineHeight:S17,
+    fontSize:fontSmallMedium,
+    lineHeight:lineHeightSmallMedium,
     fontFamily:Fonts.Regular,
     textAlign: "center",
 },
@@ -148,7 +138,7 @@ secondaryFlexBoxLarge: {
 },
 preloginRedButton:{
   paddingHorizontal:spacingL,
-  paddingVertical:S9,
+  paddingVertical:actuatedNormalize(9),
   justifyContent: "center",
   alignItems: "center"
 },
@@ -164,9 +154,9 @@ quickActionButtonBox:{
 quickActionButtonTxt:{
     alignSelf: "stretch",
     width:actuatedNormalize(110),
-    fontSize:S14,
+    fontSize:fontMedium,
     paddingBottom:spacingXS,
-    lineHeight:S18,
+    lineHeight:lineHeightMedium,
     fontFamily:Fonts.Regular,
     textAlign: "center",
     marginTop:spacingXS
@@ -181,8 +171,8 @@ quickActionButtonBox1:{
   alignSelf:"center",
 },
 quickActionButtonTxt1:{
-  fontSize:S14,
-  lineHeight: S18,
+  fontSize:fontMedium,
+  lineHeight: lineHeightMedium,
   textAlign: "left",
   marginLeft:spacingXS,
   fontFamily:Fonts.Regular,
@@ -198,20 +188,20 @@ quickActionButtonBox2:{
 },
 quickActionButtonTxt2:{
  // alignSelf: "stretch",
-fontSize:S12,
-lineHeight:S16,
+fontSize:fontSmall,
+lineHeight:lineHeightSmall,
 fontFamily:Fonts.Regular,
 textAlign: "center"
 },
 linkTextsmall:{
-  fontSize:actuatedNormalize(12),
-lineHeight:actuatedNormalize(16),
+  fontSize:fontSmall,
+lineHeight:lineHeightSmall,
 fontFamily:Fonts.Regular,
 textAlign: "left"
 },
 linkTextlarge:{
-  fontSize:S17,
-lineHeight:S22,
+  fontSize:fontLarge,
+lineHeight:lineHeightLarge,
 fontFamily:Fonts.Regular,
 textAlign: "left"
 },
@@ -260,7 +250,7 @@ togglelabel:{
   },
     notificationbadgetext: {
       lineHeight: 17,
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
       textAlign: "center",
       fontSize: 12,
   },
@@ -344,8 +334,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
     alignSelf: "center",
-    fontSize: S15,
-    lineHeight: S22,
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightLarge,
     textAlign: "left",
     fontFamily:Fonts.Regular,
   },
@@ -355,8 +345,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: S16,
-      lineHeight: S21,
+      fontSize: fontLarge,
+      lineHeight: lineHeightLarge,
       textAlign: "left",
       fontFamily:Fonts.Regular,
   },
@@ -366,8 +356,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: S16,
-      lineHeight: S21,
+      fontSize: fontMediumLarge,
+      lineHeight: lineHeightMediumLarge,
       textAlign: "left",
       fontFamily:Fonts.Bold,
   },
@@ -397,8 +387,8 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: S15,
-      lineHeight:S22,
+      fontSize: fontMediumLarge,
+      lineHeight:lineHeightMediumLarge,
       textAlign: "left",
       fontFamily:Fonts.Regular,
   },
@@ -408,15 +398,15 @@ togglelabel:{
     //alignItems: "flex-end",
   
       alignSelf: "center",
-      fontSize: S15,
-      lineHeight: S22,
+      fontSize: fontMediumLarge,
+      lineHeight: lineHeightLarge,
       textAlign: "left",
       fontFamily:Fonts.Regular,
     },
     floatingButton:{
       borderRadius: radiusS,
-      width:S56,
-      height:S56,
+      width:actuatedNormalize(56),
+      height:actuatedNormalize(56),
       overflow: "hidden",
       flexDirection: "row",
       alignItems: "center",
@@ -434,34 +424,34 @@ togglelabel:{
       zIndex: 0
   },
   avatar: {
-    width: S32,
-    height: S32,
+    width: actuatedNormalize(32),
+    height: actuatedNormalize(32),
     paddingHorizontal:spacingS,
 },
   jm: {
-    fontSize: S20,
+    fontSize: fontXLarge,
     lineHeight: spacingM,
-    fontWeight: S700,
-    fontFamily: Fonts.Bold,
+    fontWeight: fontWeightBold,
+    fontFamily: Fonts.HSBC,
     textAlign: "left",
     zIndex: 1
 },
 
 jm2:{
-  fontSize: S14,
-  lineHeight: S18,
-  fontFamily: Fonts.Bold,
+  fontSize: fontMedium,
+  lineHeight: lineHeightMedium,
+  fontFamily: Fonts.HSBC,
   textAlign: "left",
   zIndex: 1
 },
 jm3:{
-  fontSize: S12,
+  fontSize: fontSmall,
 lineHeight: spacingS,
-fontFamily: Fonts.Bold,
+fontFamily: Fonts.HSBC,
 textAlign: "left"
 },
 typefilledElementsinitials: {
-  borderRadius: S100,
+  borderRadius: actuatedNormalize(100),
   flex: 1,
   padding: spacingS,
  position: "absolute",
@@ -492,13 +482,13 @@ typefilledElementsinitials: {
   height:avatarHeight
   },
     boldTextFamily:{
-      fontFamily: Fonts.Bold,
+      fontFamily: Fonts.HSBC,
     },
     regularTextFamily:{
-      fontFamily:Fonts.Regular,
+      fontFamily:Fonts.HSBC,
     },
     lightTextFamily:{
-      fontFamily: Fonts.Light,
+      fontFamily: Fonts.HSBC,
     },
     imageButton:{
       borderRadius: radiusS,
@@ -516,7 +506,7 @@ typefilledElementsinitials: {
           segmentactiveTabStyle:{
             shadowOffset: {
             width: 0,
-            height: S2
+            height: 2
             },
             shadowRadius: 6,
             elevation: 6,
@@ -528,8 +518,8 @@ typefilledElementsinitials: {
             justifyContent: "center",
           },
           segmenttabTextStyle:{
-            fontSize:S14,
-            lineHeight: S18,
+            fontSize:fontMedium,
+            lineHeight: lineHeightMedium,
             fontFamily:Fonts.Regular,
             textAlign: "center"
           },
@@ -563,14 +553,14 @@ typefilledElementsinitials: {
       borderStyle: "solid",
      // borderColor: "#99cecc",
       borderWidth: 1,
-      margin:S10,
+      margin:actuatedNormalize(10),
       paddingVertical: spacingS,
       flexDirection: "row", 
       paddingHorizontal: spacingS,
       borderRadius: radiusS
       },
       snackbarBox:{
-        paddingTop: S3,
+        paddingTop: actuatedNormalize(3),
         paddingBottom: spacingXXS,
         marginLeft: spacingS,
         flex: 1
@@ -579,15 +569,15 @@ typefilledElementsinitials: {
         alignSelf: "stretch",
         textAlign: "left",
         fontFamily:Fonts.Regular,
-        lineHeight: S18,
-        fontSize:S14
+        lineHeight: lineHeightMedium,
+        fontSize:fontMedium
       },
       AccordianMenuContainer:{
         borderRadius: radiusS,
         paddingHorizontal: spacingS,
         paddingVertical: spacingXS,
-        marginHorizontal:S10,
-        marginVertical:S10
+        marginHorizontal:actuatedNormalize(10),
+        marginVertical:actuatedNormalize(10)
       },
       AccordianMenuTitleBox:{
         justifyContent: "center",
@@ -595,8 +585,8 @@ typefilledElementsinitials: {
         flexDirection: "row"
       },
       AccordianTitleText:{
-        fontSize: S14,
-        lineHeight:S18,
+        fontSize: fontMedium,
+        lineHeight:lineHeightMedium,
         fontFamily:Fonts.Regular,
         textAlign: "left",
         display: "flex",
@@ -614,8 +604,8 @@ typefilledElementsinitials: {
       },
       AccordianSubTitleText:{
         flex: 1,
-        fontSize:S12,
-        lineHeight: S17,
+        fontSize:fontSmall,
+        lineHeight: fontLarge,
         fontFamily:Fonts.Regular,
         textAlign: "left"
 
@@ -629,32 +619,32 @@ typefilledElementsinitials: {
   },
   actionTypo: {
       textAlign: "center",
-      fontFamily: Fonts.Regular
+      fontFamily: Fonts.HSBC
   },
   ragIcon: {
-      width: S68,
-      height: S68,
+      width: actuatedNormalize(68),
+      height: actuatedNormalize(68),
    justifyContent:"center",
    alignItems:"center",
    marginHorizontal:120
   },
   welcomeBack: {
-      fontWeight: S700,
-      lineHeight: S21,
+      fontWeight:fontWeightBold,
+      lineHeight: actuatedNormalize(21),
       fontSize: spacingS,
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
       flex: 1,
-      marginRight:S10
+      marginRight:actuatedNormalize(10)
   },
   title: {
       flexDirection: "row",
   },
   enterYourUsername: {
-      fontSize: S14,
-      lineHeight: S18,
+      fontSize: fontMedium,
+      lineHeight: lineHeightMedium,
       marginTop: spacingXS,
       alignSelf: "stretch",
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
       textAlign: "center"
   },
   content: {
@@ -662,9 +652,9 @@ typefilledElementsinitials: {
       alignSelf: "stretch",
   },
   action: {
-      lineHeight: S21,
-      fontSize: S16,
-      fontFamily: Fonts.Regular,
+      lineHeight: actuatedNormalize(21),
+      fontSize: actuatedNormalize(16),
+      fontFamily: Fonts.HSBC,
   },
   wrapper1: {
       // height: 24,
@@ -674,8 +664,8 @@ typefilledElementsinitials: {
       flexDirection: "row"
   },
   primary: {
-      paddingTop: S11,
-      paddingBottom: S13,
+      paddingTop: actuatedNormalize(11),
+      paddingBottom: actuatedNormalize(13),
       flexDirection: "row",
       borderRadius: spacingXS,
       flex: 1,
@@ -741,46 +731,46 @@ elevation: 0,
       //......................
       pwdbarStyle:{
         width: "31%",
-        height: S4,
-        marginTop:S5,
-        marginHorizontal:S3,
-        borderRadius:S5
+        height: actuatedNormalize(4),
+        marginTop:actuatedNormalize(5),
+        marginHorizontal:actuatedNormalize(3),
+        borderRadius:actuatedNormalize(5)
       },
       pwdpostbarStyle: {
         width: "21.3%",
-        height: S5,
-        marginTop: S10,
-        right: S17,
+        height: actuatedNormalize(5),
+        marginTop: actuatedNormalize(10),
+        right: actuatedNormalize(17),
         //backgroundColor: "#DFDFDE",
-        marginHorizontal: S3
+        marginHorizontal: actuatedNormalize(3)
       },
       pwdtextContainer: {
         alignItems: 'center',
         width: '100%',
-        marginTop:S10,
-        paddingRight: S25,
+        marginTop:actuatedNormalize(10),
+        paddingRight: actuatedNormalize(25),
       },
       pwdmeterContainer: {
         alignItems: 'center',
-        height: S5,
+        height: actuatedNormalize(5),
         flexDirection: 'row',
         width: '100%',
         marginTop: spacingXS,
       },
       pwdlabel2: {
-        fontSize:S12,
+        fontSize:fontSmall,
        // color: "#626469",
-         lineHeight:S18,
+         lineHeight:lineHeightMedium,
       },
       pwdlabel: {
-        fontSize:S12,
+        fontSize:fontSmall,
         //color: '#000000',
-        lineHeight:S18,
+        lineHeight:lineHeightMedium,
         letterSpacing: 0
       },
       pwdpostlabel2: {
-        fontSize: S14,
-        marginLeft: S10,
+        fontSize: fontMedium,
+        marginLeft: actuatedNormalize(10),
         //color: "#5C6F7C"
       },
       chipsButtonLarge:{
@@ -793,9 +783,9 @@ elevation: 0,
         padding: spacingXS
       },
       chipsTextLarge:{
-        fontSize: S14,
-        lineHeight: S18,
-        fontFamily: Fonts.Regular,
+        fontSize: fontMedium,
+        lineHeight: lineHeightMedium,
+        fontFamily: Fonts.HSBC,
         textAlign: "left",
         marginLeft: spacingXXS
       },
@@ -807,12 +797,12 @@ elevation: 0,
         alignItems: "center",
         justifyContent: "center",
         paddingHorizontal: spacingXS,
-        paddingVertical: S2
+        paddingVertical: actuatedNormalize(2)
       },
       chipsTextSmall:{
-        fontSize: S12,
-        lineHeight: S16,
-        fontFamily: Fonts.Regular,
+        fontSize: fontSmall,
+        lineHeight: lineHeightSmall,
+        fontFamily: Fonts.HSBC,
         textAlign: "left",
         marginLeft: spacingXXS
       },
@@ -867,7 +857,7 @@ wrapper: {
   bottombtntext:{
     lineHeight: actuatedNormalize(16),
     fontSize: actuatedNormalize(12),
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.HSBC,
   } ,
   textview:{
     flex: 1,
@@ -903,7 +893,7 @@ wrapper: {
       },
     }),
      marginLeft: actuatedNormalize(3.5),
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(12),
     lineHeight: 16,
     textAlign: "left",
@@ -915,7 +905,7 @@ wrapper: {
     fontFamily:Fonts.Bold,
     fontSize: actuatedNormalize(16),
     lineHeight:actuatedNormalize(24),
-    fontWeight: "700",
+    fontWeight: fontWeightBold,
     textAlign: "left",
     marginTop:actuatedNormalize(-20)
 
@@ -929,7 +919,7 @@ wrapper: {
 
   },
   totalamount:{
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(14),
    lineHeight: 18,
    textAlign: "left",

@@ -312,11 +312,12 @@ EmptyStateComponentStory.args = {
 };
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
+ backgroundColor:"#db0011",
  label:"Action",
- enablePrimaryLarge:false, 
+ enablePrimaryLarge:true, 
  enablePrimarySmall:false,
- enablePrimaryLargeBlack:false,
- enablePrimaryLargeSmall:false,
+// enablePrimaryLargeBlack:false,
+ //enablePrimaryLargeSmall:false,
  enableSecondaryBorderBlack:false,
 // enableSecondaryBorderRed:false,
 // preloginRedButton:false,
@@ -347,12 +348,15 @@ MainButtonComponentStory.args = {
   enableImageButton:false,
   //segmentButton:false,
  // data:["First", "Second", "Third"],
-  chips:true,
+  chips:false,
   chipsBackgroudColor:"#e5f2f2",
   chipsBorderColor:"#99cecc",
   chipsType:"small",//small/large/icon
   onPress:null
 };
+MainButtonComponentStory.argTypes = {
+  backgroundColor: {control: 'color'},
+}
 
 export const AccordianStory = args => <AccordianMenu {...args} />;
 AccordianStory.args = {

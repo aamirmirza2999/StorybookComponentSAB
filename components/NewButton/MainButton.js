@@ -1,44 +1,17 @@
-import React,{useState} from 'react'
-import {Text, StyleSheet, View, Image,TouchableOpacity} from "react-native";
+import React,{} from 'react'
+import { StyleSheet, View,TouchableOpacity} from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
-import SvgIconList from "../../constants/SvgIconList";
-import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,AddBenefiary,RightRedArrow1, Split, GreyInfo } from "../../constants/SvgLocations";
-import SegmentedControlTab from "react-native-segmented-control-tab";
-
+import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,RightRedArrow1, Split,  } from "../../constants/SvgLocations";
 const MainButton = (props) => {
 	const { theme } = useTheme();
-	const [selectedIndex, SetselectedIndex] = useState(0);
+
     let Component = TouchableOpacity;
 
-	const handleIndexChange = (value) => {
-		SetselectedIndex(value);
-	  };
-  	
   	return (
     	<>
-		{/* {props.segmentButton?
-		<View
-		style={{
-			marginTop:actuatedNormalize(10)
-		}}
-		>
-		 <SegmentedControlTab
-		  tabsContainerStyle={{
-		 marginHorizontal:actuatedNormalize(10),
-		  }}
-		  tabStyle={[globalStyles.segmenttabStyle,{ backgroundColor: theme.primarycolor2_20,}]}
-		  activeTabStyle={[globalStyles.segmentactiveTabStyle,{shadowColor: "rgba(0, 0, 0, 0.15)",backgroundColor:theme.primarycolor4,}]}
-		  tabTextStyle={[globalStyles.segmenttabTextStyle,{color: "#000"}]}
-		  activeTabTextStyle={[globalStyles.segmenttabTextStyle,{color: "#000"}]}
-          values={props.data}
-          selectedIndex={selectedIndex}
-          onTabPress={handleIndexChange}
-        />
-		</View>
-		:null} */}
 		{/* Primary Large Button Red Background */}
       			{props.enablePrimaryLarge?
 					<Component
@@ -49,7 +22,7 @@ const MainButton = (props) => {
 						onPress={props.onPress}
 						disabled={props.disabled}
 					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge, props.primaryFlexBoxLarge]}>			
+            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge, props.primaryFlexBoxLarge]}>			
                   		 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
         			</View>
 					</Component>:null}
@@ -65,39 +38,7 @@ const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disabled}
 				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
-				</View>
-				</Component>:null}
-
-				{/* Primary Large Button Black Background */}
-
-				{props.enablePrimaryLargeBlack?
-					<Component
-					testID={props.testID ? props.testID : 'primaryCTALargeBlack'}
-					accessibilityLabel={
-					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALargeBlack'
-					}
-					onPress={props.onPress}
-					disabled={props.disabled}
-				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
-					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
-				</View>
-				</Component>:null}
-
-			{/* Primary Small Button Black Background */}
-
-				{props.enablePrimaryLargeSmall?
-				<Component
-					testID={props.testID ? props.testID : 'primaryCTABlackSmall'}
-					accessibilityLabel={
-					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTABlackSmall'
-					}
-					onPress={props.onPress}
-					disabled={props.disabled}
-				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
+				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
 					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
@@ -117,54 +58,7 @@ const MainButton = (props) => {
 					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
 				</View>
 				</Component>:null}
-
-			{/* Secondary Large Button Red Border */}
-{/* 
-				{props.enableSecondaryBorderRed?
-					<Component
-					testID={props.testID ? props.testID : 'primaryCTARB'}
-					accessibilityLabel={
-					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTARB'
-					}
-					onPress={props.onPress}
-					disabled={props.disabled}
-				>
-				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor3,alignSelf:"flex-start"},props.secondaryFlexBoxLarge,globalStyles.secondaryFlexBoxLarge]}>			
-					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor3},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
-				</View>
-				</Component>:null} */}
-
-			{/* Prelogin Red Background Button */}
-				{/* {props.preloginRedButton?
-					<Component
-						testID={props.testID ? props.testID : 'primaryCTALarge'}
-						accessibilityLabel={
-						props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALarge'
-						}
-						onPress={props.onPress}
-						disabled={props.disabled}
-					>
-            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
-                  		 <TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
-        			</View>
-					</Component>:null} */}
-
-			{/* Prelogin Black Background Button */}
-			
-					{/* {props.preloginBlackButton?
-					<Component
-					testID={props.testID ? props.testID : 'primaryCTALargeBlack'}
-					accessibilityLabel={
-					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALargeBlack'
-					}
-					onPress={props.onPress}
-					disabled={props.disabled}
-				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor,alignSelf:"flex-start"},props.preloginRedButton,globalStyles.preloginRedButton]}>			
-					<TextComponent style={[{color: theme.primarycolor4},props.primaryTextLarge,globalStyles.primaryTextLarge]}>{props.label}</TextComponent>
-				</View>
-				</Component>:null} */}
-
+		
 				{/* Quick Action Button */}
 			
 				{props.quickActionButton?
@@ -264,36 +158,10 @@ const MainButton = (props) => {
 						
 				null}
 
-					{/* Floating Button */}
-
-					{/* {props.floatingButton?
-					<Component
-						testID={props.testID ? props.testID : 'floatingButton'}
-						accessibilityLabel={
-						props.accessibilityLabel ? props.accessibilityLabel : 'floatingButton'
-						}
-						onPress={props.onPress}>
-						<View
-						style={[globalStyles.floatingButton,{ backgroundColor:theme.primarycolor3,}]}>
-							<AddBenefiary
-							width={actuatedNormalize(32)}
-							height={actuatedNormalize(32)}
-							/>
-
-						</View>
-			
-						</Component>:
-						
-				null} */}
-
 				{/*  Button Group */}
 
 				{props.enableprimary?
 						<Component
-						style={{
-							marginHorizontal:actuatedNormalize(16),
-							marginVertical:actuatedNormalize(16)
-						}}
 							testID={props.testID ? props.testID : 'primaryCTA'}
 							accessibilityLabel={
 							props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
@@ -340,9 +208,6 @@ const MainButton = (props) => {
 					{props.enableSecondary?		
 
 					<Component
-							style={{
-								marginHorizontal:actuatedNormalize(16)
-							}}
 								testID={props.testID ? props.testID : 'floatingButton'}
 								accessibilityLabel={
 								props.accessibilityLabel ? props.accessibilityLabel : 'floatingButton'
@@ -357,7 +222,7 @@ const MainButton = (props) => {
 				{props.enableImageButton?				
 				<Component>
 					<View
-					style={[globalStyles.imageButton,props.imageButton,{borderColor: "#000",}]}
+					style={[globalStyles.imageButton,props.imageButton,{borderColor: theme.primarycolor,}]}
 					>
 						<Split
 						width={actuatedNormalize(24)}
@@ -387,7 +252,6 @@ const MainButton = (props) => {
 							</View>
 						<View
 						style={{
-							//backgroundColor:"yellow",
 							flexDirection:"column"
 						}}
 						>	
@@ -441,9 +305,9 @@ const MainButton = (props) => {
 					</View>
 						}
 						
-						</Component>:
-						
-				null}
+							</Component>:
+							
+					null}
 
 </>	
 			);
