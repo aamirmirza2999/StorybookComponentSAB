@@ -1,7 +1,6 @@
 import {actuatedNormalize} from './PixelScaling';
 
 // SPACINGS:
-
 export const spacingXXS = actuatedNormalize(4)
 export const spacingXS = actuatedNormalize(8)
 export const spacingS = actuatedNormalize(16)
@@ -50,6 +49,6 @@ export const lineHeightXLG= actuatedNormalize(32)
 export const lineHeightXXLG= actuatedNormalize(41)
 
 //FontWeight
-export const fontWeightLight= actuatedNormalize(200)
-export const fontWeightRegular= actuatedNormalize(400)
-export const fontWeightBold= actuatedNormalize(700)
+export const fontWeightLight= "200"
+export const fontWeightRegular= "400"
+export const fontWeightBold= "700"

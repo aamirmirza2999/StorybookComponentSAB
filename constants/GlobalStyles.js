@@ -10,20 +10,6 @@ import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,f
 const deviceHeight = Dimensions.get('window').height;
 
  export const globalStyles ={
-  optioncontainer:{
-    flexDirection:"row",
-    justifyContent:"center",
-    alignItems:"center",
-    borderRadius:radiusS,
-    padding:spacingXS
-  },
-  optioncontainertxt:{
-    alignSelf:"center",
-    fontSize:actuatedNormalize(12),
-    lineHeight:actuatedNormalize(16),
-    fontFamily:Fonts.Regular,
-    //paddingBottom:spacingXS
-  },
     svgStyle :{
         width: '80',
         height: '40',
@@ -43,7 +29,7 @@ const deviceHeight = Dimensions.get('window').height;
         justifyContent: 'center',
         height: actuatedNormalize(44),
         fontSize: actuatedNormalize(14),
-        fontFamily: Fonts.Bold,
+        fontFamily: Fonts.HSBC,
       },
       screenInitialStyle:{
       
@@ -51,14 +37,14 @@ const deviceHeight = Dimensions.get('window').height;
       },
       TextComponentLabelstyle:{
         fontSize:actuatedNormalize(16),
-        fontFamily: Fonts.Bold,
+        fontFamily: Fonts.HSBC,
           // color: Colors.primaryTextColor,
           paddingBottom:spacingXS
       },
       TextComponentDisclaimerstyle:{
         paddingBottom:spacingM,
         fontSize:actuatedNormalize(14),
-        fontFamily: Fonts.Light,
+        fontFamily: Fonts.HSBC,
           // color: Colors.primaryTextColor,
       },
       TextInputComponenttextstyle:{
@@ -75,7 +61,7 @@ const deviceHeight = Dimensions.get('window').height;
         marginVertical:spacingM
       },
       tncTextStyle:{
-        fontFamily: Fonts.Bold,
+        fontFamily: Fonts.HSBC,
         fontSize:actuatedNormalize(14),
       },
       DividerStyle:{
@@ -85,12 +71,15 @@ const deviceHeight = Dimensions.get('window').height;
         alignSelf: "stretch"
       },
       primaryFlexBoxLarge: {
-    		paddingVertical:spacingXS,
-    		borderRadius: radiusS,
+       // margin:8,
+        paddingTop:actuatedNormalize(11),
+        paddingBottom:actuatedNormalize(13),
+    		borderRadius:radiusS,
     		justifyContent: "center",
     		flexDirection: "row",
     		paddingHorizontal:spacingS,
     		alignItems: "center",
+        minWidth: 128
     		//flex: 1
   	},
     badgeNotification:{
@@ -121,10 +110,11 @@ const deviceHeight = Dimensions.get('window').height;
     primaryFlexBoxSmall: {
       borderRadius:radiusS,
       paddingHorizontal:spacingS,
-      paddingVertical:spacingXXS,
+      paddingVertical:actuatedNormalize(7),
       justifyContent: "center",
       flexDirection: "row",
       alignItems: "center",
+      minWidth: 60
   },
     primaryTextLarge: {
       textAlign: "center",
@@ -260,7 +250,7 @@ togglelabel:{
   },
     notificationbadgetext: {
       lineHeight: 17,
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
       textAlign: "center",
       fontSize: 12,
   },
@@ -442,7 +432,7 @@ togglelabel:{
     fontSize: fontXLarge,
     lineHeight: spacingM,
     fontWeight: fontWeightBold,
-    fontFamily: Fonts.Bold,
+    fontFamily: Fonts.HSBC,
     textAlign: "left",
     zIndex: 1
 },
@@ -450,14 +440,14 @@ togglelabel:{
 jm2:{
   fontSize: fontMedium,
   lineHeight: lineHeightMedium,
-  fontFamily: Fonts.Bold,
+  fontFamily: Fonts.HSBC,
   textAlign: "left",
   zIndex: 1
 },
 jm3:{
   fontSize: fontSmall,
 lineHeight: spacingS,
-fontFamily: Fonts.Bold,
+fontFamily: Fonts.HSBC,
 textAlign: "left"
 },
 typefilledElementsinitials: {
@@ -492,13 +482,13 @@ typefilledElementsinitials: {
   height:avatarHeight
   },
     boldTextFamily:{
-      fontFamily: Fonts.Bold,
+      fontFamily: Fonts.HSBC,
     },
     regularTextFamily:{
-      fontFamily:Fonts.Regular,
+      fontFamily:Fonts.HSBC,
     },
     lightTextFamily:{
-      fontFamily: Fonts.Light,
+      fontFamily: Fonts.HSBC,
     },
     imageButton:{
       borderRadius: radiusS,
@@ -629,7 +619,7 @@ typefilledElementsinitials: {
   },
   actionTypo: {
       textAlign: "center",
-      fontFamily: Fonts.Regular
+      fontFamily: Fonts.HSBC
   },
   ragIcon: {
       width: actuatedNormalize(68),
@@ -642,7 +632,7 @@ typefilledElementsinitials: {
       fontWeight:fontWeightBold,
       lineHeight: actuatedNormalize(21),
       fontSize: spacingS,
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
       flex: 1,
       marginRight:actuatedNormalize(10)
   },
@@ -654,7 +644,7 @@ typefilledElementsinitials: {
       lineHeight: lineHeightMedium,
       marginTop: spacingXS,
       alignSelf: "stretch",
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
       textAlign: "center"
   },
   content: {
@@ -664,7 +654,7 @@ typefilledElementsinitials: {
   action: {
       lineHeight: actuatedNormalize(21),
       fontSize: actuatedNormalize(16),
-      fontFamily: Fonts.Regular,
+      fontFamily: Fonts.HSBC,
   },
   wrapper1: {
       // height: 24,
@@ -793,7 +783,7 @@ typefilledElementsinitials: {
       chipsTextLarge:{
         fontSize: fontMedium,
         lineHeight: lineHeightMedium,
-        fontFamily: Fonts.Regular,
+        fontFamily: Fonts.HSBC,
         textAlign: "left",
         marginLeft: spacingXXS
       },
@@ -810,7 +800,7 @@ typefilledElementsinitials: {
       chipsTextSmall:{
         fontSize: fontSmall,
         lineHeight: lineHeightSmall,
-        fontFamily: Fonts.Regular,
+        fontFamily: Fonts.HSBC,
         textAlign: "left",
         marginLeft: spacingXXS
       },
@@ -865,7 +855,7 @@ wrapper: {
   bottombtntext:{
     lineHeight: actuatedNormalize(16),
     fontSize: actuatedNormalize(12),
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.HSBC,
   } ,
   textview:{
     flex: 1,
@@ -901,7 +891,7 @@ wrapper: {
       },
     }),
      marginLeft: actuatedNormalize(3.5),
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(12),
     lineHeight: 16,
     textAlign: "left",
@@ -927,7 +917,7 @@ wrapper: {
 
   },
   totalamount:{
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(14),
    lineHeight: 18,
    textAlign: "left",
