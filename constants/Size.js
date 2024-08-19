@@ -36,7 +36,7 @@ export const fontXXLarge= actuatedNormalize(22)
 export const fontXLG= actuatedNormalize(26)
 export const fontXXLG= actuatedNormalize(34)
 
-//lineHeight
+//LineHeight
 export const lineHeightXXSmall= actuatedNormalize(14)
 export const lineHeightXSmall= actuatedNormalize(15)
 export const lineHeightSmall= actuatedNormalize(16)
@@ -48,3 +48,8 @@ export const lineHeightXLarge= actuatedNormalize(25)
 export const lineHeightXXLarge= actuatedNormalize(28)
 export const lineHeightXLG= actuatedNormalize(32)
 export const lineHeightXXLG= actuatedNormalize(41)
+
+//FontWeight
+export const fontWeightLight= actuatedNormalize(200)
+export const fontWeightRegular= actuatedNormalize(400)
+export const fontWeightBold= actuatedNormalize(700)
