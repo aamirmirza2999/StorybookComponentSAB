@@ -698,9 +698,15 @@ typefilledElementsinitials: {
   },
   //emptystate end
       tabBarLabel: {
-        alignSelf: "center",
         lineHeight: I18nManager.isRTL? actuatedNormalize(20) : actuatedNormalize(18), 
         fontSize: actuatedNormalize(14),
+      },
+      container: {
+        // marginTop: actuatedNormalize(15),
+        flexDirection: "row",
+        alignItems: "center",
+        marginHorizontal: actuatedNormalize(16),
+        // backgroundColor: 'red',
       },
       tabBarContainer: {
         flex: 1,
@@ -709,34 +715,30 @@ typefilledElementsinitials: {
       tabBarComponent:{
         height: deviceHeight,
         backgroundColor: '#fbfcfe',
-        marginHorizontal: spacingS
+        //  marginHorizontal: spacingS
       },
       renderTabBarView: {
         marginLeft: spacingXS,
         marginRight: spacingXS,
       },
       tabBarIndicatorStyle: {
-        backgroundColor: "#eeeeee",
-        height: "75%",
-        borderRadius: radiusS,
-        justifyContent: "center",
-        bottom: spacingXS,
-        ...(Platform.OS === "web" && {
-        height: actuatedNormalize(24), // Using height for consistent sizing
-        position: "absolute",
-        top: actuatedNormalize(-12), // Adjust top to ensure borderRadius is not cut off
-        })
+        height:0
       },
       tabBarStyle: {
-        backgroundColor: '#fbfcfe',
-        elevation: 0,
-        // borderColor: "rgba(179,177,179,0.25)",
-        shadowOpacity: 0
+         backgroundColor: '#fbfcfe',
+elevation: 0,
+        shadowOpacity: 0,
+
       },
       tabBarIndicatorContainerStyle: {
-        alignSelf: 'center',
-        bottom: -1
+         alignSelf: 'center',
+         elevation: 0,
+         shadowOpacity: 0,
+         shadowColor:"transperent"
+        // bottom: -1
+        
       },
+      //......................
       pwdbarStyle:{
         width: "31%",
         height: S4,
