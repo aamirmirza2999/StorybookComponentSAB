@@ -34,6 +34,7 @@ import { Success } from '../constants/SvgLocations';
 import EmptystateNote from '../components/Common/EmptystateNote';
 import MainHeader from '../components/Common/MainHeader';
 import CardsComponent from '../components/Common/CardsComponent'
+import Space from '../components/Common/Space';
 
 
 // import Avatarcomponent from '../components/Button/Avatarcomponent';
@@ -191,9 +192,11 @@ const Home = props => {
           <TouchableOpacity
             onPress={() => navigation.navigate('PassWord')}
             style={{
-
               alignSelf: 'flex-end',
             }}>
+              <Space
+              paddingVertical={actuatedNormalize(10)}
+              />   
             <TextComponent
               fontWeight={'Bold'}
               style={{
@@ -203,6 +206,9 @@ const Home = props => {
               }}>
               {t('initialLang:forgot')}
             </TextComponent>
+            <Space
+              paddingVertical={actuatedNormalize(10)}
+              />  
           </TouchableOpacity>
         </View>
         <CardsComponent
