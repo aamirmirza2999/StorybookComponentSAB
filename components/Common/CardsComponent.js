@@ -18,7 +18,6 @@ export const CardsComponent = (props) => {
         <ImageBackground
             style={styles.typecardsLanguagearabic}
             source={props.CardImage}
-        //resizeMode="stretch"
         >
 
             <View style={styles.parentFlexBox}>
@@ -86,7 +85,7 @@ export const CardsComponent = (props) => {
 
                 </View>
                 :
-
+             (props.balanceRequired?
                 <View style={[styles.frameParent, styles.wrapper1FlexBox]}>
                     <Divider />
                     <View style={styles.mainAccountParent}>
@@ -99,7 +98,7 @@ export const CardsComponent = (props) => {
                             </View>
                         </View>
                     </View>
-                </View>}
+                </View>:null)}
         </ImageBackground>);
 };
 const styles = StyleSheet.create({
@@ -232,7 +231,7 @@ const styles = StyleSheet.create({
         padding: 16,
         backgroundColor: "transparent",
         overflow: "hidden",
-        flex: 1,
+        //flex: 1,
         alignSelf: "stretch"
     },
     mainAccount: {
