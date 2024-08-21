@@ -444,14 +444,29 @@ TooltipComponentStory.argTypes = {
 
 export const TabsComponentStory = args => <TabsComponent {...args} />;
 TabsComponentStory.args = {
-  // children: 'prompt text',
-  numberOfTabs: 2,
-  scrollEnabled: true,
-  tabWidth: 90,
-  textColor: 'black',
-  fontFamily: 'Regular',
-  fontWeight: '600',
-  textTransform: 'none',
+   children: 'prompt text',
+  //  numberOfTabs: 6,
+   numberOfSubTabs: 4,
+   scrollEnabled: true,
+   tabWidth: 90,
+   textColor: 'black',
+   fontFamily: 'Regular',
+   fontWeight: '600',
+   textTransform: 'none',
+   tabTitles: [
+     'All',
+     'Mobile',
+     'International',
+     'Transfer Account',
+     'Card',
+     'Sabb Card'
+   ], // Titles for the main tabs
+   subTabTitles: [
+     'Sub All',
+     'Sub Mobile',
+     'Sub International',
+     'Sub Transfer Account',
+   ], // Titles for the sub-tabs
 };
 
 TabsComponentStory.argTypes = {

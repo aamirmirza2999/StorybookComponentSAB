@@ -15,9 +15,8 @@ let users= [
     { name: "Payment",index:1 },
     { name: "Mobile" ,index:2},
     { name: "Transfer",index:3},
-    { name: " Transfer" ,index:4},
-    { name: "Payment Method",index:5 },
-    { name: "Beneficiary" ,index:6},
+    { name: "Payment Method",index:4 },
+    { name: "Beneficiary" ,index:5},
     
   ]
 
@@ -86,7 +85,7 @@ const TabsComponent = (props) => {
 
                     <TabView
                         navigationState={{
-                            index: 1,
+                            index: 0,
                             routes: generateRoutes(props.numberOfTabs)
                         }}
                         renderScene={renderScene}
@@ -100,24 +99,19 @@ const TabsComponent = (props) => {
                                         indicatorStyle={[globalStyles.tabBarIndicatorStyle]}
                                         tabStyle={{ 
                                              elevation: 0, shadowOpacity: 0, 
-                                             marginHorizontal: actuatedNormalize(-30),
+                                               marginHorizontal: actuatedNormalize(-5),
+                                               width:"auto"
                                          }} 
                                         scrollEnabled={props.scrollEnabled}
                                         style={globalStyles.tabBarStyle}
                                         indicatorContainerStyle={globalStyles.tabBarIndicatorContainerStyle}
-
+                                        pressColor="transparent" // Removes the ripple effect color
+                                        pressOpacity={1} // Removes the ripple effect opacity
                                         renderLabel={({ route, focused, color }) => (
                                             <>
-                                            <View style={{
-                                             backgroundColor: focused ? '#000000' : '#eeeeee',
-                                             borderRadius: actuatedNormalize(8),
-                                            height: actuatedNormalize(36),
-                                            alignItems: "center",
-                                            justifyContent:"space-evenly",
-                                         paddingHorizontal: actuatedNormalize(16),
-                                            width: "auto",
-
-                                            }}
+                                            <View style={ [globalStyles.TabBarView,{
+                                             backgroundColor: focused ? theme.primarycolor : theme.stylesblockbg,        
+                                            }]}
                                  
                                             >
 
@@ -125,8 +119,8 @@ const TabsComponent = (props) => {
                                                 <Text
                                                     style={[globalStyles.tabBarLabel,
                                                     {
-                                                        color: focused ? '#ffffff' : '#000000', 
-                                                                                                                 textTransform: props.textTransform,
+                                                        color: focused ? theme.primaryinvert : theme.primarycolor, 
+                                                        textTransform: props.textTransform,
                                                     },
                                                   ]}>
                                                     {route.title}
@@ -139,8 +133,7 @@ const TabsComponent = (props) => {
                                         )}
                                     />
                                       {/* Sub-Tabs Below the Main Tabs */}
-                    <View style={{ flexDirection: "row-reverse", justifyContent: "flex-end", marginTop: 10,        marginHorizontal: actuatedNormalize(16),
- }}>
+                    <View style={[globalStyles.subTabs,{}]}>
                         <ScrollView 
                             bounces={true}
                             horizontal={true}
@@ -152,56 +145,34 @@ const TabsComponent = (props) => {
                                     accessibilityLabel={index + "tab"}
                                     style={
                                         index === activeIndex
-                                            ? [{
-                                                justifyContent: "center",
-                                                alignItems: "center",
-                                                width: "auto",
-                                                backgroundColor: "#B2B2B2",
-                                                borderRadius: actuatedNormalize(8),
-                                                marginVertical: actuatedNormalize(10),
-                                            }]
-                                            : [{
-                                                justifyContent: "center",
-                                                alignItems: "center",
-                                                width: "auto",
-                                                backgroundColor: isDark
-                                                    ? "#B2B2B2"
-                                                    : "#F2F3F4",
-                                                borderRadius: actuatedNormalize(8),
-                                                marginHorizontal: actuatedNormalize(5),
-                                                marginVertical: actuatedNormalize(10),
-                                                height: actuatedNormalize(35),
-                                            }]
+                                            ? [
+                                            globalStyles.activetab,{                                               
+                                                 backgroundColor: theme.primarytextcolor2_2,
+                                            }
+                                            ]
+                                            : [
+                                                globalStyles.inactivetab,{                                               
+                                                    backgroundColor: theme.stylesblockbg,
+                                                }
+                                                
+                                            ]
                                     }
                                     key={item.title}
 onPress={() => setActiveIndex(index)}                                >
                                     <Text
                                         style={
                                             index === activeIndex
-                                                ? [{
-                                                    textAlign: "center",
-                                                    justifyContent: "center",
-                                                    alignItems: "center",
-                                                    fontSize: actuatedNormalize(14),
-                                                    fontFamily: I18nManager.isRTL
-                                                        ? Fonts.UniversArabicForHSBC_Regular
-                                                        : Fonts.UniversNextforHSBC_Regular,
-                                                    paddingHorizontal: actuatedNormalize(16),
-                                                    paddingVertical: actuatedNormalize(8),
-                                                    color: "#FFFFFF",
-                                                }]
-                                                : [{
-                                                    textAlign: "center",
-                                                    justifyContent: "center",
-                                                    alignItems: "center",
-                                                    fontSize: actuatedNormalize(14),
-                                                    fontFamily: I18nManager.isRTL
-                                                        ? Fonts.UniversArabicForHSBC_Regular
-                                                        : Fonts.UniversNextforHSBC_Regular,
-                                                    paddingHorizontal: actuatedNormalize(16),
-                                                    paddingVertical: actuatedNormalize(8),
-                                                    color: "#000000",
-                                                }]
+                                                ? [
+                                                    globalStyles.activetext,{                                               
+                                                        color: theme.primarycolor4,
+                                                    }  
+                                                ]
+                                                : [
+                                                    globalStyles.activetext,{                                               
+                                                        color: theme.primarycolor,
+
+                                                    }  
+                                                ]
                                         }
                                     >
                                         {item.name}

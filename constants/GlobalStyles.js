@@ -688,14 +688,15 @@ typefilledElementsinitials: {
   },
   //emptystate end
       tabBarLabel: {
-        lineHeight: I18nManager.isRTL? actuatedNormalize(20) : actuatedNormalize(18), 
-        fontSize: actuatedNormalize(14),
+        lineHeight: I18nManager.isRTL? lineHeightMedium : lineHeightMedium, 
+        fontSize: fontMedium,
+        
       },
       container: {
         // marginTop: actuatedNormalize(15),
         flexDirection: "row",
         alignItems: "center",
-        marginHorizontal: actuatedNormalize(16),
+        marginHorizontal: spacingS,
         // backgroundColor: 'red',
       },
       tabBarContainer: {
@@ -724,9 +725,63 @@ elevation: 0,
          alignSelf: 'center',
          elevation: 0,
          shadowOpacity: 0,
-         shadowColor:"transperent"
+         shadowColor:"transperent",
+         
         // bottom: -1
         
+      },
+      TabBarView:{
+        borderRadius: radiusS,
+        height: actuatedNormalize(36),
+        alignItems: "center",
+        justifyContent:"space-evenly",
+     paddingHorizontal: spacingS,
+        width: "auto",
+      },
+      subTabs:{
+        flexDirection: "row-reverse",
+        justifyContent: "flex-end", 
+        marginTop: fontXXSmall, 
+         marginHorizontal: spacingXS,
+      },
+      activetab:{
+        justifyContent: "center",
+        alignItems: "center",
+        width: "auto",
+        borderRadius: spacingXS,
+        marginVertical: fontXXSmall,
+
+      },
+      inactivetab:{
+        justifyContent: "center",
+        alignItems: "center",
+        width: "auto",
+        borderRadius:spacingXS,
+        marginHorizontal: spacingXS,
+        marginVertical: fontXXSmall,
+        height: fontXXLG,
+      },
+      activetext:{
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: fontMedium,
+        fontFamily: I18nManager.isRTL
+                     ? Fonts.UniversArabicForHSBC_Regular
+                     : Fonts.UniversNextforHSBC_Regular,
+        paddingHorizontal: spacingS,
+        paddingVertical: spacingXS,
+      },
+      inactivetext:{
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: fontMedium,
+        fontFamily: I18nManager.isRTL
+            ? Fonts.UniversArabicForHSBC_Regular
+            : Fonts.UniversNextforHSBC_Regular,
+        paddingHorizontal:spacingS,
+        paddingVertical: spacingXS,
       },
       //......................
       pwdbarStyle:{
