@@ -60,7 +60,7 @@ import HomeStack from './screens/navigations/HomeStack';
 import {ThemeProvider} from './constants/Theme/ThemeProvider';
 import i18n from './locales/i18n';
 import {I18nextProvider} from 'react-i18next';
-
+import TabBar from './screens/navigations/TabBar';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -78,7 +78,7 @@ function App() {
         <NavigationContainer>
           <I18nextProvider i18n={i18n}>
             <Suspense fallback="loading">
-              <HomeStack />
+              <TabBar />
             </Suspense>
           </I18nextProvider>
         </NavigationContainer>

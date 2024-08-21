@@ -32,6 +32,7 @@ import { actuatedNormalize } from '../../constants/PixelScaling';
 import PasswordStrength from '../PasswordStrength/PasswordStrength';
 import EmptystateNote from './EmptystateNote';
 import MainHeader from './MainHeader';
+import CardsComponent from './CardsComponent';
 
 const data = [
   { title: 'Item 1', text: 'Text 1' },
@@ -490,7 +491,6 @@ TabsComponentStory.argTypes = {
 
 export const MainHeaderStory = args => <MainHeader {...args} />;
 MainHeaderStory.args = {
-  bgColor:"#263a52",
   enableLogo:true,
   isAccountTypeReq:true,
   SearchIconReq:true,
@@ -516,4 +516,21 @@ ProgressBarStory.argTypes = {
   color:{control: 'color'},
   unfilledColor:{control: 'color'},
   progress: {control: 'number'},
+};
+export const CardsComponentStory = args => <CardsComponent {...args} />;
+CardsComponentStory.args = {
+  CardImage:require("../../assets/cardColorDarkBlue.png"),
+  CardName:"SAB Signature Visa Credit Card",
+  infoiconRequired:true,
+  LimitDetailsRequired:true,
+  balanceRequired:false,
+  Balance:"84,900.00",
+  statusBgColor:"#f9f2f3",
+  statusborderColor:"#e5b2b5",
+  CardStatus:"Active",
+  CardNumber:"4272-2201-0114-9091",
+  currency:"SAR",
+  AvailableLimit:"81,986.90",
+  CreditLimit:"84,900.00",
+  progress:"0.8"
 };

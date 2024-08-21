@@ -51,6 +51,11 @@ export {default as WhiteInfo} from '../assets/infowhite.svg';
 export {default as BlackArrow} from '../assets/arrowblack.svg';
 export {default as SearchIcon} from '../assets/search.svg';
 export {default as NotificationIcon} from '../assets/notifications.svg';
+export { default as PaymentActive } from "../assets/PaymentDark.svg";
+export { default as HomeActive } from "../assets/HomeDark.svg";
+export { default as Transfer } from "../assets/Transfer.svg";
+export { default as Payment_Icon } from "../assets/Payment.svg";
+export { default as HomeTab } from "../assets/Home_light.svg";
 
 
 
