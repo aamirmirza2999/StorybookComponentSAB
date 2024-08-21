@@ -315,14 +315,15 @@ export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
  backgroundColor:"#db0011",
  label:"Action",
- enablePrimaryLarge:true, 
- enablePrimarySmall:false,
-// enablePrimaryLargeBlack:false,
- //enablePrimaryLargeSmall:false,
- enableSecondaryBorderBlack:false,
-// enableSecondaryBorderRed:false,
-// preloginRedButton:false,
- //preloginBlackButton:false,
+ enablePrimaryBtn:false,
+ type:"large",//large/small/stacked/inline
+ enableLeftIcon:true,
+ enableRightIcon:true,
+ enableSecondaryBtn:false,
+ enableButtonGroup:true,
+ enableprimary:false,
+ enableSecondary:false,
+ enableTertiary:false,
  disabled:false,
  quickActionButton:false,
   Icon:<SvgIconList
@@ -330,10 +331,6 @@ MainButtonComponentStory.args = {
                          width={24}
                          height={24}
                       />,
-// Icon:	<GreyInfo
-// width={actuatedNormalize(16)}
-// height={actuatedNormalize(16)}
-// />,
   quickActionButtonLabel:"Button",
   quickActionButtonType:1,
   linkButton:false,
@@ -343,12 +340,8 @@ MainButtonComponentStory.args = {
   listHeadlLine:"HeadLine",
   listDescription:"Lorem IPsum",
   listNotificationCount:1,
- // floatingButton:false,
-  enableprimary:false,
-  enableSecondary:false,
+  listBadge:"Active",
   enableImageButton:false,
-  //segmentButton:false,
- // data:["First", "Second", "Third"],
   chips:false,
   chipsBackgroudColor:"#e5f2f2",
   chipsBorderColor:"#99cecc",

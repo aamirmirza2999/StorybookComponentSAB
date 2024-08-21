@@ -71,17 +71,17 @@ const deviceHeight = Dimensions.get('window').height;
         alignSelf: "stretch"
       },
       primaryFlexBoxLarge: {
-       // margin:8,
-        paddingTop:actuatedNormalize(11),
-        paddingBottom:actuatedNormalize(13),
-    		borderRadius:radiusS,
-    		justifyContent: "center",
-    		flexDirection: "row",
-    		paddingHorizontal:spacingS,
-    		alignItems: "center",
-        minWidth: 128
-    		//flex: 1
-  	},
+        // margin:8,
+          paddingVertical:spacingXS,
+          borderRadius:radiusS,
+          justifyContent: "center",
+          flexDirection: "row",
+          paddingHorizontal:spacingS,
+          alignItems: "center",
+          minWidth: 128
+          //flex: 1
+      },
+      
     badgeNotification:{
       borderRadius: actuatedNormalize(100),
       backgroundColor: "#ffbb33",
@@ -130,11 +130,24 @@ const deviceHeight = Dimensions.get('window').height;
     textAlign: "center",
 },
 secondaryFlexBoxLarge: {
+  flexDirection:"row",
+  justifyContent:"center",
+  alignItems:"center",
   borderRadius:radiusS,
   borderStyle:"solid",
   borderWidth: 1,
   paddingHorizontal:spacingS,
  paddingVertical:spacingXS
+},
+secondaryFlexBoxSmall: {
+  flexDirection:"row",
+  justifyContent:"center",
+  alignItems:"center",
+  borderRadius:radiusS,
+  borderStyle:"solid",
+  borderWidth: 1,
+  paddingHorizontal:spacingS,
+ paddingVertical:spacingXXS
 },
 preloginRedButton:{
   paddingHorizontal:spacingL,
@@ -328,6 +341,28 @@ togglelabel:{
     color: "#767676",
    // textAlign: "left",
   },
+  listBadgeTxt:{
+    lineHeight: 18,
+    fontSize: 14,
+    textAlign: "left",
+    fontFamily: "Univers Next for HSBC"
+  },
+  listBadge:{
+    marginLeft: spacingXS,
+    borderRadius: 4,
+    backgroundColor: "#e5f2f2",
+    borderStyle: "solid",
+    borderColor: "#99cecc",
+    borderWidth: 0.5,
+    paddingHorizontal: 8,
+    alignSelf:"stretch",
+    paddingVertical: 2,
+    marginTop: 8,
+    justifyContent: "center",
+    //display: "none",
+    alignItems: "center",
+    flexDirection: "row"
+  },
   listButtonTxtSmall:{
     width: actuatedNormalize(279),
     justifyContent: "center",
@@ -345,13 +380,14 @@ togglelabel:{
     //alignItems: "flex-end",
     marginLeft: spacingXS,
       alignSelf: "center",
-      fontSize: fontLarge,
-      lineHeight: lineHeightLarge,
+      fontSize: fontMedium,
+      lineHeight: lineHeightMedium,
       textAlign: "left",
       fontFamily:Fonts.Regular,
   },
   listButtonTxtLargeHeadline:{
     width: actuatedNormalize(279),
+    alignSelf: "stretch",
     justifyContent: "center",
     //alignItems: "flex-end",
     marginLeft: spacingXS,

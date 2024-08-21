@@ -4,7 +4,8 @@ import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
-import { RightArrowBlackLarge,RightArrowBlackSmall,RightRedArrow,RightRedArrow1, Split,  } from "../../constants/SvgLocations";
+import { RightArrowBlackLarge,RightArrowBlackSmall,BlackArrow,RightRedArrow,RightRedArrow1, Split, WhiteArrow,  } from "../../constants/SvgLocations";
+import { spacingM, spacingS, spacingXL } from '../../constants/Size';
 const MainButton = (props) => {
 	const { theme } = useTheme();
 
@@ -13,7 +14,8 @@ const MainButton = (props) => {
   	return (
     	<>
 		{/* Primary Large Button Red Background */}
-      			{props.enablePrimaryLarge?
+      			{props.enablePrimaryBtn?
+				props.type==="large"?
 					<Component
 						testID={props.testID ? props.testID : 'primaryCTALarge'}
 						accessibilityLabel={
@@ -23,29 +25,65 @@ const MainButton = (props) => {
 						disabled={props.disabled}
 					>
             		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge, props.primaryFlexBoxLarge]}>			
-                  		 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
-        			</View>
-					</Component>:null}
-			
-			{/* Primary Small Button Red Background */}
-
-				{props.enablePrimarySmall?
-				<Component
-					testID={props.testID ? props.testID : 'primaryCTASmall'}
-					accessibilityLabel={
-					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
-					}
-					onPress={props.onPress}
-					disabled={props.disabled}
-				>
-				<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
-					<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
-				</View>
-				</Component>:null}
+						{props.enableLeftIcon?
+								<WhiteArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>
+						:null}
+						 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+						{props.enableRightIcon?
+							<WhiteArrow
+							style={{
+								marginLeft:actuatedNormalize(8),
+								transform: [{ rotate:"180deg"}]
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></WhiteArrow>
+						:null}
+					</View>
+					</Component>:
+					<Component
+						testID={props.testID ? props.testID : 'primaryCTASmall'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
+						}
+						onPress={props.onPress}
+						disabled={props.disabled}
+					>
+						<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
+							{props.enableLeftIcon?
+								<WhiteArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>
+							:null}
+							<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
+							{props.enableRightIcon?
+								<WhiteArrow
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:"180deg"}]
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>
+						:null}
+						</View>
+					</Component>
+					:null}
 
 				{/* Secondary Large Button Black Border */}
 
-				{props.enableSecondaryBorderBlack?
+				{props.enableSecondaryBtn?
+				props.type==="large"?
 					<Component
 					testID={props.testID ? props.testID : 'secondaryCTABB'}
 					accessibilityLabel={
@@ -55,9 +93,60 @@ const MainButton = (props) => {
 					disabled={props.disabled}
 				>
 				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+				{props.enableLeftIcon?
+								<BlackArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrow>
+						:null}
 					<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+					{props.enableRightIcon?
+							<BlackArrow
+							style={{
+								marginLeft:actuatedNormalize(8),
+								transform: [{ rotate:"180deg"}]
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></BlackArrow>
+						:null}
 				</View>
-				</Component>:null}
+				</Component>:
+				<Component
+					testID={props.testID ? props.testID : 'secondaryCTABS'}
+					accessibilityLabel={
+					props.accessibilityLabel ? props.accessibilityLabel : 'secondaryCTABS'
+					}
+					onPress={props.onPress}
+					disabled={props.disabled}
+					>
+					<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxSmall,props.secondaryFlexBoxSmall]}>			
+					{props.enableLeftIcon?
+								<BlackArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrow>
+						:null}
+						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
+						{props.enableRightIcon?
+							<BlackArrow
+							style={{
+								marginLeft:actuatedNormalize(8),
+								transform: [{ rotate:"180deg"}]
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></BlackArrow>
+						:null}
+					</View>
+			</Component>
+				:null}
 		
 				{/* Quick Action Button */}
 			
@@ -159,27 +248,179 @@ const MainButton = (props) => {
 				null}
 
 				{/*  Button Group */}
+				{props.enableButtonGroup?
+				<>
+				<View
+				style={{
+					marginVertical:spacingM,
+					marginHorizontal:spacingS
+				}}
+				>
+					{props.type==="stacked"?
+					<>
+					{props.enableprimary?
+							<Component
+								testID={props.testID ? props.testID : 'primaryCTA'}
+								accessibilityLabel={
+								props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
+								}
+								onPress={props.onPress}>
+							
+							<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
+							<TextComponent style={[{color: theme.primarycolor4}, globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+							</View>
+								</Component>:null}
 
-				{props.enableprimary?
-						<Component
-							testID={props.testID ? props.testID : 'primaryCTA'}
+						{props.enableSecondary?
+								<Component
+								style={{
+									marginTop:spacingS
+								}}
+								testID={props.testID ? props.testID : 'secondarybtn'}
+								accessibilityLabel={
+								props.accessibilityLabel ? props.accessibilityLabel : 'secondarybtn'
+								}
+								onPress={props.onPress}>
+							
+							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+					</View>
+					</Component>:null}
+
+					{props.enableTertiary?
+							<Component
+							style={{
+								marginTop:spacingS,
+								alignSelf:"center"
+							}}
+							testID={props.testID ? props.testID : 'linkButton'}
 							accessibilityLabel={
-							props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
+							props.accessibilityLabel ? props.accessibilityLabel : 'linkButton'
 							}
 							onPress={props.onPress}>
-						
-						<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
-						<TextComponent style={[{color: theme.primarycolor4}, globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+								<View
+								style={{
+									flexDirection: "row",
+									alignItems:"center",
+								}}
+								>
+									<TextComponent
+									style={[props.linkType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
+									>{props.label}</TextComponent>
+								<RightRedArrow1
+								style={{
+									marginTop:actuatedNormalize(2)
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></RightRedArrow1>
+	
+								</View>
+				
+							</Component>
+				:null}
+				</>	:
+				<View
+				style={{
+					flexDirection:"row",
+					justifyContent:"space-evenly",
+					alignItems:"center"
+				}}
+				>
+				{props.enableprimary?
+				<Component
+						testID={props.testID ? props.testID : 'primaryCTALarge'}
+						accessibilityLabel={
+						props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALarge'
+						}
+						onPress={props.onPress}
+						disabled={props.disabled}
+					>
+            		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge, props.primaryFlexBoxLarge]}>			
+						{props.enableLeftIcon?
+								<WhiteArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>
+						:null}
+						 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+						{props.enableRightIcon?
+							<WhiteArrow
+							style={{
+								marginLeft:actuatedNormalize(8),
+								transform: [{ rotate:"180deg"}]
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></WhiteArrow>
+						:null}
+					</View>
+					</Component>
+					:null}
+				{props.enableSecondary?
+					<Component
+							testID={props.testID ? props.testID : 'secondaryCTABB'}
+							accessibilityLabel={
+							props.accessibilityLabel ? props.accessibilityLabel : 'secondaryCTABB'
+							}
+							onPress={props.onPress}
+							disabled={props.disabled}
+						>
+						<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+						{props.enableLeftIcon?
+										<BlackArrow
+										style={{
+											marginRight:actuatedNormalize(8),
+										}}
+										width={actuatedNormalize(24)}
+										height={actuatedNormalize(24)}
+										></BlackArrow>
+								:null}
+							<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+							{props.enableRightIcon?
+									<BlackArrow
+									style={{
+										marginLeft:actuatedNormalize(8),
+										transform: [{ rotate:"180deg"}]
+									}}
+									width={actuatedNormalize(24)}
+									height={actuatedNormalize(24)}
+									></BlackArrow>
+								:null}
 						</View>
-							</Component>:null}
+						</Component>
+						:null}
+				{props.enableTertiary?
+						<Component>
+						<View
+						style={[globalStyles.imageButton,props.imageButton,{borderColor: theme.primarycolor,}]}
+						>
+							<Split
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							
+							></Split>
+						</View>
+					</Component>
+				:null}
+
+				</View>
+				
+				}
+				 </View>
+					</>:null}
+
 
 			{/* Chips */}
 				{props.chips?
 				<Component
-					style={{
-						marginHorizontal:actuatedNormalize(16),
-						marginVertical:actuatedNormalize(16)
-					}}
+					// style={{
+					// 	marginHorizontal:actuatedNormalize(16),
+					// 	marginVertical:actuatedNormalize(16)
+					// }}
 						testID={props.testID ? props.testID : 'chips'}
 						accessibilityLabel={
 						props.accessibilityLabel ? props.accessibilityLabel : 'chips'
@@ -205,19 +446,6 @@ const MainButton = (props) => {
 						</Component>	:null}
 
 
-					{props.enableSecondary?		
-
-					<Component
-								testID={props.testID ? props.testID : 'floatingButton'}
-								accessibilityLabel={
-								props.accessibilityLabel ? props.accessibilityLabel : 'floatingButton'
-								}
-								onPress={props.onPress}>
-							
-							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
-						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
-					</View>
-					</Component>:null}
 				
 				{props.enableImageButton?				
 				<Component>
@@ -252,15 +480,29 @@ const MainButton = (props) => {
 							</View>
 						<View
 						style={{
-							flexDirection:"column"
+							flexDirection:"column",
+							alignItems:"flex-start"
 						}}
 						>	
 							<TextComponent
 								style={[globalStyles.listButtonTxtLargeHeadline,,props.listButtonTxt,{color:theme.primaryblack}]}
 								>{props.listHeadlLine}</TextComponent>
+								{props.listButtonType===2?
+								<>
 								<TextComponent
 								style={[globalStyles.listButtonTxtLarge,,props.listButtonTxt,{color:theme.primarycolor2_100}]}
 								>{props.listDescription}</TextComponent>
+								<View
+								style={{
+									//flex:1,
+									alignSelf:"flex-start"
+								}}
+								>
+								<View style={globalStyles.listBadge}>
+								<TextComponent style={globalStyles.listBadgeTxt}>{props.listBadge}</TextComponent>
+								</View>
+								</View></>
+								:null}
 						</View>
 
 						
