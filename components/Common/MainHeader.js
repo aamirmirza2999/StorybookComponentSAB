@@ -167,20 +167,15 @@ const MainHeader = (props) => {
 
 
 const styles = {
-    //Layer
+
     mainContainer: {
         flex: 1,
         paddingTop: getStatusBarHeight() + 50,
-
-
     },
 
-    blueContainer: {
-    },
     whiteContainer: {
         backgroundColor: "#FFFFFF",
         flex: 1,
-
     },
 }
 export default MainHeader

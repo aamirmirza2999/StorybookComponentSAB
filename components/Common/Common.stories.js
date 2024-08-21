@@ -79,7 +79,7 @@ PostLoginHeaderStory.args = {
   enableBackButton: true,
   enableCloseButton: false,
   hideHeader:false,
-  enableLivechat:true
+  //enableLivechat:true
 };
 PostLoginHeaderStory.argTypes = {
   textColor: {control: 'color'},
@@ -521,9 +521,10 @@ export const CardsComponentStory = args => <CardsComponent {...args} />;
 CardsComponentStory.args = {
   CardImage:require("../../assets/cardColorDarkBlue.png"),
   CardName:"SAB Signature Visa Credit Card",
-  infoiconRequired:true,
-  LimitDetailsRequired:true,
-  balanceRequired:false,
+  chipsinfo:true,
+  isFinanceProduct:false,
+  isAccount:false,
+  isCards:true,
   Balance:"84,900.00",
   statusBgColor:"#f9f2f3",
   statusborderColor:"#e5b2b5",

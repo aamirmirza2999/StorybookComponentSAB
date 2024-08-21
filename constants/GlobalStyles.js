@@ -102,7 +102,7 @@ const deviceHeight = Dimensions.get('window').height;
     badgeTxt:{
       fontSize: fontXXSmall,
       lineHeight: lineHeightXXSmall,
-      fontFamily: "Univers Next for HSBC",
+      fontFamily: Fonts.HSBC,
       color: "#000",
       textAlign: "center",
       alignSelf:"center"
@@ -324,7 +324,7 @@ togglelabel:{
   listButtonSecondTxt:{
     fontSize: 14,
     lineHeight: 18,
-    fontFamily: "Univers Next for HSBC",
+    fontFamily: Fonts.HSBC,
     color: "#767676",
    // textAlign: "left",
   },
@@ -1007,4 +1007,190 @@ wrapper: {
     borderTopRightRadius: actuatedNormalize(8),
  
   },   
+
+  //Card Component style:
+
+  sarTypo: {
+    textAlign: "left",
+    fontFamily: Fonts.HSBC
+},
+wrapperFlexBox1: {
+    alignSelf: "stretch",
+    marginTop: spacingXS
+},
+wrapper1FlexBox: {
+    justifyContent: "flex-end",
+    alignSelf: "stretch"
+},
+wrapperFlexBox: {
+    alignItems: "flex-end",
+    flexDirection: "row"
+},
+
+parentFlexBox: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignSelf: "stretch"
+},
+textTypo1: {
+    fontFamily: Fonts.HSBC,
+    lineHeight: lineHeightMediumLarge,
+    fontSize: fontMedium,
+    textAlign: "left",
+    color: "#fff"
+},
+textTypo: {
+    textAlign: "right",
+    lineHeight: lineHeightLarge,
+    fontFamily: Fonts.HSBC,
+    color: "#fff",
+    fontSize: fontMediumLarge
+},
+
+welcomeBack: {
+    lineHeight: lineHeightMediumLarge,
+    width: actuatedNormalize(221),
+    height: actuatedNormalize(42),
+    color: "#fff",
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    fontWeight: "700",
+    fontSize: fontMediumLarge
+},
+
+label: {
+    fontSize: fontSmall,
+    lineHeight: fontMediumLarge,
+    color: "#000",
+    textAlign: "left",
+    fontFamily: Fonts.HSBC
+},
+
+chipsinfo: {
+    borderRadius: radiusXS,
+    backgroundColor: "#f9f2f3",
+    borderStyle: "solid",
+    borderColor: "#e5b2b5",
+    borderWidth: 0.5,
+    width: actuatedNormalize(70),
+    height: actuatedNormalize(20),
+    justifyContent: "center",
+    paddingHorizontal: spacingXS,
+    paddingVertical: actuatedNormalize(2),
+    alignItems: "center",
+    flexDirection: "row"
+},
+
+wrapper: {
+    marginTop: spacingXS,
+    flexDirection: "row"
+},
+
+sar: {
+    fontSize: fontXXSmall,
+    lineHeight: lineHeightXXSmall,
+    color: "#fff",
+    textAlign: "left",
+    fontFamily: Fonts.HSBC
+},
+
+wrapper2: {
+    paddingHorizontal: 0,
+    paddingVertical: actuatedNormalize(1),
+    marginLeft: spacingXXS
+},
+
+wrapper1: {
+    justifyContent: "flex-end",
+    alignSelf: "stretch"
+},
+
+
+barParent: {
+    height: actuatedNormalize(4),
+    width: actuatedNormalize(310)
+},
+creditLimit95: {
+    display: "flex",
+    width: actuatedNormalize(118),
+    height: actuatedNormalize(19),
+    alignItems: "center"
+},
+text2: {
+    fontWeight: "700"
+},
+creditLimit95Parent: {
+    height: actuatedNormalize(19),
+    marginTop: spacingXS
+},
+groupParent: {
+    height: actuatedNormalize(31),
+    marginTop: spacingXS
+},
+frameParent: {
+    marginTop: spacingXS,
+    flex: 1,
+    justifyContent: "flex-end"
+},
+typecardsLanguagearabic: {
+    borderRadius: radiusL,
+    height: actuatedNormalize(178),
+    padding: spacingS,
+    backgroundColor: "transparent",
+    overflow: "hidden",
+    //flex: 1,
+    alignSelf: "stretch"
+},
+mainAccount: {
+    top: "0%",
+    left: "0%",
+    position: "absolute",
+    lineHeight: lineHeightMediumLarge,
+    fontSize: fontMedium,
+    textAlign: "left",
+    width: "100%"
+},
+mainAccountParent: {
+    height: actuatedNormalize(44),
+   // width: 128,
+    marginTop: spacingXS
+},
+text1Layout: {
+    lineHeight: lineHeightMediumLarge,
+    letterSpacing: 0,
+    color: "#fff",
+    fontFamily: Fonts.HSBC
+},
+sarParentPosition: {
+    left: 0,
+    position: "absolute",
+    width: actuatedNormalize(128)
+},
+frameWrapper: {
+    top: spacingM,
+    height: actuatedNormalize(20)
+},
+sarParent: {
+    top: 0,
+    alignItems: "flex-end",
+    justifyContent: "space-between",
+    flexDirection: "row"
+},
+text1: {
+    fontSize: fontXLarge,
+    lineHeight:lineHeightMediumLarge,
+    fontWeight: "700",
+    textAlign: "left"
+},
+accountNameAccount: {
+    overflow: "hidden",
+    flex: 1
+    },
+accountTypo: {
+    lineHeight: lineHeightMedium,
+    fontSize: fontMedium,
+    textAlign: "left",
+    color: "#fff",
+    fontFamily: Fonts.HSBC
+    },
  }

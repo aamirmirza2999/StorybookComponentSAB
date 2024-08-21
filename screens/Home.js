@@ -214,7 +214,8 @@ const Home = props => {
         <CardsComponent
         CardImage={require("../assets/cardColorDarkBlue.png")}
         CardName={"SAB Signature Visa Credit Card"}
-        LimitDetailsRequired={true}
+        chipsinfo={true}
+        isCards={true}
         statusBgColor={"#f9f2f3"}
         statusborderColor={"#e5b2b5"}
         CardStatus={"Active"}
