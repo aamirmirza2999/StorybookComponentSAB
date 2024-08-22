@@ -6,5 +6,11 @@
   "submit": "Submit",
   "register1": "Register",
   "RegisterOnline": "Register Online",
-  "MainButtonLabel":"Action"
+  "MainButtonLabel":"Action",
+  "All":"All",
+  "Mobile":"Mobile",
+  "International":"International",
+  "Transfer":"Transfer Account",
+  "Payment":"Payment",
+  "Beneficary":"Beneficary"
 }

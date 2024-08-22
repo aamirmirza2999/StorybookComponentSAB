@@ -9,8 +9,10 @@ import { TouchableOpacity } from 'react-native';
 import { I18nManager } from 'react-native';
 import Fonts from '../../constants/Fonts';
 import TextComponent from './TextComponent';
+import { useTranslation } from 'react-i18next';
 
-let users= [
+
+let subTabs= [
     { name: "All " ,index:0},
     { name: "Payment",index:1 },
     { name: "Mobile" ,index:2},
@@ -20,74 +22,44 @@ let users= [
     
   ]
 
-const TabsComponent = (props) => {
+const TabsComponent = ({ 
+    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, numOfSubTabs
+}) => {
     const layout = useWindowDimensions();
     const deviceHeight = Dimensions.get('window').height;
     const { theme, isDark } = useTheme()
     const [activeIndex, setActiveIndex] = useState(0);  
-    const generateRoutes = () => {
-        return [
-            { key: 'all', title: 'All' },
-            { key: 'mobile', title: 'Mobile' },
-            { key: 'international', title: 'International' },
-            { key: 'Transfer', title: 'Transfer Account' },
-            { key: 'Card', title: 'Card' },
-            { key: 'Sabb', title: 'Sabb Card' }
-            // Add more routes here if needed
-        ];
-    };
-    
-  
-    const fontsFamily = (fontFamily) => {
-        switch (fontFamily) {
-            case "Bold": {
-                return globalStyles.boldTextFamily
-            }
-            case "Regular": {
-                return globalStyles.regularTextFamily
-            }
-            case "Light": {
-                return globalStyles.lightTextFamily
-            }
-            default: {
-                return globalStyles.regularTextFamily
-            }
-        }
-    }
+    const { t } = useTranslation();
 
+  
     
+   
+
     const renderScene = useCallback(({ route }) => {
         switch (route.key) {
-            case 'all':
-                return <View  />;
-            case 'mobile':
-                return <View />;
-            case 'International':
-                return <View  />;
-                case 'Transfer':
-                return <View  />;
-            case 'Card':
-                return <View />;
-            case 'Sabb Card':
-                return <View  />;
+            case 1:
+                return null
+
             default:
                 return null;
         }
-    }, []);
+    }, [])
+  
 
     return (
         <>
-        <View style={globalStyles.tabBarContainer}>
+        <View style={[globalStyles.tabBarContainer,{backgroundColor:theme.primaryinvert}]}>
 
  
-                <View style={globalStyles.tabBarComponent}>
+                <View style={[globalStyles.tabBarComponent,{backgroundColor:theme.primaryinvert}]}>
   
 
                     <TabView
                         navigationState={{
                             index: 0,
-                            routes: generateRoutes(props.numberOfTabs)
-                        }}
+                            routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
+                            // routes:mainTabs,                     
+                          }}
                         renderScene={renderScene}
                         onIndexChange={() => console.log("some function to execute")}
                         initialLayout={{ width: layout.width }}
@@ -102,8 +74,8 @@ const TabsComponent = (props) => {
                                                marginHorizontal: actuatedNormalize(-5),
                                                width:"auto"
                                          }} 
-                                        scrollEnabled={props.scrollEnabled}
-                                        style={globalStyles.tabBarStyle}
+                                        scrollEnabled={scrollEnabled}
+                                        style={[globalStyles.tabBarStyle,{backgroundColor:theme.primaryinvert}]}
                                         indicatorContainerStyle={globalStyles.tabBarIndicatorContainerStyle}
                                         pressColor="transparent" // Removes the ripple effect color
                                         pressOpacity={1} // Removes the ripple effect opacity
@@ -120,7 +92,7 @@ const TabsComponent = (props) => {
                                                     style={[globalStyles.tabBarLabel,
                                                     {
                                                         color: focused ? theme.primaryinvert : theme.primarycolor, 
-                                                        textTransform: props.textTransform,
+                                                        // textTransform: props.textTransform,
                                                     },
                                                   ]}>
                                                     {route.title}
@@ -139,7 +111,7 @@ const TabsComponent = (props) => {
                             horizontal={true}
                             showsHorizontalScrollIndicator={false}
                         >
-                            {users.map((item, index) => (
+                            {subTabs.slice(0, numOfSubTabs).filter(tab => tab).map((item, index) => (
                                 <TouchableOpacity
                                     testID={index + "tab"}
                                     accessibilityLabel={index + "tab"}
@@ -157,7 +129,7 @@ const TabsComponent = (props) => {
                                                 
                                             ]
                                     }
-                                    key={item.title}
+                                    key={item.name}
 onPress={() => setActiveIndex(index)}                                >
                                     <Text
                                         style={

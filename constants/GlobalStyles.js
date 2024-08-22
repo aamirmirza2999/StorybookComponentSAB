@@ -693,20 +693,15 @@ typefilledElementsinitials: {
         
       },
       container: {
-        // marginTop: actuatedNormalize(15),
         flexDirection: "row",
         alignItems: "center",
         marginHorizontal: spacingS,
-        // backgroundColor: 'red',
       },
       tabBarContainer: {
         flex: 1,
-        backgroundColor: '#fbfcfe',
       },
       tabBarComponent:{
         height: deviceHeight,
-        backgroundColor: '#fbfcfe',
-        //  marginHorizontal: spacingS
       },
       renderTabBarView: {
         marginLeft: spacingXS,
@@ -716,7 +711,7 @@ typefilledElementsinitials: {
         height:0
       },
       tabBarStyle: {
-         backgroundColor: '#fbfcfe',
+        //  backgroundColor: '#fbfcfe',
 elevation: 0,
         shadowOpacity: 0,
 

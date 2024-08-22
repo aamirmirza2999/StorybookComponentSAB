@@ -33,6 +33,7 @@ import PasswordStrength from '../PasswordStrength/PasswordStrength';
 import EmptystateNote from './EmptystateNote';
 import MainHeader from './MainHeader';
 import CardsComponent from './CardsComponent';
+import i18n from '../../locales/i18n';
 
 const data = [
   { title: 'Item 1', text: 'Text 1' },
@@ -49,7 +50,24 @@ const subdata = [
    
   ];
 
-  
+  const mainTabs = [
+    { key: 0, title: i18n.t('initialLang:All') },
+    { key: 1, title: i18n.t('initialLang:Mobile') },
+    { key: 2, title: i18n.t('initialLang:International') },
+    { key: 3, title: i18n.t('initialLang:Transfer')},
+    { key: 4, title:i18n.t('initialLang:Payment') },
+    { key: 5, title: i18n.t('initialLang:Beneficary') }
+];
+
+const subTabs = [
+  { name:i18n.t('initialLang:All')  ,index:0},
+  { name: i18n.t('initialLang:Payment'),index:1 },
+  { name: i18n.t('initialLang:Mobile') ,index:2},
+  { name:i18n.t('initialLang:Transfer'),index:3},
+  { name: i18n.t('initialLang:International'),index:4 },
+  { name: i18n.t('initialLang:Beneficary') ,index:5},
+    // Add more sub-tabs here if needed
+];
   
 export default {
   title: 'components/EntireComponents',
@@ -446,28 +464,18 @@ TooltipComponentStory.argTypes = {
 export const TabsComponentStory = args => <TabsComponent {...args} />;
 TabsComponentStory.args = {
    children: 'prompt text',
-  //  numberOfTabs: 6,
-   numberOfSubTabs: 4,
-   scrollEnabled: true,
+   numberOfTabs: 2,
+   numOfSubTabs: 4,
    tabWidth: 90,
    textColor: 'black',
    fontFamily: 'Regular',
    fontWeight: '600',
    textTransform: 'none',
-   tabTitles: [
-     'All',
-     'Mobile',
-     'International',
-     'Transfer Account',
-     'Card',
-     'Sabb Card'
-   ], // Titles for the main tabs
-   subTabTitles: [
-     'Sub All',
-     'Sub Mobile',
-     'Sub International',
-     'Sub Transfer Account',
-   ], // Titles for the sub-tabs
+   mainTabs:mainTabs,
+   subTabs:subTabs,
+   
+
+  
 };
 
 TabsComponentStory.argTypes = {

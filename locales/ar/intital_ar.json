@@ -6,5 +6,11 @@
   "submit": "يقدم",
   "register1": "متابعة",
   "RegisterOnline": "اشتراك مباشر",
-  "MainButtonLabel":"فعل"
+  "MainButtonLabel":"فعل",
+  "All":"ملصق",
+  "Mobile":"ملصق",
+  "International":"ملصق",
+  "Transfer":"ملصق",
+  "Payment":"ملصق",
+  "Beneficary":"ملصق"
 }
