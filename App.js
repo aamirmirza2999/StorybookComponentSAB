@@ -78,7 +78,7 @@ function App() {
         <NavigationContainer>
           <I18nextProvider i18n={i18n}>
             <Suspense fallback="loading">
-              <TabBar />
+              <HomeStack />
             </Suspense>
           </I18nextProvider>
         </NavigationContainer>
@@ -89,7 +89,7 @@ function App() {
 
 let AppEntryPoint = App;
 
-if (process.env.STORYBOOK_ENABLED) {
+if (!process.env.STORYBOOK_ENABLED) {
   const AppEntry = require('./.ondevice').default;
   AppEntryPoint = () => (
     <ThemeProvider>

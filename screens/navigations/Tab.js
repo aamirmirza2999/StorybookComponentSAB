@@ -73,7 +73,7 @@ const Tab=({
           case "Password":
             PassWordNavigation(route.name, route.params?.params?.fromScreen || "");
             break;
-          case "Transfers":
+          case "New_Transfer":
             TransferNavigation(route.name, route.params?.params?.fromScreen || "");
             break;
           default:
@@ -97,7 +97,7 @@ const Tab=({
   };
   const TransferNavigation = (screen, routeScreen) => {
 
-    navigation.navigate("Transfers");
+    navigation.navigate("New_Transfer");
   };
 
 
@@ -231,7 +231,7 @@ const Tab=({
                         // stroke={tintColor}
                         // stroke={colors.menuView2BackgroundColor}
                         />
-                      ) : route.name === "Transfers" ? (
+                      ) : route.name === "New_Transfer" ? (
                         <TransferIcon
                           width={actuatedNormalize(24)}
                           height={actuatedNormalize(24)}
@@ -256,7 +256,7 @@ const Tab=({
                         ? "Home"
                         : route.name === "PassWord"
                           ? "Payments"
-                          : route.name === "Transfers"
+                          : route.name === "New_Transfer"
                             ? "Transfer"
                                 : Name
                               }
