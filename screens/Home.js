@@ -35,8 +35,26 @@ import EmptystateNote from '../components/Common/EmptystateNote';
 import MainHeader from '../components/Common/MainHeader';
 import CardsComponent from '../components/Common/CardsComponent'
 import Space from '../components/Common/Space';
+import TabsComponent from '../components/Common/TabsComponent';
 
+const mainTabs = [
+  { key: 0, title: i18n.t('initialLang:All') },
+  { key: 1, title: i18n.t('initialLang:Mobile') },
+  { key: 2, title: i18n.t('initialLang:International') },
+  { key: 3, title: i18n.t('initialLang:Transfer')},
+  { key: 4, title:i18n.t('initialLang:Payment') },
+  { key: 5, title: i18n.t('initialLang:Beneficary') }
+];
 
+const subTabs = [
+{ name:i18n.t('initialLang:All')  ,index:0},
+{ name: i18n.t('initialLang:Payment'),index:1 },
+{ name: i18n.t('initialLang:Mobile') ,index:2},
+{ name:i18n.t('initialLang:Transfer'),index:3},
+{ name: i18n.t('initialLang:International'),index:4 },
+{ name: i18n.t('initialLang:Beneficary') ,index:5},
+  // Add more sub-tabs here if needed
+];
 // import Avatarcomponent from '../components/Button/Avatarcomponent';
 const Home = props => {
   const navigation = useNavigation();
@@ -229,6 +247,10 @@ const Home = props => {
         <Toggleswitch />
         <EmptystateNote />
         {/* <Avatarcomponent/> */}
+        <TabsComponent
+        mainTabs={mainTabs}
+        subTabs={subTabs}
+        />
       </PrimaryBgComponent>
     </>
   );
