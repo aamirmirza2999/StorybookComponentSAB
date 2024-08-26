@@ -63,7 +63,7 @@ const Home = props => {
   const HandleSubmit = () => {
     if (username) {
       setErrorMsg('');
-      navigation.navigate('Transfers');
+      navigation.navigate('Menu');
     } else {
       setErrorMsg('Enter The UserName');
     }
@@ -137,7 +137,6 @@ const Home = props => {
         }
         BgHeader={
           <MainHeader
-            bgColor={"#263a52"}
             enableLogo={true}
             changeTheme={toggleTheme}
             LanguageSwitchReq = {true}

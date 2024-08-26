@@ -16,8 +16,7 @@ const PrimaryBgComponent = props => {
     <View
       style={{
         flex: 1,
-        // backgroundColor: "red",
-        backgroundColor: props.primaryBgColor,
+        backgroundColor: 'white',
       }}>
       {props.BgHeader}
 
@@ -28,7 +27,6 @@ const PrimaryBgComponent = props => {
             paddingRight: spacingS,
             paddingBottom: spacingM,
             paddingTop: spacingL,
-            // backgroundColor: Colors.primaryBgColor,
           }}>
          
           {props.children}
@@ -37,12 +35,7 @@ const PrimaryBgComponent = props => {
       <View
         style={
           props.ButtonContainer
-          //   {
-          //    paddingLeft: actuatedNormalize(16),
-          //    paddingRight: actuatedNormalize(16),
-          //    paddingBottom: actuatedNormalize(24),
-          //    paddingTop: actuatedNormalize(24),
-          // }
+          
         }>
         {props.PrimaryButton}
         {props.SecondaryButton}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { actuatedNormalize } from './PixelScaling';
 import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
-  BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack} from './SvgLocations';
+  BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon} from './SvgLocations';
 
 const SvgIconList = ({ icon, width, height  ,transform}) => {
   switch (icon) {
@@ -114,6 +114,14 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
       
                   />
                 );
+                case 'HelpIcon':
+                  return (
+                    <HelpIcon
+                      width={width}
+                      height={height}
+        
+                    />
+                  );
     default:
       return null;
   }

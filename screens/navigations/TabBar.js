@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import HomeStack from './HomeStack'
+// import HomeStack from './HomeStack'
 import Home from '../Home';
 import PassWord from '../PassWord';
 import Transfers

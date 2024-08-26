@@ -96,7 +96,10 @@ PostLoginHeaderStory.args = {
   TextColor: 'white',
   enableBackButton: true,
   enableCloseButton: false,
-  hideHeader:false,
+  LanguageSwitchReq:false,
+  MenuHeader:false,
+  Headline:'Headline',
+  HeaderTitleReq:true
   //enableLivechat:true
 };
 PostLoginHeaderStory.argTypes = {

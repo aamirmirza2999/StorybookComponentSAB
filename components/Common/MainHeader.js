@@ -53,11 +53,11 @@ const MainHeader = (props) => {
                 }}
             />
             <StatusBar
-                animated
-                backgroundColor={props.bgColor}
-                barStyle={'light-content'}
-                translucent={true}
-            />
+      animated
+      backgroundColor={'white'}
+      barStyle={'dark-content'}
+      translucent={true}
+    />
             <View style={[{ ...StyleSheet.absoluteFill, zIndex: -1 }, props.addOverFlowHidden ? { overflow: "hidden", } : {}]}>
                 {/* <Background
                     bgColor = {props.bgColor}
