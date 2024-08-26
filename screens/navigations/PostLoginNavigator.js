@@ -43,6 +43,7 @@ const PostLoginNavigator = () => {
             enableBackButton={true}
             enableCloseButton={true}
             hideHeader={false}
+            HeaderTitleReq={true}
             ></PostLoginHeader>
           ),
           //transitionPresets,

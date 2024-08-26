@@ -9,6 +9,7 @@ import Transfers
  from '../Transfers';
  import Tab from './Tab';
  import New_Transfer from '../New_Transfer';
+ import Menu from '../Menu';
 
 const TabSetting=createBottomTabNavigator();
 
@@ -44,6 +45,10 @@ screenOptions={{tabBarHideOnKeyboard: true}}
   <TabSetting.Screen
           name="New_Transfer"
           component={New_Transfer}
+        />
+   <TabSetting.Screen
+          name="Menu"
+          component={Menu}
         />
 
  </TabSetting.Navigator>
