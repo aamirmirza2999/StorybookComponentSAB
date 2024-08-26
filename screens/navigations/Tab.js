@@ -19,7 +19,7 @@ import Fonts from '../../constants/Fonts';
 import { I18nManager } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { HomeActive,PaymentActive,Transfer,Payment_Icon,HomeTab} from '../../constants/SvgLocations';
+import { HomeActive,PaymentActive,Transfer,Payment_Icon,HomeTab,Iconfilledmenu,IconOutlineMenu} from '../../constants/SvgLocations';
 
 const Tab=({
   state,
@@ -179,6 +179,7 @@ const Tab=({
           const HomeIcon = isRouteActive ? HomeActive : HomeTab
           const PaymentIcon = isRouteActive ? PaymentActive : Payment_Icon
           const TransferIcon = isRouteActive ? Transfer : Transfer
+          const MenuIcon = isRouteActive ? Iconfilledmenu : IconOutlineMenu
           const ActiveFontEn = isRouteActive ? Fonts.HSBC : Fonts.HSBC;        
           
           let IconName;
@@ -237,7 +238,16 @@ const Tab=({
                           height={actuatedNormalize(24)}
                           fill={tintIconColor}
                         />
-                      )  : null}
+                      ) 
+                      :
+                      route.name === "Menu" ? (
+                        <MenuIcon
+                        width={actuatedNormalize(25)}
+                        height={actuatedNormalize(25)}
+                        fill={tintIconColor}
+                      />
+                      )
+                      : null}
 
                     <Text
                       style={{
@@ -258,6 +268,8 @@ const Tab=({
                           ? "Payments"
                           : route.name === "New_Transfer"
                             ? "Transfer"
+                            : route.name === "Menu"
+                            ? "Menu"
                                 : Name
                               }
                     </Text>

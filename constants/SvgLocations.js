@@ -56,8 +56,11 @@ export { default as HomeActive } from "../assets/HomeDark.svg";
 export { default as Transfer } from "../assets/Transfer.svg";
 export { default as Payment_Icon } from "../assets/Payment.svg";
 export { default as HomeTab } from "../assets/Home_light.svg";
+export {default as Iconfilledmenu} from "../assets/iconfilledmenu.svg"
+export {default as IconOutlineMenu} from "../assets/iconOutlineMenu.svg"
+
 
 export {default as WhiteArrow} from "../assets/arrowWhite.svg"
-
+export {default as HelpIcon} from "../assets/help.svg"
 
 

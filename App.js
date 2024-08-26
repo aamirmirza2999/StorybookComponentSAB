@@ -1,7 +1,7 @@
 // import React, {Suspense} from 'react';
 // import {LogBox, StyleSheet, View} from 'react-native';
 // import {NavigationContainer} from '@react-navigation/native';
-// import HomeStack from './screens/navigations/HomeStack';
+// import PostLoginNavigator from './screens/navigations/PostLoginNavigator';
 // import {ThemeProvider} from './constants/Theme/ThemeProvider';
 // import i18n from './locales/i18n';
 // import {I18nextProvider} from 'react-i18next';
@@ -27,7 +27,7 @@
 //         <NavigationContainer>
 //           <I18nextProvider i18n={i18n}>
 //             <Suspense fallback="loading">
-//               <HomeStack />
+//               <PostLoginNavigator />
 //             </Suspense>
 //           </I18nextProvider>
 //           {/* stackNavigator */}
@@ -56,7 +56,7 @@
 import React, {Suspense} from 'react';
 import {LogBox, StyleSheet, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeStack from './screens/navigations/HomeStack';
+import PostLoginNavigator from './screens/navigations/PostLoginNavigator';
 import {ThemeProvider} from './constants/Theme/ThemeProvider';
 import i18n from './locales/i18n';
 import {I18nextProvider} from 'react-i18next';
@@ -78,7 +78,7 @@ function App() {
         <NavigationContainer>
           <I18nextProvider i18n={i18n}>
             <Suspense fallback="loading">
-              <HomeStack />
+              <PostLoginNavigator />
             </Suspense>
           </I18nextProvider>
         </NavigationContainer>
@@ -89,7 +89,7 @@ function App() {
 
 let AppEntryPoint = App;
 
-if (!process.env.STORYBOOK_ENABLED) {
+if (process.env.STORYBOOK_ENABLED) {
   const AppEntry = require('./.ondevice').default;
   AppEntryPoint = () => (
     <ThemeProvider>

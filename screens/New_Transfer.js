@@ -12,19 +12,10 @@ const New_Transfer=()=> {
   const navigation = useNavigation();
   return (
     <>
-    <PostLoginHeader></PostLoginHeader>
+    <PostLoginHeader
+      Headline={'Headline'}
+    ></PostLoginHeader>
     <View style={{flex:1,backgroundColor:"#ffffff"}}>
-      <TextComponent
-      style={{
-        fontSize: fontXLG,
-        lineHeight: lineHeightXLG,
-        fontWeight: fontWeightBold,
-        fontFamily:Fonts.HSBC,
-        color: "#000",
-        textAlign: "left",
-        padding:spacingXS
-      }}
-      >Headline</TextComponent>
       <View
       style={{
         flexDirection:"row",

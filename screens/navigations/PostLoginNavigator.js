@@ -13,9 +13,11 @@ import Transfers
  import SuccessScreen from '../SuccessScreen';
  import TabBar from './TabBar';
  import PostLoginHeader from '../../components/Common/PostLoginHeader';
+ import Dashboard from '../Dashboard';
+ import Menu from '../Menu'
 
 const SettingsStack = createNativeStackNavigator();
-const HomeStack = () => {
+const PostLoginNavigator = () => {
   return (
     <SettingsStack.Navigator initialRouteName="Home">
       <SettingsStack.Screen
@@ -41,6 +43,7 @@ const HomeStack = () => {
             enableBackButton={true}
             enableCloseButton={true}
             hideHeader={false}
+            HeaderTitleReq={true}
             ></PostLoginHeader>
           ),
           //transitionPresets,
@@ -67,6 +70,17 @@ const HomeStack = () => {
         component={RadioBtn}
         options={{headerShown: false}}
       />
+       <SettingsStack.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{headerShown: false}}
+      />
+      <SettingsStack.Screen
+        name="Menu"
+        component={Menu}
+        options={{headerShown: false}}
+      />
+     
        {/* <SettingsStack.Screen
         name="Disclaimerdesign"
         component={Disclaimerdesign}
@@ -76,6 +90,6 @@ const HomeStack = () => {
   );
 };
 
-export default HomeStack;
+export default PostLoginNavigator;
 
 const styles = StyleSheet.create({});

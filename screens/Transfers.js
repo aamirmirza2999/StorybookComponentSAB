@@ -185,8 +185,6 @@ const Transfers = props => {
         BgHeader={
           <PostLoginHeader
             title={'Make a Transfer'}
-            TextColor={'white'}
-            customSvg={true}
             enableBackButton={true}
             enableCloseButton={true}
             textColor={theme.primarywhitestatic}
@@ -224,7 +222,8 @@ const Transfers = props => {
 
             // color={theme.primaryWhiteColor}
           />
-        }>
+        }
+        >
           {showpopup?
           <BottomSheetComponent
           Show={showpopup}
