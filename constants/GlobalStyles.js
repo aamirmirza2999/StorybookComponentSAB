@@ -3,7 +3,7 @@ import { I18nManager, Dimensions, Platform } from "react-native";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
 import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,fontXSmall,fontSmall,fontSmallMedium,fontMedium,fontMediumLarge,fontLarge,fontXLarge,fontXXLarge,fontXLG,fontXXLG,lineHeightXSmall,lineHeightSmall,lineHeightSmallMedium,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, lineHeightXXSmall, fontXXSmall,lineHeightMedium,lineHeightMediumLarge,lineHeightLarge,lineHeightXLarge,lineHeightXXLarge,lineHeightXLG,lineHeightXXLG, fontWeightBold,
+  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, lineHeightXXSmall, fontXXSmall,lineHeightMedium,lineHeightMediumLarge,lineHeightLarge,lineHeightXLarge,lineHeightXXLarge,lineHeightXLG,lineHeightXXLG, fontWeightBold, sizeXL,
 } from "./Size";
 
 
@@ -740,8 +740,9 @@ typefilledElementsinitials: {
         height: deviceHeight,
       },
       renderTabBarView: {
-        marginLeft: spacingXS,
-        marginRight: spacingXS,
+        // marginLeft: spacingXS,
+        // marginRight: spacingXS,
+        gap:spacingXS
       },
       tabBarIndicatorStyle: {
         height:0
@@ -768,6 +769,8 @@ elevation: 0,
         justifyContent:"space-evenly",
      paddingHorizontal: spacingS,
         width: "auto",
+        paddingVertical:spacingXS,
+        minWidth:sizeXL
       },
       subTabs:{
         flexDirection: "row-reverse",

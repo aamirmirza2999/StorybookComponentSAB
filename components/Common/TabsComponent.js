@@ -23,7 +23,7 @@ let subTabs= [
   ]
 
 const TabsComponent = ({ 
-    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, numOfSubTabs
+    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, type,numOfSubTabs
 }) => {
     const layout = useWindowDimensions();
     const deviceHeight = Dimensions.get('window').height;
@@ -45,10 +45,12 @@ const TabsComponent = ({
         }
     }, [])
   
+    const tabsToDisplay = type === 'mainTab' ? mainTabs : subTabs;
+  const numberOfTabsToShow = type === 'mainTab' ? numberOfTabs : numOfSubTabs;
 
     return (
         <>
-        <View style={[globalStyles.tabBarContainer,{backgroundColor:theme.primaryinvert}]}>
+        <View>
 
  
                 <View style={[globalStyles.tabBarComponent,{backgroundColor:theme.primaryinvert}]}>
@@ -57,9 +59,8 @@ const TabsComponent = ({
                     <TabView
                         navigationState={{
                             index: 0,
-                            routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
-                            // routes:mainTabs,                     
-                          }}
+                            // routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
+                            routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0, 1) : tabsToDisplay.slice(0, numberOfTabsToShow)                          }}
                         renderScene={renderScene}
                         onIndexChange={() => console.log("some function to execute")}
                         initialLayout={{ width: layout.width }}
@@ -71,18 +72,22 @@ const TabsComponent = ({
                                         indicatorStyle={[globalStyles.tabBarIndicatorStyle]}
                                         tabStyle={{ 
                                              elevation: 0, shadowOpacity: 0, 
-                                               marginHorizontal: actuatedNormalize(-5),
+                                            //    marginHorizontal: actuatedNormalize(-5),
                                                width:"auto"
                                          }} 
                                         scrollEnabled={scrollEnabled}
                                         style={[globalStyles.tabBarStyle,{backgroundColor:theme.primaryinvert}]}
                                         indicatorContainerStyle={globalStyles.tabBarIndicatorContainerStyle}
-                                        pressColor="transparent" // Removes the ripple effect color
-                                        pressOpacity={1} // Removes the ripple effect opacity
+                                        pressColor="transparent" 
+                                        pressOpacity={1} 
                                         renderLabel={({ route, focused, color }) => (
                                             <>
                                             <View style={ [globalStyles.TabBarView,{
-                                             backgroundColor: focused ? theme.primarycolor : theme.stylesblockbg,        
+                                            //  backgroundColor: focused ? theme.primarycolor : theme.stylesblockbg,  
+                                            backgroundColor: type === 'mainTab' 
+                  ? (focused ? theme.primarycolor : theme.stylesblockbg) 
+                  : (focused ? theme.primarytextcolor2_2 : theme.stylesblockbg),
+      
                                             }]}
                                  
                                             >
@@ -91,8 +96,9 @@ const TabsComponent = ({
                                                 <Text
                                                     style={[globalStyles.tabBarLabel,
                                                     {
-                                                        color: focused ? theme.primaryinvert : theme.primarycolor, 
-                                                        // textTransform: props.textTransform,
+                                                        color: type === 'mainTab' 
+                                                        ? (focused ? theme.primaryinvert : theme.primarycolor) 
+                                                        : (focused ? theme.primarycolor4 : theme.primarycolor),
                                                     },
                                                   ]}>
                                                     {route.title}
@@ -105,7 +111,7 @@ const TabsComponent = ({
                                         )}
                                     />
                                       {/* Sub-Tabs Below the Main Tabs */}
-                    <View style={[globalStyles.subTabs,{}]}>
+                    {/* <View style={[globalStyles.subTabs,{}]}>
                         <ScrollView 
                             bounces={true}
                             horizontal={true}
@@ -152,7 +158,7 @@ onPress={() => setActiveIndex(index)}                                >
                                 </TouchableOpacity>
                             ))}
                         </ScrollView>
-                    </View>
+                    </View> */}
                                 </View>
                                 
                             )

@@ -60,12 +60,12 @@ const subdata = [
 ];
 
 const subTabs = [
-  { name:i18n.t('initialLang:All')  ,index:0},
-  { name: i18n.t('initialLang:Payment'),index:1 },
-  { name: i18n.t('initialLang:Mobile') ,index:2},
-  { name:i18n.t('initialLang:Transfer'),index:3},
-  { name: i18n.t('initialLang:International'),index:4 },
-  { name: i18n.t('initialLang:Beneficary') ,index:5},
+  { title:i18n.t('initialLang:All')  ,key:0},
+  { title: i18n.t('initialLang:Payment'),key:1 },
+  { title: i18n.t('initialLang:Mobile') ,key:2},
+  { title:i18n.t('initialLang:Transfer'),key:3},
+  { title: i18n.t('initialLang:International'),key:4 },
+  { title: i18n.t('initialLang:Beneficary') ,key:5},
     // Add more sub-tabs here if needed
 ];
   
@@ -459,20 +459,30 @@ TooltipComponentStory.argTypes = {
 
 export const TabsComponentStory = args => <TabsComponent {...args} />;
 TabsComponentStory.args = {
-   children: 'prompt text',
+  type:"subTab",
    numberOfTabs: 2,
    numOfSubTabs: 4,
-   tabWidth: 90,
-   textColor: 'black',
-   fontFamily: 'Regular',
-   fontWeight: '600',
-   textTransform: 'none',
    mainTabs:mainTabs,
    subTabs:subTabs,
    
 
   
 };
+// TabsComponentStory.decorators = [
+//   () => {
+//     return (
+//       <>
+//         <TabsComponent 
+//         type="subTab"
+//         numberOfTabs= {2}
+     
+//         mainTabs={mainTabs}
+//         subTabs={subTabs}
+//          />
+//       </>
+//     );
+//   },
+// ];
 
 TabsComponentStory.argTypes = {
   // children: {control: 'text'},

@@ -52,3 +52,6 @@ export const lineHeightXXLG= actuatedNormalize(41)
 export const fontWeightLight= "200"
 export const fontWeightRegular= "400"
 export const fontWeightBold= "700"
+
+//Size
+export const sizeXL = actuatedNormalize(48)
