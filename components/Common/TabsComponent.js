@@ -13,18 +13,17 @@ import { useTranslation } from 'react-i18next';
 
 
 const TabsComponent = ({ 
-    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, type,numOfSubTabs
+    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, type,numOfSubTabs,language
 }) => {
     const layout = useWindowDimensions();
     const deviceHeight = Dimensions.get('window').height;
     const { theme, isDark } = useTheme()
     const [activeIndex, setActiveIndex] = useState(0);  
-    const { t } = useTranslation();
+    const { t,i18n } = useTranslation();
 
   
     
    
-
     const renderScene = useCallback(({ route }) => {
         switch (route.key) {
             case 1:
@@ -48,12 +47,12 @@ const TabsComponent = ({
 
                     <TabView
                         navigationState={{
-                            index: activeIndex,
+                            index: 0,
                             // routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
-                            routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0, 1) : tabsToDisplay.slice(0, numberOfTabsToShow)                          }}
+                            routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0,1) : tabsToDisplay.slice(0, numberOfTabsToShow)                          }}
                         renderScene={renderScene}
-                        // onIndexChange={() => console.log("some function to execute")}
-                        onIndexChange={index => setActiveIndex(index)}
+                        onIndexChange={() => console.log("some function to execute")}
+                        // onIndexChange={index => setActiveIndex(index)}
                         initialLayout={{ width: layout.width }}
                         renderTabBar={
                             propss => (
@@ -63,8 +62,9 @@ const TabsComponent = ({
                                         indicatorStyle={[globalStyles.tabBarIndicatorStyle]}
                                         tabStyle={{ 
                                              elevation: 0, shadowOpacity: 0, 
-                                            //    marginHorizontal: actuatedNormalize(-5),
-                                               width:"auto"
+                                                marginHorizontal: actuatedNormalize(-4),
+                                               width:"auto",
+                                            //    gap:8
                                          }} 
                                         scrollEnabled={scrollEnabled}
                                         style={[globalStyles.tabBarStyle,{backgroundColor:theme.primaryinvert}]}

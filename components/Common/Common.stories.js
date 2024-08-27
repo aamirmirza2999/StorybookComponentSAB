@@ -499,9 +499,9 @@ TabsComponentStory.args = {
    numOfSubTabs: 4,
    mainTabs:mainTabs,
    subTabs:subTabs,
-   
 
   
+
 };
 // TabsComponentStory.decorators = [
 //   () => {

@@ -741,9 +741,9 @@ typefilledElementsinitials: {
         height: deviceHeight,
       },
       renderTabBarView: {
-        marginLeft: spacingXS,
-        marginRight: spacingXS,
-        // gap:spacingXS
+        // marginLeft: spacingXS,
+        // marginRight: spacingXS,
+        // gap:60,
       },
       tabBarIndicatorStyle: {
         height:0
@@ -771,7 +771,8 @@ elevation: 0,
      paddingHorizontal: spacingS,
         width: "auto",
         paddingVertical:spacingXS,
-        minWidth:sizeXL
+        minWidth:sizeXL,
+        // gap:8
       },
       subTabs:{
         flexDirection: "row-reverse",
