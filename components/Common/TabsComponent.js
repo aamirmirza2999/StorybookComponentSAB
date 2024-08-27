@@ -12,16 +12,6 @@ import TextComponent from './TextComponent';
 import { useTranslation } from 'react-i18next';
 
 
-let subTabs= [
-    { name: "All " ,index:0},
-    { name: "Payment",index:1 },
-    { name: "Mobile" ,index:2},
-    { name: "Transfer",index:3},
-    { name: "Payment Method",index:4 },
-    { name: "Beneficiary" ,index:5},
-    
-  ]
-
 const TabsComponent = ({ 
     mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, type,numOfSubTabs
 }) => {
@@ -58,11 +48,12 @@ const TabsComponent = ({
 
                     <TabView
                         navigationState={{
-                            index: 0,
+                            index: activeIndex,
                             // routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
                             routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0, 1) : tabsToDisplay.slice(0, numberOfTabsToShow)                          }}
                         renderScene={renderScene}
-                        onIndexChange={() => console.log("some function to execute")}
+                        // onIndexChange={() => console.log("some function to execute")}
+                        onIndexChange={index => setActiveIndex(index)}
                         initialLayout={{ width: layout.width }}
                         renderTabBar={
                             propss => (
@@ -163,6 +154,8 @@ onPress={() => setActiveIndex(index)}                                >
                                 
                             )
                         }
+                        swipeEnabled={false}  // Disable swipe gestures
+                        animationEnabled={false}
                     />
                 </View>
 

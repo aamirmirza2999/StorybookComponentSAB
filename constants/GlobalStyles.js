@@ -740,9 +740,9 @@ typefilledElementsinitials: {
         height: deviceHeight,
       },
       renderTabBarView: {
-        // marginLeft: spacingXS,
-        // marginRight: spacingXS,
-        gap:spacingXS
+        marginLeft: spacingXS,
+        marginRight: spacingXS,
+        // gap:spacingXS
       },
       tabBarIndicatorStyle: {
         height:0
