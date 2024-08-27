@@ -81,7 +81,7 @@ const Home = props => {
   const HandleSubmit = () => {
     if (username) {
       setErrorMsg('');
-      navigation.navigate('Menu');
+      navigation.navigate('Dashboard');
     } else {
       setErrorMsg('Enter The UserName');
     }
