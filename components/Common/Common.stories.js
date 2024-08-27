@@ -15,7 +15,8 @@ import OptionButton from '../OptionButton';
 import ProgressHeader from './ProgressComponent';
 import CheckboxComponent from './CheckboxComponent';
 import Divider from './Divider';
-import MainButton from '../NewButton/MainButton';
+//import MainButton from '../NewButton/MainButton';
+import { MainButton,LinkButton,GroupButton,QuickButton,ListButton } from './Button';
 import SvgIconList from '../../constants/SvgIconList';
 import Paginator from './Paginator';
 import Toggleswitch from './Toggleswitch';
@@ -332,46 +333,80 @@ EmptyStateComponentStory.args = {
   
 
 };
+
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
  backgroundColor:"#db0011",
  label:"Action",
  enablePrimaryBtn:false,
- type:"large",//large/small/stacked/inline
+ enableSecondaryBtn:false,
+ type:"large",//large/small
  enableLeftIcon:true,
  enableRightIcon:true,
- enableSecondaryBtn:false,
- enableButtonGroup:true,
- enableprimary:false,
- enableSecondary:false,
- enableTertiary:false,
  disabled:false,
- quickActionButton:false,
-  Icon:<SvgIconList
-                         icon="AccountAction"
-                         width={24}
-                         height={24}
-                      />,
-  quickActionButtonLabel:"Button",
-  quickActionButtonType:1,
-  linkButton:false,
-  linkType:"large", // small/large
-  listButton:false,
-  listButtonType:1,
-  listHeadlLine:"HeadLine",
-  listDescription:"Lorem IPsum",
-  listNotificationCount:1,
-  listBadge:"Active",
-  enableImageButton:false,
-  chips:false,
-  chipsBackgroudColor:"#e5f2f2",
-  chipsBorderColor:"#99cecc",
-  chipsType:"small",//small/large/icon
-  onPress:null
+ onPress:null
 };
 MainButtonComponentStory.argTypes = {
   backgroundColor: {control: 'color'},
 }
+
+export const LinkButtonComponentStory = args => <LinkButton {...args} />;
+LinkButtonComponentStory.args = {
+ label:"Action",
+ type:"large",//large/small
+ enableLeftIcon:true,
+ enableRightIcon:true,
+ onPress:null
+};
+
+export const GroupButtonComponentStory = args => <GroupButton {...args} />;
+GroupButtonComponentStory.args = {
+ backgroundColor:"#db0011",
+ label:"Action",
+ type:"stacked",//stacked/inline
+ enableprimary:false,
+ enableSecondary:false,
+ enableTertiary:false,
+ enableLeftIcon:true,
+ enableRightIcon:true,
+ onPress:null
+};
+GroupButtonComponentStory.argTypes = {
+  backgroundColor: {control: 'color'},
+}
+
+export const QuickButtonComponentStory = args => <QuickButton {...args} />;
+QuickButtonComponentStory.args = {
+ label:"Action",
+ Icon:<SvgIconList
+ icon="AccountAction"
+ width={24}
+ height={24}
+/>,
+quickActionButtonLabel:"Button",
+quickActionButtonType:1,
+badge:true,
+quickNotificationCount:"2",
+onPress:null
+};
+
+export const ListButtonComponentStory = args => <ListButton {...args} />;
+ListButtonComponentStory.args = {
+ label:"Action",
+ showIcon:true,
+ Icon:<SvgIconList
+ icon="AccountAction"
+ width={24}
+ height={24}
+/>,
+ listButtonType:1,
+ listHeadlLine:"HeadLine",
+ listDescription:"Lorem IPsum",
+ showBadge:true,
+ listBadgeText:"Active",
+onPress:null
+};
+
 
 export const AccordianStory = args => <AccordianMenu {...args} />;
 AccordianStory.args = {

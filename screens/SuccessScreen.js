@@ -3,7 +3,7 @@ import React from 'react'
 import TextComponent from '../components/Common/TextComponent'
 import { fontXLG ,lineHeightXLG,fontWeightBold,spacingXS, spacingXXL,spacingXXS, spacingS, fontSmall, fontMedium} from '../constants/Size';
 import Fonts from '../constants/Fonts';
-import MainButton from '../components/NewButton/MainButton';
+import { GroupButton } from '../components/Common/Button';
 import { actuatedNormalize } from '../constants/PixelScaling';
 
 const SuccessScreen=()=> {
@@ -31,13 +31,13 @@ const SuccessScreen=()=> {
         marginTop:actuatedNormalize(400)
       }}
       >
-      <MainButton
+      <GroupButton
        backgroundColor={"#db0011"}
        label={"Action"}
        enableButtonGroup={true}
        enableprimary={true}
        type={"stacked"}
-      ></MainButton>
+      ></GroupButton>
       </View>
     </View>
   )

@@ -395,7 +395,8 @@ togglelabel:{
       fontSize: fontMediumLarge,
       lineHeight: lineHeightMediumLarge,
       textAlign: "left",
-      fontFamily:Fonts.Bold,
+      fontFamily:Fonts.HSBC,
+      fontWeight:fontWeightBold,
   },
   listButtonDashboard:{
     borderRadius: radiusS,
