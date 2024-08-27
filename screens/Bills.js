@@ -3,7 +3,8 @@ import React from 'react'
 import TextComponent from '../components/Common/TextComponent'
 import { fontXLG ,lineHeightXLG,fontWeightBold,spacingXS, spacingXXL,spacingXXS, spacingS} from '../constants/Size';
 import Fonts from '../constants/Fonts';
-import MainButton from '../components/NewButton/MainButton';
+//import MainButton from '../components/NewButton/MainButton';
+import { MainButton } from '../components/Common/Button';
 import Space from '../components/Common/Space';
 import { useNavigation } from '@react-navigation/native';
 const Bills=()=> {
