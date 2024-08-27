@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     color: "#000",
     textAlign: "left",
     marginTop: spacingL,
-    paddingLeft: spacingS,
+    paddingHorizontal: spacingS,
   }
 
 });
