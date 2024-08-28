@@ -137,7 +137,8 @@ secondaryFlexBoxLarge: {
   borderStyle:"solid",
   borderWidth: 1,
   paddingHorizontal:spacingS,
- paddingVertical:spacingXS
+  paddingVertical:spacingXS,
+  minWidth: 128
 },
 secondaryFlexBoxSmall: {
   flexDirection:"row",
