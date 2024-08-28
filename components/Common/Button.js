@@ -285,7 +285,7 @@ export const GroupButton = (props) => {
 								>
 									<TextComponent
 									style={[props.linkType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
-									>{props.label}</TextComponent>
+									>{props.tertiaryLabel}</TextComponent>
 								<RightRedArrow1
 								style={{
 									marginTop:actuatedNormalize(2)
