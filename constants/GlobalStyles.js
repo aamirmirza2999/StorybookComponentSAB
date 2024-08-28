@@ -92,7 +92,7 @@ const deviceHeight = Dimensions.get('window').height;
       marginLeft:spacingXS
     },
     badgeNotification1:{
-      top: -55,
+      top: -75,
       left: 21,
       borderRadius: 100,
       backgroundColor: "#ffbb33",
@@ -194,13 +194,16 @@ quickActionButtonTxt1:{
   fontFamily:Fonts.Regular,
 },
 quickActionButtonBox2:{
+  margin:8,
+  width: 48,
+  height: 48,
   borderRadius: radiusS,
   flexDirection: "row",
   alignItems: "flex-start",
-  //justifyContent: "center",
- paddingHorizontal:spacingXS,
- paddingVertical:spacingXXS
-  //alignItems:"flex-start"
+  justifyContent: "center",
+  paddingHorizontal:spacingXS,
+  paddingVertical:spacingXXS,
+  alignItems:"center",
 },
 quickActionButtonTxt2:{
  // alignSelf: "stretch",
