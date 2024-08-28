@@ -5,8 +5,25 @@ import { fontXLG ,lineHeightXLG,fontWeightBold,spacingXS, spacingXXL,spacingXXS,
 import Fonts from '../constants/Fonts';
 import { GroupButton } from '../components/Common/Button';
 import { actuatedNormalize } from '../constants/PixelScaling';
+import { useNavigation } from '@react-navigation/native';
 
 const SuccessScreen=()=> {
+  const navigation = useNavigation();
+
+  const goScreen=()=>{
+    navigation.reset({
+      index: 0,
+      routes: [{
+        name: "Home",
+        params: {
+          screen: "Home",
+          params: {
+            fromScreen: "Success"
+          }
+        },
+      }],
+    })
+  }
   return (
     <View
     style={{
@@ -15,7 +32,7 @@ const SuccessScreen=()=> {
    
     }}
     >
-     <TextComponent
+     {/* <TextComponent
        style={{
         alignSelf:"center",
         fontSize: fontMedium,
@@ -25,7 +42,7 @@ const SuccessScreen=()=> {
         color: "#000",
         textAlign: "left",
       }}
-      >Success Screen</TextComponent>
+      >Success Screen</TextComponent> */}
       <View
       style={{
         marginTop:actuatedNormalize(400)
@@ -33,11 +50,16 @@ const SuccessScreen=()=> {
       >
       <GroupButton
        backgroundColor={"#db0011"}
-       label={"Action"}
+       primaryLabel={"Go to Dashboard"}
+       secondaryLabel={"Cancel"}
        enableButtonGroup={true}
        enableprimary={true}
+       enableSecondary={true}
        type={"stacked"}
+       onPressPrimary={()=>navigation.navigate('Dashboard')}
+       onPressSecondary={()=>goScreen() }
       ></GroupButton>
+      
       </View>
     </View>
   )

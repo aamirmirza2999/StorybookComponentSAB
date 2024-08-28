@@ -165,7 +165,9 @@ quickActionButtonBox:{
   justifyContent: "center",
   paddingHorizontal:spacingXXS,
   paddingVertical:spacingXS,
-  overflow: "hidden"
+  overflow: "hidden",
+  height: 116,
+  gap: 8,
 },
 quickActionButtonTxt:{
     alignSelf: "stretch",
@@ -175,7 +177,7 @@ quickActionButtonTxt:{
     lineHeight:lineHeightMedium,
     fontFamily:Fonts.Regular,
     textAlign: "center",
-    marginTop:spacingXS
+    //marginTop:spacingXS
 },
 quickActionButtonBox1:{
   borderRadius:radiusS,

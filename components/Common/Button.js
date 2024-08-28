@@ -212,8 +212,8 @@ export const GroupButton = (props) => {
 		<>
 			<View
 				style={{
-					// marginVertical:spacingM,
-					// marginHorizontal:spacingS
+					 marginVertical:spacingM,
+					 marginHorizontal:spacingS
 				}}
 				>
 					{props.type==="stacked"?
@@ -415,7 +415,7 @@ export const QuickButton = (props) => {
 		>
 			<View
 				style={{
-				marginTop: actuatedNormalize(8),
+				//marginTop: actuatedNormalize(48),
 				}}
 			>
 				{props.Icon}
