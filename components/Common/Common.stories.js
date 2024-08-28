@@ -362,14 +362,17 @@ LinkButtonComponentStory.args = {
 export const GroupButtonComponentStory = args => <GroupButton {...args} />;
 GroupButtonComponentStory.args = {
  backgroundColor:"#db0011",
- label:"Action",
+ primaryLabel:"Action",
+ secondaryLabel:"Action1",
  type:"stacked",//stacked/inline
  enableprimary:false,
  enableSecondary:false,
  enableTertiary:false,
  enableLeftIcon:true,
  enableRightIcon:true,
- onPress:null
+ onPressPrimary:null,
+ onPressSecondary:null,
+ onPressTertiary:null
 };
 GroupButtonComponentStory.argTypes = {
   backgroundColor: {control: 'color'},

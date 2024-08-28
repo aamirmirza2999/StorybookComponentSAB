@@ -212,8 +212,8 @@ export const GroupButton = (props) => {
 		<>
 			<View
 				style={{
-					marginVertical:spacingM,
-					marginHorizontal:spacingS
+					// marginVertical:spacingM,
+					// marginHorizontal:spacingS
 				}}
 				>
 					{props.type==="stacked"?
@@ -224,7 +224,7 @@ export const GroupButton = (props) => {
 								accessibilityLabel={
 								props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
 								}
-								onPress={props.onPress}>
+								onPress={props.onPressPrimary}>
 							
 							<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
 							{props.enableLeftIcon?
@@ -236,7 +236,7 @@ export const GroupButton = (props) => {
 								height={actuatedNormalize(24)}
 								></WhiteArrow>
 						:null}
-							<TextComponent style={[{color: theme.primarycolor4}, globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+							<TextComponent style={[{color: theme.primarycolor4}, globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.primaryLabel}</TextComponent>
 							{props.enableRightIcon?
 								<WhiteArrow
 								style={{
@@ -259,10 +259,10 @@ export const GroupButton = (props) => {
 								accessibilityLabel={
 								props.accessibilityLabel ? props.accessibilityLabel : 'secondarybtn'
 								}
-								onPress={props.onPress}>
+								onPress={props.onPressSecondary}>
 							
 							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
-						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.secondaryLabel}</TextComponent>
 					</View>
 					</Component>:null}
 
@@ -276,7 +276,7 @@ export const GroupButton = (props) => {
 							accessibilityLabel={
 							props.accessibilityLabel ? props.accessibilityLabel : 'linkButton'
 							}
-							onPress={props.onPress}>
+							onPress={props.onPressTertiary}>
 								<View
 								style={{
 									flexDirection: "row",
@@ -312,7 +312,7 @@ export const GroupButton = (props) => {
 						accessibilityLabel={
 						props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTALarge'
 						}
-						onPress={props.onPress}
+						onPress={props.onPressPrimary}
 						disabled={props.disabled}
 					>
             		<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxLarge, props.primaryFlexBoxLarge]}>			
@@ -345,7 +345,7 @@ export const GroupButton = (props) => {
 							accessibilityLabel={
 							props.accessibilityLabel ? props.accessibilityLabel : 'secondaryCTABB'
 							}
-							onPress={props.onPress}
+							onPress={props.onPressSecondary}
 							disabled={props.disabled}
 						>
 						<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
@@ -373,7 +373,9 @@ export const GroupButton = (props) => {
 						</Component>
 						:null}
 				{props.enableTertiary?
-						<Component>
+						<Component
+							onPress={props.onPressTertiary}
+						>
 						<View
 						style={[globalStyles.imageButton,props.imageButton,{borderColor: theme.primarycolor,}]}
 						>

@@ -7,6 +7,7 @@ import { useTheme } from '../../constants/Theme/ThemeProvider';
 import PrimaryButton from './PrimaryButton';
 import { spacingS } from '../../constants/Size';
 import { globalStyles } from '../../constants/GlobalStyles';
+import { GroupButton } from './Button';
 const BottomButton = props => {
   console.log("props>>>>",props)
   const { theme, toggleTheme } = useTheme();
@@ -278,12 +279,30 @@ const addCommaToNumber = (data) => {
               </View>
            
               <View style={[globalStyles.bottombtn]}>
-                <PrimaryButton
+                {/* <PrimaryButton
                    onPress={props.onPress}
                    textColor={'white'}
                    PrimaryButtonBgClr={theme.primaryredstatic}
                    label={props.label}
-                />
+                /> */}
+                <GroupButton
+                secondaryFlexBoxLarge={{
+                  borderColor:"#ffffff",
+                  backgroundColor:'transparent'
+                }}
+                primaryTextLarge={{
+                  color:"#ffffff"
+                }}
+                primaryBgColor="#db0011"
+                secondaryBgColor="transparent"
+                primaryLabel="Action"
+                secondaryLabel="Action1"
+                type="stacked"//stacked/inline
+                enableprimary={true}
+                enableSecondary={true}
+                onPressPrimary={null}
+                onPressSecondary={null}
+                ></GroupButton>
 
               </View>
 

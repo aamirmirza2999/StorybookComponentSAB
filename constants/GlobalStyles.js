@@ -78,7 +78,8 @@ const deviceHeight = Dimensions.get('window').height;
           flexDirection: "row",
           paddingHorizontal:spacingS,
           alignItems: "center",
-          minWidth: 128
+          minWidth: 128,
+          height: 48,
           //flex: 1
       },
       
@@ -138,7 +139,8 @@ secondaryFlexBoxLarge: {
   borderWidth: 1,
   paddingHorizontal:spacingS,
   paddingVertical:spacingXS,
-  minWidth: 128
+  minWidth: 128,
+  height: 48,
 },
 secondaryFlexBoxSmall: {
   flexDirection:"row",
