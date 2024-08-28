@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   mainContainer: function (props) {
     return {
       height: svgHeight,
-      backgroundColor: 'white',
+     
 
 
     };
@@ -114,19 +114,19 @@ const xml1 = `<svg width=${Platform.OS == "ios" ? svgWidth + actuatedNormalize(5
 // }
 const PostLoginHeader = (props) => {
   // const navigation = useNavigation();
-  const { colors, isDark } = useTheme();
+  const { theme, toggleTheme,isDarkMode } = useTheme();
   console.log("props>>>>1111", props)
   return (
     <>
       <View style={{
-        backgroundColor: "white",     
+          
         height: getStatusBarHeight() + 10
       }}>
         <SafeAreaView>
           <StatusBar
             animated
-            backgroundColor={'white'}
-            barStyle={'dark-content'}
+            backgroundColor={theme.primaryinvert}
+            barStyle={isDarkMode?'light-content': 'dark-content'}
             translucent={true}
           />
         </SafeAreaView>
@@ -134,6 +134,7 @@ const PostLoginHeader = (props) => {
 
 
       <View style={[styles.mainContainer(props), {
+         backgroundColor: theme.primaryinvert,
       }, props.HeaderStyle]}>
         <View style={{
           flexDirection: 'row',
@@ -187,7 +188,7 @@ const PostLoginHeader = (props) => {
                 numberOfLines={1}
                 ellipsizeMode="tail"
                 style={{
-                  color: "#000",
+                  color: theme.primarycolor,
                   fontWeight: "700",
                   fontSize: actuatedNormalize(17),
                   // fontFamily: I18nManager.isRTL
@@ -281,7 +282,7 @@ const PostLoginHeader = (props) => {
                     icon="HelpIcon"
                     width={actuatedNormalize(25)}
                     height={actuatedNormalize(25)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                   
                   />
                 </TouchableOpacity>
 
@@ -311,7 +312,9 @@ const PostLoginHeader = (props) => {
           </View>
         </View>
         {props.Headline && !props.HeaderTitleReq ?
-          <TextComponent style={styles.HeadlineText}>{props.Headline}</TextComponent>
+          <TextComponent style={[styles.HeadlineText,{
+            color: theme.primarycolor,
+          }]}>{props.Headline}</TextComponent>
           : null}
 
       </View>

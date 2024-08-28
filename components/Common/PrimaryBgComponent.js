@@ -5,18 +5,18 @@ import {actuatedNormalize} from '../../constants/PixelScaling';
 import {globalStyles} from '../../constants/GlobalStyles';
 // import Colors from '../../constants/Colors';
 import BgHeader from './BgHeader';
-// import { useTheme } from '../../constants/Theme/ThemeProvider';
+ import { useTheme } from '../../constants/Theme/ThemeProvider';
 import ProgressHeader from './ProgressComponent';
 import {spacingS, spacingM, spacingL} from '../../constants/Size';
 
 const PrimaryBgComponent = props => {
-  // const { theme, toggleTheme } = useTheme();
+   const { theme, toggleTheme } = useTheme();
 
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: theme.primaryinvert,
       }}>
       {props.BgHeader}
 

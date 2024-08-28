@@ -41,8 +41,8 @@ const xml1 = `<svg width=${Platform.OS == "ios" ? svgWidth + actuatedNormalize(1
 // }
 
 const MainHeader = (props) => {
-    const { colors } = useTheme()
-    let theme = colors
+    const { theme, toggleTheme,isDarkMode } = useTheme();
+    console.log("WHICH THEME????",theme)
 
     return (
 
@@ -54,28 +54,28 @@ const MainHeader = (props) => {
             />
             <StatusBar
       animated
-      backgroundColor={'white'}
-      barStyle={'dark-content'}
+      backgroundColor={theme.primaryinvert}
+      barStyle={isDarkMode?'light-content': 'dark-content'}
       translucent={true}
     />
-            <View style={[{ ...StyleSheet.absoluteFill, zIndex: -1 }, props.addOverFlowHidden ? { overflow: "hidden", } : {}]}>
+            <View style={[{ ...StyleSheet.absoluteFill, zIndex: -1 },  { overflow: "hidden", }]}>
                 {/* <Background
                     bgColor = {props.bgColor}
                     /> */}
-                {props.LoginBar ?
+                {/* {props.LoginBar ?
                     <View style={{ width: '100%', height: actuatedNormalize(37), flexDirection: 'row', }}>
                         {props.LoginBar}
                     </View>
-                    : null}
-                <View style={[styles.whiteContainer, { backgroundColor: props.addOverFlowHidden ? "transparent" : "#fbfcfe" }]}>
-                </View>
+                    : null} */}
+                {/* <View style={[styles.whiteContainer, { backgroundColor:  "#fbfcfe" }]}>
+                </View> */}
             </View>
             {/* {props.children} */}
             <View
                 style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    paddingHorizontal: spacingS
+                    paddingHorizontal: spacingS,
                 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <LogoComponent enableLogo={props.enableLogo} changeTheme={props.changeTheme} />
@@ -85,14 +85,14 @@ const MainHeader = (props) => {
                             <View style={{
                                 height: actuatedNormalize(20),
                                 width: actuatedNormalize(2),
-                                backgroundColor: 'black',
+                                backgroundColor: theme.primarycolor,
                                 marginLeft: spacingS
                             }}>
                             </View>
 
                             <TextComponent style={{
                                 marginLeft: spacingXS,
-                                color: "#000",
+                                color: theme.primarycolor,
                                 fontWeight: "700",
                                 fontSize: actuatedNormalize(12),
                             }}> {props.AccountType} </TextComponent>
@@ -155,7 +155,8 @@ const MainHeader = (props) => {
             {props.BottomBar && Platform.OS === 'ios' ?
                 <View style={{
                     height:
-                        getBottomSpace(), width: '100%', backgroundColor: theme.backgroundColor
+                        getBottomSpace(), width: '100%',
+                        // backgroundColor: theme.backgroundColor
                 }}>
                     {props.BottomBar ? props.BottomBar : null}
                 </View> : null
@@ -174,7 +175,7 @@ const styles = {
     },
 
     whiteContainer: {
-        backgroundColor: "#FFFFFF",
+      //  backgroundColor: "black",
         flex: 1,
     },
 }

@@ -35,7 +35,7 @@ import {
           LanguageSwitchReq={true}
           MenuHeader={true}
           HeaderTitleReq={false}
-          Headline={'Headline'}
+          Headline={t('initialLang:headline')}
             />
         }>
       </PrimaryBgComponent>

@@ -1,9 +1,15 @@
 import React from 'react';
 import { actuatedNormalize } from './PixelScaling';
-import { AddBene, BackArrowNew, ChangeLang, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
-  BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon} from './SvgLocations';
+import { useTheme } from "../constants/Theme/ThemeProvider";
+import { AddBene, BackArrowNew, ChangeLang,ChangeLangDark, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
+  BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon,SearchIconDark,
+  NotificationIconDark,AvatarIconDark} from './SvgLocations';
+
+
 
 const SvgIconList = ({ icon, width, height  ,transform}) => {
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+
   switch (icon) {
     case 'backIcon':
       return (
@@ -36,8 +42,13 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
           );
       case 'ChangeLang':
         return (
+          isDarkMode?
+          <ChangeLangDark
+          width={width}
+          height={height}/>
+          :
+
           <ChangeLang
-          fill={"black"}
             width={width}
             height={height}
           />
@@ -92,14 +103,28 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
           );
           case 'SearchIcon':
             return (
-              <SearchIcon
+              isDarkMode?
+              <SearchIconDark
                 width={width}
                 height={height}
   
               />
+              :
+              <SearchIcon
+              width={width}
+              height={height}
+
+            />
+
             );
             case 'NotificationIcon':
               return (
+                isDarkMode?
+                <NotificationIconDark
+                width={width}
+                height={height}
+                />
+                :
                 <NotificationIcon
                   width={width}
                   height={height}
@@ -108,6 +133,13 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
               );
               case 'AvatarIconblack':
                 return (
+                  isDarkMode?
+                  <AvatarIconDark
+                  width={width}
+                  height={height}
+                  />
+                  :
+
                   <AvatarIconblack
                     width={width}
                     height={height}

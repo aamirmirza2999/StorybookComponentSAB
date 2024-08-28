@@ -36,7 +36,7 @@ import MainHeader from '../components/Common/MainHeader';
 import CardsComponent from '../components/Common/CardsComponent'
 import Space from '../components/Common/Space';
 import TabsComponent from '../components/Common/TabsComponent';
-
+import { MainButton } from '../components/Common/Button';
 const mainTabs = [
   { key: 0, title: i18n.t('initialLang:All') },
   { key: 1, title: i18n.t('initialLang:Mobile') },
@@ -136,23 +136,23 @@ const Home = props => {
           paddingBottom: spacingM,
           paddingTop: spacingM,
         }}
-        primaryBgColor={theme.primaryColor}
-        PrimaryButton={
-          <PrimaryButton
-            onPress={HandleSubmit}
-            textColor={'white'}
-            disabled={enableButton}
-            PrimaryButtonBgClr={theme.primaryredstatic}
-            label={t('initialLang:submit')}
-            {...props}
-          />
-        }
-        SecondaryButton={
-          <SecondaryButton
-            label={t('initialLang:register1')}
-          // SecondaryButtonBgClr={"red"}
-          />
-        }
+        // primaryBgColor={theme.primaryColor}
+        // PrimaryButton={
+        //   <PrimaryButton
+        //     onPress={HandleSubmit}
+        //     textColor={'white'}
+        //     disabled={enableButton}
+        //     PrimaryButtonBgClr={theme.primaryredstatic}
+        //     label={t('initialLang:submit')}
+        //     {...props}
+        //   />
+        // }
+        // SecondaryButton={
+        //   <SecondaryButton
+        //     label={t('initialLang:register1')}
+        //   // SecondaryButtonBgClr={"red"}
+        //   />
+        // }
         BgHeader={
           <MainHeader
             enableLogo={true}
@@ -163,7 +163,7 @@ const Home = props => {
             />
         }
         >
-        <View
+        {/* <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -189,10 +189,7 @@ const Home = props => {
           }}>
           {t('initialLang:lifestyle')}
         </TextComponent>
-        {/* <Button
-          onPress={() => changeLanguage(language == 'en' ? 'ar' : 'en')}
-          title="Lang"
-        /> */}
+        
         <View
           style={{
             paddingTop: actuatedNormalize(24),
@@ -246,11 +243,22 @@ const Home = props => {
         />
         <Toggleswitch />
         <EmptystateNote />
-        {/* <Avatarcomponent/> */}
+        
         <TabsComponent
         mainTabs={mainTabs}
         subTabs={subTabs}
-        />
+        /> */}
+        <View>
+        <MainButton
+       backgroundColor={"#db0011"}
+       label={"Action"}
+       type={"large"}//large/small/stacked/inline
+       enableLeftIcon={false}
+       enableRightIcon={true}
+       enableSecondaryBtn={true}
+       onPress={()=>navigation.navigate('Dashboard')}
+      ></MainButton>
+        </View>
       </PrimaryBgComponent>
     </>
   );

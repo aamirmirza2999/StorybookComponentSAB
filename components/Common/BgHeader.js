@@ -80,7 +80,7 @@ const BgHeader = (props) => {
     <View style={styles.SliderContainer}>
     <StatusBar
       animated
-      backgroundColor={'#263a52'}
+     // backgroundColor={'#263a52'}
       barStyle={'default'}
       translucent={true}
     />
