@@ -12,5 +12,9 @@
   "International":"International",
   "Transfer":"Transfer Account",
   "Payment":"Payment",
-  "Beneficary":"Beneficary"
+  "Beneficary":"Beneficary",
+  "home": "Home",
+  "payments": "Payments",
+  "menu": "Menu",
+  "transfer": "Transfer"
 }

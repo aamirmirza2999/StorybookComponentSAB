@@ -263,13 +263,13 @@ const Tab=({
                       }}
                     >
                       {route.name === "Home"
-                        ? "Home"
+                        ? t('initialLang:home')
                         : route.name === "PassWord"
-                          ? "Payments"
+                          ? t('initialLang:payments')
                           : route.name === "New_Transfer"
-                            ? "Transfer"
+                            ? t('initialLang:welcome')
                             : route.name === "Menu"
-                            ? "Menu"
+                            ? t('initialLang:menu')
                                 : Name
                               }
                     </Text>

@@ -12,5 +12,9 @@
   "International":"ملصق",
   "Transfer":"ملصق",
   "Payment":"ملصق",
-  "Beneficary":"ملصق"
+  "Beneficary":"ملصق",
+  "home": "الرئيسية",
+  "payments": "المدفوعات",
+  "menu": "القائمة",
+  "transfer": "التحويل"
 }
