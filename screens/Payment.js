@@ -5,10 +5,11 @@ import PostLoginHeader from '../components/Common/PostLoginHeader';
 import { QuickButton } from '../components/Common/Button';
 import SvgIconList from '../constants/SvgIconList';
 import { useNavigation } from '@react-navigation/native';
-const New_Transfer=()=> {
+const Payment=()=> {
   const navigation = useNavigation();
   return (
     <>
+  
     <View style={{flex:1,backgroundColor:"#ffffff"}}>
       <View
       style={{
@@ -52,4 +53,4 @@ const New_Transfer=()=> {
     </>
   )
 }
-export default New_Transfer;
+export default Payment;

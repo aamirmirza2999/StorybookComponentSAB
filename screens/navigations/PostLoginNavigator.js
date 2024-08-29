@@ -13,17 +13,93 @@ import Transfers
  import SuccessScreen from '../SuccessScreen';
  import TabBar from './TabBar';
  import PostLoginHeader from '../../components/Common/PostLoginHeader';
+ import MainHeader from '../../components/Common/MainHeader';
  import Dashboard from '../Dashboard';
  import Menu from '../Menu'
+ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+ import Payment from '../Payment';
+ import { useTranslation } from 'react-i18next';
+
+ function getHeaderTitle(route) {
+  const { t } = useTranslation();
+  // If the focused route is not found, we need to assume it's the initial screen
+  // This can happen during if there hasn't been any navigation inside the screen
+  // In our case, it's "Feed" as that's the first screen inside the navigator
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
+
+  switch (routeName) {
+    case 'Home':
+      return <MainHeader
+      enableLogo={true}
+      ></MainHeader>;
+      case 'Payment':
+        return  <PostLoginHeader
+        Headline={'Headline Payment'}
+      ></PostLoginHeader>;
+      case 'New_Transfer':
+        return     <PostLoginHeader
+        Headline={'Headline'}
+      ></PostLoginHeader>;
+      case 'Menu':
+        return    <PostLoginHeader
+                LanguageSwitchReq={true}
+                MenuHeader={true}
+                HeaderTitleReq={false}
+                Headline={t('initialLang:headline')}
+                  />;
+  }
+}
 
 const SettingsStack = createNativeStackNavigator();
 const PostLoginNavigator = () => {
+
   return (
     <SettingsStack.Navigator initialRouteName="Home">
       <SettingsStack.Screen
         name="Home"
         component={TabBar}
-        options={{headerShown: false}}
+       // options={{headerShown: false}}
+       options={({ route }) => ({
+        headerShown: true,
+        header: () => (
+          getHeaderTitle(route)
+        ),
+        //transitionPresets,
+      })}
+      />
+     <SettingsStack.Screen
+        name="Payment"
+        component={Payment}
+        options={({ route }) => ({
+          headerShown: true,
+          header: () => (
+            getHeaderTitle(route)
+          ),
+          //transitionPresets,
+        })}
+      />
+
+<SettingsStack.Screen
+        name="New_Transfer"
+        component={New_Transfer}
+        options={({ route }) => ({
+          headerShown: true,
+          header: () => (
+            getHeaderTitle(route)
+          ),
+          //transitionPresets,
+        })}
+      />
+       <SettingsStack.Screen
+        name="Menu"
+        component={Menu}
+        options={({ route }) => ({
+          headerShown: true,
+          header: () => (
+            getHeaderTitle(route)
+          ),
+          //transitionPresets,
+        })}
       />
      
       <SettingsStack.Screen
@@ -73,11 +149,6 @@ const PostLoginNavigator = () => {
        <SettingsStack.Screen
         name="Dashboard"
         component={Dashboard}
-        options={{headerShown: false}}
-      />
-      <SettingsStack.Screen
-        name="Menu"
-        component={Menu}
         options={{headerShown: false}}
       />
      

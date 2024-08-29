@@ -152,16 +152,16 @@ const Home = props => {
         //     label={t('initialLang:register1')}
         //   // SecondaryButtonBgClr={"red"}
         //   />
-        // }
-        BgHeader={
-          <MainHeader
-            enableLogo={true}
-            changeTheme={toggleTheme}
-            LanguageSwitchReq = {true}
-            changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}
+        // // }
+        // BgHeader={
+        //   <MainHeader
+        //     enableLogo={true}
+        //     changeTheme={toggleTheme}
+        //     LanguageSwitchReq = {true}
+        //     changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}
            
-            />
-        }
+        //     />
+        // }
         >
         {/* <View
           style={{

@@ -30,14 +30,15 @@ import {
           paddingTop: spacingM,
         }}
 
-        BgHeader={
-          <PostLoginHeader
-          LanguageSwitchReq={true}
-          MenuHeader={true}
-          HeaderTitleReq={false}
-          Headline={t('initialLang:headline')}
-            />
-        }>
+        // BgHeader={
+        //   <PostLoginHeader
+        //   LanguageSwitchReq={true}
+        //   MenuHeader={true}
+        //   HeaderTitleReq={false}
+        //   Headline={t('initialLang:headline')}
+        //     />
+        // }
+        >
       </PrimaryBgComponent>
         </>
     )

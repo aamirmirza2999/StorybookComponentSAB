@@ -10,6 +10,7 @@ import Transfers
  import Tab from './Tab';
  import New_Transfer from '../New_Transfer';
  import Menu from '../Menu';
+ import Payment from '../Payment';
 
 const TabSetting=createBottomTabNavigator();
 
@@ -39,8 +40,8 @@ screenOptions={{tabBarHideOnKeyboard: true}}
           component={Home}
         />
     <TabSetting.Screen
-          name="PassWord"
-          component={PassWord}
+          name="Payment"
+          component={Payment}
         />
   <TabSetting.Screen
           name="New_Transfer"

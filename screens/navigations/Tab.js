@@ -70,8 +70,8 @@ const Tab=({
           case "Home":
             HomeNavigation(route.name, route.params?.params?.fromScreen || "");
             break;
-          case "Password":
-            PassWordNavigation(route.name, route.params?.params?.fromScreen || "");
+          case "Payment":
+            PaymentNavigation(route.name, route.params?.params?.fromScreen || "");
             break;
           case "New_Transfer":
             TransferNavigation(route.name, route.params?.params?.fromScreen || "");
@@ -91,9 +91,9 @@ const Tab=({
     navigation.navigate("Home");
   };
 
-   const PassWordNavigation = (screen, routeScreen) => {
+   const PaymentNavigation = (screen, routeScreen) => {
 
-    navigation.navigate("PassWord");
+    navigation.navigate("Payment");
   };
   const TransferNavigation = (screen, routeScreen) => {
 
@@ -224,7 +224,7 @@ const Tab=({
                       />
                     )
 
-                      : route.name === "PassWord" ? (
+                      : route.name === "Payment" ? (
                         <PaymentIcon
                           width={actuatedNormalize(24)}
                           height={actuatedNormalize(24)}
@@ -264,7 +264,7 @@ const Tab=({
                     >
                       {route.name === "Home"
                         ? t('initialLang:home')
-                        : route.name === "PassWord"
+                        : route.name === "Payment"
                           ? t('initialLang:payments')
                           : route.name === "New_Transfer"
                             ? t('initialLang:welcome')
