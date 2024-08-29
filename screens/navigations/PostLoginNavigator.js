@@ -28,10 +28,10 @@ import Transfers
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
 
   switch (routeName) {
-    case 'Home':
-      return <MainHeader
-      enableLogo={true}
-      ></MainHeader>;
+    // case 'Home':
+    //   return <MainHeader
+    //   enableLogo={true}
+    //   ></MainHeader>;
       case 'Payment':
         return  <PostLoginHeader
         Headline={'Headline Payment'}

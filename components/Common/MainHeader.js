@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 import SvgXml from './SvgXml'
 import { useTheme } from "../../constants/Theme/ThemeProvider";
-import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper-2'
+import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper'
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import LogoComponent from '../../components/Common/LogoComponent';
 import SvgIconList from '../../constants/SvgIconList';
@@ -49,7 +49,9 @@ const MainHeader = (props) => {
         <>
             <View
                 style={{
-                    height: getStatusBarHeight() + 10
+                    height: getStatusBarHeight()+10 ,
+
+                   
                 }}
             />
             <StatusBar
@@ -58,24 +60,25 @@ const MainHeader = (props) => {
       barStyle={isDarkMode?'light-content': 'dark-content'}
       translucent={true}
     />
-            <View style={[{ ...StyleSheet.absoluteFill, zIndex: -1 },  { overflow: "hidden", }]}>
-                {/* <Background
+            {/* <View style={[{ ...StyleSheet.absoluteFill, zIndex: -1 },  { overflow: "hidden", }]}>
+                <Background
                     bgColor = {props.bgColor}
-                    /> */}
-                {/* {props.LoginBar ?
+                    />
+                {props.LoginBar ?
                     <View style={{ width: '100%', height: actuatedNormalize(37), flexDirection: 'row', }}>
                         {props.LoginBar}
                     </View>
-                    : null} */}
-                {/* <View style={[styles.whiteContainer, { backgroundColor:  "#fbfcfe" }]}>
-                </View> */}
+                    : null}
+                <View style={[styles.whiteContainer, { backgroundColor:  "#fbfcfe" }]}>
+                </View>
             </View>
-            {/* {props.children} */}
+            {props.children} */}
             <View
                 style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     paddingHorizontal: spacingS,
+                    backgroundColor: theme.primaryinvert,
                 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <LogoComponent enableLogo={props.enableLogo} changeTheme={props.changeTheme} />
