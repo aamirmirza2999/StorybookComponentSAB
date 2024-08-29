@@ -39,6 +39,7 @@ import {
             SearchIconReq={true}
             NotificationIconReq={true}            
             AvatarIconReq={true}
+            avatarblack={true}
             //changeTheme={toggleTheme}
             //LanguageSwitchReq = {true}
             //changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}

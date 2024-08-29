@@ -127,15 +127,14 @@ const MainHeader = (props) => {
                         </TouchableOpacity>
                         : null}
                     {props.AvatarIconReq ?
+                    
                         <TouchableOpacity
                             style={{ alignSelf: '' }}
                             onPress={props.AvatarIconfunc}>
-                            <SvgIconList
-                                icon="AvatarIconblack"
-                                width={actuatedNormalize(32)}
-                                height={actuatedNormalize(32)}
-                                transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                            />
+                            <Avatarcomponent
+                             avatarblack={props.avatarblack}
+                             avatarname={props.avatarname}
+                    />
                         </TouchableOpacity>
                         : null}
                     {props.LanguageSwitchReq ?

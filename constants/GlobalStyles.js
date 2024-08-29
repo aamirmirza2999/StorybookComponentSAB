@@ -471,7 +471,7 @@ togglelabel:{
   avatar: {
     width: actuatedNormalize(32),
     height: actuatedNormalize(32),
-    paddingHorizontal:spacingS,
+    //paddingHorizontal:spacingS,
 },
   jm: {
     fontSize: fontXLarge,

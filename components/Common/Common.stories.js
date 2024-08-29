@@ -1,6 +1,6 @@
 // stories/MyButton.stories.js
 import BgHeaderComponent from './BgHeader';
-import PostLoginHeader from './PostLoginHeader';
+
 import ButtonComponent from './ButtonComponent';
 import DarkLightToggle from './DarkLightToggle';
 import LogoComponent from './LogoComponent';
@@ -32,7 +32,7 @@ import { Close,Success,GreyInfo} from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import PasswordStrength from '../PasswordStrength/PasswordStrength';
 import EmptystateNote from './EmptystateNote';
-import MainHeader from './MainHeader';
+
 import CardsComponent from './CardsComponent';
 import i18n from '../../locales/i18n';
 
@@ -91,21 +91,7 @@ export default {
 // BgHeaderStory.argTypes = {
 //   textColor: {control: 'color'},
 // };
-export const PostLoginHeaderStory = args => <PostLoginHeader {...args} />;
-PostLoginHeaderStory.args = {
-  title: 'Primary Button',
-  TextColor: 'white',
-  enableBackButton: true,
-  enableCloseButton: false,
-  LanguageSwitchReq:false,
-  MenuHeader:false,
-  Headline:'Headline',
-  HeaderTitleReq:true
-  //enableLivechat:true
-};
-PostLoginHeaderStory.argTypes = {
-  textColor: {control: 'color'},
-};
+
 
 
 export const TextComponentStory = args => <TextComponent {...args} />;
@@ -464,20 +450,7 @@ TabsComponentStory.argTypes = {
   },
 };
 
-export const MainHeaderStory = args => <MainHeader {...args} />;
-MainHeaderStory.args = {
-  enableLogo:true,
-  isAccountTypeReq:true,
-  SearchIconReq:true,
-  NotificationIconReq:true,
-  AvatarIconReq:true,
-  LanguageSwitchReq:false,
-  AccountType:'Premier'
 
-};
-MainHeaderStory.argTypes = {
-  bgColor: {control: 'color'},
-};
 
 export const ProgressBarStory = args => <ProgressBar {...args} />;
 ProgressBarStory.args = {
