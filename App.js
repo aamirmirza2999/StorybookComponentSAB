@@ -61,6 +61,9 @@ import {ThemeProvider} from './constants/Theme/ThemeProvider';
 import i18n from './locales/i18n';
 import {I18nextProvider} from 'react-i18next';
 import TabBar from './screens/navigations/TabBar';
+import { store } from "./redux/store/Store"
+import { Provider } from "react-redux";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -76,11 +79,13 @@ function App() {
     <ThemeProvider>
       <View style={{flex: 1}}>
         <NavigationContainer>
+        <Provider store={store}>
           <I18nextProvider i18n={i18n}>
             <Suspense fallback="loading">
               <PostLoginNavigator />
             </Suspense>
           </I18nextProvider>
+          </Provider>
         </NavigationContainer>
       </View>
     </ThemeProvider>
@@ -93,7 +98,9 @@ if (process.env.STORYBOOK_ENABLED) {
   const AppEntry = require('./.ondevice').default;
   AppEntryPoint = () => (
     <ThemeProvider>
+        <Provider store={store}>
       <AppEntry />
+      </Provider>
     </ThemeProvider>
   );
 }
