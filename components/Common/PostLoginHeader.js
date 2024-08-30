@@ -117,7 +117,10 @@ const PostLoginHeader = (props) => {
   const { theme, toggleTheme,isDarkMode } = useTheme();
   console.log("props>>>>1111", props)
   return (
-    <>
+    <View
+        style={{  
+          height: props.HeaderHeight,
+            backgroundColor:theme.primaryinvert}}>
       <View style={{
           
         height: getStatusBarHeight() ,
@@ -321,7 +324,7 @@ const PostLoginHeader = (props) => {
 
 
 
-    </>
+    </View>
 
   )
 }

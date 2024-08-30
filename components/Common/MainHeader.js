@@ -46,10 +46,14 @@ const MainHeader = (props) => {
 
     return (
 
-        <>
+        <View
+        style={{  
+            height: props.HeaderHeight,
+            backgroundColor:theme.primaryinvert}}>
             <View
                 style={{
                     height: getStatusBarHeight()+10 ,
+                    
 
                    
                 }}
@@ -163,7 +167,7 @@ const MainHeader = (props) => {
                     {props.BottomBar ? props.BottomBar : null}
                 </View> : null
             }
-        </>
+        </View>
 
     )
 }

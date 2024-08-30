@@ -1,13 +1,17 @@
 import MainHeader from './MainHeader';
 import PostLoginHeader from './PostLoginHeader';
+import {
+    Dimensions,
+    I18nManager
+} from 'react-native'
 import RNRestart from 'react-native-restart';
-import { I18nManager } from 'react-native';
 import i18n from '../../locales/i18n';
 import React, { useState ,useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { store } from '../../redux/store/Store';
 import {setlangSwitch} from '../../redux/actions/common/CommonAction'
 import { useDispatch } from "react-redux";
+import { useTheme } from '../../constants/Theme/ThemeProvider';
 
 export default {
   title: 'components/HeaderComponent',
@@ -15,7 +19,7 @@ export default {
 
 let initiallanguage = store.getState().commonReducer.LanginitialValue
 console.log("REDUX VALUE LANG>>>>>>>>>",initiallanguage)
-
+const deviceheight = Dimensions.get('window').height 
 
 const changeLanguage = async (language,setlanguage) => {
 
@@ -89,12 +93,14 @@ export const PostLoginHeaderStory = args => {
     <PostLoginHeader
       {...args}
       changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
+      HeaderHeight={deviceheight}
     />
   );
 };
 
 export const MainHeaderStory = args => {
   const [language, setlanguage] = useState('en');
+  const { theme, toggleTheme } = useTheme();
   useEffect(() => {
     init();
   }, []);
@@ -113,6 +119,8 @@ export const MainHeaderStory = args => {
   return (
     <MainHeader
       {...args}
+      changeTheme={toggleTheme}
+      HeaderHeight={deviceheight}
       changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
     />
   );
