@@ -10,9 +10,10 @@ import {
 import Divider from './Divider';
 import {spacingXS} from '../../constants/Size'
 import { globalStyles } from '../../constants/GlobalStyles';
+import { useTranslation } from 'react-i18next';
 
 export const CardsComponent = (props) => {
-
+    const { t } = useTranslation();
     console.log("card component propssssss>>>>>>>>>", props)
     return (
 
@@ -42,7 +43,7 @@ export const CardsComponent = (props) => {
 
             <View style={[globalStyles.wrapper, globalStyles.parentFlexBox]}>
                 <View style={{flexDirection:'column',bottom:!props.isFinanceProduct?spacingXS:null}}>
-                {props.isAccount || props.isCards ?<TextComponent style={globalStyles.textTypo1}>SAB Signature Visa Credit Card</TextComponent>:null}
+                {props.isAccount || props.isCards ?<TextComponent style={globalStyles.textTypo1}>{props.CardName}</TextComponent>:null}
                 <TextComponent style={globalStyles.textTypo1}>{props.CardNumber}</TextComponent>
                 </View>
                 {props.isFinanceProduct ?
@@ -58,7 +59,7 @@ export const CardsComponent = (props) => {
                 <View style={[globalStyles.frameParent, globalStyles.wrapper1FlexBox]}>
 
                     <View style={globalStyles.parentFlexBox}>
-                        <TextComponent style={globalStyles.textTypo1}>Available Limit</TextComponent>
+                        <TextComponent style={globalStyles.textTypo1}>{t('initialLang:AvailableLimit')}</TextComponent>
                         <View style={[globalStyles.wrapper1, globalStyles.wrapperFlexBox]}>
                             <TextComponent style={globalStyles.textTypo}>{props.AvailableLimit}</TextComponent>
                             <View style={[globalStyles.wrapper2, globalStyles.wrapperFlexBox]}>
@@ -81,7 +82,7 @@ export const CardsComponent = (props) => {
 
                         </View>
                         <View style={[globalStyles.creditLimit95Parent, globalStyles.parentFlexBox]}>
-                            <TextComponent style={[globalStyles.creditLimit95, globalStyles.textTypo1]}>Credit Limit</TextComponent>
+                            <TextComponent style={[globalStyles.creditLimit95, globalStyles.textTypo1]}>{t('initialLang:CreditLimit')}</TextComponent>
                             <View style={[globalStyles.wrapper1, globalStyles.wrapperFlexBox]}>
                                 <TextComponent style={[globalStyles.text2, globalStyles.textTypo]}>{props.CreditLimit}</TextComponent>
                                 <View style={[globalStyles.wrapper2, globalStyles.wrapperFlexBox]}>
@@ -97,7 +98,7 @@ export const CardsComponent = (props) => {
                 <View style={[globalStyles.frameParent, globalStyles.wrapper1FlexBox]}>
                     <Divider />
                     <View style={globalStyles.mainAccountParent}>
-                        <TextComponent style={[globalStyles.mainAccount, globalStyles.text1Layout]}>{props.isFinanceProduct?"Principle Outstanding":props.isAccount? "Balance":props.AmountHeader }</TextComponent>
+                        <TextComponent style={[globalStyles.mainAccount, globalStyles.text1Layout]}>{props.isFinanceProduct?t('initialLang:PrincipleOutstanding'):props.isAccount? t('initialLang:Balance'):props.AmountHeader }</TextComponent>
                         <View style={[globalStyles.frameWrapper, globalStyles.sarParentPosition]}>
                             <View style={[globalStyles.sarParent, globalStyles.sarParentPosition]}>
                                 <TextComponent style={[globalStyles.text1, globalStyles.text1Layout]}>{props.Balance}</TextComponent>

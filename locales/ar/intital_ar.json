@@ -17,5 +17,9 @@
   "payments": "المدفوعات",
   "menu": "القائمة",
   "transfer": "التحويل",
-  "headline":"العنوان"
+  "headline":"العنوان",
+  "AvailableLimit":"الحد المتاح",
+  "CreditLimit":"حد الائتمان",
+  "PrincipleOutstanding":"المبدأ المتميز",
+  "Balance":"توازن"
 }

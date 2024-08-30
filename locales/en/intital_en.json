@@ -17,5 +17,9 @@
   "payments": "Payments",
   "menu": "Menu",
   "transfer": "Transfer",
-  "headline":"Headline"
+  "headline":"Headline",
+  "AvailableLimit":"Available Limit",
+  "CreditLimit":"Credit Limit",
+  "PrincipleOutstanding":"Principle Outstanding",
+  "Balance":"Balance"
 }
