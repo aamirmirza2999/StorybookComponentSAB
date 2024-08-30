@@ -21,5 +21,8 @@
   "AvailableLimit":"الحد المتاح",
   "CreditLimit":"حد الائتمان",
   "PrincipleOutstanding":"المبدأ المتميز",
-  "Balance":"توازن"
+  "Balance":"توازن",
+  "action":"فعل",
+  "linkButton":"وصلة"
+  
 }
