@@ -1,4 +1,4 @@
-import React, { useCallback,useState } from 'react';
+import React, { useCallback,useState ,useEffect} from 'react';
 import { View, Text, Dimensions, useWindowDimensions } from 'react-native';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { globalStyles } from '../../constants/GlobalStyles';
@@ -13,15 +13,53 @@ import { useTranslation } from 'react-i18next';
 
 
 const TabsComponent = ({ 
-    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, type,numOfSubTabs,language
+    mainTabs, subTabs ,scrollEnabled = true ,numberOfTabs, type,numOfSubTabs, language: initialLanguage
 }) => {
     const layout = useWindowDimensions();
     const deviceHeight = Dimensions.get('window').height;
     const { theme, isDark } = useTheme()
     const [activeIndex, setActiveIndex] = useState(0);  
-    const { t,i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [language, setLanguage] = useState(initialLanguage);
 
-  
+    const changeLanguage = async (lang) => {
+        console.log("currentLang--lang->>", lang, " - ", lang === 'ar');
+
+        if (lang === 'ar') {
+            I18nManager.forceRTL(true);
+        } else {
+            I18nManager.forceRTL(false);
+        }
+
+        await i18n.changeLanguage(lang);
+        await AsyncStorage.setItem('currentLang', lang);
+        setLanguage(lang);
+        RNRestart.Restart(); // Restart the app to apply RTL changes
+    };
+
+    // Initialize and listen to language prop changes
+    useEffect(() => {
+        const init = async () => {
+            let currentLang = await AsyncStorage.getItem('currentLang');
+            console.log("currentLang-->>", currentLang);
+            if (currentLang) {
+                i18n.changeLanguage(currentLang);
+                setLanguage(currentLang);
+            } else {
+                i18n.changeLanguage(initialLanguage);
+                setLanguage(initialLanguage);
+            }
+        };
+
+        init();
+    }, []); // Run only once on mount
+
+    // Update language when initialLanguage prop changes
+    useEffect(() => {
+        if (language !== initialLanguage) {
+            changeLanguage(initialLanguage);
+        }
+    }, [initialLanguage]);
     
    
     const renderScene = useCallback(({ route }) => {
@@ -37,6 +75,10 @@ const TabsComponent = ({
     const tabsToDisplay = type === 'mainTab' ? mainTabs : subTabs;
   const numberOfTabsToShow = type === 'mainTab' ? numberOfTabs : numOfSubTabs;
 
+  const localizedTabs = tabsToDisplay.map(tab => ({
+    ...tab,
+    title: t(`initialLang:${tab.title}`), // Translate the title dynamically
+}));
     return (
         <>
         <View>
@@ -49,7 +91,9 @@ const TabsComponent = ({
                         navigationState={{
                             index: 0,
                             // routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
-                            routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0,1) : tabsToDisplay.slice(0, numberOfTabsToShow)                          }}
+                            // routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0,1) : tabsToDisplay.slice(0, numberOfTabsToShow)             
+                            routes: numberOfTabsToShow === 0 ? localizedTabs.slice(0,1) : localizedTabs.slice(0, numberOfTabsToShow),           
+                          }}
                         renderScene={renderScene}
                         onIndexChange={() => console.log("some function to execute")}
                         // onIndexChange={index => setActiveIndex(index)}
