@@ -21,5 +21,7 @@
   "AvailableLimit":"Available Limit",
   "CreditLimit":"Credit Limit",
   "PrincipleOutstanding":"Principle Outstanding",
-  "Balance":"Balance"
+  "Balance":"Balance",
+  "action":"Action",
+  "linkButton":"Link Button"
 }

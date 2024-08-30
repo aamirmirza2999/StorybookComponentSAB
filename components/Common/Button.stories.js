@@ -1,11 +1,12 @@
 import { MainButton,LinkButton,GroupButton,QuickButton,ListButton } from './Button';
 import SvgIconList from '../../constants/SvgIconList';
+import i18n from '../../locales/i18n';
 
 
 export const MainButtonComponentStory = args => <MainButton {...args} />;
 MainButtonComponentStory.args = {
  backgroundColor:"#db0011",
- label:"Action",
+ label: i18n.t('initialLang:action'),
  enablePrimaryBtn:false,
  enableSecondaryBtn:false,
  type:"large",//large/small
@@ -20,7 +21,7 @@ MainButtonComponentStory.argTypes = {
 
 export const LinkButtonComponentStory = args => <LinkButton {...args} />;
 LinkButtonComponentStory.args = {
- label:"Action",
+ label:i18n.t('initialLang:linkButton'),
  type:"large",//large/small
  enableLeftIcon:true,
  enableRightIcon:true,
@@ -30,9 +31,9 @@ LinkButtonComponentStory.args = {
 export const GroupButtonComponentStory = args => <GroupButton {...args} />;
 GroupButtonComponentStory.args = {
  backgroundColor:"#db0011",
- primaryLabel:"Action",
- secondaryLabel:"Action1",
- tertiaryLabel:"Action2",
+ primaryLabel:i18n.t('initialLang:action'),
+ secondaryLabel:i18n.t('initialLang:action'),
+ tertiaryLabel:i18n.t('initialLang:action'),
  type:"stacked",//stacked/inline
  enableprimary:false,
  enableSecondary:false,
@@ -49,7 +50,7 @@ GroupButtonComponentStory.argTypes = {
 
 export const QuickButtonComponentStory = args => <QuickButton {...args} />;
 QuickButtonComponentStory.args = {
- label:"Action",
+ label:i18n.t('initialLang:action'),
  Icon:<SvgIconList
  icon="AccountAction"
  width={24}

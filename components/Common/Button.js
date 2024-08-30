@@ -1,5 +1,5 @@
 import React,{} from 'react'
-import { StyleSheet, View,TouchableOpacity} from "react-native";
+import { StyleSheet, View,TouchableOpacity,I18nManager} from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
 import { useTheme } from "../../constants/Theme/ThemeProvider";
@@ -176,7 +176,7 @@ export const LinkButton = (props) => {
 							<RightRedArrow1
 							style={{
 							
-									transform: [{ rotate:"180deg"}],
+									transform: [{ rotate:I18nManager.isRTL?"360deg":"180deg"}],
 							
 								marginTop:actuatedNormalize(2)
 							}}
@@ -189,7 +189,8 @@ export const LinkButton = (props) => {
 							{props.enableRightIcon?
 							<RightRedArrow1
 							style={{
-								marginTop:actuatedNormalize(2)
+								marginTop:actuatedNormalize(2),
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
 							}}
 							width={actuatedNormalize(24)}
 							height={actuatedNormalize(24)}
@@ -226,7 +227,7 @@ export const GroupButton = (props) => {
 								}
 								onPress={props.onPressPrimary}>
 							
-							<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:theme.primarycolor3,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
+							<View style={[{	backgroundColor:props.disabled?theme.primarycolor2_30:props.backgroundColor,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
 							{props.enableLeftIcon?
 								<WhiteArrow
 								style={{
@@ -261,7 +262,7 @@ export const GroupButton = (props) => {
 								}
 								onPress={props.onPressSecondary}>
 							
-							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+							<View style={[{	backgroundColor:'transparent',borderColor:props.disabled?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
 						<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.secondaryLabel}</TextComponent>
 					</View>
 					</Component>:null}
@@ -420,7 +421,7 @@ export const QuickButton = (props) => {
 			>
 				{props.Icon}
 			</View>
-			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
 		</View>
 		:null}
 
@@ -430,7 +431,7 @@ export const QuickButton = (props) => {
 					>
 							{props.Icon}
 					
-						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
 						{props.badge?
 						<View
 						style={[globalStyles.badgeNotification,props.badgeNotification,{}]}
@@ -453,7 +454,7 @@ export const QuickButton = (props) => {
 					>
 							{props.Icon}
 					</View>
-					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primaryblack}]}>{props.quickActionButtonLabel}</TextComponent>
+					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
 			{props.badge?
 				<View
 				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
@@ -497,7 +498,7 @@ export const ListButton = (props) => {
 		}}
 		>	
 			<TextComponent
-				style={[globalStyles.listButtonTxtLargeHeadline,,props.listButtonTxt,{color:theme.primaryblack}]}
+				style={[globalStyles.listButtonTxtLargeHeadline,,props.listButtonTxt,{color:theme.primarycolor}]}
 				>{props.listHeadlLine}</TextComponent>
 				{props.listButtonType===2?
 				<>
@@ -537,7 +538,7 @@ export const ListButton = (props) => {
 		props.listButtonType===3?
 		<View style={[globalStyles.listButtonDashboard,props.listButtonDashboard,{backgroundColor:theme.stylesblockbg}]}>
 		<TextComponent
-		style={[globalStyles.listButtonTxt,props.listButtonTxt,{color:theme.primaryblack}]}
+		style={[globalStyles.listButtonTxt,props.listButtonTxt,{color:theme.primarycolor}]}
 		>{props.label}</TextComponent>
 		<RightRedArrow
 				width={actuatedNormalize(24)}
@@ -556,7 +557,7 @@ export const ListButton = (props) => {
 			}}
 				></RightRedArrow>
 		<TextComponent
-			style={[globalStyles.listButtonTxt1,props.listButtonTxt1,{color:theme.primaryblack}]}
+			style={[globalStyles.listButtonTxt1,props.listButtonTxt1,{color:theme.primarycolor}]}
 		>{props.label}</TextComponent>
 	</View>
 		}
