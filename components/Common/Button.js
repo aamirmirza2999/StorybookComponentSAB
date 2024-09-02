@@ -326,7 +326,7 @@ export const GroupButton = (props) => {
 								height={actuatedNormalize(24)}
 								></WhiteArrow>
 						:null}
-						 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+						 <TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.primaryLabel}</TextComponent>
 						{props.enableRightIcon?
 							<WhiteArrow
 							style={{
@@ -359,7 +359,7 @@ export const GroupButton = (props) => {
 										height={actuatedNormalize(24)}
 										></BlackArrow>
 								:null} */}
-							<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
+							<TextComponent style={[{color:props.disabled?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.secondaryLabel}</TextComponent>
 							{/* {props.enableRightIcon?
 									<BlackArrow
 									style={{
