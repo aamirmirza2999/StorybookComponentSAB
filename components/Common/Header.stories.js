@@ -21,6 +21,10 @@ const deviceheight = Dimensions.get('window').height
 
 export const PostLoginHeaderStory = args => {
   const [language, setlanguage] = useState('en');
+  const { t } = useTranslation();
+  args.Headline=t('initialLang:headline')
+  args.title=t('initialLang:PostloginHeader')
+
   useEffect(() => {
     CommonHelper.initLanguage(setlanguage);
   }, []);
@@ -71,13 +75,13 @@ MainHeaderStory.argTypes = {
 };
 
 PostLoginHeaderStory.args = {
-  title: 'Primary Button',
+  //title: 'Primary Button',
   TextColor: 'white',
   enableBackButton: true,
   enableCloseButton: false,
   LanguageSwitchReq:false,
   MenuHeader:false,
-  Headline:'Headline',
+ // Headline:'Headline',
   HeaderTitleReq:true
   //enableLivechat:true
 };
