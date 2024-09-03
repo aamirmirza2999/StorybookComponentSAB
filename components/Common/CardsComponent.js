@@ -11,12 +11,17 @@ import Divider from './Divider';
 import {spacingXS} from '../../constants/Size'
 import { globalStyles } from '../../constants/GlobalStyles';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from "../../constants/Theme/ThemeProvider";
 
 export const CardsComponent = (props) => {
     const { t } = useTranslation();
+    const { theme, toggleTheme,isDarkMode } = useTheme();
     console.log("card component propssssss>>>>>>>>>", props)
     return (
-
+        <View
+        style={{  
+          height: props.HeaderHeight,
+            backgroundColor:theme.primaryinvert}}>
 
         <ImageBackground
             style={globalStyles.typecardsLanguagearabic}
@@ -108,7 +113,8 @@ export const CardsComponent = (props) => {
                         </View>
                     </View>
                 </View>:null)}
-        </ImageBackground>);
+        </ImageBackground>
+        </View>);
 };
 
 export default CardsComponent;

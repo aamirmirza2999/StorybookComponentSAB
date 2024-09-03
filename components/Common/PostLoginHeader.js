@@ -194,6 +194,7 @@ const PostLoginHeader = (props) => {
                   color: theme.primarycolor,
                   fontWeight: "700",
                   fontSize: actuatedNormalize(17),
+                  bottom:actuatedNormalize(3)
                   // fontFamily: I18nManager.isRTL
                   //   ? Fonts.UniversArabicForHSBC_Regular
                   //   : Fonts.UniversNextforHSBC_Medium,
@@ -235,7 +236,7 @@ const PostLoginHeader = (props) => {
                   </TouchableOpacity>
                 ) : null}
 
-            {props.enableCloseButton ? (
+            {props.enableCloseButton && !props.MenuHeader ? (
               <TouchableOpacity
                 style={styles.IconViewStyle2}
                 onPress={

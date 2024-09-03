@@ -1,60 +1,87 @@
 import MainHeader from './MainHeader';
 import PostLoginHeader from './PostLoginHeader';
-import {
-    Dimensions,
-} from 'react-native'
-import React, { useState ,useEffect} from 'react';
-import { store } from '../../redux/store/Store';
+import { Dimensions } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
-import CommonHelper from '../../constants/CommonHelper'
+import CommonHelper from '../../constants/CommonHelper';
 import { useTranslation } from 'react-i18next';
 
 export default {
   title: 'components/HeaderComponent',
 };
 
-let initiallanguage = store.getState().commonReducer.LanginitialValue
-console.log("REDUX VALUE LANG>>>>>>>>>",initiallanguage)
-const deviceheight = Dimensions.get('window').height 
+const deviceheight = Dimensions.get('window').height;
 
+const handleChange = (newLang, setLanguage, i18n) => {
+  setLanguage(newLang);
+  i18n.changeLanguage(newLang); 
+  CommonHelper.changeLanguage(newLang, setLanguage); 
+};
 
+export const PostLoginHeaderStory = (args) => {
+  const [language, setLanguage] = useState(args.lang || 'en');
+  const { t, i18n } = useTranslation();
+  const { theme, toggleTheme,isDarkMode } = useTheme();
 
-export const PostLoginHeaderStory = args => {
-  const [language, setlanguage] = useState('en');
-  const { t } = useTranslation();
-  args.Headline=t('initialLang:headline')
-  args.title=t('initialLang:PostloginHeader')
+  args.Headline = t('initialLang:headline');
+  args.title = t('initialLang:PostloginHeader');
 
   useEffect(() => {
-    CommonHelper.initLanguage(setlanguage);
+    CommonHelper.initLanguage(setLanguage);
   }, []);
 
+  useEffect(() => {
+    if (language !== args.lang) {
+      handleChange(args.lang, setLanguage, i18n);
+    }
+  }, [args.lang]);
+  useEffect(() => {
+   
+    if (args.enableDarktheme !== isDarkMode) {
+      toggleTheme();
+    }
+  }, [args.enableDarktheme, isDarkMode]);
 
   return (
     <PostLoginHeader
       {...args}
-      changeLanguage={() => CommonHelper.changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
       HeaderHeight={deviceheight}
     />
   );
 };
 
-export const MainHeaderStory = args => {
-  const [language, setlanguage] = useState('en');
-  const { theme, toggleTheme } = useTheme();
-  const { t } = useTranslation();
-  args.AccountType=t('initialLang:Premier')
+export const MainHeaderStory = (args) => {
+  const [language, setLanguage] = useState(args.lang || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  args.AccountType = t('initialLang:Premier');
 
   useEffect(() => {
-    CommonHelper.initLanguage(setlanguage);
+    CommonHelper.initLanguage(setLanguage);
   }, []);
+
+  useEffect(() => {
+    if (language !== args.lang) {
+      handleChange(args.lang, setLanguage, i18n);
+    }
+  }, [args.lang]);
+
+  useEffect(() => {
+   
+    if (args.enableDarktheme !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>",args.enableDarktheme,isDarkMode)
+      toggleTheme();
+    }
+  }, [args.enableDarktheme, isDarkMode]);
 
   return (
     <MainHeader
       {...args}
       changeTheme={toggleTheme}
       HeaderHeight={deviceheight}
-      changeLanguage={() => CommonHelper.changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
 };
@@ -66,27 +93,43 @@ MainHeaderStory.args = {
   NotificationIconReq: true,
   AvatarIconReq: true,
   LanguageSwitchReq: true,
-  //AccountType: 'Premier',
   avatarblack: true,
   avatarname: false,
   avatarnamemid:false,
-  avatarnamesmall:true
+  avatarnamesmall:true,
+  lang: 'en',
+  enableDarktheme: false,
 };
+
 MainHeaderStory.argTypes = {
   bgColor: { control: 'color' },
+  lang: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  enableDarktheme: {
+    control: 'boolean',
+  },
 };
 
 PostLoginHeaderStory.args = {
-  //title: 'Primary Button',
   TextColor: 'white',
   enableBackButton: true,
   enableCloseButton: false,
-  LanguageSwitchReq:false,
-  MenuHeader:false,
- // Headline:'Headline',
-  HeaderTitleReq:true
-  //enableLivechat:true
+  LanguageSwitchReq: false,
+  MenuHeader: false,
+  HeaderTitleReq: true,
+  lang: 'en',
+  enableDarktheme: false,
 };
+
 PostLoginHeaderStory.argTypes = {
-  textColor: {control: 'color'}
-}
+  textColor: { control: 'color' },
+  lang: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  enableDarktheme: {
+    control: 'boolean',
+  },
+};

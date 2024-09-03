@@ -70,9 +70,9 @@ const subTabs = [
     // Add more sub-tabs here if needed
 ];
   
-export default {
-  title: 'components/EntireComponents',
-};
+// export default {
+//   title: 'components/EntireComponents',
+// };
 
 // export const ToggleThemeStory = args => <DarkLightToggle {...args} />;
 // ToggleThemeStory.args = {
@@ -465,22 +465,4 @@ ProgressBarStory.argTypes = {
   color:{control: 'color'},
   unfilledColor:{control: 'color'},
   progress: {control: 'number'},
-};
-export const CardsComponentStory = args => <CardsComponent {...args} />;
-CardsComponentStory.args = {
-  CardImage:require("../../assets/cardColorDarkBlue.png"),
-  CardName:"SAB Signature Visa Credit Card",
-  chipsinfo:true,
-  isFinanceProduct:false,
-  isAccount:false,
-  isCards:true,
-  Balance:"84,900.00",
-  statusBgColor:"#f9f2f3",
-  statusborderColor:"#e5b2b5",
-  CardStatus:"Active",
-  CardNumber:"4272-2201-0114-9091",
-  currency:"SAR",
-  AvailableLimit:"81,986.90",
-  CreditLimit:"84,900.00",
-  progress:"0.8"
 };
