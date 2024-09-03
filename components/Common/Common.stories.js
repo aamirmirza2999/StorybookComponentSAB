@@ -306,8 +306,9 @@ AvatarComponentStory.args = {
   avatarsplit:true,
   avatarassbene:true,
   avataredit:true,
-  avatarname:true
-
+  avatarname:true,
+  avatarnamemid:true,
+ avatarnamesmall:true
 };
 export const EmptyStateComponentStory = args => <EmptystateNote {...args} />;
 EmptyStateComponentStory.args = {

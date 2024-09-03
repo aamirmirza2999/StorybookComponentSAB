@@ -69,6 +69,8 @@ MainHeaderStory.args = {
   //AccountType: 'Premier',
   avatarblack: true,
   avatarname: false,
+  avatarnamemid:false,
+  avatarnamesmall:true
 };
 MainHeaderStory.argTypes = {
   bgColor: { control: 'color' },

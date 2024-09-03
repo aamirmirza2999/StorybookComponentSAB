@@ -44,9 +44,25 @@ import TextComponent from './TextComponent';
    <EditIcon/>
    </View> : null }
    {props.avatarname? 
+     <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
+     <TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>JM</TextComponent>
+ </View>
+ :null}
+ {props.avatarnamemid?
+ <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
+ <TextComponent style={[globalStyles.jm2,{color:theme.primarycolor3}]}>JM</TextComponent>
+</View>
+ :null}
+ {props.avatarnamesmall?
+ <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor: "#fbe5e7"}]}>
+ <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>JM</TextComponent>
+</View>
+ :null}
+
+   
+   {/* {props.avatarname? 
    <View style={{flexDirection:"row",}}>
    <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
-   {/* <Image style={globalStyles.path3Icon} resizeMode="cover" source="Path 3.png" /> */}
       			<TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>JM</TextComponent>
     		</View>
         <View style={[globalStyles.typefilledElementsinitials,{marginLeft:65,backgroundColor: "#fbe5e7"}]}>
@@ -56,7 +72,7 @@ import TextComponent from './TextComponent';
       			<TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>JM</TextComponent>
     		</View>
 </View>  
-:null}
+:null} */}
 </View>
 
       </>

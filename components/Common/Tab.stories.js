@@ -49,7 +49,6 @@ MainTab.args = {
   type:"mainTab",
   numberOfTabs: 2,
   numOfSubTabs: 4,
-  LanguageSwitchReq: true,
   //mainTabs:mainTabs,
   // subTabs:subTabs,
 };
@@ -77,7 +76,6 @@ export const SubTab =(args) => {
   {title: t('initialLang:Transfer'), key: 3},
   {title: t('initialLang:International'), key: 4},
   {title: t('initialLang:Beneficary'), key: 5},
-  // Add more sub-tabs here if needed
 ];
  
   return(<TabsComponent {...args} 

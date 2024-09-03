@@ -141,6 +141,8 @@ const MainHeader = (props) => {
                             <Avatarcomponent
                              avatarblack={props.avatarblack}
                              avatarname={props.avatarname}
+                             avatarnamemid={props.avatarnamemid}
+                             avatarnamesmall={props.avatarnamesmall}
                     />
                         </TouchableOpacity>
                         : null}

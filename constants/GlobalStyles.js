@@ -496,11 +496,10 @@ fontFamily: Fonts.HSBC,
 textAlign: "left"
 },
 typefilledElementsinitials: {
-  borderRadius: actuatedNormalize(100),
-  flex: 1,
-  padding: spacingS,
- position: "absolute",
- 
+   borderRadius: actuatedNormalize(100),
+   padding: spacingS,
+   justifyContent:"space-around" ,
+   marginRight:actuatedNormalize(4)
 },
 
   Addbeneavatar: {
