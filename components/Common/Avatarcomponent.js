@@ -43,6 +43,7 @@ import TextComponent from './TextComponent';
    <View style={{}}>
    <EditIcon/>
    </View> : null }
+   <View style={{flexDirection:"row"}}>
    {props.avatarname? 
      <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
      <TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>JM</TextComponent>
@@ -58,6 +59,7 @@ import TextComponent from './TextComponent';
  <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>JM</TextComponent>
 </View>
  :null}
+ </View>
 
    
    {/* {props.avatarname? 
