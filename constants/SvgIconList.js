@@ -3,7 +3,7 @@ import { actuatedNormalize } from './PixelScaling';
 import { useTheme } from "../constants/Theme/ThemeProvider";
 import { AddBene, BackArrowNew, ChangeLang,ChangeLangDark, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
   BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon,SearchIconDark,
-  NotificationIconDark,AvatarIconDark} from './SvgLocations';
+  NotificationIconDark,AvatarIconDark, AccountActionDark, Home, HomeDark} from './SvgLocations';
 
 
 
@@ -55,6 +55,10 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
         );
         case 'AccountAction':
           return (
+            isDarkMode?<AccountActionDark
+            width={24}
+            height={24}
+            />:
             <AccountAction
               width={width}
               height={height}
@@ -69,6 +73,18 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
 
             />
           );
+          case 'Home':
+            return (
+              isDarkMode?<HomeDark
+              width={width}
+              height={height}
+              />:
+              <Home
+                width={width}
+                height={height}
+  
+              />
+            );
           case 'LiveChat':
           return (
             <LiveChat

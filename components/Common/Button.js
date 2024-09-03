@@ -4,12 +4,18 @@ import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { actuatedNormalize } from "../../constants/PixelScaling";
-import { RightArrowBlackLarge,RightArrowBlackSmall,BlackArrow,RightRedArrow,RightRedArrow1, Split, WhiteArrow,  } from "../../constants/SvgLocations";
+import { RightArrowBlackLarge,RightArrowBlackSmall,BlackArrow,RightRedArrow,RightRedArrow1, Split, WhiteArrow, RightArrowDarkLarge, RightRedArrowDark, RightRedArrowDark1, BlackArrowDark,  } from "../../constants/SvgLocations";
 import { spacingM, spacingS, spacingXL } from '../../constants/Size';
 import CommonHelper from '../../constants/CommonHelper';
 
 export const MainButton = (props) => {
-	const { theme } = useTheme();
+	const { theme,isDarkMode } = useTheme();
+	// useEffect(() => {
+	
+	// toggleTheme()
+	
+	//   }, [props.themeStatus]);
+
 
     let Component = TouchableOpacity;
 
@@ -96,8 +102,19 @@ export const MainButton = (props) => {
 					onPress={props.onPress}
 					disabled={props.disableSecondaryBtn}
 				>
-				<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disableSecondaryBtn?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+				<View style={[{	backgroundColor:'transparent',borderColor:props.disableSecondaryBtn?theme.primarycolor:theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
 				{props.enableLeftIcon?
+				isDarkMode?
+				<WhiteArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>
+
+								:
 								<BlackArrow
 								style={{
 									marginRight:actuatedNormalize(8),
@@ -107,17 +124,29 @@ export const MainButton = (props) => {
 								width={actuatedNormalize(24)}
 								height={actuatedNormalize(24)}
 								></BlackArrow>
+								
+								
 						:null}
 					<TextComponent style={[{color:props.disableSecondaryBtn?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.label}</TextComponent>
 					{props.enableRightIcon?
-							<BlackArrow
-							style={{
-								marginLeft:actuatedNormalize(8),
-								transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
-							}}
-							width={actuatedNormalize(24)}
-							height={actuatedNormalize(24)}
-							></BlackArrow>
+					isDarkMode?
+								
+								<WhiteArrow
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>:
+								<BlackArrow
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrow>
 						:null}
 				</View>
 				</Component>:
@@ -131,6 +160,18 @@ export const MainButton = (props) => {
 					>
 					<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disableSecondaryBtn?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxSmall,props.secondaryFlexBoxSmall]}>			
 					{props.enableLeftIcon?
+					isDarkMode?
+							
+
+								<WhiteArrow
+								style={{
+									marginRight:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>:
+
 								<BlackArrow
 								style={{
 									marginRight:actuatedNormalize(8),
@@ -139,17 +180,30 @@ export const MainButton = (props) => {
 								width={actuatedNormalize(24)}
 								height={actuatedNormalize(24)}
 								></BlackArrow>
+
 						:null}
 						<TextComponent style={[{color:props.disableSecondaryBtn?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.label}</TextComponent>
 						{props.enableRightIcon?
-							<BlackArrow
-							style={{
-								marginLeft:actuatedNormalize(8),
-								transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
-							}}
-							width={actuatedNormalize(24)}
-							height={actuatedNormalize(24)}
-							></BlackArrow>
+							isDarkMode?
+						
+							
+								
+							<WhiteArrow
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></WhiteArrow>:
+								<BlackArrow
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrow>
 						:null}
 					</View>
 			</Component>
@@ -161,7 +215,7 @@ export const MainButton = (props) => {
 };
 
 export const LinkButton = (props) => {
-	const { theme } = useTheme();
+	const { theme,isDarkMode } = useTheme();
 
     let Component = TouchableOpacity;
 
@@ -179,6 +233,15 @@ export const LinkButton = (props) => {
 							}}
 							>
 							{props.enableLeftIcon?
+							isDarkMode?
+							<RightRedArrowDark1
+							style={{
+							
+								transform: [{ rotate:I18nManager.isRTL?"360deg":"180deg"}],
+						
+							marginTop:actuatedNormalize(2)
+						}}
+							/>:
 							<RightRedArrow1
 							style={{
 							
@@ -193,6 +256,15 @@ export const LinkButton = (props) => {
 								style={[props.type==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
 								>{props.label}</TextComponent>
 							{props.enableRightIcon?
+							isDarkMode?
+							<RightRedArrowDark1
+							style={{
+								marginTop:actuatedNormalize(2),
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							/>:
 							<RightRedArrow1
 							style={{
 								marginTop:actuatedNormalize(2),
@@ -211,7 +283,7 @@ export const LinkButton = (props) => {
 };
 
 export const GroupButton = (props) => {
-	const { theme } = useTheme();
+	const { theme ,isDarkMode} = useTheme();
 
     let Component = TouchableOpacity;
 
@@ -275,6 +347,14 @@ export const GroupButton = (props) => {
 							
 							<View style={[{	backgroundColor:'transparent',borderColor:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
 							{props.enableLeftIcon?
+							isDarkMode?
+							<BlackArrowDark
+							style={{
+								marginRight:actuatedNormalize(8),
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}/>:
 								<BlackArrow
 								style={{
 									marginRight:actuatedNormalize(8),
@@ -286,6 +366,15 @@ export const GroupButton = (props) => {
 						:null}
 						<TextComponent style={[{color:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.secondaryLabel}</TextComponent>
 						{props.enableRightIcon?
+						isDarkMode?
+						<BlackArrowDark
+						style={{
+							marginLeft:actuatedNormalize(8),
+							transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+						}}
+						width={actuatedNormalize(24)}
+						height={actuatedNormalize(24)}
+						/>:
 								<BlackArrow
 								style={{
 									marginLeft:actuatedNormalize(8),
@@ -316,6 +405,14 @@ export const GroupButton = (props) => {
 								}}
 								>
 						{props.enableLeftIcon?
+							isDarkMode?
+							<RightRedArrowDark1
+							style={{
+							
+								transform: [{ rotate:I18nManager.isRTL?"360deg":"180deg"}],
+						
+							marginTop:actuatedNormalize(2)
+						}}/>:
 							<RightRedArrow1
 							style={{
 							
@@ -329,6 +426,12 @@ export const GroupButton = (props) => {
 									<TextComponent
 									style={[props.linktype==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
 									>{props.tertiaryLabel}</TextComponent>
+										{isDarkMode?
+							<RightRedArrowDark1
+							style={{
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+								marginTop:actuatedNormalize(2)
+							}}/>:
 								<RightRedArrow1
 								style={{
 									transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
@@ -336,7 +439,7 @@ export const GroupButton = (props) => {
 								}}
 								width={actuatedNormalize(24)}
 								height={actuatedNormalize(24)}
-								></RightRedArrow1>
+								></RightRedArrow1>}
 	
 								</View>
 				
@@ -393,8 +496,17 @@ export const GroupButton = (props) => {
 							onPress={props.onPressSecondary}
 							disabled={props.disableSecondary}
 						>
-						<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
+						<View style={[{	backgroundColor:'transparent',borderColor:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
 						 {props.enableLeftIcon?
+							isDarkMode?
+							<BlackArrowDark
+							style={{
+								marginRight:actuatedNormalize(8),
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							/>:
 										<BlackArrow
 										style={{
 											marginRight:actuatedNormalize(8),
@@ -406,6 +518,15 @@ export const GroupButton = (props) => {
 								:null} 
 							<TextComponent style={[{color:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.secondaryLabel}</TextComponent>
 							{props.enableRightIcon?
+							isDarkMode?
+							<BlackArrowDark
+							style={{
+								marginLeft:actuatedNormalize(8),
+								transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							/>:
 									<BlackArrow
 									style={{
 										marginLeft:actuatedNormalize(8),
@@ -443,7 +564,7 @@ export const GroupButton = (props) => {
 };
 
 export const QuickButton = (props) => {
-	const { theme } = useTheme();
+	const { theme,isDarkMode } = useTheme();
 
     let Component = TouchableOpacity;
 
@@ -516,7 +637,7 @@ export const QuickButton = (props) => {
 };
 
 export const ListButton = (props) => {
-	const { theme } = useTheme();
+	const { theme,isDarkMode } = useTheme();
 
     let Component = TouchableOpacity;
 
@@ -576,6 +697,13 @@ export const ListButton = (props) => {
 				height={actuatedNormalize(24)}
 				></RightArrowBlackSmall>:null}
 				{props.listButtonType==="Big"?
+				isDarkMode?<RightArrowDarkLarge
+				style={{
+					transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+				}}
+				width={actuatedNormalize(24)}
+				height={actuatedNormalize(24)}
+				/>:
 				<RightArrowBlackLarge
 				style={{
 					transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
@@ -591,14 +719,27 @@ export const ListButton = (props) => {
 		<TextComponent
 		style={[globalStyles.listButtonTxt,props.listButtonTxt,{color:theme.primarycolor}]}
 		>{props.label}</TextComponent>
+		{isDarkMode?<RightRedArrowDark
+		width={actuatedNormalize(24)}
+		height={actuatedNormalize(24)}
+		/>:
 		<RightRedArrow
 				width={actuatedNormalize(24)}
 				height={actuatedNormalize(24)}
-				></RightRedArrow>
+				></RightRedArrow>}
+				
+				
 		</View>:
 	<View
 	style={[globalStyles.listButtonDashboard1,props.listButtonDashboard1,{backgroundColor:theme.stylesblockbg}]}
-	>
+	>{isDarkMode?<RightRedArrowDark
+		width={actuatedNormalize(24)}
+		height={actuatedNormalize(24)}
+		style={{
+			transform: [{ rotate:  "90deg"  }],
+			marginRight:actuatedNormalize(8)
+	}}
+		/>:
 		<RightRedArrow
 				width={actuatedNormalize(24)}
 				height={actuatedNormalize(24)}
@@ -606,7 +747,7 @@ export const ListButton = (props) => {
 					transform: [{ rotate:  "90deg"  }],
 					marginRight:actuatedNormalize(8)
 			}}
-				></RightRedArrow>
+				></RightRedArrow>}
 		<TextComponent
 			style={[globalStyles.listButtonTxt1,props.listButtonTxt1,{color:theme.primarycolor}]}
 		>{props.label}</TextComponent>

@@ -1,9 +1,11 @@
 import { MainButton,LinkButton,GroupButton,QuickButton,ListButton } from './Button';
 import SvgIconList from '../../constants/SvgIconList';
 import { useTranslation } from 'react-i18next';
-import { Home } from '../../constants/SvgLocations';
+import { AccountActionDark, Home } from '../../constants/SvgLocations';
+import { useTheme } from '../../constants/Theme/ThemeProvider';
 
 export const MainButtonComponentStory = (args) =>{ 
+  const { isDarkMode } = useTheme();
   const { t } = useTranslation();
   args.label=t('initialLang:action')
   return(<MainButton {...args} />)
@@ -17,13 +19,18 @@ export const MainButtonComponentStory = (args) =>{
   enableRightIcon:false,
   disablePrimaryBtn:false,
   disableSecondaryBtn:false,
-  onPress:null
+  onPress:null,
+  themeStatus:"light"
 };
 MainButtonComponentStory.argTypes = {
   backgroundColor: {control: 'color'},
   type: {
     control: 'select',
     options: ['large', 'small'],
+  },
+  themeStatus: {
+    control: 'select',
+    options: ['light', 'dark'],
   },
 }
 
@@ -113,7 +120,8 @@ export const ListButtonComponentStory = (args) =>{
 };
 ListButtonComponentStory.args = {
  showIcon:true,
- Icon:<Home
+ Icon:<SvgIconList
+ icon="Home"
  width={24}
  height={24}
 />,

@@ -21,15 +21,19 @@ export {default as RedSelected} from '../assets/checkboxSelected_red.svg';
 export {default as RedUnSelected} from '../assets/checkboxUnSelected_red.svg';
 export {default as IconChevRight} from '../assets/right.svg';
 export {default as AccountAction} from '../assets/account_actions.svg';
+export {default as AccountActionDark} from '../assets/account_actions_dark.svg';
 export {default as Toggle} from '../assets/toggleswitch.svg';
 export {default as Toggleunselect} from '../assets/toggleUnselect.svg';
 export {default as AvatarIconblack} from '../assets/Profileimg.svg';
 export { default as AvatarIconwhite} from '../assets/Profilepic.svg';
 export {default as AvatarIconDark} from '../assets/profileDark.svg';
 export {default as RightArrowBlackLarge} from '../assets/rightLargeBlack.svg';
+export {default as RightArrowDarkLarge} from '../assets/rightDarkLarge.svg';
 export {default as RightArrowBlackSmall} from '../assets/rightSmallBlack.svg';
 export {default as RightRedArrow} from '../assets/rightRedLarge.svg';
+export {default as RightRedArrowDark} from '../assets/rightRedLargeDark.svg';
 export {default as RightRedArrow1} from '../assets/rightRed.svg';
+export {default as RightRedArrowDark1} from '../assets/rightRedDark.svg';
 export {default as AddBenefiary} from '../assets/add_beneficiary.svg';
 export {default as EditIcon} from '../assets/document_edit.svg';
 export {default as SplitIcon} from '../assets/split.svg';
@@ -42,7 +46,7 @@ export {default as Close} from '../assets/close.svg';
 export {default as Success} from '../assets/success.svg';
 export {default as Cancel} from '../assets/cancel.svg';
 export {default as Home} from '../assets/home.svg'
-
+export {default as HomeDark} from '../assets/homeDark.svg'
 export {default as LiveChat} from '../assets/livechat.svg';
 
 export {default as Check} from '../assets/check.svg';
@@ -52,6 +56,7 @@ export {default as GreyInfo} from '../assets/infoGrey.svg';
 export {default as WhiteInfo} from '../assets/infowhite.svg';
 
 export {default as BlackArrow} from '../assets/arrowblack.svg';
+export {default as BlackArrowDark} from '../assets/arrowblackDark.svg';
 export {default as SearchIcon} from '../assets/search.svg';
 export {default as SearchIconDark} from '../assets/searchDark.svg';
 export {default as NotificationIcon} from '../assets/notifications.svg';
