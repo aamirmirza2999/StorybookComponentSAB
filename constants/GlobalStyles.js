@@ -391,6 +391,7 @@ togglelabel:{
       fontSize: fontMedium,
       lineHeight: lineHeightMedium,
       textAlign: "left",
+      marginTop:8,
       fontFamily:Fonts.Regular,
   },
   listButtonTxtLargeHeadline:{
@@ -405,6 +406,18 @@ togglelabel:{
       textAlign: "left",
       fontFamily:Fonts.HSBC,
       fontWeight:fontWeightBold,
+  },
+  listButtonTxtLargeHeadlineSmall:{
+    width: actuatedNormalize(279),
+    alignSelf: "stretch",
+    justifyContent: "center",
+    //alignItems: "flex-end",
+    marginLeft: spacingXS,
+      alignSelf: "center",
+      fontSize: fontMediumLarge,
+      lineHeight: lineHeightMediumLarge,
+      textAlign: "left",
+      fontFamily:Fonts.HSBC,
   },
   listButtonDashboard:{
     borderRadius: radiusS,
@@ -496,10 +509,12 @@ fontFamily: Fonts.HSBC,
  textAlign: "left"
 },
 typefilledElementsinitials: {
-   borderRadius: actuatedNormalize(100),
+  borderRadius: actuatedNormalize(100),
    padding: spacingS,
    justifyContent:"space-around" ,
    marginRight:actuatedNormalize(4)
+
+ 
 },
 
   Addbeneavatar: {
