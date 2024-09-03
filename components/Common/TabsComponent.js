@@ -49,13 +49,13 @@ const TabsComponent = ({
 
                     <TabView
                         navigationState={{
-                            index: 0,
+                            index: activeIndex,
                             // routes:numberOfTabs === 0 ? mainTabs.slice(0,1): mainTabs.slice(0,numberOfTabs)
                              routes: numberOfTabsToShow === 0 ? tabsToDisplay.slice(0,1) : tabsToDisplay.slice(0, numberOfTabsToShow)             
                           }}
                         renderScene={renderScene}
-                        onIndexChange={() => console.log("some function to execute")}
-                        // onIndexChange={index => setActiveIndex(index)}
+                        // onIndexChange={() => console.log("some function to execute")}
+                         onIndexChange={index => setActiveIndex(index)}
                         initialLayout={{ width: layout.width }}
                         renderTabBar={
                             propss => (
@@ -157,7 +157,7 @@ onPress={() => setActiveIndex(index)}                                >
                                 
                             )
                         }
-                        swipeEnabled={false}  // Disable swipe gestures
+                         swipeEnabled={false}  
                         animationEnabled={false}
                     />
                 </View>
