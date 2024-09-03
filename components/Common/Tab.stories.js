@@ -87,5 +87,4 @@ SubTab.args = {
   type:"subTab",
   numberOfTabs: 2,
   numOfSubTabs: 4,
-  LanguageSwitchReq: true,
 };
