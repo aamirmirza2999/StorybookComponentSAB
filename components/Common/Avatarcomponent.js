@@ -19,7 +19,7 @@ import TextComponent from './TextComponent';
    
     return (
       <>
-        <View>
+        <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}> 
           {props.avatarblack?
         <View style={globalStyles.avatar}>
    <AvatarIconblack/>

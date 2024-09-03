@@ -471,7 +471,7 @@ togglelabel:{
   avatar: {
     width: actuatedNormalize(32),
     height: actuatedNormalize(32),
-    //paddingHorizontal:spacingS,
+    
 },
   jm: {
     fontSize: fontXLarge,
@@ -493,7 +493,7 @@ jm3:{
   fontSize: fontSmall,
 lineHeight: spacingS,
 fontFamily: Fonts.HSBC,
-textAlign: "left"
+ textAlign: "left"
 },
 typefilledElementsinitials: {
    borderRadius: actuatedNormalize(100),
