@@ -18,8 +18,13 @@ let initiallanguage = store.getState().commonReducer.LanginitialValue
 
 export const MainTab =(args) =>{ 
   const { t } = useTranslation();
-  const [language, setlanguage] = useState('en');
-  const { theme, toggleTheme } = useTheme();
+  const [language, setLanguage] = useState('en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const handleChange = (newLang, setLanguage, i18n) => {
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang); 
+    CommonHelper.changeLanguage(newLang, setLanguage); 
+  };
   args.mainTabs = [
   {key: 0, title:t('initialLang:All')},
   {key: 1, title: t('initialLang:Mobile')},
@@ -38,29 +43,66 @@ export const MainTab =(args) =>{
   // Add more sub-tabs here if needed
 ];
 useEffect(() => {
-  CommonHelper.initLanguage(setlanguage);
+  CommonHelper.initLanguage(setLanguage);
 }, []);
+useEffect(() => {
+  if (language !== args.lang) {
+    handleChange(args.lang, setLanguage, i18n);
+  }
+}, [args.lang]);
+useEffect(() => {
+ 
+  if (args.enableDarktheme !== isDarkMode) {
+    toggleTheme();
+  }
+}, [args.enableDarktheme, isDarkMode]);
 
   return(<TabsComponent {...args}
-    changeTheme={toggleTheme}
-    changeLanguage={() => CommonHelper.changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
+    // changeTheme={toggleTheme}
+    // changeLanguage={() => CommonHelper.changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
      />)}
 MainTab.args = {
   type:"mainTab",
   numberOfTabs: 2,
   numOfSubTabs: 4,
+  lang: 'en',
+  enableDarktheme: false,
   //mainTabs:mainTabs,
   // subTabs:subTabs,
 };
-
+MainTab.argTypes = {
+  lang: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  enableDarktheme: {
+    control: 'boolean',
+  },
+};
 export const SubTab =(args) => {
   const { t } = useTranslation();
-  const [language, setlanguage] = useState('en');
-  const { theme, toggleTheme } = useTheme();
+  const [language, setLanguage] = useState('en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const handleChange = (newLang, setLanguage, i18n) => {
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang); 
+    CommonHelper.changeLanguage(newLang, setLanguage); 
+  };
+  
   useEffect(() => {
-    CommonHelper.initLanguage(setlanguage);
+    CommonHelper.initLanguage(setLanguage);
   }, []);
-
+  useEffect(() => {
+    if (language !== args.lang) {
+      handleChange(args.lang, setLanguage, i18n);
+    }
+  }, [args.lang]);
+  useEffect(() => {
+   
+    if (args.enableDarktheme !== isDarkMode) {
+      toggleTheme();
+    }
+  }, [args.enableDarktheme, isDarkMode]);
   args.mainTabs = [
   {key: 0, title:t('initialLang:All')},
   {key: 1, title: t('initialLang:Mobile')},
@@ -79,12 +121,22 @@ export const SubTab =(args) => {
 ];
  
   return(<TabsComponent {...args} 
-    changeTheme={toggleTheme}
-    changeLanguage={() => CommonHelper.changeLanguage(language == 'en' ? 'ar' : 'en',setlanguage)}
   />)}
 
 SubTab.args = {
   type:"subTab",
   numberOfTabs: 2,
   numOfSubTabs: 4,
+  lang: 'en',
+  enableDarktheme: false,
+};
+
+SubTab.argTypes = {
+  lang: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  enableDarktheme: {
+    control: 'boolean',
+  },
 };
