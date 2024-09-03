@@ -1,6 +1,7 @@
 import { MainButton,LinkButton,GroupButton,QuickButton,ListButton } from './Button';
 import SvgIconList from '../../constants/SvgIconList';
 import { useTranslation } from 'react-i18next';
+import { Home } from '../../constants/SvgLocations';
 
 export const MainButtonComponentStory = (args) =>{ 
   const { t } = useTranslation();
@@ -10,15 +11,20 @@ export const MainButtonComponentStory = (args) =>{
  MainButtonComponentStory.args = {
   backgroundColor:"#db0011",
   enablePrimaryBtn:false,
-  enableSecondaryBtn:false,
+  enableSecondaryBtn:true,
   type:"large",//large/small
-  enableLeftIcon:true,
-  enableRightIcon:true,
-  disabled:false,
+  enableLeftIcon:false,
+  enableRightIcon:false,
+  disablePrimaryBtn:false,
+  disableSecondaryBtn:false,
   onPress:null
 };
 MainButtonComponentStory.argTypes = {
   backgroundColor: {control: 'color'},
+  type: {
+    control: 'select',
+    options: ['large', 'small'],
+  },
 }
 
 export const LinkButtonComponentStory = (args) =>{
@@ -31,9 +37,14 @@ export const LinkButtonComponentStory = (args) =>{
   enableLeftIcon:true,
   enableRightIcon:true,
   onPress:null,
-  language:"en" ,//en/ar,
-  theme:"light" //light/dark
 };
+LinkButtonComponentStory.argTypes = {
+  type: {
+    control: 'select',
+    options: ['large', 'small'],
+  },
+}
+
 
 export const GroupButtonComponentStory = (args) =>{
   const { t } = useTranslation();
@@ -44,18 +55,30 @@ export const GroupButtonComponentStory = (args) =>{
 };
   GroupButtonComponentStory.args = {
   backgroundColor:"#db0011",
-  type:"stacked",//stacked/inline
-  enableprimary:false,
+  buttonType:"stacked",//stacked/inline
+  linktype:"large",
+  enableprimary:true,
   enableSecondary:false,
   enableTertiary:false,
   enableLeftIcon:true,
   enableRightIcon:true,
   onPressPrimary:null,
   onPressSecondary:null,
-  onPressTertiary:null
+  onPressTertiary:null,
+  disablePrimary:true,
+  disableSecondary:false,
   };
 GroupButtonComponentStory.argTypes = {
   backgroundColor: {control: 'color'},
+  buttonType: {
+    control: 'select',
+    options: ['stacked', 'inline'],
+  },
+  linktype: {
+    control: 'select',
+    options: ['large', 'small'],
+  },
+  
 }
 
 export const QuickButtonComponentStory = (args) => {
@@ -70,11 +93,17 @@ QuickButtonComponentStory.args = {
  width={24}
  height={24}
 />,
-quickActionButtonType:1,//1/2/3
+quickActionButtonType:"Vertical",//Vertical/Horizontal/Vertical-Small
 badge:true,
 quickNotificationCount:"2",
 onPress:null
 };
+QuickButtonComponentStory.argTypes = {
+  quickActionButtonType: {
+    control: 'select',
+    options: ['Vertical', 'Horizontal','Vertical-Small'],
+  },
+}
 
 export const ListButtonComponentStory = (args) =>{
   const { t } = useTranslation();
@@ -84,17 +113,22 @@ export const ListButtonComponentStory = (args) =>{
 };
 ListButtonComponentStory.args = {
  showIcon:true,
- Icon:<SvgIconList
- icon="AccountAction"
+ Icon:<Home
  width={24}
  height={24}
 />,
- listButtonType:1,//1/2/3/4
+ listButtonType:"Big",//Big/Small/Right/Center
  listDescription:"Lorem IPsum",
  showBadge:true,
  listBadgeText:"Active",
 onPress:null
 };
+ListButtonComponentStory.argTypes = {
+  listButtonType: {
+    control: 'select',
+    options: ['Big', 'Small','Right','Center'],
+  },
+}
 
 export default {
   title: 'components/ButtonComponent',
