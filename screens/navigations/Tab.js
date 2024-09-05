@@ -267,7 +267,7 @@ const Tab=({
                         : route.name === "Payment"
                           ? t('initialLang:payments')
                           : route.name === "New_Transfer"
-                            ? t('initialLang:welcome')
+                            ? t('initialLang:transfer')
                             : route.name === "Menu"
                             ? t('initialLang:menu')
                                 : Name

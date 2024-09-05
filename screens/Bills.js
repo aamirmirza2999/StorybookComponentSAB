@@ -17,7 +17,7 @@ const Bills=()=> {
       backgroundColor:"#ffffff"
     }}
     >
-      <TextComponent
+      {/* <TextComponent
        style={{
         fontSize: fontXLG,
         lineHeight: lineHeightXLG,
@@ -26,7 +26,7 @@ const Bills=()=> {
         color: "#000",
         textAlign: "left",
       }}
-      >Bills Screen</TextComponent>
+      >Bills Screen</TextComponent> */}
       <Space paddingVertical={spacingXXS}/>
       <MainButton
        backgroundColor={"#db0011"}

@@ -23,7 +23,7 @@ const New_Transfer=()=> {
                               height={24}
                            />}
        quickActionButtonLabel={"Unpaid Bills"}
-       quickActionButtonType={1}
+       quickActionButtonType={"Vertical"}
       onPress={()=>navigation.navigate('Bills')}
       ></QuickButton>
         <QuickButton
@@ -33,7 +33,7 @@ const New_Transfer=()=> {
                               height={24}
                            />}
        quickActionButtonLabel={"Button"}
-       quickActionButtonType={1}
+       quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button")}
       
       ></QuickButton>
@@ -44,7 +44,7 @@ const New_Transfer=()=> {
                               height={24}
                            />}
        quickActionButtonLabel={"Button"}
-       quickActionButtonType={1}
+       quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button1")}
       ></QuickButton>
       </View>
