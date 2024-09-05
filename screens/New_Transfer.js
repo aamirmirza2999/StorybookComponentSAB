@@ -5,8 +5,10 @@ import PostLoginHeader from '../components/Common/PostLoginHeader';
 import { QuickButton } from '../components/Common/Button';
 import SvgIconList from '../constants/SvgIconList';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 const New_Transfer=()=> {
   const navigation = useNavigation();
+  const { t } = useTranslation();
   return (
     <>
     <View style={{flex:1,backgroundColor:"#ffffff"}}>
@@ -32,7 +34,7 @@ const New_Transfer=()=> {
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={"Button"}
+       quickActionButtonLabel={t('initialLang:action')}
        quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button")}
       
@@ -43,7 +45,7 @@ const New_Transfer=()=> {
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={"Button"}
+       quickActionButtonLabel={t('initialLang:action')}
        quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button1")}
       ></QuickButton>

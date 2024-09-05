@@ -38,7 +38,7 @@ import Transfers
       ></PostLoginHeader>;
       case 'New_Transfer':
         return     <PostLoginHeader
-        Headline={'Headline'}
+        Headline={t('initialLang:headline')}
       ></PostLoginHeader>;
       case 'Menu':
         return    <PostLoginHeader
