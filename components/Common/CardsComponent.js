@@ -1,6 +1,6 @@
 import React from 'react';
 import {  View, ImageBackground } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
+// import LinearGradient from "react-native-linear-gradient";
 import TextComponent from './TextComponent';
 import * as Progress from "react-native-progress";
 import SvgIconList from '../../constants/SvgIconList';
