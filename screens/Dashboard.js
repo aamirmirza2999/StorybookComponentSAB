@@ -34,6 +34,7 @@ import {
           <MainHeader
             bgColor={"#263a52"}
             enableLogo={true}
+            changeTheme={props.changeScreen}
             isAccountTypeReq={true}
             AccountType={"Premier"}
             SearchIconReq={true}

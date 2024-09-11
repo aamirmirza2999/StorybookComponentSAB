@@ -37,6 +37,7 @@ import CardsComponent from '../components/Common/CardsComponent'
 import Space from '../components/Common/Space';
 import TabsComponent from '../components/Common/TabsComponent';
 import { MainButton } from '../components/Common/Button';
+import Dashboard from './Dashboard';
 const mainTabs = [
   { key: 0, title: i18n.t('initialLang:All') },
   { key: 1, title: i18n.t('initialLang:Mobile') },
@@ -63,6 +64,7 @@ const Home = props => {
   const [enableButton, setenableButton] = useState(true);
   const { theme, toggleTheme } = useTheme();
   const [language, setlanguage] = useState('en');
+  const [Screen, setScreen]= useState('Home');
   console.log("ggggggg", theme);
   const { t } = useTranslation();
 
@@ -120,15 +122,8 @@ const Home = props => {
   };
   return (
     <>
-      {/* <SnackBar
-      label={"Tag created successfully"}
-      backgroundColor={"#f9f2f3"}
-      borderColor={"#e5b2b5"}
-      Icon={<Success
-      width={actuatedNormalize(24)}
-      height={actuatedNormalize(24)}
-      ></Success>}
-    ></SnackBar> */}
+    {Screen==="Home"?
+    
       <PrimaryBgComponent
         ButtonContainer={{
           paddingLeft: spacingS,
@@ -136,23 +131,6 @@ const Home = props => {
           paddingBottom: spacingM,
           paddingTop: spacingM,
         }}
-        // primaryBgColor={theme.primaryColor}
-        // PrimaryButton={
-        //   <PrimaryButton
-        //     onPress={HandleSubmit}
-        //     textColor={'white'}
-        //     disabled={enableButton}
-        //     PrimaryButtonBgClr={theme.primaryredstatic}
-        //     label={t('initialLang:submit')}
-        //     {...props}
-        //   />
-        // }
-        // SecondaryButton={
-        //   <SecondaryButton
-        //     label={t('initialLang:register1')}
-        //   // SecondaryButtonBgClr={"red"}
-        //   />
-        // // }
         BgHeader={
           <MainHeader
             enableLogo={true}
@@ -163,92 +141,7 @@ const Home = props => {
             />
         }
         >
-        {/* <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
-
-
-        </View>
-        <TextComponent
-          fontWeight={'Bold'}
-          style={{
-            color: theme.primaryblack,
-            fontSize: actuatedNormalize(20),
-            marginTop: spacingM,
-          }}>
-          {t('initialLang:welcome')}
-        </TextComponent>
-        <TextComponent
-          fontWeight={'Light'}
-          style={{
-            color: theme.primaryblack,
-            fontSize: actuatedNormalize(14),
-            marginTop: spacingXS,
-          }}>
-          {t('initialLang:lifestyle')}
-        </TextComponent>
-        
-        <View
-          style={{
-            paddingTop: actuatedNormalize(24),
-          }}>
-          <TextInputComponent
-            label={t('initialLang:Username')}
-            placeHolder={t('initialLang:Username')}
-            value={username}
-            inputStyle={{ width: '100%' }}
-            onChangeText={handleUsernameChange}
-            errorMsg={errorMsg}
-          />
-        </View>
-        <View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('PassWord')}
-            style={{
-              alignSelf: 'flex-end',
-            }}>
-              <Space
-              paddingVertical={actuatedNormalize(10)}
-              />   
-            <TextComponent
-              fontWeight={'Bold'}
-              style={{
-                color: theme.primaryblack,
-                fontSize: actuatedNormalize(12),
-                marginTop: spacingM,
-              }}>
-              {t('initialLang:forgot')}
-            </TextComponent>
-            <Space
-              paddingVertical={actuatedNormalize(10)}
-              />  
-          </TouchableOpacity>
-        </View>
-        <CardsComponent
-        CardImage={require("../assets/cardColorDarkBlue.png")}
-        CardName={"SAB Signature Visa Credit Card"}
-        chipsinfo={true}
-        isCards={true}
-        statusBgColor={"#f9f2f3"}
-        statusborderColor={"#e5b2b5"}
-        CardStatus={"Active"}
-        CardNumber={"4272-2201-0114-9091"}
-        currency={"SAR"}
-        AvailableLimit={"81,986.90"}
-        CreditLimit={"84,900.00"}
-        progress={"0.8"}
-
-        />
-        <Toggleswitch />
-        <EmptystateNote />
-        
-        <TabsComponent
-        mainTabs={mainTabs}
-        subTabs={subTabs}
-        /> */}
-        <View>
+       <View>
         <MainButton
        backgroundColor={"#db0011"}
        label={"Action"}
@@ -256,10 +149,15 @@ const Home = props => {
        enableLeftIcon={false}
        enableRightIcon={true}
        enableSecondaryBtn={true}
-       onPress={()=>navigation.navigate('Dashboard')}
+       onPress={()=>setScreen("Dashboard")}
       ></MainButton>
         </View>
       </PrimaryBgComponent>
+      :
+    <Dashboard
+    changeScreen={()=>setScreen("Home")}
+    />
+      }
     </>
   );
 };
