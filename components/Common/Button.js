@@ -426,7 +426,10 @@ export const GroupButton = (props) => {
 									<TextComponent
 									style={[props.linktype==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
 									>{props.tertiaryLabel}</TextComponent>
-										{isDarkMode?
+						
+						{props.enableRightIcon?
+						<>
+						{isDarkMode?
 							<RightRedArrowDark1
 							style={{
 								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
@@ -439,7 +442,7 @@ export const GroupButton = (props) => {
 								}}
 								width={actuatedNormalize(24)}
 								height={actuatedNormalize(24)}
-								></RightRedArrow1>}
+								></RightRedArrow1>}</>:null}
 	
 								</View>
 				
@@ -454,6 +457,8 @@ export const GroupButton = (props) => {
 				}}
 				>
 				{props.enableprimary?
+				<>
+				{props.inlineSize==="large"?
 				<Component
 						testID={props.testID ? props.testID : 'primaryCTALarge'}
 						accessibilityLabel={
@@ -486,8 +491,44 @@ export const GroupButton = (props) => {
 						:null}
 					</View>
 					</Component>
+
+					:	<Component
+					testID={props.testID ? props.testID : 'primaryCTASmall'}
+					accessibilityLabel={
+					props.accessibilityLabel ? props.accessibilityLabel : 'primaryCTA'
+					}
+					onPress={props.onPress}
+					disabled={props.disablePrimaryBtn}
+				>
+					<View style={[{	backgroundColor:props.disablePrimaryBtn?theme.primarycolor2_30:props.backgroundColor,alignSelf:"flex-start"},globalStyles.primaryFlexBoxSmall,props.primaryFlexBoxSmall]}>			
+						{props.enableLeftIcon?
+							<WhiteArrow
+							style={{
+								marginRight:actuatedNormalize(8),
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></WhiteArrow>
+						:null}
+						<TextComponent style={[{color: theme.primarycolor4},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.primaryLabel}</TextComponent>
+						{props.enableRightIcon?
+							<WhiteArrow
+							style={{
+								marginLeft:actuatedNormalize(8),
+								transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+							}}
+							width={actuatedNormalize(24)}
+							height={actuatedNormalize(24)}
+							></WhiteArrow>
+					:null}
+					</View>
+				</Component>}
+				</>
 					:null}
 				{props.enableSecondary?
+				<>
+				{props.inlineSize==="large"?
 					<Component
 							testID={props.testID ? props.testID : 'secondaryCTABB'}
 							accessibilityLabel={
@@ -537,7 +578,65 @@ export const GroupButton = (props) => {
 									></BlackArrow>
 								:null} 
 						</View>
-						</Component>
+						</Component>:
+							<Component
+							testID={props.testID ? props.testID : 'secondaryCTABS'}
+							accessibilityLabel={
+							props.accessibilityLabel ? props.accessibilityLabel : 'secondaryCTABS'
+							}
+							onPress={props.onPress}
+							disabled={props.disableSecondaryBtn}
+							>
+							<View style={[{	backgroundColor:theme.primarytextcolor4,borderColor:props.disableSecondaryBtn?theme.primarycolor2_30: theme.primarycolor,alignSelf:"flex-start"},globalStyles.secondaryFlexBoxSmall,props.secondaryFlexBoxSmall]}>			
+							{props.enableLeftIcon?
+							isDarkMode?
+									
+		
+										<WhiteArrow
+										style={{
+											marginRight:actuatedNormalize(8),
+											transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+										}}
+										width={actuatedNormalize(24)}
+										height={actuatedNormalize(24)}
+										></WhiteArrow>:
+		
+										<BlackArrow
+										style={{
+											marginRight:actuatedNormalize(8),
+											transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+										}}
+										width={actuatedNormalize(24)}
+										height={actuatedNormalize(24)}
+										></BlackArrow>
+		
+								:null}
+								<TextComponent style={[{color:props.disableSecondaryBtn?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextSmall,props.primaryTextSmall]}>{props.secondaryLabel}</TextComponent>
+								{props.enableRightIcon?
+									isDarkMode?
+								
+									
+										
+									<WhiteArrow
+										style={{
+											marginLeft:actuatedNormalize(8),
+											transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+										}}
+										width={actuatedNormalize(24)}
+										height={actuatedNormalize(24)}
+										></WhiteArrow>:
+										<BlackArrow
+										style={{
+											marginLeft:actuatedNormalize(8),
+											transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+										}}
+										width={actuatedNormalize(24)}
+										height={actuatedNormalize(24)}
+										></BlackArrow>
+								:null}
+							</View>
+					</Component>}
+						</>
 						:null}
 				{props.enableTertiary?
 						<Component

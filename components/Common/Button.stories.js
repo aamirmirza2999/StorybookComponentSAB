@@ -145,6 +145,7 @@ export const GroupButtonComponentStory = (args) =>{
   GroupButtonComponentStory.args = {
   backgroundColor:"#db0011",
   buttonType:"stacked",//stacked/inline
+  inlineSize:"large",
   linktype:"large",
   enableprimary:true,
   enableSecondary:false,
@@ -176,7 +177,10 @@ GroupButtonComponentStory.argTypes = {
   enableDarktheme: {
     control: 'boolean',
   },
-  
+  inlineSize: {
+    control: 'select',
+    options: ['small', 'large'],
+  },
 }
 
 export const QuickButtonComponentStory = (args) => {
