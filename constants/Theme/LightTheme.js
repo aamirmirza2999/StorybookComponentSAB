@@ -16,13 +16,13 @@ export const lightTheme = {
   primarycolorstatic:"#000000", //primaryblackstatic
   primarycolor2:"#D7D8D6", //primarygray
   primarycolor3:"#DB0011", //primaryred
-  primarycolor3static:"#DB0011", //primaryredstatic
+  primarycolor3static:"#DB001110", //primaryredstatic
   primarycolor3tonal:"rgba(219, 0, 17, 0.1)", //primaryredtonal
   primarycolor4:"#FFFFFF", //primarywhite
   primarycolor4static:"#FFFFFF", //primarywhitestatic
   primaryinvert:"#FFFFFF",
   primarycolornav:"#000000", //primaryblacknav
-
+  
   // PRIMARY GREY COLORS:
 
   primarycolor2_100:"#767676",

@@ -25,7 +25,7 @@ export const darkTheme = {
    primarycolor4static:"#FFFFFF",
    primaryinvert:"#000000",
    primarycolornav:"rgba(255, 255, 255, 0.6)",
- 
+   
    // PRIMARY GREY COLORS:
  
    primarycolor2_100:"rgba(255, 255, 255, 0.6)",

@@ -9,20 +9,26 @@ import {
   } from 'react-native';
   import React, {useState, useReducer} from 'react';
   import { useTheme } from '../../constants/Theme/ThemeProvider';
-import { AvatarIconblack,AvatarIconwhite,SplitIcon,EditIcon,AddBenefiary} from '../../constants/SvgLocations';
+import { AvatarIconblack,AvatarIconwhite,SplitIcon,EditIcon,AddBenefiary,AvatarIconblackDark} from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
 import TextComponent from './TextComponent';
 
   const Avatarcomponent = props => {
-  const {theme, toggleTheme} = useTheme();
+  const {theme, toggleTheme,isDarkMode} = useTheme();
   
    
     return (
       <>
         <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}> 
-          {props.avatarblack?
-        <View style={globalStyles.avatar}>
-   <AvatarIconblack/>
+          {props.avatarblack ?
+          isDarkMode?
+        <View style={[globalStyles.avatar,{}]}>
+          <AvatarIconblackDark/>
+          </View>
+          :
+        <View style={[globalStyles.avatar,{}]}>
+   <AvatarIconblack
+   />
    </View>
    :null}
 
@@ -45,17 +51,17 @@ import TextComponent from './TextComponent';
    </View> : null }
    <View style={{flexDirection:"row"}}>
    {props.avatarname? 
-     <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
+     <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: theme.primarycolor3static}]}>
      <TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>JM</TextComponent>
  </View>
  :null}
  {props.avatarnamemid?
- <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: "#fbe5e7"}]}>
+ <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: theme.primarycolor3static}]}>
  <TextComponent style={[globalStyles.jm2,{color:theme.primarycolor3}]}>JM</TextComponent>
 </View>
  :null}
  {props.avatarnamesmall?
- <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor: "#fbe5e7"}]}>
+ <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor: theme.primarycolor3static}]}>
  <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>JM</TextComponent>
 </View>
  :null}

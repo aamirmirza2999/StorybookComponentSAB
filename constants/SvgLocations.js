@@ -25,6 +25,7 @@ export {default as AccountActionDark} from '../assets/account_actions_dark.svg';
 export {default as Toggle} from '../assets/toggleswitch.svg';
 export {default as Toggleunselect} from '../assets/toggleUnselect.svg';
 export {default as AvatarIconblack} from '../assets/Profileimg.svg';
+export {default as AvatarIconblackDark} from '../assets/Profileimgdark.svg'
 export { default as AvatarIconwhite} from '../assets/Profilepic.svg';
 export {default as AvatarIconDark} from '../assets/profileDark.svg';
 export {default as RightArrowBlackLarge} from '../assets/rightLargeBlack.svg';
