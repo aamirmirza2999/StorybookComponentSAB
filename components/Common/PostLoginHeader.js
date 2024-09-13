@@ -113,7 +113,7 @@ const xml1 = `<svg width=${Platform.OS == "ios" ? svgWidth + actuatedNormalize(5
 //   )
 // }
 const PostLoginHeader = (props) => {
-  // const navigation = useNavigation();
+   const navigation = useNavigation();
   const { theme, toggleTheme,isDarkMode } = useTheme();
   console.log("props>>>>1111", props)
   return (
@@ -148,15 +148,9 @@ const PostLoginHeader = (props) => {
               {props.enableBackButton ? (
                 <TouchableOpacity
                   style={[styles.IconViewStyle1, props.IconViewStyle1]}
-                  onPress={
-                    props.BackarrowFun
-                      ? () => {
-                        (() => props.BackarrowFun());
-                      }
-                      : () => {
-                        (() => goBack());
-                      }
-                  }
+                  onPress={ props.BackarrowFun?
+                    ()=>props.BackarrowFun() : ()=>navigation.goBack()}
+                  
                 >
                   <SvgIconList
                     icon="BlackArrow"
@@ -239,13 +233,9 @@ const PostLoginHeader = (props) => {
             {props.enableCloseButton && !props.MenuHeader ? (
               <TouchableOpacity
                 style={styles.IconViewStyle2}
-                onPress={
-                  props.onClosePress
-                    ? () => (() => props.onClosePress())
-                    : () => {
-                      (() => goBack());
-                    }
-                }
+                onPress={ props.onClosePress?
+                   ()=>props.onClosePress() : ()=>navigation.goBack()}
+               
               >
                 <View style={{
                   width: actuatedNormalize(44), height: actuatedNormalize(44), alignItems: 'center',

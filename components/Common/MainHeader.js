@@ -111,7 +111,7 @@ const MainHeader = (props) => {
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     {props.SearchIconReq ?
                         <TouchableOpacity
-                            style={{ alignSelf: '' }}
+                            style={{ top:actuatedNormalize(3) }}
                             onPress={props.Searchfunc}>
                             <SvgIconList
                                 icon="SearchIcon"
@@ -123,7 +123,7 @@ const MainHeader = (props) => {
                         : null}
                     {props.NotificationIconReq ?
                         <TouchableOpacity
-                            style={{ alignSelf: '',marginLeft:spacingXS,marginRight:spacingXS }}
+                            style={{marginLeft:spacingXS,marginRight:spacingXS,top:actuatedNormalize(3) }}
                             onPress={props.NotificationFunc}>
                             <SvgIconList
                                 icon="NotificationIcon"
@@ -136,7 +136,7 @@ const MainHeader = (props) => {
                     {props.AvatarIconReq ?
                     
                         <TouchableOpacity
-                            style={{ alignSelf: '' }}
+                            style={{  }}
                             onPress={props.AvatarIconfunc}>
                             <Avatarcomponent
                              avatarblack={props.avatarblack}
@@ -148,7 +148,7 @@ const MainHeader = (props) => {
                         : null}
                     {props.LanguageSwitchReq ?
                         <TouchableOpacity
-                            style={{ alignSelf: '' }}
+                            style={{ top:actuatedNormalize(3) }}
                             onPress={props.changeLanguage}>
                             <SvgIconList
                                 icon="ChangeLang"
