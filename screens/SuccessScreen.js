@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text,Platform } from 'react-native'
 import React from 'react'
 import TextComponent from '../components/Common/TextComponent'
 import { fontXLG ,lineHeightXLG,fontWeightBold,spacingXS, spacingXXL,spacingXXS, spacingS, fontSmall, fontMedium} from '../constants/Size';
@@ -45,7 +45,7 @@ const SuccessScreen=()=> {
       >Success Screen</TextComponent> */}
       <View
       style={{
-        marginTop:actuatedNormalize(400)
+        marginTop:Platform.OS === 'ios'?actuatedNormalize(485):actuatedNormalize(470)
       }}
       >
       <GroupButton
