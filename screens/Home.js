@@ -65,7 +65,11 @@ const Home = props => {
   const { theme, toggleTheme } = useTheme();
   const [language, setlanguage] = useState('en');
   const [Screen, setScreen]= useState('Home');
-  console.log("ggggggg", theme);
+
+useEffect(() => {
+ props.route.params
+?.fromScreen === undefined ?setScreen("Home"):setScreen("Dashboard")
+}, [])
   const { t } = useTranslation();
 
   const handleUsernameChange = text => {

@@ -56,7 +56,7 @@ const SuccessScreen=()=> {
        enableprimary={true}
        enableSecondary={true}
        buttonType={"stacked"}
-       onPressPrimary={()=>navigation.navigate('Dashboard')}
+       onPressPrimary={()=>goScreen()}
        onPressSecondary={()=>goScreen() }
       ></GroupButton>
       
