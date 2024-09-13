@@ -333,7 +333,7 @@ togglelabel:{
   },
   listButtonLarge:{
     borderRadius: radiusS,
-    //width: "100%",
+    width: "100%",
     overflow: "hidden",
     paddingHorizontal:spacingS,
     paddingVertical: spacingXS,

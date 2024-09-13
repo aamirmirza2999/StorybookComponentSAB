@@ -819,10 +819,16 @@ export const ListButton = (props) => {
 		style={[globalStyles.listButtonTxt,props.listButtonTxt,{color:theme.primarycolor}]}
 		>{props.label}</TextComponent>
 		{isDarkMode?<RightRedArrowDark
+		style={{
+			transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+		}}
 		width={actuatedNormalize(24)}
 		height={actuatedNormalize(24)}
 		/>:
 		<RightRedArrow
+		style={{
+					transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+				}}
 				width={actuatedNormalize(24)}
 				height={actuatedNormalize(24)}
 				></RightRedArrow>}
