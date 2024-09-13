@@ -752,8 +752,26 @@ export const ListButton = (props) => {
 
 		<View
 		style={[props.listButtonType==="Small"?globalStyles.listButtonSmall:globalStyles.listButtonLarge,{backgroundColor:theme.stylesblockbg},props.listButton]}>
+			<View
+			style={{
+				flexDirection:"row",
+				//backgroundColor:"red",
+				alignItems: "center",
+				alignSelf:"center",
+			}}
+			>
+				<View
+				style={{
+					flexDirection:"row",
+					alignItems:"center",
+					//backgroundColor:"yellow",
+					width:"95%"
+				}}
+				>
 			{props.showIcon?
-			<View>
+			<View
+			
+			>
 				{props.Icon}
 			</View>:null}
 		<View
@@ -784,9 +802,17 @@ export const ListButton = (props) => {
 				</View></>
 				:null}
 		</View>
+		</View>
 
 		
-			<View>
+			<View
+			style={{
+			//backgroundColor:"blue",
+				width:"5%",
+				flexDirection:"row",
+				alignSelf:"center"
+			}}
+			>
 				{props.listButtonType==="Small"?
 				<RightArrowBlackSmall
 				style={{
@@ -810,6 +836,7 @@ export const ListButton = (props) => {
 				width={actuatedNormalize(24)}
 				height={actuatedNormalize(24)}
 				></RightArrowBlackLarge>:null}
+				</View>
 				</View>
 			</View>
 		:

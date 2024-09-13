@@ -264,6 +264,7 @@ export const ListButtonComponentStory = (args) =>{
   
   args.label=t('initialLang:action')
   args.listHeadlLine=t('initialLang:headline')
+  args.listBadgeText=t('initialLang:active')
   return(<ListButton {...args} />)
 };
 ListButtonComponentStory.args = {
@@ -276,7 +277,6 @@ ListButtonComponentStory.args = {
  listButtonType:"Big",//Big/Small/Right/Center
  listDescription:"Lorem IPsum",
  showBadge:true,
- listBadgeText:"Active",
 onPress:null,
 lang:'en',
 enableDarktheme: false,

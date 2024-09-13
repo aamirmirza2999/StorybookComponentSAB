@@ -333,13 +333,12 @@ togglelabel:{
   },
   listButtonLarge:{
     borderRadius: radiusS,
-    width: "100%",
+   // width: "100%",
     overflow: "hidden",
     paddingHorizontal:spacingS,
     paddingVertical: spacingXS,
-    alignItems: "center",
-    alignSelf:"center",
-    flexDirection: "row",
+ 
+   // flexDirection: "row",
     //flex: 1
   },
   listButtonSecondTxt:{
@@ -421,7 +420,7 @@ togglelabel:{
   },
   listButtonDashboard:{
     borderRadius: radiusS,
-    //width: "100%",
+    width: "100%",
     overflow: "hidden",
     paddingHorizontal:spacingS,
     paddingVertical: spacingS,
