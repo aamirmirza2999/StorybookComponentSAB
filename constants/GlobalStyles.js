@@ -482,9 +482,11 @@ togglelabel:{
       zIndex: 0
   },
   avatar: {
-    width: actuatedNormalize(32),
-    height: actuatedNormalize(32),
-    
+    width: actuatedNormalize(30),
+    height: actuatedNormalize(30),
+    bottom:actuatedNormalize(2),
+    marginRight:actuatedNormalize(6)
+
 },
   jm: {
     fontSize: fontXLarge,
@@ -506,13 +508,14 @@ jm3:{
   fontSize: fontSmall,
 lineHeight: spacingS,
 fontFamily: Fonts.HSBC,
- textAlign: "left"
+ textAlign: "left",
+ bottom:1
 },
 typefilledElementsinitials: {
   borderRadius: actuatedNormalize(100),
-   padding: spacingS,
+    padding: spacingXS,
    justifyContent:"space-around" ,
-   marginRight:actuatedNormalize(4)
+    marginRight:actuatedNormalize(6)
 
  
 },
