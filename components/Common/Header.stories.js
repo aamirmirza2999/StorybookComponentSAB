@@ -5,10 +5,13 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import CommonHelper from '../../constants/CommonHelper';
 import { useTranslation } from 'react-i18next';
+import { mockUseNavigation } from './MockNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default {
   title: 'components/HeaderComponent',
 };
+mockUseNavigation();
 
 const deviceheight = Dimensions.get('window').height;
 
@@ -43,11 +46,14 @@ export const PostLoginHeaderStory = (args) => {
   }, [args.enableDarktheme, isDarkMode]);
 
   return (
+    <NavigationContainer>
     <PostLoginHeader
       {...args}
       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
       HeaderHeight={deviceheight}
+      
     />
+    </NavigationContainer>
   );
 };
 
