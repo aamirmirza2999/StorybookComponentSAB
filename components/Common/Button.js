@@ -679,13 +679,14 @@ export const QuickButton = (props) => {
 		<View
 		style={[globalStyles.quickActionButtonBox,props.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
 		>
+			{props.showIcon?
 			<View
 				style={{
 				//marginTop: actuatedNormalize(48),
 				}}
 			>
 				{props.Icon}
-			</View>
+			</View>:null}
 			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
 		</View>
 		:null}

@@ -217,6 +217,7 @@ QuickButtonComponentStory.args = {
  width={24}
  height={24}
 />,
+showIcon:true,
 quickActionButtonType:"Vertical",//Vertical/Horizontal/Vertical-Small
 badge:true,
 quickNotificationCount:"2",
