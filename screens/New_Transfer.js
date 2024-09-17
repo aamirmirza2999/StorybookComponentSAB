@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { act } from 'react'
 import { actuatedNormalize } from '../constants/PixelScaling';
 import PostLoginHeader from '../components/Common/PostLoginHeader';
 import { QuickButton } from '../components/Common/Button';
@@ -14,41 +14,61 @@ const New_Transfer=()=> {
     <View style={{flex:1,backgroundColor:"#ffffff"}}>
       <View
       style={{
-        flexDirection:"row",
-        justifyContent:"space-evenly"
+        marginLeft:actuatedNormalize(16),
+        marginRight:actuatedNormalize(16)
+      
       }}
       >
+      <View
+      style={{
+        flexDirection:"row",
+       alignItems:"center",
+       justifyContent:"center"
+       // justifyContent:"space-evenly"
+      }}
+      >
+      
       <QuickButton
+      quickActionButtonBox={{
+        marginRight:actuatedNormalize(8)
+      }}
+        showIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={"Unpaid Bills"}
+       quickActionButtonLabel={t('initialLang:Button')}
        quickActionButtonType={"Vertical"}
       onPress={()=>navigation.navigate('Bills')}
       ></QuickButton>
         <QuickButton
+         quickActionButtonBox={{
+          marginRight:actuatedNormalize(8)
+        }}
+      showIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={t('initialLang:action')}
+       quickActionButtonLabel={t('initialLang:Button')}
        quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button")}
       
       ></QuickButton>
          <QuickButton
+        showIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={t('initialLang:action')}
+       quickActionButtonLabel={t('initialLang:Button')}
        quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button1")}
       ></QuickButton>
+      </View>
       </View>
     </View>
     </>

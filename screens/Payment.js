@@ -5,49 +5,71 @@ import PostLoginHeader from '../components/Common/PostLoginHeader';
 import { QuickButton } from '../components/Common/Button';
 import SvgIconList from '../constants/SvgIconList';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 const Payment=()=> {
   const navigation = useNavigation();
+  const { t } = useTranslation();
   return (
     <>
   
-    <View style={{flex:1,backgroundColor:"#ffffff"}}>
+  <View style={{flex:1,backgroundColor:"#ffffff"}}>
+      <View
+      style={{
+        marginLeft:actuatedNormalize(16),
+        marginRight:actuatedNormalize(16)
+      
+      }}
+      >
       <View
       style={{
         flexDirection:"row",
-        justifyContent:"space-evenly"
+       alignItems:"center",
+       justifyContent:"center"
+       // justifyContent:"space-evenly"
       }}
       >
+      
       <QuickButton
+      quickActionButtonBox={{
+        marginRight:actuatedNormalize(8)
+      }}
+        showIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={"Unpaid Bills"}
+       quickActionButtonLabel={t('initialLang:Button')}
        quickActionButtonType={"Vertical"}
       onPress={()=>navigation.navigate('Bills')}
       ></QuickButton>
         <QuickButton
+         quickActionButtonBox={{
+          marginRight:actuatedNormalize(8)
+        }}
+      showIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={"Button"}
+       quickActionButtonLabel={t('initialLang:Button')}
        quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button")}
       
       ></QuickButton>
          <QuickButton
+        showIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
-       quickActionButtonLabel={"Button"}
+       quickActionButtonLabel={t('initialLang:Button')}
        quickActionButtonType={"Vertical"}
        onPress={()=>alert("Button1")}
       ></QuickButton>
+      </View>
       </View>
     </View>
     </>
