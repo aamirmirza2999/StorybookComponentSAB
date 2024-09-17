@@ -60,7 +60,7 @@ CardsComponentStory.args = {
   currency:"SAR",
   AvailableLimit:"81,986.90",
   CreditLimit:"84,900.00",
-  progress:"0.8",
+  progress:"0.6",
   lang: 'en',
   enableDarktheme: false,
 };

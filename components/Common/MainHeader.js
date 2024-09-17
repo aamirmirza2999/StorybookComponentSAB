@@ -14,7 +14,7 @@ import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import LogoComponent from '../../components/Common/LogoComponent';
 import SvgIconList from '../../constants/SvgIconList';
-import { spacingM, spacingS, spacingXS } from '../../constants/Size';
+import { spacingM, spacingS, spacingXS,fontXXSmall } from '../../constants/Size';
 import TextComponent from './TextComponent';
 import Avatarcomponent from './Avatarcomponent';
 
@@ -122,16 +122,23 @@ const MainHeader = (props) => {
                         </TouchableOpacity>
                         : null}
                     {props.NotificationIconReq ?
+                    <>
                         <TouchableOpacity
-                            style={{marginLeft:spacingXS,marginRight:spacingXS,top:actuatedNormalize(3) }}
+                            style={{flexDirection:'row',marginLeft:spacingS,top:actuatedNormalize(3) }}
                             onPress={props.NotificationFunc}>
                             <SvgIconList
                                 icon="NotificationIcon"
-                                width={actuatedNormalize(25)}
-                                height={actuatedNormalize(25)}
+                                width={actuatedNormalize(26)}
+                                height={actuatedNormalize(26)}
+                                fill={isDarkMode?"white":"black"}
                                 transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                             />
+                             <View style={[styles.badgenotification, styles.textFlexBox]}>
+                        <TextComponent style={[styles.TextComponent, styles.textFlexBox]}>2</TextComponent>
+                        </View>
                         </TouchableOpacity>
+                       
+                        </>
                         : null}
                     {props.AvatarIconReq ?
                     
@@ -143,6 +150,7 @@ const MainHeader = (props) => {
                              avatarname={props.avatarname}
                              avatarnamemid={props.avatarnamemid}
                              avatarnamesmall={props.avatarnamesmall}
+                             avatarwhite={props.avatarwhite}
                     />
                         </TouchableOpacity>
                         : null}
@@ -186,5 +194,23 @@ const styles = {
       //  backgroundColor: "black",
         flex: 1,
     },
+    textFlexBox: {
+        justifyContent: "center",
+        alignItems: "center"
+        },
+        TextComponent: {
+        fontSize: fontXXSmall,
+        fontFamily: "Univers Next for HSBC",
+        color: "#fff",
+        textAlign: "center",
+        display: "flex",
+        },
+        badgenotification: {
+        borderRadius: 100,
+        backgroundColor: "#ffbb33",
+        width: 15,
+        height: 15,
+        right:actuatedNormalize(10)
+        }
 }
 export default MainHeader

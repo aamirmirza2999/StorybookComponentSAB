@@ -1152,7 +1152,7 @@ sar: {
     lineHeight: lineHeightXXSmall,
     color: "#fff",
     textAlign: "left",
-    fontFamily: Fonts.HSBC
+    fontFamily: Fonts.HSBC,
 },
 
 wrapper2: {

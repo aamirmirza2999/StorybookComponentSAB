@@ -3,11 +3,11 @@ import { actuatedNormalize } from './PixelScaling';
 import { useTheme } from "../constants/Theme/ThemeProvider";
 import { AddBene, BackArrowNew, ChangeLang,ChangeLangDark, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
   BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon,SearchIconDark,
-  NotificationIconDark,AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList} from './SvgLocations';
+  AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList} from './SvgLocations';
 
 
 
-const SvgIconList = ({ icon, width, height  ,transform}) => {
+const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
   const { theme, toggleTheme,isDarkMode } = useTheme();
 
   switch (icon) {
@@ -135,15 +135,11 @@ const SvgIconList = ({ icon, width, height  ,transform}) => {
             );
             case 'NotificationIcon':
               return (
-                isDarkMode?
-                <NotificationIconDark
-                width={width}
-                height={height}
-                />
-                :
+               
                 <NotificationIcon
                   width={width}
                   height={height}
+                  fill={fill}
     
                 />
               );

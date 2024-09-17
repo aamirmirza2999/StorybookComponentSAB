@@ -167,8 +167,8 @@ const PostLoginHeader = (props) => {
                 >
                   <SvgIconList
                     icon="ChangeLang"
-                    width={actuatedNormalize(25)}
-                    height={actuatedNormalize(25)}
+                    width={actuatedNormalize(24)}
+                    height={actuatedNormalize(24)}
                     transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                   />
                 </TouchableOpacity>
@@ -260,8 +260,8 @@ const PostLoginHeader = (props) => {
                 >
                   <SvgIconList
                     icon="SearchIcon"
-                    width={actuatedNormalize(25)}
-                    height={actuatedNormalize(25)}
+                    width={actuatedNormalize(24)}
+                    height={actuatedNormalize(24)}
                     transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                   />
                 </TouchableOpacity>
@@ -274,8 +274,8 @@ const PostLoginHeader = (props) => {
                 >
                   <SvgIconList
                     icon="HelpIcon"
-                    width={actuatedNormalize(25)}
-                    height={actuatedNormalize(25)}
+                    width={actuatedNormalize(24)}
+                    height={actuatedNormalize(24)}
                    
                   />
                 </TouchableOpacity>
@@ -288,8 +288,8 @@ const PostLoginHeader = (props) => {
                 >
                   <SvgIconList
                     icon="AvatarIconblack"
-                    width={actuatedNormalize(32)}
-                    height={actuatedNormalize(32)}
+                    width={actuatedNormalize(24)}
+                    height={actuatedNormalize(24)}
                     transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                   />
                 </TouchableOpacity>

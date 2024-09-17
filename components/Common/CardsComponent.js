@@ -77,8 +77,8 @@ export const CardsComponent = (props) => {
 
                         <View style={globalStyles.barParent}>
                             <Progress.Bar
-                                unfilledColor={"#767676"}
-                                color={"#eee"}
+                                unfilledColor={"#eee"}
+                                color={"#767676"}
                                 borderRadius={null}
                                 borderWidth={0}
                                 progress={props.progress}
@@ -107,7 +107,7 @@ export const CardsComponent = (props) => {
                         <View style={[globalStyles.frameWrapper, globalStyles.sarParentPosition]}>
                             <View style={[globalStyles.sarParent, globalStyles.sarParentPosition]}>
                                 <TextComponent style={[globalStyles.text1, globalStyles.text1Layout]}>{props.Balance}</TextComponent>
-                                <TextComponent style={globalStyles.sar}>{props.currency}</TextComponent>
+                                <TextComponent style={[globalStyles.sar,{right:actuatedNormalize(10)}]}>{props.currency}</TextComponent>
 
                             </View>
                         </View>
