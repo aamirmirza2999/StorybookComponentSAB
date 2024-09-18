@@ -47,12 +47,14 @@ const MainHeader = (props) => {
     return (
 
         <View
-        style={{  
-            height: props.HeaderHeight,
-            backgroundColor:theme.primaryinvert}}>
+        style={[styles.mainContainer,{ backgroundColor:theme.primaryinvert,}]}
+        // {{  
+        //     // height: props.HeaderHeight,
+        //     backgroundColor:theme.primaryinvert}}
+            >
             <View
                 style={{
-                    height: getStatusBarHeight()+10 ,
+                    //height: getStatusBarHeight()+10 ,
                     
 
                    
@@ -124,7 +126,7 @@ const MainHeader = (props) => {
                     {props.NotificationIconReq ?
                     <>
                         <TouchableOpacity
-                            style={{flexDirection:'row',marginLeft:spacingS,top:actuatedNormalize(3) }}
+                            style={{flexDirection:'row',marginLeft:spacingXS,top:actuatedNormalize(3) }}
                             onPress={props.NotificationFunc}>
                             <SvgIconList
                                 icon="NotificationIcon"
@@ -186,8 +188,8 @@ const MainHeader = (props) => {
 const styles = {
 
     mainContainer: {
-        flex: 1,
-        paddingTop: getStatusBarHeight() + 50,
+        
+        paddingTop: getStatusBarHeight() +40 ,
     },
 
     whiteContainer: {

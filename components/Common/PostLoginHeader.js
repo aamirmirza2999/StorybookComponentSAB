@@ -119,11 +119,12 @@ const PostLoginHeader = (props) => {
   return (
     <View
         style={{  
-          height: props.HeaderHeight,
+          paddingTop: getStatusBarHeight() + 40 ,
+          //height: props.HeaderHeight,
             backgroundColor:theme.primaryinvert}}>
       <View style={{
           
-        height: getStatusBarHeight() ,
+        //height: getStatusBarHeight() ,
       }}>
         <SafeAreaView>
           <StatusBar

@@ -50,7 +50,7 @@ export const PostLoginHeaderStory = (args) => {
     <PostLoginHeader
       {...args}
       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
-      HeaderHeight={deviceheight}
+      //HeaderHeight={deviceheight}
       
     />
     </NavigationContainer>
@@ -86,7 +86,7 @@ export const MainHeaderStory = (args) => {
     <MainHeader
       {...args}
       changeTheme={toggleTheme}
-      HeaderHeight={deviceheight}
+     // HeaderHeight={deviceheight}
       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
