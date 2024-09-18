@@ -483,8 +483,8 @@ togglelabel:{
   avatar: {
     width: actuatedNormalize(30),
     height: actuatedNormalize(30),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2): actuatedNormalize(2),
-    marginRight:actuatedNormalize(6)
+    top:  Platform.OS ==="ios" ?actuatedNormalize(2):actuatedNormalize(2),
+    marginRight: actuatedNormalize(6)
 
 },
   jm: {
@@ -515,7 +515,7 @@ typefilledElementsinitials: {
     padding: spacingXS,
    justifyContent:"space-around" ,
     marginRight:actuatedNormalize(6),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2): null,
+    top:  Platform.OS ==="ios" ?actuatedNormalize(2): actuatedNormalize(3),
 
  
 },
