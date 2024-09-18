@@ -119,7 +119,7 @@ const PostLoginHeader = (props) => {
   return (
     <View
         style={{  
-          paddingTop:Platform.OS=='ios'? getStatusBarHeight() + 40:getStatusBarHeight() + 20 ,
+          paddingTop:Platform.OS=='ios'? getStatusBarHeight() + 40:getStatusBarHeight() + 10 ,
           //height: props.HeaderHeight,
             backgroundColor:theme.primaryinvert}}>
       <View style={{
