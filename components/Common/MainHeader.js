@@ -189,7 +189,7 @@ const styles = {
 
     mainContainer: {
         
-        paddingTop: getStatusBarHeight() +40 ,
+        paddingTop:Platform.OS=='ios'? getStatusBarHeight() + 40:getStatusBarHeight() + 10 ,
     },
 
     whiteContainer: {
