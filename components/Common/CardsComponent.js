@@ -1,5 +1,5 @@
 import React from 'react';
-import {  View, ImageBackground } from "react-native";
+import {  View, ImageBackground, Platform } from "react-native";
 // import LinearGradient from "react-native-linear-gradient";
 import TextComponent from './TextComponent';
 import * as Progress from "react-native-progress";
@@ -107,7 +107,7 @@ export const CardsComponent = (props) => {
                         <View style={[globalStyles.frameWrapper, globalStyles.sarParentPosition]}>
                             <View style={[globalStyles.sarParent, globalStyles.sarParentPosition]}>
                                 <TextComponent style={[globalStyles.text1, globalStyles.text1Layout]}>{props.Balance}</TextComponent>
-                                <TextComponent style={[globalStyles.sar,{right:actuatedNormalize(10)}]}>{props.currency}</TextComponent>
+                                <TextComponent style={[globalStyles.sar,{right:Platform.OS=='ios'?actuatedNormalize(3) :actuatedNormalize(10)}]}>{props.currency}</TextComponent>
 
                             </View>
                         </View>
