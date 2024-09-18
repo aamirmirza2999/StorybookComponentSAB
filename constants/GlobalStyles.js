@@ -1254,4 +1254,124 @@ accountTypo: {
     color: "#fff",
     fontFamily: Fonts.HSBC
     },
- }
+  wrapperFlexBoxRow: {
+    gap: spacingXS,
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  linkTypo: {
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC
+  },
+  centerFlexBox: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  labelTypoInactive: {
+    lineHeight: lineHeightMedium,
+    fontSize: fontMedium,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    color: "#000"
+  },
+  link: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    flex: 1
+  },
+  circularViewtext: {
+    fontSize: fontSmall,
+    lineHeight: lineHeightSmallMedium,
+    textAlign: "center",
+    width: actuatedNormalize(19),
+    height: actuatedNormalize(19),
+    color: "#000",
+    fontFamily:Fonts.HSBC
+  },
+  cicularView: {
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: "#ffbb33",
+    width: actuatedNormalize(20),
+    height: actuatedNormalize(20)
+  },
+  dividerStyle: {
+    backgroundColor: "rgba(118, 118, 118, 0.2)",
+    height: actuatedNormalize(2),
+    alignSelf: "stretch",
+    overflow: "hidden",
+    marginTop: spacingS,
+  },
+  inlinelistitemmenu: {
+    justifyContent: "center",
+    alignSelf: "stretch"
+  },
+  labeltypoHeadline: {
+    fontSize: fontLarge,
+    lineHeight: lineHeightLarge,
+    fontWeight: fontWeightBold,
+    alignSelf: "stretch",
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC
+  },
+  labeltypoBody: {
+    color: "#767676",
+    alignSelf: "stretch",
+    lineHeight: lineHeightMedium,
+    fontSize: fontMedium,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC
+  },
+  stackedlistitembody: {
+    gap: spacingXXS,
+    flex: 1
+  },
+  chipsinfoInactive: {
+    borderRadius: radiusXS,
+    backgroundColor: "#f9f2f3",
+    borderStyle: "solid",
+    borderColor: "#e5b2b5",
+    borderWidth: 0.5,
+    paddingHorizontal: spacingXS,
+    paddingVertical: actuatedNormalize(2),
+    flexDirection: "row"
+  },
+  rowFlexBox: {
+    flexDirection: "row"
+  },
+  flexBoxspacingS: {
+    paddingTop: spacingS,
+    paddingHorizontal: spacingS,
+    alignSelf: "stretch"
+  },
+  rowFlexBoxSpaceBetween: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    width: '100%'
+  },
+  labelLightPreviewValue: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+    color: "#767676",
+    textAlign: "left"
+  },
+  valueLightPreviewValue: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontWeight: "700",
+    fontFamily: Fonts.HSBC,
+    color: "#000",
+    textAlign: "left",
+  },
+  labelBulletPoint: {
+    flex: 1,
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontFamily: Fonts.HSBC,
+    color: "#000",
+    textAlign: "left"
+  }
+}

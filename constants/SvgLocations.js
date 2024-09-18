@@ -75,5 +75,6 @@ export {default as DarkIconList} from "../assets/DarkH.svg"
 
 export {default as WhiteArrow} from "../assets/arrowWhite.svg"
 export {default as HelpIcon} from "../assets/help.svg"
+export {default as TickIcon} from "../assets/tick.svg"
 
 
