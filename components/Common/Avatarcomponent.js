@@ -24,15 +24,15 @@ import TextComponent from './TextComponent';
           isDarkMode?
         <View style={[globalStyles.avatar,{}]}>
           <AvatarIconblackDark
-          width= {26}
-          height={26}
+          width= {28}
+          height={28}
           />
           </View>
           :
         <View style={[globalStyles.avatar,{}]}>
    <AvatarIconblack
-     width= {26}
-     height={26}
+     width= {28}
+     height={28}
    />
    </View>
    :null}

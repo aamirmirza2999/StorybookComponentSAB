@@ -481,9 +481,10 @@ togglelabel:{
       zIndex: 0
   },
   avatar: {
-    
-     marginTop:  Platform.OS ==="ios" ?actuatedNormalize(2):actuatedNormalize(5.5),
-     marginRight: actuatedNormalize(6)
+    // width: actuatedNormalize(30),
+    // height: actuatedNormalize(30),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(3):actuatedNormalize(3),
+    marginRight: actuatedNormalize(6)
 
 },
   jm: {
@@ -511,10 +512,10 @@ fontFamily: Fonts.HSBC,
 },
 typefilledElementsinitials: {
   borderRadius: actuatedNormalize(100),
-   padding: spacingXS,
+    padding: spacingXS,
    justifyContent:"space-around" ,
     marginRight:actuatedNormalize(6),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2): actuatedNormalize(3),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(4): actuatedNormalize(4),
 
  
 },
