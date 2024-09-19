@@ -23,18 +23,26 @@ import TextComponent from './TextComponent';
           {props.avatarblack ?
           isDarkMode?
         <View style={[globalStyles.avatar,{}]}>
-          <AvatarIconblackDark/>
+          <AvatarIconblackDark
+          width= {26}
+          height={26}
+          />
           </View>
           :
         <View style={[globalStyles.avatar,{}]}>
    <AvatarIconblack
+     width= {26}
+     height={26}
    />
    </View>
    :null}
 
        {props.avatarwhite? 
        <View style={globalStyles.avatar}>
-        <AvatarIconwhite/>
+        <AvatarIconwhite
+         width= {26}
+         height={26}
+        />
    </View>
    :null}
   {props.avatarsplit? 
