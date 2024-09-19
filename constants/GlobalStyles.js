@@ -481,9 +481,9 @@ togglelabel:{
       zIndex: 0
   },
   avatar: {
-    width: actuatedNormalize(30),
-    height: actuatedNormalize(30),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2):actuatedNormalize(2),
+    // width: actuatedNormalize(30),
+    // height: actuatedNormalize(30),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(3):actuatedNormalize(5),
     marginRight: actuatedNormalize(6)
 
 },
@@ -515,7 +515,7 @@ typefilledElementsinitials: {
     padding: spacingXS,
    justifyContent:"space-around" ,
     marginRight:actuatedNormalize(6),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2): actuatedNormalize(3),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(4): actuatedNormalize(4),
 
  
 },
