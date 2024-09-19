@@ -355,6 +355,15 @@ export const GroupButton = (props) => {
 							}}
 							width={actuatedNormalize(24)}
 							height={actuatedNormalize(24)}/>:
+							props.disableSecondary?
+								<BlackArrowDark
+								style={{
+									marginRight:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrowDark>:
 								<BlackArrow
 								style={{
 									marginRight:actuatedNormalize(8),
@@ -375,6 +384,15 @@ export const GroupButton = (props) => {
 						width={actuatedNormalize(24)}
 						height={actuatedNormalize(24)}
 						/>:
+						props.disableSecondary?
+								<BlackArrowDark
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrowDark>:
 								<BlackArrow
 								style={{
 									marginLeft:actuatedNormalize(8),
