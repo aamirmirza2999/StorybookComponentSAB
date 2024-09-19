@@ -126,7 +126,7 @@ const MainHeader = (props) => {
                     {props.NotificationIconReq ?
                     <>
                         <TouchableOpacity
-                            style={{flexDirection:'row',marginLeft:spacingXS,top:actuatedNormalize(3) }}
+                            style={{flexDirection:'row',marginLeft:spacingS,top:actuatedNormalize(3) }}
                             onPress={props.NotificationFunc}>
                             <SvgIconList
                                 icon="NotificationIcon"
@@ -158,7 +158,7 @@ const MainHeader = (props) => {
                         : null}
                     {props.LanguageSwitchReq ?
                         <TouchableOpacity
-                            style={{ top:actuatedNormalize(3) }}
+                            style={{ top:actuatedNormalize(3),marginLeft:spacingXS }}
                             onPress={props.changeLanguage}>
                             <SvgIconList
                                 icon="ChangeLang"
