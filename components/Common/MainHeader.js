@@ -145,7 +145,7 @@ const MainHeader = (props) => {
                     {props.AvatarIconReq ?
                     
                         <TouchableOpacity
-                            style={{ paddingBottom:actuatedNormalize(6) }}
+                            style={{ paddingBottom:actuatedNormalize(3.5) }}
                             onPress={props.AvatarIconfunc}>
                             <Avatarcomponent
                              avatarblack={props.avatarblack}
