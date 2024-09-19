@@ -1373,5 +1373,12 @@ accountTypo: {
     fontFamily: Fonts.HSBC,
     color: "#000",
     textAlign: "left"
-  }
+  },
+  listItemActionableSelectType: {
+     borderStyle: 'solid',
+     borderColor: '#00847f',
+     borderWidth: 1,
+     width: actuatedNormalize(20),
+     height: actuatedNormalize(20),
+   }
 }

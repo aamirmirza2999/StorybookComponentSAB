@@ -25,6 +25,11 @@ export default {
     listItemPreviewType: 'Value',
     iconPreview: false,
     showDivider: true,
+    listItemActionableType: 'Menu',
+    listItemActionableSelectType: 'Check Box',
+    iconActionableMenu: true,
+    badgeActionableMenu: true,
+    linkActionableMenu: true,
     lang: 'en',
     enableDarktheme: false,
   };
@@ -48,6 +53,23 @@ export default {
       if: { arg: 'inlineListItemType', eq: 'Preview' } 
     },
     showDivider: {
+      control: 'boolean',
+    },
+    listItemActionableType: { 
+      control: 'select',
+      options: ['Menu', 'Select'], 
+    },
+    listItemActionableSelectType: { 
+      control: 'select',
+      options: ['Check Box', 'Radio Button'], 
+    },
+    iconActionableMenu: {
+      control: 'boolean',
+    },
+    badgeActionableMenu: {
+      control: 'boolean',
+    },
+    linkActionableMenu: {
       control: 'boolean',
     },
     lang: {

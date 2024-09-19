@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import {RightArrow, InfoIconRed, TickIcon} from '../../constants/SvgLocations';
 import {actuatedNormalize} from '../../constants/PixelScaling';
 import {globalStyles} from '../../constants/GlobalStyles';
-import { spacingM, } from '../../constants/Size';
+import {spacingM, spacingXXS} from '../../constants/Size';
 
 const NewListComponent = props => {
   console.log('props--->', props);
@@ -14,30 +14,54 @@ const NewListComponent = props => {
         <>
           {props.inlineListItemType === 'Actionable' && (
             <View style={globalStyles.inlinelistitemmenu}>
-              <View style={[globalStyles.wrapperFlexBoxRow]}>
-                <InfoIconRed
-                  width={spacingM}
-                  height={spacingM}
-                />
-                <Text style={[globalStyles.link, globalStyles.linkTypo]}>
-                  Link
-                </Text>
-                <View style={globalStyles.wrapperFlexBoxRow}>
-                  <View>
+              {props.listItemActionableType === 'Menu' ? (
+                <View style={[globalStyles.wrapperFlexBoxRow]}>
+                  {props.iconActionableMenu && (
+                    <InfoIconRed width={spacingM} height={spacingM} />
+                  )}
+
+                  <Text style={[globalStyles.link, globalStyles.linkTypo]}>
+                    Link
+                  </Text>
+                  <View style={globalStyles.wrapperFlexBoxRow}>
+                    <View>
+                      {props.badgeActionableMenu && (
+                        <View
+                          style={[
+                            globalStyles.cicularView,
+                            globalStyles.centerFlexBox,
+                          ]}>
+                          <Text style={globalStyles.circularViewtext}>1</Text>
+                        </View>
+                      )}
+                    </View>
+                    {props.linkActionableMenu && (
+                      <RightArrow width={spacingM} height={spacingM} />
+                    )}
+                  </View>
+                </View>
+              ) : (
+                <View style={[globalStyles.wrapperFlexBoxRow]}>
+                  <Text style={[globalStyles.link, globalStyles.linkTypo]}>
+                    Label
+                  </Text>
+                  {props.listItemActionableSelectType === 'Check Box' ? (
                     <View
                       style={[
-                        globalStyles.cicularView,
-                        globalStyles.centerFlexBox,
-                      ]}>
-                      <Text style={globalStyles.circularViewtext}>1</Text>
-                    </View>
-                  </View>
-                  <RightArrow
-                    width={spacingM}
-                    height={spacingM}
-                  />
+                        globalStyles.listItemActionableSelectType,
+                        {borderRadius: spacingXXS},
+                      ]}
+                    />
+                  ) : (
+                    <View
+                      style={[
+                        globalStyles.listItemActionableSelectType,
+                        {borderRadius: spacingM},
+                      ]}
+                    />
+                  )}
                 </View>
-              </View>
+              )}
             </View>
           )}
 
@@ -56,10 +80,7 @@ const NewListComponent = props => {
                       </Text>
 
                       {props.iconPreview && (
-                        <RightArrow
-                          width={spacingM}
-                          height={spacingM}
-                        />
+                        <RightArrow width={spacingM} height={spacingM} />
                       )}
                     </View>
                   ) : (
@@ -100,10 +121,7 @@ const NewListComponent = props => {
       {props.listType === 'Stacked' && (
         <View style={globalStyles.rowFlexBox}>
           <View style={[globalStyles.wrapperFlexBoxRow, {flex: 1}]}>
-            <InfoIconRed
-              width={spacingM}
-              height={spacingM}
-            />
+            <InfoIconRed width={spacingM} height={spacingM} />
             <View style={globalStyles.stackedlistitembody}>
               <Text style={[globalStyles.labeltypoHeadline]}>Headline</Text>
               <Text style={[globalStyles.labeltypoBody]}>Body copy</Text>
@@ -117,10 +135,7 @@ const NewListComponent = props => {
                 <Text style={[globalStyles.labelTypoInactive]}>Inactive</Text>
               </View>
             </View>
-            <RightArrow
-              width={spacingM}
-              height={spacingM}
-            />
+            <RightArrow width={spacingM} height={spacingM} />
           </View>
         </View>
       )}
