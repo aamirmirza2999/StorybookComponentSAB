@@ -1169,7 +1169,7 @@ wrapper1: {
 
 barParent: {
     height: actuatedNormalize(4),
-    width: actuatedNormalize(310)
+   // width: actuatedNormalize(310)
 },
 creditLimit95: {
     display: "flex",
