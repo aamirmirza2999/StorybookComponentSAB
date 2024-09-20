@@ -117,8 +117,8 @@ const MainHeader = (props) => {
                             onPress={props.Searchfunc}>
                             <SvgIconList
                                 icon="SearchIcon"
-                                width={actuatedNormalize(25)}
-                                height={actuatedNormalize(25)}
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}
                                 transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                             />
                         </TouchableOpacity>
@@ -130,8 +130,8 @@ const MainHeader = (props) => {
                             onPress={props.NotificationFunc}>
                             <SvgIconList
                                 icon="NotificationIcon"
-                                width={actuatedNormalize(26)}
-                                height={actuatedNormalize(26)}
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}
                                 fill={isDarkMode?"white":"black"}
                                 transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                             />
@@ -145,7 +145,7 @@ const MainHeader = (props) => {
                     {props.AvatarIconReq ?
                     
                         <TouchableOpacity
-                            style={{ paddingBottom:actuatedNormalize(3.5) }}
+                            style={{ }}
                             onPress={props.AvatarIconfunc}>
                             <Avatarcomponent
                              avatarblack={props.avatarblack}
@@ -162,8 +162,8 @@ const MainHeader = (props) => {
                             onPress={props.changeLanguage}>
                             <SvgIconList
                                 icon="ChangeLang"
-                                width={actuatedNormalize(25)}
-                                height={actuatedNormalize(25)}
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}
                                 transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                             />
                         </TouchableOpacity>
@@ -201,7 +201,7 @@ const styles = {
         alignItems: "center"
         },
         TextComponent: {
-        fontSize: fontXXSmall,
+        fontSize: actuatedNormalize(9),
         fontFamily: "Univers Next for HSBC",
         color: "#fff",
         textAlign: "center",
@@ -210,8 +210,8 @@ const styles = {
         badgenotification: {
         borderRadius: 100,
         backgroundColor: "#ffbb33",
-        width: 15,
-        height: 15,
+        width: 13,
+        height: 13,
         right:actuatedNormalize(10)
         }
 }
