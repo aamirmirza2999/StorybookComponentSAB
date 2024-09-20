@@ -3,7 +3,7 @@ import { actuatedNormalize } from './PixelScaling';
 import { useTheme } from "../constants/Theme/ThemeProvider";
 import { AddBene, BackArrowNew, ChangeLang,ChangeLangDark, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
   BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon,SearchIconDark,
-  AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList} from './SvgLocations';
+  AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList,Blockcard,Blockgenericred,BlackRightarrow,Lightmyacounts,Lightright, Whitecard, Whiterightarrow} from './SvgLocations';
 
 
 
@@ -166,6 +166,50 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
         
                     />
                   );
+
+                case 'BlockCard':
+                  return (
+                    <Blockcard
+                      width={width}
+                      height={height}        
+                    />
+                  );
+                case 'Whitecard':
+                  return (
+                    <Whitecard
+                      width={width}
+                      height={height}        
+                    />
+                  );
+                case 'Blockgenericred':
+                  return (
+                    <Blockgenericred
+                      width={width}
+                      height={height}
+                    />
+                  );
+                case 'BlackRightarrow':
+                  return (
+                    <BlackRightarrow
+                      width={width}
+                      height={height}
+                    />
+                  );
+                case 'Lightmyacounts':
+                  return (
+                    <Lightmyacounts
+                      width={width}
+                      height={height}
+                    />
+                  );
+                case 'Lightright':
+                  return (
+                    <Lightright
+                      width={width}
+                      height={height}
+                    />
+                  );
+                
     default:
       return null;
   }

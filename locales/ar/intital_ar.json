@@ -27,6 +27,9 @@
   "linkButton":"وصلة",
   "Premier":"رئيس الوزراء",
   "PostloginHeader":"نشر رأس تسجيل الدخول",
-  "Button":"زر"
-  
+  "Button":"زر",
+  "BlockcardText":"تحقق من فوائد بطاقتك",
+  "LinkButton":"زر الارتباط",
+  "SolidText":"اسم",
+  "PattrenText":"التمويل الشخصي"
 }

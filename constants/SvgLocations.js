@@ -77,3 +77,12 @@ export {default as WhiteArrow} from "../assets/arrowWhite.svg"
 export {default as HelpIcon} from "../assets/help.svg"
 
 
+export {default as Blockcard} from "../assets/card.svg"
+export {default as Blockgenericred} from "../assets/myaccounts.svg"
+export {default as BlackRightarrow} from "../assets/iconright.svg"
+export {default as Lightmyacounts} from "../assets/lightmyaccounts.svg"
+export {default as Lightright} from "../assets/lightright.svg"
+export {default as Whitecard} from "../assets/Whitecard.svg"
+export {default as Whiterightarrow} from "../assets/Whiteright.svg"
+
+

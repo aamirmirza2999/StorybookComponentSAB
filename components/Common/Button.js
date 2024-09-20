@@ -253,7 +253,7 @@ export const LinkButton = (props) => {
 							height={actuatedNormalize(24)}
 							></RightRedArrow1>:null}
 								<TextComponent
-								style={[props.type==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:theme.primarycolor3,alignSelf:"center"}]}
+								style={[props.type==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:isDarkMode? theme.primarycolor4 : theme.primarycolor3,alignSelf:"center"}]}
 								>{props.label}</TextComponent>
 							{props.enableRightIcon?
 							isDarkMode?
