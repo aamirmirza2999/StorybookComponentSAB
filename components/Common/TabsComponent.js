@@ -79,8 +79,8 @@ const TabsComponent = ({
                                             <View style={ [globalStyles.TabBarView,{
                                             //  backgroundColor: focused ? theme.primarycolor : theme.stylesblockbg,  
                                             backgroundColor: type === 'mainTab' 
-                  ? (focused ? theme.primarycolor : theme.stylesblockbg) 
-                  : (focused ? theme.primarytextcolor2_2 : theme.stylesblockbg),
+                  ? (focused ? theme.primarycolor : theme.primarybackgroundtab) 
+                  : (focused ? theme.primarytextcolor2_2 : theme.primarybackgroundtab),
       
                                             }]}
                                  
