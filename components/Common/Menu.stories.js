@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import NewListComponent from './NewListComponent';
-
+import TextDivider from './TextDivider';
 
 export default {
     title: 'components/MenuComponent',
@@ -81,3 +81,12 @@ export default {
     },
   };
   
+
+  export const TextDividerComponentStory = (args) => {
+    return <TextDivider {...args} />;
+  };
+
+  TextDividerComponentStory.args={
+    promotional:true,
+    pagetitle:true
+  }

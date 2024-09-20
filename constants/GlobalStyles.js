@@ -1380,5 +1380,57 @@ accountTypo: {
      borderWidth: 1,
      width: actuatedNormalize(20),
      height: actuatedNormalize(20),
-   }
+   },
+
+
+//TextDivider
+headlineFlexBox: {
+  textAlign: "left",
+  color: "#000",
+  fontFamily: "Univers Next for HSBC",
+  alignSelf: "stretch",
+},
+headline: {
+  fontSize: 34,
+  lineHeight: 41,
+  fontWeight: "700",
+
+},
+nequePorroQuisquam: {
+  fontSize: 17,
+  lineHeight: 22
+},
+typepromotionalLanguageeng: {
+  flex: 1,
+  width: "100%",
+  paddingHorizontal: 16,
+  paddingVertical: 24,
+  gap: 8,
+},
+
+//.......
+
+welcomeBackFlexBox: {
+  textAlign: "left",
+  color: "#000",
+  fontFamily: "Univers Next for HSBC",
+  alignSelf: "stretch"
+  },
+  welcomeBackText: {
+  fontSize: 26,
+  lineHeight: 32,
+  fontWeight: "700"
+  },
+  nametext: {
+  fontSize: 17,
+  lineHeight: 22
+  },
+  typepageTitleLanguageengl: {
+  flex: 1,
+  width: "100%",
+  paddingHorizontal: 16,
+  paddingVertical: 24,
+  gap: 8
+  }
+
 }
