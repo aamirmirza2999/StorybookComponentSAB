@@ -481,9 +481,9 @@ togglelabel:{
       zIndex: 0
   },
   avatar: {
-    width: actuatedNormalize(30),
-    height: actuatedNormalize(30),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2):actuatedNormalize(2),
+    // width: actuatedNormalize(30),
+    // height: actuatedNormalize(30),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(3):actuatedNormalize(3),
     marginRight: actuatedNormalize(6)
 
 },
@@ -515,7 +515,7 @@ typefilledElementsinitials: {
     padding: spacingXS,
    justifyContent:"space-around" ,
     marginRight:actuatedNormalize(6),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(2): actuatedNormalize(3),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(4): actuatedNormalize(4),
 
  
 },
@@ -1169,7 +1169,7 @@ wrapper1: {
 
 barParent: {
     height: actuatedNormalize(4),
-    width: actuatedNormalize(310)
+   // width: actuatedNormalize(310)
 },
 creditLimit95: {
     display: "flex",
@@ -1342,4 +1342,183 @@ textFlexBox3: {
   alignItems: "flex-end",
   alignSelf: "stretch"
 },
+  wrapperFlexBoxRow: {
+    gap: spacingXS,
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  linkTypo: {
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC
+  },
+  centerFlexBox: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  labelTypoInactive: {
+    lineHeight: lineHeightMedium,
+    fontSize: fontMedium,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    color: "#000"
+  },
+  link: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    flex: 1
+  },
+  circularViewtext: {
+    fontSize: fontSmall,
+    lineHeight: lineHeightSmallMedium,
+    textAlign: "center",
+    width: actuatedNormalize(19),
+    height: actuatedNormalize(19),
+    color: "#000",
+    fontFamily:Fonts.HSBC
+  },
+  cicularView: {
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: "#ffbb33",
+    width: actuatedNormalize(20),
+    height: actuatedNormalize(20)
+  },
+  dividerStyle: {
+    backgroundColor: "rgba(118, 118, 118, 0.2)",
+    height: actuatedNormalize(2),
+    alignSelf: "stretch",
+    overflow: "hidden",
+    marginTop: spacingS,
+  },
+  inlinelistitemmenu: {
+    justifyContent: "center",
+    alignSelf: "stretch"
+  },
+  labeltypoHeadline: {
+    fontSize: fontLarge,
+    lineHeight: lineHeightLarge,
+    fontWeight: fontWeightBold,
+    alignSelf: "stretch",
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC
+  },
+  labeltypoBody: {
+    color: "#767676",
+    alignSelf: "stretch",
+    lineHeight: lineHeightMedium,
+    fontSize: fontMedium,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC
+  },
+  stackedlistitembody: {
+    gap: spacingXXS,
+    flex: 1
+  },
+  chipsinfoInactive: {
+    borderRadius: radiusXS,
+    backgroundColor: "#f9f2f3",
+    borderStyle: "solid",
+    borderColor: "#e5b2b5",
+    borderWidth: 0.5,
+    paddingHorizontal: spacingXS,
+    paddingVertical: actuatedNormalize(2),
+    flexDirection: "row"
+  },
+  rowFlexBox: {
+    flexDirection: "row"
+  },
+  flexBoxspacingS: {
+    paddingTop: spacingS,
+    paddingHorizontal: spacingS,
+    alignSelf: "stretch"
+  },
+  rowFlexBoxSpaceBetween: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    width: '100%'
+  },
+  labelLightPreviewValue: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+    color: "#767676",
+    textAlign: "left"
+  },
+  valueLightPreviewValue: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontWeight: "700",
+    fontFamily: Fonts.HSBC,
+    color: "#000",
+    textAlign: "left",
+  },
+  labelBulletPoint: {
+    flex: 1,
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontFamily: Fonts.HSBC,
+    color: "#000",
+    textAlign: "left"
+  },
+  listItemActionableSelectType: {
+     borderStyle: 'solid',
+     borderColor: '#00847f',
+     borderWidth: 1,
+     width: actuatedNormalize(20),
+     height: actuatedNormalize(20),
+   },
+
+
+//TextDivider
+headlineFlexBox: {
+  textAlign: "left",
+  color: "#000",
+  fontFamily: "Univers Next for HSBC",
+  alignSelf: "stretch",
+},
+headline: {
+  fontSize: 34,
+  lineHeight: 41,
+  fontWeight: "700",
+
+},
+nequePorroQuisquam: {
+  fontSize: 17,
+  lineHeight: 22
+},
+typepromotionalLanguageeng: {
+  flex: 1,
+  width: "100%",
+  paddingHorizontal: 16,
+  paddingVertical: 24,
+  gap: 8,
+},
+
+//.......
+
+welcomeBackFlexBox: {
+  textAlign: "left",
+  color: "#000",
+  fontFamily: "Univers Next for HSBC",
+  alignSelf: "stretch"
+  },
+  welcomeBackText: {
+  fontSize: 26,
+  lineHeight: 32,
+  fontWeight: "700"
+  },
+  nametext: {
+  fontSize: 17,
+  lineHeight: 22
+  },
+  typepageTitleLanguageengl: {
+  flex: 1,
+  width: "100%",
+  paddingHorizontal: 16,
+  paddingVertical: 24,
+  gap: 8
+  }
+
 }

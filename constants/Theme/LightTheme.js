@@ -22,7 +22,7 @@ export const lightTheme = {
   primarycolor4static:"#FFFFFF", //primarywhitestatic
   primaryinvert:"#FFFFFF",
   primarycolornav:"#000000", //primaryblacknav
-  
+  primarybackgroundtab:"#F2F3F4",
   // PRIMARY GREY COLORS:
 
   primarycolor2_100:"#767676",

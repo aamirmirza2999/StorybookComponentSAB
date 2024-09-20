@@ -19,7 +19,7 @@ let initiallanguage = store.getState().commonReducer.LanginitialValue
 export const MainTab =(args) =>{ 
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const {  toggleTheme,isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
     i18n.changeLanguage(newLang); 
@@ -82,7 +82,7 @@ MainTab.argTypes = {
 export const SubTab =(args) => {
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const {  toggleTheme,isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
     i18n.changeLanguage(newLang); 

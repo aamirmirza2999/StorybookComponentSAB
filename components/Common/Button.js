@@ -307,7 +307,7 @@ export const GroupButton = (props) => {
 								disabled={props.disablePrimary}
 								>
 							
-							<View style={[{	backgroundColor:props.disablePrimary?theme.primarycolor2_30:props.backgroundColor,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
+							<View style={[{	backgroundColor:props.disablePrimary?"rgba(118, 118, 118, 0.3)":props.backgroundColor,}, globalStyles.primaryFlexBoxLarge,props.primaryFlexBoxLarge]}>			
 							{props.enableLeftIcon?
 								<WhiteArrow
 								style={{
@@ -348,13 +348,22 @@ export const GroupButton = (props) => {
 							<View style={[{	backgroundColor:'transparent',borderColor:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor,},globalStyles.secondaryFlexBoxLarge,props.secondaryFlexBoxLarge]}>			
 							{props.enableLeftIcon?
 							isDarkMode?
-							<BlackArrowDark
+							<WhiteArrow
 							style={{
 								marginRight:actuatedNormalize(8),
 								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
 							}}
 							width={actuatedNormalize(24)}
 							height={actuatedNormalize(24)}/>:
+							props.disableSecondary?
+								<BlackArrowDark
+								style={{
+									marginRight:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrowDark>:
 								<BlackArrow
 								style={{
 									marginRight:actuatedNormalize(8),
@@ -367,7 +376,7 @@ export const GroupButton = (props) => {
 						<TextComponent style={[{color:props.disableSecondary?theme.primarycolor2_30: theme.primarycolor},globalStyles.primaryTextLarge,props.primaryTextLarge]}>{props.secondaryLabel}</TextComponent>
 						{props.enableRightIcon?
 						isDarkMode?
-						<BlackArrowDark
+						<WhiteArrow
 						style={{
 							marginLeft:actuatedNormalize(8),
 							transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
@@ -375,6 +384,15 @@ export const GroupButton = (props) => {
 						width={actuatedNormalize(24)}
 						height={actuatedNormalize(24)}
 						/>:
+						props.disableSecondary?
+								<BlackArrowDark
+								style={{
+									marginLeft:actuatedNormalize(8),
+									transform: [{ rotate:I18nManager.isRTL?"0deg":"180deg"}],
+								}}
+								width={actuatedNormalize(24)}
+								height={actuatedNormalize(24)}
+								></BlackArrowDark>:
 								<BlackArrow
 								style={{
 									marginLeft:actuatedNormalize(8),

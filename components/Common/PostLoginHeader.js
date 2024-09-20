@@ -20,7 +20,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { spacingM, spacingS, spacingXS, spacingL } from '../../constants/Size';
-
+import { LinkButton } from './Button';
 
 
 // Get device dimensions
@@ -95,10 +95,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontFamily: "Univers Next for HSBC",
     color: "#000",
-    textAlign: "left",
-    marginTop: spacingL,
     paddingHorizontal: spacingS,
-  }
+      }
 
 });
 const xml1 = `<svg width=${Platform.OS == "ios" ? svgWidth + actuatedNormalize(50) : svgWidth + actuatedNormalize(100)} height=${svgHeight2 + 1} preserveAspectRatio="none" viewBox="${I18nManager.isRTL ? 0 : 1} 0 ${Platform.OS == "ios" ? I18nManager.isRTL ? svgWidth - actuatedNormalize(30) : svgWidth + actuatedNormalize(20) : I18nManager.isRTL ? svgWidth - actuatedNormalize(50) : svgWidth + actuatedNormalize(50)} ${svgHeight2}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -307,9 +305,21 @@ const PostLoginHeader = (props) => {
           </View>
         </View>
         {props.Headline && !props.HeaderTitleReq ?
+        <View style={{flexDirection:'row',marginTop: spacingL,justifyContent:'space-between'}}>
           <TextComponent style={[styles.HeadlineText,{
             color: theme.primarycolor,
           }]}>{props.Headline}</TextComponent>
+          {/* {props.LinkButtonReq?
+          <View style={{marginTop:actuatedNormalize(5),paddingRight:actuatedNormalize(16)}}>
+         <LinkButton
+         label={"Link Button"}
+         type={"large"}
+         enableRightIcon={true}
+         //onPress={{}}
+         />
+         </View>
+         :null} */}
+          </View>
           : null}
 
       </View>
