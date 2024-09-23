@@ -8,7 +8,8 @@ import SvgIconList from '../../constants/SvgIconList';
 
 import NewListComponent from './NewListComponent';
 import TextDivider from './TextDivider';
-
+import CommonHelper from '../../constants/CommonHelper';
+import i18n from '../../locales/i18n';
 export default {
     title: 'components/MenuComponent',
   };
@@ -275,10 +276,55 @@ export default {
   
 
   export const TextDividerComponentStory = (args) => {
+    const { t } = useTranslation();
+    const [language, setLanguage] = useState('en');
+    const {  toggleTheme,isDarkMode } = useTheme();
+    const handleChange = (newLang, setLanguage, i18n) => {
+      setLanguage(newLang);
+      i18n.changeLanguage(newLang); 
+      CommonHelper.changeLanguage(newLang, setLanguage); 
+    };
+
+    useEffect(() => {
+      CommonHelper.initLanguage(setLanguage);
+    }, []);
+    useEffect(() => {
+      if (language !== args.lang) {
+        handleChange(args.lang, setLanguage, i18n);
+      }
+    }, [args.lang]);
+
+    useEffect(() => {
+   
+      if (args.enableDarktheme !== isDarkMode) {
+        toggleTheme();
+      }
+    }, [args.enableDarktheme, isDarkMode]);
+
+    args.Headline=t('initialLang:Headline')
+    args.Description=t('initialLang:SunTextDivider')
+
     return <TextDivider {...args} />;
   };
 
   TextDividerComponentStory.args={
     promotional:true,
-    pagetitle:true
+    pagetitle:true,
+    bottomsheet:true,
+    inpage:true,
+    lang:'en',
+    enableDarktheme: true,
   }
+
+  TextDividerComponentStory.argTypes = {
+   
+    lang: {
+      control: 'select',
+      options: ['en', 'ar'],
+    },
+    enableDarktheme: {
+      control: 'boolean',
+    },
+  }
+   
+  

@@ -58,6 +58,7 @@ return (<TextComponent {...args}/>)
     badgeIcon:false,
     textInfoIcon:false,
     enableDarkTheme:false,
+    isHeadline:true,
     lang:'en',
   };
 
@@ -72,6 +73,7 @@ return (<TextComponent {...args}/>)
     badgeIcon:{control:'boolean'},
     textInfoIcon:{control:'boolean'},
     enableDarkTheme:{control:'boolean'},
+    isHeadline:{control:'boolean'},
     bulletPoint:{
       control:'select',
       options:['true', 'false', 'true.success']

@@ -120,28 +120,31 @@ const TextComponent = (props) => {
 
       {/* Headline Text Component */}
       <View style={globalStyles.textComponentStyle}>
-        <Text
-          testID={props.testID}
-          accessibilityLabel={props.accessibilityLabel}
-          style={[
-            styles.defaultTextStyle,
-            {
-              color: isDarkMode?theme.primarytextcolor4: theme.primarytextcolor,
-              fontSize: 17 || props.fontSize,
-              fontWeight: 700 || props.fontWeight,
-              textTransform: props.textTransform || 'none',
-            },
-            fontsFamily(props.fontFamily), // Apply font family
-            props.style,
+        {props.isHeadline &&(
+   <Text
+   testID={props.testID}
+   accessibilityLabel={props.accessibilityLabel}
+   style={[
+     styles.defaultTextStyle,
+     {
+       color: isDarkMode?theme.primarytextcolor4: theme.primarytextcolor,
+       fontSize: 17 || props.fontSize,
+       fontWeight: 700 || props.fontWeight,
+       textTransform: props.textTransform || 'none',
+     },
+     fontsFamily(props.fontFamily), // Apply font family
+     props.style,
 
-          ]}
-          onPress={props.onPress}
-          numberOfLines={props.numberOfLines}
-          selectable={false}
-          suppressHighlighting={true} // iOS highlight issue fix
-        >
-          {props.headlineText + " "}
-        </Text>
+   ]}
+   onPress={props.onPress}
+   numberOfLines={props.numberOfLines}
+   selectable={false}
+   suppressHighlighting={true} // iOS highlight issue fix
+ >
+   {props.headlineText + " "}
+ </Text>
+        )}
+     
         {props.textInfoIcon && !props.badgeIcon && (
           <TextInfoIcon
             // style={{ marginTop: actuatedNormalize(2) }}
