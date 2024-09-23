@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {BlockBanner,BlockGeneric,BlockGenericTxtChange} from './Blocks'
 import { useTheme } from '../../constants/Theme/ThemeProvider';
-import i18n from '../../locales/i18n';
-import CommonHelper from '../../constants/CommonHelper';
 import SvgIconList from '../../constants/SvgIconList';
 
 import NewListComponent from './NewListComponent';
