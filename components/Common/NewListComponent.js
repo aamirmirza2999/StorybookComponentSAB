@@ -5,6 +5,12 @@ import {
   InfoIconRed,
   TickIcon,
   Slices,
+  Cancel,
+  Toggle,
+  RadioUnSelect,
+  EditBlack,
+  Delete,
+  CheckboxUnSelected
 } from '../../constants/SvgLocations';
 import {actuatedNormalize} from '../../constants/PixelScaling';
 import {globalStyles} from '../../constants/GlobalStyles';
@@ -12,6 +18,25 @@ import {spacingM, spacingXXS} from '../../constants/Size';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 const NewListComponent = props => {
   const { theme } = useTheme();
+
+  const getDefaultAction = () => {
+    switch (props.listItemActionType) {
+      case 'Toggle':
+        return <Toggle width={spacingM} height={spacingM}/>;
+      case 'Check Box':
+        return <CheckboxUnSelected width={spacingM} height={spacingM}/>;
+      case 'Chevron':
+        return <RightArrow width={spacingM} height={spacingM} />;
+      case 'Radio Button':
+        return <RadioUnSelect width={spacingM} height={spacingM} />;
+      case 'Edit':
+        return <EditBlack width={spacingM} height={spacingM} />;
+      case 'Delete':
+        return <Delete width={spacingM} height={spacingM} />;
+      default:
+        return <RightArrow width={spacingM} height={spacingM} />;
+    }
+  };
 
   return (
     <View style={globalStyles.flexBoxspacingS}>
@@ -159,8 +184,14 @@ const NewListComponent = props => {
                 />
               </View>
               {props.stackedListItemDefaultBadge && (
-                <View style={globalStyles.rowFlexBox}>
-                  <View
+                // <View style={globalStyles.rowFlexBox}>
+                  <BadgeStatus badgeStatusType={props.badgeStatusType}
+                  badgeNotificationType = {props.badgeNotificationType}
+                  badgeNotificationSize= {props.badgeNotificationSize}
+                  badgeNotificationNumber= {props.badgeNotificationNumber}/>
+                )}
+                  
+                  {/* <View
                     style={[
                       globalStyles.chipsinfoInactive,
                       globalStyles.centerFlexBox,
@@ -172,10 +203,11 @@ const NewListComponent = props => {
                       Inactive
                     </Text>
                   </View>
-                </View>
-              )}
+                </View> */}
+              
               {props.stackedListItemDefaultAction && (
-                <RightArrow width={spacingM} height={spacingM} />
+                // <RightArrow width={spacingM} height={spacingM} />
+                getDefaultAction()
               )}
             </View>
           ) : (
@@ -210,6 +242,7 @@ const NewListComponent = props => {
 export default NewListComponent;
 
 const ListItemAddon = ({addonType}) => {
+  const { theme } = useTheme();
   return (
     <>
       {addonType === 'Avatar' && (
@@ -244,6 +277,9 @@ const StackedListItemBody = ({
   stackedListItemBodyShowStatus,
   stackedListItemBodyStatusState,
 }) => {
+
+  const { theme } = useTheme();
+
   const getStatusColor = () => {
     switch (stackedListItemBodyStatusState) {
       case 'Success':
@@ -310,4 +346,253 @@ const StackedListItemBody = ({
     </>
   );
 };
+
+
+
+const BadgeStatus = ({
+  badgeStatusType,
+  badgeNotificationType,
+  badgeNotificationSize,
+  badgeNotificationNumber
+}) => {
+  const {theme} = useTheme();
+  console.log('Proppss-->', badgeStatusType);
+  const getBadgeBackgroundColor = () => {
+    switch (badgeNotificationType) {
+      case 'Success':
+        return '#00847F';
+      case 'Primary':
+        return '#A8000B';
+      case 'Warning':
+        return '#FFBB33';
+      case 'Neutral':
+        return '#305A85';
+      case 'Reverse':
+        return '#ffffff';
+      default:
+        return '#A8000B';
+    }
+  };
+
+  const getBadgeTextColor = () => {
+    switch (badgeNotificationType) {
+      case 'Success':
+        return '#ffffff';
+      case 'Primary':
+        return '#ffffff';
+      case 'Warning':
+        return '#000000';
+      case 'Neutral':
+        return '#000000';
+      case 'Reverse':
+        return '#A8000B';
+      default:
+        return '#000000';
+    }
+  };
+
+  const getBadgeTextSize = () => {
+    switch (badgeNotificationSize) {
+      case 'Small':
+        return {
+          fontSize: 12,
+          lineHeight: 17,
+        };
+      case 'Large':
+        return {
+          fontSize: 14,
+          lineHeight: 18,
+        };
+      case 'XS':
+        return {
+          fontSize: 11,
+          lineHeight: 15,
+        };
+      default:
+        return {
+          fontSize: 12,
+          lineHeight: 17,
+        };
+    }
+  };
+
+  return (
+    <>
+      {badgeStatusType === 'Badge Notification' && (
+        <View
+          style={[
+            styles.badgenotification,
+            {backgroundColor: getBadgeBackgroundColor()},
+          ]}>
+          <Text style={[styles.text, {color: getBadgeTextColor()},getBadgeTextSize()]}>{badgeNotificationNumber}</Text>
+        </View>
+      )}
+      {badgeStatusType === 'Chips Info' && (
+        <View style={globalStyles.rowFlexBox}>
+          <View
+            style={[
+              globalStyles.chipsinfoInactive,
+              globalStyles.centerFlexBox,
+              {
+                backgroundColor: theme.ragcolor3tint,
+                borderColor: theme.strokecolor3tint,
+              },
+            ]}>
+            <Text
+              style={[
+                globalStyles.labelTypoInactive,
+                {color: theme.primarycolor},
+              ]}>
+              Inactive
+            </Text>
+          </View>
+        </View>
+      )}
+      {badgeStatusType === 'Text' &&
+      <Text style={styles.contentText}>Content</Text>}
+
+{badgeStatusType === 'Balance' &&
+      <View style={styles.typebalance1}>
+<View style={[styles.wrapper2, styles.wrapperFlexBox1]}>
+<Text style={[styles.content1, styles.contentTypo1]}>Content</Text>
+<View style={[styles.wrapper11, styles.wrapperFlexBox1]}>
+<Text style={styles.sar1}>SAR</Text>
+</View>
+</View>
+<Text style={[styles.content11, styles.contentTypo1]}>Content</Text>
+</View>}
+      {badgeStatusType === 'Balance with Status' && (
+        <View style={styles.typebalanceWithStatus}>
+          <View style={styles.wrapper}>
+            <Text style={styles.content}>Content</Text>
+            <View style={styles.wrapper1}>
+              <Text style={[styles.sar, styles.sarTypo]}>SAR</Text>
+            </View>
+          </View>
+          <View style={styles.chipsinfo}>
+            <Cancel />
+            <Text style={[styles.label, styles.sarTypo]}>Inactive</Text>
+          </View>
+        </View>
+      )}
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  sarTypo: {
+    textAlign: 'left',
+    color: '#000',
+    fontFamily: 'Univers Next for HSBC',
+  },
+  content: {
+    fontSize: 17,
+    lineHeight: 22,
+    fontWeight: '700',
+    textAlign: 'right',
+    color: '#000',
+    fontFamily: 'Univers Next for HSBC',
+  },
+  contentText: {
+    fontSize: 13,
+    lineHeight: 17,
+    fontFamily: "Univers Next for HSBC",
+    color: "#767676",
+    textAlign: "right"
+    },
+  sar: {
+    fontSize: 11,
+    lineHeight: 15,
+  },
+  wrapper1: {
+    paddingHorizontal: 0,
+    paddingVertical: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  wrapper: {
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    gap: 4,
+    alignItems: 'flex-end',
+  },
+  ragIcon: {
+    width: 16,
+    height: 16,
+  },
+  label: {
+    fontSize: 13,
+    lineHeight: 17,
+  },
+  chipsinfo: {
+    borderRadius: 4,
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 4,
+  },
+  typebalanceWithStatus: {
+    gap: 4,
+    alignItems: 'flex-end',
+  },
+  text: {
+    fontSize: 12,
+    lineHeight: 17,
+    fontFamily: 'Univers Next for HSBC',
+    color: '#000',
+    textAlign: 'center',
+    width: 19,
+    height: 19,
+  },
+  badgenotification: {
+    borderRadius: 100,
+    backgroundColor: '#ffbb33',
+    width: 20,
+    height: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  wrapperFlexBox1: {
+    flexDirection: "row",
+    alignItems: "flex-end"
+    },
+    contentTypo1: {
+    textAlign: "right",
+    fontFamily: "Univers Next for HSBC"
+    },
+    content1: {
+    fontSize: 17,
+    lineHeight: 22,
+    fontWeight: "700",
+    color: "#000"
+    },
+    sar1: {
+    fontSize: 11,
+    lineHeight: 15,
+    textAlign: "left",
+    color: "#000",
+    fontFamily: "Univers Next for HSBC"
+    },
+    wrapper11: {
+    paddingHorizontal: 0,
+    paddingVertical: 1
+    },
+    wrapper2: {
+    justifyContent: "flex-end",
+    gap: 4
+    },
+    content11: {
+    fontSize: 13,
+    lineHeight: 17,
+    color: "#767676"
+    },
+    typebalance1: {
+    // flex: 1,
+    // width: "100%",
+    gap: 4,
+    alignItems: "flex-end"
+    }
+});
+
+
 

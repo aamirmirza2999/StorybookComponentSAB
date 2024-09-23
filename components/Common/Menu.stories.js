@@ -6,8 +6,8 @@ import SvgIconList from '../../constants/SvgIconList';
 
 import NewListComponent from './NewListComponent';
 import TextDivider from './TextDivider';
-// import CommonHelper from '../../constants/CommonHelper';
-// import i18n from '../../locales/i18n';
+import CommonHelper from '../../constants/CommonHelper';
+import i18n from '../../locales/i18n';
 export default {
     title: 'components/MenuComponent',
   };
@@ -185,14 +185,16 @@ export default {
   NewListComponentStory.args = {
     listType: 'Inline',
     inlineListItemType: 'Actionable',
-    listItemPreviewType: 'Value',
-    iconPreview: false,
-    showDivider: true,
     listItemActionableType: 'Menu',
     listItemActionableSelectType: 'Check Box',
+    showDivider: true,
+    
+    
     iconActionableMenu: true,
     badgeActionableMenu: true,
     linkActionableMenu: true,
+    listItemPreviewType: 'Value',
+    iconPreview: false,
     stackedListItemType: 'Default',
     stackedListItemDefaultIcon: true,
     stackedListItemDefaultBadge: true,
@@ -205,6 +207,11 @@ export default {
     stackedListItemBodyShowBodyCopy: true,
     stackedListItemBodyShowStatus: true,
     stackedListItemBodyStatusState: 'Success',
+    badgeStatusType: 'Chips Info',
+    badgeNotificationType: 'Primary',
+    badgeNotificationSize: 'Small',
+    badgeNotificationNumber: '1',
+    listItemActionType: 'Chevron',
     lang: 'en',
     enableDarktheme: false,
   };
@@ -222,6 +229,7 @@ export default {
     listItemPreviewType: { 
       control: 'select',
       options: ['Value', 'Bullet Point'], 
+      if: { arg: 'inlineListItemType', eq: 'Preview' }
     },
     iconPreview: {
       control: 'boolean',
@@ -233,59 +241,105 @@ export default {
     listItemActionableType: { 
       control: 'select',
       options: ['Menu', 'Select'], 
+      if: { arg: 'listType', eq: 'Inline' }
     },
     listItemActionableSelectType: { 
       control: 'select',
       options: ['Check Box', 'Radio Button'], 
+      // if: { arg: 'inlineListItemType', neq: 'Preview' },
+      if: { arg: 'listItemActionableType', eq: 'Select' } ,
     },
     iconActionableMenu: {
       control: 'boolean',
+      if: { arg: 'listType', eq: 'Inline' },
+      // if: { arg: 'listItemActionableType', eq: 'Menu' } 
     },
     badgeActionableMenu: {
       control: 'boolean',
+      if: { arg: 'listType', eq: 'Inline' },
+      // if: { arg: 'listItemActionableType', eq: 'Menu' }  
     },
     linkActionableMenu: {
       control: 'boolean',
+      if: { arg: 'listType', eq: 'Inline' } ,
+      // if: { arg: 'listItemActionableType', eq: 'Menu' } 
     },
     stackedListItemType: { 
       control: 'select',
       options: ['Default', 'Preview'], 
+      if: { arg: 'listType', eq: 'Stacked' } 
     },
     stackedListItemDefaultIcon: {
       control: 'boolean',
+      if: { arg: 'listType', eq: 'Stacked' } 
     },
     stackedListItemDefaultBadge: {
       control: 'boolean',
+      if: { arg: 'listType', eq: 'Stacked' } 
     },
     stackedListItemDefaultAction: {
       control: 'boolean',
+      if: { arg: 'listType', eq: 'Stacked' } 
     },
     listtemAddonType: {
       control: 'select',
-      options: ['Avatar', 'Icon', 'Logo', 'Icon with BG', 'Avatar With Bank', 'Pie Graph'], 
+      options: ['Avatar', 'Icon', 'Logo', 'Icon with BG', 'Avatar With Bank', 'Pie Graph'],
+      if: { arg: 'stackedListItemDefaultIcon' }  
     },
     stackedListItemBodyType: {
       control: 'select',
       options: ['Headline+Body', 'Label+Value', 'Extra Content'], 
+      if: { arg: 'stackedListItemDefaultBadge'} 
     },
     stackedListItemBodyShowContent: {
       control: 'boolean',
+      if: { arg: 'stackedListItemBodyType', eq: 'Headline+Body' } 
     },
     stackedListItemBodyShowLabel: {
       control: 'boolean',
+      if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' } 
     },
     stackedListItemBodyShowSubTitle: {
       control: 'boolean',
+      if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' } 
     },
     stackedListItemBodyShowBodyCopy: {
       control: 'boolean',
+      if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' } 
     },
     stackedListItemBodyShowStatus: {
       control: 'boolean',
+      if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' } 
     },
     stackedListItemBodyStatusState: {
       control: 'select',
       options: ['Success', 'Error', 'Warning', 'Neutral'], 
+      if: { arg: 'stackedListItemBodyShowStatus'} 
+    },
+    badgeStatusType: {
+      control: 'select',
+      options: ['Badge Notification', 'Chips Info', 'Text', 'Balance', 'Balance with Status'], 
+      // if: { arg: 'stackedListItemBodyShowStatus'} 
+    },
+    badgeNotificationType: {
+      control: 'select',
+      options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'], 
+      if: { arg: 'badgeStatusType' , eq: 'Badge Notification'} 
+    },
+    badgeNotificationSize: {
+      control: 'select',
+      options: ['Small', 'Large', 'XS'], 
+      if: { arg: 'badgeStatusType' , eq: 'Badge Notification'} 
+    },
+    badgeNotificationNumber: {
+      control: 'select',
+      options: ['1', '2', '3', '4', '5', '6','7', '8', '9','10', '99+'], 
+      if: { arg: 'badgeStatusType' , eq: 'Badge Notification'} 
+    },
+    listItemActionType: {
+      control: 'select',
+      options: ['Toggle', 'Check Box', 'Chevron', 'Radio Button', 'Edit', 'Delete'], 
+      // if: { arg: 'badgeStatusType' , eq: 'Badge Notification'} 
     },
     lang: {
       control: 'select',
