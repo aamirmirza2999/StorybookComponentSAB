@@ -8,8 +8,8 @@ import SvgIconList from '../../constants/SvgIconList';
 
 import NewListComponent from './NewListComponent';
 import TextDivider from './TextDivider';
-import CommonHelper from '../../constants/CommonHelper';
-import i18n from '../../locales/i18n';
+// import CommonHelper from '../../constants/CommonHelper';
+// import i18n from '../../locales/i18n';
 export default {
     title: 'components/MenuComponent',
   };
@@ -157,6 +157,30 @@ export default {
   
 
   export const NewListComponentStory = (args) => {
+    const { t } = useTranslation();
+    const [language, setLanguage] = useState('en');
+    const {  toggleTheme,isDarkMode } = useTheme();
+    const handleChange = (newLang, setLanguage, i18n) => {
+      setLanguage(newLang);
+      i18n.changeLanguage(newLang); 
+      CommonHelper.changeLanguage(newLang, setLanguage); 
+    };
+
+    useEffect(() => {
+      CommonHelper.initLanguage(setLanguage);
+    }, []);
+    useEffect(() => {
+      if (language !== args.lang) {
+        handleChange(args.lang, setLanguage, i18n);
+      }
+    }, [args.lang]);
+
+    useEffect(() => {
+   
+      if (args.enableDarktheme !== isDarkMode) {
+        toggleTheme();
+      }
+    }, [args.enableDarktheme, isDarkMode]);
     return <NewListComponent {...args} />;
   };
   

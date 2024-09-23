@@ -1349,7 +1349,7 @@ textFlexBox3: {
   },
   linkTypo: {
     textAlign: "left",
-    color: "#000",
+    // color: "#000",
     fontFamily: Fonts.HSBC
   },
   centerFlexBox: {
@@ -1374,17 +1374,17 @@ textFlexBox3: {
     textAlign: "center",
     width: actuatedNormalize(19),
     height: actuatedNormalize(19),
-    color: "#000",
+    // color: "#000",
     fontFamily:Fonts.HSBC
   },
   cicularView: {
     borderRadius: actuatedNormalize(100),
-    backgroundColor: "#ffbb33",
+    // backgroundColor: "#ffbb33",
     width: actuatedNormalize(20),
     height: actuatedNormalize(20)
   },
   dividerStyle: {
-    backgroundColor: "rgba(118, 118, 118, 0.2)",
+    // backgroundColor: "rgba(118, 118, 118, 0.2)",
     height: actuatedNormalize(2),
     alignSelf: "stretch",
     overflow: "hidden",
@@ -1400,7 +1400,7 @@ textFlexBox3: {
     fontWeight: fontWeightBold,
     alignSelf: "stretch",
     textAlign: "left",
-    color: "#000",
+    // color: "#000",
     fontFamily: Fonts.HSBC
   },
   labeltypoBody: {
@@ -1417,9 +1417,9 @@ textFlexBox3: {
   },
   chipsinfoInactive: {
     borderRadius: radiusXS,
-    backgroundColor: "#f9f2f3",
+    // backgroundColor: "#f9f2f3",
     borderStyle: "solid",
-    borderColor: "#e5b2b5",
+    // borderColor: "#e5b2b5",
     borderWidth: 0.5,
     paddingHorizontal: spacingXS,
     paddingVertical: actuatedNormalize(2),
@@ -1443,7 +1443,7 @@ textFlexBox3: {
     fontSize: fontMedium,
     lineHeight: lineHeightMedium,
     fontFamily: Fonts.HSBC,
-    color: "#767676",
+    // color: "#767676",
     textAlign: "left"
   },
   valueLightPreviewValue: {
@@ -1451,7 +1451,7 @@ textFlexBox3: {
     lineHeight: lineHeightMediumLarge,
     fontWeight: "700",
     fontFamily: Fonts.HSBC,
-    color: "#000",
+    // color: "#000",
     textAlign: "left",
   },
   labelBulletPoint: {
@@ -1464,7 +1464,7 @@ textFlexBox3: {
   },
   listItemActionableSelectType: {
      borderStyle: 'solid',
-     borderColor: '#00847f',
+    //  borderColor: '#00847f',
      borderWidth: 1,
      width: actuatedNormalize(20),
      height: actuatedNormalize(20),
@@ -1564,12 +1564,12 @@ welcomeBackFlexBox: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
     fontFamily: Fonts.HSBC,
-    color: '#db0011',
+    // color: '#db0011',
     textAlign: 'left',
   },
   wrapperListItemAddon: {
     borderRadius: actuatedNormalize(100),
-    backgroundColor: 'rgba(118, 118, 118, 0.1)',
+    // backgroundColor: 'rgba(118, 118, 118, 0.1)',
     width: spacingXL,
     height: spacingXL,
     overflow: 'hidden',
@@ -1586,7 +1586,7 @@ welcomeBackFlexBox: {
     fontSize: fontSmallMedium,
     lineHeight: lineHeightSmallMedium,
     fontFamily: Fonts.HSBC,
-    color: '#db0011',
+    // color: '#db0011',
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
@@ -1603,18 +1603,18 @@ welcomeBackFlexBox: {
   labelstackedListItemBodyType: {
     fontSize: fontMedium,
     lineHeight: lineHeightMedium,
-    color: '#767676',
+    // color: '#767676',
   },
   valuestackedListItemBodyType: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
     fontWeight: '700',
-    color: '#000',
+    // color: '#000',
   },
   labelstackedListItemBodyLabel: {
     fontSize: fontXSmall,
     lineHeight: lineHeightXSmall,
-    color: '#b2b2b2',
+    // color: '#b2b2b2',
     alignSelf: 'stretch',
   },
   labelTypo: {
@@ -1627,7 +1627,7 @@ welcomeBackFlexBox: {
     fontWeight: '700',
   },
   stackedListItemBodyheadlineFlexBox: {
-    color: '#000',
+    // color: '#000',
     textAlign: 'left',
     fontFamily: Fonts.HSBC,
     alignSelf: 'stretch',

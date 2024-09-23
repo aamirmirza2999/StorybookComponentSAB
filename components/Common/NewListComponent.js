@@ -9,9 +9,9 @@ import {
 import {actuatedNormalize} from '../../constants/PixelScaling';
 import {globalStyles} from '../../constants/GlobalStyles';
 import {spacingM, spacingXXS} from '../../constants/Size';
-
+import { useTheme } from '../../constants/Theme/ThemeProvider';
 const NewListComponent = props => {
-  console.log('props--->', props);
+  const { theme } = useTheme();
 
   return (
     <View style={globalStyles.flexBoxspacingS}>
@@ -25,7 +25,7 @@ const NewListComponent = props => {
                     <InfoIconRed width={spacingM} height={spacingM} />
                   )}
 
-                  <Text style={[globalStyles.link, globalStyles.linkTypo]}>
+                  <Text style={[globalStyles.link, globalStyles.linkTypo,{color : theme.primarycolor}]}>
                     Link
                   </Text>
                   <View style={globalStyles.wrapperFlexBoxRow}>
@@ -35,8 +35,9 @@ const NewListComponent = props => {
                           style={[
                             globalStyles.cicularView,
                             globalStyles.centerFlexBox,
+                            {backgroundColor : theme.ragcolor15}
                           ]}>
-                          <Text style={globalStyles.circularViewtext}>1</Text>
+                          <Text style={[globalStyles.circularViewtext,{color : theme.primarycolor}]}>1</Text>
                         </View>
                       )}
                     </View>
@@ -47,21 +48,25 @@ const NewListComponent = props => {
                 </View>
               ) : (
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
-                  <Text style={[globalStyles.link, globalStyles.linkTypo]}>
+                  <Text style={[globalStyles.link, globalStyles.linkTypo,{color : theme.primarycolor}]}>
                     Label
                   </Text>
                   {props.listItemActionableSelectType === 'Check Box' ? (
                     <View
                       style={[
                         globalStyles.listItemActionableSelectType,
-                        {borderRadius: spacingXXS},
+                        {borderRadius: spacingXXS,
+                          borderColor : theme.ragcolor6
+                        },
                       ]}
                     />
                   ) : (
                     <View
                       style={[
                         globalStyles.listItemActionableSelectType,
-                        {borderRadius: spacingM},
+                        {borderRadius: spacingM,
+                          borderColor : theme.ragcolor6
+                        },
                       ]}
                     />
                   )}
@@ -76,11 +81,11 @@ const NewListComponent = props => {
                 <>
                   {props.iconPreview ? (
                     <View style={globalStyles.rowFlexBoxSpaceBetween}>
-                      <Text style={[globalStyles.labelLightPreviewValue]}>
+                      <Text style={[globalStyles.labelLightPreviewValue,{color:theme.primarytextcolor2}]}>
                         Label
                       </Text>
 
-                      <Text style={[globalStyles.valueLightPreviewValue]}>
+                      <Text style={[globalStyles.valueLightPreviewValue,{color : theme.primarycolor}]}>
                         Value
                       </Text>
 
@@ -91,14 +96,14 @@ const NewListComponent = props => {
                   ) : (
                     <View style={globalStyles.rowFlexBoxSpaceBetween}>
                       <View style={{width: '50%'}}>
-                        <Text style={[globalStyles.labelLightPreviewValue]}>
+                        <Text style={[globalStyles.labelLightPreviewValue,{color:theme.primarytextcolor2}]}>
                           Label
                         </Text>
                       </View>
 
                       {/* Middle Label */}
                       <View style={{width: '50%'}}>
-                        <Text style={[globalStyles.valueLightPreviewValue]}>
+                        <Text style={[globalStyles.valueLightPreviewValue, {color : theme.primarycolor}]}>
                           Value
                         </Text>
                       </View>
@@ -113,7 +118,7 @@ const NewListComponent = props => {
                       globalStyles.wrapperFlexBoxRow,
                     ]}>
                     <TickIcon width={spacingM} height={spacingM} />
-                    <Text style={globalStyles.labelBulletPoint}>Label</Text>
+                    <Text style={[globalStyles.labelBulletPoint,{color : theme.primarycolor}]}>Label</Text>
                   </View>
                 </>
               )}
@@ -131,8 +136,6 @@ const NewListComponent = props => {
                 <ListItemAddon addonType={props.listtemAddonType} />
               )}
               <View style={globalStyles.stackedlistitembody}>
-                {/* <Text style={[globalStyles.labeltypoHeadline]}>Headline</Text>
-                <Text style={[globalStyles.labeltypoBody]}>Body copy</Text> */}
                 <StackedListItemBody
                   stackedListItemBodyType={props.stackedListItemBodyType}
                   stackedListItemBodyShowContent={
@@ -161,8 +164,11 @@ const NewListComponent = props => {
                     style={[
                       globalStyles.chipsinfoInactive,
                       globalStyles.centerFlexBox,
+                      {backgroundColor: theme.ragcolor3tint,
+                        borderColor : theme.strokecolor3tint
+                      }
                     ]}>
-                    <Text style={[globalStyles.labelTypoInactive]}>
+                    <Text style={[globalStyles.labelTypoInactive,{color : theme.primarycolor}]}>
                       Inactive
                     </Text>
                   </View>
@@ -176,16 +182,19 @@ const NewListComponent = props => {
             <View style={[globalStyles.wrapperFlexBoxRow, {flex: 1}]}>
               <InfoIconRed width={spacingM} height={spacingM} />
               <View style={globalStyles.stackedlistitembody}>
-                <Text style={[globalStyles.labeltypoHeadline]}>Headline</Text>
-                <Text style={[globalStyles.labeltypoBody]}>Body copy</Text>
+                <Text style={[globalStyles.labeltypoHeadline, {color : theme.primarycolor}]}>Headline</Text>
+                <Text style={[globalStyles.labeltypoBody,{color: theme.primarytextcolor2}]}>Body copy</Text>
               </View>
               <View style={globalStyles.rowFlexBox}>
                 <View
                   style={[
                     globalStyles.chipsinfoInactive,
                     globalStyles.centerFlexBox,
+                    {backgroundColor: theme.ragcolor3tint,
+                      borderColor : theme.strokecolor3tint
+                    }
                   ]}>
-                  <Text style={[globalStyles.labelTypoInactive]}>Inactive</Text>
+                  <Text style={[globalStyles.labelTypoInactive, {color : theme.primarycolor}]}>Inactive</Text>
                 </View>
               </View>
               <RightArrow width={spacingM} height={spacingM} />
@@ -193,7 +202,7 @@ const NewListComponent = props => {
           )}
         </View>
       )}
-      {props.showDivider && <View style={globalStyles.dividerStyle} />}
+      {props.showDivider && <View style={[globalStyles.dividerStyle, {backgroundColor: theme.primarycolor2_20}]} />}
     </View>
   );
 };
@@ -205,21 +214,21 @@ const ListItemAddon = ({addonType}) => {
     <>
       {addonType === 'Avatar' && (
         <View style={globalStyles.avatarListItemAddon}>
-          <Text style={globalStyles.avatarListItemAddonText}>JM</Text>
+          <Text style={[globalStyles.avatarListItemAddonText,{color: theme.primarytextcolor3}]}>JM</Text>
         </View>
       )}
       {addonType === 'Icon' && (
         <InfoIconRed width={spacingM} height={spacingM} />
       )}
       {addonType === 'Icon with BG' && (
-        <View style={globalStyles.wrapperListItemAddon}>
+        <View style={[globalStyles.wrapperListItemAddon,{backgroundColor: theme.primarycolor2_10}]}>
           <InfoIconRed width={spacingM} height={spacingM} />
         </View>
       )}
       {addonType === 'Pie Graph' && (
         <View>
           <Slices />
-          <Text style={globalStyles.PieGraphListItemAddon}>45%</Text>
+          <Text style={[globalStyles.PieGraphListItemAddon, {color: theme.primarytextcolor3}]}>45%</Text>
         </View>
       )}
     </>
@@ -253,36 +262,36 @@ const StackedListItemBody = ({
     <>
       {stackedListItemBodyType === 'Headline+Body' && (
         <View>
-          <Text style={[globalStyles.labeltypoHeadline]}>Headline</Text>
+          <Text style={[globalStyles.labeltypoHeadline, {color : theme.primarycolor}]}>Headline</Text>
           {stackedListItemBodyShowContent && (
-            <Text style={[globalStyles.labeltypoBody]}>Body copy</Text>
+            <Text style={[globalStyles.labeltypoBody,{color: theme.primarytextcolor2}]}>Body copy</Text>
           )}
         </View>
       )}
       {stackedListItemBodyType === 'Label+Value' && (
         <View>
-          <Text style={[globalStyles.labelstackedListItemBodyType, globalStyles.labelFlexBox]}>Label</Text>
-          <Text style={[globalStyles.valuestackedListItemBodyType, globalStyles.labelFlexBox]}>Value</Text>
+          <Text style={[globalStyles.labelstackedListItemBodyType, globalStyles.labelFlexBox , {color:theme.primarytextcolor2}]}>Label</Text>
+          <Text style={[globalStyles.valuestackedListItemBodyType, globalStyles.labelFlexBox, {color : theme.primarycolor}]}>Value</Text>
         </View>
       )}
       {stackedListItemBodyType === 'Extra Content' && (
         <View>
           {stackedListItemBodyShowLabel && (
             <Text
-              style={[globalStyles.labelstackedListItemBodyLabel, globalStyles.labelTypo]}>
+              style={[globalStyles.labelstackedListItemBodyLabel, globalStyles.labelTypo,{color: theme.primarytextcolor2_2}]}>
               Label
             </Text>
           )}
-          <Text style={[globalStyles.stackedListItemBodyheadline, globalStyles.stackedListItemBodyheadlineFlexBox]}>
+          <Text style={[globalStyles.stackedListItemBodyheadline, globalStyles.stackedListItemBodyheadlineFlexBox, {color : theme.primarycolor}]}>
             Headline
           </Text>
           {stackedListItemBodyShowSubTitle && (
-            <Text style={[globalStyles.subTitle, globalStyles.stackedListItemBodyheadlineFlexBox]}>
+            <Text style={[globalStyles.subTitle, globalStyles.stackedListItemBodyheadlineFlexBox,  {color : theme.primarycolor}]}>
               Sub title
             </Text>
           )}
           {stackedListItemBodyShowBodyCopy && (
-            <Text style={[globalStyles.bodyCopy, globalStyles.labelTypo]}>Body copy</Text>
+            <Text style={[globalStyles.bodyCopy, globalStyles.labelTypo, {color:theme.primarytextcolor2}]}>Body copy</Text>
           )}
           {stackedListItemBodyShowStatus && (
             <View style={globalStyles.status}>
