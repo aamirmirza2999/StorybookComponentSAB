@@ -1519,6 +1519,10 @@ welcomeBackFlexBox: {
   paddingHorizontal: 16,
   paddingVertical: 24,
   gap: 8
+  },
+  textComponentStyle:{
+    flexDirection:'row',
+    alignItems:'center'
   }
 
 }

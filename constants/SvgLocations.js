@@ -69,10 +69,11 @@ export { default as HomeTab } from "../assets/Home_light.svg";
 export {default as Iconfilledmenu} from "../assets/iconfilledmenu.svg"
 export {default as IconOutlineMenu} from "../assets/iconOutlineMenu.svg"
 export {default as DarkIconList} from "../assets/DarkH.svg"
-
-
-
-
+export {default as BulletPoint} from "../assets/bulletPoints.svg";
+export {default as Copy} from "../assets/copy.svg";
+export {default as Edit} from "../assets/edit.svg";
+export {default as Badge} from "../assets/badge.svg";
+export {default as TextInfoIcon} from "../assets/textinfo.svg";
 export {default as WhiteArrow} from "../assets/arrowWhite.svg"
 export {default as HelpIcon} from "../assets/help.svg"
 export {default as TickIcon} from "../assets/tick.svg"
