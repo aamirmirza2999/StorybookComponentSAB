@@ -170,6 +170,18 @@ export default {
     iconActionableMenu: true,
     badgeActionableMenu: true,
     linkActionableMenu: true,
+    stackedListItemType: 'Default',
+    stackedListItemDefaultIcon: true,
+    stackedListItemDefaultBadge: true,
+    stackedListItemDefaultAction: true,
+    listtemAddonType : 'Icon',
+    stackedListItemBodyType: 'Headline+Body',
+    stackedListItemBodyShowContent: true,
+    stackedListItemBodyShowLabel: true,
+    stackedListItemBodyShowSubTitle: true,
+    stackedListItemBodyShowBodyCopy: true,
+    stackedListItemBodyShowStatus: true,
+    stackedListItemBodyStatusState: 'Success',
     lang: 'en',
     enableDarktheme: false,
   };
@@ -211,6 +223,46 @@ export default {
     },
     linkActionableMenu: {
       control: 'boolean',
+    },
+    stackedListItemType: { 
+      control: 'select',
+      options: ['Default', 'Preview'], 
+    },
+    stackedListItemDefaultIcon: {
+      control: 'boolean',
+    },
+    stackedListItemDefaultBadge: {
+      control: 'boolean',
+    },
+    stackedListItemDefaultAction: {
+      control: 'boolean',
+    },
+    listtemAddonType: {
+      control: 'select',
+      options: ['Avatar', 'Icon', 'Logo', 'Icon with BG', 'Avatar With Bank', 'Pie Graph'], 
+    },
+    stackedListItemBodyType: {
+      control: 'select',
+      options: ['Headline+Body', 'Label+Value', 'Extra Content'], 
+    },
+    stackedListItemBodyShowContent: {
+      control: 'boolean',
+    },
+    stackedListItemBodyShowLabel: {
+      control: 'boolean',
+    },
+    stackedListItemBodyShowSubTitle: {
+      control: 'boolean',
+    },
+    stackedListItemBodyShowBodyCopy: {
+      control: 'boolean',
+    },
+    stackedListItemBodyShowStatus: {
+      control: 'boolean',
+    },
+    stackedListItemBodyStatusState: {
+      control: 'select',
+      options: ['Success', 'Error', 'Warning', 'Neutral'], 
     },
     lang: {
       control: 'select',
