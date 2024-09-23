@@ -483,7 +483,7 @@ togglelabel:{
   avatar: {
     // width: actuatedNormalize(30),
     // height: actuatedNormalize(30),
-    //top:  Platform.OS ==="ios" ?actuatedNormalize(3):actuatedNormalize(5),
+    top:  Platform.OS ==="ios" ?actuatedNormalize(3):actuatedNormalize(3),
     marginRight: actuatedNormalize(6)
 
 },
@@ -1254,6 +1254,94 @@ accountTypo: {
     color: "#fff",
     fontFamily: Fonts.HSBC
     },
+BlockText : {
+  fontSize: fontLarge,
+  lineHeight: lineHeightLarge,
+  fontWeight: fontWeightBold,
+  fontFamily: Fonts.HSBC,
+  // color: "#000",
+  textAlign: "left",
+  paddingBottom:spacingM,
+},
+Entairebanner: {
+  flex: 1,
+  width: "100%"
+},
+buttonquickaction: {
+  borderRadius: radiusS,
+  // backgroundColor: stylesbgshades,
+  height: actuatedNormalize(132),
+  overflow: "hidden",
+  padding: spacingS,
+  justifyContent: "space-between",
+  width: actuatedNormalize(343)
+},
+buttonquickactionInner: {
+  alignItems: "flex-end",
+  zIndex: 2,
+  flexDirection: "row",
+  alignSelf: "stretch",
+  justifyContent: "space-between"
+},
+frameWrapper : {
+  alignSelf: "stretch",
+  flex: 1
+},
+frameContainer: {
+  alignSelf: "stretch"
+},
+checkOutYour: {
+  fontSize: fontMediumLarge,
+  lineHeight: lineHeightMediumLarge,
+  fontFamily: Fonts.HSBC,
+  // color: "#000",
+  width: actuatedNormalize(310),
+  textAlign: "left",
+  height: actuatedNormalize(24)
+},
+linkButton1: {
+  fontSize: fontMedium,
+  lineHeight: lineHeightMedium,
+  },
+typesolid : {
+  borderRadius: radiusS,
+  // backgroundColor: stylesblockbg,
+  // flex: 1,
+  width: "40%",
+  height: actuatedNormalize(110),
+  padding: spacingS,
+  justifyContent: "space-between",
+  overflow: "hidden"
+}, 
+Blocktext2: {
+  // height: actuatedNormalize(42),
+  flexDirection: "row",
+  justifyContent: "space-between"
+},
+textFlexBox2: {
+  alignItems: "flex-end",
+  alignSelf: "stretch"
+},
+nameWrapper: {
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "row",
+  alignSelf: "stretch"
+},
+blockname: {
+  fontSize: fontMediumLarge,
+  lineHeight: lineHeightMediumLarge,
+  fontFamily: Fonts.HSBC,
+  // color: "#000",
+  textAlign: "left",
+  display: "flex",
+  width: actuatedNormalize(108),
+  overflow: "hidden"
+},
+textFlexBox3: {
+  alignItems: "flex-end",
+  alignSelf: "stretch"
+},
   wrapperFlexBoxRow: {
     gap: spacingXS,
     alignItems: "center",
@@ -1457,6 +1545,10 @@ welcomeBackFlexBox: {
     paddingVertical: 24,
     gap: 8
     },
+  textComponentStyle:{
+    flexDirection:'row',
+    alignItems:'center'
+  },
 
     //....
     welcomeBackTypo: {

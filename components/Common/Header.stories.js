@@ -102,7 +102,7 @@ MainHeaderStory.args = {
   avatarblack: true,
   avatarname: false,
   avatarnamemid:false,
-  avatarnamesmall:true,
+  avatarnamesmall:false,
   avatarwhite:false,
   lang: 'en',
   enableDarktheme: false,
