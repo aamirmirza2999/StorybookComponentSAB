@@ -1500,7 +1500,6 @@ typepromotionalLanguageeng: {
 
 welcomeBackFlexBox: {
   textAlign: "left",
-  color: "#000",
   fontFamily: "Univers Next for HSBC",
   alignSelf: "stretch"
   },
@@ -1524,7 +1523,6 @@ welcomeBackFlexBox: {
   //..........
   FlexBox: {
     textAlign: "left",
-    color: "#000",
     fontFamily: "Univers Next for HSBC",
     alignSelf: "stretch",
 
@@ -1655,7 +1653,7 @@ welcomeBackFlexBox: {
     width: '100%',
   },
 
-    //....
+    //....textdividr
     welcomeBackTypo: {
       textAlign: "left",
       fontFamily: "Univers Next for HSBC"
@@ -1670,25 +1668,9 @@ welcomeBackFlexBox: {
       fontSize: 17,
       lineHeight: 22,
       fontWeight: "700",
-      color: "#000",
       textAlign: "left",
       fontFamily: "Univers Next for HSBC",
       flex: 1
-      },
-      linkButton1: {
-      fontSize: 14,
-      lineHeight: 18,
-      color: "#db0011",
-      textAlign: "left",
-      fontFamily: "Univers Next for HSBC"
-      },
-      wrapperlink: {
-      paddingHorizontal: 0,
-      paddingVertical: 4
-      },
-      iconchevronright: {
-      width: 24,
-      height: 24
       },
       welcomeBackParent: {
       flexDirection: "row",
@@ -1698,7 +1680,6 @@ welcomeBackFlexBox: {
       sublinktext: {
       fontSize: 15,
       lineHeight: 20,
-      color: "#000",
       textAlign: "left",
       fontFamily: "Univers Next for HSBC",
       alignSelf: "stretch"
