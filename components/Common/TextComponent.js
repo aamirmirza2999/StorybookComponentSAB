@@ -31,14 +31,13 @@ const TextComponent = (props) => {
           style={[
             styles.defaultTextStyle,
             {
-              color: isDarkMode?theme.primarytextcolor2: theme.primarytextcolor, // Primary text color
-              fontSize: props.fontSize,
-              fontWeight: props.fontWeight === 'null' ? null : props.fontWeight,
+              color: isDarkMode ? theme.primarytextcolor2 : theme.primarytextcolor, // Primary text color
+              fontSize: props.fontSize || 16,
+              fontWeight: props.fontWeight === 'null' ? null : props.fontWeight, // Handle null fontWeight
               textTransform: props.textTransform || 'none',
             },
             fontsFamily(props.fontFamily), // Apply font family
             props.style,
-
           ]}
           onPress={props.onPress}
           numberOfLines={props.numberOfLines}
@@ -47,14 +46,13 @@ const TextComponent = (props) => {
         >
           {props.bulletPoint === 'true' ? <Text>o </Text> : null}
           {props.children}
-
         </Text>
         {props.editable && !props.copyable && (
           <Edit
-            style={{ marginTop: actuatedNormalize(2)}}
+            style={{ marginTop: actuatedNormalize(2) }}
             width={actuatedNormalize(24)}
             height={actuatedNormalize(24)}
-           />
+          />
         )}
         {props.copyable && !props.editable && (
           <Copy
@@ -69,24 +67,26 @@ const TextComponent = (props) => {
       <View style={globalStyles.textComponentStyle}>
         {props.enableSecondary && (
           <>
-            {props.bulletPoint === 'true.success' ?
+            {props.bulletPoint === 'true.success' ? (
               <Text>
                 <BulletPoint
-                  style={{ marginTop: actuatedNormalize(2)}}
-                  width={actuatedNormalize(18)} height={actuatedNormalize(18)}
+                  style={{ marginTop: actuatedNormalize(2) }}
+                  width={actuatedNormalize(18)}
+                  height={actuatedNormalize(18)}
                 />
-              <Text> </Text>
+                <Text> </Text>
               </Text>
-              : props.bulletPoint === 'true' ? <Text>o </Text> : null
-            }
+            ) : props.bulletPoint === 'true' ? (
+              <Text>o </Text>
+            ) : null}
             <Text
               testID={props.testID}
               accessibilityLabel={props.accessibilityLabel}
               style={[
                 styles.defaultTextStyle,
                 {
-                  color: props.enableSecondary || isDarkMode ? theme.primarytextcolor2: theme.primarytextcolor,
-                  fontSize: props.fontSize,
+                  color: props.enableSecondary || isDarkMode ? theme.primarytextcolor2 : theme.primarytextcolor,
+                  fontSize: props.fontSize || 16,
                   fontWeight: props.fontWeight === 'null' ? null : props.fontWeight,
                   textTransform: props.textTransform || 'none',
                 },
@@ -120,38 +120,39 @@ const TextComponent = (props) => {
 
       {/* Headline Text Component */}
       <View style={globalStyles.textComponentStyle}>
+        {props.isHeadline &&(
+          <>
         <Text
           testID={props.testID}
           accessibilityLabel={props.accessibilityLabel}
           style={[
             styles.defaultTextStyle,
             {
-              color: isDarkMode?theme.primarytextcolor4: theme.primarytextcolor,
+              color: isDarkMode ? theme.primarytextcolor4 : theme.primarytextcolor,
               fontSize: 17 || props.fontSize,
               fontWeight: 700 || props.fontWeight,
               textTransform: props.textTransform || 'none',
             },
-            fontsFamily(props.fontFamily), // Apply font family
+            fontsFamily(props.fontFamily),
             props.style,
-
           ]}
           onPress={props.onPress}
           numberOfLines={props.numberOfLines}
           selectable={false}
-          suppressHighlighting={true} // iOS highlight issue fix
+          suppressHighlighting={true}
         >
           {props.headlineText + " "}
         </Text>
+        </>
+        )}
         {props.textInfoIcon && !props.badgeIcon && (
           <TextInfoIcon
-            // style={{ marginTop: actuatedNormalize(2) }}
             width={actuatedNormalize(24)}
             height={actuatedNormalize(24)}
           />
         )}
         {props.badgeIcon && !props.textInfoIcon && (
           <Badge
-            // style={{ marginTop: actuatedNormalize(2) }}
             width={actuatedNormalize(20)}
             height={actuatedNormalize(20)}
           />
