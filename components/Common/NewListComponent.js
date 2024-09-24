@@ -61,20 +61,34 @@ const NewListComponent = props => {
                   <View style={globalStyles.wrapperFlexBoxRow}>
                     <View>
                       {props.badgeActionableMenu && (
-                        <View
-                          style={[
-                            globalStyles.cicularView,
-                            globalStyles.centerFlexBox,
-                            {backgroundColor: theme.ragcolor15},
-                          ]}>
-                          <Text
-                            style={[
-                              globalStyles.circularViewtext,
-                              {color: theme.primarycolor},
-                            ]}>
-                            1
-                          </Text>
-                        </View>
+                        // <View
+                        //   style={[
+                        //     globalStyles.cicularView,
+                        //     globalStyles.centerFlexBox,
+                        //     {backgroundColor: theme.ragcolor15},
+                        //   ]}>
+                        //   <Text
+                        //     style={[
+                        //       globalStyles.circularViewtext,
+                        //       {color: theme.primarycolor},
+                        //     ]}>
+                        //     1
+                        //   </Text>
+                        // </View>
+                        <BadgeStatusMenu
+                          badgeActionableMenuType={
+                            props.badgeActionableMenuType
+                          }
+                          badgeNotificationMenuType={
+                            props.badgeNotificationMenuType
+                          }
+                          badgeNotificationMenuSize={
+                            props.badgeNotificationMenuSize
+                          }
+                          badgeNotificationMenuNumber={
+                            props.badgeNotificationMenuNumber
+                          }
+                        />
                       )}
                     </View>
                     {props.linkActionableMenu && (
@@ -612,6 +626,185 @@ const BadgeStatus = ({
         </View>
       )}
       {badgeStatusType === 'Balance with Status' && (
+        <View style={globalStyles.typebalance}>
+          <View style={globalStyles.wrapperContentAndSar}>
+            <Text
+              style={[
+                globalStyles.contentBalanceWithStatus,
+                {color: theme.primarycolor},
+              ]}>
+              Content
+            </Text>
+            <View style={globalStyles.wrapperSARLabel}>
+              <Text
+                style={[globalStyles.sarLabel, {color: theme.primarycolor}]}>
+                SAR
+              </Text>
+            </View>
+          </View>
+          <View style={globalStyles.chipsinfoBalanceStatusType}>
+            <Cancel />
+            <Text
+              style={[globalStyles.labelInactive, {color: theme.primarycolor}]}>
+              Inactive
+            </Text>
+          </View>
+        </View>
+      )}
+    </>
+  );
+};
+
+const BadgeStatusMenu = ({
+  badgeActionableMenuType,
+  badgeNotificationMenuType,
+  badgeNotificationMenuSize,
+  badgeNotificationMenuNumber,
+}) => {
+  const {theme} = useTheme();
+  console.log('Proppss-->', badgeActionableMenuType);
+  const getBadgeBackgroundColor = () => {
+    switch (badgeNotificationMenuType) {
+      case 'Success':
+        return '#00847F';
+      case 'Primary':
+        return '#A8000B';
+      case 'Warning':
+        return '#FFBB33';
+      case 'Neutral':
+        return '#305A85';
+      case 'Reverse':
+        return '#ffffff';
+      default:
+        return '#A8000B';
+    }
+  };
+
+  const getBadgeTextColor = () => {
+    switch (badgeNotificationMenuType) {
+      case 'Success':
+        return '#ffffff';
+      case 'Primary':
+        return '#ffffff';
+      case 'Warning':
+        return '#000000';
+      case 'Neutral':
+        return '#000000';
+      case 'Reverse':
+        return '#A8000B';
+      default:
+        return '#000000';
+    }
+  };
+
+  const getBadgeTextSize = () => {
+    switch (badgeNotificationMenuSize) {
+      case 'Small':
+        return {
+          fontSize: 12,
+          lineHeight: 17,
+        };
+      case 'Large':
+        return {
+          fontSize: 14,
+          lineHeight: 18,
+        };
+      case 'XS':
+        return {
+          fontSize: 11,
+          lineHeight: 15,
+        };
+      default:
+        return {
+          fontSize: 12,
+          lineHeight: 17,
+        };
+    }
+  };
+
+  return (
+    <>
+      {badgeActionableMenuType === 'Badge Notification' && (
+        <View
+          style={[
+            globalStyles.badgenotificationList,
+            {backgroundColor: getBadgeBackgroundColor()},
+          ]}>
+          <Text
+            style={[
+              globalStyles.circularViewtext,
+              {color: getBadgeTextColor()},
+              getBadgeTextSize(),
+            ]}>
+            {badgeNotificationMenuNumber}
+          </Text>
+        </View>
+      )}
+      {badgeActionableMenuType === 'Chips Info' && (
+        <View style={globalStyles.rowFlexBox}>
+          <View
+            style={[
+              globalStyles.chipsinfoInactive,
+              globalStyles.centerFlexBox,
+              {
+                backgroundColor: theme.ragcolor3tint,
+                borderColor: theme.strokecolor3tint,
+              },
+            ]}>
+            <Text
+              style={[
+                globalStyles.labelTypoInactive,
+                {color: theme.primarycolor},
+              ]}>
+              Inactive
+            </Text>
+          </View>
+        </View>
+      )}
+      {badgeActionableMenuType === 'Text' && (
+        <Text
+          style={[globalStyles.contentText, {color: theme.primarytextcolor2}]}>
+          Content
+        </Text>
+      )}
+
+      {badgeActionableMenuType === 'Balance' && (
+        <View style={globalStyles.typebalance}>
+          <View
+            style={[
+              globalStyles.typebalance,
+              globalStyles.wrapperFlexBoxBadgeStatusBalance,
+            ]}>
+            <Text
+              style={[
+                globalStyles.stackedListItemBodyheadline,
+                globalStyles.contentTypoRightAligned,
+                {color: theme.primarycolor},
+              ]}>
+              Content
+            </Text>
+            <View
+              style={[
+                globalStyles.wrapperBalanceSAR,
+                globalStyles.wrapperFlexBoxBadgeStatusBalance,
+              ]}>
+              <Text
+                style={[globalStyles.sarLabel, {color: theme.primarycolor}]}>
+                SAR
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={[
+              globalStyles.contentBalanceStatusType,
+              globalStyles.contentTypoRightAligned,
+              {color: theme.primarytextcolor2},
+            ]}>
+            Content
+          </Text>
+        </View>
+      )}
+      {badgeActionableMenuType === 'Balance with Status' && (
         <View style={globalStyles.typebalance}>
           <View style={globalStyles.wrapperContentAndSar}>
             <Text

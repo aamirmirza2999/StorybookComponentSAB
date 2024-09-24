@@ -162,6 +162,10 @@ NewListComponentStory.args = {
 
   iconActionableMenu: true,
   badgeActionableMenu: true,
+  badgeActionableMenuType: 'Badge Notification',
+  badgeNotificationMenuType: 'Warning',
+  badgeNotificationMenuSize: 'Small',
+  badgeNotificationMenuNumber: '1',
   linkActionableMenu: true,
   listItemPreviewType: 'Value',
   iconPreview: false,
@@ -229,6 +233,32 @@ NewListComponentStory.argTypes = {
     control: 'boolean',
     if: {arg: 'listType', eq: 'Inline'},
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
+  },
+  badgeActionableMenuType: {
+    control: 'select',
+    options: [
+      'Badge Notification',
+      'Chips Info',
+      'Text',
+      'Balance',
+      'Balance with Status',
+    ],
+     if: { arg: 'listType', eq: 'Inline' }
+  },
+  badgeNotificationMenuType: {
+    control: 'select',
+    options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
+    if: {arg: 'badgeActionableMenuType', eq: 'Badge Notification'},
+  },
+  badgeNotificationMenuSize: {
+    control: 'select',
+    options: ['Small', 'Large', 'XS'],
+    if: {arg: 'badgeActionableMenuType', eq: 'Badge Notification'},
+  },
+  badgeNotificationMenuNumber: {
+    control: 'select',
+    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
+    if: {arg: 'badgeActionableMenuType', eq: 'Badge Notification'},
   },
   linkActionableMenu: {
     control: 'boolean',
