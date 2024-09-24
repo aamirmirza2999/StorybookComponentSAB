@@ -124,29 +124,29 @@ BlockBox.argTypes = {
 };
 
 export const NewListComponentStory = args => {
-  const {t} = useTranslation();
-  const [language, setLanguage] = useState('en');
-  const {toggleTheme, isDarkMode} = useTheme();
-  const handleChange = (newLang, setLanguage, i18n) => {
-    setLanguage(newLang);
-    i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
-  };
+  // const {t} = useTranslation();
+  // const [language, setLanguage] = useState('en');
+  // const {toggleTheme, isDarkMode} = useTheme();
+  // const handleChange = (newLang, setLanguage, i18n) => {
+  //   setLanguage(newLang);
+  //   i18n.changeLanguage(newLang);
+  //   CommonHelper.changeLanguage(newLang, setLanguage);
+  // };
 
-  useEffect(() => {
-    CommonHelper.initLanguage(setLanguage);
-  }, []);
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
+  // useEffect(() => {
+  //   CommonHelper.initLanguage(setLanguage);
+  // }, []);
+  // useEffect(() => {
+  //   if (language !== args.lang) {
+  //     handleChange(args.lang, setLanguage, i18n);
+  //   }
+  // }, [args.lang]);
 
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
+  // useEffect(() => {
+  //   if (args.enableDarktheme !== isDarkMode) {
+  //     toggleTheme();
+  //   }
+  // }, [args.enableDarktheme, isDarkMode]);
   return <NewListComponent {...args} />;
 };
 
@@ -180,8 +180,8 @@ NewListComponentStory.args = {
   badgeNotificationNumber: '1',
   listItemActionType: 'Chevron',
   stackedListItemPreviewSecondValue: false,
-  lang: 'en',
-  enableDarktheme: false,
+  // lang: 'en',
+  // enableDarktheme: false,
 };
 
 NewListComponentStory.argTypes = {
@@ -243,7 +243,7 @@ NewListComponentStory.argTypes = {
   },
   stackedListItemDefaultBadge: {
     control: 'boolean',
-    if: {arg: 'listType', eq: 'Stacked'},
+    // if: {arg: 'listType', eq: 'Stacked'},
   },
   stackedListItemDefaultAction: {
     control: 'boolean',
@@ -264,7 +264,7 @@ NewListComponentStory.argTypes = {
   stackedListItemBodyType: {
     control: 'select',
     options: ['Headline+Body', 'Label+Value', 'Extra Content'],
-    if: {arg: 'stackedListItemDefaultBadge'},
+    // if: {arg: 'stackedListItemDefaultBadge'},
   },
   stackedListItemBodyShowContent: {
     control: 'boolean',
@@ -327,18 +327,19 @@ NewListComponentStory.argTypes = {
       'Edit',
       'Delete',
     ],
-    // if: { arg: 'badgeStatusType' , eq: 'Badge Notification'}
+    if: { arg: 'stackedListItemDefaultAction'}
   },
   stackedListItemPreviewSecondValue: {
     control: 'boolean',
+    if: {arg: 'stackedListItemType', eq: 'Preview'},
   },
-  lang: {
-    control: 'select',
-    options: ['en', 'ar'],
-  },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  // lang: {
+  //   control: 'select',
+  //   options: ['en', 'ar'],
+  // },
+  // enableDarktheme: {
+  //   control: 'boolean',
+  // },
 };
 
 export const TextDividerComponentStory = args => {
