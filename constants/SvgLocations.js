@@ -78,6 +78,8 @@ export {default as WhiteArrow} from "../assets/arrowWhite.svg"
 export {default as HelpIcon} from "../assets/help.svg"
 export {default as TickIcon} from "../assets/tick.svg"
 export {default as Slices} from "../assets/Slices.svg"
+export {default as EditBlack} from "../assets/document_edit_black.svg"
+export {default as Delete} from "../assets/delete.svg"
 
 
 export {default as Blockcard} from "../assets/card.svg"
@@ -89,3 +91,8 @@ export {default as Whitecard} from "../assets/Whitecard.svg"
 export {default as Whiterightarrow} from "../assets/Whiteright.svg"
 
 export {default as PassWordeye} from "../assets/password.svg"
+export { default as Pfm360 } from "../assets/pfm360.svg";
+export { default as PfmActive } from "../assets/pfm360Dark.svg";
+
+
+

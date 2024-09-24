@@ -19,7 +19,7 @@ import Fonts from '../../constants/Fonts';
 import { I18nManager } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { HomeActive,PaymentActive,Transfer,Payment_Icon,HomeTab,Iconfilledmenu,IconOutlineMenu} from '../../constants/SvgLocations';
+import { HomeActive,PaymentActive,Transfer,Payment_Icon,HomeTab,Iconfilledmenu,IconOutlineMenu,Pfm360,PfmActive} from '../../constants/SvgLocations';
 
 const Tab=({
   state,
@@ -180,7 +180,8 @@ const Tab=({
           const PaymentIcon = isRouteActive ? PaymentActive : Payment_Icon
           const TransferIcon = isRouteActive ? Transfer : Transfer
           const MenuIcon = isRouteActive ? Iconfilledmenu : IconOutlineMenu
-          const ActiveFontEn = isRouteActive ? Fonts.HSBC : Fonts.HSBC;        
+          const ActiveFontEn = isRouteActive ? Fonts.HSBC : Fonts.HSBC;    
+          const PfmIcon = isRouteActive ? PfmActive : Pfm360    
           
           let IconName;
           let Name;
@@ -246,6 +247,13 @@ const Tab=({
                         height={actuatedNormalize(25)}
                         fill={tintIconColor}
                       />
+                      ):
+                      route.name === "PFM" ? (
+                        <PfmIcon
+                        width={actuatedNormalize(25)}
+                        height={actuatedNormalize(25)}
+                        fill={tintIconColor}
+                      />
                       )
                       : null}
 
@@ -270,6 +278,8 @@ const Tab=({
                             ? t('initialLang:transfer')
                             : route.name === "Menu"
                             ? t('initialLang:menu')
+                            : route.name === "PFM"
+                            ? t('initialLang:pfm')
                                 : Name
                               }
                     </Text>
