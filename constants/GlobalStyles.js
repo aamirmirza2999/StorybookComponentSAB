@@ -1652,6 +1652,117 @@ welcomeBackFlexBox: {
     lineHeight: lineHeightSmallMedium,
     width: '100%',
   },
+  wrapperDefaultContainer: {
+    gap: spacingXXS,
+    alignSelf: "stretch"
+    },
+    labelDefaultContainer: {
+      lineHeight: lineHeightMedium,
+      color: "#767676",
+      fontSize: fontMedium,
+      textAlign: "left",
+      fontFamily: Fonts.HSBC,
+      },
+      valueDefaultContainer: {
+      fontSize: fontMediumLarge,
+      lineHeight: lineHeightMediumLarge,
+      fontWeight: "700",
+      // color: "#000",
+      textAlign: "left",
+      fontFamily: Fonts.HSBC,
+      },
+      valueFlexBox: {
+        textAlign: "left",
+        fontFamily: Fonts.HSBC,
+        alignSelf: "stretch"
+      },
+      secondValueDefaultContainer: {
+        lineHeight: lineHeightMedium,
+        fontWeight: "500",
+        // display: "none",
+        color: "#767676",
+        fontSize: fontMedium,
+        textAlign: "left",
+        fontFamily: Fonts.HSBC,
+      },
+      badgenotificationList: {
+        borderRadius: actuatedNormalize(100),
+        backgroundColor: '#ffbb33',
+        width: actuatedNormalize(20),
+        height: actuatedNormalize(20),
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      contentText: {
+        fontSize: fontSmallMedium,
+        lineHeight: lineHeightSmallMedium,
+        fontFamily: Fonts.HSBC,
+        color: "#767676",
+        textAlign: "right"
+        },
+        typebalance: {
+          // flex: 1,
+          // width: "100%",
+          gap: spacingXXS,
+          alignItems: "flex-end"
+        },
+        wrapperFlexBoxBadgeStatusBalance: {
+          flexDirection: "row",
+          alignItems: "flex-end"
+        },
+        contentTypoRightAligned: {
+          textAlign: "right",
+          fontFamily: Fonts.HSBC,
+        },
+        wrapperBalanceSAR: {
+          paddingHorizontal: actuatedNormalize(0),
+          paddingVertical: actuatedNormalize(1)
+        },
+        sarLabel: {
+          fontSize: fontXSmall,
+          lineHeight: lineHeightXSmall,
+          textAlign: "left",
+          color: "#000",
+          fontFamily: Fonts.HSBC,
+        },
+        contentBalanceStatusType: {
+          fontSize: fontSmallMedium,
+          lineHeight: lineHeightSmallMedium,
+          color: "#767676"
+        },
+        wrapperContentAndSar: {
+          justifyContent: 'flex-end',
+          flexDirection: 'row',
+          gap: spacingXXS,
+          alignItems: 'flex-end',
+        },
+        contentBalanceWithStatus: {
+          fontSize: fontLarge,
+          lineHeight: lineHeightLarge,
+          fontWeight: '700',
+          textAlign: 'right',
+          color: '#000',
+          fontFamily: Fonts.HSBC,
+        },
+        wrapperSARLabel: {
+          paddingHorizontal: actuatedNormalize(0),
+          paddingVertical: actuatedNormalize(1),
+          flexDirection: 'row',
+          alignItems: 'flex-end',
+        },
+        chipsinfoBalanceStatusType: {
+          borderRadius: spacingXXS,
+          alignItems: 'center',
+          flexDirection: 'row',
+          gap: spacingXXS,
+        },
+        labelInactive: {
+          fontSize: fontSmallMedium,
+          lineHeight: lineHeightSmallMedium,
+          textAlign: 'left',
+          color: '#000',
+          fontFamily: Fonts.HSBC,
+        },
 
     //....textdividr
     welcomeBackTypo: {
