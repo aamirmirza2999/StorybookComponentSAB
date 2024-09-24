@@ -8,6 +8,7 @@ import NewListComponent from './NewListComponent';
 import TextDivider from './TextDivider';
 import CommonHelper from '../../constants/CommonHelper';
 import i18n from '../../locales/i18n';
+import SearchInput from './SearchInput';
 
 // export default {
 //     title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
@@ -393,4 +394,11 @@ TextDividerComponentStory.argTypes = {
   enableDarktheme: {
     control: 'boolean',
   },
+};
+export const SearchInputComponentStory = args => <SearchInput {...args} />;
+SearchInputComponentStory.args = {
+ 
+  
+  placeHolder:'Search By'
+ 
 };
