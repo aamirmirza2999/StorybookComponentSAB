@@ -21,123 +21,186 @@ const handleChange = (newLang, setLanguage, i18n) => {
   CommonHelper.changeLanguage(newLang, setLanguage); 
 };
 
-export const PostLoginHeaderStory = (args) => {
-  const [language, setLanguage] = useState(args.lang || 'en');
-  const { t, i18n } = useTranslation();
-  const { theme, toggleTheme,isDarkMode } = useTheme();
-
-  args.Headline = t('initialLang:headline');
-  args.title = t('initialLang:PostloginHeader');
-
-  useEffect(() => {
-    CommonHelper.initLanguage(setLanguage);
-  }, []);
-
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
-  useEffect(() => {
-   
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
-
-  return (
-    <NavigationContainer>
-    <PostLoginHeader
-      {...args}
-      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
-      //HeaderHeight={deviceheight}
-      
-    />
-    </NavigationContainer>
-  );
-};
 
 export const MainHeaderStory = (args) => {
-  const [language, setLanguage] = useState(args.lang || 'en');
+  const [language, setLanguage] = useState(args.language || 'en');
   const { theme, toggleTheme,isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
 
   args.AccountType = t('initialLang:Premier');
 
   useEffect(() => {
-    CommonHelper.initLanguage(setLanguage);
+  CommonHelper.initLanguage(setLanguage);
   }, []);
 
   useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
+  if (language !== args.language) {
+  handleChange(args.language, setLanguage, i18n);
+  }
+  }, [args.language]);
 
   useEffect(() => {
-   
-    if (args.enableDarktheme !== isDarkMode) {
-      console.log("THEME TRIGGERED>>>",args.enableDarktheme,isDarkMode)
+    const headerthemedark = args.colorStyles !== 'LightMode'; 
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.enableDarktheme, isDarkMode]);
+  }, [args.colorStyles, isDarkMode, toggleTheme]); 
+
 
   return (
+    <NavigationContainer>
     <MainHeader
       {...args}
       changeTheme={toggleTheme}
      // HeaderHeight={deviceheight}
       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
+    </NavigationContainer>
   );
 };
 
 MainHeaderStory.args = {
-  enableLogo: true,
-  isAccountTypeReq: true,
-  SearchIconReq: true,
-  NotificationIconReq: true,
-  AvatarIconReq: true,
-  LanguageSwitchReq: true,
-  avatarblack: true,
-  avatarname: false,
-  avatarnamemid:false,
-  avatarnamesmall:false,
-  avatarwhite:false,
-  lang: 'en',
-  enableDarktheme: false,
+  
+  //Common:
+
+  type:'level0',
+  language: 'en',
+  state:'postlogin',
+
+  // Level 0 -------------------------------
+
+    //Prelogin:
+    LanguageIcon: true,
+
+
+
+  //PostLogin:
+
+  
+  // Notificationsize:'big',
+  showbadge:true,
+  avatarType:"Filled",
+  avatarElements:"Icons",
+  avatarSize:"Small",
+  avatarinitial:"JM",
+
+  // Level 1 ---------------------------------
+    back:true,
+    showLinkButton:true,
+    HeadlineText:'Headline',
+    linkButtonsize:'small',
+    link:"Link Button",
+    IconLeft:false,
+    IconRight:true,
+    Search:true,
+
+    //Level 2--------------------------------------
+    Headline:true,
+    CloseIcon:true,
+  //Common:
+
+  colorStyles:"LightMode",
+  
 };
 
 MainHeaderStory.argTypes = {
-  bgColor: { control: 'color' },
-  lang: {
+
+  //Common:
+
+  type:{ control: 'select', options: ['level0', 'level1', 'level1-menu','level1-foryou','level2','search'] },
+  
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
+
+  state:{control:'select',options:['postlogin','prelogin']},
+  
+    // Level 0 -------------------------------------------------------------------------
+
+     //Prelogin:
+     LanguageIcon:{
+      control: 'boolean',
+      // if:{arg:'type',eq:'level0'},
+      // if:{arg:'state',eq:'prelogin'}
+    },
+
+    //PostLogin:
+
+    
+  // Notificationsize: {
+  //   control: 'select',
+  //   options: ['big', 'small'],
+  //   if: { arg: 'type', eq: 'level0' }, 
+  // },
+
+  showbadge: {
     control: 'boolean',
+   // if: { arg: 'type', eq: 'level0' },
   },
-};
-
-PostLoginHeaderStory.args = {
-  TextColor: 'white',
-  enableBackButton: true,
-  enableCloseButton: false,
-  LanguageSwitchReq: false,
-  MenuHeader: false,
-  // LinkButtonReq:false,
-  HeaderTitleReq: true,
-  lang: 'en',
-  enableDarktheme: false,
-};
-
-PostLoginHeaderStory.argTypes = {
-  textColor: { control: 'color' },
-  lang: {
+  avatarType:{
     control: 'select',
-    options: ['en', 'ar'],
+    options: ['Filled', 'Outline'],
+    // if: { arg: 'type', eq: 'level0' },
+    // if: { arg: 'type', eq: 'level1-menu' },
   },
-  enableDarktheme: {
-    control: 'boolean',
+  avatarElements:{
+    control: 'select',
+    options: ['Initials', 'Icons'],
+    // if: { arg: 'type', eq: 'level0' },
+    // if: { arg: 'type', eq: 'level1-menu' },
   },
+  avatarSize:{
+    control: 'select',
+    options: ['Small', 'Medium',"Large"],
+    // if: { arg: 'type', eq: 'level0' },
+    // if: { arg: 'type', eq: 'level1-menu' },
+  },
+  avatarinitial:{
+    control:'text',
+    // if: { arg: 'type', eq: 'level0' },
+    // if: { arg: 'type', eq: 'level1-menu' },
+    // if: { arg: 'avatarElements', eq: 'Initials' },
+    
+  },
+
+   // Level 1 -------------------------------------------------------------------------
+
+   back:{
+    control:'boolean'
+   },
+   showLinkButton:{
+    control:'boolean'
+   },
+   HeadlineText:{
+    control:'text'
+   },
+   linkButtonsize:{
+    control:'select',
+    options: ['small', 'large'],
+   },
+   link:{
+    control:'text',
+   },
+   Search:{
+    control:'boolean'
+   },
+
+   //level 2 ----------------------------------------------------------------------
+   Headline:{
+    control:'boolean'
+   },
+   CloseIcon:{
+    control:'boolean'
+   },
+
+ //Common:
+
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
+ 
 };
+

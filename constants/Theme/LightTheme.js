@@ -61,7 +61,7 @@ export const lightTheme = {
   stylescolor7:"#EEEEEE", //styleslightgray
   stylescolor3pressed:"#E96670", //stylesredpressed
   stylescolorpressed:"#666666", //stylesblackpressed
-
+  stylescolorpressed1:"#FFFFFF",
   //SECONDARY COLORS:
 
   secondarycolor8:"#E8E012", //secondaryyellow

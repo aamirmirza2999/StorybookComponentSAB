@@ -32,15 +32,12 @@ import {
 
         BgHeader={
           <MainHeader
-            bgColor={"#263a52"}
-            enableLogo={true}
-            changeTheme={props.changeScreen}
-            isAccountTypeReq={true}
-            AccountType={"Premier"}
-            SearchIconReq={true}
-            NotificationIconReq={true}            
-            AvatarIconReq={true}
-            avatarblack={true}
+          type="level0"
+          state='postlogin'
+          showbadge={true}
+          avatarElements="Icons"
+          avatarType="Filled"
+          AccountType={t('initialLang:Premier')}
             //changeTheme={toggleTheme}
             //LanguageSwitchReq = {true}
             //changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}

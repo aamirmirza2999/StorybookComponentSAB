@@ -65,7 +65,8 @@ export const darkTheme = {
    stylescolor7:"rgba(255, 255, 255, 0.1)",
    stylescolor3pressed:"#E96670",
    stylescolorpressed:"#666666",
- 
+   stylescolorpressed1:"#333333",
+
    //SECONDARY COLORS:
  
    secondarycolor8:"#E8E012",

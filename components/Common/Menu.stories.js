@@ -8,9 +8,10 @@ import NewListComponent from './NewListComponent';
 import TextDivider from './TextDivider';
 import CommonHelper from '../../constants/CommonHelper';
 import i18n from '../../locales/i18n';
-export default {
-  title: 'components/MenuComponent',
-};
+
+// export default {
+//     title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
+//   };
 
 export const MenuComponentStory = args => {};
 
@@ -38,6 +39,7 @@ export const BlockBnner = args => {
       toggleTheme();
     }
   }, [args.enableDarktheme, isDarkMode]);
+
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');
@@ -373,14 +375,15 @@ export const TextDividerComponentStory = args => {
   return <TextDivider {...args} />;
 };
 
-TextDividerComponentStory.args = {
-  promotional: true,
-  pagetitle: true,
-  bottomsheet: true,
-  inpage: true,
-  lang: 'en',
-  enableDarktheme: true,
-};
+  TextDividerComponentStory.args={
+    promotional:true,
+    pagetitle:true,
+    bottomsheet:true,
+    inpage:true,
+    lang:'en',
+    enableDarktheme: true,
+    eyeicon:true
+  }
 
 TextDividerComponentStory.argTypes = {
   lang: {

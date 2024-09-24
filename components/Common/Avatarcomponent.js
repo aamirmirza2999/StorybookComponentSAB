@@ -60,17 +60,17 @@ import TextComponent from './TextComponent';
    <View style={{flexDirection:"row"}}>
    {props.avatarname? 
      <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: theme.primarycolor3static}]}>
-     <TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>JM</TextComponent>
+     <TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>{props.avatarinitial}</TextComponent>
  </View>
  :null}
  {props.avatarnamemid?
  <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: theme.primarycolor3static}]}>
- <TextComponent style={[globalStyles.jm2,{color:theme.primarycolor3}]}>JM</TextComponent>
+ <TextComponent style={[globalStyles.jm2,{color:theme.primarycolor3}]}>{props.avatarinitial}</TextComponent>
 </View>
  :null}
  {props.avatarnamesmall?
  <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor: theme.primarycolor3static}]}>
- <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>JM</TextComponent>
+ <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>{props.avatarinitial}</TextComponent>
 </View>
  :null}
  </View>

@@ -90,4 +90,9 @@ export {default as Lightright} from "../assets/lightright.svg"
 export {default as Whitecard} from "../assets/Whitecard.svg"
 export {default as Whiterightarrow} from "../assets/Whiteright.svg"
 
+export {default as PassWordeye} from "../assets/password.svg"
+export { default as Pfm360 } from "../assets/pfm360.svg";
+export { default as PfmActive } from "../assets/pfm360Dark.svg";
+
+
 

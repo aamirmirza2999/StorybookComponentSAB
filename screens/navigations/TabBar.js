@@ -11,6 +11,7 @@ import Transfers
  import New_Transfer from '../New_Transfer';
  import Menu from '../Menu';
  import Payment from '../Payment';
+import PFM from '../PFM';
 
 const TabSetting=createBottomTabNavigator();
 
@@ -50,6 +51,10 @@ screenOptions={{tabBarHideOnKeyboard: true}}
    <TabSetting.Screen
           name="Menu"
           component={Menu}
+        />
+         <TabSetting.Screen
+          name="PFM"
+          component={PFM}
         />
 
  </TabSetting.Navigator>

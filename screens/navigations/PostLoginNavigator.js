@@ -12,7 +12,7 @@ import Transfers
  import Bills from '../Bills';
  import SuccessScreen from '../SuccessScreen';
  import TabBar from './TabBar';
- import PostLoginHeader from '../../components/Common/PostLoginHeader';
+//  import PostLoginHeader from '../../components/Common/PostLoginHeader';
  import MainHeader from '../../components/Common/MainHeader';
  import Dashboard from '../Dashboard';
  import Menu from '../Menu'
@@ -33,19 +33,25 @@ import Transfers
     //   enableLogo={true}
     //   ></MainHeader>;
       case 'Payment':
-        return  <PostLoginHeader
-        Headline={'Headline Payment'}
-      ></PostLoginHeader>;
+        return  <MainHeader
+        type="level1"
+        HeadlineText={'Headline Payment'}
+        back={false}
+        showLinkButton={false}
+      ></MainHeader>;
       case 'New_Transfer':
-        return     <PostLoginHeader
-        Headline={t('initialLang:headline')}
-      ></PostLoginHeader>;
+        return     <MainHeader
+        type="level1"
+        HeadlineText={t('initialLang:headline')}
+        back={false}
+        showLinkButton={false}
+      ></MainHeader>;
       case 'Menu':
-        return    <PostLoginHeader
-                LanguageSwitchReq={true}
-                MenuHeader={true}
-                HeaderTitleReq={false}
-                Headline={t('initialLang:headline')}
+        return    <MainHeader
+                type="level1-menu"
+                HeadlineText={t('initialLang:headline')}
+                avatarElements="Icons"
+                avatarType="Filled"
                   />;
   }
 }
@@ -113,14 +119,14 @@ const PostLoginNavigator = () => {
         options={{
           headerShown: true,
           header: () => (
-            <PostLoginHeader
-            title={'Primary Button'}
-            textColor={'white'}
-            enableBackButton={true}
-            enableCloseButton={true}
-            hideHeader={false}
+            <MainHeader
+            type={'level2'}
+            Headline={true}
+            HeadlineText={'Primary Button'}
+            back={true}
+            CloseIcon={true}
             HeaderTitleReq={true}
-            ></PostLoginHeader>
+            ></MainHeader>
           ),
           //transitionPresets,
         }}
@@ -131,7 +137,7 @@ const PostLoginNavigator = () => {
         options={{
           headerShown: true,
           header: () => (
-           <PostLoginHeader></PostLoginHeader>
+           <MainHeader></MainHeader>
           ),
           //transitionPresets,
         }}
