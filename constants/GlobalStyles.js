@@ -1690,5 +1690,84 @@ welcomeBackFlexBox: {
       paddingVertical: 24,
       gap: 8,
       flex: 1
-      }
+      },
+    
+      //Text View all textdivider
+      languagearabicPosition: {
+        width: 344,
+        left: 20,
+        position: "absolute"
+        },
+        viewall: {
+        textAlign: "left",
+        color: "#000",
+        fontFamily: "Univers Next for HSBC"
+        },
+        wrapperFlexBoxview: {
+        paddingVertical: 4,
+        paddingHorizontal: 0,
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row"
+        },
+        textLayout: {
+        lineHeight: 18,
+        fontSize: 14
+        },
+        linkFlexBox: {
+        justifyContent: "center",
+        height: 24,
+        alignItems: "center",
+        flexDirection: "row"
+        },
+        textTypo: {
+        fontFamily: "Univers Arabic forHSBC",
+        textAlign: "left",
+        color: "#000"
+        },
+        Viewheadlinetext: {
+        fontWeight: "700",
+        lineHeight: 22,
+        fontSize: 17
+        },
+        iconoutlinepassword: {
+        width: 24,
+        height: 24
+        },
+        Vewallheader: {
+        gap: 8,
+        alignItems: "center",
+        flexDirection: "row",
+        alignSelf: "stretch"
+        },
+        viewalltextdivi: {
+        textAlign: "left",
+        color: "#000",
+        fontFamily: "Univers Next for HSBC"
+        },
+        wrapperview: {
+        height: 24
+        },
+        frameParenttextdivider: {
+        justifyContent: "space-between",
+        flexDirection: "row",
+        alignSelf: "stretch"
+        },
+        languageenglish: {
+        top: 20
+        },
+        // text: {
+        // display: "flex",
+        // alignItems: "flex-end",
+        // height: 22,
+        // lineHeight: 18,
+        // fontSize: 14,
+        // flex: 1
+        // },
+       
+        texttitleactions: {
+       
+        height: 124,
+        flex: 1
+        }
 }

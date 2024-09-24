@@ -312,6 +312,7 @@ export default {
     inpage:true,
     lang:'en',
     enableDarktheme: true,
+    eyeicon:true
   }
 
   TextDividerComponentStory.argTypes = {
