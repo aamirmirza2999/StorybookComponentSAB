@@ -9,10 +9,12 @@ import TextDivider from './TextDivider';
 import CommonHelper from '../../constants/CommonHelper';
 import i18n from '../../locales/i18n';
 import SearchInput from './SearchInput';
+import DarkThemeBlock from './DarkThemeBlock';
+import LastLoggedIn from './LastLoggedIn';
 
-// export default {
-//     title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
-//   };
+export default {
+    title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
+  };
 
 export const MenuComponentStory = args => {};
 
@@ -431,4 +433,131 @@ SearchInputComponentStory.args = {
   
   placeHolder:'Search By'
  
+};
+
+export const DarkThemeBlockStory = (args) => {
+  const [language, setLanguage] = useState(args.lang || 'en');
+  const { theme, toggleTheme, isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  args.themeText = 'Dark Theme';
+  args.themeChangeText = 'Change from Light to Dark Mode';
+
+  const handleChange = (newLang, setLanguage, i18n) => {
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
+  };
+
+  useEffect(() => {
+    CommonHelper.initLanguage(setLanguage);
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.lang) {
+      handleChange(args.lang, setLanguage, i18n);
+    }
+  }, [args.lang, language]);
+
+  // Fix: Check before toggling to avoid infinite loop
+  useEffect(() => {
+    if (args.enableDarktheme !== isDarkMode) {
+      toggleTheme();
+    }
+  }, [args.enableDarktheme, isDarkMode, toggleTheme]);
+
+  return (
+    <DarkThemeBlock
+      {...args}
+      changeTheme={toggleTheme}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    />
+  );
+};
+
+DarkThemeBlockStory.args = {
+  bgColor: 'black',
+  lang: 'en',
+  enableDarktheme: false,
+  toggleButton: true,
+  colorMode: 'light',
+};
+
+DarkThemeBlockStory.argTypes = {
+  bgColor: { control: 'color' },
+  lang: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  enableDarktheme: {
+    control: 'boolean',
+  },
+  toggleButton: {
+    control: 'boolean',
+  },
+  colorMode: {
+    control: 'select',
+    options: ['light', 'dark'],
+  },
+};
+
+export const LastLoggedInStory = (args) => {
+  const [language, setLanguage] = useState(args.lang || 'en');
+  const { theme, toggleTheme, isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  args.name = 'Mohammed Salah';
+  args.status = 'Last login XX/XX/XX at 6:00';
+
+  const handleChange = (newLang, setLanguage, i18n) => {
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
+  };
+
+  useEffect(() => {
+    CommonHelper.initLanguage(setLanguage);
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.lang) {
+      handleChange(args.lang, setLanguage, i18n);
+    }
+  }, [args.lang, language]);
+
+  // Fix: Check before toggling to avoid infinite loop
+  useEffect(() => {
+    if (args.enableDarktheme !== isDarkMode) {
+      toggleTheme();
+    }
+  }, [args.enableDarktheme, isDarkMode, toggleTheme]);
+
+  return (
+    <LastLoggedIn
+      {...args}
+      changeTheme={toggleTheme}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    />
+  );
+}; 
+
+LastLoggedInStory.args = {
+  bgColor: 'black',
+  lang: 'en',
+  enableDarktheme: false, 
+  powerButton: true,
+ };
+
+LastLoggedInStory.argTypes = {
+  bgColor: { control: 'color' },
+  lang: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  enableDarktheme: {
+    control: 'boolean',
+  },
+  powerButton: {
+    control: 'boolean',
+  },
 };
