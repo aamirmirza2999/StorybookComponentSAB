@@ -173,7 +173,7 @@ quickActionButtonTxt:{
     alignSelf: "stretch",
     width:actuatedNormalize(110),
     fontSize:fontMedium,
-    paddingBottom:spacingXS,
+    //paddingBottom:spacingXS,
     lineHeight:lineHeightMedium,
     fontFamily:Fonts.Regular,
     textAlign: "center",
