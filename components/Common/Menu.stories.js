@@ -8,9 +8,10 @@ import NewListComponent from './NewListComponent';
 import TextDivider from './TextDivider';
 import CommonHelper from '../../constants/CommonHelper';
 import i18n from '../../locales/i18n';
-export default {
-  title: 'components/MenuComponent',
-};
+
+// export default {
+//     title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
+//   };
 
 export const MenuComponentStory = args => {};
 
@@ -38,6 +39,7 @@ export const BlockBnner = args => {
       toggleTheme();
     }
   }, [args.enableDarktheme, isDarkMode]);
+
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');

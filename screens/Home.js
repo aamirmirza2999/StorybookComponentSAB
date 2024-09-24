@@ -137,9 +137,12 @@ useEffect(() => {
         }}
         BgHeader={
           <MainHeader
-            enableLogo={true}
-            changeTheme={toggleTheme}
-            LanguageSwitchReq = {true}
+          type="level0"
+           state='prelogin'
+           LanguageIcon={true}
+            // enableLogo={true}
+            // changeTheme={toggleTheme}
+            // LanguageSwitchReq = {true}
             changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}
            
             />
