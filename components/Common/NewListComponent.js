@@ -60,7 +60,7 @@ const NewListComponent = props => {
                   </Text>
                   <View style={globalStyles.wrapperFlexBoxRow}>
                     <View>
-                      {/* {props.badgeActionableMenu && (
+                      {props.badgeActionableMenu && (
                         <View
                           style={[
                             globalStyles.cicularView,
@@ -75,16 +75,7 @@ const NewListComponent = props => {
                             1
                           </Text>
                         </View>
-                      )} */}
-                      {props.stackedListItemDefaultBadge && (
-                // <View style={globalStyles.rowFlexBox}>
-                <BadgeStatus
-                  badgeStatusType={props.badgeStatusType}
-                  badgeNotificationType={props.badgeNotificationType}
-                  badgeNotificationSize={props.badgeNotificationSize}
-                  badgeNotificationNumber={props.badgeNotificationNumber}
-                />
-              )}
+                      )}
                     </View>
                     {props.linkActionableMenu && (
                       <RightArrow width={spacingM} height={spacingM} />
