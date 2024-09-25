@@ -46,7 +46,8 @@ const SuccessScreen=()=> {
       <View
       style={{
       flex:1,
-      justifyContent:"flex-end"
+      justifyContent:"flex-end",
+      paddingBottom:Platform.OS === 'ios'?actuatedNormalize(10):actuatedNormalize(0)
       }}
       >
       <GroupButton
