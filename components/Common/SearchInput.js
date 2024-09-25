@@ -107,7 +107,7 @@ import {
           icon="SearchIcon"
           width={actuatedNormalize(24)}
           height={actuatedNormalize(24)}
-          transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+          //transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
         />
       </TouchableOpacity>
                     <TextComponent

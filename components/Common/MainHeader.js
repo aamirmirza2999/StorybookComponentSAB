@@ -19,6 +19,7 @@ import TextComponent from './TextComponent';
 import Avatarcomponent from './Avatarcomponent';
 import { useNavigation } from "@react-navigation/native";
 import { LinkButton } from './Button';
+import Fonts from '../../constants/Fonts';
 
 let IosSpecific = Platform.OS === "ios" ? getStatusBarHeight() : 0
 let iosMargin = Platform.OS == "ios" ? 50 : 0
@@ -97,6 +98,7 @@ const MainHeader = (props) => {
                                 color: theme.primarycolor,
                                 fontWeight: "700",
                                 fontSize: actuatedNormalize(12),
+                                fontFamily:Fonts.HSBC
                             }}> {props.AccountType} </TextComponent>
                         </>
 
@@ -115,12 +117,14 @@ const MainHeader = (props) => {
                 icon="SearchIcon"
                 width={actuatedNormalize(24)}
                 height={actuatedNormalize(24)}
-                transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                // transform={[
+                //   { scaleX: I18nManager.isRTL ? -1 : 1 }        
+                // ]}
             />
         </TouchableOpacity>
 
         <TouchableOpacity
-            style={{ flexDirection: 'row', marginLeft: spacingS, marginRight:!props.showbadge?spacingS:0, top: actuatedNormalize(3) }}
+            style={{ flexDirection:I18nManager.isRTL? 'row-reverse':'row', marginLeft: spacingS, marginRight:!props.showbadge?spacingS:0, top: actuatedNormalize(3) }}
             onPress={props.NotificationFunc}
         >
             <SvgIconList
@@ -128,7 +132,7 @@ const MainHeader = (props) => {
                 width={actuatedNormalize(24)}
                 height={actuatedNormalize(24)}
                 fill={isDarkMode ? "white" : "black"}
-                transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+               
             />
             {props.showbadge?
             <View style={[styles.badgenotification, styles.textFlexBox]}>
@@ -189,7 +193,10 @@ const MainHeader = (props) => {
                     icon="BlackArrow"
                     width={actuatedNormalize(25)}
                     height={actuatedNormalize(25)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                    transform={[
+                      { scaleX: I18nManager.isRTL ? -1 : 1 }           
+                    ]}
+                   
                   />
                 </TouchableOpacity>
               ) : null}
@@ -221,10 +228,8 @@ const MainHeader = (props) => {
                   color: theme.primarycolor,
                   fontWeight: "700",
                   fontSize: actuatedNormalize(17),
-                  bottom:actuatedNormalize(3)
-                  // fontFamily: I18nManager.isRTL
-                  //   ? Fonts.UniversArabicForHSBC_Regular
-                  //   : Fonts.UniversNextforHSBC_Medium,
+                  bottom:actuatedNormalize(3),
+                  fontFamily:Fonts.HSBC
 
                 }}
               >
@@ -272,7 +277,10 @@ const MainHeader = (props) => {
                     icon="SearchIcon"
                     width={actuatedNormalize(24)}
                     height={actuatedNormalize(24)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                    transform={[
+                      { scaleX: I18nManager.isRTL ? -1 : 1 }    
+                    ]}
+                  
                   />
                 </TouchableOpacity>
 
@@ -286,7 +294,10 @@ const MainHeader = (props) => {
                     icon="HelpIcon"
                     width={actuatedNormalize(24)}
                     height={actuatedNormalize(24)}
-                   
+                     transform={[
+                  { scaleX: I18nManager.isRTL ? -1 : 1 }        
+                ]}
+                                                           
                   />
                 </TouchableOpacity>
 
@@ -343,7 +354,9 @@ const MainHeader = (props) => {
           icon="SearchIcon"
           width={actuatedNormalize(24)}
           height={actuatedNormalize(24)}
-          transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+          transform={[
+            { scaleX: I18nManager.isRTL ? 1 : 1 }    
+          ]}
         />
       </TouchableOpacity>
     ) : null}
@@ -385,7 +398,7 @@ const styles = {
         },
         TextComponent: {
         fontSize: actuatedNormalize(9),
-        fontFamily: "Univers Next for HSBC",
+        fontFamily: Fonts.HSBC,
         color: "#fff",
         textAlign: "center",
         display: "flex",
@@ -438,11 +451,10 @@ const styles = {
             justifyContent: "center",
           },
           HeadlineText: {
-        
             fontSize: 26,
             lineHeight: 32,
             fontWeight: "700",
-            fontFamily: "Univers Next for HSBC",
+            fontFamily:Fonts.HSBC,
             color: "#000",
             paddingHorizontal: spacingS,
               }

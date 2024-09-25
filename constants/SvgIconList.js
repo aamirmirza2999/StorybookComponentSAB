@@ -24,6 +24,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
           <CloseIconNew
             width={width}
             height={height}
+            transform={transform}
           />
         );
       case 'AddBene':
@@ -31,6 +32,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
           <AddBene
             width={width}
             height={height}
+            transform={transform}
           />
         );
         case 'Iconright':
@@ -38,6 +40,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             <RightArrow
               width={width}
               height={height}
+              transform={transform}
             />
           );
       case 'ChangeLang':
@@ -45,12 +48,14 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
           isDarkMode?
           <ChangeLangDark
           width={width}
-          height={height}/>
+          height={height}
+          transform={transform}/>
           :
 
           <ChangeLang
             width={width}
             height={height}
+            transform={transform}
           />
         );
         case 'AccountAction':
@@ -58,10 +63,12 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             isDarkMode?<AccountActionDark
             width={24}
             height={24}
+            transform={transform}
             />:
             <AccountAction
               width={width}
               height={height}
+              transform={transform}
 
             />
           );
@@ -70,6 +77,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             <InfoIconRed
               width={width}
               height={height}
+              transform={transform}
 
             />
           );
@@ -78,10 +86,12 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
               isDarkMode?<DarkIconList
               width={width}
               height={height}
+              transform={transform}
               />:
               <Home
                 width={width}
                 height={height}
+                transform={transform}
   
               />
             );
@@ -90,6 +100,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             <LiveChat
               width={width}
               height={height}
+              transform={transform}
 
             />
           );
@@ -98,6 +109,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             <WhiteInfo
               width={width}
               height={height}
+              transform={transform}
 
             />
           );
@@ -106,6 +118,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             <BlackArrow
               width={width}
               height={height}
+              transform={transform}
 
             />
           );
@@ -114,6 +127,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
             <Close
               width={width}
               height={height}
+              transform={transform}
 
             />
           );
@@ -123,12 +137,14 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
               <SearchIconDark
                 width={width}
                 height={height}
+                transform={transform}
   
               />
               :
               <SearchIcon
               width={width}
               height={height}
+              transform={transform}
 
             />
 
@@ -140,6 +156,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                   width={width}
                   height={height}
                   fill={fill}
+                  transform={transform}
     
                 />
               );
@@ -149,12 +166,14 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                   <AvatarIconDark
                   width={width}
                   height={height}
+                  transform={transform}
                   />
                   :
 
                   <AvatarIconblack
                     width={width}
                     height={height}
+                    transform={transform}
       
                   />
                 );
@@ -163,6 +182,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                     <HelpIcon
                       width={width}
                       height={height}
+                      transform={transform}
         
                     />
                   );
@@ -171,14 +191,16 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                   return (
                     <Blockcard
                       width={width}
-                      height={height}        
+                      height={height}     
+                      transform={transform}   
                     />
                   );
                 case 'Whitecard':
                   return (
                     <Whitecard
                       width={width}
-                      height={height}        
+                      height={height}  
+                      transform={transform}      
                     />
                   );
                 case 'Blockgenericred':
@@ -186,6 +208,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                     <Blockgenericred
                       width={width}
                       height={height}
+                      transform={transform}
                     />
                   );
                 case 'BlackRightarrow':
@@ -193,6 +216,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                     <BlackRightarrow
                       width={width}
                       height={height}
+                      transform={transform}
                     />
                   );
                 case 'Lightmyacounts':
@@ -200,6 +224,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                     <Lightmyacounts
                       width={width}
                       height={height}
+                      transform={transform}
                     />
                   );
                 case 'Lightright':
@@ -207,6 +232,7 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
                     <Lightright
                       width={width}
                       height={height}
+                      transform={transform}
                     />
                   );
                 
