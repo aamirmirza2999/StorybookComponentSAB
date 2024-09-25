@@ -6,6 +6,7 @@ import { QuickButton } from '../components/Common/Button';
 import SvgIconList from '../constants/SvgIconList';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
+import { spacingS } from '../constants/Size';
 const Payment=()=> {
   const navigation = useNavigation();
   const { t } = useTranslation();
@@ -15,8 +16,9 @@ const Payment=()=> {
   <View style={{flex:1,backgroundColor:"#ffffff"}}>
       <View
       style={{
-        marginLeft:actuatedNormalize(16),
-        marginRight:actuatedNormalize(16)
+        marginLeft:spacingS,
+        marginRight:spacingS,
+        marginTop:spacingS
       
       }}
       >

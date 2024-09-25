@@ -3,8 +3,10 @@ import React from 'react'
 
 const PFM=()=> {
   return (
-    <View>
-      <Text>PFM</Text>
+    <View
+    style={{flex:1,backgroundColor:"#ffffff"}}
+    >
+    
     </View>
   )
 }

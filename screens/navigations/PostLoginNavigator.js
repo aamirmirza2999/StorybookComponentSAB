@@ -53,6 +53,13 @@ import Transfers
                 avatarElements="Icons"
                 avatarType="Filled"
                   />;
+       case 'PFM':
+                    return     <MainHeader
+                    type="level1"
+                    HeadlineText={t('initialLang:headline')}
+                    back={false}
+                    showLinkButton={false}
+                  ></MainHeader>;
   }
 }
 
