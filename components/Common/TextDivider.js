@@ -12,60 +12,64 @@ const TextDivider = (props) => {
     const { t } = useTranslation();
   	return (
         <>
-        {props.promotional ?
+        {props.Type === "promotional" ?
     		<View style={[globalStyles.typepromotionalLanguageeng,{backgroundColor:theme.stylescolorpressed1}]}>
       			<Text style={[globalStyles.headline, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.Headline}</Text>
+                  {props.Subtitle ? 
       			<Text style={[globalStyles.nequePorroQuisquam, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.Description}</Text>
+                :null}
     		</View>
             :null
             }
 
-        {   props.pagetitle      ?                          
+        {   props.Type=== 'pagetitle'      ?                          
             <View style={[globalStyles.typepageTitleLanguageengl,{backgroundColor:theme.stylescolorpressed1}]}>
             <Text style={[globalStyles.welcomeBackText, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Headline} </Text>
+            {props.Subtitle ? 
             <Text style={[globalStyles.nametext, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Description}</Text>
+            :null}
             </View>
             : null}
 
-         {props.bottomsheet?
+         {props.Type === 'bottomsheet'?
             <View style={[globalStyles.typebottomsheetLanguageeng,{backgroundColor:theme.stylescolorpressed1}]}>
             <Text style={[globalStyles.bottomsheettext, globalStyles.FlexBox,{color:theme.primarycolor}]}>{props.Headline}</Text>
+            {props.Subtitle ? 
             <Text style={[globalStyles.textcontent, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Description}</Text>
+            :null}
             </View>
             :null}
 
-           {props.inpage ?
+           {props.Type==='inpage' ?
                 <View style={[globalStyles.typeinPageLanguageenglish,{backgroundColor:theme.stylescolorpressed1}]}>
                 <View style={globalStyles.welcomeBackParent}>
                 <Text style={[globalStyles.Linktext, styles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.Headline}</Text>
-                {/* <View style={globalStyles.linkFlexBox}>
-                <View style={[globalStyles.wrapperlink, globalStyles.linkFlexBox]}>
-                <Text style={[globalStyles.linkButton1, globalStyles.welcomeBackTypo]}>Link Button</Text>
-                </View>
-                <RightRedArrow1 style={globalStyles.iconchevronright} resizeMode="cover" />
-                </View> */}
+               {props.Link?
                 <LinkButton
                 label={t('initialLang:linkButton')}
-                enableLeftIcon={I18nManager.isRTL?true:false}
-                enableRightIcon={I18nManager.isRTL?false:true}
+                enableLeftIcon={I18nManager.isRTL?false:false}
+                enableRightIcon={I18nManager.isRTL?true:true}
                 type="small"
                 />
+                :null}
                 </View>
+                {props.Subtitle ? 
                 <Text style={[globalStyles.sublinktext, globalStyles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.Description}</Text>
+                :null}
                 </View>
                 :null}
 <View style={[globalStyles.texttitleactions,{backgroundColor:theme.stylescolorpressed1}]}>
 <View style={[globalStyles.languageenglish, globalStyles.languagearabicPosition]}>
 <View style={globalStyles.frameParenttextdivider}>
 <View style={globalStyles.Vewallheader}>
-<Text style={[globalStyles.Viewheadlinetext, globalStyles.viewall,{color:theme.primarycolor}]}>Headline</Text>
+<Text style={[globalStyles.Viewheadlinetext, globalStyles.viewall,{color:theme.primarycolor}]}>{props.Headline}</Text>
 {props.eyeicon?
 <PassWordeye/>
 :null}
 </View>
 <View style={globalStyles.linkFlexBox}>
 <View style={[globalStyles.wrapperview, globalStyles.wrapperFlexBoxview]}>
-<Text style={[globalStyles.viewalltextdivi, globalStyles.textLayout,{color:theme.primarycolor}]}>View All</Text>
+<Text style={[globalStyles.viewalltextdivi, globalStyles.textLayout,{color:theme.primarycolor}]}>{props.viewall}</Text>
 </View>
 </View>
 </View>

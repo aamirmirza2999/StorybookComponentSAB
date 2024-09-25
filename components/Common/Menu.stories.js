@@ -404,21 +404,22 @@ export const TextDividerComponentStory = args => {
 
   args.Headline = t('initialLang:Headline');
   args.Description = t('initialLang:SunTextDivider');
+  args.viewall = t('initialLang:viewall');
 
   return <TextDivider {...args} />;
 };
 
   TextDividerComponentStory.args={
-    promotional:true,
-    pagetitle:true,
-    bottomsheet:true,
-    inpage:true,
+    Type: "promotional",
+    Subtitle:true,
+    Link:true,
     lang:'en',
     enableDarktheme: true,
     eyeicon:true
   }
 
 TextDividerComponentStory.argTypes = {
+  Type:{ control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet','inpage',] },
   lang: {
     control: 'select',
     options: ['en', 'ar'],
