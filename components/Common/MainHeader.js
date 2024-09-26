@@ -100,7 +100,8 @@ const MainHeader = (props) => {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     paddingHorizontal: spacingS,
-                    backgroundColor: theme.primaryinvert,
+                    height:50,
+                    alignItems:'center',
                 }}>
                    
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -153,7 +154,6 @@ const MainHeader = (props) => {
             style={[styles.IconViewStyle2, { flexDirection:I18nManager.isRTL? 'row-reverse':'row', 
             marginLeft: spacingXS, marginRight: spacingXS,
             transform:[{ scaleX: I18nManager.isRTL ? 1 : 1 } ]  ,
-           
             alignItems: "flex-start",
             justifyContent: "flex-start",    
             // marginLeft: spacingS, 
@@ -212,8 +212,11 @@ const MainHeader = (props) => {
             <>
           
           <View style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
+           flexDirection: 'row',
+           justifyContent: 'space-between',
+           paddingHorizontal: spacingS,
+           height:50,
+           alignItems:'center',
         }}>
           <View style={[styles.column1]}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -449,7 +452,7 @@ const styles = {
         },
         column1: {
             width: "20%",
-            paddingLeft: spacingS,
+            //paddingLeft: spacingS,
             justifyContent: "flex-end",
             //top: actuatedNormalize(16),
             //flexDirection: 'row',
@@ -469,7 +472,7 @@ const styles = {
             width: "20%",
             alignItems: "flex-end",
             justifyContent: "flex-end",
-            paddingRight: actuatedNormalize(20),
+           // paddingRight: actuatedNormalize(20),
             //top: actuatedNormalize(16)
         
           },
