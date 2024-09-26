@@ -96,6 +96,8 @@ export {default as LogoutIconWhite} from "../assets/power.svg";
 export {default as LogoutIconDark} from "../assets/powerDark.svg";
 
 export {default as PassWordeye} from "../assets/password.svg"
+export {default as PassWordeyeDark} from "../assets/passworddark.svg"
+
 export { default as Pfm360 } from "../assets/pfm360.svg";
 export { default as PfmActive } from "../assets/pfm360Dark.svg";
 

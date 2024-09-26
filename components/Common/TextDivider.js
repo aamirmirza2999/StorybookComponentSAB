@@ -6,7 +6,7 @@ import { useTheme } from '../../constants/Theme/ThemeProvider';
 import {RightRedArrow1} from '../../constants/SvgLocations';
 import { LinkButton } from "./Button";
 import { useTranslation } from 'react-i18next';
-import { PassWordeye } from "../../constants/SvgLocations";
+import { PassWordeye ,PassWordeyeDark} from "../../constants/SvgLocations";
 const TextDivider = (props) => {
     const {theme, toggleTheme,isDarkMode} = useTheme();
     const { t } = useTranslation();
@@ -64,6 +64,9 @@ const TextDivider = (props) => {
 <View style={globalStyles.Vewallheader}>
 <Text style={[globalStyles.Viewheadlinetext, globalStyles.viewall,{color:theme.primarycolor}]}>{props.Headline}</Text>
 {props.eyeicon?
+isDarkMode?
+<PassWordeyeDark/>
+:
 <PassWordeye/>
 :null}
 </View>
