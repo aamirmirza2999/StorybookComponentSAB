@@ -2,7 +2,7 @@ import React from 'react';
 import { actuatedNormalize } from './PixelScaling';
 import { useTheme } from "../constants/Theme/ThemeProvider";
 import { AddBene, BackArrowNew, ChangeLang,ChangeLangDark, CloseIconNew,LiveChat,AccountAction,RightArrow ,InfoIconRed,WhiteInfo,
-  BlackArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon,SearchIconDark,
+  BlackArrow,WhiteArrow,Close,SearchIcon,NotificationIcon,AvatarIconblack,HelpIcon,SearchIconDark,
   AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList,Blockcard,Blockgenericred,BlackRightarrow,Lightmyacounts,Lightright, Whitecard, Whiterightarrow} from './SvgLocations';
 
 
@@ -115,6 +115,12 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
           );
           case 'BlackArrow':
           return (
+            isDarkMode?
+            <WhiteArrow
+            width={width}
+            height={height}
+            transform={transform}
+            />:
             <BlackArrow
               width={width}
               height={height}
@@ -124,6 +130,12 @@ const SvgIconList = ({ icon, width, height  ,transform,fill}) => {
           );
           case 'BlackClose':
           return (
+            isDarkMode?
+            <CloseIconNew
+            width={width}
+            height={height}
+            transform={transform}
+          />:
             <Close
               width={width}
               height={height}

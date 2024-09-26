@@ -12,7 +12,6 @@ import Transfers
  import Bills from '../Bills';
  import SuccessScreen from '../SuccessScreen';
  import TabBar from './TabBar';
-//  import PostLoginHeader from '../../components/Common/PostLoginHeader';
  import MainHeader from '../../components/Common/MainHeader';
  import Dashboard from '../Dashboard';
  import Menu from '../Menu'

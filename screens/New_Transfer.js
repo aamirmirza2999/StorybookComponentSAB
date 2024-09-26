@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native'
 import React, { act } from 'react'
 import { actuatedNormalize } from '../constants/PixelScaling';
-import PostLoginHeader from '../components/Common/PostLoginHeader';
 import { QuickButton } from '../components/Common/Button';
 import SvgIconList from '../constants/SvgIconList';
 import { useNavigation } from '@react-navigation/native';

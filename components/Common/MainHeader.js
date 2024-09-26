@@ -110,21 +110,32 @@ const MainHeader = (props) => {
                 {props.state === "postlogin" ? (
     <>
         <TouchableOpacity
-            style={{ top: actuatedNormalize(3) }}
+            style={ [styles.IconViewStyle2,{}]}
             onPress={props.Searchfunc}
         >
+         
             <SvgIconList
                 icon="SearchIcon"
                 width={actuatedNormalize(24)}
                 height={actuatedNormalize(24)}
-                // transform={[
-                //   { scaleX: I18nManager.isRTL ? -1 : 1 }        
-                // ]}
+                transform={[
+                  { scaleX: I18nManager.isRTL ? -1 : 1 }        
+                ]}
             />
+           
         </TouchableOpacity>
 
         <TouchableOpacity
-            style={{ flexDirection:I18nManager.isRTL? 'row-reverse':'row', marginLeft: spacingS, marginRight:!props.showbadge?spacingS:0, top: actuatedNormalize(3) }}
+            style={[styles.IconViewStyle2, { flexDirection:I18nManager.isRTL? 'row-reverse':'row', 
+            marginLeft: spacingXS, marginRight: spacingXS,
+            transform:[{ scaleX: I18nManager.isRTL ? 1 : 1 } ]  ,
+           
+            alignItems: "flex-start",
+            justifyContent: "flex-start",    
+            // marginLeft: spacingS, 
+            // marginRight:!props.showbadge?spacingS:0, 
+            // top: actuatedNormalize(3)
+          }]}
             onPress={props.NotificationFunc}
         >
             <SvgIconList
@@ -135,13 +146,13 @@ const MainHeader = (props) => {
                
             />
             {props.showbadge?
-            <View style={[styles.badgenotification, styles.textFlexBox]}>
-                <TextComponent style={[styles.TextComponent, styles.textFlexBox]}>2</TextComponent>
+            <View style={[styles.badgenotification,]}>
+                <TextComponent style={[styles.TextComponent]}>2</TextComponent>
             </View>:null}
         </TouchableOpacity>
 
         <TouchableOpacity
-            style={{ }}
+            style={{paddingBottom:actuatedNormalize(5)}}
             onPress={props.AvatarIconfunc}
         >
             <Avatarcomponent
@@ -408,7 +419,9 @@ const styles = {
         backgroundColor: "#ffbb33",
         width: 13,
         height: 13,
-        right:actuatedNormalize(10)
+        right:actuatedNormalize(10),
+        alignItems:'center',
+        justifyContent:'center'
         },
         column1: {
             width: "20%",

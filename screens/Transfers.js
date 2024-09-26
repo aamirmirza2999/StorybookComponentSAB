@@ -8,8 +8,7 @@ import {
   ScrollView
 } from 'react-native';
 import React, {useState, useReducer} from 'react';
-import BgHeader from '../components/Common/BgHeader';
-import PostLoginHeader from '../components/Common/PostLoginHeader'
+import MainHeader from '../components/Common/MainHeader';
 import {
   Colors,
   TextComponent,
@@ -183,42 +182,41 @@ const Transfers = props => {
           />
         }
         BgHeader={
-          <PostLoginHeader
-            title={'Make a Transfer'}
-            enableBackButton={true}
-            enableCloseButton={true}
-            textColor={theme.primarywhitestatic}
-            multiplesvgRequired={false}
+          <MainHeader
+          HeadlineText={'Make a Transfer'}
+          back={true}
+            CloseIcon={true}
+            //multiplesvgRequired={false}
            // enableLivechat={true}
-           multiplesvgUI={
-            <>
-              <TouchableOpacity
-              testID={"svgRequired"}
-              accessibilityLabel={"svgRequired"}
-              // style={[styles.IconViewStyle2,{
+          //  multiplesvgUI={
+          //   <>
+          //     <TouchableOpacity
+          //     testID={"svgRequired"}
+          //     accessibilityLabel={"svgRequired"}
+          //     // style={[styles.IconViewStyle2,{
                 
-              // }, props.IconViewStyle2]}
-              // onPress={
-              //  () => {(() => props.svgFunc()) }
+          //     // }, props.IconViewStyle2]}
+          //     // onPress={
+          //     //  () => {(() => props.svgFunc()) }
                 
-              // }
-              >
-              <SvgIconList
-              icon="backIcon"
-              width={actuatedNormalize(25)}
-              height={actuatedNormalize(25)}
-              transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
-            />
-              </TouchableOpacity>
-            <SvgIconList
-            icon="backIcon"
-            width={actuatedNormalize(25)}
-            height={actuatedNormalize(25)}
-            transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
-          />
+          //     // }
+          //     >
+          //     <SvgIconList
+          //     icon="backIcon"
+          //     width={actuatedNormalize(25)}
+          //     height={actuatedNormalize(25)}
+          //     transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
+          //   />
+          //     </TouchableOpacity>
+          //   <SvgIconList
+          //   icon="backIcon"
+          //   width={actuatedNormalize(25)}
+          //   height={actuatedNormalize(25)}
+          //   transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
+          // />
           
-          </>
-            }
+          // </>
+          //   }
 
             // color={theme.primaryWhiteColor}
           />

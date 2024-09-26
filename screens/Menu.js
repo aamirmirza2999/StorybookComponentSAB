@@ -11,7 +11,6 @@ import {
   import { useNavigation } from '@react-navigation/native';
   import { useTheme } from '../constants/Theme/ThemeProvider';
   import { useTranslation } from 'react-i18next';
-  import PostLoginHeader from '../components/Common/PostLoginHeader';
   import { spacingM, spacingS, spacingXS } from '../constants/Size';
 
   const Menu = (props) =>{

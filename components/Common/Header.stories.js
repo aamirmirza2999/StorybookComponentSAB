@@ -1,5 +1,4 @@
 import MainHeader from './MainHeader';
-import PostLoginHeader from './PostLoginHeader';
 import { Dimensions } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
