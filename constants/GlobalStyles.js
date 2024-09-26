@@ -1429,7 +1429,7 @@ textFlexBox3: {
     flexDirection: "row"
   },
   flexBoxspacingS: {
-    paddingTop: spacingS,
+    paddingVertical: spacingS,
     paddingHorizontal: spacingS,
     alignSelf: "stretch"
   },
