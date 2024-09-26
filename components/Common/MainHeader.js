@@ -20,6 +20,7 @@ import Avatarcomponent from './Avatarcomponent';
 import { useNavigation } from "@react-navigation/native";
 import { LinkButton } from './Button';
 import Fonts from '../../constants/Fonts';
+import { SafeAreaView, SafeAreaProvider, useSafeAreaInsets} from 'react-native-safe-area-context';
 
 let IosSpecific = Platform.OS === "ios" ? getStatusBarHeight() : 0
 let iosMargin = Platform.OS == "ios" ? 50 : 0
@@ -42,13 +43,37 @@ const xml1 = `<svg width=${Platform.OS == "ios" ? svgWidth + actuatedNormalize(1
 //     )
 // }
 
+
+
 const MainHeader = (props) => {
     const { theme, toggleTheme,isDarkMode } = useTheme();
     const navigation = useNavigation();
     console.log("WHICH THEME????",theme)
 
-    return (
+    const CustomStatusBar = (
+  
+      {
+        backgroundColor,
+        barStyle = isDarkMode?'light-content': 'dark-content',
+      }
+    ) => { 
+       
+       const insets = useSafeAreaInsets();
+    
+       return (
+         <View style={{ height: insets.top, backgroundColor }}>
+            <StatusBar
+              animated={true}
+              backgroundColor={backgroundColor}
+              barStyle={barStyle} />
+         </View>
+       );
+    }
 
+
+
+    return (
+      <SafeAreaProvider>
         <View
         style={[styles.mainContainer,{
              backgroundColor:theme.primaryinvert,
@@ -63,12 +88,16 @@ const MainHeader = (props) => {
                    
                 }}
             />
-            <StatusBar
+            {/* <StatusBar
       animated
       backgroundColor={theme.primaryinvert}
       barStyle={isDarkMode?'light-content': 'dark-content'}
       translucent={true}
-    />
+    /> */}
+    
+      <CustomStatusBar backgroundColor={theme.primaryinvert} />
+     
+    
            
              {props.type === 'level0'?
             <View
@@ -387,7 +416,7 @@ const MainHeader = (props) => {
                 </View> : null
             }
         </View>
-
+        </SafeAreaProvider>
     )
 }
 
