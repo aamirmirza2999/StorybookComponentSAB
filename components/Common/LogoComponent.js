@@ -15,15 +15,15 @@ const LogoComponent = props => {
         <TouchableOpacity onPress={props.changeTheme}>
           {isDarkMode?
            <SabLogoDark
-           width={actuatedNormalize(globalStyles.svgStyle.width)}
-           height={actuatedNormalize(globalStyles.svgStyle.height)}
+          width={actuatedNormalize(60)}
+          height={actuatedNormalize(19)}
           // fill={"blue"}
            // transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
          />
          :
           <SabLogo
-            width={actuatedNormalize(globalStyles.svgStyle.width)}
-            height={actuatedNormalize(globalStyles.svgStyle.height)}
+           width={actuatedNormalize(60)}
+           height={actuatedNormalize(19)}
             //fill={"blue"}
             // transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
           />

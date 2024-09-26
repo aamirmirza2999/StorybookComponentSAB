@@ -111,7 +111,7 @@ const MainHeader = (props) => {
                     {props.state ==='postlogin' ?
                         <>
                             <View style={{
-                                height: actuatedNormalize(20),
+                                height: actuatedNormalize(18),
                                 width: actuatedNormalize(2),
                                 backgroundColor: theme.primarycolor,
                                 marginLeft: spacingS
@@ -368,7 +368,7 @@ const MainHeader = (props) => {
         }
      
 {(props.type === 'level1' || props.type === 'level1-menu' || props.type === 'level1-foryou') && (
-  <View style={{ flexDirection: 'row', marginTop: spacingL, justifyContent: 'space-between' }}>
+  <View style={{ flexDirection: 'row', marginTop: spacingM, justifyContent: 'space-between' }}>
     <TextComponent style={[styles.HeadlineText, { color: theme.primarycolor }]}>
       {props.HeadlineText}
     </TextComponent>
