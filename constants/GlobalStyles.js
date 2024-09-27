@@ -1353,7 +1353,7 @@ textFlexBox3: {
   wrapperFlexBoxRow: {
     gap: spacingXS,
     alignItems: "center",
-    flexDirection: "row"
+    flexDirection: "row",   
   },
   linkTypo: {
     textAlign: "left",
@@ -1420,8 +1420,10 @@ textFlexBox3: {
     fontFamily: Fonts.HSBC
   },
   stackedlistitembody: {
-    gap: spacingXXS,
-    flex: 1
+  marginLeft: spacingXS,
+    // gap: spacingXS,
+    flex: 1,
+  
   },
   chipsinfoInactive: {
     borderRadius: radiusXS,
@@ -1477,7 +1479,43 @@ textFlexBox3: {
      width: actuatedNormalize(20),
      height: actuatedNormalize(20),
    },
-
+// LastLoginblock
+lastLoginContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+  width: "83%",
+  height: actuatedNormalize(73),
+  paddingHorizontal: actuatedNormalize(16),
+  marginHorizontal: actuatedNormalize(30),
+},
+userInfoSection: {
+  flexDirection: "row",
+  alignItems: "center",
+  flex: 1,
+},
+avatarSection: {
+  position: 'relative',
+  width: actuatedNormalize(40),
+  height: actuatedNormalize(40),
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflow: 'hidden'
+},
+editIconWrapper: {
+  position: 'absolute',
+  bottom: -2,
+  right: -2,
+  // backgroundColor: 'white',
+  borderRadius: actuatedNormalize(8),
+  padding: actuatedNormalize(2),
+},
+textWrapper: {
+  marginLeft: actuatedNormalize(12),
+  // gap: 3,
+  justifyContent: "center",
+},
+// ....///
 
 //TextDivider
 headlineFlexBox: {

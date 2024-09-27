@@ -480,18 +480,28 @@ export const DarkThemeBlockStory = (args) => {
     <DarkThemeBlock
       {...args}
       changeTheme={toggleTheme}
-      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+      // changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
 };
 
 DarkThemeBlockStory.args = {
-  // lang: 'en',
   listType: 'Stacked',
-  stackedListItemType: 'Default',
-  enableDarktheme: false,
-  // colorMode: 'light',
   inlineListItemType: 'Actionable',
+  listItemActionableType: 'Menu',
+  listItemActionableSelectType: 'Check Box',
+  showDivider: true,
+enableDarktheme:false,
+  iconActionableMenu: true,
+  badgeActionableMenu: true,
+  badgeActionableMenuType: 'Badge Notification',
+  badgeNotificationMenuType: 'Warning',
+  badgeNotificationMenuSize: 'Small',
+  badgeNotificationMenuNumber: '1',
+  linkActionableMenu: true,
+  listItemPreviewType: 'Value',
+  iconPreview: false,
+  stackedListItemType: 'Default',
   stackedListItemDefaultIcon: true,
   stackedListItemDefaultBadge: false,
   stackedListItemDefaultAction: true,
@@ -502,21 +512,91 @@ DarkThemeBlockStory.args = {
   stackedListItemBodyShowSubTitle: true,
   stackedListItemBodyShowBodyCopy: true,
   stackedListItemBodyShowStatus: true,
-  stackedListItemBodyStatusState: 'Sucess',
-  listItemActionType: 'Toggle',
-  listActionTypeToggleState: 'UnSelected',
-  listActionTypeCheckboxState: 'Unchecked',
-  listActionTypeCheckboxState: 'Unchecked',
+  stackedListItemBodyStatusState: 'Success',
   badgeStatusType: 'Chips Info',
   badgeNotificationType: 'Primary',
   badgeNotificationSize: 'Small',
   badgeNotificationNumber: '1',
+  listItemActionType: 'Toggle',
+  stackedListItemPreviewSecondValue: false,
 };
 
 DarkThemeBlockStory.argTypes = {
+  enableDarktheme: {
+    control: 'boolean',
+  },
   listType: {
     control: 'select',
-    options: ['Stacked', 'Inline']
+    options: ['Inline', 'Stacked'],
+  },
+  inlineListItemType: {
+    control: 'select',
+    options: ['Actionable', 'Preview'],
+    if: { arg: 'listType', eq: 'Inline' },
+  },
+  listItemPreviewType: {
+    control: 'select',
+    options: ['Value', 'Bullet Point'],
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  iconPreview: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  showDivider: {
+    control: 'boolean',
+  },
+  listItemActionableType: {
+    control: 'select',
+    options: ['Menu', 'Select'],
+    if: { arg: 'listType', eq: 'Inline' },
+  },
+  listItemActionableSelectType: {
+    control: 'select',
+    options: ['Check Box', 'Radio Button'],
+    // if: { arg: 'inlineListItemType', neq: 'Preview' },
+    if: { arg: 'listItemActionableType', eq: 'Select' },
+  },
+  iconActionableMenu: {
+    control: 'boolean',
+    if: { arg: 'listType', eq: 'Inline' },
+    // if: { arg: 'listItemActionableType', eq: 'Menu' }
+  },
+  badgeActionableMenu: {
+    control: 'boolean',
+    if: { arg: 'listType', eq: 'Inline' },
+    // if: { arg: 'listItemActionableType', eq: 'Menu' }
+  },
+  badgeActionableMenuType: {
+    control: 'select',
+    options: [
+      'Badge Notification',
+      'Chips Info',
+      'Text',
+      'Balance',
+      'Balance with Status',
+    ],
+    if: { arg: 'listType', eq: 'Inline' }
+  },
+  badgeNotificationMenuType: {
+    control: 'select',
+    options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
+    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+  },
+  badgeNotificationMenuSize: {
+    control: 'select',
+    options: ['Small', 'Large', 'XS'],
+    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+  },
+  badgeNotificationMenuNumber: {
+    control: 'select',
+    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
+    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+  },
+  linkActionableMenu: {
+    control: 'boolean',
+    if: { arg: 'listType', eq: 'Inline' },
+    // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
   stackedListItemType: {
     control: 'select',
@@ -525,15 +605,15 @@ DarkThemeBlockStory.argTypes = {
   },
   stackedListItemDefaultIcon: {
     control: 'boolean',
-    if: { arg: 'stackedListItemType', eq: 'Default' }
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   stackedListItemDefaultBadge: {
     control: 'boolean',
-    if: { arg: 'stackedListItemType', eq: 'Default' }
+    // if: {arg: 'listType', eq: 'Stacked'},
   },
   stackedListItemDefaultAction: {
     control: 'boolean',
-    if: { arg: 'stackedListItemType', eq: 'Default' }
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   listtemAddonType: {
     control: 'select',
@@ -550,39 +630,8 @@ DarkThemeBlockStory.argTypes = {
   stackedListItemBodyType: {
     control: 'select',
     options: ['Headline+Body', 'Label+Value', 'Extra Content'],
-    if: { arg: 'stackedListItemType', eq: 'Default' }
+    // if: {arg: 'stackedListItemDefaultBadge'},
   },
-
-  listItemActionType: {
-    control: 'select',
-    options: [
-      'Toggle',
-      'Check Box',
-      'Chevron',
-      'Radio Button',
-      'Edit',
-      'Delete',
-    ],
-    if: { arg: 'stackedListItemDefaultAction' }
-  },
-  // lang: {
-  //   control: 'select',
-  //   options: ['en', 'ar'],
-  // },
-  enableDarktheme: {
-    control: 'boolean',
-  },
-  // colorMode: {
-  //   control: 'select',
-  //   options: ['light', 'dark'],
-  // },
-  
-  inlineListItemType: {
-    control: 'select',
-    options: ['Actionable', 'Preview'],
-    if: { arg: 'listType', eq: 'Inline' },
-  }, 
- 
   stackedListItemBodyShowContent: {
     control: 'boolean',
     if: { arg: 'stackedListItemBodyType', eq: 'Headline+Body' },
@@ -607,28 +656,8 @@ DarkThemeBlockStory.argTypes = {
     control: 'select',
     options: ['Success', 'Error', 'Warning', 'Neutral'],
     if: { arg: 'stackedListItemBodyShowStatus' },
-  },  
-  listActionTypeToggleState: {
-    control: 'select',
-    options: ['Selected', 'UnSelected'],
-    if: { arg: 'listItemActionType', eq: 'Toggle' },
   },
-  listActionTypeCheckboxState: {
-    control: 'select',
-    options: ['Unchecked', 'Checked', 'Disabled'],
-    if: { arg: 'listItemActionType', eq: 'Check Box' },
-  },
-  listActionTypeCheckboxState: {
-    control: 'select',
-    options: ['Unchecked', 'Checked', 'Disabled'],
-    if: { arg: 'listItemActionType', eq: 'Radio Button' },
-  },
-  badgeActionableMenu: {
-    control: 'boolean',
-    if: { arg: 'listType', eq: 'Stacked' },
-    // if: { arg: 'listItemActionableType', eq: 'Menu' }
-  },
-  badgeActionableMenuType: {
+  badgeStatusType: {
     control: 'select',
     options: [
       'Badge Notification',
@@ -637,22 +666,38 @@ DarkThemeBlockStory.argTypes = {
       'Balance',
       'Balance with Status',
     ],
-    if: { arg: 'listType', eq: 'Inline' }
+    // if: { arg: 'stackedListItemBodyShowStatus'}
   },
-  badgeNotificationMenuType: {
+  badgeNotificationType: {
     control: 'select',
     options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
-    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
   },
-  badgeNotificationMenuNumber: {
-    control: 'select',
-    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
-    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
-  },
-  badgeNotificationMenuSize: {
+  badgeNotificationSize: {
     control: 'select',
     options: ['Small', 'Large', 'XS'],
-    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
+  },
+  badgeNotificationNumber: {
+    control: 'select',
+    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
+    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
+  },
+  listItemActionType: {
+    control: 'select',
+    options: [
+      'Toggle',
+      'Check Box',
+      'Chevron',
+      'Radio Button',
+      'Edit',
+      'Delete',
+    ],
+    if: { arg: 'stackedListItemDefaultAction' }
+  },
+  stackedListItemPreviewSecondValue: {
+    control: 'boolean',
+    if: { arg: 'stackedListItemType', eq: 'Preview' },
   },
 };
 

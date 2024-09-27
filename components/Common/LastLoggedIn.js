@@ -4,92 +4,51 @@ import { AvatarIconWhiteFilled, AvatarIconblackDark, LogoutIconDark, LogoutIconW
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
+import { fontLarge, fontMedium, fontWeightBold, spacingM, spacingS, spacingXL } from '../../constants/Size';
+import { globalStyles } from '../../constants/GlobalStyles';
 
 const LastLoggedIn = (props) => {
     const { theme, isDarkMode } = useTheme();
     const primaryTextColor = isDarkMode ? theme.primarycolor2 : theme.primarytextcolor;
 
     return (
-        <View style={[styles.container, { backgroundColor: isDarkMode ? theme.primarycolorstatic : theme.primarycolor4 }]}>
-            <View style={styles.userInfoSection}>
-                <View style={styles.avatarSection}>
-                    {/* Avatar Icon */}
-                    {isDarkMode ? <AvatarIconblackDark width={actuatedNormalize(48)} height={actuatedNormalize(48)} /> : <AvatarIconWhiteFilled width={actuatedNormalize(48)} height={actuatedNormalize(48)} />}
-                    
-                    {/* Profile Edit Icon (Overlaid on Avatar) */}
-                    <View style={styles.editIconWrapper}>
-                        <ProfileEditIconDark width={actuatedNormalize(16)} height={actuatedNormalize(16)} />
+        <View style={[globalStyles.lastLoginContainer, { backgroundColor: isDarkMode ? theme.primarybackground : theme.primarycolor4 }]}>
+            <View style={globalStyles.userInfoSection}>
+                <View style={globalStyles.avatarSection}>
+                    {isDarkMode ? <AvatarIconblackDark width={spacingXL} height={spacingXL} /> : <AvatarIconWhiteFilled width={spacingXL} height={spacingXL} />}
+                    <View style={globalStyles.editIconWrapper}>
+                        <ProfileEditIconDark width={spacingS} height={spacingS} />
                     </View>
                 </View>
-                <View style={styles.textWrapper}>
+                <View style={globalStyles.textWrapper}>
                     <TextComponent
                         numberOfLines={1}
-                        style={[styles.title, { color: primaryTextColor }]}
+                        fontSize={fontLarge}
+                        fontWeight={fontWeightBold}
+                        style={[{ color: primaryTextColor }]}
                     >
                         {props.name}
                     </TextComponent>
                     <TextComponent
                         numberOfLines={1}
-                        style={[styles.subCopy, { color: theme.primarytextcolor2 }]}
+                        fontSize={fontMedium}
+                        style={[{ color: theme.primarytextcolor2 }]}
                     >
                         {props.status}
                     </TextComponent>
                 </View>
             </View>
+
             {props.powerButton ?
                 isDarkMode ?
-                    <LogoutIconDark width={actuatedNormalize(24)} height={actuatedNormalize(24)} /> :
-                    <LogoutIconWhite width={actuatedNormalize(24)} height={actuatedNormalize(24)} /> : null}
+                    <LogoutIconDark width={spacingM} height={spacingM} /> :
+                    <LogoutIconWhite width={spacingM} height={spacingM} /> : null}
+
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between", // Ensure space between user info and LogoutIcon
-        width: "100%",
-        height: actuatedNormalize(73),
-        paddingHorizontal: actuatedNormalize(16), // Adjust horizontal padding
-    },
-    userInfoSection: {
-        flexDirection: "row",
-        alignItems: "center",
-        flex: 1, // Allows this section to grow and take available space
-    },
-    avatarSection: {
-        position: 'relative',  // For positioning the edit icon relative to the avatar
-        width: actuatedNormalize(40), 
-        height: actuatedNormalize(40),
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    editIconWrapper: {
-        position: 'absolute', // Allows the edit icon to overlap the avatar
-        bottom: -2,
-        right: -2,
-        backgroundColor: 'white', // Optional: You can add a background circle to the edit icon for clarity
-        borderRadius: actuatedNormalize(8),
-        padding: actuatedNormalize(2), // Slight padding for better visibility
-    },
-    textWrapper: {
-        marginLeft: actuatedNormalize(12), // Space between the avatar and the text
-        // gap: 3,
-        justifyContent: "center",
-    },
-    title: {
-        fontWeight: "700",
-        fontSize: actuatedNormalize(17),
-        lineHeight: 22,
-        textAlign: "left",
-    },
-    subCopy: {
-        fontSize: actuatedNormalize(14), // Slightly smaller for subtext
-        lineHeight: 20,
-        textAlign: "left",
-        color: "#767676",
-    },
+const styles = StyleSheet.create({ 
 });
 
 export default LastLoggedIn;
