@@ -12,7 +12,7 @@ const LastLoggedIn = (props) => {
     const primaryTextColor = isDarkMode ? theme.primarycolor2 : theme.primarytextcolor;
 
     return (
-        <View style={[globalStyles.lastLoginContainer, { backgroundColor: isDarkMode ? theme.primarybackground : theme.primarycolor4 }]}>
+        <View style={[globalStyles.lastLoginContainer, { backgroundColor: isDarkMode ? '#383838' : theme.primarycolor4 }]}>
             <View style={globalStyles.userInfoSection}>
                 <View style={globalStyles.avatarSection}>
                     {isDarkMode ? <AvatarIconblackDark width={spacingXL} height={spacingXL} /> : <AvatarIconWhiteFilled width={spacingXL} height={spacingXL} />}

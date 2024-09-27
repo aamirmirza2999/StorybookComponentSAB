@@ -11,8 +11,8 @@ import DarkThemeBlock from './DarkThemeBlock';
 import LastLoggedIn from './LastLoggedIn';
 import { I18nManager } from 'react-native';
 export default {
-    title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
-  };
+  title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
+};
 
 export const MenuComponentStory = args => { };
 
@@ -49,7 +49,7 @@ BlockBnner.args = {
   // BlackCardIcon: <SvgIconList icon="BlockCard" width={24} height={24} />,
   // Whitecard: <SvgIconList icon="Whitecard" width={24} height={24} />,
   //  showIcon:true,
-  demo:require("../../assets/Path3.png"),
+  demo: require("../../assets/Path3.png"),
   lang: 'en',
   enableDarktheme: false,
 };
@@ -130,7 +130,7 @@ BlockBox.argTypes = {
 export const NewListComponentStory = args => {
   // const {t} = useTranslation();
   // const [language, setLanguage] = useState('en');
-  // const {toggleTheme, isDarkMode} = useTheme();
+  const {toggleTheme, isDarkMode} = useTheme();
   // const handleChange = (newLang, setLanguage, i18n) => {
   //   setLanguage(newLang);
   //   i18n.changeLanguage(newLang);
@@ -146,12 +146,18 @@ export const NewListComponentStory = args => {
   //   }
   // }, [args.lang]);
 
-  // useEffect(() => {
-  //   if (args.enableDarktheme !== isDarkMode) {
-  //     toggleTheme();
-  //   }
-  // }, [args.enableDarktheme, isDarkMode]);
-  return <NewListComponent {...args} />;
+  useEffect(() => {
+    if (args.enableDarktheme !== isDarkMode) {
+      toggleTheme();
+    }
+console.log("menulist", args.enableDarktheme, isDarkMode)
+  }, [args.enableDarktheme, isDarkMode]);
+  return (
+    <NewListComponent
+      {...args}
+      changeTheme={toggleTheme}
+    />
+  )
 };
 
 NewListComponentStory.args = {
@@ -160,7 +166,6 @@ NewListComponentStory.args = {
   listItemActionableType: 'Menu',
   listItemActionableSelectType: 'Check Box',
   showDivider: true,
-
   iconActionableMenu: true,
   badgeActionableMenu: true,
   badgeActionableMenuType: 'Badge Notification',
@@ -189,7 +194,7 @@ NewListComponentStory.args = {
   listItemActionType: 'Chevron',
   stackedListItemPreviewSecondValue: false,
   // lang: 'en',
-  // enableDarktheme: false,
+  enableDarktheme: false,
 };
 
 NewListComponentStory.argTypes = {
@@ -371,9 +376,9 @@ NewListComponentStory.argTypes = {
   //   control: 'select',
   //   options: ['en', 'ar'],
   // },
-  // enableDarktheme: {
-  //   control: 'boolean',
-  // },
+  enableDarktheme: {
+    control: 'boolean',
+  },
 };
 
 export const TextDividerComponentStory = args => {
@@ -413,13 +418,13 @@ TextDividerComponentStory.args = {
   Type: "promotional",
   Subtitle: true,
   Link: true,
-  enableLeftIcon:I18nManager.isRTL?false:false,
-   enableRightIcon:I18nManager.isRTL?true:true,
-    type:"small",
-    eyeicon: true,
+  enableLeftIcon: I18nManager.isRTL ? false : false,
+  enableRightIcon: I18nManager.isRTL ? true : true,
+  type: "small",
+  eyeicon: true,
   lang: 'en',
   enableDarktheme: true,
-  
+
 }
 
 TextDividerComponentStory.argTypes = {
@@ -434,7 +439,7 @@ TextDividerComponentStory.argTypes = {
   type: {
     control: 'select',
     options: ['large', 'small'],
-    
+
   },
 };
 export const SearchInputComponentStory = args => <SearchInput {...args} />;
@@ -480,7 +485,7 @@ export const DarkThemeBlockStory = (args) => {
     <DarkThemeBlock
       {...args}
       changeTheme={toggleTheme}
-      // changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    // changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
 };
@@ -491,7 +496,7 @@ DarkThemeBlockStory.args = {
   listItemActionableType: 'Menu',
   listItemActionableSelectType: 'Check Box',
   showDivider: true,
-enableDarktheme:false,
+  enableDarktheme: false,
   iconActionableMenu: true,
   badgeActionableMenu: true,
   badgeActionableMenuType: 'Badge Notification',

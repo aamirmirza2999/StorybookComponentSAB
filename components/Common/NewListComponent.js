@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import {
   RightArrow,
   InfoIconRed,
@@ -11,35 +11,41 @@ import {
   EditBlack,
   Delete,
   CheckboxUnSelected,
+  Whiterightarrow,
+  TextInfoIconDark,
 } from '../../constants/SvgLocations';
-import {actuatedNormalize} from '../../constants/PixelScaling';
-import {globalStyles} from '../../constants/GlobalStyles';
-import {spacingM, spacingXXS} from '../../constants/Size';
-import {useTheme} from '../../constants/Theme/ThemeProvider';
+import { actuatedNormalize } from '../../constants/PixelScaling';
+import { globalStyles } from '../../constants/GlobalStyles';
+import { spacingM, spacingXXS } from '../../constants/Size';
+import { useTheme } from '../../constants/Theme/ThemeProvider';
 const NewListComponent = props => {
-  const {theme} = useTheme();
+  const { isDarkMode, theme } = useTheme();
+  const backgroundColor = isDarkMode ? '#383838' : theme.primarycolor4;
 
   const getDefaultAction = () => {
     switch (props.listItemActionType) {
       case 'Toggle':
-        return <Toggle width={spacingM} height={spacingM} />;
+        return (
+          <Toggleunselect width={actuatedNormalize(43)} height={actuatedNormalize(27)} />
+        );
       case 'Check Box':
         return <CheckboxUnSelected width={spacingM} height={spacingM} />;
       case 'Chevron':
-        return <RightArrow width={spacingM} height={spacingM} />;
+        return isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />;
       case 'Radio Button':
         return <RadioUnSelect width={spacingM} height={spacingM} />;
       case 'Edit':
-        return <EditBlack width={spacingM} height={spacingM} />;
+        return <EditBlack width={spacingL} height={spacingL} />;
       case 'Delete':
-        return <Delete width={spacingM} height={spacingM} />;
+        return <Delete width={spacingL} height={spacingL} />;
       default:
-        return <RightArrow width={spacingM} height={spacingM} />;
+        return <Toggle width={actuatedNormalize(43)} height={actuatedNormalize(27)} />;
+        ;
     }
   };
 
   return (
-    <View style={globalStyles.flexBoxspacingS}>
+    <View style={[globalStyles.flexBoxspacingS, { backgroundColor }]}>
       {props.listType === 'Inline' && (
         <>
           {props.inlineListItemType === 'Actionable' && (
@@ -47,14 +53,14 @@ const NewListComponent = props => {
               {props.listItemActionableType === 'Menu' ? (
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
                   {props.iconActionableMenu && (
-                    <InfoIconRed width={spacingM} height={spacingM} />
+                    isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
                   )}
 
                   <Text
                     style={[
                       globalStyles.link,
                       globalStyles.linkTypo,
-                      {color: theme.primarycolor},
+                      { color: theme.primarycolor },
                     ]}>
                     Link
                   </Text>
@@ -92,7 +98,7 @@ const NewListComponent = props => {
                       )}
                     </View>
                     {props.linkActionableMenu && (
-                      <RightArrow width={spacingM} height={spacingM} />
+                      isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
                     )}
                   </View>
                 </View>
@@ -102,7 +108,7 @@ const NewListComponent = props => {
                     style={[
                       globalStyles.link,
                       globalStyles.linkTypo,
-                      {color: theme.primarycolor},
+                      { color: theme.primarycolor },
                     ]}>
                     Label
                   </Text>
@@ -120,7 +126,7 @@ const NewListComponent = props => {
                     <View
                       style={[
                         globalStyles.listItemActionableSelectType,
-                        {borderRadius: spacingM, borderColor: theme.ragcolor6},
+                        { borderRadius: spacingM, borderColor: theme.ragcolor6 },
                       ]}
                     />
                   )}
@@ -138,7 +144,7 @@ const NewListComponent = props => {
                       <Text
                         style={[
                           globalStyles.labelLightPreviewValue,
-                          {color: theme.primarytextcolor2},
+                          { color: theme.primarytextcolor2 },
                         ]}>
                         Label
                       </Text>
@@ -146,33 +152,33 @@ const NewListComponent = props => {
                       <Text
                         style={[
                           globalStyles.valueLightPreviewValue,
-                          {color: theme.primarycolor},
+                          { color: theme.primarycolor },
                         ]}>
                         Value
                       </Text>
 
                       {props.iconPreview && (
-                        <RightArrow width={spacingM} height={spacingM} />
+                        isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
                       )}
                     </View>
                   ) : (
                     <View style={globalStyles.rowFlexBoxSpaceBetween}>
-                      <View style={{width: '50%'}}>
+                      <View style={{ width: '50%' }}>
                         <Text
                           style={[
                             globalStyles.labelLightPreviewValue,
-                            {color: theme.primarytextcolor2},
+                            { color: theme.primarytextcolor2 },
                           ]}>
                           Label
                         </Text>
                       </View>
 
                       {/* Middle Label */}
-                      <View style={{width: '50%'}}>
+                      <View style={{ width: '50%' }}>
                         <Text
                           style={[
                             globalStyles.valueLightPreviewValue,
-                            {color: theme.primarycolor},
+                            { color: theme.primarycolor },
                           ]}>
                           Value
                         </Text>
@@ -191,7 +197,7 @@ const NewListComponent = props => {
                     <Text
                       style={[
                         globalStyles.labelBulletPoint,
-                        {color: theme.primarycolor},
+                        { color: theme.primarycolor },
                       ]}>
                       Label
                     </Text>
@@ -207,7 +213,7 @@ const NewListComponent = props => {
       {props.listType === 'Stacked' && (
         <View style={globalStyles.rowFlexBox}>
           {props.stackedListItemType === 'Default' ? (
-            <View style={[globalStyles.wrapperFlexBoxRow, {flex: 1}]}>
+            <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
               {props.stackedListItemDefaultIcon && (
                 <ListItemAddon addonType={props.listtemAddonType} />
               )}
@@ -268,7 +274,7 @@ const NewListComponent = props => {
                 style={[
                   globalStyles.labelDefaultContainer,
                   globalStyles.valueFlexBox,
-                  {color: theme.primarytextcolor2},
+                  { color: theme.primarytextcolor2 },
                 ]}>
                 Label
               </Text>
@@ -276,7 +282,7 @@ const NewListComponent = props => {
                 style={[
                   globalStyles.valueDefaultContainer,
                   globalStyles.valueFlexBox,
-                  {color: theme.primarycolor},
+                  { color: theme.primarycolor },
                 ]}>
                 Value
               </Text>
@@ -285,7 +291,7 @@ const NewListComponent = props => {
                   style={[
                     globalStyles.secondValueDefaultContainer,
                     globalStyles.valueFlexBox,
-                    {color: theme.primarytextcolor2},
+                    { color: theme.primarytextcolor2 },
                   ]}>
                   Second Value
                 </Text>
@@ -298,7 +304,7 @@ const NewListComponent = props => {
         <View
           style={[
             globalStyles.dividerStyle,
-            {backgroundColor: theme.primarycolor2_20},
+            { backgroundColor: theme.primarycolor2_20 },
           ]}
         />
       )}
@@ -308,43 +314,43 @@ const NewListComponent = props => {
 
 export default NewListComponent;
 
-const ListItemAddon = ({addonType}) => {
-  const {theme} = useTheme();
+const ListItemAddon = ({ addonType }) => {
+  const { theme, isDarkMode } = useTheme();
   return (
     <>
       {addonType === 'Avatar' && (
         <View style={globalStyles.avatarListItemAddon}>
-          <Text
+          <TextComponent
             style={[
               globalStyles.avatarListItemAddonText,
-              {color: theme.primarytextcolor3},
+              { color: theme.primarytextcolor3 },
             ]}>
             JM
-          </Text>
+          </TextComponent>
         </View>
       )}
       {addonType === 'Icon' && (
-        <InfoIconRed width={spacingM} height={spacingM} />
+        isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
       )}
       {addonType === 'Icon with BG' && (
         <View
           style={[
             globalStyles.wrapperListItemAddon,
-            {backgroundColor: theme.primarycolor2_10},
+            { backgroundColor: theme.primarycolor2_10 },
           ]}>
-          <InfoIconRed width={spacingM} height={spacingM} />
+          {isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />}
         </View>
       )}
       {addonType === 'Pie Graph' && (
         <View>
           <Slices />
-          <Text
+          <TextComponent
             style={[
               globalStyles.PieGraphListItemAddon,
-              {color: theme.primarytextcolor3},
+              { color: theme.primaryComTextComponentcolor3, marginTop: actuatedNormalize(1) },
             ]}>
             45%
-          </Text>
+          </TextComponent>
         </View>
       )}
     </>
@@ -359,8 +365,8 @@ const StackedListItemBody = ({
   stackedListItemBodyShowBodyCopy,
   stackedListItemBodyShowStatus,
   stackedListItemBodyStatusState,
-}) => {
-  const {theme} = useTheme();
+  }) => {
+  const { theme } = useTheme();
 
   const getStatusColor = () => {
     switch (stackedListItemBodyStatusState) {
@@ -383,7 +389,7 @@ const StackedListItemBody = ({
           <Text
             style={[
               globalStyles.labeltypoHeadline,
-              {color: theme.primarycolor},
+              { color: theme.primarycolor },
             ]}>
             Headline
           </Text>
@@ -391,7 +397,7 @@ const StackedListItemBody = ({
             <Text
               style={[
                 globalStyles.labeltypoBody,
-                {color: theme.primarytextcolor2},
+                { color: theme.primarytextcolor2 },
               ]}>
               Body copy
             </Text>
@@ -404,7 +410,7 @@ const StackedListItemBody = ({
             style={[
               globalStyles.labelstackedListItemBodyType,
               globalStyles.labelFlexBox,
-              {color: theme.primarytextcolor2},
+              { color: theme.primarytextcolor2 },
             ]}>
             Label
           </Text>
@@ -412,7 +418,7 @@ const StackedListItemBody = ({
             style={[
               globalStyles.valuestackedListItemBodyType,
               globalStyles.labelFlexBox,
-              {color: theme.primarycolor},
+              { color: theme.primarycolor },
             ]}>
             Value
           </Text>
@@ -425,7 +431,7 @@ const StackedListItemBody = ({
               style={[
                 globalStyles.labelstackedListItemBodyLabel,
                 globalStyles.labelTypo,
-                {color: theme.primarytextcolor2_2},
+                { color: theme.primarytextcolor2_2 },
               ]}>
               Label
             </Text>
@@ -434,7 +440,7 @@ const StackedListItemBody = ({
             style={[
               globalStyles.stackedListItemBodyheadline,
               globalStyles.stackedListItemBodyheadlineFlexBox,
-              {color: theme.primarycolor},
+              { color: theme.primarycolor },
             ]}>
             Headline
           </Text>
@@ -443,7 +449,7 @@ const StackedListItemBody = ({
               style={[
                 globalStyles.subTitle,
                 globalStyles.stackedListItemBodyheadlineFlexBox,
-                {color: theme.primarycolor},
+                { color: theme.primarycolor },
               ]}>
               Sub title
             </Text>
@@ -453,7 +459,7 @@ const StackedListItemBody = ({
               style={[
                 globalStyles.bodyCopy,
                 globalStyles.labelTypo,
-                {color: theme.primarytextcolor2},
+                { color: theme.primarytextcolor2 },
               ]}>
               Body copy
             </Text>
@@ -464,7 +470,7 @@ const StackedListItemBody = ({
                 style={[
                   globalStyles.status1,
                   globalStyles.labelTypo,
-                  {color: getStatusColor()},
+                  { color: getStatusColor() },
                 ]}>
                 Status
               </Text>
@@ -482,7 +488,7 @@ const BadgeStatus = ({
   badgeNotificationSize,
   badgeNotificationNumber,
 }) => {
-  const {theme} = useTheme();
+  const { theme, isDarkMode } = useTheme();
   console.log('Proppss-->', badgeStatusType);
   const getBadgeBackgroundColor = () => {
     switch (badgeNotificationType) {
@@ -549,12 +555,12 @@ const BadgeStatus = ({
         <View
           style={[
             globalStyles.badgenotificationList,
-            {backgroundColor: getBadgeBackgroundColor()},
+            { backgroundColor: getBadgeBackgroundColor() },
           ]}>
           <Text
             style={[
               globalStyles.circularViewtext,
-              {color: getBadgeTextColor()},
+              { color: getBadgeTextColor() },
               getBadgeTextSize(),
             ]}>
             {badgeNotificationNumber}
@@ -575,7 +581,7 @@ const BadgeStatus = ({
             <Text
               style={[
                 globalStyles.labelTypoInactive,
-                {color: theme.primarycolor},
+                { color:isDarkMode?primarytextcolor4:theme.primarytextcolor },
               ]}>
               Inactive
             </Text>
@@ -584,7 +590,7 @@ const BadgeStatus = ({
       )}
       {badgeStatusType === 'Text' && (
         <Text
-          style={[globalStyles.contentText, {color: theme.primarytextcolor2}]}>
+          style={[globalStyles.contentText, { color: theme.primarytextcolor2 }]}>
           Content
         </Text>
       )}
@@ -600,7 +606,7 @@ const BadgeStatus = ({
               style={[
                 globalStyles.stackedListItemBodyheadline,
                 globalStyles.contentTypoRightAligned,
-                {color: theme.primarycolor},
+                { color: theme.primarycolor },
               ]}>
               Content
             </Text>
@@ -610,7 +616,7 @@ const BadgeStatus = ({
                 globalStyles.wrapperFlexBoxBadgeStatusBalance,
               ]}>
               <Text
-                style={[globalStyles.sarLabel, {color: theme.primarycolor}]}>
+                style={[globalStyles.sarLabel, { color: theme.primarycolor }]}>
                 SAR
               </Text>
             </View>
@@ -619,7 +625,7 @@ const BadgeStatus = ({
             style={[
               globalStyles.contentBalanceStatusType,
               globalStyles.contentTypoRightAligned,
-              {color: theme.primarytextcolor2},
+              { color: theme.primarytextcolor2 },
             ]}>
             Content
           </Text>
@@ -631,13 +637,13 @@ const BadgeStatus = ({
             <Text
               style={[
                 globalStyles.contentBalanceWithStatus,
-                {color: theme.primarycolor},
+                { color: theme.primarycolor },
               ]}>
               Content
             </Text>
             <View style={globalStyles.wrapperSARLabel}>
               <Text
-                style={[globalStyles.sarLabel, {color: theme.primarycolor}]}>
+                style={[globalStyles.sarLabel, { color: theme.primarycolor }]}>
                 SAR
               </Text>
             </View>
@@ -645,7 +651,7 @@ const BadgeStatus = ({
           <View style={globalStyles.chipsinfoBalanceStatusType}>
             <Cancel />
             <Text
-              style={[globalStyles.labelInactive, {color: theme.primarycolor}]}>
+              style={[globalStyles.labelInactive, { color: theme.primarycolor }]}>
               Inactive
             </Text>
           </View>
@@ -661,7 +667,7 @@ const BadgeStatusMenu = ({
   badgeNotificationMenuSize,
   badgeNotificationMenuNumber,
 }) => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   console.log('Proppss-->', badgeActionableMenuType);
   const getBadgeBackgroundColor = () => {
     switch (badgeNotificationMenuType) {
@@ -728,12 +734,12 @@ const BadgeStatusMenu = ({
         <View
           style={[
             globalStyles.badgenotificationList,
-            {backgroundColor: getBadgeBackgroundColor()},
+            { backgroundColor: getBadgeBackgroundColor() },
           ]}>
           <Text
             style={[
               globalStyles.circularViewtext,
-              {color: getBadgeTextColor()},
+              { color: getBadgeTextColor() },
               getBadgeTextSize(),
             ]}>
             {badgeNotificationMenuNumber}
@@ -754,7 +760,7 @@ const BadgeStatusMenu = ({
             <Text
               style={[
                 globalStyles.labelTypoInactive,
-                {color: theme.primarycolor},
+                { color: theme.primarycolor },
               ]}>
               Inactive
             </Text>
@@ -763,7 +769,7 @@ const BadgeStatusMenu = ({
       )}
       {badgeActionableMenuType === 'Text' && (
         <Text
-          style={[globalStyles.contentText, {color: theme.primarytextcolor2}]}>
+          style={[globalStyles.contentText, { color: theme.primarytextcolor2 }]}>
           Content
         </Text>
       )}
@@ -779,7 +785,7 @@ const BadgeStatusMenu = ({
               style={[
                 globalStyles.stackedListItemBodyheadline,
                 globalStyles.contentTypoRightAligned,
-                {color: theme.primarycolor},
+                { color: theme.primarycolor },
               ]}>
               Content
             </Text>
@@ -789,7 +795,7 @@ const BadgeStatusMenu = ({
                 globalStyles.wrapperFlexBoxBadgeStatusBalance,
               ]}>
               <Text
-                style={[globalStyles.sarLabel, {color: theme.primarycolor}]}>
+                style={[globalStyles.sarLabel, { color: theme.primarycolor }]}>
                 SAR
               </Text>
             </View>
@@ -798,7 +804,7 @@ const BadgeStatusMenu = ({
             style={[
               globalStyles.contentBalanceStatusType,
               globalStyles.contentTypoRightAligned,
-              {color: theme.primarytextcolor2},
+              { color: theme.primarytextcolor2 },
             ]}>
             Content
           </Text>
@@ -810,13 +816,13 @@ const BadgeStatusMenu = ({
             <Text
               style={[
                 globalStyles.contentBalanceWithStatus,
-                {color: theme.primarycolor},
+                { color: theme.primarycolor },
               ]}>
               Content
             </Text>
             <View style={globalStyles.wrapperSARLabel}>
               <Text
-                style={[globalStyles.sarLabel, {color: theme.primarycolor}]}>
+                style={[globalStyles.sarLabel, { color: theme.primarycolor }]}>
                 SAR
               </Text>
             </View>
@@ -824,7 +830,7 @@ const BadgeStatusMenu = ({
           <View style={globalStyles.chipsinfoBalanceStatusType}>
             <Cancel />
             <Text
-              style={[globalStyles.labelInactive, {color: theme.primarycolor}]}>
+              style={[globalStyles.labelInactive, { color: theme.primarycolor }]}>
               Inactive
             </Text>
           </View>

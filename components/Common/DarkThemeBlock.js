@@ -12,7 +12,7 @@ const BadgeStatus = ({
   badgeNotificationSize,
   badgeNotificationNumber,
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDarkMode } = useTheme();
   // console.log('Proppss-->', badgeStatusType);
   const getBadgeBackgroundColor = () => {
     switch (badgeNotificationType) {
@@ -105,7 +105,7 @@ const BadgeStatus = ({
             <Text
               style={[
                 globalStyles.labelTypoInactive,
-                { color: 'black' },
+                { color: isDarkMode?theme.primarytextcolor4:theme.primaryTextColor },
               ]}>
               Inactive
             </Text>
@@ -366,7 +366,7 @@ const BadgeStatusMenu = ({
 
 const DarkThemeBlock = (props) => {
   const { theme, isDarkMode } = useTheme();
-  const backgroundColor = isDarkMode ? theme.primarybackground : theme.primarycolor4;
+  const backgroundColor = isDarkMode ? '#383838' : theme.primarycolor4;
   const primaryTextColor = isDarkMode ? theme.primarycolor2 : theme.primarytextcolor;
 
   const getDefaultAction = () => {
@@ -532,7 +532,7 @@ const DarkThemeBlock = (props) => {
                       </Text>
 
                       {props.iconPreview && (
-                        <RightArrow width={spacingM} height={spacingM} />
+                        isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
                       )}
                     </View>
                   ) : (
