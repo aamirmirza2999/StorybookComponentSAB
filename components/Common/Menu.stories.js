@@ -9,7 +9,7 @@ import i18n from '../../locales/i18n';
 import SearchInput from './SearchInput';
 import DarkThemeBlock from './DarkThemeBlock';
 import LastLoggedIn from './LastLoggedIn';
-
+import { I18nManager } from 'react-native';
 export default {
     title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
   };
@@ -404,6 +404,7 @@ export const TextDividerComponentStory = args => {
   args.Headline = t('initialLang:Headline');
   args.Description = t('initialLang:SunTextDivider');
   args.viewall = t('initialLang:viewall');
+  args.label = t('initialLang:linkButton');
 
   return <TextDivider {...args} />;
 };
@@ -412,9 +413,13 @@ TextDividerComponentStory.args = {
   Type: "promotional",
   Subtitle: true,
   Link: true,
+  enableLeftIcon:I18nManager.isRTL?false:false,
+   enableRightIcon:I18nManager.isRTL?true:true,
+    type:"small",
+    eyeicon: true,
   lang: 'en',
   enableDarktheme: true,
-  eyeicon: true
+  
 }
 
 TextDividerComponentStory.argTypes = {
@@ -425,6 +430,11 @@ TextDividerComponentStory.argTypes = {
   },
   enableDarktheme: {
     control: 'boolean',
+  },
+  type: {
+    control: 'select',
+    options: ['large', 'small'],
+    
   },
 };
 export const SearchInputComponentStory = args => <SearchInput {...args} />;

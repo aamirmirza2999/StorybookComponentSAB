@@ -46,10 +46,10 @@ const TextDivider = (props) => {
                 <Text style={[globalStyles.Linktext, styles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.Headline}</Text>
                {props.Link?
                 <LinkButton
-                label={t('initialLang:linkButton')}
-                enableLeftIcon={I18nManager.isRTL?false:false}
-                enableRightIcon={I18nManager.isRTL?true:true}
-                type="small"
+                label={props.label}
+                enableLeftIcon={props.enableLeftIcon}
+                enableRightIcon={props.enableRightIcon}
+                type={props.type}
                 />
                 :null}
                 </View>
