@@ -1816,7 +1816,7 @@ welcomeBackFlexBox: {
         },
         wrapperFlexBoxview: {
         paddingVertical: 4,
-        paddingHorizontal: 0,
+        paddingHorizontal: 5,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row"
@@ -1825,17 +1825,7 @@ welcomeBackFlexBox: {
         lineHeight: 18,
         fontSize: 14
         },
-        linkFlexBox: {
-        justifyContent: "center",
-        height: 24,
-        alignItems: "center",
-        flexDirection: "row"
-        },
-        textTypo: {
-        fontFamily: "Univers Arabic forHSBC",
-        textAlign: "left",
-        color: "#000"
-        },
+      
         Viewheadlinetext: {
         fontWeight: "700",
         lineHeight: 22,
@@ -1852,8 +1842,7 @@ welcomeBackFlexBox: {
         alignSelf: "stretch"
         },
         viewalltextdivi: {
-        textAlign: "left",
-        color: "#000",
+         textAlign: "left",
         fontFamily: "Univers Next for HSBC"
         },
         wrapperview: {
