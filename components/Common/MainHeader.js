@@ -49,27 +49,6 @@ const MainHeader = (props) => {
     const navigation = useNavigation();
     console.log("WHICH THEME????",theme)
 
-    const CustomStatusBar = (
-  
-      {
-        backgroundColor,
-        barStyle = isDarkMode?'light-content': 'dark-content',
-      }
-    ) => { 
-       
-       const insets = useSafeAreaInsets();
-    
-       return (
-         <View style={{ height: insets.top, backgroundColor }}>
-            <StatusBar
-              animated={true}
-              backgroundColor={backgroundColor}
-              barStyle={barStyle} />
-         </View>
-       );
-    }
-
-
 
     return (
 
@@ -90,7 +69,7 @@ const MainHeader = (props) => {
             <StatusBar
       animated
       backgroundColor={theme.primaryinvert}
-      barStyle={isDarkMode?'light-content': 'dark-content'}
+      barStyle={'dark-content'}
       translucent={true}
     />
            
