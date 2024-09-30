@@ -46,7 +46,7 @@ const TextComponent = (props) => {
           suppressHighlighting={true} // iOS highlight issue fix
         >
           {props.bulletPoint === 'true' ? <Text>o </Text> : null}
-          {props.text}
+          {props.children}
 
         </Text>
         {props.editable && !props.copyable && (
@@ -98,7 +98,7 @@ const TextComponent = (props) => {
               selectable={false}
               suppressHighlighting={true}
             >
-              {props.text || 'Secondary Text'}
+              {props.children || 'Secondary Text'}
             </Text>
           </>
         )}

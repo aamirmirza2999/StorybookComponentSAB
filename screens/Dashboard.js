@@ -35,6 +35,7 @@ import {
           type="level0"
           state='postlogin'
           showbadge={true}
+          NotificationCount={"2"}
           avatarElements="Icons"
           avatarType="Filled"
           AccountType={t('initialLang:Premier')}
