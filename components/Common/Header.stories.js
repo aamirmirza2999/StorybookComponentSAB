@@ -79,6 +79,7 @@ MainHeaderStory.args = {
   
   // Notificationsize:'big',
   showbadge:true,
+  NotificationCount:"2",
   avatarType:"Filled",
   avatarElements:"Icons",
   avatarSize:"Small",
