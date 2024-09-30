@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, StyleSheet, ImageBackground } from "react-native";
+import { Text, View, StyleSheet, ImageBackground ,I18nManager,} from "react-native";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
@@ -58,7 +58,8 @@ export const BlockGeneric = (props) => {
                         height={actuatedNormalize(24)}
                     ></Blockgenericred> */}
                     {isDarkMode ? <Lightmyacounts /> : <Blockgenericred />}
-                    <View style={[globalStyles.Blocktext2, props.Blocktext2, globalStyles.textFlexBox2, props.textFlexBox2]}>
+                    <View style={[globalStyles.Blocktext2, props.Blocktext2, 
+                        globalStyles.textFlexBox2, props.textFlexBox2]}>
                         <View style={[globalStyles.nameWrapper]}>
                             <TextComponent style={[{ color: isDarkMode ? theme.primarytextcolor : theme.primarytextcolor }, globalStyles.blockname, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.SolidText}</TextComponent>
                         </View>
@@ -66,7 +67,19 @@ export const BlockGeneric = (props) => {
                             width={actuatedNormalize(24)}
                             height={actuatedNormalize(24)}
                         ></BlackRightarrow> */}
-                        {isDarkMode ? <Lightright width={actuatedNormalize(24)} height={actuatedNormalize(24)} /> : <BlackRightarrow />}
+                        {isDarkMode ? 
+                        <Lightright style={{
+								// marginTop:actuatedNormalize(2),
+								transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+							}}
+                        width={actuatedNormalize(24)} height={actuatedNormalize(24)} /> : 
+                        <BlackRightarrow 
+
+                        style={{
+                            // marginTop:actuatedNormalize(2),
+                            transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+                        }}
+                        />}
                     </View>
                 </View>
                 : null}
@@ -81,10 +94,15 @@ export const BlockGeneric = (props) => {
                         <View style={[globalStyles.nameWrapper]}>
                             <TextComponent style={[{ color: theme.primarycolor4 }, globalStyles.blockname, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.PattrenText}</TextComponent>
                         </View>
-                        <Lightright
-                            width={actuatedNormalize(24)}
-                            height={actuatedNormalize(24)}
-                        ></Lightright>
+                        
+                                <Lightright
+                            style={{
+                                transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+                            }}
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}
+                            ></Lightright>
+                        
                     </View>
                 </View>
                 : null}

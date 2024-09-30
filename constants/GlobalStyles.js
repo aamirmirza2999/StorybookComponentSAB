@@ -1301,7 +1301,7 @@ checkOutYour: {
   // color: "#000",
   width: actuatedNormalize(310),
   textAlign: "left",
-  height: actuatedNormalize(24)
+  height: actuatedNormalize(28)
 },
 linkButton1: {
   fontSize: fontMedium,
@@ -1320,7 +1320,7 @@ typesolid : {
 Blocktext2: {
   // height: actuatedNormalize(42),
   flexDirection: "row",
-  justifyContent: "space-between"
+  justifyContent: "space-around",
 },
 textFlexBox2: {
   alignItems: "flex-end",
