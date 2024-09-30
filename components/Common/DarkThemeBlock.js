@@ -5,7 +5,7 @@ import { useTheme } from '../../constants/Theme/ThemeProvider';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, Slices, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
-import { spacingL, spacingM } from '../../constants/Size';
+import { spacingL, spacingM, spacingXXS } from '../../constants/Size';
 const BadgeStatus = ({
   badgeStatusType,
   badgeNotificationType,
@@ -105,7 +105,7 @@ const BadgeStatus = ({
             <Text
               style={[
                 globalStyles.labelTypoInactive,
-                { color: isDarkMode?theme.primarytextcolor4:theme.primaryTextColor },
+                { color: isDarkMode ? theme.primarytextcolor4 : theme.primaryTextColor },
               ]}>
               Inactive
             </Text>
@@ -685,7 +685,7 @@ const StackedListItemBody = ({
   stackedListItemBodyStatusState,
   themeChangeText, themeText
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDarkMode } = useTheme();
 
   const getStatusColor = () => {
     switch (stackedListItemBodyStatusState) {
@@ -705,21 +705,21 @@ const StackedListItemBody = ({
     <>
       {stackedListItemBodyType === 'Headline+Body' && (
         <View>
-          <Text
+          <TextComponent
             style={[
               globalStyles.labeltypoHeadline,
               { color: theme.primarycolor },
             ]}>
             {themeText}
-          </Text>
+          </TextComponent>
           {stackedListItemBodyShowContent && (
-            <Text
+            <TextComponent          
               style={[
                 globalStyles.labeltypoBody,
-                { color: theme.primarytextcolor2 },
+                { color: isDarkMode ? theme.primarycolor2_100 : theme.primarytextcolor2 },
               ]}>
               {themeChangeText}
-            </Text>
+            </TextComponent>
           )}
         </View>
       )}

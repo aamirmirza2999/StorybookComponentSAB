@@ -1407,8 +1407,7 @@ textFlexBox3: {
     // color: "#000",
     fontFamily: Fonts.HSBC
   },
-  labeltypoBody: {
-    color: "#767676",
+  labeltypoBody: {  
     alignSelf: "stretch",
     lineHeight: lineHeightMedium,
     fontSize: fontMedium,
@@ -1483,7 +1482,7 @@ lastLoginContainer: {
   width: "83%",
   height: actuatedNormalize(73),
   paddingHorizontal: actuatedNormalize(16),
-  marginHorizontal: actuatedNormalize(30),
+  // marginHorizontal: actuatedNormalize(30),
 },
 userInfoSection: {
   flexDirection: "row",

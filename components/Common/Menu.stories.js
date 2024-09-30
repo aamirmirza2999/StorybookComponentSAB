@@ -800,13 +800,13 @@ export const LastLoggedInStory = (args) => {
   const { theme, toggleTheme, isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
 
-  args.name = 'Mohammed Salah';
-  args.status = 'Last login XX/XX/XX at 6:00';
+  args.name = t('initialLang:userNamelastLogin');
+  args.status = t('initialLang:status');
 
-  const handleChange = (newLang, setLanguage, i18n) => {
+  const handleChange = (newLang) => {
     setLanguage(newLang);
     i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
+    CommonHelper.changeLanguage(newLang);
   };
 
   useEffect(() => {
@@ -814,12 +814,11 @@ export const LastLoggedInStory = (args) => {
   }, []);
 
   useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
+    if (args.lang && args.lang !== language) {
+      handleChange(args.lang);
     }
-  }, [args.lang, language]);
+  }, [args.lang]);
 
-  // Fix: Check before toggling to avoid infinite loop
   useEffect(() => {
     if (args.enableDarktheme !== isDarkMode) {
       toggleTheme();
@@ -830,7 +829,7 @@ export const LastLoggedInStory = (args) => {
     <LastLoggedIn
       {...args}
       changeTheme={toggleTheme}
-      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en')}
     />
   );
 };
@@ -855,3 +854,5 @@ LastLoggedInStory.argTypes = {
     control: 'boolean',
   },
 };
+
+

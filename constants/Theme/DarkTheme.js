@@ -29,7 +29,7 @@ export const darkTheme = {
 
    // PRIMARY GREY COLORS:
  
-   primarycolor2_100:"#76767660",
+   primarycolor2_100:"#767676",
    primarycolor2_90:"rgba(255, 255, 255, 0.5)",
    primarycolor2_80:"rgba(255, 255, 255, 0.45)",
    primarycolor2_70:"rgba(255, 255, 255, 0.4)",

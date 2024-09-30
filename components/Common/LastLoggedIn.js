@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from "react-native";
+import { I18nManager, StyleSheet, View } from "react-native";
 import { AvatarIconWhiteFilled, AvatarIconblackDark, LogoutIconDark, LogoutIconWhite, ProfileEditIconDark } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import TextComponent from './TextComponent';
@@ -17,7 +17,11 @@ const LastLoggedIn = (props) => {
                 <View style={globalStyles.avatarSection}>
                     {isDarkMode ? <AvatarIconblackDark width={spacingXL} height={spacingXL} /> : <AvatarIconWhiteFilled width={spacingXL} height={spacingXL} />}
                     <View style={globalStyles.editIconWrapper}>
-                        <ProfileEditIconDark width={spacingS} height={spacingS} />
+                        <ProfileEditIconDark
+                            style={{
+                                transform: [{ rotate: I18nManager.isRTL ? "180deg" : "0deg" }],
+                            }}
+                            width={spacingS} height={spacingS} />
                     </View>
                 </View>
                 <View style={globalStyles.textWrapper}>
@@ -32,7 +36,7 @@ const LastLoggedIn = (props) => {
                     <TextComponent
                         numberOfLines={1}
                         fontSize={fontMedium}
-                        style={[{ color: theme.primarytextcolor2 }]}
+                        style={[{ color:isDarkMode?theme.primarycolor2_100: theme.primarytextcolor2 }]}
                     >
                         {props.status}
                     </TextComponent>
@@ -48,7 +52,7 @@ const LastLoggedIn = (props) => {
     );
 };
 
-const styles = StyleSheet.create({ 
+const styles = StyleSheet.create({
 });
 
 export default LastLoggedIn;
