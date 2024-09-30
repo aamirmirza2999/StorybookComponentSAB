@@ -129,8 +129,8 @@ import {
                       {
                         fontFamily:
                           username === ''
-                            ? Fonts.Regular
-                            : Fonts.Bold,
+                            ? Fonts.HSBC
+                            : Fonts.HSBC,
                       },
                       props.textstyle,
                     ]}
@@ -191,7 +191,7 @@ import {
       left:spacingXS,
       fontSize: 15,
       lineHeight: 20,
-      fontFamily: "Univers Next for HSBC",
+      fontFamily:Fonts.HSBC,
       color: "#000",
       textAlign: "left"
       // fontFamily: Fonts.universlTStd,
@@ -247,7 +247,7 @@ import {
       //justifyContent: 'center',
       //height: actuatedNormalize(44),
       fontSize: actuatedNormalize(14),
-      fontFamily: Fonts.Bold,
+      fontFamily: Fonts.HSBC,
     },
     billDetailInputStyle: {
       fontSize: actuatedNormalize(18),
@@ -257,7 +257,7 @@ import {
       color: '#d22630',
       fontSize: actuatedNormalize(12),
       marginTop: actuatedNormalize(8),
-      fontFamily: Fonts.Light,
+      fontFamily: Fonts.HSBC,
     },
     billDetailCurrencyStyle: {
       fontSize: actuatedNormalize(11),
