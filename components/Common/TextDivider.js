@@ -1,9 +1,9 @@
 import * as React from "react";
-import {Text, StyleSheet, View, I18nManager} from "react-native";
+import {Text, StyleSheet, View, I18nManager,} from "react-native";
 import { globalStyles } from '../../constants/GlobalStyles';
-import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import {RightRedArrow1} from '../../constants/SvgLocations';
+import TextComponent from "../Common/TextComponent"
 import { LinkButton } from "./Button";
 import { useTranslation } from 'react-i18next';
 import { PassWordeye ,PassWordeyeDark} from "../../constants/SvgLocations";

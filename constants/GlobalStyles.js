@@ -1853,15 +1853,14 @@ welcomeBackFlexBox: {
         },
         viewall: {
         textAlign: "left",
-        color: "#000",
-        fontFamily:Fonts.HSBC,
         },
         wrapperFlexBoxview: {
-        paddingVertical: 4,
-        paddingHorizontal: 5,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row"
+          paddingVertical: 4,
+          paddingHorizontal: 0,
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "row",
+          left:8
         },
         textLayout: {
         lineHeight: 18,
@@ -1871,7 +1870,8 @@ welcomeBackFlexBox: {
         Viewheadlinetext: {
         fontWeight: "700",
         lineHeight: 22,
-        fontSize: 17
+        fontSize: 17,
+        fontFamily:Fonts.HSBC
         },
         iconoutlinepassword: {
         width: 24,
@@ -1893,7 +1893,7 @@ welcomeBackFlexBox: {
         frameParenttextdivider: {
         justifyContent: "space-between",
         flexDirection: "row",
-        alignSelf: "stretch"
+        alignSelf: "stretch",
         },
         languageenglish: {
         top: 20

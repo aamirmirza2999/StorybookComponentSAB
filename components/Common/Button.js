@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { StyleSheet, View,TouchableOpacity,I18nManager, Alert} from "react-native";
+import { StyleSheet, View,TouchableOpacity,I18nManager, Alert, Text} from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
 import { useTheme } from "../../constants/Theme/ThemeProvider";
@@ -252,9 +252,9 @@ export const LinkButton = (props) => {
 							width={actuatedNormalize(24)}
 							height={actuatedNormalize(24)}
 							></RightRedArrow1>:null}
-								<TextComponent
+								<Text
 								style={[props.type==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:isDarkMode? theme.primarycolor4 : theme.primarycolor3,alignSelf:"center"}]}
-								>{props.label}</TextComponent>
+								>{props.label}</Text>
 							{props.enableRightIcon?
 							isDarkMode?
 							<RightRedArrowDark1
