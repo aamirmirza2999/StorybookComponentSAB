@@ -1301,7 +1301,7 @@ checkOutYour: {
   // color: "#000",
   width: actuatedNormalize(310),
   textAlign: "left",
-  height: actuatedNormalize(24)
+  height: actuatedNormalize(28)
 },
 linkButton1: {
   fontSize: fontMedium,
@@ -1320,7 +1320,7 @@ typesolid : {
 Blocktext2: {
   // height: actuatedNormalize(42),
   flexDirection: "row",
-  justifyContent: "space-between"
+  justifyContent: "space-around",
 },
 textFlexBox2: {
   alignItems: "flex-end",
@@ -1407,8 +1407,7 @@ textFlexBox3: {
     // color: "#000",
     fontFamily: Fonts.HSBC
   },
-  labeltypoBody: {
-    color: "#767676",
+  labeltypoBody: {  
     alignSelf: "stretch",
     lineHeight: lineHeightMedium,
     fontSize: fontMedium,
@@ -1483,7 +1482,7 @@ lastLoginContainer: {
   width: "83%",
   height: actuatedNormalize(73),
   paddingHorizontal: actuatedNormalize(16),
-  marginHorizontal: actuatedNormalize(30),
+  // marginHorizontal: actuatedNormalize(30),
 },
 userInfoSection: {
   flexDirection: "row",

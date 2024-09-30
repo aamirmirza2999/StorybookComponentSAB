@@ -52,430 +52,474 @@ const MainHeader = (props) => {
 
     return (
 
-        <View
-        style={[styles.mainContainer,{
-             backgroundColor:theme.primaryinvert,
-            }]}
-        
-            >
-            <View
-                style={{
-                    backgroundColor:theme.primaryinvert,
-                    
-
-                   
-                }}
-            />
-            <StatusBar
-      animated
-      backgroundColor={theme.primaryinvert}
-      barStyle={'dark-content'}
-      translucent={true}
-    />
-           
-             {props.type === 'level0'?
-            <View
-                style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    paddingHorizontal: spacingS,
-                    height:50,
-                    alignItems:'center',
-                }}>
-                   
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                      
-                    <LogoComponent enableLogo={props.type=='level0'||props.state === 'prelogin'?true:false} />
-
-                    {props.state ==='postlogin' ?
-                        <>
-                            <View style={{
-                                height: actuatedNormalize(18),
-                                width: actuatedNormalize(2),
-                                backgroundColor: theme.primarycolor,
-                                marginLeft: spacingS
-                            }}>
-                            </View>
-
-                            <TextComponent style={{
-                                marginLeft: spacingXS,
-                                color: theme.primarycolor,
-                                fontWeight: "700",
-                                fontSize: actuatedNormalize(12),
-                                fontFamily:Fonts.HSBC
-                            }}> {props.AccountType} </TextComponent>
-                        </>
-
-                        : null}
-                </View>
-
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-
-                {props.state === "postlogin" ? (
-    <>
-        <TouchableOpacity
-            style={ [styles.IconViewStyle2,{}]}
-            onPress={props.Searchfunc}
-        >
-         
-            <SvgIconList
-                icon="SearchIcon"
-                width={actuatedNormalize(24)}
-                height={actuatedNormalize(24)}
-                transform={[
-                  { scaleX: I18nManager.isRTL ? -1 : 1 }        
-                ]}
-            />
-           
-        </TouchableOpacity>
-
-        <TouchableOpacity
-            style={[styles.IconViewStyle2, { flexDirection:I18nManager.isRTL? 'row-reverse':'row', 
-            marginLeft: spacingXS, marginRight: spacingXS,
-            transform:[{ scaleX: I18nManager.isRTL ? 1 : 1 } ]  ,
-            alignItems: "flex-start",
-            justifyContent: "flex-start",    
-            // marginLeft: spacingS, 
-            // marginRight:!props.showbadge?spacingS:0, 
-            // top: actuatedNormalize(3)
+      <View
+      style={[styles.mainContainer,{
+           backgroundColor:theme.primaryinvert,
           }]}
-            onPress={props.NotificationFunc}
-        >
-            <SvgIconList
-                icon="NotificationIcon"
-                width={actuatedNormalize(24)}
-                height={actuatedNormalize(24)}
-                fill={isDarkMode ? "white" : "black"}
-               
-            />
-            {props.showbadge?
-            <View style={[styles.badgenotification,]}>
-                <TextComponent style={[styles.TextComponent]}>2</TextComponent>
-            </View>:null}
-        </TouchableOpacity>
+      
+          >
+          <View
+              style={{
+                  backgroundColor:theme.primaryinvert,
+                  
 
-        <TouchableOpacity
-            style={{paddingBottom:actuatedNormalize(5)}}
-            onPress={props.AvatarIconfunc}
-        >
-            <Avatarcomponent
-                avatarinitial={props.avatarinitial}
-                avatarblack={props.avatarElements==='Icons' && props.avatarType==='Filled'?true:false}
-                avatarname={props.avatarElements==='Initials' &&props.avatarSize==='Large' ?true:false}
-                avatarnamemid={props.avatarElements==='Initials' &&props.avatarSize==='Medium' ?true:false}
-                avatarnamesmall={props.avatarElements==='Initials' &&props.avatarSize==='Small' ?true:false}
-                avatarwhite={props.avatarElements==='Icons' && props.avatarType==='Outline'?true:false}
-            />
-        </TouchableOpacity>
-    </>
+                 
+              }}
+          />
+          <StatusBar
+    animated
+    backgroundColor={theme.primaryinvert}
+    barStyle={'dark-content'}
+    translucent={true}
+  />
+         
+           {props.type === 'level0'?
+          <View
+              style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingHorizontal: spacingS,
+                  height:50,
+                  alignItems:'center',
+              }}>
+                 
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    
+                  <LogoComponent enableLogo={props.type=='level0'||props.state === 'prelogin'?true:false} />
+
+                  {props.state ==='postlogin' ?
+                      <>
+                          <View style={{
+                              height: actuatedNormalize(18),
+                              width: actuatedNormalize(2),
+                              backgroundColor: theme.primarycolor,
+                              marginLeft: spacingS
+                          }}>
+                          </View>
+
+                          <TextComponent style={{
+                              marginLeft: spacingXS,
+                              color: theme.primarycolor,
+                              fontWeight: "700",
+                              fontSize: actuatedNormalize(12),
+                              fontFamily:Fonts.HSBC
+                          }}> {props.AccountType} </TextComponent>
+                      </>
+
+                      : null}
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+
+              {props.state === "postlogin" ? (
+  <>
+      <TouchableOpacity
+          style={ [styles.IconViewStyle2,{}]}
+          onPress={props.Searchfunc}
+      >
+       
+          <SvgIconList
+              icon="SearchIcon"
+              width={actuatedNormalize(24)}
+              height={actuatedNormalize(24)}
+              transform={[
+                { scaleX: I18nManager.isRTL ? -1 : 1 }        
+              ]}
+          />
+         
+      </TouchableOpacity>
+
+      <TouchableOpacity
+          style={[styles.IconViewStyle2, { flexDirection:I18nManager.isRTL? 'row-reverse':'row', 
+          marginLeft: spacingXS, marginRight: spacingXS,
+          transform:[{ scaleX: I18nManager.isRTL ? 1 : 1 } ]  ,
+          alignItems: "flex-start",
+          justifyContent: "flex-start",    
+          // marginLeft: spacingS, 
+          // marginRight:!props.showbadge?spacingS:0, 
+          // top: actuatedNormalize(3)
+        }]}
+          onPress={props.NotificationFunc}
+      >
+          <SvgIconList
+              icon="NotificationIcon"
+              width={actuatedNormalize(24)}
+              height={actuatedNormalize(24)}
+              fill={isDarkMode ? "white" : "black"}
+             
+          />
+          {props.showbadge?
+          <View style={[styles.badgenotification,]}>
+              <TextComponent style={[styles.TextComponent]}>{props.NotificationCount}</TextComponent>
+          </View>:null}
+      </TouchableOpacity>
+
+      <TouchableOpacity
+          style={{paddingBottom:actuatedNormalize(5)}}
+          onPress={props.AvatarIconfunc}
+      >
+          <Avatarcomponent
+              avatarinitial={props.avatarinitial}
+              avatarblack={props.avatarElements==='Icons' && props.avatarType==='Filled'?true:false}
+              avatarname={props.avatarElements==='Initials' &&props.avatarSize==='Large' ?true:false}
+              avatarnamemid={props.avatarElements==='Initials' &&props.avatarSize==='Medium' ?true:false}
+              avatarnamesmall={props.avatarElements==='Initials' &&props.avatarSize==='Small' ?true:false}
+              avatarwhite={props.avatarElements==='Icons' && props.avatarType==='Outline'?true:false}
+          />
+      </TouchableOpacity>
+  </>
 ) : (
-    props.LanguageIcon ? (
-        <TouchableOpacity
+  props.LanguageIcon ? (
+      <TouchableOpacity
+          style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+          onPress={props.changeLanguage}
+      >
+          <SvgIconList
+              icon="ChangeLang"
+              width={actuatedNormalize(24)}
+              height={actuatedNormalize(24)}
+              transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+          />
+      </TouchableOpacity>
+  ) : props.SupportedIcon?
+    <TouchableOpacity
             style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
-            onPress={props.changeLanguage}
+            onPress={props.SupportedIconFunc}
         >
             <SvgIconList
-                icon="ChangeLang"
+                icon={props.SupportIcon}
                 width={actuatedNormalize(24)}
                 height={actuatedNormalize(24)}
                 transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
             />
         </TouchableOpacity>
-    ) : null
+    
+    :null
 )}
 
-                        
-                </View>
-            </View>
-            :
-            <>
-          
-          <View style={{
-           flexDirection: 'row',
-           justifyContent: 'space-between',
-           paddingHorizontal: spacingS,
-           height:50,
-           alignItems:'center',
-        }}>
-          <View style={[styles.column1]}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              {props.type !== 'level0'&& props.type !=='level1-menu' && props.back ? (
-                <TouchableOpacity
-                  style={[styles.IconViewStyle1, props.IconViewStyle1]}
-                  onPress={ props.BackarrowFun?
-                    ()=>props.BackarrowFun() : ()=>navigation.goBack()}
-                  
-                >
-                  <SvgIconList
-                    icon="BlackArrow"
-                    width={actuatedNormalize(25)}
-                    height={actuatedNormalize(25)}
-                    transform={[
-                      { scaleX: I18nManager.isRTL ? -1 : 1 }           
-                    ]}
-                   
-                  />
-                </TouchableOpacity>
-              ) : null}
-              {props.type === 'level1-menu' ? (
-                <TouchableOpacity
-                  style={{ }}
-                  onPress={props.changeLanguage}
-                >
-                  <SvgIconList
-                    icon="ChangeLang"
-                    width={actuatedNormalize(24)}
-                    height={actuatedNormalize(24)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                  />
-                </TouchableOpacity>
-              ) : null}
-
-
-            </View>
+                      
+              </View>
           </View>
-          {(props.type==='level2' && props.Headline)|| props.type==='search'?
-            <View style={[styles.column2, {
-            }, props.column2]}
-            >
-              <TextComponent
-                numberOfLines={1}
-                ellipsizeMode="tail"
-                style={{
-                  color: theme.primarycolor,
-                  fontWeight: "700",
-                  fontSize: actuatedNormalize(17),
-                  bottom:actuatedNormalize(3),
-                  fontFamily:Fonts.HSBC
-
-                }}
-              >
-                {props.type==='search'?'Search':props.HeadlineText}
-              </TextComponent>
-
-
-            </View>
-            : null}
-
-
-          <View style={[styles.column3]}>
-
-            
-
-            {props.type==='level2'&& props.CloseIcon? (
+          :
+          <>
+        
+        <View style={{
+         flexDirection: 'row',
+         justifyContent: 'space-between',
+         paddingHorizontal: spacingS,
+         height:50,
+         alignItems:'center',
+      }}>
+        <View style={[styles.column1]}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            {props.type !== 'level0'&& props.type !=='level1-menu' && props.back ? (
               <TouchableOpacity
-                style={styles.IconViewStyle2}
-                onPress={ props.onClosePress?
-                   ()=>props.onClosePress() : ()=>navigation.goBack()}
-               
+                style={[styles.IconViewStyle1, props.IconViewStyle1]}
+                onPress={ props.BackarrowFun?
+                  ()=>props.BackarrowFun() : ()=>navigation.goBack()}
+                
               >
-                <View style={{
-                  width: actuatedNormalize(44), height: actuatedNormalize(44), alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <SvgIconList
-                    icon="BlackClose"
-                    width={actuatedNormalize(25)}
-                    height={actuatedNormalize(25)}
-
-                  />
-                </View>
+                <SvgIconList
+                  icon="BlackArrow"
+                  width={actuatedNormalize(25)}
+                  height={actuatedNormalize(25)}
+                  transform={[
+                    { scaleX: I18nManager.isRTL ? -1 : 1 }           
+                  ]}
+                 
+                />
+              </TouchableOpacity>
+            ) : null}
+            {props.type === 'level1-menu' ? (
+              <TouchableOpacity
+                style={{ }}
+                onPress={props.changeLanguage}
+              >
+                <SvgIconList
+                  icon="ChangeLang"
+                  width={actuatedNormalize(24)}
+                  height={actuatedNormalize(24)}
+                  transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                />
               </TouchableOpacity>
             ) : null}
 
-            {props.type==='level1-menu' ? (
-              <View style={{ flexDirection: 'row' , alignItems: 'center'}}>
-
-                <TouchableOpacity
-                  style={styles.IconViewStyle2}
-                  onPress={props.Searchfunc}
-                >
-                  <SvgIconList
-                    icon="SearchIcon"
-                    width={actuatedNormalize(24)}
-                    height={actuatedNormalize(24)}
-                    transform={[
-                      { scaleX: I18nManager.isRTL ? -1 : 1 }    
-                    ]}
-                  
-                  />
-                </TouchableOpacity>
-
-
-
-                <TouchableOpacity
-                  style={[styles.IconViewStyle2, { marginLeft: spacingXS, marginRight: spacingXS }]}
-                  onPress={props.Helpfunc}
-                >
-                  <SvgIconList
-                    icon="HelpIcon"
-                    width={actuatedNormalize(24)}
-                    height={actuatedNormalize(24)}
-                     transform={[
-                  { scaleX: I18nManager.isRTL ? -1 : 1 }        
-                ]}
-                                                           
-                  />
-                </TouchableOpacity>
-
-                <TouchableOpacity
-            style={{paddingBottom:actuatedNormalize(5)}}
-            onPress={props.AvatarIconfunc}
-        >
-            <Avatarcomponent
-                avatarinitial={props.avatarinitial}
-                avatarblack={props.avatarElements==='Icons' && props.avatarType==='Filled'?true:false}
-                avatarname={props.avatarElements==='Initials' &&props.avatarSize==='Large' ?true:false}
-                avatarnamemid={props.avatarElements==='Initials' &&props.avatarSize==='Medium' ?true:false}
-                avatarnamesmall={props.avatarElements==='Initials' &&props.avatarSize==='Small' ?true:false}
-                avatarwhite={props.avatarElements==='Icons' && props.avatarType==='Outline'?true:false}
-            />
-        </TouchableOpacity>
-
-              </View>
-            ) : null}
-
-
-            {props.multiplesvgRequired ? (
-              props.multiplesvgUI  //Add your required number of svg icons and its function within your js. 
-            ) : null}
-
 
           </View>
         </View>
-        </>
-        }
-     
-{(props.type === 'level1' || props.type === 'level1-menu' || props.type === 'level1-foryou') && (
-  <View style={{ flexDirection: 'row', marginTop: spacingM, justifyContent: 'space-between' }}>
-    <TextComponent style={[styles.HeadlineText, { color: theme.primarycolor }]}>
-      {props.HeadlineText}
-    </TextComponent>
+        {(props.type==='level2' && props.Headline)|| props.type==='search'?
+          <View style={[styles.column2, {
+          }, props.column2]}
+          >
+            <TextComponent
+              numberOfLines={1}
+              ellipsizeMode="tail"
+              style={{
+                color: theme.primarycolor,
+                fontWeight: "700",
+                fontSize: actuatedNormalize(17),
+                bottom:actuatedNormalize(3),
+                fontFamily:Fonts.HSBC
 
-    {props.type === 'level1' && props.showLinkButton ? (
-      <View style={{ marginTop: actuatedNormalize(5), paddingRight: actuatedNormalize(16) }}>
-        <LinkButton
-          label={props.link}
-          type={props.linkButtonsize}
-          enableRightIcon={props.IconRight === true}
-          enableLeftIcon={props.IconLeft === true}
-          // onPress={{}}
-        />
-      </View>
-    ) : props.type === 'level1-foryou' && props.Search ? (
-      <TouchableOpacity
-      style={{ marginTop: actuatedNormalize(5), paddingRight: actuatedNormalize(16) }}
-        onPress={props.Searchfunc}
+              }}
+            >
+              {props.type==='search'?'Search':props.HeadlineText}
+            </TextComponent>
+
+
+          </View>
+          : null}
+
+
+        <View style={[styles.column3]}>
+
+        {props.SupportedIcon?
+    <TouchableOpacity
+            style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+            onPress={props.SupportedIconFunc}
+        >
+            <SvgIconList
+                icon={props.SupportIcon}
+                fill={props.fill}
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+                transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+            />
+        </TouchableOpacity>
+    
+    :null}
+
+          {props.type==='level2'&& props.CloseIcon? (
+<TouchableOpacity
+            style={styles.IconViewStyle2}
+            onPress={ props.onClosePress?
+              ()=>props.onClosePress() : ()=>navigation.goBack()}
+          
+            >
+              <View style={{
+                width: actuatedNormalize(44),
+                height: actuatedNormalize(44),
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                <SvgIconList
+                  icon="BlackClose"
+                  width={actuatedNormalize(25)}
+                  height={actuatedNormalize(25)}
+
+                />
+              </View>
+            </TouchableOpacity>
+          ) : null}
+
+          {props.type==='level1-menu' ? (
+            <View style={{ flexDirection: 'row' , alignItems: 'center'}}>
+
+              <TouchableOpacity
+                style={styles.IconViewStyle2}
+                onPress={props.Searchfunc}
+              >
+                <SvgIconList
+                  icon="SearchIcon"
+                  width={actuatedNormalize(24)}
+                  height={actuatedNormalize(24)}
+                  transform={[
+                    { scaleX: I18nManager.isRTL ? -1 : 1 }    
+                  ]}
+                
+                />
+              </TouchableOpacity>
+
+
+
+              <TouchableOpacity
+                style={[styles.IconViewStyle2, { marginLeft: spacingXS, marginRight: spacingXS }]}
+                onPress={props.Helpfunc}
+              >
+                <SvgIconList
+                  icon="HelpIcon"
+                  width={actuatedNormalize(24)}
+                  height={actuatedNormalize(24)}
+                                     transform={[
+                { scaleX: I18nManager.isRTL ? -1 : 1 }        
+              ]}
+                                                         
+                />
+              </TouchableOpacity>
+
+          <TouchableOpacity
+          style={{paddingBottom:actuatedNormalize(5)}}
+          onPress={props.AvatarIconfunc}
       >
-        <SvgIconList
-          icon="SearchIcon"
-          width={actuatedNormalize(24)}
-          height={actuatedNormalize(24)}
-          transform={[
-            { scaleX: I18nManager.isRTL ? 1 : 1 }    
-          ]}
-        />
+          <Avatarcomponent
+              avatarinitial={props.avatarinitial}
+              avatarblack={props.avatarElements==='Icons' && props.avatarType==='Filled'?true:false}
+              avatarname={props.avatarElements==='Initials' &&props.avatarSize==='Large' ?true:false}
+              avatarnamemid={props.avatarElements==='Initials' &&props.avatarSize==='Medium' ?true:false}
+              avatarnamesmall={props.avatarElements==='Initials' &&props.avatarSize==='Small' ?true:false}
+              avatarwhite={props.avatarElements==='Icons' && props.avatarType==='Outline'?true:false}
+          />
       </TouchableOpacity>
-    ) : null}
-  </View>
+
+            </View>
+          ) : null}
+
+
+          {props.multiplesvgRequired ? (
+            props.multiplesvgUI  //Add your required number of svg icons and its function within your js. 
+          ) : null}
+
+
+        </View>
+      </View>
+      </>
+      }
+   
+{(props.type === 'level1' || props.type === 'level1-menu' || props.type === 'level1-foryou') && (
+<View style={{ flexDirection: 'row', marginTop: spacingXS, justifyContent: 'space-between' }}>
+  <TextComponent style={[styles.HeadlineText, { color: theme.primarycolor }]}>
+    {props.HeadlineText}
+  </TextComponent>
+  {props.SupportedIcon?
+    <TouchableOpacity
+            style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+            onPress={props.SupportedIconFunc}
+        >
+            <SvgIconList
+                icon={props.SupportIcon}
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+                transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+            />
+        </TouchableOpacity>
+    
+    :null }
+  {props.type === 'level1' && props.showLinkButton ? (
+    <View style={{ marginTop: actuatedNormalize(5), paddingRight: actuatedNormalize(16) }}>
+      <LinkButton
+        label={props.link}
+        type={props.linkButtonsize}
+        enableRightIcon={props.IconRight === true}
+        enableLeftIcon={props.IconLeft === true}
+        onPress={props.onLinkPress}
+        // onPress={{}}
+      />
+    </View>
+  ) : props.type === 'level1-foryou' && props.Search ? (
+    <TouchableOpacity
+    style={{ marginTop: actuatedNormalize(5), paddingRight: actuatedNormalize(16) }}
+      onPress={props.Searchfunc}
+    >
+      <SvgIconList
+        icon="SearchIcon"
+        width={actuatedNormalize(24)}
+        height={actuatedNormalize(24)}
+        transform={[
+          { scaleX: I18nManager.isRTL ? 1 : 1 }    
+        ]}
+      />
+    </TouchableOpacity>
+  ) : null}
+</View>
 )}
 
 
 
 
-            {props.BottomBar && Platform.OS === 'ios' ?
-                <View style={{
-                    height:
-                        getBottomSpace(), width: '100%',
-                        // backgroundColor: theme.backgroundColor
-                }}>
-                    {props.BottomBar ? props.BottomBar : null}
-                </View> : null
-            }
-        </View>
+          {props.BottomBar && Platform.OS === 'ios' ?
+              <View style={{
+                  height:
+                      getBottomSpace(), width: '100%',
+                      // backgroundColor: theme.backgroundColor
+              }}>
+                  {props.BottomBar ? props.BottomBar : null}
+              </View> : null
+          }
+      </View>
 
-    )
+  )
 }
 
 
 const styles = {
 
-    mainContainer: {
-        
-        paddingTop:Platform.OS=='ios'? getStatusBarHeight() + 40:getStatusBarHeight() + 25 ,
-    },
+  mainContainer: {
+      
+      paddingTop:Platform.OS=='ios'? getStatusBarHeight() + 40:getStatusBarHeight() + 25 ,
+  },
 
-    whiteContainer: {
-      //  backgroundColor: "black",
-        flex: 1,
-    },
-    textFlexBox: {
-        justifyContent: "center",
-        alignItems: "center"
+  whiteContainer: {
+    //  backgroundColor: "black",
+      flex: 1,
+  },
+  textFlexBox: {
+      justifyContent: "center",
+      alignItems: "center"
+      },
+      TextComponent: {
+      fontSize: actuatedNormalize(9),
+      fontFamily: Fonts.HSBC,
+      color: "#fff",
+      textAlign: "center",
+      display: "flex",
+      bottom:I18nManager.isRTL?actuatedNormalize(2):null
+      },
+      badgenotification: {
+      borderRadius: 100,
+      backgroundColor: "#ffbb33",
+      width: 13,
+      height: 13,
+      right:actuatedNormalize(10),
+      alignItems:'center',
+      justifyContent:'center'
+      },
+      column1: {
+          width: "20%",
+          //paddingLeft: spacingS,
+          justifyContent: "flex-end",
+          //top: actuatedNormalize(16),
+          //flexDirection: 'row',
+          //alignItems: 'center'
+      
         },
-        TextComponent: {
-        fontSize: actuatedNormalize(9),
-        fontFamily: Fonts.HSBC,
-        color: "#fff",
-        textAlign: "center",
-        display: "flex",
+        column2: {
+          width: "60%",
+          alignItems: "flex-end",
+          justifyContent: "center",
+          flexDirection: "row",
+         // top: actuatedNormalize(16)
+      
         },
-        badgenotification: {
-        borderRadius: 100,
-        backgroundColor: "#ffbb33",
-        width: 13,
-        height: 13,
-        right:actuatedNormalize(10),
-        alignItems:'center',
-        justifyContent:'center'
+        column3: {
+          flexDirection: 'row',
+          width: "20%",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+         // paddingRight: actuatedNormalize(20),
+          //top: actuatedNormalize(16)
+      
         },
-        column1: {
-            width: "20%",
-            //paddingLeft: spacingS,
-            justifyContent: "flex-end",
-            //top: actuatedNormalize(16),
-            //flexDirection: 'row',
-            //alignItems: 'center'
-        
-          },
-          column2: {
-            width: "60%",
-            alignItems: "flex-end",
-            justifyContent: "center",
-            flexDirection: "row",
-           // top: actuatedNormalize(16)
-        
-          },
-          column3: {
-            flexDirection: 'row',
-            width: "20%",
-            alignItems: "flex-end",
-            justifyContent: "flex-end",
-           // paddingRight: actuatedNormalize(20),
-            //top: actuatedNormalize(16)
-        
-          },
-          IconViewStyle1: {
-            height: actuatedNormalize(25),
-            width: actuatedNormalize(25),
-            alignItems: "center",
-            justifyContent: "center",
-        
-          },
-          IconViewStyle2: {
-            transform: [{ scaleX: I18nManager.isRTL ? -1 : 1 }],
-            height: actuatedNormalize(25),
-            width: actuatedNormalize(25),
-            alignItems: "center",
-            justifyContent: "center",
-          },
-          HeadlineText: {
-            fontSize: 26,
-            lineHeight: 32,
-            fontWeight: "700",
-            fontFamily:Fonts.HSBC,
-            color: "#000",
-            paddingHorizontal: spacingS,
-              }
+        IconViewStyle1: {
+          height: actuatedNormalize(25),
+          width: actuatedNormalize(25),
+          alignItems: "center",
+          justifyContent: "center",
+      
+        },
+        IconViewStyle2: {
+          transform: [{ scaleX: I18nManager.isRTL ? -1 : 1 }],
+          height: actuatedNormalize(25),
+          width: actuatedNormalize(25),
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        HeadlineText: {
+          fontSize: 26,
+          lineHeight: 32,
+          fontWeight: "700",
+          fontFamily:Fonts.HSBC,
+          color: "#000",
+          paddingHorizontal: spacingS,
+            }
 }
 export default MainHeader

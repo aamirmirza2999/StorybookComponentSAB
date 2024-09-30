@@ -92,7 +92,7 @@ export {default as Whitecard} from "../assets/Whitecard.svg"
 export {default as Whiterightarrow} from "../assets/Whiteright.svg"
 export {default as ProfileEditIconDark} from "../assets/profileEditDark.svg";
 export {default as AvatarIconWhiteFilled} from "../assets/profileIconFilled.svg";
-export {default as LogoutIconWhite} from "../assets/power.svg";
+export {default as LogoutIconWhite} from "../assets/logoutIcon.svg";
 export {default as LogoutIconDark} from "../assets/powerDark.svg";
 
 export {default as PassWordeye} from "../assets/password.svg"
