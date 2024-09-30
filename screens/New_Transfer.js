@@ -33,40 +33,40 @@ const New_Transfer=()=> {
       quickActionButtonBox={{
         marginRight:actuatedNormalize(8)
       }}
-        showIcon={true}
+        HideIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
        quickActionButtonLabel={t('initialLang:Button')}
-       quickActionButtonType={"Vertical"}
+      Type={"Vertical"}
       onPress={()=>navigation.navigate('Bills')}
       ></QuickButton>
         <QuickButton
          quickActionButtonBox={{
           marginRight:actuatedNormalize(8)
         }}
-      showIcon={true}
+      HideIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
        quickActionButtonLabel={t('initialLang:Button')}
-       quickActionButtonType={"Vertical"}
+     Type={"Vertical"}
        onPress={()=>alert("Button")}
       
       ></QuickButton>
          <QuickButton
-        showIcon={true}
+        HideIcon={true}
        Icon={<SvgIconList
                               icon="AccountAction"
                               width={24}
                               height={24}
                            />}
        quickActionButtonLabel={t('initialLang:Button')}
-       quickActionButtonType={"Vertical"}
+   Type={"Vertical"}
        onPress={()=>alert("Button1")}
       ></QuickButton>
       </View>

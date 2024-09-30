@@ -201,11 +201,13 @@ export const QuickButtonComponentStory = (args) => {
     }
   }, [args.lang]);
   useEffect(() => {
-   
-    if (args.enableDarktheme !== isDarkMode) {
+    const headerthemedark = args.colorStyles !== 'LightMode'; 
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.enableDarktheme, isDarkMode]);
+  }, [args.colorStyles, isDarkMode, toggleTheme]); 
+
   
   args.label=t('initialLang:action')
   args.quickActionButtonLabel=t('initialLang:action')
@@ -217,16 +219,16 @@ QuickButtonComponentStory.args = {
  width={24}
  height={24}
 />,
-showIcon:true,
-quickActionButtonType:"Vertical",//Vertical/Horizontal/Vertical-Small
-badge:true,
+HideIcon:true,
+Type:"Vertical",//Vertical/Horizontal/Vertical-Small
+Badge:true,
 quickNotificationCount:"2",
 onPress:null,
 lang:'en',
-enableDarktheme: false,
+colorStyles:"LightMode",
 };
 QuickButtonComponentStory.argTypes = {
-  quickActionButtonType: {
+ Type : {
     control: 'select',
     options: ['Vertical', 'Horizontal','Vertical-Small'],
   },
@@ -234,9 +236,10 @@ QuickButtonComponentStory.argTypes = {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 }
 
 export const ListButtonComponentStory = (args) =>{

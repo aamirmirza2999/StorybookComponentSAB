@@ -693,11 +693,11 @@ export const QuickButton = (props) => {
 		}
 		onPress={props.onPress}
 	>
-		{props.quickActionButtonType==="Vertical"?
+		{props.Type==="Vertical"?
 		<View
 		style={[globalStyles.quickActionButtonBox,props.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
 		>
-			{props.showIcon?
+			{props.HideIcon?
 			<View
 				style={{
 				//marginTop: actuatedNormalize(48),
@@ -709,14 +709,14 @@ export const QuickButton = (props) => {
 		</View>
 		:null}
 
-		{props.quickActionButtonType==="Horizontal"?
+		{props.Type==="Horizontal"?
 					<View
 					style={[globalStyles.quickActionButtonBox1,props.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
 					>
 							{props.Icon}
 					
 						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
-						{props.badge?
+						{props.Badge?
 						<View
 						style={[globalStyles.badgeNotification,props.badgeNotification,{}]}
 						>
@@ -726,7 +726,7 @@ export const QuickButton = (props) => {
 					</View>
 		:null}
 
-		{props.quickActionButtonType==="Vertical-Small"?
+		{props.Type==="Vertical-Small"?
 			<View
 			style={{
 				flexDirection:"column",
@@ -739,7 +739,7 @@ export const QuickButton = (props) => {
 							{props.Icon}
 					</View>
 					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
-			{props.badge?
+			{props.Badge?
 				<View
 				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
 				>

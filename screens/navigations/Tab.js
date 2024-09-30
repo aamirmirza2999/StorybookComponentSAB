@@ -262,9 +262,7 @@ const Tab=({
                         marginTop: actuatedNormalize(4),
                         fontSize: actuatedNormalize(12),
                         //fontFamily: Fonts.universlTStd,
-                        fontFamily: I18nManager.isRTL
-                          ? Fonts.UniversArabicForHSBC_Regular
-                          : ActiveFontEn,
+                        fontFamily: Fonts.HSBC,
                         top: I18nManager.isRTL ? actuatedNormalize(-3) : actuatedNormalize(0),
                         color: tintColor,
                         textAlign: "center",

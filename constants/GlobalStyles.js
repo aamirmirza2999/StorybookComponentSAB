@@ -19,7 +19,7 @@ const deviceHeight = Dimensions.get('window').height;
         paddingBottom:spacingXS,
         // flexDirection: 'row',
         // justifyContent: 'center',
-        fontFamily:Fonts.Regular,
+        fontFamily:Fonts.HSBC,
         fontSize: actuatedNormalize(14),
         // color: Colors.primaryTextColor,
     },
@@ -130,12 +130,12 @@ const deviceHeight = Dimensions.get('window').height;
       fontWeight: fontWeightBold,
       lineHeight:lineHeightLarge,
       fontSize:fontMediumLarge,
-      fontFamily:Fonts.Bold,
+      fontFamily:Fonts.HSBC,
   },
   primaryTextSmall: {
     fontSize:fontSmallMedium,
     lineHeight:lineHeightSmallMedium,
-    fontFamily:Fonts.Regular,
+    fontFamily:Fonts.HSBC,
     textAlign: "center",
 },
 secondaryFlexBoxLarge: {
@@ -183,7 +183,7 @@ quickActionButtonTxt:{
     fontSize:fontMedium,
     //paddingBottom:spacingXS,
     lineHeight:lineHeightMedium,
-    fontFamily:Fonts.Regular,
+    fontFamily:Fonts.HSBC,
     textAlign: "center",
     //marginTop:spacingXS
 },
@@ -201,7 +201,7 @@ quickActionButtonTxt1:{
   lineHeight: lineHeightMedium,
   textAlign: "left",
   marginLeft:spacingXS,
-  fontFamily:Fonts.Regular,
+  fontFamily:Fonts.HSBC,
 },
 quickActionButtonBox2:{
   margin:8,
@@ -219,19 +219,19 @@ quickActionButtonTxt2:{
  // alignSelf: "stretch",
 fontSize:fontSmall,
 lineHeight:lineHeightSmall,
-fontFamily:Fonts.Regular,
+fontFamily:Fonts.HSBC,
 textAlign: "center"
 },
 linkTextsmall:{
   fontSize:fontSmall,
 lineHeight:lineHeightSmall,
-fontFamily:Fonts.Regular,
+fontFamily:Fonts.HSBC,
 textAlign: "left"
 },
 linkTextlarge:{
   fontSize:fontLarge,
 lineHeight:lineHeightLarge,
-fontFamily:Fonts.Regular,
+fontFamily:Fonts.HSBC,
 textAlign: "left"
 },
    //Paginator
@@ -265,7 +265,7 @@ textAlign: "left"
 // }, 
 //Toggle
 togglelabel:{
-  fontFamily:Fonts.Regular,
+  fontFamily:Fonts.HSBC,
 } ,
  
   badgestatus: {
@@ -360,7 +360,7 @@ togglelabel:{
     lineHeight: 18,
     fontSize: 14,
     textAlign: "left",
-    fontFamily: "Univers Next for HSBC"
+    fontFamily: Fonts.HSBC,
   },
   listBadge:{
     marginLeft: spacingXS,
@@ -387,7 +387,7 @@ togglelabel:{
     fontSize: fontMediumLarge,
     lineHeight: lineHeightLarge,
     textAlign: "left",
-    fontFamily:Fonts.Regular,
+    fontFamily:Fonts.HSBC,
   },
   listButtonTxtLarge:{
     width: actuatedNormalize(279),
@@ -399,7 +399,7 @@ togglelabel:{
       lineHeight: lineHeightMedium,
       textAlign: "left",
       marginTop:8,
-      fontFamily:Fonts.Regular,
+      fontFamily:Fonts.HSBC,
   },
   listButtonTxtLargeHeadline:{
     width: actuatedNormalize(279),
@@ -455,7 +455,7 @@ togglelabel:{
       fontSize: fontMediumLarge,
       lineHeight:lineHeightMediumLarge,
       textAlign: "left",
-      fontFamily:Fonts.Regular,
+      fontFamily:Fonts.HSBC,
   },
   listButtonTxt1:{
   
@@ -466,7 +466,7 @@ togglelabel:{
       fontSize: fontMediumLarge,
       lineHeight: lineHeightLarge,
       textAlign: "left",
-      fontFamily:Fonts.Regular,
+      fontFamily:Fonts.HSBC,
     },
     floatingButton:{
       borderRadius: radiusS,
@@ -590,7 +590,7 @@ typefilledElementsinitials: {
           segmenttabTextStyle:{
             fontSize:fontMedium,
             lineHeight: lineHeightMedium,
-            fontFamily:Fonts.Regular,
+            fontFamily:Fonts.HSBC,
             textAlign: "center"
           },
           tooltipContainerStyle: {
@@ -614,7 +614,7 @@ typefilledElementsinitials: {
         tooltipText: {
           fontSize: actuatedNormalize(14),
           lineHeight: actuatedNormalize(22),
-          fontFamily: "Roboto-Regular",
+          fontFamily: Fonts.HSBC,
           color: "#000",
           textAlign: "left"
       },
@@ -638,7 +638,7 @@ typefilledElementsinitials: {
       snackBarLabel:{
         alignSelf: "stretch",
         textAlign: "left",
-        fontFamily:Fonts.Regular,
+        fontFamily:Fonts.HSBC,
         lineHeight: lineHeightMedium,
         fontSize:fontMedium
       },
@@ -657,7 +657,7 @@ typefilledElementsinitials: {
       AccordianTitleText:{
         fontSize: fontMedium,
         lineHeight:lineHeightMedium,
-        fontFamily:Fonts.Regular,
+        fontFamily:Fonts.HSBC,
         textAlign: "left",
         display: "flex",
         marginLeft: spacingXS,
@@ -676,7 +676,7 @@ typefilledElementsinitials: {
         flex: 1,
         fontSize:fontSmall,
         lineHeight: fontLarge,
-        fontFamily:Fonts.Regular,
+        fontFamily:Fonts.HSBC,
         textAlign: "left"
 
       },
@@ -835,9 +835,7 @@ elevation: 0,
         justifyContent: "center",
         alignItems: "center",
         fontSize: fontMedium,
-        fontFamily: I18nManager.isRTL
-                     ? Fonts.UniversArabicForHSBC_Regular
-                     : Fonts.UniversNextforHSBC_Regular,
+        fontFamily: Fonts.HSBC,
         paddingHorizontal: spacingS,
         paddingVertical: spacingXS,
       },
@@ -846,9 +844,7 @@ elevation: 0,
         justifyContent: "center",
         alignItems: "center",
         fontSize: fontMedium,
-        fontFamily: I18nManager.isRTL
-            ? Fonts.UniversArabicForHSBC_Regular
-            : Fonts.UniversNextforHSBC_Regular,
+        fontFamily: Fonts.HSBC,
         paddingHorizontal:spacingS,
         paddingVertical: spacingXS,
       },
@@ -1026,7 +1022,7 @@ wrapper: {
 
   },
   totalamt:{
-    fontFamily:Fonts.Bold,
+    fontFamily:Fonts.HSBC,
     fontSize: actuatedNormalize(16),
     lineHeight:actuatedNormalize(24),
     fontWeight: fontWeightBold,
@@ -1521,7 +1517,7 @@ textWrapper: {
 headlineFlexBox: {
   textAlign: "left",
   color: "#000",
-  fontFamily: "Univers Next for HSBC",
+  fontFamily: Fonts.HSBC,
   alignSelf: "stretch",
 },
 headline: {
@@ -1546,7 +1542,7 @@ typepromotionalLanguageeng: {
 
 welcomeBackFlexBox: {
   textAlign: "left",
-  fontFamily: "Univers Next for HSBC",
+  fontFamily: Fonts.HSBC,
   alignSelf: "stretch"
   },
   welcomeBackText: {
@@ -1569,7 +1565,7 @@ welcomeBackFlexBox: {
   //..........
   FlexBox: {
     textAlign: "left",
-    fontFamily: "Univers Next for HSBC",
+    fontFamily: Fonts.HSBC,
     alignSelf: "stretch",
 
     },
@@ -1813,7 +1809,7 @@ welcomeBackFlexBox: {
     //....textdividr
     welcomeBackTypo: {
       textAlign: "left",
-      fontFamily: "Univers Next for HSBC"
+      fontFamily:Fonts.HSBC,
       },
       linkFlexBox: {
       justifyContent: "center",
@@ -1826,7 +1822,7 @@ welcomeBackFlexBox: {
       lineHeight: 22,
       fontWeight: "700",
       textAlign: "left",
-      fontFamily: "Univers Next for HSBC",
+      fontFamily: Fonts.HSBC,
       flex: 1
       },
       welcomeBackParent: {
@@ -1838,7 +1834,7 @@ welcomeBackFlexBox: {
       fontSize: 15,
       lineHeight: 20,
       textAlign: "left",
-      fontFamily: "Univers Next for HSBC",
+      fontFamily:Fonts.HSBC,
       alignSelf: "stretch"
       },
       typeinPageLanguageenglish: {
@@ -1858,7 +1854,7 @@ welcomeBackFlexBox: {
         viewall: {
         textAlign: "left",
         color: "#000",
-        fontFamily: "Univers Next for HSBC"
+        fontFamily:Fonts.HSBC,
         },
         wrapperFlexBoxview: {
         paddingVertical: 4,
@@ -1889,7 +1885,7 @@ welcomeBackFlexBox: {
         },
         viewalltextdivi: {
          textAlign: "left",
-        fontFamily: "Univers Next for HSBC"
+        fontFamily:Fonts.HSBC,
         },
         wrapperview: {
         height: 24
