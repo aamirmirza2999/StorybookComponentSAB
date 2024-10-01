@@ -184,7 +184,7 @@ NewListComponentStory.args = {
   stackedListItemDefaultBadge: true,
   stackedListItemDefaultAction: true,
   listtemAddonType: 'Icon',
-  stackedListItemBodyType: 'Headline+Body',
+  stackedListItemBody: 'Headline+Body',
   stackedListItemBodyShowContent: true,
   stackedListItemBodyShowLabel: true,
   stackedListItemBodyShowSubTitle: true,
@@ -317,22 +317,22 @@ NewListComponentStory.argTypes = {
     ],
     if: { arg: 'stackedListItemDefaultIcon' },
   },
-  stackedListItemBodyType: {
+  stackedListItemBody: {
     control: 'select',
     options: ['Headline+Body', 'Label+Value', 'Extra Content'],
     // if: {arg: 'stackedListItemDefaultBadge'},
   },
   stackedListItemBodyShowContent: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Headline+Body' },
+    if: { arg: 'stackedListItemBody', eq: 'Headline+Body' },
   },
   stackedListItemBodyShowLabel: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowSubTitle: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowBodyCopy: {
     control: 'boolean',
@@ -399,8 +399,8 @@ NewListComponentStory.argTypes = {
 };
 
 export const TextDividerComponentStory = args => {
-  const { t } = useTranslation();
-  const [language, setLanguage] = useState('en');
+  const { t ,i18n} = useTranslation();
+  const [language, setLanguage] = useState(args.language || 'en');
   const { toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
@@ -412,41 +412,51 @@ export const TextDividerComponentStory = args => {
     CommonHelper.initLanguage(setLanguage);
   }, []);
   useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
+    if (language !== args.language) {
+    handleChange(args.language, setLanguage, i18n);
     }
-  }, [args.lang]);
+    }, [args.language]);
 
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
-
-  args.Headline = t('initialLang:Headline');
-  args.Description = t('initialLang:SunTextDivider');
-  args.viewall = t('initialLang:viewall');
-  args.label = t('initialLang:linkButton');
-
-  return <TextDivider {...args} />;
+    useEffect(() => {
+      const headerthemedark = args.colorStyles !== 'LightMode'; 
+      if (headerthemedark !== isDarkMode) {
+        console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+        toggleTheme();
+      }
+    }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  const translatedHeadline = t('initialLang:Headline');
+  const SunTextDivider = t('initialLang:SunTextDivider');
+  const viewall = t('initialLang:viewall');
+  const Link = t('initialLang:linkButton');
+  args.Headline = args.Headline || translatedHeadline;
+  args.text = args.text || SunTextDivider;
+  args.viewall =  args.viewall || viewall;
+  args.Link = args.Link || Link;
+  return <TextDivider 
+  changeTheme={toggleTheme}
+  changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+  {...args} />;
 };
 
 TextDividerComponentStory.args = {
   Type: "promotional",
+  Headline:"Headline",
   Subtitle: true,
+  text:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
   Link: true,
-  enableLeftIcon: I18nManager.isRTL ? false : false,
-  enableRightIcon: I18nManager.isRTL ? true : true,
+  Link:"Link Button",
+  Iconleft: I18nManager.isRTL ? false : false,
+  Iconright: I18nManager.isRTL ? true : true,
   type: "small",
-  eyeicon: true,
-  lang: 'en',
+  Password: true,
+  language: 'en',
   enableDarktheme: true,
 
 }
 
 TextDividerComponentStory.argTypes = {
   Type: { control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet', 'inpage',] },
-  lang: {
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
@@ -464,66 +474,57 @@ export const TextComponentStory =(args) =>{
   const [language, setLanguage] = useState('en');
 const { theme, toggleTheme,isDarkMode } = useTheme();
 
-  const handleChange = (newLang, setLanguage, i18n) => {
-    setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
-  };
-
-  useEffect(() => {
-    CommonHelper.initLanguage(setLanguage);
-  }, []);
-
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang, language]);
-   
-  
-  useEffect(() => {
-        if (args.enableDarkTheme !== isDarkMode) {
+  useEffect(() => {   
+    const shouldBeDarkMode = args.colorStyles === 'Dark Mode';
+    if (shouldBeDarkMode !== isDarkMode) {
       toggleTheme();
-    }     
-  }, [args.enableDarkTheme, isDarkMode, toggleTheme]);
+    }
+  }, [args.colorStyles, isDarkMode, toggleTheme]); 
 
   
 return (<TextComponent {...args}/>)
 }  
 TextComponentStory.args = {
-  children: 'text1',
+  children: 'Text Line',
   headlineText:'Headline',
-  textColor: 'black',
+  // textColor: 'black',
   fontSize: 16,
   fontFamily: 'Regular',
   fontWeight: '600',
   onPress: null,
   numberOfLines: 1,
   textTransform: 'none',
-  enableSecondary:false,
+  hierarchy:'primary',
   editable:false,
   copyable:false,
-  bulletPoint:'false',
-  badgeIcon:false,
+  bullet:'false',
+  badge:false,
   textInfoIcon:false,
-  enableDarkTheme:false,
+  colorStyles:'Light Mode',
   isHeadline:true,
-  lang:'en',
+  // lang:'en',
 };
 
 TextComponentStory.argTypes = {
   children: {control: 'text'},
   headlineText: {control: 'text'},
-  textColor: {control: 'color'},
+  // textColor: {control: 'color'},
   fontSize: {control: 'number'},
-  enableSecondary:{control:'boolean'},
+  hierarchy:{
+    control:'select',
+    options:['primary', 'secondary']
+  },
   editable:{control:'boolean'},
   copyable:{control:'boolean'},
-  badgeIcon:{control:'boolean'},
+  badge:{control:'boolean'},
   textInfoIcon:{control:'boolean'},
-  enableDarkTheme:{control:'boolean'},
+  colorStyles: {
+    control: 'select',
+    options: ['Light Mode', 'Dark Mode'],
+  },
+  // enableDarkTheme:{control:'boolean'},
   isHeadline:{control:'boolean'},
-  bulletPoint:{
+  bullet:{
     control:'select',
     options:['true', 'false', 'true.success']
   },
@@ -535,11 +536,11 @@ TextComponentStory.argTypes = {
     control: 'select',
     options: ["null",'normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900']
   },
-  onPress: {action: 'pressed'},
-  lang: {
-    control: 'select',
-    options: ['en', 'ar'],
-  },
+  // onPress: {action: 'pressed'},
+  // lang: {
+  //   control: 'select',
+  //   options: ['en', 'ar'],
+  // },
   numberOfLines: {control: 'number'},
   textTransform: {
     control: 'select',
@@ -547,13 +548,71 @@ TextComponentStory.argTypes = {
   },
 };
 
-export const SearchInputComponentStory = args => <SearchInput {...args} />;
+export const SearchInputComponentStory = (args) => {
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+ // args.Input = t('initialLang:searchby');
+
+
+const handleChange = (newLang, setLanguage, i18n) => {
+  setLanguage(newLang);
+  i18n.changeLanguage(newLang); 
+  CommonHelper.changeLanguage(newLang, setLanguage); 
+};
+
+useEffect(() => {
+  CommonHelper.initLanguage(setLanguage);
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.language) {
+    handleChange(args.language, setLanguage, i18n);
+    }
+    }, [args.language]);
+   
+  
+    useEffect(() => {
+      const headerthemedark = args.colorStyles !== 'LightMode'; 
+      if (headerthemedark !== isDarkMode) {
+        console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+        toggleTheme();
+      }
+    }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  return(
+    <SearchInput 
+    changeTheme={toggleTheme}
+    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    {...args}/>
+  )
+};
 SearchInputComponentStory.args = {
 
-
-  placeHolder: 'Search By'
-
+  State:"Default",
+  language: 'en',
+  Input: 'Search By',
+  showIcon:false,
+  colorStyles:"LightMode",
 };
+
+SearchInputComponentStory.argTypes={
+  State:{control:'select',options:['Default','Filled']},
+  language: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  Input:{
+    control:'text'
+   },
+  showIcon:{
+    control: 'boolean',
+  },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
+}
+
 
 export const DarkThemeBlockStory = (args) => {
   const [language, setLanguage] = useState(args.lang || 'en');
@@ -563,15 +622,15 @@ export const DarkThemeBlockStory = (args) => {
   args.themeText = 'Dark Theme';
   args.themeChangeText = 'Change from Light to Dark Mode';
 
-  const handleChange = (newLang, setLanguage, i18n) => {
-    setLanguage(newLang);
-    i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
-  };
+  // const handleChange = (newLang, setLanguage, i18n) => {
+  //   setLanguage(newLang);
+  //   i18n.changeLanguage(newLang);
+  //   CommonHelper.changeLanguage(newLang, setLanguage);
+  // };
 
-  useEffect(() => {
-    CommonHelper.initLanguage(setLanguage);
-  }, []);
+  // useEffect(() => {
+  //   CommonHelper.initLanguage(setLanguage);
+  // }, []);
 
   // useEffect(() => {
   //   if (language !== args.lang) {
@@ -580,11 +639,19 @@ export const DarkThemeBlockStory = (args) => {
   // }, [args.lang, language]);
 
   // Fix: Check before toggling to avoid infinite loop
+  // useEffect(() => {
+  //   if (args.enableDarktheme !== isDarkMode) {
+  //     toggleTheme();
+  //   }
+  // }, [args.enableDarktheme, isDarkMode, toggleTheme]);
+
   useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
+    // Check if current mode matches the selected colorStyles
+    const shouldBeDarkMode = args.colorStyles === 'Dark Mode';
+    if (shouldBeDarkMode !== isDarkMode) {
       toggleTheme();
     }
-  }, [args.enableDarktheme, isDarkMode, toggleTheme]);
+  }, [args.colorStyles, isDarkMode, toggleTheme]);
 
   return (
     <DarkThemeBlock
@@ -601,7 +668,8 @@ DarkThemeBlockStory.args = {
   listItemActionableType: 'Menu',
   listItemActionableSelectType: 'Check Box',
   showDivider: true,
-  enableDarktheme: false,
+  // enableDarktheme: false,
+  colorStyles: 'Light Mode',
   iconActionableMenu: true,
   badgeActionableMenu: true,
   badgeActionableMenuType: 'Badge Notification',
@@ -616,7 +684,7 @@ DarkThemeBlockStory.args = {
   stackedListItemDefaultBadge: false,
   stackedListItemDefaultAction: true,
   listtemAddonType: 'Icon',
-  stackedListItemBodyType: 'Headline+Body',
+  stackedListItemBody: 'Headline+Body',
   stackedListItemBodyShowContent: true,
   stackedListItemBodyShowLabel: true,
   stackedListItemBodyShowSubTitle: true,
@@ -632,8 +700,12 @@ DarkThemeBlockStory.args = {
 };
 
 DarkThemeBlockStory.argTypes = {
-  enableDarktheme: {
-    control: 'boolean',
+  // enableDarktheme: {
+  //   control: 'boolean',
+  // },
+  colorStyles: {
+    control: 'select',
+    options: ['Light Mode', 'Dark Mode'],
   },
   listType: {
     control: 'select',
@@ -737,30 +809,30 @@ DarkThemeBlockStory.argTypes = {
     ],
     if: { arg: 'stackedListItemDefaultIcon' },
   },
-  stackedListItemBodyType: {
+  stackedListItemBody: {
     control: 'select',
     options: ['Headline+Body', 'Label+Value', 'Extra Content'],
     // if: {arg: 'stackedListItemDefaultBadge'},
   },
   stackedListItemBodyShowContent: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Headline+Body' },
+    if: { arg: 'stackedListItemBody', eq: 'Headline+Body' },
   },
   stackedListItemBodyShowLabel: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowSubTitle: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowBodyCopy: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowStatus: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyStatusState: {
     control: 'select',
