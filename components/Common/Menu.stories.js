@@ -20,27 +20,35 @@ export const MenuComponentStory = args => { };
 MenuComponentStory.args = {};
 
 export const BlockBnner = args => {
-  const { t } = useTranslation();
-  const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme, isDarkMode } = useTheme();
+
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
+    i18n.changeLanguage(newLang); 
+    CommonHelper.changeLanguage(newLang, setLanguage); 
   };
+
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
-  }, []);
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
+    }, []);
+  
+    useEffect(() => {
+      if (language !== args.language) {
+      handleChange(args.language, setLanguage, i18n);
+      }
+      }, [args.language]);
+     
+    
+      useEffect(() => {
+        const headerthemedark = args.colorStyles !== 'LightMode'; 
+        if (headerthemedark !== isDarkMode) {
+          console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+          toggleTheme();
+        }
+      }, [args.colorStyles, isDarkMode, toggleTheme]);
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');
@@ -51,18 +59,19 @@ BlockBnner.args = {
   // Whitecard: <SvgIconList icon="Whitecard" width={24} height={24} />,
   //  showIcon:true,
   demo: require("../../assets/Path3.png"),
-  lang: 'en',
-  enableDarktheme: false,
+  language: 'en',
+  colorStyles:"LightMode",
 };
 
 BlockBnner.argTypes = {
-  lang: {
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 };
 
 export const BlockBox = args => {
@@ -116,7 +125,7 @@ BlockBox.args = {
   // Whitebox: <SvgIconList icon="Lightmyacounts" width={24} height={24} />,
   // WhiteArrow: <SvgIconList icon="Lightright" width={24} height={24} />,
   //  showIcon:true,
-  BlockBoxType: 'Solid',
+  Type: 'Solid',
   language: 'en',
   // enableDarktheme: false,
   colorStyles:"LightMode",
@@ -124,7 +133,7 @@ BlockBox.args = {
 };
 
 BlockBox.argTypes = {
-  BlockBoxType: {
+  Type: {
     control: 'select',
     options: ['Solid', 'Pattern'],
   },
@@ -412,10 +421,9 @@ NewListComponentStory.argTypes = {
 };
 
 export const TextDividerComponentStory = args => {
+  const { t ,i18n} = useTranslation();
   const [language, setLanguage] = useState(args.language || 'en');
   const { toggleTheme, isDarkMode } = useTheme();
-  const { t ,i18n} = useTranslation();
-
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
     i18n.changeLanguage(newLang);
@@ -438,15 +446,14 @@ export const TextDividerComponentStory = args => {
         toggleTheme();
       }
     }, [args.colorStyles, isDarkMode, toggleTheme]); 
-  // const Headline = t('initialLang:Headline');
-  // const text = t('initialLang:SunTextDivider');
-  // const viewall = t('initialLang:viewall');
-  // const Link = t('initialLang:linkButton');
-  args.Headline = t('initialLang:Headline');
-  // args.text = args.text || text;
-  args.text =t('initialLang:SunTextDivider');
-  args.viewall =  t('initialLang:viewall');
-  args.Link = t('initialLang:Headline');
+  const translatedHeadline = t('initialLang:Headline');
+  const SunTextDivider = t('initialLang:SunTextDivider');
+  const viewall = t('initialLang:viewall');
+  const Link = t('initialLang:linkButton');
+  args.Headline = args.Headline || translatedHeadline;
+  args.text = args.text || SunTextDivider;
+  args.viewall =  args.viewall || viewall;
+  args.Link = args.Link || Link;
   return <TextDivider 
   changeTheme={toggleTheme}
   changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
@@ -454,32 +461,31 @@ export const TextDividerComponentStory = args => {
 };
 
 TextDividerComponentStory.args = {
-  textDividerType: "promotional",
-  textDividerHeadline:"Headline",
-  textDividerSubtitle: true,
-  textDividerText:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
-  textDividerLink: true,
-  linkbuttonLink:"Link Button",
-  linkbuttonIconleft: I18nManager.isRTL ? false : false,
-  linkbuttonIconright: I18nManager.isRTL ? true : true,
-  linkbuttonsize: "small",
-  texttitleactionPassword: true,
+  Type: "promotional",
+  Headline:"Headline",
+  Subtitle: true,
+  text:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
+  Link: true,
+  Link:"Link Button",
+  Iconleft: I18nManager.isRTL ? false : false,
+  Iconright: I18nManager.isRTL ? true : true,
+  type: "small",
+  Password: true,
   language: 'en',
-  colorStyles:"LightMode",
+  enableDarktheme: true,
 
 }
 
 TextDividerComponentStory.argTypes = {
-  textDividerType: { control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet', 'inpage',] },
+  Type: { control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet', 'inpage',] },
   language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  colorStyles:{
-    control: 'select',
-    options: ['LightMode', 'DarkMode'],
+  enableDarktheme: {
+    control: 'boolean',
   },
-  linkbuttonsize: {
+  type: {
     control: 'select',
     options: ['large', 'small'],
 
