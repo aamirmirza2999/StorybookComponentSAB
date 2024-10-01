@@ -7,6 +7,7 @@ import { actuatedNormalize } from "../../constants/PixelScaling";
 import { RightArrowBlackLarge,RightArrowBlackSmall,BlackArrow,RightRedArrow,RightRedArrow1, Split, WhiteArrow, RightArrowDarkLarge, RightRedArrowDark, RightRedArrowDark1, BlackArrowDark,  } from "../../constants/SvgLocations";
 import { spacingM, spacingS, spacingXL } from '../../constants/Size';
 import CommonHelper from '../../constants/CommonHelper';
+import SvgIconList from '../../constants/SvgIconList';
 
 export const MainButton = (props) => {
 	const { theme,isDarkMode } = useTheme();
@@ -739,6 +740,32 @@ export const QuickButton = (props) => {
 							{props.Icon}
 					</View>
 					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
+			{props.Badge?
+				<View
+				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
+				>
+					<TextComponent
+						style={[globalStyles.badgeTxt,props.badgeTxt]}
+						>{props.quickNotificationCount}</TextComponent>
+				</View>:null}
+				</View>
+		:null}
+		{props.Type==="Vertical-Small-Selected"?
+			<View
+			style={{
+				flexDirection:"column",
+				alignItems:"center"
+			}}
+			>
+					<View
+					style={[globalStyles.quickActionButtonBox3,props.quickActionButtonBox3,{backgroundColor: theme.stylesblockbg}]}
+					><SvgIconList
+					icon="AccountActionFill"
+					width={24}
+					height={24}
+				   />
+					</View>
+					<TextComponent style={[globalStyles.quickActionButtonTxt3,props.quickActionButtonTxt3,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
 			{props.Badge?
 				<View
 				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
