@@ -106,7 +106,7 @@ const NewListComponent = props => {
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
                   <Text
                     style={[
-                      globalStyles.link,
+                      globalStyles.linkSelect,
                       globalStyles.linkTypo,
                       { color: theme.primarycolor },
                     ]}>
