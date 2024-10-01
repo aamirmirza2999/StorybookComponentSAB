@@ -17,7 +17,7 @@ export const BlockBanner = (props) => {
             <View style={[globalStyles.Entairebanner, props.Entairebanner, { backgroundColor }]}>
                 <View style={[{ backgroundColor: isDarkMode ? theme.stylesblockbg : theme.stylesbgshades }, globalStyles.buttonquickaction, props.buttonquickaction]}>
                     <View style={{
-                        marginLeft: actuatedNormalize(8),
+                        marginLeft: actuatedNormalize(-2),
                     }}>
                         {/* <Blockcard
                         width={actuatedNormalize(24)}
