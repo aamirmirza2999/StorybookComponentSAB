@@ -66,27 +66,34 @@ BlockBnner.argTypes = {
 };
 
 export const BlockBox = args => {
-  const { t } = useTranslation();
-  const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme, isDarkMode } = useTheme();
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
+    i18n.changeLanguage(newLang); 
+    CommonHelper.changeLanguage(newLang, setLanguage); 
   };
+
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
-  }, []);
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
+    }, []);
+  
+    useEffect(() => {
+      if (language !== args.language) {
+      handleChange(args.language, setLanguage, i18n);
+      }
+      }, [args.language]);
+     
+    
+      useEffect(() => {
+        const headerthemedark = args.colorStyles !== 'LightMode'; 
+        if (headerthemedark !== isDarkMode) {
+          console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+          toggleTheme();
+        }
+      }, [args.colorStyles, isDarkMode, toggleTheme]);
 
   args.SolidText = t('initialLang:SolidText');
   args.PattrenText = t('initialLang:PattrenText');
@@ -110,8 +117,10 @@ BlockBox.args = {
   // WhiteArrow: <SvgIconList icon="Lightright" width={24} height={24} />,
   //  showIcon:true,
   BlockBoxType: 'Solid',
-  lang: 'en',
-  enableDarktheme: false,
+  language: 'en',
+  // enableDarktheme: false,
+  colorStyles:"LightMode",
+
 };
 
 BlockBox.argTypes = {
@@ -119,13 +128,17 @@ BlockBox.argTypes = {
     control: 'select',
     options: ['Solid', 'Pattern'],
   },
-  lang: {
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  // enableDarktheme: {
+  //   control: 'boolean',
+  // },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 };
 
 export const NewListComponentStory = args => {
