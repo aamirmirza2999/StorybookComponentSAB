@@ -399,8 +399,8 @@ NewListComponentStory.argTypes = {
 };
 
 export const TextDividerComponentStory = args => {
-  const { t } = useTranslation();
-  const [language, setLanguage] = useState('en');
+  const { t ,i18n} = useTranslation();
+  const [language, setLanguage] = useState(args.language || 'en');
   const { toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
@@ -412,16 +412,18 @@ export const TextDividerComponentStory = args => {
     CommonHelper.initLanguage(setLanguage);
   }, []);
   useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
+    if (language !== args.language) {
+    handleChange(args.language, setLanguage, i18n);
     }
-  }, [args.lang]);
+    }, [args.language]);
 
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
+    useEffect(() => {
+      const headerthemedark = args.colorStyles !== 'LightMode'; 
+      if (headerthemedark !== isDarkMode) {
+        console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+        toggleTheme();
+      }
+    }, [args.colorStyles, isDarkMode, toggleTheme]); 
   const translatedHeadline = t('initialLang:Headline');
   const SunTextDivider = t('initialLang:SunTextDivider');
   const viewall = t('initialLang:viewall');
@@ -430,7 +432,10 @@ export const TextDividerComponentStory = args => {
   args.text = args.text || SunTextDivider;
   args.viewall =  args.viewall || viewall;
   args.Link = args.Link || Link;
-  return <TextDivider {...args} />;
+  return <TextDivider 
+  changeTheme={toggleTheme}
+  changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+  {...args} />;
 };
 
 TextDividerComponentStory.args = {
@@ -444,14 +449,14 @@ TextDividerComponentStory.args = {
   Iconright: I18nManager.isRTL ? true : true,
   type: "small",
   Password: true,
-  lang: 'en',
+  language: 'en',
   enableDarktheme: true,
 
 }
 
 TextDividerComponentStory.argTypes = {
   Type: { control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet', 'inpage',] },
-  lang: {
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
