@@ -13,11 +13,14 @@ import {
   CheckboxUnSelected,
   Whiterightarrow,
   TextInfoIconDark,
+  SabLogoRound,
+  BankLogo
 } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { globalStyles } from '../../constants/GlobalStyles';
-import { spacingM, spacingXXS } from '../../constants/Size';
+import { spacingM, spacingXXS, spacingXL } from '../../constants/Size';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
+import TextComponent from './TextComponent';
 const NewListComponent = props => {
   const { isDarkMode, theme } = useTheme();
   const backgroundColor = isDarkMode ? '#383838' : theme.primarycolor4;
@@ -62,7 +65,7 @@ const NewListComponent = props => {
                       globalStyles.linkTypo,
                       { color: theme.primarycolor },
                     ]}>
-                    Link
+                    {props.linkActionableMenuText}
                   </Text>
                   <View style={globalStyles.wrapperFlexBoxRow}>
                     <View>
@@ -106,7 +109,7 @@ const NewListComponent = props => {
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
                   <Text
                     style={[
-                      globalStyles.link,
+                      globalStyles.linkSelect,
                       globalStyles.linkTypo,
                       { color: theme.primarycolor },
                     ]}>
@@ -146,7 +149,7 @@ const NewListComponent = props => {
                           globalStyles.labelLightPreviewValue,
                           { color: theme.primarytextcolor2 },
                         ]}>
-                        Label
+                        {props.inlineListItemLabel}
                       </Text>
 
                       <Text
@@ -154,7 +157,7 @@ const NewListComponent = props => {
                           globalStyles.valueLightPreviewValue,
                           { color: theme.primarycolor },
                         ]}>
-                        Value
+                        {props.inlineListItemValue}
                       </Text>
 
                       {props.iconPreview && (
@@ -169,7 +172,7 @@ const NewListComponent = props => {
                             globalStyles.labelLightPreviewValue,
                             { color: theme.primarytextcolor2 },
                           ]}>
-                          Label
+                          {props.inlineListItemLabel}
                         </Text>
                       </View>
 
@@ -180,7 +183,7 @@ const NewListComponent = props => {
                             globalStyles.valueLightPreviewValue,
                             { color: theme.primarytextcolor2 },
                           ]}>
-                          Value
+                          {props.inlineListItemValue}
                         </Text>
                       </View>
                     </View>
@@ -206,7 +209,7 @@ const NewListComponent = props => {
               )}
             </View>
           )}
-          {/* {props.showDivider && <View style={globalStyles.dividerStyle} />} */}
+          {/* {props.Divider && <View style={globalStyles.dividerStyle} />} */}
         </>
       )}
 
@@ -300,7 +303,7 @@ const NewListComponent = props => {
           )}
         </View>
       )}
-      {props.showDivider && (
+      {props.Divider && (
         <View
           style={[
             globalStyles.dividerStyle,
@@ -351,6 +354,30 @@ const ListItemAddon = ({ addonType }) => {
             ]}>
             45%
           </TextComponent>
+        </View>
+      )}
+      {addonType === 'Logo' && (
+        isDarkMode ? <SabLogoRound width={spacingXL} height={spacingXL} /> : <SabLogoRound width={spacingXL} height={spacingXL} />
+      )}
+      {addonType === 'Avatar With Bank' && (
+        <View style={{ paddingRight: 0 }}>
+          <View style={globalStyles.avatarListItemAddon}>
+            <TextComponent
+              style={[
+                globalStyles.avatarListItemAddonText,
+                { color: theme.primarytextcolor3 },
+              ]}>
+              JM
+            </TextComponent>
+
+          </View>
+          <View style={{
+            position: "absolute", right: -5,
+            bottom: -5,
+
+          }}>
+            <BankLogo width={spacingM} height={spacingM} />
+          </View>
         </View>
       )}
     </>
@@ -581,7 +608,7 @@ const BadgeStatus = ({
             <Text
               style={[
                 globalStyles.labelTypoInactive,
-                { color:isDarkMode?primarytextcolor4:theme.primarytextcolor },
+                { color:isDarkMode?theme.primarytextcolor4:theme.primarytextcolor },
               ]}>
               Inactive
             </Text>

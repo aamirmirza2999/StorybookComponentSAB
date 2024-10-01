@@ -166,7 +166,8 @@ NewListComponentStory.args = {
   inlineListItemType: 'Actionable',
   listItemActionableType: 'Menu',
   listItemActionableSelectType: 'Check Box',
-  showDivider: true,
+  Divider: true,
+  linkActionableMenuText: "Link",
   iconActionableMenu: true,
   badgeActionableMenu: true,
   badgeActionableMenuType: 'Badge Notification',
@@ -176,6 +177,8 @@ NewListComponentStory.args = {
   linkActionableMenu: true,
   listItemPreviewType: 'Value',
   iconPreview: false,
+  inlineListItemLabel: 'Label',
+  inlineListItemValue: 'Value',
   stackedListItemType: 'Default',
   stackedListItemDefaultIcon: true,
   stackedListItemDefaultBadge: true,
@@ -217,7 +220,15 @@ NewListComponentStory.argTypes = {
     control: 'boolean',
     if: { arg: 'inlineListItemType', eq: 'Preview' },
   },
-  showDivider: {
+  inlineListItemLabel: {
+    control: 'text',
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  inlineListItemValue: {
+    control: 'text',
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  Divider: {
     control: 'boolean',
   },
   listItemActionableType: {
@@ -230,6 +241,11 @@ NewListComponentStory.argTypes = {
     options: ['Check Box', 'Radio Button'],
     // if: { arg: 'inlineListItemType', neq: 'Preview' },
     if: { arg: 'listItemActionableType', eq: 'Select' },
+  },
+  linkActionableMenuText: {
+    control: 'text',
+    if: { arg: 'listType', eq: 'Inline' },
+    // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
   iconActionableMenu: {
     control: 'boolean',
@@ -531,13 +547,71 @@ TextComponentStory.argTypes = {
   },
 };
 
-export const SearchInputComponentStory = args => <SearchInput {...args} />;
+export const SearchInputComponentStory = (args) => {
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+ // args.Input = t('initialLang:searchby');
+
+
+const handleChange = (newLang, setLanguage, i18n) => {
+  setLanguage(newLang);
+  i18n.changeLanguage(newLang); 
+  CommonHelper.changeLanguage(newLang, setLanguage); 
+};
+
+useEffect(() => {
+  CommonHelper.initLanguage(setLanguage);
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.language) {
+    handleChange(args.language, setLanguage, i18n);
+    }
+    }, [args.language]);
+   
+  
+    useEffect(() => {
+      const headerthemedark = args.colorStyles !== 'LightMode'; 
+      if (headerthemedark !== isDarkMode) {
+        console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+        toggleTheme();
+      }
+    }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  return(
+    <SearchInput 
+    changeTheme={toggleTheme}
+    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    {...args}/>
+  )
+};
 SearchInputComponentStory.args = {
 
-
-  placeHolder: 'Search By'
-
+  State:"Default",
+  language: 'en',
+  Input: 'Search By',
+  showIcon:false,
+  colorStyles:"LightMode",
 };
+
+SearchInputComponentStory.argTypes={
+  State:{control:'select',options:['Default','Filled']},
+  language: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+  Input:{
+    control:'text'
+   },
+  showIcon:{
+    control: 'boolean',
+  },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
+}
+
 
 export const DarkThemeBlockStory = (args) => {
   const [language, setLanguage] = useState(args.lang || 'en');

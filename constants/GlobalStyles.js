@@ -1394,6 +1394,11 @@ textFlexBox3: {
     lineHeight: lineHeightMediumLarge,
     flex: 1
   },
+  linkSelect: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    flex: 1
+  },
   circularViewtext: {
     fontSize: fontSmall,
     lineHeight: lineHeightSmallMedium,
@@ -1618,7 +1623,7 @@ welcomeBackFlexBox: {
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: spacingS,
+    // padding: spacingS,
     flexDirection: 'row',
   },
   avatarListItemAddonText: {

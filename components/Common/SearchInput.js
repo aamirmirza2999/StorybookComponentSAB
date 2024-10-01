@@ -24,7 +24,7 @@ import {
 
   const SearchInput = props => {
     console.log('hhhhh', props);
-    const { theme, isDark } = useTheme()
+    const { theme, isDarkMode } = useTheme()
     console.log('theme99999', theme);
   
     const [username, setUsername] = useState('');
@@ -46,7 +46,7 @@ import {
         // marginTop: actuatedNormalize(8),
         borderRadius: actuatedNormalize(8),
         borderColor: props.errorMsg ? '#d22630' : '#d9d9d9',
-        backgroundColor: 'transparent',
+        backgroundColor: isDarkMode?'#767676':'tranparent',
         borderWidth: 1,
         padding: props.editable === false ? null : 2,
       };
@@ -80,7 +80,7 @@ import {
                 style={[
                   styles.billDetailInputBorderWhite,
                   {
-                    backgroundColor: 'transparent',
+                    backgroundColor: isDarkMode?'#767676':'tranparent',
                     width: '100%',
                   },
                   props.inputStyle,
@@ -95,7 +95,7 @@ import {
                         bottom: 0,
                         alignItems: 'center',
                         justifyContent: 'center',
-                        left: spacingXXS,
+                        left: spacingXS,
                       },
                       props.arabicplaceholdertext,
                     ]}>
@@ -116,9 +116,12 @@ import {
                       style={[
                         styles.defaultTextStyle,
                         props.textstyle,
-                        props.placeholderStyleRTL,
+                        props.placeholderStyleRTL,{
+                          color:theme.primarycolor,
+                          fontWeight:props.State ==='Filled'?'bold':'normal'
+                        }
                       ]}>
-                      {props.placeHolder}
+                      {props.Input}
                     </TextComponent>
                   </View>
                 )}
@@ -164,7 +167,32 @@ import {
                   />
     
                 </View>
-               
+                {props.State ==='Filled'?
+                <TouchableOpacity
+      style={{ alignSelf: 'center'}}
+       // onPress={props.Searchfunc}
+      >
+        <SvgIconList
+          icon="BlackClose"
+          width={actuatedNormalize(24)}
+          height={actuatedNormalize(24)}
+          //transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+        />
+      </TouchableOpacity>
+      :null}
+       {props.showIcon?
+                <TouchableOpacity
+      style={{ alignSelf: 'center'}}
+       // onPress={props.Searchfunc}
+      >
+        <SvgIconList
+          icon="Filter"
+          width={actuatedNormalize(24)}
+          height={actuatedNormalize(24)}
+          //transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+        />
+      </TouchableOpacity>
+      :null}
               </View>
             </LinearGradient>
             
@@ -193,7 +221,8 @@ import {
       lineHeight: 20,
       fontFamily:Fonts.HSBC,
       color: "#000",
-      textAlign: "left"
+      textAlign: "left",
+      
       // fontFamily: Fonts.universlTStd,
     },
     labelStyle: {
