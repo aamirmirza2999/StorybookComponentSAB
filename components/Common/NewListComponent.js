@@ -59,7 +59,7 @@ const NewListComponent = props => {
             <View style={globalStyles.inlinelistitemmenu}>
               {props.listItemActionableType === 'Menu' ? (
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
-                  {props.iconActionableMenu && (
+                  {props.inlineListItemMenuIcon && (
                     isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
                   )}
 
@@ -73,7 +73,7 @@ const NewListComponent = props => {
                   </Text>
                   <View style={globalStyles.wrapperFlexBoxRow}>
                     <View>
-                      {props.badgeActionableMenu && (
+                      {props.inlineListItemMenuBadge && (
                         // <View
                         //   style={[
                         //     globalStyles.cicularView,
@@ -104,7 +104,7 @@ const NewListComponent = props => {
                         />
                       )}
                     </View>
-                    {props.linkActionableMenu && (
+                    {props.inlineListItemMenuLink && (
                       isDarkMode ? <Whiterightarrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
                         width={spacingM} height={spacingM} /> :
                         <RightArrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
@@ -234,7 +234,7 @@ const NewListComponent = props => {
               )}
               <View style={globalStyles.stackedlistitembody}>
                 <StackedListItemBody
-                  stackedListItemBodyType={props.stackedListItemBodyType}
+                  stackedListItemBodyType={props.stackedListItemBody}
                   stackedListItemBodyShowContent={
                     props.stackedListItemBodyShowContent
                   }

@@ -148,11 +148,11 @@ export const NewListComponentStory = args => {
   // }, [args.lang]);
 
   useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
+    const headerthemedark = args.colorStyles !== 'Light Mode'; 
+    if (headerthemedark !== isDarkMode) {
       toggleTheme();
     }
-console.log("menulist", args.enableDarktheme, isDarkMode)
-  }, [args.enableDarktheme, isDarkMode]);
+  }, [args.colorStyles, isDarkMode, toggleTheme]); 
   return (
     <NewListComponent
       {...args}
@@ -168,13 +168,13 @@ NewListComponentStory.args = {
   listItemActionableSelectType: 'Check Box',
   Divider: true,
   linkActionableMenuText: "Link",
-  iconActionableMenu: true,
-  badgeActionableMenu: true,
+  inlineListItemMenuIcon: true,
+  inlineListItemMenuBadge: true,
   badgeActionableMenuType: 'Badge Notification',
   badgeNotificationMenuType: 'Warning',
   badgeNotificationMenuSize: 'Small',
   badgeNotificationMenuNumber: '1',
-  linkActionableMenu: true,
+  inlineListItemMenuLink: true,
   listItemPreviewType: 'Value',
   iconPreview: false,
   inlineListItemLabel: 'Label',
@@ -198,7 +198,7 @@ NewListComponentStory.args = {
   listItemActionType: 'Chevron',
   stackedListItemPreviewSecondValue: false,
   // lang: 'en',
-  enableDarktheme: false,
+  colorStyles:'Light Mode',
 };
 
 NewListComponentStory.argTypes = {
@@ -247,12 +247,12 @@ NewListComponentStory.argTypes = {
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
-  iconActionableMenu: {
+  inlineListItemMenuIcon: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
-  badgeActionableMenu: {
+  inlineListItemMenuBadge: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
@@ -283,7 +283,7 @@ NewListComponentStory.argTypes = {
     options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
     if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
   },
-  linkActionableMenu: {
+  inlineListItemMenuLink: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
@@ -336,11 +336,11 @@ NewListComponentStory.argTypes = {
   },
   stackedListItemBodyShowBodyCopy: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowStatus: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyStatusState: {
     control: 'select',
@@ -393,8 +393,9 @@ NewListComponentStory.argTypes = {
   //   control: 'select',
   //   options: ['en', 'ar'],
   // },
-  enableDarktheme: {
-    control: 'boolean',
+  colorStyles: {
+    control: 'select',
+    options: ['Light Mode', 'Dark Mode'],
   },
 };
 
