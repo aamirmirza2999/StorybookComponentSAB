@@ -6,6 +6,7 @@ import { actuatedNormalize } from '../../constants/PixelScaling';
 import { BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, Slices, SuccessTick, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
 import { spacingL, spacingM, spacingXXS } from '../../constants/Size';
+import { Image } from 'react-native-svg';
 const BadgeStatus = ({
   badgeStatusType,
   badgeNotificationType,
@@ -385,8 +386,8 @@ const DarkThemeBlock = (props) => {
         return <EditBlack width={spacingL} height={spacingL} />;
       case 'Delete':
         return <Delete width={spacingL} height={spacingL} />;
-        case 'Tick':
-          return <SuccessTick width={spacingL} height={spacingL} />;
+      case 'Tick':
+        return <SuccessTick width={spacingL} height={spacingL} />;
       default:
         return <Toggle width={actuatedNormalize(43)} height={actuatedNormalize(27)} />;
         ;
@@ -394,10 +395,22 @@ const DarkThemeBlock = (props) => {
   };
   const ListItemAddon = ({ addonType }) => {
     const { theme } = useTheme();
+    const imagePath = require('../../assets/wrapper.png');
     return (
       <>
         {addonType === 'Avatar' && (
-          <View style={globalStyles.avatarListItemAddon}>
+          <View style={globalStyles.avatarListItemAddon1}>
+            <TextComponent
+              style={[
+                globalStyles.avatarListItemAddonText,
+                { color: theme.primarytextcolor3 },
+              ]}>
+              JM
+            </TextComponent>
+          </View>
+        )}
+        {addonType === 'Avatar With Bank' && (
+          <View style={globalStyles.avatarListItemAddon1}>
             <TextComponent
               style={[
                 globalStyles.avatarListItemAddonText,
@@ -419,13 +432,28 @@ const DarkThemeBlock = (props) => {
             {isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />}
           </View>
         )}
+        {addonType === 'Logo' && (
+          <View>
+            <Image
+              style={{ width: 40, height: 40, borderColor: 'red', borderWidth: 2 }}
+              source={imagePath}
+            />
+            {/* <TextComponent
+              style={[
+                globalStyles.PieGraphListItemAddon1,
+                { color: theme.primarycolor3},
+              ]}>
+              45%
+            </TextComponent> */}
+          </View>
+        )}
         {addonType === 'Pie Graph' && (
           <View>
             <Slices />
             <TextComponent
               style={[
-                globalStyles.PieGraphListItemAddon,
-                { color: theme.primaryComTextComponentcolor3, marginTop: actuatedNormalize(1) },
+                globalStyles.PieGraphListItemAddon1,
+                { color: theme.primarycolor3 },
               ]}>
               45%
             </TextComponent>
@@ -595,7 +623,7 @@ const DarkThemeBlock = (props) => {
       )}
 
       {props.listType === 'Stacked' && (
-        <View style={[globalStyles.rowFlexBox, {width:'88%'}]}>
+        <View style={[globalStyles.rowFlexBox, { width: '88%' }]}>
           {props.stackedListItemType === 'Default' ? (
             <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
               {props.stackedListItemDefaultIcon && (
@@ -605,7 +633,7 @@ const DarkThemeBlock = (props) => {
                 <StackedListItemBody
                   themeText={props.themeText}
                   themeChangeText={props.themeChangeText}
-                  stackedListItemBodyType={props.stackedListItemBodyType}
+                  stackedListItemBodyType={props.stackedListItemBody}
                   stackedListItemBodyShowContent={
                     props.stackedListItemBodyShowContent
                   }
@@ -715,8 +743,8 @@ const StackedListItemBody = ({
             {themeText}
           </TextComponent>
           {stackedListItemBodyShowContent && (
-            <TextComponent   
-            numberOfLines={2}   
+            <TextComponent
+              numberOfLines={2}
               style={[
                 globalStyles.labeltypoBody,
                 { color: isDarkMode ? theme.primarycolor2_100 : theme.primarytextcolor2 },
