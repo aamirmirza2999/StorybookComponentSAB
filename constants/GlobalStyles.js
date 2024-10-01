@@ -1613,7 +1613,7 @@ welcomeBackFlexBox: {
     },
   textComponentStyle:{
     flexDirection:'row',
-    alignItems:'center'
+    alignItems:'center'  
   },
   avatarListItemAddon: {
     borderRadius: actuatedNormalize(100),
@@ -1633,6 +1633,17 @@ welcomeBackFlexBox: {
     // color: '#db0011',
     textAlign: 'left',
   },
+  avatarListItemAddon1: {
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: '#fbe5e7',
+    width: spacingXL,
+    height: spacingXL,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // padding: spacingS,
+    flexDirection: 'row',
+  },
   wrapperListItemAddon: {
     borderRadius: actuatedNormalize(100),
     // backgroundColor: 'rgba(118, 118, 118, 0.1)',
@@ -1649,6 +1660,23 @@ welcomeBackFlexBox: {
     marginLeft: actuatedNormalize(-20),
     top: '50%',
     left: '50%',
+    fontSize: fontSmallMedium,
+    lineHeight: lineHeightSmallMedium,
+    fontFamily: Fonts.HSBC,
+    // color: '#db0011',
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: actuatedNormalize(40),
+    height: actuatedNormalize(40),
+    position: 'absolute',
+  },
+  PieGraphListItemAddon1: {
+    // marginTop: actuatedNormalize(-10),
+    // marginLeft: actuatedNormalize(-20),
+    top: -35,
+    left: 8,
     fontSize: fontSmallMedium,
     lineHeight: lineHeightSmallMedium,
     fontFamily: Fonts.HSBC,
