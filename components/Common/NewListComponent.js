@@ -178,7 +178,7 @@ const NewListComponent = props => {
                         <Text
                           style={[
                             globalStyles.valueLightPreviewValue,
-                            { color: theme.primarycolor },
+                            { color: theme.primarytextcolor2 },
                           ]}>
                           Value
                         </Text>
