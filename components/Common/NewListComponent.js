@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, I18nManager } from 'react-native';
 import {
   RightArrow,
   InfoIconRed,
@@ -14,11 +14,12 @@ import {
   Whiterightarrow,
   TextInfoIconDark,
   SabLogoRound,
-  BankLogo
+  BankLogo,
+  Toggleunselect
 } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { globalStyles } from '../../constants/GlobalStyles';
-import { spacingM, spacingXXS, spacingXL } from '../../constants/Size';
+import { spacingM, spacingXXS, spacingXL, spacingL } from '../../constants/Size';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import TextComponent from './TextComponent';
 const NewListComponent = props => {
@@ -34,7 +35,10 @@ const NewListComponent = props => {
       case 'Check Box':
         return <CheckboxUnSelected width={spacingM} height={spacingM} />;
       case 'Chevron':
-        return isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />;
+        return isDarkMode ? <Whiterightarrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+        width={spacingM} height={spacingM} /> : 
+        <RightArrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+         width={spacingM} height={spacingM} />;
       case 'Radio Button':
         return <RadioUnSelect width={spacingM} height={spacingM} />;
       case 'Edit':
@@ -101,7 +105,10 @@ const NewListComponent = props => {
                       )}
                     </View>
                     {props.linkActionableMenu && (
-                      isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
+                      isDarkMode ? <Whiterightarrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                        width={spacingM} height={spacingM} /> :
+                        <RightArrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                          width={spacingM} height={spacingM} />
                     )}
                   </View>
                 </View>
@@ -161,7 +168,12 @@ const NewListComponent = props => {
                       </Text>
 
                       {props.iconPreview && (
-                        isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
+                        isDarkMode ? <Whiterightarrow 
+                        transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]} 
+                        width={spacingM} height={spacingM} /> 
+                        : 
+                        <RightArrow transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                        width={spacingM} height={spacingM} />
                       )}
                     </View>
                   ) : (
