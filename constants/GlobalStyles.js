@@ -1347,7 +1347,7 @@ textFlexBox3: {
   alignSelf: "stretch"
 },
   wrapperFlexBoxRow: {
-    gap: spacingXS,
+    gap: spacingXXS,
     alignItems: "center",
     flexDirection: "row",   
   },
@@ -1365,8 +1365,7 @@ textFlexBox3: {
     fontSize: fontMedium,
     textAlign: "left",
     fontFamily: Fonts.HSBC,
-    color: "#000"
-  },
+     },
   link: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
@@ -1431,8 +1430,8 @@ textFlexBox3: {
     flexDirection: "row"
   },
   rowFlexBox: {
-    flexDirection: "row"
-  },
+    flexDirection: "row",
+    },
   flexBoxspacingS: {
     paddingVertical: spacingS,
     paddingHorizontal: spacingS,
@@ -1618,7 +1617,7 @@ welcomeBackFlexBox: {
     flexDirection: 'row',
   },
   PieGraphListItemAddon: {
-    marginTop: actuatedNormalize(-10),
+    // marginTop: actuatedNormalize(-10),
     marginLeft: actuatedNormalize(-20),
     top: '50%',
     left: '50%',

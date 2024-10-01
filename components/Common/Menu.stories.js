@@ -786,6 +786,7 @@ DarkThemeBlockStory.argTypes = {
       'Radio Button',
       'Edit',
       'Delete',
+      'Tick'
     ],
     if: { arg: 'stackedListItemDefaultAction' }
   },
