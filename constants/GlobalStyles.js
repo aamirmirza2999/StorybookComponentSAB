@@ -223,7 +223,7 @@ fontFamily:Fonts.HSBC,
 textAlign: "center"
 },
 linkTextsmall:{
-  fontSize:fontSmall,
+  fontSize:fontMedium,
 lineHeight:lineHeightSmall,
 fontFamily:Fonts.HSBC,
 textAlign: "left"
@@ -1536,6 +1536,7 @@ typepromotionalLanguageeng: {
   paddingVertical: 24,
   gap: 8,
 },
+
 
 //.......
 

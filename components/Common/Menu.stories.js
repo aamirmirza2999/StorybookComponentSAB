@@ -406,21 +406,26 @@ export const TextDividerComponentStory = args => {
       toggleTheme();
     }
   }, [args.enableDarktheme, isDarkMode]);
-
-  args.Headline = t('initialLang:Headline');
-  args.Description = t('initialLang:SunTextDivider');
-  args.viewall = t('initialLang:viewall');
-  args.label = t('initialLang:linkButton');
-
+  const translatedHeadline = t('initialLang:Headline');
+  const SunTextDivider = t('initialLang:SunTextDivider');
+  const viewall = t('initialLang:viewall');
+  const Link = t('initialLang:linkButton');
+  args.Headline = args.Headline || translatedHeadline;
+  args.text = args.text || SunTextDivider;
+  args.viewall =  args.viewall || viewall;
+  args.Link = args.Link || Link;
   return <TextDivider {...args} />;
 };
 
 TextDividerComponentStory.args = {
   Type: "promotional",
+  Headline:"Headline",
   Subtitle: true,
+  text:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
   Link: true,
-  enableLeftIcon: I18nManager.isRTL ? false : false,
-  enableRightIcon: I18nManager.isRTL ? true : true,
+  Link:"Link Button",
+  Iconleft: I18nManager.isRTL ? false : false,
+  Iconright: I18nManager.isRTL ? true : true,
   type: "small",
   eyeicon: true,
   lang: 'en',

@@ -16,7 +16,7 @@ const TextDivider = (props) => {
     		<View style={[globalStyles.typepromotionalLanguageeng,{backgroundColor:theme.stylescolorpressed1}]}>
       			<Text style={[globalStyles.headline, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.Headline}</Text>
                   {props.Subtitle ? 
-      			<Text style={[globalStyles.nequePorroQuisquam, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.Description}</Text>
+      			<Text style={[globalStyles.nequePorroQuisquam, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.text}</Text>
                 :null}
     		</View>
             :null
@@ -26,7 +26,7 @@ const TextDivider = (props) => {
             <View style={[globalStyles.typepageTitleLanguageengl,{backgroundColor:theme.stylescolorpressed1}]}>
             <Text style={[globalStyles.welcomeBackText, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Headline} </Text>
             {props.Subtitle ? 
-            <Text style={[globalStyles.nametext, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Description}</Text>
+            <Text style={[globalStyles.nametext, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.text}</Text>
             :null}
             </View>
             : null}
@@ -35,7 +35,7 @@ const TextDivider = (props) => {
             <View style={[globalStyles.typebottomsheetLanguageeng,{backgroundColor:theme.stylescolorpressed1}]}>
             <Text style={[globalStyles.bottomsheettext, globalStyles.FlexBox,{color:theme.primarycolor}]}>{props.Headline}</Text>
             {props.Subtitle ? 
-            <Text style={[globalStyles.textcontent, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Description}</Text>
+            <Text style={[globalStyles.textcontent, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.text}</Text>
             :null}
             </View>
             :null}
@@ -46,15 +46,15 @@ const TextDivider = (props) => {
                 <Text style={[globalStyles.Linktext, styles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.Headline}</Text>
                {props.Link?
                 <LinkButton
-                label={props.label}
-                enableLeftIcon={props.enableLeftIcon}
-                enableRightIcon={props.enableRightIcon}
+                label={props.Link}
+                enableLeftIcon={props.Iconleft}
+                enableRightIcon={props.Iconright}
                 type={props.type}
                 />
                 :null}
                 </View>
                 {props.Subtitle ? 
-                <Text style={[globalStyles.sublinktext, globalStyles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.Description}</Text>
+                <Text style={[globalStyles.sublinktext, globalStyles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.text}</Text>
                 :null}
                 </View>
                 :null}
