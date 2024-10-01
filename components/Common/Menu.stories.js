@@ -443,7 +443,7 @@ TextDividerComponentStory.args = {
   Iconleft: I18nManager.isRTL ? false : false,
   Iconright: I18nManager.isRTL ? true : true,
   type: "small",
-  eyeicon: true,
+  Password: true,
   lang: 'en',
   enableDarktheme: true,
 
