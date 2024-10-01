@@ -20,27 +20,35 @@ export const MenuComponentStory = args => { };
 MenuComponentStory.args = {};
 
 export const BlockBnner = args => {
-  const { t } = useTranslation();
-  const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme, isDarkMode } = useTheme();
+
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
+    i18n.changeLanguage(newLang); 
+    CommonHelper.changeLanguage(newLang, setLanguage); 
   };
+
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
-  }, []);
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
+    }, []);
+  
+    useEffect(() => {
+      if (language !== args.language) {
+      handleChange(args.language, setLanguage, i18n);
+      }
+      }, [args.language]);
+     
+    
+      useEffect(() => {
+        const headerthemedark = args.colorStyles !== 'LightMode'; 
+        if (headerthemedark !== isDarkMode) {
+          console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+          toggleTheme();
+        }
+      }, [args.colorStyles, isDarkMode, toggleTheme]);
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');
@@ -51,42 +59,50 @@ BlockBnner.args = {
   // Whitecard: <SvgIconList icon="Whitecard" width={24} height={24} />,
   //  showIcon:true,
   demo: require("../../assets/Path3.png"),
-  lang: 'en',
-  enableDarktheme: false,
+  language: 'en',
+  colorStyles:"LightMode",
 };
 
 BlockBnner.argTypes = {
-  lang: {
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 };
 
 export const BlockBox = args => {
-  const { t } = useTranslation();
-  const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme, isDarkMode } = useTheme();
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang);
-    CommonHelper.changeLanguage(newLang, setLanguage);
+    i18n.changeLanguage(newLang); 
+    CommonHelper.changeLanguage(newLang, setLanguage); 
   };
+
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
-  }, []);
-  useEffect(() => {
-    if (language !== args.lang) {
-      handleChange(args.lang, setLanguage, i18n);
-    }
-  }, [args.lang]);
-  useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
-      toggleTheme();
-    }
-  }, [args.enableDarktheme, isDarkMode]);
+    }, []);
+  
+    useEffect(() => {
+      if (language !== args.language) {
+      handleChange(args.language, setLanguage, i18n);
+      }
+      }, [args.language]);
+     
+    
+      useEffect(() => {
+        const headerthemedark = args.colorStyles !== 'LightMode'; 
+        if (headerthemedark !== isDarkMode) {
+          console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+          toggleTheme();
+        }
+      }, [args.colorStyles, isDarkMode, toggleTheme]);
 
   args.SolidText = t('initialLang:SolidText');
   args.PattrenText = t('initialLang:PattrenText');
@@ -109,23 +125,29 @@ BlockBox.args = {
   // Whitebox: <SvgIconList icon="Lightmyacounts" width={24} height={24} />,
   // WhiteArrow: <SvgIconList icon="Lightright" width={24} height={24} />,
   //  showIcon:true,
-  BlockBoxType: 'Solid',
-  lang: 'en',
-  enableDarktheme: false,
+  Type: 'Solid',
+  language: 'en',
+  // enableDarktheme: false,
+  colorStyles:"LightMode",
+
 };
 
 BlockBox.argTypes = {
-  BlockBoxType: {
+  Type: {
     control: 'select',
     options: ['Solid', 'Pattern'],
   },
-  lang: {
+  language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  // enableDarktheme: {
+  //   control: 'boolean',
+  // },
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 };
 
 export const NewListComponentStory = args => {
@@ -687,6 +709,8 @@ DarkThemeBlockStory.args = {
   listtemAddonType: 'Icon',
   stackedListItemBody: 'Headline+Body',
   stackedListItemBodyShowContent: true,
+  stackedListItemBodyHeadline:'Dark Theme',
+  stackedListItemBodyContent:'Change from Light to Dark Mode',
   stackedListItemBodyShowLabel: true,
   stackedListItemBodyShowSubTitle: true,
   stackedListItemBodyShowBodyCopy: true,
@@ -707,6 +731,12 @@ DarkThemeBlockStory.argTypes = {
   colorStyles: {
     control: 'select',
     options: ['Light Mode', 'Dark Mode'],
+  },
+  stackedListItemBodyHeadline:{
+    control:'text'
+  },
+  stackedListItemBodyContent:{
+    control:'text'
   },
   listType: {
     control: 'select',
@@ -919,7 +949,7 @@ export const LastLoggedInStory = (args) => {
     <LastLoggedIn
       {...args}
       changeTheme={toggleTheme}
-      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en')}
+       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
 };

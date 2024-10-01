@@ -14,8 +14,10 @@ export const BlockBanner = (props) => {
     return (
         <>
             {/* <TextComponent style={[{color: theme.primarycolor},globalStyles.BlockText,props.BlockText]}>Block banner</TextComponent> */}
-            <View style={[globalStyles.Entairebanner, props.Entairebanner, { backgroundColor }]}>
-                <View style={[{ backgroundColor: isDarkMode ? theme.stylesblockbg : theme.stylesbgshades }, globalStyles.buttonquickaction, props.buttonquickaction]}>
+            <View style={[globalStyles.Entairebanner, props.Entairebanner, 
+                // { backgroundColor }
+                ]}>
+                <View style={[{ backgroundColor: isDarkMode ? theme.stylescolorpressed1 : theme.stylesbgshades }, globalStyles.buttonquickaction, props.buttonquickaction]}>
                     <View style={{
                         marginLeft: actuatedNormalize(-2),
                     }}>
@@ -53,7 +55,7 @@ export const BlockGeneric = (props) => {
     return (
         <>
             {/* <TextComponent style={[{color: theme.primarycolor},globalStyles.BlockText,props.BlockText]}>Block generic</TextComponent> */}
-                {props.BlockBoxType === "Solid" ?
+                {props.Type === "Solid" ?
                    
                                 <View style={[{ backgroundColor: isDarkMode ? theme.stylescolorpressed1
                     // primarybackground 
