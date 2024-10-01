@@ -376,7 +376,7 @@ const MainHeader = (props) => {
       }
    
 {(props.type === 'level1' || props.type === 'level1-menu' || props.type === 'level1-foryou') && (
-<View style={{ flexDirection: 'row', marginTop: spacingXS, justifyContent: 'space-between' }}>
+<View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
   <TextComponent style={[styles.HeadlineText, { color: theme.primarycolor }]}>
     {props.HeadlineText}
   </TextComponent>
