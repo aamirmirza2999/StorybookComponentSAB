@@ -95,7 +95,7 @@ import {
                         bottom: 0,
                         alignItems: 'center',
                         justifyContent: 'center',
-                        left: spacingXXS,
+                        left: spacingXS,
                       },
                       props.arabicplaceholdertext,
                     ]}>
