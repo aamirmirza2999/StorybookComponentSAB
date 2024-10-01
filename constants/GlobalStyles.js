@@ -1355,9 +1355,20 @@ nameWrapper: {
   flexDirection: "row",
   alignSelf: "stretch"
 },
+blocknameSolid : {
+  fontSize: fontMediumLarge,
+  lineHeight: lineHeightMediumLarge,
+  fontFamily: Fonts.HSBC,
+  // color: "#000",
+  textAlign: "left",
+  display: "flex",
+  width: actuatedNormalize(108),
+  overflow: "hidden"
+},
 blockname: {
   fontSize: fontMediumLarge,
   lineHeight: lineHeightMediumLarge,
+  fontWeight: fontWeightBold,
   fontFamily: Fonts.HSBC,
   // color: "#000",
   textAlign: "left",

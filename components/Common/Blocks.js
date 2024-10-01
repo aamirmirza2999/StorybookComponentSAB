@@ -61,7 +61,7 @@ export const BlockGeneric = (props) => {
                     <View style={[globalStyles.Blocktext2, props.Blocktext2, 
                         globalStyles.textFlexBox2, props.textFlexBox2]}>
                         <View style={[globalStyles.nameWrapper]}>
-                            <TextComponent style={[{ color: isDarkMode ? theme.primarytextcolor : theme.primarytextcolor }, globalStyles.blockname, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.SolidText}</TextComponent>
+                            <TextComponent style={[{ color: isDarkMode ? theme.primarytextcolor : theme.primarytextcolor }, globalStyles.blocknameSolid, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.SolidText}</TextComponent>
                         </View>
                         {/* <BlackRightarrow
                             width={actuatedNormalize(24)}
@@ -94,14 +94,16 @@ export const BlockGeneric = (props) => {
                         <View style={[globalStyles.nameWrapper]}>
                             <TextComponent style={[{ color: theme.primarycolor4 }, globalStyles.blockname, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.PattrenText}</TextComponent>
                         </View>
-                        
+                            <View style = {{marginBottom: actuatedNormalize(5)}}>
                                 <Lightright
-                            style={{
-                                transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
-                            }}
-                                width={actuatedNormalize(24)}
-                                height={actuatedNormalize(24)}
-                            ></Lightright>
+                                    style={{
+                                        transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
+                                    }}
+                                    width={actuatedNormalize(28)}
+                                    height={actuatedNormalize(28)}
+                                ></Lightright>
+                            </View>
+                               
                         
                     </View>
                 </View>
