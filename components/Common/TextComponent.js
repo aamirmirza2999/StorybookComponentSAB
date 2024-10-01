@@ -25,7 +25,7 @@ const TextComponent = (props) => {
   return (
     <>
       {/* Primary Text Component */}
-      <View style={[globalStyles.textComponentStyle, { backgroundColor: isDarkMode ? '#383838' : theme.primarycolor4 }]}>
+      <View style={[globalStyles.textComponentStyle, { backgroundColor: isDarkMode ? '#383838' : null }]}>
         <Text
           testID={props.testID}
           accessibilityLabel={props.accessibilityLabel}
