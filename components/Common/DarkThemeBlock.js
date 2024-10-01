@@ -3,9 +3,9 @@ import { StyleSheet, View, Text } from 'react-native';
 import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import { actuatedNormalize } from '../../constants/PixelScaling';
-import { BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, Slices, SuccessTick, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
+import { BankLogo, BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, SabLogoRound, Slices, SuccessTick, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
-import { spacingL, spacingM, spacingXXS } from '../../constants/Size';
+import { spacingL, spacingM, spacingXL, spacingXXS } from '../../constants/Size';
 import { Image } from 'react-native-svg';
 const BadgeStatus = ({
   badgeStatusType,
@@ -410,7 +410,8 @@ const DarkThemeBlock = (props) => {
           </View>
         )}
         {addonType === 'Avatar With Bank' && (
-          <View style={globalStyles.avatarListItemAddon1}>
+        <View style={{ paddingRight: 0 }}>
+          <View style={globalStyles.avatarListItemAddon}>
             <TextComponent
               style={[
                 globalStyles.avatarListItemAddonText,
@@ -418,8 +419,17 @@ const DarkThemeBlock = (props) => {
               ]}>
               JM
             </TextComponent>
+
           </View>
-        )}
+          <View style={{
+            position: "absolute", right: -5,
+            bottom: -5,
+
+          }}>
+            <BankLogo width={spacingM} height={spacingM} />
+          </View>
+        </View>
+      )}
         {addonType === 'Icon' && (
           isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
         )}
@@ -432,21 +442,9 @@ const DarkThemeBlock = (props) => {
             {isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />}
           </View>
         )}
-        {addonType === 'Logo' && (
-          <View>
-            <Image
-              style={{ width: 40, height: 40, borderColor: 'red', borderWidth: 2 }}
-              source={imagePath}
-            />
-            {/* <TextComponent
-              style={[
-                globalStyles.PieGraphListItemAddon1,
-                { color: theme.primarycolor3},
-              ]}>
-              45%
-            </TextComponent> */}
-          </View>
-        )}
+      {addonType === 'Logo' && (
+        isDarkMode ? <SabLogoRound width={spacingXL} height={spacingXL} /> : <SabLogoRound width={spacingXL} height={spacingXL} />
+      )}
         {addonType === 'Pie Graph' && (
           <View>
             <Slices />
@@ -623,7 +621,7 @@ const DarkThemeBlock = (props) => {
       )}
 
       {props.listType === 'Stacked' && (
-        <View style={[globalStyles.rowFlexBox, { width: '88%' }]}>
+        <View style={[globalStyles.rowFlexBox]}>
           {props.stackedListItemType === 'Default' ? (
             <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
               {props.stackedListItemDefaultIcon && (
@@ -631,8 +629,8 @@ const DarkThemeBlock = (props) => {
               )}
               <View style={globalStyles.stackedlistitembody}>
                 <StackedListItemBody
-                  themeText={props.themeText}
-                  themeChangeText={props.themeChangeText}
+                  themeText={props.stackedListItemBodyHeadline}
+                  themeChangeText={props.stackedListItemBodyContent}
                   stackedListItemBodyType={props.stackedListItemBody}
                   stackedListItemBodyShowContent={
                     props.stackedListItemBodyShowContent
