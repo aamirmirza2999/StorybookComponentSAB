@@ -21,6 +21,7 @@ export {default as RedSelected} from '../assets/checkboxSelected_red.svg';
 export {default as RedUnSelected} from '../assets/checkboxUnSelected_red.svg';
 export {default as IconChevRight} from '../assets/right.svg';
 export {default as AccountAction} from '../assets/account_actions.svg';
+export {default as AccountActionFill} from '../assets/account_actions_fill.svg';
 export {default as AccountActionDark} from '../assets/account_actions_dark.svg';
 export {default as Toggle} from '../assets/toggleswitch.svg';
 export {default as Toggleunselect} from '../assets/toggleUnselect.svg';
@@ -78,6 +79,7 @@ export {default as TextInfoIconDark} from "../assets/textInfoDark.svg";
 export {default as WhiteArrow} from "../assets/arrowWhite.svg"
 export {default as HelpIcon} from "../assets/help.svg"
 export {default as TickIcon} from "../assets/tick.svg"
+export {default as SuccessTick} from "../assets/greentick.svg";
 export {default as Slices} from "../assets/Slices.svg"
 export {default as EditBlack} from "../assets/document_edit_black.svg"
 export {default as Delete} from "../assets/delete.svg"
@@ -100,6 +102,12 @@ export {default as PassWordeyeDark} from "../assets/passworddark.svg"
 
 export { default as Pfm360 } from "../assets/pfm360.svg";
 export { default as PfmActive } from "../assets/pfm360Dark.svg";
+export { default as SabLogoRound } from "../assets/sabLogocircle.svg";
+export { default as BankLogo } from "../assets/Bank_logo.svg";
+export { default as PictoLight } from "../assets/zakatiLogo.svg";
+export { default as PictoDark } from "../assets/zakatiLogoDark.svg";
+export {default as Filter} from "../assets/filter.svg"
+export {default as FilterDark} from "../assets/filterdark.svg"
 
 
 

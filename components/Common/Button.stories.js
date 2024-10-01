@@ -201,12 +201,12 @@ export const QuickButtonComponentStory = (args) => {
     }
   }, [args.lang]);
   useEffect(() => {
-    const headerthemedark = args.colorStyles !== 'LightMode'; 
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
     if (headerthemedark !== isDarkMode) {
       console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
 
   
   args.label=t('initialLang:action')
@@ -219,16 +219,18 @@ QuickButtonComponentStory.args = {
  width={24}
  height={24}
 />,
-HideIcon:true,
-Type:"Vertical",//Vertical/Horizontal/Vertical-Small
-Badge:true,
+buttonquickActionHideIcon:true,
+buttonquickActionText:"Button",
+buttonquickActionType:"Vertical",//Vertical/Horizontal/Vertical-Small
+buttonquickActionPictogram:false,
+quickActionButtonBadge:true,
 quickNotificationCount:"2",
 onPress:null,
 lang:'en',
-colorStyles:"LightMode",
+VariablemodescolorStyles:"LightMode",
 };
 QuickButtonComponentStory.argTypes = {
- Type : {
+  buttonquickActionType : {
     control: 'select',
     options: ['Vertical', 'Horizontal','Vertical-Small'],
   },
@@ -236,7 +238,7 @@ QuickButtonComponentStory.argTypes = {
     control: 'select',
     options: ['en', 'ar'],
   },
-  colorStyles:{
+  VariablemodescolorStyles:{
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }

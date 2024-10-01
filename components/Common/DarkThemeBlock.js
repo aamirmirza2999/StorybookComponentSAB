@@ -3,9 +3,10 @@ import { StyleSheet, View, Text } from 'react-native';
 import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import { actuatedNormalize } from '../../constants/PixelScaling';
-import { BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, Slices, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
+import { BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, Slices, SuccessTick, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
 import { spacingL, spacingM, spacingXXS } from '../../constants/Size';
+import { Image } from 'react-native-svg';
 const BadgeStatus = ({
   badgeStatusType,
   badgeNotificationType,
@@ -92,7 +93,7 @@ const BadgeStatus = ({
         </View>
       )}
       {badgeStatusType === 'Chips Info' && (
-        <View style={globalStyles.rowFlexBox}>
+        <View style={{}}>
           <View
             style={[
               globalStyles.chipsinfoInactive,
@@ -102,13 +103,13 @@ const BadgeStatus = ({
                 borderColor: theme.strokecolor3tint,
               },
             ]}>
-            <Text
+            <TextComponent
               style={[
                 globalStyles.labelTypoInactive,
-                { color: isDarkMode ? theme.primarytextcolor4 : theme.primaryTextColor },
+                { color: isDarkMode ? theme.primarytextcolor4 : theme.primarytextcolor },
               ]}>
               Inactive
-            </Text>
+            </TextComponent>
           </View>
         </View>
       )}
@@ -367,7 +368,7 @@ const BadgeStatusMenu = ({
 const DarkThemeBlock = (props) => {
   const { theme, isDarkMode } = useTheme();
   const backgroundColor = isDarkMode ? '#383838' : theme.primarycolor4;
-  const primaryTextColor = isDarkMode ? theme.primarycolor2 : theme.primarytextcolor;
+  // const primaryTextColor = isDarkMode ? theme.primarycolor2 : theme.primarytextcolor;
 
   const getDefaultAction = () => {
     switch (props.listItemActionType) {
@@ -378,13 +379,15 @@ const DarkThemeBlock = (props) => {
       case 'Check Box':
         return <CheckboxUnSelected width={spacingM} height={spacingM} />;
       case 'Chevron':
-        return isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />;
+        return isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />;
       case 'Radio Button':
         return <RadioUnSelect width={spacingM} height={spacingM} />;
       case 'Edit':
         return <EditBlack width={spacingL} height={spacingL} />;
       case 'Delete':
         return <Delete width={spacingL} height={spacingL} />;
+      case 'Tick':
+        return <SuccessTick width={spacingL} height={spacingL} />;
       default:
         return <Toggle width={actuatedNormalize(43)} height={actuatedNormalize(27)} />;
         ;
@@ -392,10 +395,22 @@ const DarkThemeBlock = (props) => {
   };
   const ListItemAddon = ({ addonType }) => {
     const { theme } = useTheme();
+    const imagePath = require('../../assets/wrapper.png');
     return (
       <>
         {addonType === 'Avatar' && (
-          <View style={globalStyles.avatarListItemAddon}>
+          <View style={globalStyles.avatarListItemAddon1}>
+            <TextComponent
+              style={[
+                globalStyles.avatarListItemAddonText,
+                { color: theme.primarytextcolor3 },
+              ]}>
+              JM
+            </TextComponent>
+          </View>
+        )}
+        {addonType === 'Avatar With Bank' && (
+          <View style={globalStyles.avatarListItemAddon1}>
             <TextComponent
               style={[
                 globalStyles.avatarListItemAddonText,
@@ -417,13 +432,28 @@ const DarkThemeBlock = (props) => {
             {isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />}
           </View>
         )}
+        {addonType === 'Logo' && (
+          <View>
+            <Image
+              style={{ width: 40, height: 40, borderColor: 'red', borderWidth: 2 }}
+              source={imagePath}
+            />
+            {/* <TextComponent
+              style={[
+                globalStyles.PieGraphListItemAddon1,
+                { color: theme.primarycolor3},
+              ]}>
+              45%
+            </TextComponent> */}
+          </View>
+        )}
         {addonType === 'Pie Graph' && (
           <View>
             <Slices />
             <TextComponent
               style={[
-                globalStyles.PieGraphListItemAddon,
-                { color: theme.primaryComTextComponentcolor3, marginTop: actuatedNormalize(1) },
+                globalStyles.PieGraphListItemAddon1,
+                { color: theme.primarycolor3 },
               ]}>
               45%
             </TextComponent>
@@ -472,7 +502,7 @@ const DarkThemeBlock = (props) => {
                       )}
                     </View>
                     {props.linkActionableMenu && (
-                      isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
+                      isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />
                     )}
                   </View>
                 </View>
@@ -532,7 +562,7 @@ const DarkThemeBlock = (props) => {
                       </Text>
 
                       {props.iconPreview && (
-                        isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />
+                        isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />
                       )}
                     </View>
                   ) : (
@@ -593,7 +623,7 @@ const DarkThemeBlock = (props) => {
       )}
 
       {props.listType === 'Stacked' && (
-        <View style={globalStyles.rowFlexBox}>
+        <View style={[globalStyles.rowFlexBox, { width: '88%' }]}>
           {props.stackedListItemType === 'Default' ? (
             <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
               {props.stackedListItemDefaultIcon && (
@@ -603,7 +633,7 @@ const DarkThemeBlock = (props) => {
                 <StackedListItemBody
                   themeText={props.themeText}
                   themeChangeText={props.themeChangeText}
-                  stackedListItemBodyType={props.stackedListItemBodyType}
+                  stackedListItemBodyType={props.stackedListItemBody}
                   stackedListItemBodyShowContent={
                     props.stackedListItemBodyShowContent
                   }
@@ -639,31 +669,31 @@ const DarkThemeBlock = (props) => {
             </View>
           ) : (
             <View style={globalStyles.wrapperDefaultContainer}>
-              <Text
+              <TextComponent
                 style={[
                   globalStyles.labelDefaultContainer,
                   globalStyles.valueFlexBox,
                   { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor2 },
                 ]}>
                 Label
-              </Text>
-              <Text
+              </TextComponent>
+              <TextComponent
                 style={[
                   globalStyles.valueDefaultContainer,
                   globalStyles.valueFlexBox,
                   { color: theme.primarycolor },
                 ]}>
                 Value
-              </Text>
+              </TextComponent>
               {props.stackedListItemPreviewSecondValue && (
-                <Text
+                <TextComponent
                   style={[
                     globalStyles.secondValueDefaultContainer,
                     globalStyles.valueFlexBox,
                     { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor2 },
                   ]}>
                   Second Value
-                </Text>
+                </TextComponent>
               )}
             </View>
           )}
@@ -713,7 +743,8 @@ const StackedListItemBody = ({
             {themeText}
           </TextComponent>
           {stackedListItemBodyShowContent && (
-            <TextComponent          
+            <TextComponent
+              numberOfLines={2}
               style={[
                 globalStyles.labeltypoBody,
                 { color: isDarkMode ? theme.primarycolor2_100 : theme.primarytextcolor2 },

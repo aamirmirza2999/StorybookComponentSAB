@@ -7,6 +7,7 @@ import { actuatedNormalize } from "../../constants/PixelScaling";
 import { RightArrowBlackLarge,RightArrowBlackSmall,BlackArrow,RightRedArrow,RightRedArrow1, Split, WhiteArrow, RightArrowDarkLarge, RightRedArrowDark, RightRedArrowDark1, BlackArrowDark,  } from "../../constants/SvgLocations";
 import { spacingM, spacingS, spacingXL } from '../../constants/Size';
 import CommonHelper from '../../constants/CommonHelper';
+import SvgIconList from '../../constants/SvgIconList';
 
 export const MainButton = (props) => {
 	const { theme,isDarkMode } = useTheme();
@@ -686,6 +687,12 @@ export const QuickButton = (props) => {
     let Component = TouchableOpacity;
 
   	return (
+		<View
+		style={{
+			flex:1,
+			backgroundColor:theme.stylescolorpressed1
+		}}
+		>
 		<Component
 		testID={props.testID ? props.testID : 'quickActionButton'}
 		accessibilityLabel={
@@ -693,11 +700,23 @@ export const QuickButton = (props) => {
 		}
 		onPress={props.onPress}
 	>
-		{props.Type==="Vertical"?
+		{props.buttonquickActionType==="Vertical"?
 		<View
 		style={[globalStyles.quickActionButtonBox,props.quickActionButtonBox,{backgroundColor: theme.stylesblockbg} ]}
 		>
-			{props.HideIcon?
+			{props.buttonquickActionPictogram?
+			<View
+				style={{
+				//marginTop: actuatedNormalize(48),
+				}}
+			>
+				<SvgIconList
+					icon="Pictogram"
+					width={56}
+					height={24}
+				   />
+			</View>:null}
+			{props.buttonquickActionHideIcon?
 			<View
 				style={{
 				//marginTop: actuatedNormalize(48),
@@ -705,18 +724,18 @@ export const QuickButton = (props) => {
 			>
 				{props.Icon}
 			</View>:null}
-			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
+			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primarycolor}]}>{props.buttonquickActionText}</TextComponent>
 		</View>
 		:null}
 
-		{props.Type==="Horizontal"?
+		{props.buttonquickActionType==="Horizontal"?
 					<View
 					style={[globalStyles.quickActionButtonBox1,props.quickActionButtonBox1,{backgroundColor: theme.stylesblockbg}]}
 					>
 							{props.Icon}
 					
-						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
-						{props.Badge?
+						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primarycolor}]}>{props.buttonquickActionText}</TextComponent>
+						{props.quickActionButtonBadge?
 						<View
 						style={[globalStyles.badgeNotification,props.badgeNotification,{}]}
 						>
@@ -726,7 +745,7 @@ export const QuickButton = (props) => {
 					</View>
 		:null}
 
-		{props.Type==="Vertical-Small"?
+		{props.buttonquickActionType==="Vertical-Small"?
 			<View
 			style={{
 				flexDirection:"column",
@@ -738,7 +757,33 @@ export const QuickButton = (props) => {
 					>
 							{props.Icon}
 					</View>
-					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
+					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.buttonquickActionText}</TextComponent>
+			{props.quickActionButtonBadge?
+				<View
+				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
+				>
+					<TextComponent
+						style={[globalStyles.badgeTxt,props.badgeTxt]}
+						>{props.quickNotificationCount}</TextComponent>
+				</View>:null}
+				</View>
+		:null}
+		{props.Type==="Vertical-Small-Selected"?
+			<View
+			style={{
+				flexDirection:"column",
+				alignItems:"center"
+			}}
+			>
+					<View
+					style={[globalStyles.quickActionButtonBox3,props.quickActionButtonBox3,{backgroundColor: theme.stylesblockbg}]}
+					><SvgIconList
+					icon="AccountActionFill"
+					width={24}
+					height={24}
+				   />
+					</View>
+					<TextComponent style={[globalStyles.quickActionButtonTxt3,props.quickActionButtonTxt3,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
 			{props.Badge?
 				<View
 				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
@@ -751,6 +796,7 @@ export const QuickButton = (props) => {
 		:null}
 
 	</Component>
+	</View>
 	)
 };
 

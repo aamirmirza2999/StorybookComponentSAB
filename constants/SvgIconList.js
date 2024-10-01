@@ -4,7 +4,8 @@ import { useTheme } from "../constants/Theme/ThemeProvider";
 import {
   AddBene, BackArrowNew, ChangeLang, ChangeLangDark, CloseIconNew, LiveChat, AccountAction, RightArrow, InfoIconRed, WhiteInfo,
   BlackArrow, WhiteArrow, Close, SearchIcon, NotificationIcon, AvatarIconblack, HelpIcon, SearchIconDark,
-  AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList, Blockcard, Blockgenericred, BlackRightarrow, Lightmyacounts, Lightright, Whitecard, Whiterightarrow, ProfileEditIconDark
+  AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList, Blockcard, Blockgenericred, BlackRightarrow, Lightmyacounts, Lightright, Whitecard, Whiterightarrow, ProfileEditIconDark, AccountActionFill, PictoDark, PictoLight,
+  Filter,FilterDark
 } from './SvgLocations';
 
 
@@ -74,6 +75,34 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
 
           />
       );
+      case 'AccountActionFill':
+            return (
+              isDarkMode?<AccountActionDark
+              width={24}
+              height={24}
+              transform={transform}
+              />:
+              <AccountActionFill
+                width={width}
+                height={height}
+                transform={transform}
+  
+              />
+            );
+            case 'Pictogram':
+              return (
+                isDarkMode?<PictoDark
+                width={24}
+                height={24}
+                transform={transform}
+                />:
+                <PictoLight
+                  width={width}
+                  height={height}
+                  transform={transform}
+    
+                />
+              );
     case 'InfoIconRed':
       return (
         <InfoIconRed
@@ -256,6 +285,21 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
           height={height}
           transform={transform}
         />
+      );
+      case 'Filter':
+      return (
+        isDarkMode ?
+          <FilterDark
+            width={width}
+            height={height}
+            transform={transform} />
+          :
+
+          <Filter
+            width={width}
+            height={height}
+            transform={transform}
+          />
       );
 
     default:
