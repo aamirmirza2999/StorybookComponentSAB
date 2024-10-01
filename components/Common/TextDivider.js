@@ -12,48 +12,48 @@ const TextDivider = (props) => {
     const { t } = useTranslation();
   	return (
         <>
-        {props.Type === "promotional" ?
+        {props.textDividerType === "promotional" ?
     		<View style={[globalStyles.typepromotionalLanguageeng,{backgroundColor:theme.stylescolorpressed1}]}>
       			<Text style={[globalStyles.headline, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.Headline}</Text>
-                  {props.Subtitle ? 
+                  {props.textDividerSubtitle ? 
       			<Text style={[globalStyles.nequePorroQuisquam, globalStyles.headlineFlexBox,{color:theme.primarycolor}]}>{props.text}</Text>
                 :null}
     		</View>
             :null
             }
 
-        {   props.Type=== 'pagetitle'      ?                          
+        {   props.textDividerType=== 'pagetitle'      ?                          
             <View style={[globalStyles.typepageTitleLanguageengl,{backgroundColor:theme.stylescolorpressed1}]}>
             <Text style={[globalStyles.welcomeBackText, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.Headline} </Text>
-            {props.Subtitle ? 
+            {props.textDividerSubtitle ? 
             <Text style={[globalStyles.nametext, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.text}</Text>
             :null}
             </View>
             : null}
 
-         {props.Type === 'bottomsheet'?
+         {props.textDividerType === 'bottomsheet'?
             <View style={[globalStyles.typebottomsheetLanguageeng,{backgroundColor:theme.stylescolorpressed1}]}>
             <Text style={[globalStyles.bottomsheettext, globalStyles.FlexBox,{color:theme.primarycolor}]}>{props.Headline}</Text>
-            {props.Subtitle ? 
+            {props.textDividerSubtitle ? 
             <Text style={[globalStyles.textcontent, globalStyles.welcomeBackFlexBox,{color:theme.primarycolor}]}>{props.text}</Text>
             :null}
             </View>
             :null}
 
-           {props.Type==='inpage' ?
+           {props.textDividerType==='inpage' ?
                 <View style={[globalStyles.typeinPageLanguageenglish,{backgroundColor:theme.stylescolorpressed1}]}>
                 <View style={globalStyles.welcomeBackParent}>
                 <Text style={[globalStyles.Linktext, styles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.Headline}</Text>
-               {props.Link?
+               {props.textDividerLink?
                 <LinkButton
                 label={props.Link}
-                enableLeftIcon={props.Iconleft}
-                enableRightIcon={props.Iconright}
-                type={props.type}
+                enableLeftIcon={props.linkbuttonIconleft}
+                enableRightIcon={props.linkbuttonIconright}
+                type={props.linkbuttonsize}
                 />
                 :null}
                 </View>
-                {props.Subtitle ? 
+                {props.textDividerSubtitle ? 
                 <Text style={[globalStyles.sublinktext, globalStyles.welcomeBackTypo,{color:theme.primarycolor}]}>{props.text}</Text>
                 :null}
                 </View>
@@ -63,7 +63,7 @@ const TextDivider = (props) => {
 <View style={globalStyles.frameParenttextdivider}>
 <View style={globalStyles.Vewallheader}>
 <Text style={[globalStyles.Viewheadlinetext, globalStyles.viewall,{color:theme.primarycolor}]}>{props.Headline}</Text>
-{props.Password?
+{props.texttitleactionPassword?
 isDarkMode?
 <PassWordeyeDark/>
 :

@@ -399,9 +399,10 @@ NewListComponentStory.argTypes = {
 };
 
 export const TextDividerComponentStory = args => {
-  const { t ,i18n} = useTranslation();
   const [language, setLanguage] = useState(args.language || 'en');
   const { toggleTheme, isDarkMode } = useTheme();
+  const { t ,i18n} = useTranslation();
+
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
     i18n.changeLanguage(newLang);
@@ -424,14 +425,15 @@ export const TextDividerComponentStory = args => {
         toggleTheme();
       }
     }, [args.colorStyles, isDarkMode, toggleTheme]); 
-  const translatedHeadline = t('initialLang:Headline');
-  const SunTextDivider = t('initialLang:SunTextDivider');
-  const viewall = t('initialLang:viewall');
-  const Link = t('initialLang:linkButton');
-  args.Headline = args.Headline || translatedHeadline;
-  args.text = args.text || SunTextDivider;
-  args.viewall =  args.viewall || viewall;
-  args.Link = args.Link || Link;
+  // const Headline = t('initialLang:Headline');
+  // const text = t('initialLang:SunTextDivider');
+  // const viewall = t('initialLang:viewall');
+  // const Link = t('initialLang:linkButton');
+  args.Headline = t('initialLang:Headline');
+  // args.text = args.text || text;
+  args.text =t('initialLang:SunTextDivider');
+  args.viewall =  t('initialLang:viewall');
+  args.Link = t('initialLang:Headline');
   return <TextDivider 
   changeTheme={toggleTheme}
   changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
@@ -439,31 +441,32 @@ export const TextDividerComponentStory = args => {
 };
 
 TextDividerComponentStory.args = {
-  Type: "promotional",
-  Headline:"Headline",
-  Subtitle: true,
-  text:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
-  Link: true,
-  Link:"Link Button",
-  Iconleft: I18nManager.isRTL ? false : false,
-  Iconright: I18nManager.isRTL ? true : true,
-  type: "small",
-  Password: true,
+  textDividerType: "promotional",
+  textDividerHeadline:"Headline",
+  textDividerSubtitle: true,
+  textDividerText:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
+  textDividerLink: true,
+  linkbuttonLink:"Link Button",
+  linkbuttonIconleft: I18nManager.isRTL ? false : false,
+  linkbuttonIconright: I18nManager.isRTL ? true : true,
+  linkbuttonsize: "small",
+  texttitleactionPassword: true,
   language: 'en',
-  enableDarktheme: true,
+  colorStyles:"LightMode",
 
 }
 
 TextDividerComponentStory.argTypes = {
-  Type: { control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet', 'inpage',] },
+  textDividerType: { control: 'select', options: ['promotional', 'pagetitle', 'bottomsheet', 'inpage',] },
   language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
+  colorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
   },
-  type: {
+  linkbuttonsize: {
     control: 'select',
     options: ['large', 'small'],
 
