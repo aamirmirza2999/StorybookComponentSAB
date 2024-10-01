@@ -54,7 +54,7 @@ export const BlockGeneric = (props) => {
         <>
             {/* <TextComponent style={[{color: theme.primarycolor},globalStyles.BlockText,props.BlockText]}>Block generic</TextComponent> */}
                 {props.BlockBoxType === "Solid" ?
-                   <View style = {{backgroundColor,flex : 1}}>
+                   
                                 <View style={[{ backgroundColor: isDarkMode ? theme.stylescolorpressed1
                     // primarybackground 
                     : theme.stylesblockbg }, globalStyles.typesolid, props.typesolid]}>
@@ -90,7 +90,6 @@ export const BlockGeneric = (props) => {
                             />}
                         </View>
                     </View>
-                   </View>
                     
                     : null}
 
