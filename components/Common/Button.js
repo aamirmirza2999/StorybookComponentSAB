@@ -687,6 +687,12 @@ export const QuickButton = (props) => {
     let Component = TouchableOpacity;
 
   	return (
+		<View
+		style={{
+			flex:1,
+			backgroundColor:theme.stylescolorpressed1
+		}}
+		>
 		<Component
 		testID={props.testID ? props.testID : 'quickActionButton'}
 		accessibilityLabel={
@@ -706,7 +712,7 @@ export const QuickButton = (props) => {
 			>
 				{props.Icon}
 			</View>:null}
-			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
+			<TextComponent style={[globalStyles.quickActionButtonTxt,props.quickActionButtonTxt,{  color: theme.primarycolor}]}>{props.Text}</TextComponent>
 		</View>
 		:null}
 
@@ -716,7 +722,7 @@ export const QuickButton = (props) => {
 					>
 							{props.Icon}
 					
-						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
+						<TextComponent style={[globalStyles.quickActionButtonTxt1,props.quickActionButtonTxt1,{  color: theme.primarycolor}]}>{props.Text}</TextComponent>
 						{props.Badge?
 						<View
 						style={[globalStyles.badgeNotification,props.badgeNotification,{}]}
@@ -739,7 +745,7 @@ export const QuickButton = (props) => {
 					>
 							{props.Icon}
 					</View>
-					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.quickActionButtonLabel}</TextComponent>
+					<TextComponent style={[globalStyles.quickActionButtonTxt2,props.quickActionButtonTxt2,{color: theme.primarycolor}]}>{props.Text}</TextComponent>
 			{props.Badge?
 				<View
 				style={[globalStyles.badgeNotification1,props.badgeNotification1]}
@@ -778,6 +784,7 @@ export const QuickButton = (props) => {
 		:null}
 
 	</Component>
+	</View>
 	)
 };
 
