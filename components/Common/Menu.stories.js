@@ -702,6 +702,8 @@ DarkThemeBlockStory.args = {
   listtemAddonType: 'Icon',
   stackedListItemBody: 'Headline+Body',
   stackedListItemBodyShowContent: true,
+  stackedListItemBodyHeadline:'Dark Theme',
+  stackedListItemBodyContent:'Change from Light to Dark Mode',
   stackedListItemBodyShowLabel: true,
   stackedListItemBodyShowSubTitle: true,
   stackedListItemBodyShowBodyCopy: true,
@@ -722,6 +724,12 @@ DarkThemeBlockStory.argTypes = {
   colorStyles: {
     control: 'select',
     options: ['Light Mode', 'Dark Mode'],
+  },
+  stackedListItemBodyHeadline:{
+    control:'text'
+  },
+  stackedListItemBodyContent:{
+    control:'text'
   },
   listType: {
     control: 'select',
@@ -934,7 +942,7 @@ export const LastLoggedInStory = (args) => {
     <LastLoggedIn
       {...args}
       changeTheme={toggleTheme}
-      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en')}
+       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
 };

@@ -1517,7 +1517,7 @@ lastLoginContainer: {
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "space-between",
-  width: "83%",
+  // width: "83%",
   height: actuatedNormalize(73),
   paddingHorizontal: actuatedNormalize(16),
   // marginHorizontal: actuatedNormalize(30),
@@ -1526,6 +1526,7 @@ userInfoSection: {
   flexDirection: "row",
   alignItems: "center",
   flex: 1,
+  // borderColor:'green', borderWidth:2
 },
 avatarSection: {
   position: 'relative',
