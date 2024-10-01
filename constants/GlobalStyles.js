@@ -1381,7 +1381,7 @@ textFlexBox3: {
   alignSelf: "stretch"
 },
   wrapperFlexBoxRow: {
-    gap: spacingXXS,
+    gap: spacingXS,
     alignItems: "center",
     flexDirection: "row",   
   },

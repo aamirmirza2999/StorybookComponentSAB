@@ -25,7 +25,7 @@ const TextComponent = (props) => {
   return (
     <>
       {/* Primary Text Component */}
-      <View style={[globalStyles.textComponentStyle, { backgroundColor: isDarkMode ? '#383838' : null }]}>
+      <View style={[globalStyles.textComponentStyle]}>
         <Text
           testID={props.testID}
           accessibilityLabel={props.accessibilityLabel}
@@ -71,7 +71,7 @@ const TextComponent = (props) => {
       </View>
 
       {/* Secondary Text Component */}
-      <View style={[globalStyles.textComponentStyle, { backgroundColor: isDarkMode ? '#383838' : theme.primarycolor4 }]}>
+      <View style={[globalStyles.textComponentStyle]}>
         {props.hierarchy === 'secondary' && (
           <>
             {props.bullet === 'true.success' ?
@@ -127,7 +127,7 @@ const TextComponent = (props) => {
       </View>
 
       {/* Headline Text Component */}
-      <View style={[globalStyles.textComponentStyle, { backgroundColor: isDarkMode ? '#383838' : theme.primarycolor4 }]}>
+      <View style={[globalStyles.textComponentStyle]}>
         {props.isHeadline && (
           <Text
             testID={props.testID}

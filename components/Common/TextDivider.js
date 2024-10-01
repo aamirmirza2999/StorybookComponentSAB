@@ -63,7 +63,7 @@ const TextDivider = (props) => {
 <View style={globalStyles.frameParenttextdivider}>
 <View style={globalStyles.Vewallheader}>
 <Text style={[globalStyles.Viewheadlinetext, globalStyles.viewall,{color:theme.primarycolor}]}>{props.Headline}</Text>
-{props.eyeicon?
+{props.Password?
 isDarkMode?
 <PassWordeyeDark/>
 :
