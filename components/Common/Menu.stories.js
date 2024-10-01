@@ -517,12 +517,12 @@ TextComponentStory.args = {
   onPress: null,
   numberOfLines: 1,
   textTransform: 'none',
-  hierarchy:'primary',
-  editable:false,
-  copyable:false,
-  bullet:'false',
-  badge:false,
-  textInfoIcon:false,
+  textHierarchy:'primary',
+  textEditable:false,
+  textCopyable:false,
+  textBullet:'false',
+  textTitleBadge:false,
+  textTitleIcon:false,
   colorStyles:'Light Mode',
   isHeadline:true,
   // lang:'en',
@@ -533,21 +533,21 @@ TextComponentStory.argTypes = {
   headlineText: {control: 'text'},
   // textColor: {control: 'color'},
   fontSize: {control: 'number'},
-  hierarchy:{
+  textHierarchy:{
     control:'select',
     options:['primary', 'secondary']
   },
-  editable:{control:'boolean'},
-  copyable:{control:'boolean'},
-  badge:{control:'boolean'},
-  textInfoIcon:{control:'boolean'},
+  textEditable:{control:'boolean'},
+  textCopyable:{control:'boolean'},
+  textTitleBadge:{control:'boolean'},
+  textTitleIcon:{control:'boolean'},
   colorStyles: {
     control: 'select',
     options: ['Light Mode', 'Dark Mode'],
   },
   // enableDarkTheme:{control:'boolean'},
   isHeadline:{control:'boolean'},
-  bullet:{
+  textBullet:{
     control:'select',
     options:['true', 'false', 'true.success']
   },

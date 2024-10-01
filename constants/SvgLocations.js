@@ -83,7 +83,8 @@ export {default as SuccessTick} from "../assets/greentick.svg";
 export {default as Slices} from "../assets/Slices.svg"
 export {default as EditBlack} from "../assets/document_edit_black.svg"
 export {default as Delete} from "../assets/delete.svg"
-
+export {default as CopyDark} from "../assets/copyDark.svg";
+export {default as EditDark} from "../assets/editDark.svg";
 
 export {default as Blockcard} from "../assets/card.svg"
 export {default as Blockgenericred} from "../assets/myaccounts.svg"

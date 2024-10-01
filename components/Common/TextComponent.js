@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
-import { Edit, Copy, BulletPoint, TextInfoIcon, Badge, TextInfoIconDark, InfoIconRed } from '../../constants/SvgLocations';
+import { Edit, Copy, BulletPoint, TextInfoIcon, Badge, TextInfoIconDark, InfoIconRed, CopyDark, EditDark } from '../../constants/SvgLocations';
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { spacingM } from "../../constants/Size";
@@ -46,26 +46,41 @@ const TextComponent = (props) => {
           selectable={false}
           suppressHighlighting={true} // iOS highlight issue fix
         >
-          {props.bullet === 'true' ? <Text>o </Text> : null}
+          {props.textBullet === 'true' ? <Text>o </Text> : null}
           {props.children}
 
         </Text>
-        {props.editable && !props.copyable && (
-          <View style={{ marginLeft: actuatedNormalize(5) }}>
-            <Edit
-              style={{ marginTop: actuatedNormalize(2) }}
-              width={actuatedNormalize(24)}
-              height={actuatedNormalize(24)}
-            />
+        {props.textEditable && !props.textCopyable && (
+          <View style={{ paddingLeft: actuatedNormalize(8) }}>
+            {isDarkMode ?
+              <EditDark
+                style={{ marginTop: actuatedNormalize(2) }}
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+              /> :
+
+              <Edit
+                style={{ marginTop: actuatedNormalize(2) }}
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+              />
+            }
           </View>
         )}
-        {props.copyable && !props.editable && (
-          <View style={{ marginLeft: actuatedNormalize(5) }}>
-            <Copy
-              style={{ marginTop: actuatedNormalize(2) }}
-              width={actuatedNormalize(24)}
-              height={actuatedNormalize(24)}
-            />
+        {props.textCopyable && !props.textEditable && (
+          <View style={{ paddingLeft: actuatedNormalize(8) }}>
+            {isDarkMode ?
+              <CopyDark
+                style={{ marginTop: actuatedNormalize(2) }}
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+              /> :
+              <Copy
+                style={{ marginTop: actuatedNormalize(2) }}
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+              />
+            }
           </View>
         )}
       </View>
@@ -74,14 +89,14 @@ const TextComponent = (props) => {
       <View style={[globalStyles.textComponentStyle]}>
         {props.hierarchy === 'secondary' && (
           <>
-            {props.bullet === 'true.success' ?
-              <View style={{ marginRight: actuatedNormalize(7) }}>
+            {props.textBullet === 'true.success' ?
+              <View style={{ paddingRight: actuatedNormalize(8) }}>
                 <BulletPoint
                   style={{ marginTop: actuatedNormalize(2) }}
                   width={actuatedNormalize(18)} height={actuatedNormalize(18)}
                 />
               </View>
-              : props.bullet === 'true' ? <Text>o </Text> : null
+              : props.textBullet === 'true' ? <Text>o </Text> : null
             }
             <Text
               testID={props.testID}
@@ -106,8 +121,8 @@ const TextComponent = (props) => {
             </Text>
           </>
         )}
-        {props.enableSecondary && props.editable && !props.copyable && (
-          <View style={{ marginLeft: actuatedNormalize(5) }}>
+        {props.enableSecondary && props.textEditable && !props.textCopyable && (
+          <View style={{ paddingLeft: actuatedNormalize(8) }}>
             <Edit
               style={{ marginTop: actuatedNormalize(2) }}
               width={actuatedNormalize(24)}
@@ -115,7 +130,7 @@ const TextComponent = (props) => {
             />
           </View>
         )}
-        {props.enableSecondary && props.copyable && !props.editable && (
+        {props.enableSecondary && props.textCopyable && !props.textEditable && (
           <View style={{ marginLeft: actuatedNormalize(5) }}>
             <Copy
               style={{ marginTop: actuatedNormalize(2) }}
@@ -153,15 +168,15 @@ const TextComponent = (props) => {
           </Text>
         )}
 
-        {props.textInfoIcon && !props.badge && (
-          <View style={{ marginLeft: actuatedNormalize(7) }}>
+        {props.textTitleIcon && !props.textTitleBadge && (
+          <View style={{ paddingLeft: actuatedNormalize(4) }}>
             {isDarkMode ?
               <TextInfoIconDark width={spacingM} height={spacingM} />
               : <InfoIconRed width={spacingM} height={spacingM} />}
           </View>
         )}
-        {props.badge && !props.textInfoIcon && (
-          <View style={{ marginLeft: actuatedNormalize(7) }}>
+        {props.textTitleBadge && !props.textTitleIcon && (
+          <View style={{ paddingLeft: actuatedNormalize(4) }}>
             <Badge
               // style={{ marginTop: actuatedNormalize(2) }}
               width={actuatedNormalize(20)}
