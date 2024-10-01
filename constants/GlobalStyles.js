@@ -1623,7 +1623,7 @@ welcomeBackFlexBox: {
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: spacingS,
+    // padding: spacingS,
     flexDirection: 'row',
   },
   avatarListItemAddonText: {

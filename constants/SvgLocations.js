@@ -102,6 +102,8 @@ export {default as PassWordeyeDark} from "../assets/passworddark.svg"
 
 export { default as Pfm360 } from "../assets/pfm360.svg";
 export { default as PfmActive } from "../assets/pfm360Dark.svg";
+export { default as SabLogoRound } from "../assets/sabLogocircle.svg";
+export { default as BankLogo } from "../assets/Bank_logo.svg";
 
 
 

@@ -166,7 +166,8 @@ NewListComponentStory.args = {
   inlineListItemType: 'Actionable',
   listItemActionableType: 'Menu',
   listItemActionableSelectType: 'Check Box',
-  showDivider: true,
+  Divider: true,
+  linkActionableMenuText: "Link",
   iconActionableMenu: true,
   badgeActionableMenu: true,
   badgeActionableMenuType: 'Badge Notification',
@@ -176,6 +177,8 @@ NewListComponentStory.args = {
   linkActionableMenu: true,
   listItemPreviewType: 'Value',
   iconPreview: false,
+  inlineListItemLabel: 'Label',
+  inlineListItemValue: 'Value',
   stackedListItemType: 'Default',
   stackedListItemDefaultIcon: true,
   stackedListItemDefaultBadge: true,
@@ -217,7 +220,15 @@ NewListComponentStory.argTypes = {
     control: 'boolean',
     if: { arg: 'inlineListItemType', eq: 'Preview' },
   },
-  showDivider: {
+  inlineListItemLabel: {
+    control: 'text',
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  inlineListItemValue: {
+    control: 'text',
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  Divider: {
     control: 'boolean',
   },
   listItemActionableType: {
@@ -230,6 +241,11 @@ NewListComponentStory.argTypes = {
     options: ['Check Box', 'Radio Button'],
     // if: { arg: 'inlineListItemType', neq: 'Preview' },
     if: { arg: 'listItemActionableType', eq: 'Select' },
+  },
+  linkActionableMenuText: {
+    control: 'text',
+    if: { arg: 'listType', eq: 'Inline' },
+    // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
   iconActionableMenu: {
     control: 'boolean',
