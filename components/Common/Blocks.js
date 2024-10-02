@@ -17,7 +17,7 @@ export const BlockBanner = (props) => {
             <View style={[globalStyles.Entairebanner, props.Entairebanner, 
                 // { backgroundColor }
                 ]}>
-                <View style={[{ backgroundColor: isDarkMode ? theme.stylescolorpressed1 : theme.stylesbgshades }, globalStyles.buttonquickaction, props.buttonquickaction]}>
+                <View style={[{ backgroundColor: isDarkMode ? theme.primarycolor2_100 : theme.stylesblockbg }, globalStyles.buttonquickaction, props.buttonquickaction]}>
                     <View style={{
                         marginLeft: actuatedNormalize(-2),
                     }}>
@@ -95,7 +95,7 @@ export const BlockGeneric = (props) => {
                     
                     : null}
 
-                {props.BlockBoxType === "Pattern" ?
+                {props.Type === "Pattern" ?
                     <View style={[{ backgroundColor: theme.complimentaryprimarycolor3_2 }, globalStyles.typesolid, props.typesolid]}>
                         <Lightmyacounts
                             width={actuatedNormalize(24)}
