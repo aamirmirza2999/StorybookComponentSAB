@@ -170,11 +170,11 @@ export const NewListComponentStory = args => {
   // }, [args.lang]);
 
   useEffect(() => {
-    if (args.enableDarktheme !== isDarkMode) {
+    const headerthemedark = args.colorStyles !== 'Light Mode'; 
+    if (headerthemedark !== isDarkMode) {
       toggleTheme();
     }
-console.log("menulist", args.enableDarktheme, isDarkMode)
-  }, [args.enableDarktheme, isDarkMode]);
+  }, [args.colorStyles, isDarkMode, toggleTheme]); 
   return (
     <NewListComponent
       {...args}
@@ -190,13 +190,13 @@ NewListComponentStory.args = {
   listItemActionableSelectType: 'Check Box',
   Divider: true,
   linkActionableMenuText: "Link",
-  iconActionableMenu: true,
-  badgeActionableMenu: true,
+  inlineListItemMenuIcon: true,
+  inlineListItemMenuBadge: true,
   badgeActionableMenuType: 'Badge Notification',
   badgeNotificationMenuType: 'Warning',
   badgeNotificationMenuSize: 'Small',
   badgeNotificationMenuNumber: '1',
-  linkActionableMenu: true,
+  inlineListItemMenuLink: true,
   listItemPreviewType: 'Value',
   iconPreview: false,
   inlineListItemLabel: 'Label',
@@ -220,7 +220,7 @@ NewListComponentStory.args = {
   listItemActionType: 'Chevron',
   stackedListItemPreviewSecondValue: false,
   // lang: 'en',
-  enableDarktheme: false,
+  colorStyles:'Light Mode',
 };
 
 NewListComponentStory.argTypes = {
@@ -269,12 +269,12 @@ NewListComponentStory.argTypes = {
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
-  iconActionableMenu: {
+  inlineListItemMenuIcon: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
-  badgeActionableMenu: {
+  inlineListItemMenuBadge: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
@@ -305,7 +305,7 @@ NewListComponentStory.argTypes = {
     options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
     if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
   },
-  linkActionableMenu: {
+  inlineListItemMenuLink: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Inline' },
     // if: { arg: 'listItemActionableType', eq: 'Menu' }
@@ -358,11 +358,11 @@ NewListComponentStory.argTypes = {
   },
   stackedListItemBodyShowBodyCopy: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyShowStatus: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
   },
   stackedListItemBodyStatusState: {
     control: 'select',
@@ -415,8 +415,9 @@ NewListComponentStory.argTypes = {
   //   control: 'select',
   //   options: ['en', 'ar'],
   // },
-  enableDarktheme: {
-    control: 'boolean',
+  colorStyles: {
+    control: 'select',
+    options: ['Light Mode', 'Dark Mode'],
   },
 };
 
@@ -516,12 +517,12 @@ TextComponentStory.args = {
   onPress: null,
   numberOfLines: 1,
   textTransform: 'none',
-  hierarchy:'primary',
-  editable:false,
-  copyable:false,
-  bullet:'false',
-  badge:false,
-  textInfoIcon:false,
+  textHierarchy:'primary',
+  textEditable:false,
+  textCopyable:false,
+  textBullet:'false',
+  textTitleBadge:false,
+  textTitleIcon:false,
   colorStyles:'Light Mode',
   isHeadline:true,
   // lang:'en',
@@ -532,21 +533,21 @@ TextComponentStory.argTypes = {
   headlineText: {control: 'text'},
   // textColor: {control: 'color'},
   fontSize: {control: 'number'},
-  hierarchy:{
+  textHierarchy:{
     control:'select',
     options:['primary', 'secondary']
   },
-  editable:{control:'boolean'},
-  copyable:{control:'boolean'},
-  badge:{control:'boolean'},
-  textInfoIcon:{control:'boolean'},
+  textEditable:{control:'boolean'},
+  textCopyable:{control:'boolean'},
+  textTitleBadge:{control:'boolean'},
+  textTitleIcon:{control:'boolean'},
   colorStyles: {
     control: 'select',
     options: ['Light Mode', 'Dark Mode'],
   },
   // enableDarkTheme:{control:'boolean'},
   isHeadline:{control:'boolean'},
-  bullet:{
+  textBullet:{
     control:'select',
     options:['true', 'false', 'true.success']
   },
