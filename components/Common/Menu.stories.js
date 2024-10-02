@@ -498,18 +498,18 @@ export const TextComponentStory =(args) =>{
 const { theme, toggleTheme,isDarkMode } = useTheme();
 
   useEffect(() => {   
-    const shouldBeDarkMode = args.colorStyles === 'Dark Mode';
+    const shouldBeDarkMode = args.variableModecolorStyles === 'Dark Mode';
     if (shouldBeDarkMode !== isDarkMode) {
       toggleTheme();
     }
-  }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  }, [args.variableModecolorStyles, isDarkMode, toggleTheme]); 
 
-  
 return (<TextComponent {...args}/>)
 }  
 TextComponentStory.args = {
-  children: 'Text Line',
-  headlineText:'Headline',
+  // children:'Text Line',
+  textText: 'Text Line',
+  textTitleText:'Headline',
   // textColor: 'black',
   fontSize: 16,
   fontFamily: 'Regular',
@@ -523,14 +523,14 @@ TextComponentStory.args = {
   textBullet:'false',
   textTitleBadge:false,
   textTitleIcon:false,
-  colorStyles:'Light Mode',
+  variableModecolorStyles:'Light Mode',
   isHeadline:true,
   // lang:'en',
 };
 
 TextComponentStory.argTypes = {
-  children: {control: 'text'},
-  headlineText: {control: 'text'},
+  textText: {control: 'text'},
+  textTitleText: {control: 'text'},
   // textColor: {control: 'color'},
   fontSize: {control: 'number'},
   textHierarchy:{
@@ -541,7 +541,7 @@ TextComponentStory.argTypes = {
   textCopyable:{control:'boolean'},
   textTitleBadge:{control:'boolean'},
   textTitleIcon:{control:'boolean'},
-  colorStyles: {
+  variableModecolorStyles: {
     control: 'select',
     options: ['Light Mode', 'Dark Mode'],
   },
