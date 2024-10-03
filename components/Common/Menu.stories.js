@@ -19,7 +19,7 @@ export const MenuComponentStory = args => { };
 
 MenuComponentStory.args = {};
 
-export const BlockBnner = args => {
+export const BlockBannerComponentStory = args => {
 
   const [language, setLanguage] = useState(args.language || 'en');
   const { theme, toggleTheme,isDarkMode } = useTheme();
@@ -43,12 +43,12 @@ export const BlockBnner = args => {
      
     
       useEffect(() => {
-        const headerthemedark = args.colorStyles !== 'LightMode'; 
+        const headerthemedark = args.VariablemodesColorStyles !== 'LightMode'; 
         if (headerthemedark !== isDarkMode) {
           console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
           toggleTheme();
         }
-      }, [args.colorStyles, isDarkMode, toggleTheme]);
+      }, [args.VariablemodesColorStyles, isDarkMode, toggleTheme]);
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');
@@ -56,27 +56,27 @@ export const BlockBnner = args => {
   changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}    
   {...args} />;
 };
-BlockBnner.args = {
+BlockBannerComponentStory.args = {
   // BlackCardIcon: <SvgIconList icon="BlockCard" width={24} height={24} />,
   // Whitecard: <SvgIconList icon="Whitecard" width={24} height={24} />,
   //  showIcon:true,
-  demo: require("../../assets/Path3.png"),
+  // demo: require("../../assets/Path3.png"),
   language: 'en',
-  colorStyles:"LightMode",
+  VariablemodesColorStyles:"LightMode",
 };
 
-BlockBnner.argTypes = {
+BlockBannerComponentStory.argTypes = {
   language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  colorStyles:{
+  VariablemodesColorStyles:{
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
 };
 
-export const BlockBox = args => {
+export const BlockGenericComponentStory = args => {
   const [language, setLanguage] = useState(args.language || 'en');
   const { theme, toggleTheme,isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
@@ -99,12 +99,12 @@ export const BlockBox = args => {
      
     
       useEffect(() => {
-        const headerthemedark = args.colorStyles !== 'LightMode'; 
+        const headerthemedark = args.VariablemodesColorStyles !== 'LightMode'; 
         if (headerthemedark !== isDarkMode) {
           console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
           toggleTheme();
         }
-      }, [args.colorStyles, isDarkMode, toggleTheme]);
+      }, [args.VariablemodesColorStyles, isDarkMode, toggleTheme]);
 
   args.SolidText = t('initialLang:SolidText');
   args.PattrenText = t('initialLang:PattrenText');
@@ -114,7 +114,7 @@ export const BlockBox = args => {
   {...args} />;
 };
 
-BlockBox.args = {
+BlockGenericComponentStory.args = {
   // BlockGenericred:true,
   // Blockgenericred: (
   //   <SvgIconList
@@ -130,15 +130,15 @@ BlockBox.args = {
   // Whitebox: <SvgIconList icon="Lightmyacounts" width={24} height={24} />,
   // WhiteArrow: <SvgIconList icon="Lightright" width={24} height={24} />,
   //  showIcon:true,
-  Type: 'Solid',
+  blockgenericType: 'Solid',
   language: 'en',
   // enableDarktheme: false,
-  colorStyles:"LightMode",
+  VariablemodesColorStyles:"LightMode",
 
 };
 
-BlockBox.argTypes = {
-  Type: {
+BlockGenericComponentStory.argTypes = {
+  blockgenericType: {
     control: 'select',
     options: ['Solid', 'Pattern'],
   },
@@ -149,7 +149,7 @@ BlockBox.argTypes = {
   // enableDarktheme: {
   //   control: 'boolean',
   // },
-  colorStyles:{
+  VariablemodesColorStyles:{
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }

@@ -55,7 +55,7 @@ export const BlockGeneric = (props) => {
     return (
         <>
             {/* <TextComponent style={[{color: theme.primarycolor},globalStyles.BlockText,props.BlockText]}>Block generic</TextComponent> */}
-                {props.Type === "Solid" ?
+                {props.blockgenericType === "Solid" ?
                    
                                 <View style={[{ backgroundColor: isDarkMode ? theme.stylescolorpressed1
                     // primarybackground 
@@ -95,7 +95,7 @@ export const BlockGeneric = (props) => {
                     
                     : null}
 
-                {props.Type === "Pattern" ?
+                {props.blockgenericType === "Pattern" ?
                     <View style={[{ backgroundColor: theme.complimentaryprimarycolor3_2 }, globalStyles.typesolid, props.typesolid]}>
                         <Lightmyacounts
                             width={actuatedNormalize(24)}
