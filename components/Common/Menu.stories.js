@@ -61,7 +61,7 @@ BlockBannerComponentStory.args = {
   // Whitecard: <SvgIconList icon="Whitecard" width={24} height={24} />,
   //  showIcon:true,
   // demo: require("../../assets/Path3.png"),
-  language: 'en',
+  language: I18nManager.isRTL ? 'ar' : 'en',
   VariablemodesColorStyles:"LightMode",
 };
 
@@ -131,7 +131,7 @@ BlockGenericComponentStory.args = {
   // WhiteArrow: <SvgIconList icon="Lightright" width={24} height={24} />,
   //  showIcon:true,
   blockgenericType: 'Solid',
-  language: 'en',
+  language: I18nManager.isRTL ? 'ar' : 'en',
   // enableDarktheme: false,
   VariablemodesColorStyles:"LightMode",
 
@@ -478,7 +478,7 @@ TextDividerComponentStory.args = {
   linkbuttonIconright: I18nManager.isRTL ? true : true,
   linkbuttonsize: "small",
   texttitleactionPassword: true,
-  language: 'en',
+  language: I18nManager.isRTL ? 'ar' : 'en',
   colorStyles:"LightMode",
 
 }
@@ -619,7 +619,7 @@ useEffect(() => {
 SearchInputComponentStory.args = {
 
   State:"Default",
-  language: 'en',
+  language: I18nManager.isRTL ? 'ar' : 'en',
   Input: 'Search By',
   showIcon:false,
   colorStyles:"LightMode",
@@ -963,7 +963,7 @@ export const LastLoggedInStory = (args) => {
 
 LastLoggedInStory.args = {
   bgColor: 'black',
-  lang: 'en',
+  lang: I18nManager.isRTL ? 'ar' : 'en',
   enableDarktheme: false,
   powerButton: true,
 };

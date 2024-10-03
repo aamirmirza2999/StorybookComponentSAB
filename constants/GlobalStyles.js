@@ -1301,7 +1301,7 @@ buttonquickaction: {
   overflow: "hidden",
   padding: spacingS,
   justifyContent: "space-between",
-  width: actuatedNormalize(343)
+  // width: actuatedNormalize(343)
 },
 buttonquickactionInner: {
   alignItems: "flex-end",
