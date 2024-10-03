@@ -52,7 +52,9 @@ export const BlockBnner = args => {
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');
-  return <BlockBanner {...args} />;
+  return <BlockBanner changeTheme={toggleTheme}
+  changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}    
+  {...args} />;
 };
 BlockBnner.args = {
   // BlackCardIcon: <SvgIconList icon="BlockCard" width={24} height={24} />,
@@ -106,7 +108,10 @@ export const BlockBox = args => {
 
   args.SolidText = t('initialLang:SolidText');
   args.PattrenText = t('initialLang:PattrenText');
-  return <BlockGeneric {...args} />;
+  return <BlockGeneric 
+    changeTheme={toggleTheme}
+    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}    
+  {...args} />;
 };
 
 BlockBox.args = {
