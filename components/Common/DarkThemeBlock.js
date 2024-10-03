@@ -3,10 +3,9 @@ import { StyleSheet, View, Text } from 'react-native';
 import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import { actuatedNormalize } from '../../constants/PixelScaling';
-import { BankLogo, BlackRightarrow, CheckboxUnSelected, Delete, EditBlack, InfoIcon, InfoIconRed, RadioUnSelect, RightArrow, SabLogoRound, Slices, SuccessTick, TextInfoIcon, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
+import { BankLogo,CheckboxUnSelected, Delete, EditBlack,InfoIconRed, RadioUnSelect, RightArrow, SabLogoRound, Slices, SuccessTick, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
 import { spacingL, spacingM, spacingXL, spacingXXS } from '../../constants/Size';
-import { Image } from 'react-native-svg';
 const BadgeStatus = ({
   badgeStatusType,
   badgeNotificationType,
@@ -394,8 +393,7 @@ const DarkThemeBlock = (props) => {
     }
   };
   const ListItemAddon = ({ addonType }) => {
-    const { theme } = useTheme();
-    const imagePath = require('../../assets/wrapper.png');
+    const { theme } = useTheme();    
     return (
       <>
         {addonType === 'Avatar' && (
@@ -403,7 +401,7 @@ const DarkThemeBlock = (props) => {
             <TextComponent
               style={[
                 globalStyles.avatarListItemAddonText,
-                { color: theme.primarytextcolor3 },
+                { color: isDarkMode?theme.primarycolor3static:theme.primarytextcolor3 },
               ]}>
               JM
             </TextComponent>
@@ -415,7 +413,7 @@ const DarkThemeBlock = (props) => {
             <TextComponent
               style={[
                 globalStyles.avatarListItemAddonText,
-                { color: theme.primarytextcolor3 },
+                { color: isDarkMode?theme.primarycolor3static:theme.primarytextcolor3  },
               ]}>
               JM
             </TextComponent>
@@ -437,7 +435,7 @@ const DarkThemeBlock = (props) => {
           <View
             style={[
               globalStyles.wrapperListItemAddon,
-              { backgroundColor: theme.primarycolor2_10 },
+              { backgroundColor: isDarkMode?theme.primarycolor2_100:theme.primarycolor2_10 },
             ]}>
             {isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />}
           </View>

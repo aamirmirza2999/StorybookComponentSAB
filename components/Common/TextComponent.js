@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { Text, View } from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
 import { Edit, Copy, BulletPoint, TextInfoIcon, Badge, TextInfoIconDark, InfoIconRed, CopyDark, EditDark } from '../../constants/SvgLocations';
@@ -47,8 +47,7 @@ const TextComponent = (props) => {
           suppressHighlighting={true} // iOS highlight issue fix
         >
           {props.textBullet === 'true' ? <Text>o </Text> : null}
-          {props.children}
-
+          {props.textText || props.children}
         </Text>
         {props.textEditable && !props.textCopyable && (
           <View style={{ paddingLeft: actuatedNormalize(8) }}>
@@ -87,7 +86,7 @@ const TextComponent = (props) => {
 
       {/* Secondary Text Component */}
       <View style={[globalStyles.textComponentStyle]}>
-        {props.hierarchy === 'secondary' && (
+        {props.textHierarchy === 'secondary' && (
           <>
             {props.textBullet === 'true.success' ?
               <View style={{ paddingRight: actuatedNormalize(8) }}>
@@ -117,11 +116,11 @@ const TextComponent = (props) => {
               selectable={false}
               suppressHighlighting={true}
             >
-              {props.children || 'Secondary Text'}
+              {props.textText || props.children }
             </Text>
           </>
         )}
-        {props.enableSecondary && props.textEditable && !props.textCopyable && (
+        {props.textHierarchy === 'secondary' && props.textEditable && !props.textCopyable && (
           <View style={{ paddingLeft: actuatedNormalize(8) }}>
             <Edit
               style={{ marginTop: actuatedNormalize(2) }}
@@ -130,7 +129,7 @@ const TextComponent = (props) => {
             />
           </View>
         )}
-        {props.enableSecondary && props.textCopyable && !props.textEditable && (
+        {props.textHierarchy === 'secondary' && props.textCopyable && !props.textEditable && (
           <View style={{ marginLeft: actuatedNormalize(5) }}>
             <Copy
               style={{ marginTop: actuatedNormalize(2) }}
@@ -157,14 +156,13 @@ const TextComponent = (props) => {
               },
               fontsFamily(props.fontFamily), // Apply font family
               props.style,
-
             ]}
             onPress={props.onPress}
             numberOfLines={props.numberOfLines}
             selectable={false}
             suppressHighlighting={true} // iOS highlight issue fix
           >
-            {props.headlineText}
+            {props.textTitleText}
           </Text>
         )}
 
