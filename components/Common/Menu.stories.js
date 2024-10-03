@@ -15,9 +15,9 @@ export default {
   title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
 };
 
-export const MenuComponentStory = args => { };
+// export const MenuComponentStory = args => { };
 
-MenuComponentStory.args = {};
+// MenuComponentStory.args = {};
 
 export const BlockBannerComponentStory = args => {
 
