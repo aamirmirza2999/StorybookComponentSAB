@@ -235,6 +235,7 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
         <Blockcard
           width={width}
           height={height}
+          fill={fill}
           transform={transform}
         />
       );
