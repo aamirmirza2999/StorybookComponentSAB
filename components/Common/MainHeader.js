@@ -68,7 +68,7 @@ const MainHeader = (props) => {
           />
           <StatusBar
     animated
-    backgroundColor={theme.primaryinvert}
+    backgroundColor={'white'}
     barStyle={'dark-content'}
     translucent={true}
   />
