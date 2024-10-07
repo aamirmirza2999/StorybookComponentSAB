@@ -34,6 +34,7 @@ import Transfers
       case 'Payment':
         return  <MainHeader
         type="level1"
+        Headline={true}
         HeadlineText={'Headline Payment'}
         back={false}
         showLinkButton={false}
@@ -41,6 +42,7 @@ import Transfers
       case 'New_Transfer':
         return     <MainHeader
         type="level1"
+        Headline={true}
         HeadlineText={t('initialLang:headline')}
         back={false}
         showLinkButton={false}
@@ -48,6 +50,7 @@ import Transfers
       case 'Menu':
         return    <MainHeader
                 type="level1-menu"
+                Headline={true}
                 HeadlineText={t('initialLang:headline')}
                 avatarElements="Icons"
                 avatarType="Filled"
@@ -55,6 +58,7 @@ import Transfers
        case 'PFM':
                     return     <MainHeader
                     type="level1"
+                    Headline={true}
                     HeadlineText={t('initialLang:headline')}
                     back={false}
                     showLinkButton={false}
