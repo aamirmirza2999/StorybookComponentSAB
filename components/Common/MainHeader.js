@@ -173,38 +173,40 @@ const MainHeader = (props) => {
                     avatarnamemid={props.avatarElements === 'Initials' && props.avatarSize === 'Medium' ? true : false}
                     avatarnamesmall={props.avatarElements === 'Initials' && props.avatarSize === 'Small' ? true : false}
                     avatarwhite={props.avatarElements === 'Icons' && props.avatarType === 'Outline' ? true : false}
-                  />
+                 />
                 </TouchableOpacity>}
               </>
             ) : (
-              props.LanguageIcon ? (
-                <TouchableOpacity
-                  style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
-                  onPress={props.changeLanguage}
-                >
-                  <SvgIconList
-                    icon="ChangeLang"
-                    width={actuatedNormalize(24)}
-                    height={actuatedNormalize(24)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                  />
-                </TouchableOpacity>
-              ) : props.SupportedIcon ?
-                <TouchableOpacity
-                  style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
-                  onPress={props.SupportedIconFunc}
-                >
-                  <SvgIconList
-                    icon={props.SupportIcon}
-                    width={actuatedNormalize(24)}
-                    height={actuatedNormalize(24)}
-                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                  />
-                </TouchableOpacity>
-
-                : null
+              <>
+                {props.SupportedIcon && (
+                  <TouchableOpacity
+                    style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+                    onPress={props.SupportedIconFunc}
+                  >
+                    <SvgIconList
+                      icon={props.SupportIcon}
+                      width={actuatedNormalize(24)}
+                      height={actuatedNormalize(24)}
+                      transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                    />
+                  </TouchableOpacity>
+                )}
+            
+                {props.LanguageIcon && (
+                  <TouchableOpacity
+                    style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+                    onPress={props.changeLanguage}
+                  >
+                    <SvgIconList
+                      icon="ChangeLang"
+                      width={actuatedNormalize(24)}
+                      height={actuatedNormalize(24)}
+                      transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                    />
+                  </TouchableOpacity>
+                )}
+ </>
             )}
-
 
           </View>
         </View>
@@ -306,7 +308,7 @@ const MainHeader = (props) => {
                 </TouchableOpacity>
               ) : null}
 
-              {props.SupportedIcon ?
+              {props.SupportedIcon && (props.type==='level2'||props.type ==='search') ?
                 <TouchableOpacity
                   style={{  marginLeft: spacingXS }}
                   onPress={props.SupportedIconFunc}
@@ -446,17 +448,19 @@ const MainHeader = (props) => {
         <View style={{ flexDirection: 'row', marginBottom: spacingXS, justifyContent: 'space-between', 
        //backgroundColor: 'green'
          }}>
+          {props.Headline?
           <TextComponent style={[styles.HeadlineText, { color: theme.primarycolor }]}>
             {props.HeadlineText}
           </TextComponent>
+          :null}
           <View style={{ flexDirection: "row", }}>
-            {props.level1SupportedIcon ?
+            {props.SupportedIcon ?
               <TouchableOpacity
-                style={{ top: actuatedNormalize(3), marginLeft: spacingXS, marginRight: spacingXS }}
-                onPress={props.level1SupportedIconFunc}
+                style={{ top: actuatedNormalize(4), marginLeft: spacingXS, marginRight: spacingXS }}
+                onPress={props.SupportedIconFunc}
               >
                 <SvgIconList
-                  icon={props.level1SupportIcon}
+                  icon={props.SupportIcon}
                   width={actuatedNormalize(24)}
                   height={actuatedNormalize(24)}
                   transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}

@@ -125,7 +125,7 @@ import {
                     </TextComponent>
                   </View>
                 )}
-                <View style={{ width: '80%' ,}}>
+                <View style={{width:props.State ==='Filled'?'80%':'100%' }}>
                   <TextInput
                     style={[
                       globalStyles.billDetailInputView,
@@ -207,14 +207,7 @@ import {
   export default SearchInput;
   
   const styles = StyleSheet.create({
-    input: {
-      height: 40,
-      borderColor: 'gray',
-      borderWidth: 1,
-      marginVertical: 10,
-      paddingHorizontal: 10,
-      paddingBottom: actuatedNormalize(24),
-    },
+   
     defaultTextStyle: {
       left:spacingXS,
       fontSize: 15,
@@ -222,49 +215,11 @@ import {
       fontFamily:Fonts.HSBC,
       color: "#000",
       textAlign: "left",
-      
-      // fontFamily: Fonts.universlTStd,
     },
-    labelStyle: {
-      // textTransform: "capitalize",
-    },
-    textinput: {
-      // color: '#878787',
-      fontSize: actuatedNormalize(16),
-      textAlign: 'center',
-    },
-    errorview: {
-      marginTop: actuatedNormalize(10),
-      marginBottom: actuatedNormalize(10),
-    },
-  
-    buttonContainer: {
-      flex: 1.0,
-      alignSelf: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#ffffff',
-      width: '99%',
-      margin: 1,
-    },
-    buttonText: {
-      textAlign: 'center',
-      color: '#4C64FF',
-      alignSelf: 'center',
-    },
-  
     billDetailInputBorderWhite: {
-      // height: '100%',
-      // flex: 1,
-      // alignItems: 'center',
-      // justifyContent: 'space-between',
-      // flexDirection: 'row',
-      // borderRadius: actuatedNormalize(8),
-      // paddingHorizontal: actuatedNormalize(10),
+     
       flex: 1,
       borderRadius: actuatedNormalize(8),
-      // paddingLeft: 13,
-      // paddingRight: 5,
-      // overflow: 'hidden',
       flexDirection: 'row',
       paddingLeft: actuatedNormalize(13),
       paddingRight: actuatedNormalize(5),
@@ -273,14 +228,8 @@ import {
     },
     billDetailInputView: {
       width: '80%',
-      //justifyContent: 'center',
-      //height: actuatedNormalize(44),
       fontSize: actuatedNormalize(14),
       fontFamily: Fonts.HSBC,
-    },
-    billDetailInputStyle: {
-      fontSize: actuatedNormalize(18),
-      color: 'rgb(193,193,193)',
     },
     errorText: {
       color: '#d22630',
@@ -288,9 +237,6 @@ import {
       marginTop: actuatedNormalize(8),
       fontFamily: Fonts.HSBC,
     },
-    billDetailCurrencyStyle: {
-      fontSize: actuatedNormalize(11),
-      color: 'rgb(29,38,44)',
-    },
+    
   });
   
