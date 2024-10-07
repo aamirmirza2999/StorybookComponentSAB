@@ -523,29 +523,38 @@ togglelabel:{
     lineHeight: spacingM,
     fontWeight: fontWeightBold,
     fontFamily: Fonts.HSBC,
-    textAlign: "left",
-    zIndex: 1
+    // textAlign: "left",
+    zIndex: 1,
+    alignSelf:"center",
 },
 
 jm2:{
   fontSize: fontMedium,
   lineHeight: lineHeightMedium,
   fontFamily: Fonts.HSBC,
-  textAlign: "left",
-  zIndex: 1
+  // textAlign: "left",
+  zIndex: 1,
+  bottom:1,
+  alignSelf:"center",
 },
 jm3:{
   fontSize: fontSmall,
 lineHeight: spacingS,
 fontFamily: Fonts.HSBC,
- textAlign: "left",
- bottom:1
+alignSelf:"center",
+bottom:1
+//  textAlign: "left",
+// marginLeft:actuatedNormalize(5),
+// top:actuatedNormalize(2)
 },
 typefilledElementsinitials: {
   borderRadius: actuatedNormalize(100),
-    padding: spacingXS,
-   justifyContent:"space-around" ,
-    marginRight:actuatedNormalize(6),
+    // padding: spacingXS,
+    width:actuatedNormalize(30),
+    height:actuatedNormalize(30),
+    alignItems: "center",
+    justifyContent: "center",
+        marginRight:actuatedNormalize(6),
     top:  Platform.OS ==="ios" ?actuatedNormalize(4): actuatedNormalize(4),
 
  

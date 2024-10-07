@@ -70,7 +70,8 @@ import TextComponent from './TextComponent';
  :null}
  {props.avatarnamesmall?
  <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor: theme.primarycolor3static}]}>
- <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3}]}>{props.avatarinitial}</TextComponent>
+ <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3, alignItems: 'center',
+                justifyContent: 'center',}]}>{props.avatarinitial}</TextComponent>
 </View>
  :null}
  </View>
