@@ -1432,6 +1432,13 @@ textFlexBox3: {
     overflow: "hidden",
     marginTop: spacingS,
   },
+  dividerStyle1: {
+    // backgroundColor: "rgba(118, 118, 118, 0.2)",
+    height: actuatedNormalize(2),
+    alignSelf: "stretch",
+    overflow: "hidden",
+    marginTop: spacingXS,
+  },
   inlinelistitemmenu: {
     justifyContent: "center",
     alignSelf: "stretch"
@@ -1476,6 +1483,7 @@ textFlexBox3: {
     paddingHorizontal: spacingS,
     alignSelf: "stretch"
   },
+  
   rowFlexBoxSpaceBetween: {
     flexDirection: 'row', 
     justifyContent: 'space-between', 
@@ -1516,22 +1524,31 @@ textFlexBox3: {
 lastLoginContainer: {
   flexDirection: "row",
   alignItems: "center",
-  justifyContent: "space-between",
-  // width: "83%",
-  height: actuatedNormalize(73),
-  paddingHorizontal: actuatedNormalize(16),
+  // justifyContent: "space-between", 
+  paddingVertical: actuatedNormalize(16),
   // marginHorizontal: actuatedNormalize(30),
+  // borderColor:'red', borderWidth:2
 },
 userInfoSection: {
   flexDirection: "row",
   alignItems: "center",
   flex: 1,
-  // borderColor:'green', borderWidth:2
+  gap:8,
+  paddingHorizontal: actuatedNormalize(16),
 },
 avatarSection: {
   position: 'relative',
   width: actuatedNormalize(40),
   height: actuatedNormalize(40),
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflow: 'hidden',
+  
+},
+avatarSectionDarkTheme: {
+  position: 'relative',
+  width: actuatedNormalize(48),
+  height: actuatedNormalize(48),
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden'
@@ -1545,9 +1562,10 @@ editIconWrapper: {
   padding: actuatedNormalize(2),
 },
 textWrapper: {
-  marginLeft: actuatedNormalize(12),
-  // gap: 3,
+  // marginLeft: actuatedNormalize(12),
+  // paddingHorizontal:actuatedNormalize(8),
   justifyContent: "center",
+  // borderColor:'green', borderWidth:2
 },
 // ....///
 
@@ -1648,7 +1666,7 @@ welcomeBackFlexBox: {
   },
   avatarListItemAddon1: {
     borderRadius: actuatedNormalize(100),
-    backgroundColor: '#fbe5e7',
+    // backgroundColor: '#fbe5e7',
     width: spacingXL,
     height: spacingXL,
     overflow: 'hidden',
@@ -1765,6 +1783,11 @@ welcomeBackFlexBox: {
     gap: spacingXXS,
     alignSelf: "stretch"
     },
+    wrapperDefaultContainer1: {
+      gap: spacingXXS,
+      alignSelf: "stretch",
+      width:'100%'
+      },
     labelDefaultContainer: {
       lineHeight: lineHeightMedium,
       color: "#767676",
@@ -1806,7 +1829,7 @@ welcomeBackFlexBox: {
         fontSize: fontSmallMedium,
         lineHeight: lineHeightSmallMedium,
         fontFamily: Fonts.HSBC,
-        color: "#767676",
+        // color: "#767676",
         textAlign: "right"
         },
         typebalance: {

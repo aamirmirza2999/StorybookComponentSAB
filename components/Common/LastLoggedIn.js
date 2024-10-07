@@ -41,13 +41,13 @@ const LastLoggedIn = (props) => {
                         {props.status}
                     </TextComponent>
                 </View>
-            </View>
-
-            {props.powerButton ?
+                <View>
+                {props.powerButton ?
                 isDarkMode ?
                     <LogoutIconDark width={spacingM} height={spacingM} /> :
                     <LogoutIconWhite width={spacingM} height={spacingM} /> : null}
-
+                </View>
+            </View>
         </View>
     );
 };

@@ -28,6 +28,7 @@ export {default as Toggleunselect} from '../assets/toggleUnselect.svg';
 export {default as AvatarIconblack} from '../assets/Profileimg.svg';
 export {default as AvatarIconblackDark} from '../assets/Profileimgdark.svg'
 export { default as AvatarIconwhite} from '../assets/Profilepic.svg';
+export { default as AvatarIconDarkOutlined} from '../assets/ProfilepicDark.svg';
 export {default as AvatarIconDark} from '../assets/profileDark.svg';
 export {default as RightArrowBlackLarge} from '../assets/rightLargeBlack.svg';
 export {default as RightArrowDarkLarge} from '../assets/rightDarkLarge.svg';
@@ -79,6 +80,7 @@ export {default as TextInfoIconDark} from "../assets/textInfoDark.svg";
 export {default as WhiteArrow} from "../assets/arrowWhite.svg"
 export {default as HelpIcon} from "../assets/help.svg"
 export {default as TickIcon} from "../assets/tick.svg"
+export {default as TickIconDark} from "../assets/tickDark.svg"
 export {default as SuccessTick} from "../assets/greentick.svg";
 export {default as Slices} from "../assets/Slices.svg"
 export {default as EditBlack} from "../assets/document_edit_black.svg"

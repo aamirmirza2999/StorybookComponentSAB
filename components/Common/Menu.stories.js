@@ -22,21 +22,21 @@ export default {
 export const BlockBannerComponentStory = args => {
 
   const [language, setLanguage] = useState(args.language || 'en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
 
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
 
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
-    }, []);
-  
-    useEffect(() => {
-      if (language !== args.language) {
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.language) {
       handleChange(args.language, setLanguage, i18n);
       }
       }, [args.language]);
@@ -78,21 +78,21 @@ BlockBannerComponentStory.argTypes = {
 
 export const BlockGenericComponentStory = args => {
   const [language, setLanguage] = useState(args.language || 'en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
 
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
 
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
-    }, []);
-  
-    useEffect(() => {
-      if (language !== args.language) {
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.language) {
       handleChange(args.language, setLanguage, i18n);
       }
       }, [args.language]);
@@ -158,7 +158,7 @@ BlockGenericComponentStory.argTypes = {
 export const NewListComponentStory = args => {
   // const {t} = useTranslation();
   // const [language, setLanguage] = useState('en');
-  const {toggleTheme, isDarkMode} = useTheme();
+  const { toggleTheme, isDarkMode } = useTheme();
   // const handleChange = (newLang, setLanguage, i18n) => {
   //   setLanguage(newLang);
   //   i18n.changeLanguage(newLang);
@@ -175,11 +175,11 @@ export const NewListComponentStory = args => {
   // }, [args.lang]);
 
   useEffect(() => {
-    const headerthemedark = args.colorStyles !== 'Light Mode'; 
+    const headerthemedark = args.colorStyles !== 'Light Mode';
     if (headerthemedark !== isDarkMode) {
       toggleTheme();
     }
-  }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  }, [args.colorStyles, isDarkMode, toggleTheme]);
   return (
     <NewListComponent
       {...args}
@@ -225,7 +225,7 @@ NewListComponentStory.args = {
   listItemActionType: 'Chevron',
   stackedListItemPreviewSecondValue: false,
   // lang: 'en',
-  colorStyles:'Light Mode',
+  colorStyles: 'Light Mode',
 };
 
 NewListComponentStory.argTypes = {
@@ -427,7 +427,7 @@ NewListComponentStory.argTypes = {
 };
 
 export const TextDividerComponentStory = args => {
-  const { t ,i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState(args.language || 'en');
   const { toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
@@ -441,7 +441,7 @@ export const TextDividerComponentStory = args => {
   }, []);
   useEffect(() => {
     if (language !== args.language) {
-    handleChange(args.language, setLanguage, i18n);
+      handleChange(args.language, setLanguage, i18n);
     }
     }, [args.language]);
 
@@ -499,24 +499,24 @@ TextDividerComponentStory.argTypes = {
 
   },
 };
-export const TextComponentStory =(args) =>{
+export const TextComponentStory = (args) => {
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
 
-  useEffect(() => {   
+  useEffect(() => {
     const shouldBeDarkMode = args.variableModecolorStyles === 'Dark Mode';
     if (shouldBeDarkMode !== isDarkMode) {
       toggleTheme();
     }
-  }, [args.variableModecolorStyles, isDarkMode, toggleTheme]); 
+  }, [args.variableModecolorStyles, isDarkMode, toggleTheme]);
 
-return (<TextComponent {...args}/>)
-}  
+  return (<TextComponent {...args} />)
+}
 TextComponentStory.args = {
   // children:'Text Line',
   textText: 'Text Line',
-  textTitleText:'Headline',
+  textTitleText: 'Headline',
   // textColor: 'black',
   fontSize: 16,
   fontFamily: 'Regular',
@@ -524,39 +524,39 @@ TextComponentStory.args = {
   onPress: null,
   numberOfLines: 1,
   textTransform: 'none',
-  textHierarchy:'primary',
-  textEditable:false,
-  textCopyable:false,
-  textBullet:'false',
-  textTitleBadge:false,
-  textTitleIcon:false,
-  variableModecolorStyles:'Light Mode',
-  isHeadline:true,
+  textHierarchy: 'primary',
+  textEditable: false,
+  textCopyable: false,
+  textBullet: 'false',
+  textTitleBadge: false,
+  textTitleIcon: false,
+  variableModecolorStyles: 'Light Mode',
+  isHeadline: true,
   // lang:'en',
 };
 
 TextComponentStory.argTypes = {
-  textText: {control: 'text'},
-  textTitleText: {control: 'text'},
+  textText: { control: 'text' },
+  textTitleText: { control: 'text' },
   // textColor: {control: 'color'},
-  fontSize: {control: 'number'},
-  textHierarchy:{
-    control:'select',
-    options:['primary', 'secondary']
+  fontSize: { control: 'number' },
+  textHierarchy: {
+    control: 'select',
+    options: ['primary', 'secondary']
   },
-  textEditable:{control:'boolean'},
-  textCopyable:{control:'boolean'},
-  textTitleBadge:{control:'boolean'},
-  textTitleIcon:{control:'boolean'},
+  textEditable: { control: 'boolean' },
+  textCopyable: { control: 'boolean' },
+  textTitleBadge: { control: 'boolean' },
+  textTitleIcon: { control: 'boolean' },
   variableModecolorStyles: {
     control: 'select',
     options: ['Light Mode', 'Dark Mode'],
   },
   // enableDarkTheme:{control:'boolean'},
-  isHeadline:{control:'boolean'},
-  textBullet:{
-    control:'select',
-    options:['true', 'false', 'true.success']
+  isHeadline: { control: 'boolean' },
+  textBullet: {
+    control: 'select',
+    options: ['true', 'false', 'true.success']
   },
   fontFamily: {
     control: 'select',
@@ -564,14 +564,14 @@ TextComponentStory.argTypes = {
   },
   fontWeight: {
     control: 'select',
-    options: ["null",'normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900']
+    options: ["null", 'normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900']
   },
   // onPress: {action: 'pressed'},
   // lang: {
   //   control: 'select',
   //   options: ['en', 'ar'],
   // },
-  numberOfLines: {control: 'number'},
+  numberOfLines: { control: 'number' },
   textTransform: {
     control: 'select',
     options: ['none', 'capitalize', 'uppercase', 'lowercase'],
@@ -580,40 +580,40 @@ TextComponentStory.argTypes = {
 
 export const SearchInputComponentStory = (args) => {
   const [language, setLanguage] = useState(args.language || 'en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
- // args.Input = t('initialLang:searchby');
+  // args.Input = t('initialLang:searchby');
 
 
-const handleChange = (newLang, setLanguage, i18n) => {
-  setLanguage(newLang);
-  i18n.changeLanguage(newLang); 
-  CommonHelper.changeLanguage(newLang, setLanguage); 
-};
+  const handleChange = (newLang, setLanguage, i18n) => {
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
+  };
 
-useEffect(() => {
-  CommonHelper.initLanguage(setLanguage);
+  useEffect(() => {
+    CommonHelper.initLanguage(setLanguage);
   }, []);
 
   useEffect(() => {
     if (language !== args.language) {
-    handleChange(args.language, setLanguage, i18n);
+      handleChange(args.language, setLanguage, i18n);
     }
-    }, [args.language]);
-   
-  
-    useEffect(() => {
-      const headerthemedark = args.colorStyles !== 'LightMode'; 
-      if (headerthemedark !== isDarkMode) {
-        console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
-        toggleTheme();
-      }
-    }, [args.colorStyles, isDarkMode, toggleTheme]); 
-  return(
-    <SearchInput 
-    changeTheme={toggleTheme}
-    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
-    {...args}/>
+  }, [args.language]);
+
+
+  useEffect(() => {
+    const headerthemedark = args.colorStyles !== 'LightMode';
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+      toggleTheme();
+    }
+  }, [args.colorStyles, isDarkMode, toggleTheme]);
+  return (
+    <SearchInput
+      changeTheme={toggleTheme}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+      {...args} />
   )
 };
 SearchInputComponentStory.args = {
@@ -621,23 +621,23 @@ SearchInputComponentStory.args = {
   State:"Default",
   language: I18nManager.isRTL ? 'ar' : 'en',
   Input: 'Search By',
-  showIcon:false,
-  colorStyles:"LightMode",
+  showIcon: false,
+  colorStyles: "LightMode",
 };
 
-SearchInputComponentStory.argTypes={
-  State:{control:'select',options:['Default','Filled']},
+SearchInputComponentStory.argTypes = {
+  State: { control: 'select', options: ['Default', 'Filled'] },
   language: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  Input:{
-    control:'text'
-   },
-  showIcon:{
+  Input: {
+    control: 'text'
+  },
+  showIcon: {
     control: 'boolean',
   },
-  colorStyles:{
+  colorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
@@ -648,10 +648,6 @@ export const DarkThemeBlockStory = (args) => {
   const [language, setLanguage] = useState(args.lang || 'en');
   const { theme, toggleTheme, isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
-
-  args.themeText = 'Dark Theme';
-  args.themeChangeText = 'Change from Light to Dark Mode';
-
   // const handleChange = (newLang, setLanguage, i18n) => {
   //   setLanguage(newLang);
   //   i18n.changeLanguage(newLang);
@@ -666,22 +662,15 @@ export const DarkThemeBlockStory = (args) => {
   //   if (language !== args.lang) {
   //     handleChange(args.lang, setLanguage, i18n);
   //   }
-  // }, [args.lang, language]);
-
-  // Fix: Check before toggling to avoid infinite loop
-  // useEffect(() => {
-  //   if (args.enableDarktheme !== isDarkMode) {
-  //     toggleTheme();
-  //   }
-  // }, [args.enableDarktheme, isDarkMode, toggleTheme]);
+  // }, [args.lang, language]); 
 
   useEffect(() => {
     // Check if current mode matches the selected colorStyles
-    const shouldBeDarkMode = args.colorStyles === 'Dark Mode';
+    const shouldBeDarkMode = args.variableModecolorStyles === 'Dark Mode';
     if (shouldBeDarkMode !== isDarkMode) {
       toggleTheme();
     }
-  }, [args.colorStyles, isDarkMode, toggleTheme]);
+  }, [args.variableModecolorStyles, isDarkMode, toggleTheme]);
 
   return (
     <DarkThemeBlock
@@ -694,134 +683,129 @@ export const DarkThemeBlockStory = (args) => {
 
 DarkThemeBlockStory.args = {
   listType: 'Stacked',
-  inlineListItemType: 'Actionable',
-  listItemActionableType: 'Menu',
-  listItemActionableSelectType: 'Check Box',
-  showDivider: true,
-  // enableDarktheme: false,
-  colorStyles: 'Light Mode',
-  iconActionableMenu: true,
-  badgeActionableMenu: true,
-  badgeActionableMenuType: 'Badge Notification',
-  badgeNotificationMenuType: 'Warning',
-  badgeNotificationMenuSize: 'Small',
-  badgeNotificationMenuNumber: '1',
-  linkActionableMenu: true,
-  listItemPreviewType: 'Value',
-  iconPreview: false,
   stackedListItemType: 'Default',
+  // when stackedListItemType is preview
+  stackedListItemPreviewDivider: true,
+  stackedListItemPreviewLabel: 'Label',
+  stackedListItemPreviewValue: 'Value',
+  stackedListItemPreviewSecondValue: false,
+  stackedListItemPreviewSecondValueText: 'Second Value',
+  // when stackedListItemType is preview  -end
   stackedListItemDefaultIcon: true,
   stackedListItemDefaultBadge: false,
+  // badge sub content
+  badgeStatusType: 'Chips Info',
+  badgeStatusMenuType: 'Badge Notification',
+  // if badgestatustype is 'chips info'
+  chipsInfoLanguage: 'English',
+  chipsInfoLabelArabic: 'غير نشط',
+  chipsInfoState: 'Error',
+  chipsInfoSize: 'Small',
+  chipsInfoType: 'Default',
+  chipsInfoLabel: 'Inactive',
+  chipsInfoShowIcon: false,
+  // if badge status type is 'Badge Notification'
+  badgeNotificationType: 'Warning',
+  badgeNotificationMenuType: 'Warning',
+  badgeNotificationSize: 'Small',
+  badgeNotificationMenuSize: 'Small',
+  badgeNotificationNumber: 1,
+  badgeNotificationMenuNumber: 1,
+  // if badgestatustype is 'Text'
+  badgeStatusText: 'Content',
+  badgeStatusMenuText: 'Content',
+  //  if badge status type is Balance
+  badgeStatusFirstValue: 'Content',
+  badgeStatusMenuFirstValue: 'Content',
+  badgeStatusSecondValue: 'Content',
+  badgeStatusMenuSecondValue: 'Content',
+  badgeStatusShowFirstValue: true,
+  badgeStatusMenuShowFirstValue: true,
+  badgeStatusShowSecondValue: true,
+  badgeStatusMenuShowSecondValue: true,
+  badgeStatusBalanceWithStatusFirstValue: 'Content',
+  badgeStatusMenuBalanceWithStatusFirstValue: 'Content',
+  badgeStatusBalanceWithStatusShowFirstValue: true,
+  badgeStatusMenuBalanceWithStatusShowFirstValue: true,
+  // /////
   stackedListItemDefaultAction: true,
-  listtemAddonType: 'Icon',
-  stackedListItemBody: 'Headline+Body',
+  listItemAddonType: 'Icon',
+  // listitemaddon subtyps
+  listItemAddonAvatarType: 'Filled',
+  listItemAddonAvatarElements: 'Initials',
+  listItemAddonAvatarSize: 'Medium',
+  listItemAddonAvatarInitials: 'JM',
+  listItemAddonAvatarEdit: false,
+  // listitemaddon subtyps -- end
+  // Stackedlist item body
+  stackedListItemBodyType: 'Headline+Body',
+  stackedListItemBodyHeadline: 'Dark Theme',
   stackedListItemBodyShowContent: true,
-  stackedListItemBodyHeadline:'Dark Theme',
-  stackedListItemBodyContent:'Change from Light to Dark Mode',
+  stackedListItemBodyContent: 'Change from Light to Dark Mode',
+  stackedListItemBodyLabel: 'Label',
+  stackedListItemBodyValue: 'Value',
   stackedListItemBodyShowLabel: true,
   stackedListItemBodyShowSubTitle: true,
-  stackedListItemBodyShowBodyCopy: true,
+  stackedListItemBodySubTitle: 'Sub Title',
   stackedListItemBodyShowStatus: true,
   stackedListItemBodyStatusState: 'Success',
-  badgeStatusType: 'Chips Info',
-  badgeNotificationType: 'Primary',
-  badgeNotificationSize: 'Small',
-  badgeNotificationNumber: '1',
+  stackedListItemBodyStatus: 'Status',
+  // listitemactions
   listItemActionType: 'Toggle',
-  stackedListItemPreviewSecondValue: false,
+  listItemActionToggleState: 'Unselected',
+  listItemActionCheckboxIcon: 'Unchecked',
+  listItemActionRadioButton: 'Unchecked',
+  variableModecolorStyles: 'Light Mode',
+  // if listtype is inline
+  inlineListItemType: 'Actionable',
+  inlineListItemActionableType: 'Menu',
+  inlineListItemMenuText: 'Link',
+  inlineListItemMenuDivider: true,
+  inlineListItemMenuIcon: true,
+  inlineListItemMenuBadge: true,
+  inlineListItemMenuLink: true,
+  inlineListItemSelectType: 'Check Box',
+  inlineListItemSelectDivider: true,
+  inlineListItemSelectLabel: 'Label',
+  inlineListItemSelectIcon: true,
+  inlineListItemPreviewType: 'Value',
+  inlineListItemValueDivider: true,
+  inlineListItemValueIcon: false,
+  inlineListItemLabel: 'Label',
+  inlineListItemValue: 'Value',
+  inlineListItemBulletPointDivider: true,
+  inlineListItemBulletPointLabel: 'label',
 };
 
 DarkThemeBlockStory.argTypes = {
-  // enableDarktheme: {
-  //   control: 'boolean',
-  // },
-  colorStyles: {
-    control: 'select',
-    options: ['Light Mode', 'Dark Mode'],
-  },
-  stackedListItemBodyHeadline:{
-    control:'text'
-  },
-  stackedListItemBodyContent:{
-    control:'text'
-  },
   listType: {
     control: 'select',
     options: ['Inline', 'Stacked'],
-  },
-  inlineListItemType: {
-    control: 'select',
-    options: ['Actionable', 'Preview'],
-    if: { arg: 'listType', eq: 'Inline' },
-  },
-  listItemPreviewType: {
-    control: 'select',
-    options: ['Value', 'Bullet Point'],
-    if: { arg: 'inlineListItemType', eq: 'Preview' },
-  },
-  iconPreview: {
-    control: 'boolean',
-    if: { arg: 'inlineListItemType', eq: 'Preview' },
-  },
-  showDivider: {
-    control: 'boolean',
-  },
-  listItemActionableType: {
-    control: 'select',
-    options: ['Menu', 'Select'],
-    if: { arg: 'listType', eq: 'Inline' },
-  },
-  listItemActionableSelectType: {
-    control: 'select',
-    options: ['Check Box', 'Radio Button'],
-    // if: { arg: 'inlineListItemType', neq: 'Preview' },
-    if: { arg: 'listItemActionableType', eq: 'Select' },
-  },
-  iconActionableMenu: {
-    control: 'boolean',
-    if: { arg: 'listType', eq: 'Inline' },
-    // if: { arg: 'listItemActionableType', eq: 'Menu' }
-  },
-  badgeActionableMenu: {
-    control: 'boolean',
-    if: { arg: 'listType', eq: 'Inline' },
-    // if: { arg: 'listItemActionableType', eq: 'Menu' }
-  },
-  badgeActionableMenuType: {
-    control: 'select',
-    options: [
-      'Badge Notification',
-      'Chips Info',
-      'Text',
-      'Balance',
-      'Balance with Status',
-    ],
-    if: { arg: 'listType', eq: 'Inline' }
-  },
-  badgeNotificationMenuType: {
-    control: 'select',
-    options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
-    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
-  },
-  badgeNotificationMenuSize: {
-    control: 'select',
-    options: ['Small', 'Large', 'XS'],
-    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
-  },
-  badgeNotificationMenuNumber: {
-    control: 'select',
-    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
-    if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
-  },
-  linkActionableMenu: {
-    control: 'boolean',
-    if: { arg: 'listType', eq: 'Inline' },
-    // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
   stackedListItemType: {
     control: 'select',
     options: ['Default', 'Preview'],
     if: { arg: 'listType', eq: 'Stacked' },
+  },
+  stackedListItemPreviewDivider: {
+    control: 'boolean',
+    if: { arg: 'stackedListItemType', eq: 'Preview' },
+  },
+  stackedListItemPreviewLabel: {
+    control: 'text',
+    if: { arg: 'stackedListItemType', eq: 'Preview' },
+  },
+  stackedListItemPreviewValue: {
+    control: 'text',
+    if: { arg: 'stackedListItemType', eq: 'Preview' },
+  },
+  stackedListItemPreviewSecondValue: {
+    control: 'boolean',
+    if: { arg: 'stackedListItemType', eq: 'Preview' },
+  },
+  stackedListItemPreviewSecondValueText: {
+    control: 'text',
+    if: { arg: 'stackedListItemPreviewSecondValue' },
   },
   stackedListItemDefaultIcon: {
     control: 'boolean',
@@ -831,11 +815,159 @@ DarkThemeBlockStory.argTypes = {
     control: 'boolean',
     // if: {arg: 'listType', eq: 'Stacked'},
   },
+  // sub content of badge
+  badgeStatusType: {
+    control: 'select',
+    options: [
+      'Badge Notification',
+      'Chips Info',
+      'Text',
+      'Balance',
+      'Balance with Status',
+    ],
+    if: { arg: 'stackedListItemDefaultBadge', truthy: true }
+  },
+  badgeStatusMenuType: {
+    control: 'select',
+    options: [
+      'Badge Notification',
+      'Chips Info',
+      'Text',
+      'Balance',
+      'Balance with Status',
+    ],
+    // if: { arg: 'stackedListItemDefaultBadge', truthy: true }
+  },
+  // if badgestatustype is 'chips info'
+  chipsInfoLanguage: {
+    control: 'select',
+    options: ['English', 'Arabic'],
+    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+  },
+  chipsInfoLabelArabic: {
+    control: 'text',
+    if: { arg: 'chipsInfoLanguage', eq: 'Arabic' },
+
+  },
+  chipsInfoState: {
+    control: 'select',
+    options: ['Neutral', 'Success', 'Error', 'Warning', 'Info'],
+    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+  },
+  chipsInfoSize: {
+    control: 'select',
+    options: ['Small', 'Large'],
+    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+  },
+  chipsInfoType: {
+    control: 'select',
+    options: ['Default', 'Text with Icon'],
+    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+  },
+  chipsInfoLabel: {
+    control: 'text',
+    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+  },
+  chipsInfoShowIcon: {
+    control: 'boolean',
+    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+  },
+  // end of chips info type
+  // if badge status type is 'Badge Notification'
+  badgeNotificationType: {
+    control: 'select',
+    options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
+    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
+  },
+  badgeNotificationMenuType: {
+    control: 'select',
+    options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
+    if: { arg: 'badgeStatusMenuType', eq: 'Badge Notification' },
+  },
+  badgeNotificationSize: {
+    control: 'select',
+    options: ['Small', 'Large', 'XS'],
+    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
+  },
+  badgeNotificationMenuSize: {
+    control: 'select',
+    options: ['Small', 'Large', 'XS'],
+    if: { arg: 'badgeStatusMenuType', eq: 'Badge Notification' },
+  },
+  badgeNotificationNumber: {
+    control: 'select',
+    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
+    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
+  },
+  badgeNotificationMenuNumber: {
+    control: 'select',
+    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
+    if: { arg: 'badgeStatusMenuType', eq: 'Badge Notification' },
+  },
+  // if badgestatustype is 'Text'
+  badgeStatusText: {
+    control: 'text',
+    if: { arg: 'badgeStatusType', eq: 'Text' },
+  },
+  badgeStatusMenuText: {
+    control: 'text',
+    if: { arg: 'badgeStatusMenuType', eq: 'Text' },
+  },
+  //  if badge status type is Balance
+  badgeStatusFirstValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusType', eq: 'Balance' },
+  },
+  badgeStatusMenuFirstValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusMenuType', eq: 'Balance' },
+  },
+  badgeStatusSecondValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusType', eq: 'Balance' },
+  },
+  badgeStatusMenuSecondValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusMenuType', eq: 'Balance' },
+  },
+  badgeStatusShowFirstValue: {
+    control: 'boolean',
+    if: { arg: 'badgeStatusType', eq: 'Balance' },
+  },
+  badgeStatusMenuShowFirstValue: {
+    control: 'boolean',
+    if: { arg: 'badgeStatusMenuType', eq: 'Balance' },
+  },
+  badgeStatusShowSecondValue: {
+    control: 'boolean',
+    if: { arg: 'badgeStatusType', eq: 'Balance' },
+  },
+  badgeStatusMenuShowSecondValue: {
+    control: 'boolean',
+    if: { arg: 'badgeStatusMenuType', eq: 'Balance' },
+  },
+  badgeStatusBalanceWithStatusFirstValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusType', eq: 'Balance with Status' },
+  },
+  badgeStatusMenuBalanceWithStatusFirstValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusMenuType', eq: 'Balance with Status' },
+  },
+  badgeStatusBalanceWithStatusShowFirstValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusType', eq: 'Balance with Status' },
+  },
+  badgeStatusMenuBalanceWithStatusShowFirstValue: {
+    control: 'text',
+    if: { arg: 'badgeStatusMenuType', eq: 'Balance with Status' },
+  },
+  // end of badge notification
   stackedListItemDefaultAction: {
     control: 'boolean',
     if: { arg: 'listType', eq: 'Stacked' },
   },
-  listtemAddonType: {
+  listItemAddonType: {
     control: 'select',
     options: [
       'Avatar',
@@ -847,62 +979,87 @@ DarkThemeBlockStory.argTypes = {
     ],
     if: { arg: 'stackedListItemDefaultIcon' },
   },
-  stackedListItemBody: {
+  // listitemaddone sub types
+  listItemAddonAvatarType: {
+    control: 'select',
+    options: ['Filled', 'Outline'],
+    if: { arg: 'listItemAddonType', eq: 'Avatar' },
+  },
+  listItemAddonAvatarElements: {
+    control: 'select',
+    options: ['Initials', 'Icon'],
+    if: { arg: 'listItemAddonType', eq: 'Avatar' },
+  },
+  listItemAddonAvatarSize: {
+    control: 'select',
+    options: ['Small', 'Medium', 'Large'],
+    if: { arg: 'listItemAddonType', eq: 'Avatar' },
+  },
+  listItemAddonAvatarEdit: {
+    control: 'boolean',
+    if: { arg: 'listItemAddonAvatarElements', eq: 'Icon' },
+  },
+  listItemAddonAvatarInitials: {
+    control: 'text',
+    if: { arg: 'listItemAddonAvatarElements', eq: 'Initials' },
+  },
+  // listitemaddone sub types ---end
+  // stackedlist item body subtypes
+  stackedListItemBodyType: {
     control: 'select',
     options: ['Headline+Body', 'Label+Value', 'Extra Content'],
-    // if: {arg: 'stackedListItemDefaultBadge'},
+  },
+  stackedListItemBodyHeadline: {
+    if: { arg: 'stackedListItemBodyType' },
+    // if: { arg: 'stackedListItemBodyType', eq: 'Headline+Body' },
+    // if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
   },
   stackedListItemBodyShowContent: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBody', eq: 'Headline+Body' },
+    if: { arg: 'stackedListItemBodyType' },
+    // if: { arg: 'stackedListItemBodyType', eq: 'Headline+Body' },
+  },
+  stackedListItemBodyContent: {
+    control: 'text',
+    if: { arg: 'stackedListItemBodyShowContent', truthy: true },
+  },
+  stackedListItemBodyLabel: {
+    control: 'text',
+    if: { arg: 'stackedListItemBodyType' },
+    // if: { arg: 'stackedListItemBodyType', eq: 'Label+Value' },
+  },
+  stackedListItemBodyValue: {
+    control: 'text',
+    if: { arg: 'stackedListItemBodyType' },
+    // if: { arg: 'stackedListItemBodyType', eq: 'Label+Value' },
   },
   stackedListItemBodyShowLabel: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
   },
+
   stackedListItemBodyShowSubTitle: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
   },
-  stackedListItemBodyShowBodyCopy: {
-    control: 'boolean',
-    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
+  stackedListItemBodySubTitle: {
+    control: 'text',
+    if: { arg: 'stackedListItemBodyShowSubTitle', truthy: true },
   },
   stackedListItemBodyShowStatus: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBody', eq: 'Extra Content' },
+    if: { arg: 'stackedListItemBodyType', eq: 'Extra Content' },
   },
   stackedListItemBodyStatusState: {
     control: 'select',
     options: ['Success', 'Error', 'Warning', 'Neutral'],
-    if: { arg: 'stackedListItemBodyShowStatus' },
+    if: { arg: 'stackedListItemBodyShowStatus', truthy: true },
   },
-  badgeStatusType: {
-    control: 'select',
-    options: [
-      'Badge Notification',
-      'Chips Info',
-      'Text',
-      'Balance',
-      'Balance with Status',
-    ],
-    // if: { arg: 'stackedListItemBodyShowStatus'}
+  stackedListItemBodyStatus: {
+    control: 'text',
+    if: { arg: 'stackedListItemBodyShowStatus', truthy: true },
   },
-  badgeNotificationType: {
-    control: 'select',
-    options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
-    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
-  },
-  badgeNotificationSize: {
-    control: 'select',
-    options: ['Small', 'Large', 'XS'],
-    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
-  },
-  badgeNotificationNumber: {
-    control: 'select',
-    options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
-    if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
-  },
+  // stackedlist item body subtypes --end
   listItemActionType: {
     control: 'select',
     options: [
@@ -916,9 +1073,114 @@ DarkThemeBlockStory.argTypes = {
     ],
     if: { arg: 'stackedListItemDefaultAction' }
   },
-  stackedListItemPreviewSecondValue: {
+  listItemActionToggleState: {
+    control: 'select',
+    options: ['Unselected', 'Selected'],
+    if: { arg: 'listItemActionType', eq: 'Toggle' }
+  },
+  listItemActionCheckboxIcon: {
+    control: 'select',
+    options: ['Unchecked', 'Checked', 'Disabled'],
+    if: { arg: 'listItemActionType', eq: 'Check Box' }
+  },
+  listItemActionRadioButton: {
+    control: 'select',
+    options: ['Unchecked', 'Checked', 'Disabled'],
+    if: { arg: 'listItemActionType', eq: 'Radio Button' }
+  },
+  variableModecolorStyles: {
+    control: 'select',
+    options: ['Light Mode', 'Dark Mode'],
+  },
+
+  // listtype is inline
+  inlineListItemType: {
+    control: 'select',
+    options: ['Actionable', 'Preview'],
+    if: { arg: 'listType', eq: 'Inline' },
+  },
+
+  inlineListItemActionableType: {
+    control: 'select',
+    options: ['Menu', 'Select'],
+    if: { arg: 'inlineListItemType', eq: 'Actionable' },
+  },
+  // if inlinelistitemactionabletype is menu
+  inlineListxItemMenuText: {
+    control: 'text',
+    if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
+  },
+  inlineListxItemMenuDivider: {
     control: 'boolean',
-    if: { arg: 'stackedListItemType', eq: 'Preview' },
+    if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
+  },
+  inlineListItemMenuIcon: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
+  },
+  inlineListItemMenuBadge: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
+  },
+  inlineListItemMenuLink: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
+  },
+  inlineListItemSelectType: {
+    control: 'select',
+    options: ['Check Box', 'Radio Button'],
+    if: { arg: 'inlineListItemActionableType', eq: 'Select' },
+  },
+  inlineListItemSelectDivider: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemActionableType', eq: 'Select' },
+  },
+  inlineListItemSelectLabel: {
+    control: 'text',
+    if: { arg: 'inlineListItemActionableType', eq: 'Select' },
+  },
+  inlineListItemSelectIcon: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemActionableType', eq: 'Select' },
+  },
+  checkboxIcon: {
+    control: 'select',
+    options: ['Unchecked', 'Checked', 'Disabled'],
+    if: { arg: 'inlineListItemSelectIcon' },
+  },
+  radioButtonIcon: {
+    control: 'select',
+    options: ['Unchecked', 'Checked', 'Disabled'],
+    if: { arg: 'inlineListItemSelectIcon' },
+  },
+  inlineListItemPreviewType: {
+    control: 'select',
+    options: ['Value', 'Bullet Point'],
+    if: { arg: 'inlineListItemType', eq: 'Preview' },
+  },
+  inlineListItemValueDivider: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
+  },
+  inlineListItemValueIcon: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
+  },
+  inlineListitemLabel: {
+    control: 'text',
+    if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
+  },
+  inlineListitemValue: {
+    control: 'text',
+    if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
+  },
+  inlineListItemBulletPointDivider: {
+    control: 'boolean',
+    // if: { arg: 'inlineListItemPreviewType', eq: 'Bullet Point' }
+  },
+  inlineListItemBulletPointText: {
+    control: 'boolean',
+    if: { arg: 'inlineListItemPreviewType', eq: 'Bullet Point' }
   },
 };
 
@@ -956,7 +1218,7 @@ export const LastLoggedInStory = (args) => {
     <LastLoggedIn
       {...args}
       changeTheme={toggleTheme}
-       changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+      changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
     />
   );
 };

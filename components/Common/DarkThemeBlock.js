@@ -3,34 +3,52 @@ import { StyleSheet, View, Text } from 'react-native';
 import TextComponent from './TextComponent';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import { actuatedNormalize } from '../../constants/PixelScaling';
-import { BankLogo,CheckboxUnSelected, Delete, EditBlack,InfoIconRed, RadioUnSelect, RightArrow, SabLogoRound, Slices, SuccessTick, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
+import { AvatarIconblack, AvatarIconwhite, BankLogo, Cancel, CheckboxSelected1, CheckboxUnSelected, Delete, EditBlack, InfoIconRed, ProfileEditIconDark, RadioUnSelect, RightArrow, SabLogoRound, Slices, SuccessTick, TextInfoIconDark, TickIcon, Toggle, Toggleunselect, Whiterightarrow } from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
-import { spacingL, spacingM, spacingXL, spacingXXS } from '../../constants/Size';
+import { fontLarge, fontMedium, fontMediumLarge, fontSmall, lineHeightMedium, lineHeightMediumLarge, lineHeightSmallMedium, spacingL, spacingM, spacingS, spacingXL, spacingXXL, spacingXXS } from '../../constants/Size';
+import SvgIconList from '../../constants/SvgIconList';
+
 const BadgeStatus = ({
-  badgeStatusType,
-  badgeNotificationType,
-  badgeNotificationSize,
-  badgeNotificationNumber,
+  badgeStatusType, badgeNotificationType, chipsInfoLanguage,
+  badgeNotificationSize, badgeNotificationNumber, chipsInfoLabelArabic,
+  chipsInfoLabel, chipsInfoShowIcon, badgeStatusBalanceWithStatusFirstValue,
+  chipsInfoState, chipsInfoType, chipsInfoSize, badgeStatusBalanceWithStatusShowFirstValue,
+  badgeStatusFirstValue, badgeStatusSecondValue, badgeStatusText,
+  badgeStatusShowFirstValue, badgeStatusShowSecondValue,
 }) => {
   const { theme, isDarkMode } = useTheme();
-  // console.log('Proppss-->', badgeStatusType);
   const getBadgeBackgroundColor = () => {
     switch (badgeNotificationType) {
       case 'Success':
-        return '#00847F';
+        return theme.ragcolor6;
       case 'Primary':
-        return '#A8000B';
+        return theme.ragcolor3;
       case 'Warning':
-        return '#FFBB33';
+        return theme.ragcolor15;
       case 'Neutral':
-        return '#305A85';
+        return theme.ragneutral;
       case 'Reverse':
-        return '#ffffff';
+        return theme.primaryinvert;
       default:
-        return '#A8000B';
+        return theme.ragcolor15;
     }
   };
-
+  const getChipsInfoBackgroundColor = () => {
+    switch (chipsInfoState) {
+      case 'Success':
+        return theme.ragcolor6tint;
+      case 'Warning':
+        return theme.ragcolor15tint;
+      case 'Neutral':
+        return theme.ragneutraltint;
+      case 'Error':
+        return theme.ragcolor3tint;
+      case 'Info':
+        return theme.ragcolor6tint;
+      default:
+        return theme.ragcolor3tint;
+    }
+  };
   const getBadgeTextColor = () => {
     switch (badgeNotificationType) {
       case 'Success':
@@ -47,7 +65,6 @@ const BadgeStatus = ({
         return '#000000';
     }
   };
-
   const getBadgeTextSize = () => {
     switch (badgeNotificationSize) {
       case 'Small':
@@ -72,7 +89,25 @@ const BadgeStatus = ({
         };
     }
   };
-
+  const chipsInfoTextSize = () => {
+    switch (chipsInfoSize) {
+      case 'Small':
+        return {
+          fontSize: fontMedium,
+          lineHeight: lineHeightMedium,
+        };
+      case 'Large':
+        return {
+          fontSize: fontLarge,
+          lineHeight: lineHeightMedium,
+        };
+      default:
+        return {
+          fontSize: fontMedium,
+          lineHeight: lineHeightMedium,
+        };
+    }
+  };
   return (
     <>
       {badgeStatusType === 'Badge Notification' && (
@@ -98,24 +133,41 @@ const BadgeStatus = ({
               globalStyles.chipsinfoInactive,
               globalStyles.centerFlexBox,
               {
-                backgroundColor: theme.ragcolor3tint,
+                backgroundColor: getChipsInfoBackgroundColor(),
                 borderColor: theme.strokecolor3tint,
               },
             ]}>
-            <TextComponent
-              style={[
-                globalStyles.labelTypoInactive,
-                { color: isDarkMode ? theme.primarytextcolor4 : theme.primarytextcolor },
-              ]}>
-              Inactive
-            </TextComponent>
+            {chipsInfoType === 'Default' ?
+              <>
+                {chipsInfoShowIcon ? <Cancel /> : null}
+                <TextComponent
+                  style={[
+                    globalStyles.labelTypoInactive,
+                    { color: theme.primarytextcolor },
+                    chipsInfoTextSize()
+                  ]}>
+                  {chipsInfoLanguage === 'English' ? chipsInfoLabel : chipsInfoLabelArabic}
+                </TextComponent>
+              </>
+              : <>
+                <Cancel />
+                <TextComponent
+                  style={[
+                    globalStyles.labelTypoInactive,
+                    { color: theme.primarytextcolor },
+                    chipsInfoTextSize()
+                  ]}>
+                  {chipsInfoLanguage === 'English' ? chipsInfoLabel : chipsInfoLabelArabic}
+                </TextComponent>
+              </>
+            }
           </View>
         </View>
       )}
       {badgeStatusType === 'Text' && (
         <Text
           style={[globalStyles.contentText, { color: theme.primarytextcolor2 }]}>
-          Content
+          {badgeStatusText}
         </Text>
       )}
 
@@ -132,7 +184,7 @@ const BadgeStatus = ({
                 globalStyles.contentTypoRightAligned,
                 { color: theme.primarycolor },
               ]}>
-              Content
+              {badgeStatusShowFirstValue ? badgeStatusFirstValue : null}
             </Text>
             <View
               style={[
@@ -151,7 +203,7 @@ const BadgeStatus = ({
               globalStyles.contentTypoRightAligned,
               { color: theme.primarytextcolor2 },
             ]}>
-            Content
+            {badgeStatusShowSecondValue ? badgeStatusSecondValue : null}
           </Text>
         </View>
       )}
@@ -163,7 +215,7 @@ const BadgeStatus = ({
                 globalStyles.contentBalanceWithStatus,
                 { color: theme.primarycolor },
               ]}>
-              Content
+              {badgeStatusBalanceWithStatusShowFirstValue ? badgeStatusBalanceWithStatusFirstValue : null}
             </Text>
             <View style={globalStyles.wrapperSARLabel}>
               <Text
@@ -185,31 +237,47 @@ const BadgeStatus = ({
   );
 };
 
-const BadgeStatusMenu = ({
-  badgeActionableMenuType,
-  badgeNotificationMenuType,
-  badgeNotificationMenuSize,
-  badgeNotificationMenuNumber,
+const InlineBadgeStatus = ({
+  badgeStatusMenuType, badgeNotificationMenuType, chipsInfoLanguage,
+  badgeNotificationMenuSize, badgeNotificationMenuNumber, chipsInfoLabelArabic,
+  chipsInfoLabel, chipsInfoShowIcon, badgeStatusMenuBalanceWithStatusFirstValue,
+  chipsInfoState, chipsInfoType, chipsInfoSize, badgeStatusMenuBalanceWithStatusShowFirstValue,
+  badgeStatusMenuFirstValue, badgeStatusMenuSecondValue, badgeStatusMenuText,
+  badgeStatusMenuShowFirstValue, badgeStatusMenuShowSecondValue,
 }) => {
   const { theme } = useTheme();
-  console.log('Proppss-->', badgeActionableMenuType);
   const getBadgeBackgroundColor = () => {
     switch (badgeNotificationMenuType) {
       case 'Success':
-        return '#00847F';
+        return theme.ragcolor6;
       case 'Primary':
-        return '#A8000B';
+        return theme.ragcolor3;
       case 'Warning':
-        return '#FFBB33';
+        return theme.ragcolor15;
       case 'Neutral':
-        return '#305A85';
+        return theme.ragneutral;
       case 'Reverse':
-        return '#ffffff';
+        return theme.primaryinvert;
       default:
-        return '#A8000B';
+        return theme.ragcolor15;
     }
   };
-
+  const getChipsInfoBackgroundColor = () => {
+    switch (chipsInfoState) {
+      case 'Success':
+        return theme.ragcolor6tint;
+      case 'Warning':
+        return theme.ragcolor15tint;
+      case 'Neutral':
+        return theme.ragneutraltint;
+      case 'Error':
+        return theme.ragcolor3tint;
+      case 'Info':
+        return theme.ragcolor6tint;
+      default:
+        return theme.ragcolor3tint;
+    }
+  };
   const getBadgeTextColor = () => {
     switch (badgeNotificationMenuType) {
       case 'Success':
@@ -226,7 +294,6 @@ const BadgeStatusMenu = ({
         return '#000000';
     }
   };
-
   const getBadgeTextSize = () => {
     switch (badgeNotificationMenuSize) {
       case 'Small':
@@ -251,10 +318,28 @@ const BadgeStatusMenu = ({
         };
     }
   };
-
+  const chipsInfoTextSize = () => {
+    switch (chipsInfoSize) {
+      case 'Small':
+        return {
+          fontSize: fontMedium,
+          lineHeight: lineHeightMedium,
+        };
+      case 'Large':
+        return {
+          fontSize: fontLarge,
+          lineHeight: lineHeightMedium,
+        };
+      default:
+        return {
+          fontSize: fontMedium,
+          lineHeight: lineHeightMedium,
+        };
+    }
+  };
   return (
     <>
-      {badgeActionableMenuType === 'Badge Notification' && (
+      {badgeStatusMenuType === 'Badge Notification' && (
         <View
           style={[
             globalStyles.badgenotificationList,
@@ -270,35 +355,52 @@ const BadgeStatusMenu = ({
           </Text>
         </View>
       )}
-      {badgeActionableMenuType === 'Chips Info' && (
-        <View style={globalStyles.rowFlexBox}>
+      {badgeStatusMenuType === 'Chips Info' && (
+        <View style={{}}>
           <View
             style={[
               globalStyles.chipsinfoInactive,
               globalStyles.centerFlexBox,
               {
-                backgroundColor: theme.ragcolor3tint,
+                backgroundColor: getChipsInfoBackgroundColor(),
                 borderColor: theme.strokecolor3tint,
               },
             ]}>
-            <Text
-              style={[
-                globalStyles.labelTypoInactive,
-                { color: theme.primarycolor },
-              ]}>
-              Inactive
-            </Text>
+            {chipsInfoType === 'Default' ?
+              <>
+                {chipsInfoShowIcon ? <Cancel /> : null}
+                <TextComponent
+                  style={[
+                    globalStyles.labelTypoInactive,
+                    { color: theme.primarytextcolor },
+                    chipsInfoTextSize()
+                  ]}>
+                  {chipsInfoLanguage === 'English' ? chipsInfoLabel : chipsInfoLabelArabic}
+                </TextComponent>
+              </>
+              : <>
+                <Cancel />
+                <TextComponent
+                  style={[
+                    globalStyles.labelTypoInactive,
+                    { color: theme.primarytextcolor },
+                    chipsInfoTextSize()
+                  ]}>
+                  {chipsInfoLanguage === 'English' ? chipsInfoLabel : chipsInfoLabelArabic}
+                </TextComponent>
+              </>
+            }
           </View>
         </View>
       )}
-      {badgeActionableMenuType === 'Text' && (
+      {badgeStatusMenuType === 'Text' && (
         <Text
           style={[globalStyles.contentText, { color: theme.primarytextcolor2 }]}>
-          Content
+          {badgeStatusMenuText}
         </Text>
       )}
 
-      {badgeActionableMenuType === 'Balance' && (
+      {badgeStatusMenuType === 'Balance' && (
         <View style={globalStyles.typebalance}>
           <View
             style={[
@@ -311,7 +413,7 @@ const BadgeStatusMenu = ({
                 globalStyles.contentTypoRightAligned,
                 { color: theme.primarycolor },
               ]}>
-              Content
+              {badgeStatusMenuShowFirstValue ? badgeStatusMenuFirstValue : null}
             </Text>
             <View
               style={[
@@ -330,11 +432,11 @@ const BadgeStatusMenu = ({
               globalStyles.contentTypoRightAligned,
               { color: theme.primarytextcolor2 },
             ]}>
-            Content
+            {badgeStatusMenuShowSecondValue ? badgeStatusMenuSecondValue : null}
           </Text>
         </View>
       )}
-      {badgeActionableMenuType === 'Balance with Status' && (
+      {badgeStatusMenuType === 'Balance with Status' && (
         <View style={globalStyles.typebalance}>
           <View style={globalStyles.wrapperContentAndSar}>
             <Text
@@ -342,7 +444,7 @@ const BadgeStatusMenu = ({
                 globalStyles.contentBalanceWithStatus,
                 { color: theme.primarycolor },
               ]}>
-              Content
+              {badgeStatusMenuBalanceWithStatusShowFirstValue ? badgeStatusMenuBalanceWithStatusFirstValue : null}
             </Text>
             <View style={globalStyles.wrapperSARLabel}>
               <Text
@@ -373,61 +475,166 @@ const DarkThemeBlock = (props) => {
     switch (props.listItemActionType) {
       case 'Toggle':
         return (
-          <Toggleunselect width={actuatedNormalize(43)} height={actuatedNormalize(27)} />
+          <>
+            {props.listItemActionToggleState === 'Unselected' ?
+              <Toggleunselect width={actuatedNormalize(43)} height={actuatedNormalize(27)} /> :
+              <Toggle width={actuatedNormalize(43)} height={actuatedNormalize(27)} />
+            }
+          </>
         );
       case 'Check Box':
-        return <CheckboxUnSelected width={spacingM} height={spacingM} />;
+        return (
+          <>
+            {props.listItemActionCheckboxIcon === 'Checked' ?
+              <CheckboxSelected1 width={spacingM} height={spacingM} /> :
+              props.listItemActionCheckboxIcon === 'Disabled' ?
+                <CheckboxUnSelected width={spacingM} height={spacingM} /> :
+                <CheckboxUnSelected width={spacingM} height={spacingM} />
+
+            }
+          </>
+        )
       case 'Chevron':
-        return isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />;
+        return isDarkMode ? <Whiterightarrow width={spacingM} height={spacingM} /> : <RightArrow width={spacingM} height={spacingM} />;
       case 'Radio Button':
+        return (
+          <>
+            {props.listItemActionRadioButton === 'Checked' ?
+              <SvgIconList
+                icon="RadioButtonSelect"
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+                fill={theme.ragcolor6}
+              /> :
+              props.listItemActionCheckboxIcon === 'Disabled' ?
+                <SvgIconList
+                  icon="RadioButtonSelect"
+                  width={actuatedNormalize(24)}
+                  height={actuatedNormalize(24)}
+                  fill={theme.primarycolor2_100}
+                /> :
+                <RadioUnSelect width={spacingM} height={spacingM} />
+
+
+            }
+          </>
+        )
         return <RadioUnSelect width={spacingM} height={spacingM} />;
       case 'Edit':
-        return <EditBlack width={spacingL} height={spacingL} />;
+        return <EditBlack width={spacingM} height={spacingM} />;
       case 'Delete':
-        return <Delete width={spacingL} height={spacingL} />;
+        return <Delete width={spacingM} height={spacingM} />;
       case 'Tick':
-        return <SuccessTick width={spacingL} height={spacingL} />;
+        return <SuccessTick width={spacingM} height={spacingM} />;
       default:
         return <Toggle width={actuatedNormalize(43)} height={actuatedNormalize(27)} />;
         ;
     }
   };
   const ListItemAddon = ({ addonType }) => {
-    const { theme } = useTheme();    
+    const { theme, isDarkMode } = useTheme();
+
+    // Avatar Sizes function
+    const AvatarSizes = () => {
+      switch (props.listItemAddonAvatarSize) {
+        case 'Small':
+          return {
+            fontSize: fontSmall,
+            lineHeight: lineHeightSmallMedium,
+          };
+        case 'Large':
+          return {
+            fontSize: fontLarge,
+            lineHeight: lineHeightMedium,
+          };
+        case 'Medium':
+          return {
+            fontSize: fontMedium,
+            lineHeight: lineHeightMediumLarge,
+          };
+        default:
+          return {
+            fontSize: 12,
+            lineHeight: 17,
+          };
+      }
+    };
+
+    // Avatar Icon Width function
+    const AvatarIconWidth = () => {
+      switch (props.listItemAddonAvatarSize) {
+        case 'Small':
+          return spacingL;
+        case 'Large':
+          return spacingXXL;
+        case 'Medium':
+          return spacingXXL;
+        default:
+          return spacingXXL;
+      }
+    };
+
     return (
       <>
         {addonType === 'Avatar' && (
-          <View style={globalStyles.avatarListItemAddon1}>
-            <TextComponent
-              style={[
-                globalStyles.avatarListItemAddonText,
-                { color: isDarkMode?theme.primarycolor3static:theme.primarytextcolor3 },
-              ]}>
-              JM
-            </TextComponent>
-          </View>
+          <>
+            {props.listItemAddonAvatarElements === 'Initials' && (
+              <View style={[globalStyles.avatarListItemAddon1, { backgroundColor: theme.primarycolor3tonal }]}>
+                <TextComponent
+                  style={[
+                    globalStyles.avatarListItemAddonText,
+                    { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor3 },
+                    AvatarSizes(),
+                  ]}>
+                  {props.listItemAddonAvatarInitials}
+                </TextComponent>
+              </View>
+            )}
+            {props.listItemAddonAvatarElements === 'Icon' && (
+              <View style={[globalStyles.avatarSectionDarkTheme]}>
+                {props.listItemAddonAvatarType === 'Filled' ? (
+                  <SvgIconList
+                    icon="AvatarIconFilled"
+                    width={AvatarIconWidth()} // Directly use the value, not an object
+                    height={AvatarIconWidth()}
+                  />
+                ) : (
+                  <SvgIconList
+                    icon="AvatarIconOutlined"
+                    width={AvatarIconWidth()} // Directly use the value, not an object
+                    height={AvatarIconWidth()}
+                  />
+                )}
+                {props.listItemAddonAvatarEdit && (
+                  <View style={globalStyles.editIconWrapper}>
+                    <ProfileEditIconDark width={spacingS} height={spacingS} />
+                  </View>
+                )}
+              </View>
+            )}
+          </>
         )}
         {addonType === 'Avatar With Bank' && (
-        <View style={{ paddingRight: 0 }}>
-          <View style={globalStyles.avatarListItemAddon}>
-            <TextComponent
-              style={[
-                globalStyles.avatarListItemAddonText,
-                { color: isDarkMode?theme.primarycolor3static:theme.primarytextcolor3  },
-              ]}>
-              JM
-            </TextComponent>
-
+          <View style={{ paddingRight: 0 }}>
+            <View style={globalStyles.avatarListItemAddon}>
+              <TextComponent
+                style={[
+                  globalStyles.avatarListItemAddonText,
+                  { color: isDarkMode ? theme.primarycolor3static : theme.primarytextcolor3 },
+                ]}>
+                {props.listItemAddonAvatarInitials}
+              </TextComponent>
+            </View>
+            <View
+              style={{
+                position: 'absolute',
+                right: -5,
+                bottom: -5,
+              }}>
+              <BankLogo width={spacingM} height={spacingM} />
+            </View>
           </View>
-          <View style={{
-            position: "absolute", right: -5,
-            bottom: -5,
-
-          }}>
-            <BankLogo width={spacingM} height={spacingM} />
-          </View>
-        </View>
-      )}
+        )}
         {addonType === 'Icon' && (
           isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
         )}
@@ -435,14 +642,14 @@ const DarkThemeBlock = (props) => {
           <View
             style={[
               globalStyles.wrapperListItemAddon,
-              { backgroundColor: isDarkMode?theme.primarycolor2_100:theme.primarycolor2_10 },
+              { backgroundColor: isDarkMode ? theme.primarycolor2_100 : theme.primarycolor2_10 },
             ]}>
             {isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />}
           </View>
         )}
-      {addonType === 'Logo' && (
-        isDarkMode ? <SabLogoRound width={spacingXL} height={spacingXL} /> : <SabLogoRound width={spacingXL} height={spacingXL} />
-      )}
+        {addonType === 'Logo' && (
+          isDarkMode ? <SabLogoRound width={spacingXL} height={spacingXL} /> : <SabLogoRound width={spacingXL} height={spacingXL} />
+        )}
         {addonType === 'Pie Graph' && (
           <View>
             <Slices />
@@ -458,50 +665,66 @@ const DarkThemeBlock = (props) => {
       </>
     );
   };
+
   return (
     <View style={[globalStyles.flexBoxspacingS, { backgroundColor }]}>
       {props.listType === 'Inline' && (
         <>
           {props.inlineListItemType === 'Actionable' && (
             <View style={globalStyles.inlinelistitemmenu}>
-              {props.listItemActionableType === 'Menu' ? (
-                <View style={[globalStyles.wrapperFlexBoxRow]}>
-                  {props.iconActionableMenu && (
-                    isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
-                  )}
-
-                  <Text
-                    style={[
-                      globalStyles.link,
-                      globalStyles.linkTypo,
-                      { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
-                    ]}>
-                    Link
-                  </Text>
-                  <View style={globalStyles.wrapperFlexBoxRow}>
-                    <View>
-                      {props.badgeActionableMenu && (
-                        <BadgeStatusMenu
-                          badgeActionableMenuType={
-                            props.badgeActionableMenuType
-                          }
-                          badgeNotificationMenuType={
-                            props.badgeNotificationMenuType
-                          }
-                          badgeNotificationMenuSize={
-                            props.badgeNotificationMenuSize
-                          }
-                          badgeNotificationMenuNumber={
-                            props.badgeNotificationMenuNumber
-                          }
-                        />
+              {props.inlineListItemActionableType === 'Menu' ? (
+                <>
+                  <View style={[globalStyles.wrapperFlexBoxRow]}>
+                    {props.inlineListItemMenuIcon && (
+                      isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
+                    )}
+                    <Text
+                      style={[
+                        globalStyles.link,
+                        globalStyles.linkTypo,
+                        { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
+                      ]}>
+                      {props.inlineListItemMenuText}
+                    </Text>
+                    <View style={globalStyles.wrapperFlexBoxRow}>
+                      <View>
+                        {props.inlineListItemMenuBadge && (
+                          <InlineBadgeStatus
+                            badgeStatusMenuType={props.badgeStatusMenuType}
+                            chipsInfoLabel={props.chipsInfoLabel}
+                            badgeNotificationMenuType={props.badgeNotificationMenuType}
+                            badgeNotificationMenuSize={props.badgeNotificationMenuSize}
+                            badgeNotificationMenuNumber={props.badgeNotificationMenuNumber}
+                            badgeStatusMenuText={props.badgeStatusMenuText}
+                            badgeStatusMenuFirstValue={props.badgeStatusMenuFirstValue}
+                            badgeStatusMenuSecondValue={props.badgeStatusMenuSecondValue}
+                            badgeStatusMenuShowFirstValue={props.badgeStatusMenuShowFirstValue}
+                            badgeStatusMenuShowSecondValue={props.badgeStatusMenuShowSecondValue}
+                            badgeStatusMenuBalanceWithStatusFirstValue={props.badgeStatusMenuBalanceWithStatusFirstValue}
+                            badgeStatusMenuBalanceWithStatusShowFirstValue={props.badgeStatusMenuBalanceWithStatusShowFirstValue}
+                            chipsInfoLanguage={props.chipsInfoLanguage}
+                            chipsInfoShowIcon={props.chipsInfoShowIcon}
+                            chipsInfoState={props.chipsInfoState}
+                            chipsInfoSize={props.chipsInfoSize}
+                            chipsInfoType={props.chipsInfoType}
+                            chipsInfoLabelArabic={props.chipsInfoLabelArabic}
+                          />
+                        )}
+                      </View>
+                      {props.inlineListItemMenuLink && (
+                        isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />
                       )}
                     </View>
-                    {props.linkActionableMenu && (
-                      isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />
-                    )}
                   </View>
-                </View>
+                  {props.inlineListItemMenuDivider && (
+                    <View
+                      style={[
+                        globalStyles.dividerStyle1,
+                        { backgroundColor: theme.primarycolor2_20 },
+                      ]}
+                    />
+                  )}
+                </>
               ) : (
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
                   <Text
@@ -510,25 +733,29 @@ const DarkThemeBlock = (props) => {
                       globalStyles.linkTypo,
                       { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
                     ]}>
-                    Label
+                    {props.inlineListItemSelectLabel}
                   </Text>
-                  {props.listItemActionableSelectType === 'Check Box' ? (
-                    <View
-                      style={[
-                        globalStyles.listItemActionableSelectType,
-                        {
-                          borderRadius: spacingXXS,
-                          borderColor: theme.ragcolor6,
-                        },
-                      ]}
-                    />
-                  ) : (
-                    <View
-                      style={[
-                        globalStyles.listItemActionableSelectType,
-                        { borderRadius: spacingM, borderColor: theme.ragcolor6 },
-                      ]}
-                    />
+                  {props.inlineListItemSelectIcon && (
+                    <>
+                      {props.inlineListItemSelectType === 'Check Box' ? (
+                        <View
+                          style={[
+                            globalStyles.listItemActionableSelectType,
+                            {
+                              borderRadius: spacingXXS,
+                              borderColor: theme.ragcolor6,
+                            },
+                          ]}
+                        />
+                      ) : (
+                        <View
+                          style={[
+                            globalStyles.listItemActionableSelectType,
+                            { borderRadius: spacingM, borderColor: theme.ragcolor6 },
+                          ]}
+                        />
+                      )}
+                    </>
                   )}
                 </View>
               )}
@@ -536,45 +763,20 @@ const DarkThemeBlock = (props) => {
           )}
 
           {props.inlineListItemType === 'Preview' && (
-            <View style={globalStyles.inlinelistitemmenu}>
-              {props.listItemPreviewType === 'Value' ? (
-                <>
-                  {props.iconPreview ? (
-                    <View style={globalStyles.rowFlexBoxSpaceBetween}>
-                      <Text
-                        style={[
-                          globalStyles.labelLightPreviewValue,
-                          { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
-                        ]}>
-                        Label
-                      </Text>
-
-                      <Text
-                        style={[
-                          globalStyles.valueLightPreviewValue,
-                          { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
-                        ]}>
-                        Value
-                      </Text>
-
-                      {props.iconPreview && (
-                        isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />
-                      )}
-                    </View>
-                  ) : (
-                    <View style={globalStyles.rowFlexBoxSpaceBetween}>
-                      <View style={{ width: '50%' }}>
+            <>
+              <View style={globalStyles.inlinelistitemmenu}>
+                {props.inlineListItemPreviewType === 'Value' ? (
+                  <>
+                    {props.inlineListItemValueIcon ? (
+                      <View style={globalStyles.rowFlexBoxSpaceBetween}>
                         <Text
                           style={[
                             globalStyles.labelLightPreviewValue,
-                            { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor2 },
+                            { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
                           ]}>
                           Label
                         </Text>
-                      </View>
 
-                      {/* Middle Label */}
-                      <View style={{ width: '50%' }}>
                         <Text
                           style={[
                             globalStyles.valueLightPreviewValue,
@@ -582,134 +784,182 @@ const DarkThemeBlock = (props) => {
                           ]}>
                           Value
                         </Text>
+
+                        {props.inlineListItemValueIcon && (
+                          isDarkMode ? <Whiterightarrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} /> : <RightArrow width={actuatedNormalize(36)} height={actuatedNormalize(36)} />
+                        )}
                       </View>
-                    </View>
-                  )}
-                </>
-              ) : (
-                <>
-                  <View
-                    style={[
-                      globalStyles.centerFlexBox,
-                      globalStyles.wrapperFlexBoxRow,
-                    ]}>
-                    <TickIcon width={spacingM} height={spacingM} />
-                    <Text
+                    ) : (
+                      <View style={globalStyles.rowFlexBoxSpaceBetween}>
+                        <View style={{ width: '50%' }}>
+                          <Text
+                            style={[
+                              globalStyles.labelLightPreviewValue,
+                              { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor2 },
+                            ]}>
+                            Label
+                          </Text>
+                        </View>
+
+                        {/* Middle Label */}
+                        <View style={{ width: '50%' }}>
+                          <Text
+                            style={[
+                              globalStyles.valueLightPreviewValue,
+                              { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
+                            ]}>
+                            Value
+                          </Text>
+                        </View>
+                      </View>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <View
                       style={[
-                        globalStyles.labelBulletPoint,
-                        { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
+                        globalStyles.centerFlexBox,
+                        globalStyles.wrapperFlexBoxRow,
                       ]}>
-                      Label
-                    </Text>
-                  </View>
-                </>
+                      {/* <TickIcon width={spacingM} height={spacingM} /> */}
+                      <SvgIconList
+                        icon="TickIcon"
+                        width={actuatedNormalize(24)}
+                        height={actuatedNormalize(24)}
+                      />
+                      <Text
+                        style={[
+                          globalStyles.labelBulletPoint,
+                          { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor },
+                        ]}>
+                        {props.inlineListItemBulletPointLabel}
+                      </Text>
+                    </View>
+                  </>
+                )}
+              </View>
+              {props.inlineListItemBulletPointDivider && (
+                <View
+                  style={[
+                    globalStyles.dividerStyle1,
+                    { backgroundColor: theme.primarycolor2_20 },
+                  ]}
+                />
               )}
-            </View>
+            </>
           )}
           {/* {props.showDivider && <View style={globalStyles.dividerStyle} />} */}
-          {props.showDivider && (
-            <View
-              style={[
-                globalStyles.dividerStyle,
-                { backgroundColor: theme.primarycolor2_20 },
-              ]}
-            />
-          )}
-        </>
-      )}
 
-      {props.listType === 'Stacked' && (
-        <View style={[globalStyles.rowFlexBox]}>
-          {props.stackedListItemType === 'Default' ? (
-            <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
-              {props.stackedListItemDefaultIcon && (
-                <ListItemAddon addonType={props.listtemAddonType} />
-              )}
-              <View style={globalStyles.stackedlistitembody}>
-                <StackedListItemBody
-                  themeText={props.stackedListItemBodyHeadline}
-                  themeChangeText={props.stackedListItemBodyContent}
-                  stackedListItemBodyType={props.stackedListItemBody}
-                  stackedListItemBodyShowContent={
-                    props.stackedListItemBodyShowContent
-                  }
-                  stackedListItemBodyShowLabel={
-                    props.stackedListItemBodyShowLabel
-                  }
-                  stackedListItemBodyShowSubTitle={
-                    props.stackedListItemBodyShowSubTitle
-                  }
-                  stackedListItemBodyShowBodyCopy={
-                    props.stackedListItemBodyShowBodyCopy
-                  }
-                  stackedListItemBodyShowStatus={
-                    props.stackedListItemBodyShowStatus
-                  }
-                  stackedListItemBodyStatusState={
-                    props.stackedListItemBodyStatusState
-                  }
-                />
+        </>
+      )
+      }
+
+      {
+        props.listType === 'Stacked' && (
+          <View style={[globalStyles.rowFlexBox]}>
+            {props.stackedListItemType === 'Default' ? (
+              <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
+                {props.stackedListItemDefaultIcon && (
+                  <ListItemAddon addonType={props.listItemAddonType} />
+                )}
+                <View style={globalStyles.stackedlistitembody}>
+                  <StackedListItemBody
+                    stackedListItemBodyType={props.stackedListItemBodyType}
+                    stackedListItemBodyHeadline={props.stackedListItemBodyHeadline}
+                    stackedListItemBodyShowContent={props.stackedListItemBodyShowContent}
+                    stackedListItemBodyContent={props.stackedListItemBodyContent}
+                    stackedListItemBodyLabel={props.stackedListItemBodyLabel}
+                    stackedListItemBodyValue={props.stackedListItemBodyValue}
+                    stackedListItemBodyShowLabel={props.stackedListItemBodyShowLabel}
+                    stackedListItemBodyShowSubTitle={props.stackedListItemBodyShowSubTitle}
+                    stackedListItemBodySubTitle={props.stackedListItemBodySubTitle}
+                    stackedListItemBodyShowBodyCopy={props.stackedListItemBodyShowBodyCopy}
+                    stackedListItemBodyShowStatus={props.stackedListItemBodyShowStatus}
+                    stackedListItemBodyStatusState={props.stackedListItemBodyStatusState}
+                    stackedListItemBodyStatus={props.stackedListItemBodyStatus}
+                  />
+                </View>
+                {props.stackedListItemDefaultBadge && (
+                  // <View style={globalStyles.rowFlexBox}>
+                  <BadgeStatus
+                    badgeStatusType={props.badgeStatusType}
+                    chipsInfoLabel={props.chipsInfoLabel}
+                    badgeNotificationType={props.badgeNotificationType}
+                    badgeNotificationSize={props.badgeNotificationSize}
+                    badgeNotificationNumber={props.badgeNotificationNumber}
+                    badgeStatusText={props.badgeStatusText}
+                    badgeStatusFirstValue={props.badgeStatusFirstValue}
+                    badgeStatusSecondValue={props.badgeStatusSecondValue}
+                    badgeStatusShowFirstValue={props.badgeStatusShowFirstValue}
+                    badgeStatusShowSecondValue={props.badgeStatusShowSecondValue}
+                    badgeStatusBalanceWithStatusFirstValue={props.badgeStatusBalanceWithStatusFirstValue}
+                    badgeStatusBalanceWithStatusShowFirstValue={props.badgeStatusBalanceWithStatusShowFirstValue}
+                    chipsInfoLanguage={props.chipsInfoLanguage}
+                    chipsInfoShowIcon={props.chipsInfoShowIcon}
+                    chipsInfoState={props.chipsInfoState}
+                    chipsInfoSize={props.chipsInfoSize}
+                    chipsInfoType={props.chipsInfoType}
+                    chipsInfoLabelArabic={props.chipsInfoLabelArabic}
+                  />
+                )}
+                {props.stackedListItemDefaultAction &&
+                  getDefaultAction()}
               </View>
-              {props.stackedListItemDefaultBadge && (
-                // <View style={globalStyles.rowFlexBox}>
-                <BadgeStatus
-                  badgeStatusType={props.badgeStatusType}
-                  badgeNotificationType={props.badgeNotificationType}
-                  badgeNotificationSize={props.badgeNotificationSize}
-                  badgeNotificationNumber={props.badgeNotificationNumber}
-                />
-              )}
-              {props.stackedListItemDefaultAction &&
-                // <RightArrow width={spacingM} height={spacingM} />
-                getDefaultAction()}
-            </View>
-          ) : (
-            <View style={globalStyles.wrapperDefaultContainer}>
-              <TextComponent
-                style={[
-                  globalStyles.labelDefaultContainer,
-                  globalStyles.valueFlexBox,
-                  { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor2 },
-                ]}>
-                Label
-              </TextComponent>
-              <TextComponent
-                style={[
-                  globalStyles.valueDefaultContainer,
-                  globalStyles.valueFlexBox,
-                  { color: theme.primarycolor },
-                ]}>
-                Value
-              </TextComponent>
-              {props.stackedListItemPreviewSecondValue && (
+            ) : (
+              <View style={globalStyles.wrapperDefaultContainer1}>
                 <TextComponent
                   style={[
-                    globalStyles.secondValueDefaultContainer,
+                    globalStyles.labelDefaultContainer,
                     globalStyles.valueFlexBox,
-                    { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor2 },
+                    { color: theme.primarytextcolor2 },
                   ]}>
-                  Second Value
+                  {props.stackedListItemPreviewLabel}
                 </TextComponent>
-              )}
-            </View>
-          )}
-        </View>
-      )}
-    </View>
+                <TextComponent
+                  style={[
+                    globalStyles.valueDefaultContainer,
+                    globalStyles.valueFlexBox,
+                    { color: theme.primarytextcolor },
+                  ]}>
+                  {props.stackedListItemPreviewValue}
+                </TextComponent>
+                {props.stackedListItemPreviewSecondValue && (
+                  <TextComponent
+                    style={[
+                      globalStyles.secondValueDefaultContainer,
+                      globalStyles.valueFlexBox,
+                      { color: theme.primarytextcolor2 },
+                    ]}>
+                    {props.stackedListItemPreviewSecondValueText}
+                  </TextComponent>
+                )}
+                {props.stackedListItemPreviewDivider && (
+                  <View
+                    style={[
+                      globalStyles.dividerStyle1,
+                      { backgroundColor: theme.primarycolor2_20 },
+                    ]}
+                  />
+                )}
+              </View>
+            )}
+
+          </View>
+        )
+      }
+
+    </View >
   );
 };
 
 export default DarkThemeBlock;
 
 const StackedListItemBody = ({
-  stackedListItemBodyType,
-  stackedListItemBodyShowContent,
-  stackedListItemBodyShowLabel,
-  stackedListItemBodyShowSubTitle,
-  stackedListItemBodyShowBodyCopy,
-  stackedListItemBodyShowStatus,
-  stackedListItemBodyStatusState,
-  themeChangeText, themeText
+  stackedListItemBodyType, stackedListItemBodyShowContent,
+  stackedListItemBodyShowLabel, stackedListItemBodyShowSubTitle,
+  stackedListItemBodyShowBodyCopy, stackedListItemBodyShowStatus, stackedListItemBodyStatus,
+  stackedListItemBodyStatusState, stackedListItemBodyContent, stackedListItemBodySubTitle,
+  stackedListItemBodyHeadline, stackedListItemBodyLabel, stackedListItemBodyValue
 }) => {
   const { theme, isDarkMode } = useTheme();
 
@@ -736,7 +986,7 @@ const StackedListItemBody = ({
               globalStyles.labeltypoHeadline,
               { color: theme.primarycolor },
             ]}>
-            {themeText}
+            {stackedListItemBodyHeadline}
           </TextComponent>
           {stackedListItemBodyShowContent && (
             <TextComponent
@@ -745,20 +995,20 @@ const StackedListItemBody = ({
                 globalStyles.labeltypoBody,
                 { color: isDarkMode ? theme.primarycolor2_100 : theme.primarytextcolor2 },
               ]}>
-              {themeChangeText}
+              {stackedListItemBodyContent}
             </TextComponent>
           )}
         </View>
       )}
       {stackedListItemBodyType === 'Label+Value' && (
-        <View>
+        <View style={{ gap: spacingXXS }}>
           <Text
             style={[
               globalStyles.labelstackedListItemBodyType,
               globalStyles.labelFlexBox,
               { color: theme.primarytextcolor2 },
             ]}>
-            Label
+            {stackedListItemBodyLabel}
           </Text>
           <Text
             style={[
@@ -766,7 +1016,7 @@ const StackedListItemBody = ({
               globalStyles.labelFlexBox,
               { color: theme.primarycolor },
             ]}>
-            Value
+            {stackedListItemBodyValue}
           </Text>
         </View>
       )}
@@ -779,7 +1029,7 @@ const StackedListItemBody = ({
                 globalStyles.labelTypo,
                 { color: theme.primarytextcolor2_2 },
               ]}>
-              Label
+              {stackedListItemBodyLabel}
             </Text>
           )}
           <Text
@@ -788,7 +1038,7 @@ const StackedListItemBody = ({
               globalStyles.stackedListItemBodyheadlineFlexBox,
               { color: theme.primarycolor },
             ]}>
-            {themeText}
+            {stackedListItemBodyHeadline}
           </Text>
           {stackedListItemBodyShowSubTitle && (
             <Text
@@ -797,17 +1047,17 @@ const StackedListItemBody = ({
                 globalStyles.stackedListItemBodyheadlineFlexBox,
                 { color: theme.primarycolor },
               ]}>
-              {themeChangeText}
+              {stackedListItemBodySubTitle}
             </Text>
           )}
-          {stackedListItemBodyShowBodyCopy && (
+          {stackedListItemBodyContent && (
             <Text
               style={[
                 globalStyles.bodyCopy,
                 globalStyles.labelTypo,
                 { color: theme.primarytextcolor2 },
               ]}>
-              Body copy
+              {stackedListItemBodyContent}
             </Text>
           )}
           {stackedListItemBodyShowStatus && (
@@ -818,7 +1068,7 @@ const StackedListItemBody = ({
                   globalStyles.labelTypo,
                   { color: getStatusColor() },
                 ]}>
-                Status
+                {stackedListItemBodyStatus}
               </Text>
             </View>
           )}

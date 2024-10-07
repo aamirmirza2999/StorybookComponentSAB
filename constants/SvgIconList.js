@@ -5,7 +5,7 @@ import {
   AddBene, BackArrowNew, ChangeLang, ChangeLangDark, CloseIconNew, LiveChat, AccountAction, RightArrow, InfoIconRed, WhiteInfo,
   BlackArrow, WhiteArrow, Close, SearchIcon, NotificationIcon, AvatarIconblack, HelpIcon, SearchIconDark,
   AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList, Blockcard, Blockgenericred, BlackRightarrow, Lightmyacounts, Lightright, Whitecard, Whiterightarrow, ProfileEditIconDark, AccountActionFill, PictoDark, PictoLight,
-  Filter,FilterDark
+  Filter, FilterDark, RadioUnSelect, AvatarIconwhite, AvatarIconDarkOutlined, TickIcon, TickIconDark
 } from './SvgLocations';
 
 
@@ -75,34 +75,34 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
 
           />
       );
-      case 'AccountActionFill':
-            return (
-              isDarkMode?<AccountActionDark
-              width={24}
-              height={24}
-              transform={transform}
-              />:
-              <AccountActionFill
-                width={width}
-                height={height}
-                transform={transform}
-  
-              />
-            );
-            case 'Pictogram':
-              return (
-                isDarkMode?<PictoDark
-                width={24}
-                height={24}
-                transform={transform}
-                />:
-                <PictoLight
-                  width={width}
-                  height={height}
-                  transform={transform}
-    
-                />
-              );
+    case 'AccountActionFill':
+      return (
+        isDarkMode ? <AccountActionDark
+          width={24}
+          height={24}
+          transform={transform}
+        /> :
+          <AccountActionFill
+            width={width}
+            height={height}
+            transform={transform}
+
+          />
+      );
+    case 'Pictogram':
+      return (
+        isDarkMode ? <PictoDark
+          width={24}
+          height={24}
+          transform={transform}
+        /> :
+          <PictoLight
+            width={width}
+            height={height}
+            transform={transform}
+
+          />
+      );
     case 'InfoIconRed':
       return (
         <InfoIconRed
@@ -287,7 +287,7 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
           transform={transform}
         />
       );
-      case 'Filter':
+    case 'Filter':
       return (
         isDarkMode ?
           <FilterDark
@@ -302,7 +302,54 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
             transform={transform}
           />
       );
-
+    case 'RadioButtonSelect':
+      return (
+        <RadioUnSelect
+          width={width}
+          height={height}
+          fill={fill}
+        />
+      );
+    case 'AvatarIconOutlined':
+      return (
+        isDarkMode ?
+          <AvatarIconDarkOutlined
+            width={width}
+            height={height}
+          /> :
+          <AvatarIconwhite
+            width={width}
+            height={height}
+            // fill={fill}
+          />
+      );
+    case 'AvatarIconFilled':
+      return (
+        isDarkMode ?
+          <AvatarIconDark
+            width={width}
+            height={height}
+          /> :
+          <AvatarIconblack
+            width={width}
+            height={height}
+          // fill={fill}
+          />
+      );
+      case 'TickIcon':
+        return (
+          isDarkMode?
+          <TickIcon
+            width={width}
+            height={height}
+            fill={fill}
+          />:
+          <TickIconDark
+          width={width}
+            height={height}
+            fill={fill}
+          />
+        );
     default:
       return null;
   }
