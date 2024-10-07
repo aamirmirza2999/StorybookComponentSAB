@@ -28,14 +28,19 @@ export const BlockBanner = (props) => {
                     }}>
                         
 
-                        {isDarkMode ? <Whitecard /> : <Blockcard />}
-                        {/* <SvgIconList
-                            icon="BlockCard"
-                            width={actuatedNormalize(24)}
-                            height={actuatedNormalize(24)}
-                            fill={isDarkMode ? "white" : "red"}
-                            
-                        /> */}
+                        {isDarkMode ? 
+                            <SvgIconList
+                                icon="Whitecard"
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}                            
+                            />
+                            :
+                            <SvgIconList
+                                icon="BlockCard"
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}                            
+                            />
+                        }
                     </View>
 
                     <View style={[globalStyles.buttonquickactionInner]}>
@@ -80,7 +85,22 @@ export const BlockGeneric = (props) => {
                             height={actuatedNormalize(24)}
                         ></Blockgenericred> */}
                         <View style = {{marginLeft: actuatedNormalize(-5)}}> 
-                            {isDarkMode ?<Lightmyacounts /> : <Blockgenericred />}
+                            {/* {isDarkMode ?
+                            <Lightmyacounts /> :
+                             <Blockgenericred />
+                            } */}
+                            {isDarkMode ? 
+                            <SvgIconList
+                                icon="Lightmyacounts"
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}                            
+                            /> : 
+                            <SvgIconList
+                                icon="Blockgenericred"
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)}                            
+                            />
+                            }
                         </View>
                         
                         <View style={[globalStyles.Blocktext2, props.Blocktext2, 
@@ -92,19 +112,35 @@ export const BlockGeneric = (props) => {
                                     }, globalStyles.blocknameSolid, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.SolidText}</TextComponent>
                             </View>
                             
-                            {isDarkMode ? 
+                            {/* {isDarkMode ? 
                             <Lightright style={{
                                     // marginTop:actuatedNormalize(2),
                                     transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
                                 }}
                             width={actuatedNormalize(24)} height={actuatedNormalize(24)} /> : 
-                            <BlackRightarrow 
-
-                            style={{
+                            <BlackRightarrow style={{
                                 // marginTop:actuatedNormalize(2),
                                 transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
                             }}
-                            />}
+                            />
+                            } */}
+
+                            {isDarkMode  ? 
+                                 <SvgIconList
+                                 icon="Lightright"
+                                 width={actuatedNormalize(24)}
+                                 height={actuatedNormalize(24)} 
+                                 transform = {[{ rotate:I18nManager.isRTL?"180deg":"0deg"}]}                           
+                             />
+                             :
+                             <SvgIconList
+                                icon="BlackRightarrow"
+                                width={actuatedNormalize(24)}
+                                height={actuatedNormalize(24)} 
+                                transform = { [{rotate:I18nManager.isRTL?"180deg":"0deg"}]}  
+
+                            />
+                            }
                         </View>
                     </View>
                     
@@ -112,22 +148,33 @@ export const BlockGeneric = (props) => {
 
                 {props.blockgenericType === "Pattern" ?
                     <View style={[{ backgroundColor: theme.complimentaryprimarycolor3_2 }, globalStyles.typesolid, props.typesolid]}>
-                        <Lightmyacounts
+                        {/* <Lightmyacounts
                             width={actuatedNormalize(24)}
                             height={actuatedNormalize(24)}
-                        ></Lightmyacounts>
+                        ></Lightmyacounts> */}
+                        <SvgIconList
+                            icon="Lightmyacounts"
+                            width={actuatedNormalize(24)}
+                            height={actuatedNormalize(24)}                            
+                        />
                         <View style={[globalStyles.Blocktext2, props.Blocktext2, globalStyles.textFlexBox2, props.textFlexBox2]}>
                             <View style={[globalStyles.nameWrapper]}>
                                 <TextComponent style={[{ color: theme.primarycolor4 }, globalStyles.blockname, globalStyles.textFlexBox3, props.textFlexBox3]}>{props.PattrenText}</TextComponent>
                             </View>
                                 <View style = {{marginBottom: actuatedNormalize(5)}}>
-                                    <Lightright
+                                    {/* <Lightright
                                         style={{
                                             transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
                                         }}
                                         width={actuatedNormalize(28)}
                                         height={actuatedNormalize(28)}
-                                    ></Lightright>
+                                    ></Lightright> */}
+                                    <SvgIconList
+                                        icon="Lightright"
+                                        width={actuatedNormalize(28)}
+                                        height={actuatedNormalize(28)} 
+                                        transform = {[{ rotate:I18nManager.isRTL?"180deg":"0deg"}]}                           
+                                    />
                                 </View>
                                 
                             
