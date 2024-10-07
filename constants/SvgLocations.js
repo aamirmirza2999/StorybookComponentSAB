@@ -50,7 +50,7 @@ export {default as Success} from '../assets/success.svg';
 export {default as Cancel} from '../assets/cancel.svg';
 export {default as Home} from '../assets/home.svg'
 export {default as HomeDark} from '../assets/HomeDark.svg'
-export {default as LiveChat} from '../assets/livechat.svg';
+// export {default as LiveChat} from '../assets/livechat.svg';
 
 export {default as Check} from '../assets/check.svg';
 export {default as Cross} from '../assets/cross.svg';
@@ -111,6 +111,7 @@ export { default as PictoLight } from "../assets/zakatiLogo.svg";
 export { default as PictoDark } from "../assets/zakatiLogoDark.svg";
 export {default as Filter} from "../assets/filter.svg"
 export {default as FilterDark} from "../assets/filterdark.svg"
+export{default as LiveChat}from"../assets/newlivechat.svg"
 
 
 
