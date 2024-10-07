@@ -69,12 +69,15 @@ HeaderLevelOStory.args = {
   state:'postlogin',
   SupportedIcon:false,
   LanguageIcon: true,
-  showbadge:true,
+  NotificationSize:'Small',
+  Notificationshowbadge:true,
   avatarType:"Filled",
   avatarElements:"Icons",
   avatarSize:"Small",
+  avataredit:false,
   avatarinitial:"JM",
   colorStyles:"LightMode",
+
   
 };
 
@@ -82,7 +85,7 @@ HeaderLevelOStory.argTypes = {
 
   //Common:
 
-  type:{ control: 'select', options: ['level0', 'level1', 'level1-menu','level1-foryou','level2','search'] },
+  //type:{ control: 'select', options: ['level0', 'level1', 'level1-menu','level1-foryou','level2','search'] },
   
   language: {
     control: 'select',
@@ -96,8 +99,9 @@ HeaderLevelOStory.argTypes = {
       // if:{arg:'type',eq:'level0'},
       // if:{arg:'state',eq:'prelogin'}
     },
+    NotificationSize:{control:'select',options:['Small','Big']},
     
-  showbadge: {
+  Notificationshowbadge: {
     control: 'boolean',
    // if: { arg: 'type', eq: 'level0' },
   },
@@ -118,6 +122,9 @@ HeaderLevelOStory.argTypes = {
     options: ['Small', 'Medium',"Large"],
     // if: { arg: 'type', eq: 'level0' },
     // if: { arg: 'type', eq: 'level1-menu' },
+  },
+  avataredit:{
+    control: 'boolean',
   },
   avatarinitial:{
     control:'text',
@@ -271,6 +278,7 @@ HeaderLevel1MenuStory.args = {
   avatarType:"Filled",
   avatarElements:"Icons",
   avatarSize:"Small",
+  avataredit:false,
   avatarinitial:"JM",
   colorStyles:"LightMode",
   
@@ -302,6 +310,9 @@ HeaderLevel1MenuStory.argTypes = {
     options: ['Small', 'Medium',"Large"],
     // if: { arg: 'type', eq: 'level0' },
     // if: { arg: 'type', eq: 'level1-menu' },
+  },
+  avataredit:{
+    control: 'boolean',
   },
   avatarinitial:{
     control:'text',

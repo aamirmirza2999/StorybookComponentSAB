@@ -20,6 +20,7 @@ import Avatarcomponent from './Avatarcomponent';
 import { useNavigation } from "@react-navigation/native";
 import { LinkButton } from './Button';
 import Fonts from '../../constants/Fonts';
+import {ProfileEditIconDark} from '../../constants/SvgLocations';
 
 let IosSpecific = Platform.OS === "ios" ? getStatusBarHeight() : 0
 let iosMargin = Platform.OS == "ios" ? 50 : 0
@@ -156,24 +157,48 @@ const MainHeader = (props) => {
                     fill={isDarkMode ? "white" : "black"}
 
                   />
-                  {props.showbadge ?
+                  {props.Notificationshowbadge ?
                     <View style={[styles.badgenotification,]}>
                       <TextComponent style={[styles.TextComponent]}>{props.NotificationCount}</TextComponent>
                     </View> : null}
                 </TouchableOpacity>
 
                 {props.customAvatar ? props.AvatarPicture : <TouchableOpacity
-                  style={{ paddingBottom: actuatedNormalize(5) }}
+                  style={{ paddingBottom: actuatedNormalize(5),flexDirection:'row',justifyContent:'center',alignItems:'flex-end' }}
                   onPress={props.AvatarIconfunc}
                 >
                   <Avatarcomponent
                     avatarinitial={props.avatarinitial}
+                    avatarSizesmall={props.avatarSize ==='Small'?true:false}
+                    avatarSizemedium={props.avatarSize ==='Medium'?true:false}
+                    avatarSizelarge={props.avatarSize ==='Large'?true:false}
                     avatarblack={props.avatarElements === 'Icons' && props.avatarType === 'Filled' ? true : false}
                     avatarname={props.avatarElements === 'Initials' && props.avatarSize === 'Large' ? true : false}
                     avatarnamemid={props.avatarElements === 'Initials' && props.avatarSize === 'Medium' ? true : false}
                     avatarnamesmall={props.avatarElements === 'Initials' && props.avatarSize === 'Small' ? true : false}
                     avatarwhite={props.avatarElements === 'Icons' && props.avatarType === 'Outline' ? true : false}
                  />
+                 {props.avatarElements === 'Icons'&& props.avataredit && props.avatarSize ==='Small'?
+                  <ProfileEditIconDark
+                  style={{right:actuatedNormalize(15),top:actuatedNormalize(3)}}
+                  width={10}
+                  height={11}
+                  />
+                  :null}
+                  {props.avatarElements === 'Icons'&& props.avataredit && props.avatarSize ==='Medium'?
+                  <ProfileEditIconDark
+                  style={{right:actuatedNormalize(16),top:actuatedNormalize(2)}}
+                  width={12}
+                  height={13}
+                  />
+                  :null}
+                  {props.avatarElements === 'Icons'&&props.avataredit && props.avatarSize ==='Large'?
+                  <ProfileEditIconDark
+                  style={{right:actuatedNormalize(18),top:actuatedNormalize(2)}}
+                  width={14}
+                  height={15}
+                  />
+                  :null}
                 </TouchableOpacity>}
               </>
             ) : (
@@ -417,18 +442,42 @@ const MainHeader = (props) => {
                   </TouchableOpacity>
 
                   {props.customAvatar ? props.AvatarPicture : <TouchableOpacity
-                    style={{ paddingBottom: actuatedNormalize(5) }}
-                    onPress={props.AvatarIconfunc}
-                  >
-                    <Avatarcomponent
-                      avatarinitial={props.avatarinitial}
-                      avatarblack={props.avatarElements === 'Icons' && props.avatarType === 'Filled' ? true : false}
-                      avatarname={props.avatarElements === 'Initials' && props.avatarSize === 'Large' ? true : false}
-                      avatarnamemid={props.avatarElements === 'Initials' && props.avatarSize === 'Medium' ? true : false}
-                      avatarnamesmall={props.avatarElements === 'Initials' && props.avatarSize === 'Small' ? true : false}
-                      avatarwhite={props.avatarElements === 'Icons' && props.avatarType === 'Outline' ? true : false}
-                    />
-                  </TouchableOpacity>}
+                  style={{ paddingBottom: actuatedNormalize(5),flexDirection:'row',justifyContent:'center',alignItems:'flex-end' }}
+                  onPress={props.AvatarIconfunc}
+                >
+                  <Avatarcomponent
+                    avatarinitial={props.avatarinitial}
+                    avatarSizesmall={props.avatarSize ==='Small'?true:false}
+                    avatarSizemedium={props.avatarSize ==='Medium'?true:false}
+                    avatarSizelarge={props.avatarSize ==='Large'?true:false}
+                    avatarblack={props.avatarElements === 'Icons' && props.avatarType === 'Filled' ? true : false}
+                    avatarname={props.avatarElements === 'Initials' && props.avatarSize === 'Large' ? true : false}
+                    avatarnamemid={props.avatarElements === 'Initials' && props.avatarSize === 'Medium' ? true : false}
+                    avatarnamesmall={props.avatarElements === 'Initials' && props.avatarSize === 'Small' ? true : false}
+                    avatarwhite={props.avatarElements === 'Icons' && props.avatarType === 'Outline' ? true : false}
+                 />
+                 {props.avatarElements === 'Icons'&& props.avataredit && props.avatarSize ==='Small'?
+                  <ProfileEditIconDark
+                  style={{right:actuatedNormalize(15),top:actuatedNormalize(3)}}
+                  width={10}
+                  height={11}
+                  />
+                  :null}
+                  {props.avatarElements === 'Icons'&& props.avataredit && props.avatarSize ==='Medium'?
+                  <ProfileEditIconDark
+                  style={{right:actuatedNormalize(16),top:actuatedNormalize(2)}}
+                  width={12}
+                  height={13}
+                  />
+                  :null}
+                  {props.avatarElements === 'Icons'&&props.avataredit && props.avatarSize ==='Large'?
+                  <ProfileEditIconDark
+                  style={{right:actuatedNormalize(18),top:actuatedNormalize(2)}}
+                  width={14}
+                  height={15}
+                  />
+                  :null}
+                </TouchableOpacity>}
 
                 </View>
               ) : null}

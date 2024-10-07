@@ -9,7 +9,7 @@ import {
   } from 'react-native';
   import React, {useState, useReducer} from 'react';
   import { useTheme } from '../../constants/Theme/ThemeProvider';
-import { AvatarIconblack,AvatarIconwhite,SplitIcon,EditIcon,AddBenefiary,AvatarIconblackDark} from '../../constants/SvgLocations';
+import { AvatarIconblack,AvatarIconwhite,SplitIcon,EditIcon,AddBenefiary,AvatarIconblackDark,AvatarIconDarkOutlined,ProfileEditIconDark} from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
 import TextComponent from './TextComponent';
 
@@ -22,28 +22,87 @@ import TextComponent from './TextComponent';
         <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}> 
           {props.avatarblack ?
           isDarkMode?
-        <View style={[globalStyles.avatar,{}]}>
+          <>
+        <View style={[globalStyles.avatar,{backgroundColor:'red'}]}>
+          {props.avatarSizesmall ?
           <AvatarIconblackDark
-          width= {24}
-          height={24}
-          />
+          width={25}
+          height={25}
+          />:null}
+           {props.avatarSizemedium ?
+          <AvatarIconblackDark
+          width={32}
+          height={32}
+          />:null}
+           {props.avatarSizelarge ?
+          <AvatarIconblackDark
+          width={40}
+          height={40}
+          />:null}
+
           </View>
+         
+          </>
           :
         <View style={[globalStyles.avatar,{}]}>
+          {props.avatarSizesmall?
    <AvatarIconblack
-     width= {28}
-     height={28}
+     width= {25}
+     height={25}
    />
+   :null}
+     {props.avatarSizemedium?
+   <AvatarIconblack
+     width= {32}
+     height={32}
+   />
+   :null}
+     {props.avatarSizelarge?
+   <AvatarIconblack
+     width= {40}
+     height={40}
+   />
+   :null}
    </View>
    :null}
 
        {props.avatarwhite? 
+       isDarkMode?
        <View style={globalStyles.avatar}>
-        <AvatarIconwhite
-         width= {26}
-         height={26}
-        />
-   </View>
+        
+           {props.avatarSizesmall ?
+        <AvatarIconDarkOutlined
+         width= {25}
+         height={25}
+        />:null}
+         {props.avatarSizemedium ?
+        <AvatarIconDarkOutlined
+         width= {32}
+         height={32}
+        />:null}
+         {props.avatarSizelarge ?
+        <AvatarIconDarkOutlined
+         width= {40}
+         height={40}
+        />:null}
+   </View>: <View style={globalStyles.avatar}>
+        
+        {props.avatarSizesmall ?
+     <AvatarIconwhite
+      width= {25}
+      height={25}
+     />:null}
+      {props.avatarSizemedium ?
+     <AvatarIconwhite
+      width= {32}
+      height={32}
+     />:null}
+      {props.avatarSizelarge ?
+     <AvatarIconwhite
+      width= {40}
+      height={40}
+     />:null}
+</View>
    :null}
   {props.avatarsplit? 
    <View style={globalStyles.splitavatar}>

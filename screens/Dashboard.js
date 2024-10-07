@@ -34,7 +34,7 @@ import {
           <MainHeader
           type="level0"
           state='postlogin'
-          showbadge={true}
+          Notificationshowbadge={true}
           NotificationCount={"2"}
           avatarElements="Icons"
           avatarType="Filled"
