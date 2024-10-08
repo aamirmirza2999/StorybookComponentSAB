@@ -339,13 +339,13 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
       case 'TickIcon':
         return (
           isDarkMode?
-          <TickIcon
-            width={width}
+          <TickIconDark
+          width={width}
             height={height}
             fill={fill}
           />:
-          <TickIconDark
-          width={width}
+          <TickIcon
+            width={width}
             height={height}
             fill={fill}
           />

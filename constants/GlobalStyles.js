@@ -1491,13 +1491,12 @@ textFlexBox3: {
     paddingVertical: spacingS,
     paddingHorizontal: spacingS,
     alignSelf: "stretch"
-  },
-  
+  },  
   rowFlexBoxSpaceBetween: {
     flexDirection: 'row', 
     justifyContent: 'space-between', 
     alignItems: 'center', 
-    width: '100%'
+    width: '100%',
   },
   labelLightPreviewValue: {
     fontSize: fontMedium,
@@ -1533,17 +1532,17 @@ textFlexBox3: {
 lastLoginContainer: {
   flexDirection: "row",
   alignItems: "center",
-  // justifyContent: "space-between", 
+  justifyContent: "space-between",
+  // width: "83%",
+  // height: actuatedNormalize(73),
+  paddingHorizontal: actuatedNormalize(16),
   paddingVertical: actuatedNormalize(16),
   // marginHorizontal: actuatedNormalize(30),
-  // borderColor:'red', borderWidth:2
 },
 userInfoSection: {
   flexDirection: "row",
   alignItems: "center",
   flex: 1,
-  gap:8,
-  paddingHorizontal: actuatedNormalize(16),
 },
 avatarSection: {
   position: 'relative',
@@ -1551,8 +1550,7 @@ avatarSection: {
   height: actuatedNormalize(40),
   justifyContent: 'center',
   alignItems: 'center',
-  overflow: 'hidden',
-  
+  overflow: 'hidden',  
 },
 avatarSectionDarkTheme: {
   position: 'relative',
@@ -1571,9 +1569,9 @@ editIconWrapper: {
   padding: actuatedNormalize(2),
 },
 textWrapper: {
-  // marginLeft: actuatedNormalize(12),
-  // paddingHorizontal:actuatedNormalize(8),
+  marginLeft: actuatedNormalize(12),
   justifyContent: "center",
+  // paddingHorizontal:actuatedNormalize(8),
   // borderColor:'green', borderWidth:2
 },
 // ....///

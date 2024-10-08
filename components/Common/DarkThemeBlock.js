@@ -512,14 +512,10 @@ const DarkThemeBlock = (props) => {
                   width={actuatedNormalize(24)}
                   height={actuatedNormalize(24)}
                   fill={theme.primarycolor2_100}
-                /> :
-                <RadioUnSelect width={spacingM} height={spacingM} />
-
-
+                /> : <RadioUnSelect width={spacingM} height={spacingM} />
             }
           </>
         )
-        return <RadioUnSelect width={spacingM} height={spacingM} />;
       case 'Edit':
         return <EditBlack width={spacingM} height={spacingM} />;
       case 'Delete':
@@ -531,6 +527,48 @@ const DarkThemeBlock = (props) => {
         ;
     }
   };
+
+  const getSelectAction = () => {
+    switch (props.inlineListItemSelectType) {
+      case 'Check Box':
+        return (
+          <>
+            {props.listItemActionCheckboxIcon === 'Checked' ?
+              <CheckboxSelected1 width={spacingM} height={spacingM} /> :
+              props.listItemActionCheckboxIcon === 'Disabled' ?
+                <CheckboxUnSelected width={spacingM} height={spacingM} /> :
+                <CheckboxUnSelected width={spacingM} height={spacingM} />
+
+            }
+          </>
+        )
+      case 'Radio Button':
+        return (
+          <>
+            {props.listItemActionRadioButton === 'Checked' ?
+              <SvgIconList
+                icon="RadioButtonSelect"
+                width={actuatedNormalize(24)}
+                height={actuatedNormalize(24)}
+                fill={theme.ragcolor6}
+              /> :
+              props.listItemActionRadioButton === 'Disabled' ?
+                <SvgIconList
+                  icon="RadioButtonSelect"
+                  width={actuatedNormalize(24)}
+                  height={actuatedNormalize(24)}
+                  fill={theme.primarycolor2_100}
+                /> :
+                <RadioUnSelect width={spacingM} height={spacingM} />
+            }
+          </>
+        )
+      default:
+        return <CheckboxUnSelected width={spacingM} height={spacingM} />;
+        ;
+    }
+  };
+
   const ListItemAddon = ({ addonType }) => {
     const { theme, isDarkMode } = useTheme();
 
@@ -735,28 +773,9 @@ const DarkThemeBlock = (props) => {
                     ]}>
                     {props.inlineListItemSelectLabel}
                   </Text>
-                  {props.inlineListItemSelectIcon && (
-                    <>
-                      {props.inlineListItemSelectType === 'Check Box' ? (
-                        <View
-                          style={[
-                            globalStyles.listItemActionableSelectType,
-                            {
-                              borderRadius: spacingXXS,
-                              borderColor: theme.ragcolor6,
-                            },
-                          ]}
-                        />
-                      ) : (
-                        <View
-                          style={[
-                            globalStyles.listItemActionableSelectType,
-                            { borderRadius: spacingM, borderColor: theme.ragcolor6 },
-                          ]}
-                        />
-                      )}
-                    </>
-                  )}
+                  {props.inlineListItemSelectIcon &&
+                    getSelectAction()
+                  }
                 </View>
               )}
             </View>
@@ -849,11 +868,9 @@ const DarkThemeBlock = (props) => {
             </>
           )}
           {/* {props.showDivider && <View style={globalStyles.dividerStyle} />} */}
-
         </>
       )
       }
-
       {
         props.listType === 'Stacked' && (
           <View style={[globalStyles.rowFlexBox]}>
@@ -873,7 +890,6 @@ const DarkThemeBlock = (props) => {
                     stackedListItemBodyShowLabel={props.stackedListItemBodyShowLabel}
                     stackedListItemBodyShowSubTitle={props.stackedListItemBodyShowSubTitle}
                     stackedListItemBodySubTitle={props.stackedListItemBodySubTitle}
-                    stackedListItemBodyShowBodyCopy={props.stackedListItemBodyShowBodyCopy}
                     stackedListItemBodyShowStatus={props.stackedListItemBodyShowStatus}
                     stackedListItemBodyStatusState={props.stackedListItemBodyStatusState}
                     stackedListItemBodyStatus={props.stackedListItemBodyStatus}
@@ -957,7 +973,7 @@ export default DarkThemeBlock;
 const StackedListItemBody = ({
   stackedListItemBodyType, stackedListItemBodyShowContent,
   stackedListItemBodyShowLabel, stackedListItemBodyShowSubTitle,
-  stackedListItemBodyShowBodyCopy, stackedListItemBodyShowStatus, stackedListItemBodyStatus,
+  stackedListItemBodyShowStatus, stackedListItemBodyStatus,
   stackedListItemBodyStatusState, stackedListItemBodyContent, stackedListItemBodySubTitle,
   stackedListItemBodyHeadline, stackedListItemBodyLabel, stackedListItemBodyValue
 }) => {

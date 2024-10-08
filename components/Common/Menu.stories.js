@@ -842,7 +842,7 @@ DarkThemeBlockStory.argTypes = {
   chipsInfoLanguage: {
     control: 'select',
     options: ['English', 'Arabic'],
-    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+    // if: { arg: 'badgeStatusType', eq: 'Chips Info' },
   },
   chipsInfoLabelArabic: {
     control: 'text',
@@ -852,25 +852,25 @@ DarkThemeBlockStory.argTypes = {
   chipsInfoState: {
     control: 'select',
     options: ['Neutral', 'Success', 'Error', 'Warning', 'Info'],
-    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+    // if: { arg: 'badgeStatusType', eq: 'Chips Info' },
   },
   chipsInfoSize: {
     control: 'select',
     options: ['Small', 'Large'],
-    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+    // if: { arg: 'badgeStatusType', eq: 'Chips Info' },
   },
   chipsInfoType: {
     control: 'select',
     options: ['Default', 'Text with Icon'],
-    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+    // if: { arg: 'badgeStatusType', eq: 'Chips Info' },
   },
   chipsInfoLabel: {
     control: 'text',
-    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+    // if: { arg: 'badgeStatusType', eq: 'Chips Info' },
   },
   chipsInfoShowIcon: {
     control: 'boolean',
-    if: { arg: 'badgeStatusType', eq: 'Chips Info' },
+    // if: { arg: 'badgeStatusType', eq: 'Chips Info' },
   },
   // end of chips info type
   // if badge status type is 'Badge Notification'
@@ -1081,12 +1081,12 @@ DarkThemeBlockStory.argTypes = {
   listItemActionCheckboxIcon: {
     control: 'select',
     options: ['Unchecked', 'Checked', 'Disabled'],
-    if: { arg: 'listItemActionType', eq: 'Check Box' }
+    // if: { arg: 'listItemActionType', eq: 'Check Box' }
   },
   listItemActionRadioButton: {
     control: 'select',
     options: ['Unchecked', 'Checked', 'Disabled'],
-    if: { arg: 'listItemActionType', eq: 'Radio Button' }
+    // if: { arg: 'listItemActionType', eq: 'Radio Button' }
   },
   variableModecolorStyles: {
     control: 'select',
