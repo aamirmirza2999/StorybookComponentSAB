@@ -23,7 +23,7 @@ import TextComponent from './TextComponent';
           {props.avatarblack ?
           isDarkMode?
           <>
-        <View style={[globalStyles.avatar,{backgroundColor:'red'}]}>
+        <View style={[globalStyles.avatar,{}]}>
           {props.avatarSizesmall ?
           <AvatarIconblackDark
           width={25}
@@ -118,19 +118,18 @@ import TextComponent from './TextComponent';
    </View> : null }
    <View style={{flexDirection:"row"}}>
    {props.avatarname? 
-     <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: theme.primarycolor3static}]}>
-     <TextComponent style={[globalStyles.jm,{color:theme.primarycolor3}]}>{props.avatarinitial}</TextComponent>
+     <View style={[globalStyles.typefilledElementsinitials,{backgroundColor:isDarkMode? "#580007":"#DB001110"}]}>
+     <TextComponent style={[globalStyles.jm,{color:isDarkMode?"white":"#DB0011"}]}>{props.avatarinitial}</TextComponent>
  </View>
  :null}
  {props.avatarnamemid?
- <View style={[globalStyles.typefilledElementsinitials,{backgroundColor: theme.primarycolor3static}]}>
- <TextComponent style={[globalStyles.jm2,{color:theme.primarycolor3}]}>{props.avatarinitial}</TextComponent>
+ <View style={[globalStyles.typefilledElementsinitials,{backgroundColor:isDarkMode? "#580007":"#DB001110"}]}>
+ <TextComponent style={[globalStyles.jm2,{color:isDarkMode?"white":"#DB0011"}]}>{props.avatarinitial}</TextComponent>
 </View>
  :null}
  {props.avatarnamesmall?
- <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor: theme.primarycolor3static}]}>
- <TextComponent style={[globalStyles.jm3,{color:theme.primarycolor3, alignItems: 'center',
-                justifyContent: 'center',}]}>{props.avatarinitial}</TextComponent>
+ <View style={[globalStyles.typefilledElementsinitials,{  backgroundColor:isDarkMode? "#580007":"#DB001110"}]}>
+ <TextComponent style={[globalStyles.jm3,{color:isDarkMode?"white":"#DB0011"}]}>{props.avatarinitial}</TextComponent>
 </View>
  :null}
  </View>
