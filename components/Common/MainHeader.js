@@ -287,7 +287,7 @@ const MainHeader = (props) => {
             </View>
             {(props.type === 'level2' && props.Headline) || props.type === 'search' ?
               <View style={[styles.column2, {
-                left: floatCTAStatus ? null : actuatedNormalize(10)
+               // left: floatCTAStatus ? null : actuatedNormalize(10)
               }, props.column2]}
               >
                 <TextComponent
@@ -602,8 +602,7 @@ const styles = {
     justifyContent: 'center'
   },
   column1: {
-    // width: "20%",
-    //backgroundColor:'red',
+    width: "20%",
     //paddingLeft: spacingS,
     justifyContent: "flex-end",
     //top: actuatedNormalize(16),
@@ -612,24 +611,19 @@ const styles = {
 
   },
   column2: {
-    width: "80%",
-    alignItems: "center",
+    width: "60%",
+    alignItems: "flex-end",
     justifyContent: "center",
     flexDirection: "row",
-    textAlign: 'center',
-
-    // top: actuatedNormalize(16)
+   // top: actuatedNormalize(16)
 
   },
   column3: {
     flexDirection: 'row',
-    width: "13%",
-    alignItems: "center",
+    width: "20%",
+    alignItems: "flex-end",
     justifyContent: "flex-end",
-    left: actuatedNormalize(5)
-
-
-    // paddingRight: actuatedNormalize(20),
+   // paddingRight: actuatedNormalize(20),
     //top: actuatedNormalize(16)
 
   },
