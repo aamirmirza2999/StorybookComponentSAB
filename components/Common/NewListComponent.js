@@ -193,7 +193,7 @@ const NewListComponent = props => {
                         <Text
                           style={[
                             globalStyles.valueLightPreviewValue,
-                            { color: theme.primarytextcolor2 },
+                            { color: theme.primarycolor },
                           ]}>
                           {props.inlineListItemValue}
                         </Text>
