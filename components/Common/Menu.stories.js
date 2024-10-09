@@ -1178,8 +1178,8 @@ DarkThemeBlockStory.argTypes = {
     control: 'boolean',
     // if: { arg: 'inlineListItemPreviewType', eq: 'Bullet Point' }
   },
-  inlineListItemBulletPointText: {
-    control: 'boolean',
+  inlineListItemBulletPointLabel: {
+    control: 'text',
     if: { arg: 'inlineListItemPreviewType', eq: 'Bullet Point' }
   },
 };

@@ -28,7 +28,7 @@ const BadgeStatus = ({
       case 'Neutral':
         return theme.ragneutral;
       case 'Reverse':
-        return theme.primaryinvert;
+        return theme.stylesbackground2;
       default:
         return theme.ragcolor15;
     }
@@ -257,7 +257,7 @@ const InlineBadgeStatus = ({
       case 'Neutral':
         return theme.ragneutral;
       case 'Reverse':
-        return theme.primaryinvert;
+        return theme.stylesbackground2;
       default:
         return theme.ragcolor15;
     }
