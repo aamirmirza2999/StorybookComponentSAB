@@ -203,34 +203,34 @@ const MainHeader = (props) => {
               </>
             ) : (
               <>
-                {props.SupportedIcon && (
-                  <TouchableOpacity
-                    style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
-                    onPress={props.SupportedIconFunc}
-                  >
-                    <SvgIconList
-                      icon={props.SupportIcon}
-                      width={actuatedNormalize(24)}
-                      height={actuatedNormalize(24)}
-                      transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                    />
-                  </TouchableOpacity>
-                )}
+              {props.SupportedIcon ? (
+                <TouchableOpacity
+                  style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+                  onPress={props.SupportedIconFunc}
+                >
+                  <SvgIconList
+                    icon={props.SupportIcon}
+                    width={actuatedNormalize(24)}
+                    height={actuatedNormalize(24)}
+                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                  />
+                </TouchableOpacity>
+              ) : <View style={{width:actuatedNormalize(24),height:actuatedNormalize(24)}}></View>}
             
-                {props.LanguageIcon && (
-                  <TouchableOpacity
-                    style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
-                    onPress={props.changeLanguage}
-                  >
-                    <SvgIconList
-                      icon="ChangeLang"
-                      width={actuatedNormalize(24)}
-                      height={actuatedNormalize(24)}
-                      transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
-                    />
-                  </TouchableOpacity>
-                )}
- </>
+              {props.LanguageIcon ? (
+                <TouchableOpacity
+                  style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+                  onPress={props.changeLanguage}
+                >
+                  <SvgIconList
+                    icon="ChangeLang"
+                    width={actuatedNormalize(24)}
+                    height={actuatedNormalize(24)}
+                    transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+                  />
+                </TouchableOpacity>
+              ) : null}
+            </>
             )}
 
           </View>
