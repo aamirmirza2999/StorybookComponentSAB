@@ -12,6 +12,7 @@ import {
 import { AvatarIconblack,AvatarIconwhite,SplitIcon,EditIcon,AddBenefiary,AvatarIconblackDark,AvatarIconDarkOutlined,ProfileEditIconDark} from '../../constants/SvgLocations';
 import { globalStyles } from '../../constants/GlobalStyles';
 import TextComponent from './TextComponent';
+import { actuatedNormalize } from '../../constants/PixelScaling';
 
   const Avatarcomponent = props => {
   const {theme, toggleTheme,isDarkMode} = useTheme();
@@ -26,18 +27,18 @@ import TextComponent from './TextComponent';
         <View style={[globalStyles.avatar,{}]}>
           {props.avatarSizesmall ?
           <AvatarIconblackDark
-          width={25}
-          height={25}
+          width={actuatedNormalize(24)}
+          height={actuatedNormalize(24)}
           />:null}
            {props.avatarSizemedium ?
           <AvatarIconblackDark
-          width={32}
-          height={32}
+          width={actuatedNormalize(32)}
+          height={actuatedNormalize(32)}
           />:null}
            {props.avatarSizelarge ?
           <AvatarIconblackDark
-          width={40}
-          height={40}
+          width={actuatedNormalize(40)}
+          height={actuatedNormalize(40)}
           />:null}
 
           </View>
@@ -47,20 +48,20 @@ import TextComponent from './TextComponent';
         <View style={[globalStyles.avatar,{}]}>
           {props.avatarSizesmall?
    <AvatarIconblack
-     width= {25}
-     height={25}
+     width= {actuatedNormalize(24)}
+     height={actuatedNormalize(24)}
    />
    :null}
      {props.avatarSizemedium?
    <AvatarIconblack
-     width= {32}
-     height={32}
+     width= {actuatedNormalize(32)}
+     height={actuatedNormalize(32)}
    />
    :null}
      {props.avatarSizelarge?
    <AvatarIconblack
-     width= {40}
-     height={40}
+     width= {actuatedNormalize(40)}
+     height={actuatedNormalize(40)}
    />
    :null}
    </View>
@@ -72,35 +73,35 @@ import TextComponent from './TextComponent';
         
            {props.avatarSizesmall ?
         <AvatarIconDarkOutlined
-         width= {25}
-         height={25}
+         width= {actuatedNormalize(24)}
+         height={actuatedNormalize(24)}
         />:null}
          {props.avatarSizemedium ?
         <AvatarIconDarkOutlined
-         width= {32}
-         height={32}
+         width= {actuatedNormalize(32)}
+         height={actuatedNormalize(32)}
         />:null}
          {props.avatarSizelarge ?
         <AvatarIconDarkOutlined
-         width= {40}
-         height={40}
+         width= {actuatedNormalize(40)}
+         height={actuatedNormalize(40)}
         />:null}
    </View>: <View style={globalStyles.avatar}>
         
         {props.avatarSizesmall ?
      <AvatarIconwhite
-      width= {25}
-      height={25}
+      width= {actuatedNormalize(24)}
+      height={actuatedNormalize(24)}
      />:null}
       {props.avatarSizemedium ?
      <AvatarIconwhite
-      width= {32}
-      height={32}
+      width= {actuatedNormalize(32)}
+      height={actuatedNormalize(32)}
      />:null}
       {props.avatarSizelarge ?
      <AvatarIconwhite
-      width= {40}
-      height={40}
+      width= {actuatedNormalize(40)}
+      height={actuatedNormalize(40)}
      />:null}
 </View>
    :null}
