@@ -154,7 +154,7 @@ const MainHeader = (props) => {
                     icon="NotificationIcon"
                     width={actuatedNormalize(24)}
                     height={actuatedNormalize(24)}
-                    fill={isDarkMode ? "white" : "black"}
+                    //fill={isDarkMode ? "white" : "black"}
 
                   />
                   {props.Notificationshowbadge ?
@@ -585,21 +585,22 @@ const styles = {
     alignItems: "center"
   },
   TextComponent: {
-    fontSize: actuatedNormalize(9),
+    fontSize: actuatedNormalize(8),
     fontFamily: Fonts.HSBC,
     color: "#fff",
     textAlign: "center",
     display: "flex",
-    bottom: I18nManager.isRTL ? actuatedNormalize(2) : null
+    bottom: I18nManager.isRTL?actuatedNormalize(3): actuatedNormalize(1) 
   },
   badgenotification: {
     borderRadius: 100,
     backgroundColor: "#ffbb33",
-    width: 13,
-    height: 13,
-    right: actuatedNormalize(10),
+    width: 10,
+    height: 10,
+    right: actuatedNormalize(11),
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    top:actuatedNormalize(4)
   },
   column1: {
     width: "20%",

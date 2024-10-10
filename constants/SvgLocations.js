@@ -63,6 +63,7 @@ export {default as BlackArrowDark} from '../assets/arrowblackDark.svg';
 export {default as SearchIcon} from '../assets/search.svg';
 export {default as SearchIconDark} from '../assets/searchDark.svg';
 export {default as NotificationIcon} from '../assets/notifications.svg';
+export {default as NotificationIconDark} from '../assets/notificationsdark.svg';
 export { default as PaymentActive } from "../assets/PaymentDark.svg";
 export { default as HomeActive } from "../assets/HomeDark.svg";
 export { default as Transfer } from "../assets/Transfer.svg";

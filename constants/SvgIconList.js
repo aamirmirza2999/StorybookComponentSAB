@@ -3,7 +3,7 @@ import { actuatedNormalize } from './PixelScaling';
 import { useTheme } from "../constants/Theme/ThemeProvider";
 import {
   AddBene, BackArrowNew, ChangeLang, ChangeLangDark, CloseIconNew, LiveChat, AccountAction, RightArrow, InfoIconRed, WhiteInfo,
-  BlackArrow, WhiteArrow, Close, SearchIcon, NotificationIcon, AvatarIconblack, HelpIcon, SearchIconDark,
+  BlackArrow, WhiteArrow, Close, SearchIcon, NotificationIcon,NotificationIconDark, AvatarIconblack, HelpIcon, SearchIconDark,
   AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList, Blockcard, Blockgenericred, BlackRightarrow, Lightmyacounts, Lightright, Whitecard, Whiterightarrow, ProfileEditIconDark, AccountActionFill, PictoDark, PictoLight,
   Filter, FilterDark, RadioUnSelect, AvatarIconwhite, AvatarIconDarkOutlined, TickIcon, TickIconDark
 } from './SvgLocations';
@@ -194,7 +194,13 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
       );
     case 'NotificationIcon':
       return (
-
+           isDarkMode?
+           <NotificationIconDark
+           width={width}
+          height={height}
+          fill={fill}
+          transform={transform}/>
+           :
         <NotificationIcon
           width={width}
           height={height}
