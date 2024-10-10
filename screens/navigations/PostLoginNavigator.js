@@ -54,6 +54,7 @@ import Transfers
                 HeadlineText={t('initialLang:headline')}
                 avatarElements="Icons"
                 avatarType="Filled"
+                avatarSize={'Small'}
                   />;
        case 'PFM':
                     return     <MainHeader
