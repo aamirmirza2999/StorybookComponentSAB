@@ -38,23 +38,23 @@ export const BlockBannerComponentStory = args => {
   useEffect(() => {
     if (language !== args.language) {
       handleChange(args.language, setLanguage, i18n);
-      }
-      }, [args.language]);
-     
-    
-      useEffect(() => {
-        const headerthemedark = args.VariablemodesColorStyles !== 'LightMode'; 
-        if (headerthemedark !== isDarkMode) {
-          console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
-          toggleTheme();
-        }
-      }, [args.VariablemodesColorStyles, isDarkMode, toggleTheme]);
+    }
+  }, [args.language]);
+
+
+  useEffect(() => {
+    const headerthemedark = args.VariablemodesColorStyles !== 'LightMode';
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+      toggleTheme();
+    }
+  }, [args.VariablemodesColorStyles, isDarkMode, toggleTheme]);
 
   args.BlockcardText = t('initialLang:BlockcardText');
   args.LinkButton = t('initialLang:LinkButton');
   return <BlockBanner changeTheme={toggleTheme}
-  changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}    
-  {...args} />;
+    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    {...args} />;
 };
 BlockBannerComponentStory.args = {
   // BlackCardIcon: <SvgIconList icon="BlockCard" width={24} height={24} />,
@@ -62,7 +62,7 @@ BlockBannerComponentStory.args = {
   //  showIcon:true,
   // demo: require("../../assets/Path3.png"),
   language: I18nManager.isRTL ? 'ar' : 'en',
-  VariablemodesColorStyles:"LightMode",
+  VariablemodesColorStyles: "LightMode",
 };
 
 BlockBannerComponentStory.argTypes = {
@@ -70,7 +70,7 @@ BlockBannerComponentStory.argTypes = {
     control: 'select',
     options: ['en', 'ar'],
   },
-  VariablemodesColorStyles:{
+  VariablemodesColorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
@@ -94,24 +94,24 @@ export const BlockGenericComponentStory = args => {
   useEffect(() => {
     if (language !== args.language) {
       handleChange(args.language, setLanguage, i18n);
-      }
-      }, [args.language]);
-     
-    
-      useEffect(() => {
-        const headerthemedark = args.VariablemodesColorStyles !== 'LightMode'; 
-        if (headerthemedark !== isDarkMode) {
-          console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
-          toggleTheme();
-        }
-      }, [args.VariablemodesColorStyles, isDarkMode, toggleTheme]);
+    }
+  }, [args.language]);
+
+
+  useEffect(() => {
+    const headerthemedark = args.VariablemodesColorStyles !== 'LightMode';
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+      toggleTheme();
+    }
+  }, [args.VariablemodesColorStyles, isDarkMode, toggleTheme]);
 
   args.SolidText = t('initialLang:SolidText');
   args.PattrenText = t('initialLang:PattrenText');
-  return <BlockGeneric 
+  return <BlockGeneric
     changeTheme={toggleTheme}
-    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}    
-  {...args} />;
+    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    {...args} />;
 };
 
 BlockGenericComponentStory.args = {
@@ -133,7 +133,7 @@ BlockGenericComponentStory.args = {
   blockgenericType: 'Solid',
   language: I18nManager.isRTL ? 'ar' : 'en',
   // enableDarktheme: false,
-  VariablemodesColorStyles:"LightMode",
+  VariablemodesColorStyles: "LightMode",
 
 };
 
@@ -149,7 +149,7 @@ BlockGenericComponentStory.argTypes = {
   // enableDarktheme: {
   //   control: 'boolean',
   // },
-  VariablemodesColorStyles:{
+  VariablemodesColorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
@@ -443,15 +443,15 @@ export const TextDividerComponentStory = args => {
     if (language !== args.language) {
       handleChange(args.language, setLanguage, i18n);
     }
-    }, [args.language]);
+  }, [args.language]);
 
-    useEffect(() => {
-      const headerthemedark = args.colorStyles !== 'LightMode'; 
-      if (headerthemedark !== isDarkMode) {
-        console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
-        toggleTheme();
-      }
-    }, [args.colorStyles, isDarkMode, toggleTheme]); 
+  useEffect(() => {
+    const headerthemedark = args.colorStyles !== 'LightMode';
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+      toggleTheme();
+    }
+  }, [args.colorStyles, isDarkMode, toggleTheme]);
   // const translatedHeadline = t('initialLang:Headline');
   // const SunTextDivider = t('initialLang:SunTextDivider');
   // const viewall = t('initialLang:viewall');
@@ -461,25 +461,25 @@ export const TextDividerComponentStory = args => {
   args.text = t('initialLang:SunTextDivider');
   args.viewall = t('initialLang:viewall');
   args.Link = t('initialLang:linkButton');
-  return <TextDivider 
-  changeTheme={toggleTheme}
-  changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
-  {...args} />;
+  return <TextDivider
+    changeTheme={toggleTheme}
+    changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+    {...args} />;
 };
 
 TextDividerComponentStory.args = {
   textDividerType: "promotional",
-  textDividerHeadline:"Headline",
+  textDividerHeadline: "Headline",
   textDividerSubtitle: true,
-  textDividerText:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
+  textDividerText: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
   textDividerLink: true,
-  linkbuttonLink:"Link Button",
+  linkbuttonLink: "Link Button",
   linkbuttonIconleft: I18nManager.isRTL ? false : false,
   linkbuttonIconright: I18nManager.isRTL ? true : true,
   linkbuttonsize: "small",
   texttitleactionPassword: true,
   language: I18nManager.isRTL ? 'ar' : 'en',
-  colorStyles:"LightMode",
+  colorStyles: "LightMode",
 
 }
 
@@ -489,7 +489,7 @@ TextDividerComponentStory.argTypes = {
     control: 'select',
     options: ['en', 'ar'],
   },
-  colorStyles:{
+  colorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   },
@@ -618,7 +618,7 @@ export const SearchInputComponentStory = (args) => {
 };
 SearchInputComponentStory.args = {
 
-  State:"Default",
+  State: "Default",
   language: I18nManager.isRTL ? 'ar' : 'en',
   Input: 'Search By',
   showIcon: false,
@@ -775,6 +775,7 @@ DarkThemeBlockStory.args = {
   inlineListItemValue: 'Value',
   inlineListItemBulletPointDivider: true,
   inlineListItemBulletPointLabel: 'label',
+  inlineListItemDivider:true
 };
 
 DarkThemeBlockStory.argTypes = {
@@ -1110,10 +1111,10 @@ DarkThemeBlockStory.argTypes = {
     control: 'text',
     if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
   },
-  inlineListxItemMenuDivider: {
-    control: 'boolean',
-    if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
-  },
+  // inlineListxItemMenuDivider: {
+  //   control: 'boolean',
+  //   if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
+  // },
   inlineListItemMenuIcon: {
     control: 'boolean',
     if: { arg: 'inlineListItemActionableType', eq: 'Menu' },
@@ -1131,10 +1132,10 @@ DarkThemeBlockStory.argTypes = {
     options: ['Check Box', 'Radio Button'],
     if: { arg: 'inlineListItemActionableType', eq: 'Select' },
   },
-  inlineListItemSelectDivider: {
-    control: 'boolean',
-    if: { arg: 'inlineListItemActionableType', eq: 'Select' },
-  },
+  // inlineListItemSelectDivider: {
+  //   control: 'boolean',
+  //   if: { arg: 'inlineListItemActionableType', eq: 'Select' },
+  // },
   inlineListItemSelectLabel: {
     control: 'text',
     if: { arg: 'inlineListItemActionableType', eq: 'Select' },
@@ -1158,10 +1159,10 @@ DarkThemeBlockStory.argTypes = {
     options: ['Value', 'Bullet Point'],
     if: { arg: 'inlineListItemType', eq: 'Preview' },
   },
-  inlineListItemValueDivider: {
-    control: 'boolean',
-    if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
-  },
+  // inlineListItemValueDivider: {
+  //   control: 'boolean',
+  //   if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
+  // },
   inlineListItemValueIcon: {
     control: 'boolean',
     if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
@@ -1174,9 +1175,13 @@ DarkThemeBlockStory.argTypes = {
     control: 'text',
     if: { arg: 'inlineListItemPreviewType', eq: 'Value' }
   },
-  inlineListItemBulletPointDivider: {
+  // inlineListItemBulletPointDivider: {
+  //   control: 'boolean',
+  //   // if: { arg: 'inlineListItemPreviewType', eq: 'Bullet Point' }
+  // },
+  inlineListItemDivider: {
     control: 'boolean',
-    // if: { arg: 'inlineListItemPreviewType', eq: 'Bullet Point' }
+    if: { arg: 'listType', eq: 'Inline' },
   },
   inlineListItemBulletPointLabel: {
     control: 'text',

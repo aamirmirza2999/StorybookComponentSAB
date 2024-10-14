@@ -654,11 +654,11 @@ const DarkThemeBlock = (props) => {
         )}
         {addonType === 'Avatar With Bank' && (
           <View style={{ paddingRight: 0 }}>
-            <View style={globalStyles.avatarListItemAddon}>
+            <View style={[globalStyles.avatarListItemAddon1, { backgroundColor: theme.primarycolor3tonal }]}>
               <TextComponent
                 style={[
                   globalStyles.avatarListItemAddonText,
-                  { color: isDarkMode ? theme.primarycolor3static : theme.primarytextcolor3 },
+                  { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor3 },
                 ]}>
                 {props.listItemAddonAvatarInitials}
               </TextComponent>
@@ -754,14 +754,14 @@ const DarkThemeBlock = (props) => {
                       )}
                     </View>
                   </View>
-                  {props.inlineListItemMenuDivider && (
+                  {/* {props.inlineListItemMenuDivider && (
                     <View
                       style={[
                         globalStyles.dividerStyle1,
                         { backgroundColor: theme.primarycolor2_20 },
                       ]}
                     />
-                  )}
+                  )} */}
                 </>
               ) : (
                 <View style={[globalStyles.wrapperFlexBoxRow]}>
@@ -857,17 +857,25 @@ const DarkThemeBlock = (props) => {
                   </>
                 )}
               </View>
-              {props.inlineListItemBulletPointDivider && (
+              {/* {props.inlineListItemBulletPointDivider && (
                 <View
                   style={[
                     globalStyles.dividerStyle1,
                     { backgroundColor: theme.primarycolor2_20 },
                   ]}
                 />
-              )}
+              )} */}
             </>
           )}
           {/* {props.showDivider && <View style={globalStyles.dividerStyle} />} */}
+          {props.inlineListItemDivider && (
+            <View
+              style={[
+                globalStyles.dividerStyle,
+                { backgroundColor: theme.primarycolor2_20 },
+              ]}
+            />
+          )}
         </>
       )
       }
