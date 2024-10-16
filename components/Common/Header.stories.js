@@ -108,7 +108,7 @@ HeaderLevelOStory.argTypes = {
   avatarType:{
     control: 'select',
     options: ['Filled', 'Outline'],
-   // if: { arg: 'type', or: [{ eq: 'level0' }, { eq: 'level1-menu' }] },
+    if:{arg:"avatarElements" ,eq :'Icons'}
   },
   avatarElements:{
     control: 'select',
@@ -124,6 +124,7 @@ HeaderLevelOStory.argTypes = {
   },
   avataredit:{
     control: 'boolean',
+    if:{arg:"avatarElements" ,eq :'Icons'}
   },
   avatarinitial:{
     control:'text',
