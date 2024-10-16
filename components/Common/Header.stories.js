@@ -96,8 +96,8 @@ HeaderLevelOStory.argTypes = {
   
      LanguageIcon:{
       control: 'boolean',
-      // if:{arg:'type',eq:'level0'},
-      // if:{arg:'state',eq:'prelogin'}
+      if:{arg:'type',eq:'level0'},
+      if:{arg:'state',eq:'prelogin'}
     },
     NotificationSize:{control:'select',options:['Small','Big']},
     
@@ -108,8 +108,7 @@ HeaderLevelOStory.argTypes = {
   avatarType:{
     control: 'select',
     options: ['Filled', 'Outline'],
-    // if: { arg: 'type', eq: 'level0' },
-    // if: { arg: 'type', eq: 'level1-menu' },
+   // if: { arg: 'type', or: [{ eq: 'level0' }, { eq: 'level1-menu' }] },
   },
   avatarElements:{
     control: 'select',
@@ -128,9 +127,8 @@ HeaderLevelOStory.argTypes = {
   },
   avatarinitial:{
     control:'text',
-    // if: { arg: 'type', eq: 'level0' },
-    // if: { arg: 'type', eq: 'level1-menu' },
-    // if: { arg: 'avatarElements', eq: 'Initials' },
+    if: { arg: 'type', eq: 'level0' },
+    if: { arg: 'avatarElements', eq: 'Initials' },
     
   },
 
