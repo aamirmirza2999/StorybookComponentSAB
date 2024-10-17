@@ -813,10 +813,10 @@ export const ListButton = (props) => {
 		}
 		onPress={props.onPress}>
 
-		{props.listButtonType==="Big"|| props.listButtonType==="Small"?
+		{props.buttonlistitemType==="Big"|| props.buttonlistitemType==="Small"?
 
 		<View
-		style={[props.listButtonType==="Small"?globalStyles.listButtonSmall:globalStyles.listButtonLarge,{backgroundColor:theme.stylesblockbg},props.listButton]}>
+		style={[props.buttonlistitemType==="Small"?globalStyles.listButtonSmall:globalStyles.listButtonLarge,{backgroundColor:theme.stylesblockbg},props.listButton]}>
 			<View
 			style={{
 				flexDirection:"row",
@@ -833,7 +833,7 @@ export const ListButton = (props) => {
 					width:"95%"
 				}}
 				>
-			{props.showIcon?
+			{props.buttonlistitemIcon?
 			<View
 			
 			>
@@ -846,13 +846,13 @@ export const ListButton = (props) => {
 		}}
 		>	
 			<TextComponent
-				style={[props.listButtonType==="Small"?globalStyles.listButtonTxtLargeHeadlineSmall:globalStyles.listButtonTxtLargeHeadline,,props.listButtonTxt,{color:theme.primarycolor}]}
+				style={[props.buttonlistitemType==="Small"?globalStyles.listButtonTxtLargeHeadlineSmall:globalStyles.listButtonTxtLargeHeadline,props.listButtonTxt,{color:theme.primarycolor}]}
 				>{props.listHeadlLine}</TextComponent>
-				{props.listButtonType==="Big"?
+				{props.buttonlistitemType==="Big"?
 				<>
-				{props.listDescription!==""?
+				{props.buttonlistitemShowContent?
 				<TextComponent
-				style={[globalStyles.listButtonTxtLarge,,props.listButtonTxt,{color:theme.primarycolor2_100}]}
+				style={[globalStyles.listButtonTxtLarge,props.listButtonTxt,{color:theme.primarycolor2_100}]}
 				>{props.listDescription}</TextComponent>:null}
 				<View
 				style={{
@@ -860,9 +860,9 @@ export const ListButton = (props) => {
 					alignSelf:"flex-start"
 				}}
 				>
-				{props.showBadge?
+				{props.buttonlistitemBadge?
 				<View style={globalStyles.listBadge}>
-				<TextComponent style={globalStyles.listBadgeTxt}>{props.listBadgeText}</TextComponent>
+				<TextComponent style={[globalStyles.listBadgeTxt,{color:"#000"}]}>{props.listBadgeText}</TextComponent>
 				</View>:null}
 				</View></>
 				:null}
@@ -878,7 +878,7 @@ export const ListButton = (props) => {
 				alignSelf:"center"
 			}}
 			>
-				{props.listButtonType==="Small"?
+				{props.buttonlistitemType==="Small"?
 				<RightArrowBlackSmall
 				style={{
 					transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
@@ -886,7 +886,7 @@ export const ListButton = (props) => {
 				width={actuatedNormalize(24)}
 				height={actuatedNormalize(24)}
 				></RightArrowBlackSmall>:null}
-				{props.listButtonType==="Big"?
+				{props.buttonlistitemType==="Big"?
 				isDarkMode?<RightArrowDarkLarge
 				style={{
 					transform: [{ rotate:I18nManager.isRTL?"180deg":"0deg"}],
@@ -905,7 +905,7 @@ export const ListButton = (props) => {
 				</View>
 			</View>
 		:
-		props.listButtonType==="Right"?
+		props.buttonlistitemType==="Right"?
 		<View style={[globalStyles.listButtonDashboard,props.listButtonDashboard,{backgroundColor:theme.stylesblockbg}]}>
 		<TextComponent
 		style={[globalStyles.listButtonTxt,props.listButtonTxt,{color:theme.primarycolor}]}
