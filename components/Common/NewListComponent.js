@@ -15,13 +15,15 @@ import {
   TextInfoIconDark,
   SabLogoRound,
   BankLogo,
-  Toggleunselect
+  Toggleunselect,
+  ProfileEditIconDark
 } from '../../constants/SvgLocations';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import { globalStyles } from '../../constants/GlobalStyles';
-import { spacingM, spacingXXS, spacingXL, spacingL } from '../../constants/Size';
+import { spacingM, spacingXXS, spacingXL, spacingL, lineHeightSmallMedium, lineHeightMedium, lineHeightMediumLarge, fontMedium, fontLarge, fontSmall, spacingXXL, spacingS } from '../../constants/Size';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import TextComponent from './TextComponent';
+import SvgIconList from '../../constants/SvgIconList';
 const NewListComponent = props => {
   const { isDarkMode, theme } = useTheme();
   const backgroundColor = isDarkMode ? '#383838' : theme.primarycolor4;
@@ -230,7 +232,8 @@ const NewListComponent = props => {
           {props.stackedListItemType === 'Default' ? (
             <View style={[globalStyles.wrapperFlexBoxRow, { flex: 1 }]}>
               {props.stackedListItemDefaultIcon && (
-                <ListItemAddon addonType={props.listtemAddonType} />
+                <ListItemAddon addonType={props.listtemAddonType}
+                props={props} />
               )}
               <View style={globalStyles.stackedlistitembody}>
                 <StackedListItemBody
@@ -329,11 +332,49 @@ const NewListComponent = props => {
 
 export default NewListComponent;
 
-const ListItemAddon = ({ addonType }) => {
+const ListItemAddon = ({ addonType , props}) => {
   const { theme, isDarkMode } = useTheme();
+  const AvatarSizes = () => {
+    switch (props.listItemAddonAvatarSize) {
+      case 'Small':
+        return {
+          fontSize: fontSmall,
+          lineHeight: lineHeightSmallMedium,
+        };
+      case 'Large':
+        return {
+          fontSize: fontLarge,
+          lineHeight: lineHeightMedium,
+        };
+      case 'Medium':
+        return {
+          fontSize: fontMedium,
+          lineHeight: lineHeightMediumLarge,
+        };
+      default:
+        return {
+          fontSize: 12,
+          lineHeight: 17,
+        };
+    }
+  };
+
+  // Avatar Icon Width function
+  const AvatarIconWidth = () => {
+    switch (props.listItemAddonAvatarSize) {
+      case 'Small':
+        return spacingL;
+      case 'Large':
+        return spacingXXL;
+      case 'Medium':
+        return spacingXXL;
+      default:
+        return spacingXXL;
+    }
+  };
   return (
     <>
-      {addonType === 'Avatar' && (
+      {/* {addonType === 'Avatar' && (
         <View style={globalStyles.avatarListItemAddon}>
           <TextComponent
             style={[
@@ -343,7 +384,45 @@ const ListItemAddon = ({ addonType }) => {
             JM
           </TextComponent>
         </View>
-      )}
+      )} */}
+      {addonType === 'Avatar' && (
+          <>
+            {props.listItemAddonAvatarElements === 'Initials' && (
+              <View style={[globalStyles.avatarListItemAddon1, { backgroundColor: theme.primarycolor3tonal }]}>
+                <TextComponent
+                  style={[
+                    globalStyles.avatarListItemAddonText,
+                    { color: isDarkMode ? theme.primarycolor : theme.primarytextcolor3 },
+                    AvatarSizes(),
+                  ]}>
+                  {props.listItemAddonAvatarInitials}
+                </TextComponent>
+              </View>
+            )}
+            {props.listItemAddonAvatarElements === 'Icon' && (
+              <View style={[globalStyles.avatarSectionDarkTheme]}>
+                {props.listItemAddonAvatarType === 'Filled' ? (
+                  <SvgIconList
+                    icon="AvatarIconFilled"
+                    width={AvatarIconWidth()} // Directly use the value, not an object
+                    height={AvatarIconWidth()}
+                  />
+                ) : (
+                  <SvgIconList
+                    icon="AvatarIconOutlined"
+                    width={AvatarIconWidth()} // Directly use the value, not an object
+                    height={AvatarIconWidth()}
+                  />
+                )}
+                {props.listItemAddonAvatarEdit && (
+                  <View style={globalStyles.editIconWrapper}>
+                    <ProfileEditIconDark width={spacingS} height={spacingS} />
+                  </View>
+                )}
+              </View>
+            )}
+          </>
+        )}
       {addonType === 'Icon' && (
         isDarkMode ? <TextInfoIconDark width={spacingM} height={spacingM} /> : <InfoIconRed width={spacingM} height={spacingM} />
       )}
@@ -567,23 +646,23 @@ const BadgeStatus = ({
     switch (badgeNotificationSize) {
       case 'Small':
         return {
-          fontSize: 12,
-          lineHeight: 17,
+          fontSize: actuatedNormalize(12),
+          lineHeight: actuatedNormalize(17),
         };
       case 'Large':
         return {
-          fontSize: 14,
-          lineHeight: 18,
+          fontSize: actuatedNormalize(14),
+          lineHeight: actuatedNormalize(18),
         };
       case 'XS':
         return {
-          fontSize: 11,
-          lineHeight: 15,
+          fontSize: actuatedNormalize(11),
+          lineHeight: actuatedNormalize(15),
         };
       default:
         return {
-          fontSize: 12,
-          lineHeight: 17,
+          fontSize: actuatedNormalize(12),
+          lineHeight: actuatedNormalize(17),
         };
     }
   };
@@ -746,13 +825,13 @@ const BadgeStatusMenu = ({
     switch (badgeNotificationMenuSize) {
       case 'Small':
         return {
-          fontSize: 12,
-          lineHeight: 17,
+          fontSize: actuatedNormalize(12),
+          lineHeight: actuatedNormalize(17),
         };
       case 'Large':
         return {
-          fontSize: 14,
-          lineHeight: 18,
+          fontSize: actuatedNormalize(14),
+          lineHeight: actuatedNormalize(18),
         };
       case 'XS':
         return {
@@ -761,8 +840,8 @@ const BadgeStatusMenu = ({
         };
       default:
         return {
-          fontSize: 12,
-          lineHeight: 17,
+          fontSize: actuatedNormalize(12),
+          lineHeight: actuatedNormalize(17),
         };
     }
   };
