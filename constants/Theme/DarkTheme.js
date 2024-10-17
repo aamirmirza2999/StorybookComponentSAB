@@ -59,7 +59,7 @@ export const darkTheme = {
    //STYLES COLORS:
  
    stylesbgshades:"rgba(245, 245, 245, 0.15)",
-   stylesblockbg:"#FFFFFF6",
+   stylesblockbg:"#1b242e",
    stylesbackground2:"#0F1721",
    stylessecondarycolor6:"#00B8B5",
    stylescolor7:"rgba(255, 255, 255, 0.1)",
