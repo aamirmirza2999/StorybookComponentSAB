@@ -233,7 +233,7 @@ export const LinkButton = (props) => {
 								alignItems:"center",
 							}}
 							>
-							{props.enableLeftIcon?
+							{props.linkbuttoneIconLeft?
 							isDarkMode?
 							<RightRedArrowDark1
 							style={{
@@ -254,9 +254,9 @@ export const LinkButton = (props) => {
 							height={actuatedNormalize(24)}
 							></RightRedArrow1>:null}
 								<TextComponent
-								style={[props.type==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:isDarkMode? theme.primarycolor4 : theme.primarycolor3,alignSelf:"center"}]}
-								>{props.label}</TextComponent>
-							{props.enableRightIcon?
+								style={[props.linkbuttonType==="small"?globalStyles.linkTextsmall:globalStyles.linkTextlarge,props.linkText,{color:isDarkMode? theme.primarycolor4 : theme.primarycolor3,alignSelf:"center"}]}
+								>{props.lang==='en'?props.linkbuttonLink:props.label}</TextComponent>
+							{props.linkbuttonIconRight?
 							isDarkMode?
 							<RightRedArrowDark1
 							style={{
@@ -690,7 +690,7 @@ export const QuickButton = (props) => {
 		<View
 		style={{
 			flex:1,
-			backgroundColor:theme.stylescolorpressed1
+			//backgroundColor:theme.stylescolorpressed1
 		}}
 		>
 		<Component
