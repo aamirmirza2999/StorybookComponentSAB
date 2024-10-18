@@ -80,25 +80,27 @@ export const LinkButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-   
-    if (args.enableDarktheme !== isDarkMode) {
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.enableDarktheme, isDarkMode]);
-  
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
+
   args.label=t('initialLang:linkButton')
   return( <LinkButton {...args} />)
 };
   LinkButtonComponentStory.args = {
-  type:"large",//large/small
-  enableLeftIcon:true,
-  enableRightIcon:true,
+    linkbuttonType:"large",//large/small
+    linkbuttoneIconLeft:true,
+    linkbuttonIconRight:true,
+    linkbuttonLink:"Link Button",
   onPress:null,
   lang:'en',
-  enableDarktheme: false,
+  VariablemodescolorStyles:"LightMode",
 };
 LinkButtonComponentStory.argTypes = {
-  type: {
+  linkbuttonType: {
     control: 'select',
     options: ['large', 'small'],
     
@@ -107,9 +109,10 @@ LinkButtonComponentStory.argTypes = {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  VariablemodescolorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 }
 
 
@@ -234,6 +237,24 @@ QuickButtonComponentStory.argTypes = {
     control: 'select',
     options: ['Vertical', 'Horizontal','Vertical-Small'],
   },
+  buttonquickActionPictogram:{
+    control: 'boolean',
+    if:{arg:'buttonquickActionType',eq:'Vertical'}
+  },
+  buttonquickActionHideIcon:{
+    control: 'boolean',
+    if:{arg:'buttonquickActionType',eq:'Vertical'},
+  },
+  quickActionButtonBadge:{
+    control: 'boolean',
+    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+  },
+  quickNotificationCount:{
+    control: 'text',
+    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+  },
   lang: {
     control: 'select',
     options: ['en', 'ar'],
@@ -262,43 +283,59 @@ export const ListButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-   
-    if (args.enableDarktheme !== isDarkMode) {
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.enableDarktheme, isDarkMode]);
-  
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
+
   args.label=t('initialLang:action')
   args.listHeadlLine=t('initialLang:headline')
   args.listBadgeText=t('initialLang:active')
   return(<ListButton {...args} />)
 };
 ListButtonComponentStory.args = {
- showIcon:true,
+ buttonlistitemIcon:true,
  Icon:<SvgIconList
  icon="Home"
  width={24}
  height={24}
 />,
- listButtonType:"Big",//Big/Small/Right/Center
+ buttonlistitemType:'Big',//Big/Small/Right/Center
+ buttonlistitemShowContent:true,
  listDescription:"Lorem IPsum",
- showBadge:true,
+ buttonlistitemBadge:true,
 onPress:null,
 lang:'en',
-enableDarktheme: false,
+VariablemodescolorStyles:"LightMode",
 };
 ListButtonComponentStory.argTypes = {
-  listButtonType: {
+  buttonlistitemType: {
     control: 'select',
     options: ['Big', 'Small','Right','Center'],
+  },
+  buttonlistitemShowContent:{ 
+    control: 'boolean',
+  if:{arg:'buttonlistitemType',eq:'Big'}
+},
+  listDescription:{
+    control: 'text',
+    if:{arg:'buttonlistitemType',eq:'Big'},
+
+  },
+  buttonlistitemBadge:{
+    control: 'boolean',
+    if:{arg:'buttonlistitemType',eq:'Big'}
   },
   lang: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  VariablemodescolorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 }
 
 export default {

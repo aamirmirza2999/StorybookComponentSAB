@@ -211,6 +211,11 @@ NewListComponentStory.args = {
   stackedListItemDefaultBadge: true,
   stackedListItemDefaultAction: true,
   listtemAddonType: 'Icon',
+  listItemAddonAvatarType: 'Filled',
+  listItemAddonAvatarElements: 'Initials',
+  listItemAddonAvatarSize: 'Medium',
+  listItemAddonAvatarInitials: 'JM',
+  listItemAddonAvatarEdit: false,
   stackedListItemBody: 'Headline+Body',
   stackedListItemBodyShowContent: true,
   stackedListItemBodyShowLabel: true,
@@ -271,8 +276,8 @@ NewListComponentStory.argTypes = {
   },
   linkActionableMenuText: {
     control: 'text',
+    if: { arg: 'listItemActionableType', eq: 'Menu' },
     if: { arg: 'listType', eq: 'Inline' },
-    // if: { arg: 'listItemActionableType', eq: 'Menu' }
   },
   inlineListItemMenuIcon: {
     control: 'boolean',
@@ -299,16 +304,19 @@ NewListComponentStory.argTypes = {
     control: 'select',
     options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
     if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+    if: { arg: 'listType', eq: 'Inline' },
   },
   badgeNotificationMenuSize: {
     control: 'select',
     options: ['Small', 'Large', 'XS'],
     if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+    if: { arg: 'listType', eq: 'Inline' },
   },
   badgeNotificationMenuNumber: {
     control: 'select',
     options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '99+'],
     if: { arg: 'badgeActionableMenuType', eq: 'Badge Notification' },
+    if: { arg: 'listType', eq: 'Inline' },
   },
   inlineListItemMenuLink: {
     control: 'boolean',
@@ -326,7 +334,7 @@ NewListComponentStory.argTypes = {
   },
   stackedListItemDefaultBadge: {
     control: 'boolean',
-    // if: {arg: 'listType', eq: 'Stacked'},
+    if: {arg: 'listType', eq: 'Stacked'},
   },
   stackedListItemDefaultAction: {
     control: 'boolean',
@@ -342,7 +350,35 @@ NewListComponentStory.argTypes = {
       'Avatar With Bank',
       'Pie Graph',
     ],
-    if: { arg: 'stackedListItemDefaultIcon' },
+    if: { arg: 'listType', eq: 'Stacked' },
+  },
+  listItemAddonAvatarType: {
+    control: 'select',
+    options: ['Filled', 'Outline'],
+    if: { arg: 'listItemAddonType', eq: 'Avatar' },
+    if: { arg: 'listType', eq: 'Stacked' },
+  },
+  listItemAddonAvatarElements: {
+    control: 'select',
+    options: ['Initials', 'Icon'],
+    if: { arg: 'listItemAddonType', eq: 'Avatar' },
+    if: { arg: 'listType', eq: 'Stacked' },
+  },
+  listItemAddonAvatarSize: {
+    control: 'select',
+    options: ['Small', 'Medium', 'Large'],
+    if: { arg: 'listItemAddonType', eq: 'Avatar' },
+    if: { arg: 'listType', eq: 'Stacked' },
+  },
+  listItemAddonAvatarEdit: {
+    control: 'boolean',
+    if: { arg: 'listItemAddonAvatarElements', eq: 'Icon' },
+    if: { arg: 'listType', eq: 'Stacked' },
+  },
+  listItemAddonAvatarInitials: {
+    control: 'text',
+    if: { arg: 'listItemAddonAvatarElements', eq: 'Initials' },
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   stackedListItemBody: {
     control: 'select',
@@ -351,7 +387,7 @@ NewListComponentStory.argTypes = {
   },
   stackedListItemBodyShowContent: {
     control: 'boolean',
-    if: { arg: 'stackedListItemBody', eq: 'Headline+Body' },
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   stackedListItemBodyShowLabel: {
     control: 'boolean',
@@ -372,7 +408,7 @@ NewListComponentStory.argTypes = {
   stackedListItemBodyStatusState: {
     control: 'select',
     options: ['Success', 'Error', 'Warning', 'Neutral'],
-    if: { arg: 'stackedListItemBodyShowStatus' },
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   badgeStatusType: {
     control: 'select',
@@ -383,12 +419,13 @@ NewListComponentStory.argTypes = {
       'Balance',
       'Balance with Status',
     ],
-    // if: { arg: 'stackedListItemBodyShowStatus'}
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   badgeNotificationType: {
     control: 'select',
     options: ['Primary', 'Warning', 'Success', 'Neutral', 'Reverse'],
     if: { arg: 'badgeStatusType', eq: 'Badge Notification' },
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   badgeNotificationSize: {
     control: 'select',
@@ -410,7 +447,7 @@ NewListComponentStory.argTypes = {
       'Edit',
       'Delete',
     ],
-    if: { arg: 'stackedListItemDefaultAction' }
+    if: { arg: 'listType', eq: 'Stacked' },
   },
   stackedListItemPreviewSecondValue: {
     control: 'boolean',
