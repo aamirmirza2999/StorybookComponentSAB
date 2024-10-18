@@ -53,7 +53,7 @@ export const BlockBanner = (props) => {
                                     theme.primarycolor 
                                 }, globalStyles.checkOutYour, props.checkOutYour]}
                                     >{props.BlockcardText}</Text>
-                                    <LinkButton linkText={[globalStyles.linkButton1]} label={props.LinkButton} enableRightIcon={true} />
+                                    <LinkButton linkText={[globalStyles.linkButton1]} label={props.LinkButton} linkbuttonIconRight={true} />
                                 </View>
                             </View>
                         </View>
