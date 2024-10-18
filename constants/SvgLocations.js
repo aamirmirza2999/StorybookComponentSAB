@@ -57,6 +57,7 @@ export {default as Cross} from '../assets/cross.svg';
 export {default as GreyInfo} from '../assets/infoGrey.svg';
 
 export {default as WhiteInfo} from '../assets/infowhite.svg';
+export {default as Content} from '../assets/Content.svg';
 
 export {default as BlackArrow} from '../assets/arrowblack.svg';
 export {default as BlackArrowDark} from '../assets/arrowblackDark.svg';
@@ -113,6 +114,7 @@ export { default as PictoDark } from "../assets/zakatiLogoDark.svg";
 export {default as Filter} from "../assets/filter.svg"
 export {default as FilterDark} from "../assets/filterdark.svg"
 export{default as LiveChat}from"../assets/newlivechat.svg"
+export{default as RedIMG}from"../assets/red_bg.svg"
 
 
 
