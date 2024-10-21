@@ -247,8 +247,10 @@ QuickButtonComponentStory.argTypes = {
   },
   quickActionButtonBadge:{
     control: 'boolean',
-    if:{arg:'buttonquickActionType',eq:'Horizontal'},
-    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+   //if:{arg:'buttonquickActionType',neq:'Vertical'},
+    // if:{arg:'buttonquickActionType',eq:'Horizontal'},
+   // if: { arg: 'buttonquickActionType', or: [{ neq: 'Vertical' }] },
+   if: { arg: 'buttonquickActionType', or: [{ eq: 'Horizontal' }, { eq: 'Vertical-Small' },{neq:'Vertical'}] },
   },
   quickNotificationCount:{
     control: 'text',
