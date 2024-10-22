@@ -3,7 +3,7 @@ import { useTheme } from '../../constants/Theme/ThemeProvider';
 import StoryModule from './StoryModule'
 
 export default {
-    title: 'components/SabStoreRevamp',
+    title: 'components/SabStoreComponent',
 };
 
 export const StoryModuleStory = (args) => {
