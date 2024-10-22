@@ -80,25 +80,27 @@ export const LinkButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-   
-    if (args.enableDarktheme !== isDarkMode) {
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.enableDarktheme, isDarkMode]);
-  
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
+
   args.label=t('initialLang:linkButton')
   return( <LinkButton {...args} />)
 };
   LinkButtonComponentStory.args = {
-  type:"large",//large/small
-  enableLeftIcon:true,
-  enableRightIcon:true,
+    linkbuttonType:"large",//large/small
+    linkbuttoneIconLeft:true,
+    linkbuttonIconRight:true,
+    linkbuttonLink:"Link Button",
   onPress:null,
   lang:'en',
-  enableDarktheme: false,
+  VariablemodescolorStyles:"LightMode",
 };
 LinkButtonComponentStory.argTypes = {
-  type: {
+  linkbuttonType: {
     control: 'select',
     options: ['large', 'small'],
     
@@ -107,9 +109,10 @@ LinkButtonComponentStory.argTypes = {
     control: 'select',
     options: ['en', 'ar'],
   },
-  enableDarktheme: {
-    control: 'boolean',
-  },
+  VariablemodescolorStyles:{
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
 }
 
 
@@ -233,6 +236,26 @@ QuickButtonComponentStory.argTypes = {
   buttonquickActionType : {
     control: 'select',
     options: ['Vertical', 'Horizontal','Vertical-Small'],
+  },
+  buttonquickActionPictogram:{
+    control: 'boolean',
+    if:{arg:'buttonquickActionType',eq:'Vertical'}
+  },
+  buttonquickActionHideIcon:{
+    control: 'boolean',
+    if:{arg:'buttonquickActionType',eq:'Vertical'},
+  },
+  quickActionButtonBadge:{
+    control: 'boolean',
+   //if:{arg:'buttonquickActionType',neq:'Vertical'},
+    // if:{arg:'buttonquickActionType',eq:'Horizontal'},
+   // if: { arg: 'buttonquickActionType', or: [{ neq: 'Vertical' }] },
+   if: { arg: 'buttonquickActionType', or: [{ eq: 'Horizontal' }, { eq: 'Vertical-Small' },{neq:'Vertical'}] },
+  },
+  quickNotificationCount:{
+    control: 'text',
+    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+    if:{arg:'buttonquickActionType',eq:'Horizontal'},
   },
   lang: {
     control: 'select',

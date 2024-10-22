@@ -96,8 +96,11 @@ HeaderLevelOStory.argTypes = {
   
      LanguageIcon:{
       control: 'boolean',
-      if:{arg:'type',eq:'level0'},
-      if:{arg:'state',eq:'prelogin'}
+      if: {
+        arg: 'type',
+        eq: 'level0',
+        and: [{ arg: 'state', eq: 'prelogin' }],
+      },
     },
     NotificationSize:{control:'select',options:['Small','Big']},
     
