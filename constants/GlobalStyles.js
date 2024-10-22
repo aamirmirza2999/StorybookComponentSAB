@@ -2008,5 +2008,34 @@ welcomeBackFlexBox: {
        
         height: 124,
         flex: 1
-        }
+        },
+        smallFont:{
+          fontSize: fontSmall,
+		      lineHeight: lineHeightSmall,
+        },
+        extraSmallFont:{
+          fontSize: fontXSmall,
+		      lineHeight: lineHeightXSmall,
+        },
+        storyModuleContainer: {
+          // flex: 1,
+          width: actuatedNormalize(98),
+          gap: actuatedNormalize(4),
+          alignItems: "center"
+        },
+        storyStates: {
+          borderRadius: 4000,
+          flexDirection: "row",
+          padding: actuatedNormalize(6),
+          justifyContent: "center",
+          alignItems: "center"
+        },
+        iconSabStoreStoryModule: {
+          width: actuatedNormalize(86),
+          height: actuatedNormalize(86)
+        },
+        texttextFlexBox: {
+          overflow: "hidden",
+          justifyContent: "center"
+        },
 }
