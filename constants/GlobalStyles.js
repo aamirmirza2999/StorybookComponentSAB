@@ -2110,4 +2110,33 @@ welcomeBackFlexBox: {
           overflow: "hidden",
           justifyContent: "center"
         },
+        widgetS:{
+          borderRadius: 8,
+          backgroundColor: "#730014",
+          width: "100%",
+          height: 159,
+          overflow: "hidden",
+          justifyContent: "space-between",
+          padding: 16,
+          maxWidth: 163.5,
+        },
+        widgetSName:{
+          fontSize: 17,
+          lineHeight: 22,
+          fontWeight: "700",
+          fontFamily: "Univers Next for HSBC",
+          color: "#fff",
+          textAlign: "left",
+          display: "flex",
+          paddingTop:16,
+          alignItems: "flex-end"
+        },
+        widgetSDescription:{
+          fontSize: 13,
+          lineHeight: 17,textAlign: "left",
+          color: "#fff",
+          fontFamily: "Univers Next for HSBC",
+          flex: 1
+        }
+
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import StoryModule from './StoryModule'
+import Widget from './Widget';
 
 export default {
     title: 'components/SabStoreComponent',
@@ -24,19 +25,32 @@ StoryModuleStory.args = {
     colorStyles: "LightMode",
 };
 
-StoryModuleStory.argTypes = {
-    storyStateType: {
-        control: 'select',
-        options: ['ToSee', 'Seen'],
-    },
+export const WidgetModuleStory = (args) => {
+    const { theme, toggleTheme, isDarkMode } = useTheme();
+    useEffect(() => {
+        const headerthemedark = args.colorStyles !== 'LightMode';
+        if (headerthemedark !== isDarkMode) {
+            console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+            toggleTheme();
+        }
+    }, [args.colorStyles, isDarkMode, toggleTheme]);
+    return <Widget {...args} />
+}
 
-    storyModuleExtraContent: {
-        control: 'boolean',
-    },
+WidgetModuleStory.args = {
+    size:"Widget-S",
+     colorStyles: "LightMode",
+};
 
-    colorStyles: {
+WidgetModuleStory.argTypes = {
+   
+     colorStyles: {
+         control: 'select',
+         options: ['LightMode', 'DarkMode'],
+     },
+     size: {
         control: 'select',
-        options: ['LightMode', 'DarkMode'],
+        options: ['Widget-S', 'Widget-M','Widget-L'],
     }
 
 };
