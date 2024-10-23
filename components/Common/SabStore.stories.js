@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { View } from 'react-native';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import StoryModule from './StoryModule'
 import Widget from './Widget';
+import ProductCardNestedComponent from './ProductCardNestedComponent';
+import { actuatedNormalize } from '../../constants/PixelScaling';
 
 export default {
     title: 'components/SabStoreComponent',
@@ -54,3 +57,45 @@ WidgetModuleStory.argTypes = {
     }
 
 };
+
+
+
+export const ProductCardNestedStory = (args) => {
+
+    const { theme, toggleTheme, isDarkMode } = useTheme();
+    useEffect(() => {
+        const headerthemedark = args.colorStyles !== 'LightMode';
+        if (headerthemedark !== isDarkMode) {
+            toggleTheme();
+        }
+    }, [args.colorStyles, isDarkMode, toggleTheme]);
+
+    return (
+       
+            <ProductCardNestedComponent
+                top={actuatedNormalize(25)}
+                Amount={"200"}
+                Currency={"SAR"}
+                MainViewStyles={{flex:1}}
+                {...args}
+            />
+        
+    );
+};
+
+ProductCardNestedStory.args = {
+    type: "Amount",
+    colorStyles: "LightMode",
+};
+
+ProductCardNestedStory.argTypes = {
+
+    type: {
+        control: 'select',
+        options: ['Amount', 'Quantity', 'Share', 'Amount and Quantity', 'Delete and Quantity', 'Confirmation Status']
+    },
+    colorStyles: {
+        control: 'select',
+        options: ['LightMode', 'DarkMode'],
+    }
+}

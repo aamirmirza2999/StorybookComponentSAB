@@ -119,4 +119,10 @@ export{default as RedIMG}from"../assets/red_bg.svg"
 export{default as Gift}from"../assets/Group 3.svg"
 
 
+export {default as Minus} from "../assets/minus.svg"
+export {default as Plus} from "../assets/plus.svg"
+export {default as Share} from "../assets/share.svg"
+export {default as ShareDark} from "../assets/sharedark.svg"
+export{default as DeleteRed}from"../assets/deletered.svg"
+export{default as DeleteDark}from"../assets/deletedark.svg"
 
