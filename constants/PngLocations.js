@@ -778,7 +778,8 @@ const PngLocations = {
 //   QriconLogo : require("../../assets/images/QRSCANNER/sabLogoQR.png"),
 //   //manageCardsUmality
 //   manageCardsUmality : require("../../assets/images/car/manageCardsUmality.png"),
-  SabstoreStory : require("../assets/sabstoreStory.png")
+  SabstoreStory : require("../assets/sabstoreStory.png"),
+  ProductImage :require("../assets/ProductImage.png")
 
 };
 

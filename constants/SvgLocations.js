@@ -116,7 +116,7 @@ export {default as FilterDark} from "../assets/filterdark.svg"
 export{default as LiveChat}from"../assets/newlivechat.svg"
 export{default as RedIMG}from"../assets/red_bg.svg"
 
-export{default as Gift}from"../assets/Group 3.svg"
+export{default as Gift}from"../assets/Gift.svg"
 
 
 export {default as Minus} from "../assets/minus.svg"

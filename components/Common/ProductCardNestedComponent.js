@@ -1,11 +1,6 @@
 import React from 'react'
 import {
-    Dimensions,
     View,
-    StatusBar,
-    StyleSheet,
-    Platform,
-    I18nManager,
     TouchableOpacity
 } from 'react-native'
 import { useTheme } from "../../constants/Theme/ThemeProvider";
@@ -18,7 +13,7 @@ import Fonts from '../../constants/Fonts';
 
 const ProductCardNestedComponent = (props) => {
 
-    const { theme, toggleTheme, isDarkMode } = useTheme();
+    const {theme} = useTheme();
 
     return (
         <View style={[styles.MainView, {
