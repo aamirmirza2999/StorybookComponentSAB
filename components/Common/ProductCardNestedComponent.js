@@ -17,7 +17,7 @@ const ProductCardNestedComponent = (props) => {
 
     return (
         <View style={[styles.MainView, {
-            backgroundColor: theme.stylesbackground2,
+           
         }, props.MainViewStyles]}>
 
 

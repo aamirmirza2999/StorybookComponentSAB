@@ -779,7 +779,8 @@ const PngLocations = {
 //   //manageCardsUmality
 //   manageCardsUmality : require("../../assets/images/car/manageCardsUmality.png"),
   SabstoreStory : require("../assets/sabstoreStory.png"),
-  ProductImage :require("../assets/ProductImage.png")
+  ProductImage :require("../assets/ProductImage.png"),
+  Brands:require("../assets/Brands.png")
 
 };
 

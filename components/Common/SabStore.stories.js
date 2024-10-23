@@ -76,7 +76,7 @@ export const ProductCardNestedStory = (args) => {
                 top={actuatedNormalize(25)}
                 Amount={"200"}
                 Currency={"SAR"}
-                MainViewStyles={{flex:1}}
+                MainViewStyles={{flex:1,backgroundColor: theme.stylesbackground2}}
                 {...args}
             />
         

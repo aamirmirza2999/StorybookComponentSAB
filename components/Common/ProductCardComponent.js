@@ -11,7 +11,7 @@ import TextComponent from './TextComponent';
 import Fonts from '../../constants/Fonts';
 import PngLocations from '../../constants/PngLocations';
 
-const ProductCard = (props) => {
+const ProductCardComponent = (props) => {
 
     const { theme } = useTheme();
 
@@ -159,4 +159,4 @@ const styles = {
         width: "50%"
     }
 }
-export default ProductCard
+export default ProductCardComponent
