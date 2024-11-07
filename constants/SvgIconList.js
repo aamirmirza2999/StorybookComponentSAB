@@ -5,7 +5,7 @@ import {
   AddBene, BackArrowNew, ChangeLang, ChangeLangDark, CloseIconNew, LiveChat, AccountAction, RightArrow, InfoIconRed, WhiteInfo,
   BlackArrow, WhiteArrow, Close, SearchIcon, NotificationIcon,NotificationIconDark, AvatarIconblack, HelpIcon, SearchIconDark,
   AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList, Blockcard, Blockgenericred, BlackRightarrow, Lightmyacounts, Lightright, Whitecard, Whiterightarrow, ProfileEditIconDark, AccountActionFill, PictoDark, PictoLight,
-  Filter, FilterDark, RadioUnSelect, AvatarIconwhite, AvatarIconDarkOutlined, TickIcon, TickIconDark
+  Filter, FilterDark, RadioUnSelect, AvatarIconwhite, AvatarIconDarkOutlined, TickIcon, TickIconDark,Gift,Minus,Plus,Share,DeleteRed,Check,DeleteDark,ShareDark
 } from './SvgLocations';
 
 
@@ -356,6 +356,67 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
             fill={fill}
           />
         );
+        case 'Gift':
+          return (
+            <Gift
+              width={width}
+              height={height}
+              fill={fill}
+            />
+          );
+          case 'Minus':
+          return (
+            <Minus
+
+              width={width}
+              height={height}
+              fill={fill}
+            />
+          );
+          case 'Plus':
+            return (
+              <Plus
+                width={width}
+                height={height}
+                fill={fill}
+              />
+            );
+            case 'Share':
+              return (
+                isDarkMode?
+                <ShareDark
+                width={width}
+                  height={height}
+                  fill={fill}
+                />:
+                <Share
+                  width={width}
+                  height={height}
+                  fill={fill}
+                />
+              );
+              case 'Delete':
+              return (
+                isDarkMode?
+                <DeleteDark
+                width={width}
+                  height={height}
+                  fill={fill}
+                />:
+                <DeleteRed
+                  width={width}
+                  height={height}
+                  fill={fill}
+                />
+              );
+              case 'Check':
+              return (
+                <Check
+                  width={width}
+                  height={height}
+                  fill={fill}
+                />
+              );
     default:
       return null;
   }

@@ -1310,8 +1310,29 @@ buttonquickaction: {
   overflow: "hidden",
   padding: spacingS,
   justifyContent: "space-between",
-  // width: actuatedNormalize(343)
+  // width: actuatedNormalize(343),
 },
+buttonquickaction2: {
+  borderRadius: radiusS,
+  // backgroundColor: stylesbgshades,
+  height: actuatedNormalize(130),
+  overflow: "hidden",
+  padding: spacingS,
+  justifyContent: "space-between",
+  width: actuatedNormalize(342),
+},
+iconoutlinecard: {
+  zIndex: 1,
+  // height: actuatedNormalize(24)
+  },
+patternIcon: {
+  position: "absolute",
+  top: actuatedNormalize(-66),
+  left: actuatedNormalize(0),
+  // height: 240,
+  zIndex: 0,
+  // width: 343
+  },
 buttonquickactionInner: {
   alignItems: "flex-end",
   zIndex: 2,
@@ -1349,6 +1370,44 @@ typesolid : {
   justifyContent: "space-between",
   overflow: "hidden"
 }, 
+container2: {
+  position: 'relative',
+  width: '40%',
+  // flex :1,
+  borderRadius: 8,
+  height: actuatedNormalize(115), // Adjust the height as needed
+  // justifyContent: "center",
+  // alignItems: 'center',
+  overflow: 'hidden',
+  backgroundColor: "yellow",
+},
+backgroundContainer: {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+overlayIcon: {
+  position: 'absolute',
+  top: actuatedNormalize(15),
+  left: actuatedNormalize(10)
+},
+rowContainer2: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
+  // alignSelf: "stretch",
+  position: 'absolute',
+  bottom: 15, // Adjust based on your layout
+  left: 0,
+  right: 0,
+  // paddingHorizontal: 10,
+  // width : "90%",
+  // marginTop: actuatedNormalize(150), // Position row below the background content
+},
 Blocktext2: {
   // height: actuatedNormalize(42),
   flexDirection: "row",
@@ -1364,16 +1423,6 @@ nameWrapper: {
   flexDirection: "row",
   alignSelf: "stretch"
 },
-blocknameSolid : {
-  fontSize: fontMediumLarge,
-  lineHeight: lineHeightMediumLarge,
-  fontFamily: Fonts.HSBC,
-  // color: "#000",
-  textAlign: "left",
-  display: "flex",
-  width: actuatedNormalize(108),
-  overflow: "hidden"
-},
 blockname: {
   fontSize: fontMediumLarge,
   lineHeight: lineHeightMediumLarge,
@@ -1385,9 +1434,32 @@ blockname: {
   width: actuatedNormalize(108),
   overflow: "hidden"
 },
+blockname2: {
+  fontSize: fontMediumLarge,
+  lineHeight: lineHeightMediumLarge,
+  fontWeight: fontWeightBold,
+  fontFamily: Fonts.HSBC,
+  // color: "#000",
+  textAlign: "left",
+  // display: "flex",
+  // flex : 1,
+  marginLeft: actuatedNormalize(15),
+  width: actuatedNormalize(108),
+  overflow: "hidden"
+},
 textFlexBox3: {
   alignItems: "flex-end",
   alignSelf: "stretch"
+},
+blocknameSolid : {
+  fontSize: fontMediumLarge,
+  lineHeight: lineHeightMediumLarge,
+  fontFamily: Fonts.HSBC,
+  // color: "#000",
+  textAlign: "left",
+  display: "flex",
+  width: actuatedNormalize(108),
+  overflow: "hidden"
 },
   wrapperFlexBoxRow: {
     gap: spacingXS,
@@ -2008,5 +2080,63 @@ welcomeBackFlexBox: {
        
         height: 124,
         flex: 1
+        },
+        smallFont:{
+          fontSize: fontSmall,
+		      lineHeight: lineHeightSmall,
+        },
+        extraSmallFont:{
+          fontSize: fontXSmall,
+		      lineHeight: lineHeightXSmall,
+        },
+        storyModuleContainer: {
+          // flex: 1,
+          width: actuatedNormalize(98),
+          gap: actuatedNormalize(4),
+          alignItems: "center"
+        },
+        storyStates: {
+          borderRadius: 4000,
+          flexDirection: "row",
+          padding: actuatedNormalize(6),
+          justifyContent: "center",
+          alignItems: "center"
+        },
+        iconSabStoreStoryModule: {
+          width: actuatedNormalize(86),
+          height: actuatedNormalize(86)
+        },
+        texttextFlexBox: {
+          overflow: "hidden",
+          justifyContent: "center"
+        },
+        widgetS:{
+          borderRadius: 8,
+          backgroundColor: "#730014",
+          width: "100%",
+          height: 159,
+          overflow: "hidden",
+          justifyContent: "space-between",
+          padding: 16,
+          maxWidth: 163.5,
+        },
+        widgetSName:{
+          fontSize: 17,
+          lineHeight: 22,
+          fontWeight: "700",
+          fontFamily: "Univers Next for HSBC",
+          color: "#fff",
+          textAlign: "left",
+          display: "flex",
+          paddingTop:16,
+          alignItems: "flex-end"
+        },
+        widgetSDescription:{
+          fontSize: 13,
+          lineHeight: 17,textAlign: "left",
+          color: "#fff",
+          fontFamily: "Univers Next for HSBC",
+          flex: 1
         }
+
 }
