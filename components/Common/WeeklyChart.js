@@ -1,13 +1,11 @@
 import * as React from "react";
 import { Text, StyleSheet, View, Image, Dimensions } from "react-native";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
-import { globalStyles } from "../../constants/GlobalStyles";
-import SvgIconList from "../../constants/SvgIconList";
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import { BarChart } from "react-native-chart-kit";
 import TextComponent from "./TextComponent";
-import Fonts from "../../constants/Fonts";
 import { IconChevRight, Lightright } from "../../constants/SvgLocations";
+import Fonts from "../../constants/Fonts";
 
 const screenWidth = Dimensions.get('window').width;
 const WeeklyChart = (props) => {
@@ -53,13 +51,12 @@ const WeeklyChart = (props) => {
                 <Text style={[styles.welcomeBack, { color: theme.primarytextcolor }]}>Weekly Report</Text>
                 <View style={[styles.linkButton, styles.wrapperFlexBox]}>
                     <View style={[styles.wrapper, styles.listSpaceBlock]}>
-                        <TextComponent style={[styles.linkButton1, styles.welcomeBackTypo, { color: theme.primarytextcolor }]}>View All</TextComponent>
+                        <TextComponent style={{ color: theme.primarytextcolor, fontFamily:Fonts.HSBC }}>View All</TextComponent>
                     </View>
                     {isDarkMode ? <Lightright width={24} height={24} /> : <IconChevRight width={24} height={24} />}
                 </View>
             </View>
-            {/* <Text style={[styles.enterYourUsername, styles.welcomeBackTypo]}>Starting with 27 Oct</Text> */}
-            <TextComponent style={[styles.enterYourUsername, styles.welcomeBackTypo, { color: theme.primarytextcolor }]}>{props.myActivityType === "Week" ? "Starting with 27 Oct" : "+59,950.00 SAR"}</TextComponent>
+            <TextComponent style={[styles.enterYourUsername, { color: theme.primarytextcolor }]}>{props.myActivityType === "Week" ? "Starting with 27 Oct" : "+59,950.00 SAR"}</TextComponent>
 
             <View style={styles.newExpensesBarChartWidget}>
                 <BarChart
@@ -96,6 +93,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         lineHeight: 22,
         fontWeight: "700",
+        fontFamily:Fonts.HSBC,
         flex: 1,
         // borderColor: 'blue', borderWidth: 2
     },
@@ -109,6 +107,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         lineHeight: 20,
         alignSelf: "stretch",
+        fontFamily:Fonts.HSBC,
         // borderColor:'red', borderWidth:2
     },
     newExpensesBarChartWidget: {
@@ -120,11 +119,7 @@ const styles = StyleSheet.create({
         // borderColor: 'red', borderWidth: 1
     },
     typeweek: {
-        // backgroundColor: "#f2f3f4",
-        // width: "100%",
         padding: actuatedNormalize(16),
-        // flex: 1,
-        // borderRadius: 8
     }
 });
 
