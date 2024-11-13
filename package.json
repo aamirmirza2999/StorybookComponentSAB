@@ -32,6 +32,8 @@
     "react-i18next": "^11.8.6",
     "react-native": "^0.73.4",
     "react-native-bouncy-checkbox": "^1.0.8",
+    "react-native-circular-progress": "^1.4.1",
+    "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-chart-kit": "^6.12.0",
     "react-native-collapsible": "^1.6.1",
     "react-native-device-info": "^11.1.0",
