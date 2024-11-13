@@ -14,7 +14,9 @@ import TextComponent from './TextComponent';
 export default {
   title: 'components/MenuComponent',    // Uncomment for development purpose.Don't uncomment and commit.
 };
-
+import HashTagComponent from "./HashTag"
+import ExpenseComponent from "./Expenses"
+import CategoryComponent from './Category'
 // export const MenuComponentStory = args => { };
 
 // MenuComponentStory.args = {};

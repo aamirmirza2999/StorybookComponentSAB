@@ -26,9 +26,11 @@ export const darkTheme = {
    primaryinvert:"#000000",
    primarycolornav:"rgba(255, 255, 255, 0.6)",
    primarybackgroundtab:"#1E2E4290",
-
+   primarybgclr: "#767676",
+   primarytxtclr: "#FFFFFF",
    // PRIMARY GREY COLORS:
- 
+   primarycolor2_5:"#FFFFFF",
+
    primarycolor2_100:"#767676",
    primarycolor2_90:"rgba(255, 255, 255, 0.5)",
    primarycolor2_80:"rgba(255, 255, 255, 0.45)",

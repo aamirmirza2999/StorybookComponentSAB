@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { I18nManager, View } from 'react-native';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import StoryModule from './StoryModule'
 import Widget from './Widget';
 import ProductCardNestedComponent from './ProductCardNestedComponent';
 import { actuatedNormalize } from '../../constants/PixelScaling';
-
+import { useTranslation } from 'react-i18next';
+import CommonHelper from '../../constants/CommonHelper';
 export default {
     title: 'components/SabStoreComponent',
 };
@@ -41,19 +42,19 @@ export const WidgetModuleStory = (args) => {
 }
 
 WidgetModuleStory.args = {
-    size:"Widget-S",
-     colorStyles: "LightMode",
+    size: "Widget-S",
+    colorStyles: "LightMode",
 };
 
 WidgetModuleStory.argTypes = {
-   
-     colorStyles: {
-         control: 'select',
-         options: ['LightMode', 'DarkMode'],
-     },
-     size: {
+
+    colorStyles: {
         control: 'select',
-        options: ['Widget-S', 'Widget-M','Widget-L'],
+        options: ['LightMode', 'DarkMode'],
+    },
+    size: {
+        control: 'select',
+        options: ['Widget-S', 'Widget-M', 'Widget-L'],
     }
 
 };
@@ -71,15 +72,15 @@ export const ProductCardNestedStory = (args) => {
     }, [args.colorStyles, isDarkMode, toggleTheme]);
 
     return (
-       
-            <ProductCardNestedComponent
-                top={actuatedNormalize(25)}
-                Amount={"200"}
-                Currency={"SAR"}
-                MainViewStyles={{flex:1,backgroundColor: theme.stylesbackground2}}
-                {...args}
-            />
-        
+
+        <ProductCardNestedComponent
+            top={actuatedNormalize(25)}
+            Amount={"200"}
+            Currency={"SAR"}
+            MainViewStyles={{ flex: 1, backgroundColor: theme.stylesbackground2 }}
+            {...args}
+        />
+
     );
 };
 
