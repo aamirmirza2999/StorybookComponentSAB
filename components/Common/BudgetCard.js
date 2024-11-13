@@ -321,8 +321,8 @@ chipsinfoSuccess: {
     		display: "flex",
     		width: 21,
     		alignItems: "flex-end",
-    		color: "#767676",
-    		alignSelf: "stretch"
+    		// color: "#767676",
+    		// alignSelf: "stretch",
   	},
   	parent: {
     		alignItems: "flex-end",
@@ -332,7 +332,7 @@ chipsinfoSuccess: {
   	text3: {
     		lineHeight: 15,
     		fontSize: 11,
-    		color: "#767676"
+    		// color: "#767676"
   	},
   	group: {
     		gap: 2,
