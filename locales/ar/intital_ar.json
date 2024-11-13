@@ -41,6 +41,12 @@
   "userNamelastLogin":"محمد صلاح",
   "status":"حالة",
   "searchby":"البحث عن طريق",
-  "foryou":"لك"
+  "foryou":"لك",
+  "BusinessTrip": "#رحلة عمل",
+  "Transactions":"43 المعاملات",
+  "MyspendNov":"My Spend   •   For November",
+  "Myspendtext": "إنفاقي",
+  "Mysependdate":"لشهر نوفمبر",
+  "expenseamount":"28,450.00"
 
 }

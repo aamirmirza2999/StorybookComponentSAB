@@ -32,6 +32,8 @@
   "text":"Text Line",
   "SunTextDivider":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur",
   "BlockcardText":"Check out your card Benefits",
+  "BusinessTrip": "#BusinessTrip",
+  "Transactions":"43 Transactions",
   "LinkButton":"Link Button",
   "SolidText":"Name",
   "PattrenText":"Personal Finance",
@@ -40,5 +42,9 @@
   "userNamelastLogin":"Mohammed Salah",
   "status":"Last login XX/XX/XX at 6:00",
   "searchby":"Search By",
-  "foryou":"For You"
+  "foryou":"For You",
+  "MyspendNov":"My Spend   •   For November",
+  "Myspendtext": "My Spend",
+  "Mysependdate":"For November",
+  "expenseamount":"28,450.00"
 }

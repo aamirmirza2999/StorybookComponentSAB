@@ -5,6 +5,7 @@ export {default as SabLogoDark} from '../assets/SABLogoDark.svg';
 export {default as CloseIconNew} from '../assets/icon_close.svg';
 export {default as EyeOpen} from '../assets/eyeopen.svg';
 export {default as EyeClose} from '../assets/eyeclose.svg';
+export {default as NewExclamatory} from '../assets/NewExclamatory.svg';
 export { default as EyeOpendark } from "../assets/eyeopendark.svg";
 export { default as EyeClosedark } from "../assets/eyeclosedark.svg";
 export {default as AddBene} from '../assets/icon_add_beneficiary.svg';
@@ -125,4 +126,7 @@ export {default as Share} from "../assets/share.svg"
 export {default as ShareDark} from "../assets/sharedark.svg"
 export{default as DeleteRed}from"../assets/deletered.svg"
 export{default as DeleteDark}from"../assets/deletedark.svg"
+export{default as HahTagIcon}from "../assets/hash.svg"
+export{default as IconsImages}from "../assets/CombinedShape.svg"
+export{default as ArrowImages}from "../assets/sabright.svg"
 

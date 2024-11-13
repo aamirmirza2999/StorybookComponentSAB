@@ -23,7 +23,10 @@ export const lightTheme = {
   primaryinvert:"#FFFFFF",
   primarycolornav:"#000000", //primaryblacknav
   primarybackgroundtab:"#F2F3F4",
+  primarybgclr: "#f2f3f4",
+  primarytxtclr: "#626469",
   // PRIMARY GREY COLORS:
+  primarycolor2_5:"#767676",
 
   primarycolor2_100:"#767676",
   primarycolor2_90:"rgba(118, 118, 118, 0.9)",
