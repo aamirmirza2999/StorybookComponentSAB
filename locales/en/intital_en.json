@@ -40,5 +40,15 @@
   "userNamelastLogin":"Mohammed Salah",
   "status":"Last login XX/XX/XX at 6:00",
   "searchby":"Search By",
-  "foryou":"For You"
+  "foryou":"For You",
+  "weekReport":"Weekly Report",
+  "monReport" :"October Report",
+  "startingfrom":"Starting With 27 Oct",
+  "Mon":"Mon",
+  "Tue":"Tue",
+  "Wed":"Wed",
+  "Thu":"Thu",
+  "Fri":"Fri",
+  "Sat":"Sat",
+  "Sun":"Sun"
 }

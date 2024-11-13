@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { I18nManager, View } from 'react-native';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import StoryModule from './StoryModule'
 import Widget from './Widget';
 import ProductCardNestedComponent from './ProductCardNestedComponent';
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import WeeklyChart from './WeeklyChart';
+import { useTranslation } from 'react-i18next';
+import CommonHelper from '../../constants/CommonHelper';
 export default {
     title: 'components/SabStoreComponent',
 };
@@ -102,6 +104,25 @@ ProductCardNestedStory.argTypes = {
 
 export const WeeklyChartStory = (args) => {
     const { theme, toggleTheme, isDarkMode } = useTheme();
+    const [language, setLanguage] = useState(args.lang || 'en');
+    const { t, i18n } = useTranslation();
+
+    const handleChange = (newLang) => {
+        setLanguage(newLang);
+        i18n.changeLanguage(newLang);
+        CommonHelper.changeLanguage(newLang);
+    };
+
+    useEffect(() => {
+        CommonHelper.initLanguage(setLanguage);
+    }, []);
+
+    useEffect(() => {
+        if (args.lang && args.lang !== language) {
+            handleChange(args.lang);
+        }
+    }, [args.lang]);
+
     useEffect(() => {
         const headerthemedark = args.colorStyles !== 'LightMode';
         if (headerthemedark !== isDarkMode) {
@@ -109,13 +130,18 @@ export const WeeklyChartStory = (args) => {
             toggleTheme();
         }
     }, [args.colorStyles, isDarkMode, toggleTheme]);
-    return <WeeklyChart {...args} />
+    return (<WeeklyChart
+        changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+        {...args}
+    />
+    )
 }
 
 WeeklyChartStory.args = {
     myActivityType: "Week",
-    barChartType: '75%',
+    // barChartType: '75%',
     colorStyles: "LightMode",
+    lang: I18nManager.isRTL ? 'ar' : 'en',
 };
 
 WeeklyChartStory.argTypes = {
@@ -124,12 +150,16 @@ WeeklyChartStory.argTypes = {
         control: 'select',
         options: ['Month', 'Week']
     },
-    barChartType: {
-        control: 'select',
-        options: ['25%', '50%', '75%', '100%']
-    },
+    // barChartType: {
+    //     control: 'select',
+    //     options: ['25%', '50%', '75%', '100%']
+    // },
     colorStyles: {
         control: 'select',
         options: ['LightMode', 'DarkMode'],
-    }
+    },
+    lang: {
+        control: 'select',
+        options: ['en', 'ar'],
+    },
 }
