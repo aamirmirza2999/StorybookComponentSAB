@@ -3,16 +3,20 @@ import {Text, StyleSheet, View, Image} from "react-native";
 import { Cancel, Check, ErrorIcon, GreyInfo, InfoIcon, Warning } from "../../constants/SvgLocations";
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { actuatedNormalize } from "../../constants/PixelScaling";
+import { useTheme } from '../../constants/Theme/ThemeProvider';
+
 const BudgetCard = (props) => {
+	const {theme, toggleTheme,isDarkMode} = useTheme();
+
 	// const currentAmount = 28160.00; // Example current amount
     // const totalAmount = 60000.00; // Example total amount
     // const fillPercentage = (currentAmount / totalAmount) * 100;   
 	const fillPercentage = parseInt(props.BudgetCardTypePiechart);
 		return (
-    		<View style={styles.budgetCard}>
+    		<View style={[styles.budgetCard,{backgroundColor:theme.stylescolorpressed1}]}>
       			<View style={styles.wraper}>
         				<View style={styles.text}>
-          					<Text style={[styles.date, styles.dateTypo]}>{props.Month}</Text>
+          					<Text style={[styles.date, styles.dateTypo,{color:theme.primarycolor}]}>{props.Month}</Text>
 							{props.BudgetCardDaystogo?
           					<Text style={[styles.daysToGo, styles.daysToGoLayout]}>{props.Daystogo}</Text>
 							  :null}
@@ -30,7 +34,7 @@ const BudgetCard = (props) => {
 					
 							/>
 							:null}
-          					<Text style={[styles.label, styles.labelLayout,{ fontSize:props.chipsInfoSize === "small" ?  11:16}]}>3.97 SAR / Day</Text>
+          					<Text style={[styles.label, styles.labelLayout,{ fontSize:props.chipsInfoSize === "small" ?  11:16,color:theme.primarycolorstatic}]}>3.97 SAR / Day</Text>
         				</View>
 						:null}
 						{props.chipsInfoState === "Warning"?
@@ -42,7 +46,7 @@ const BudgetCard = (props) => {
 								bottom={props.chipsInfoSize === "small" ? 0:2}
 							/>
 							:null}
-          					<Text style={[styles.label, styles.labelLayout,{ fontSize:props.chipsInfoSize === "small" ?  11:16}]}>3.97 SAR / Day</Text>
+          					<Text style={[styles.label, styles.labelLayout,{ fontSize:props.chipsInfoSize === "small" ?  11:16,color:theme.primarycolorstatic}]}>3.97 SAR / Day</Text>
         				</View>
 						:null}
 						{props.chipsInfoState === "Info"?
@@ -54,7 +58,7 @@ const BudgetCard = (props) => {
 								bottom={props.chipsInfoSize === "small" ? 0:2}
 							/>
 							:null}
-          					<Text style={[styles.label, styles.labelLayout,{fontSize:props.chipsInfoSize === "small" ?  11:16}]}>3.97 SAR / Day</Text>
+          					<Text style={[styles.label, styles.labelLayout,{fontSize:props.chipsInfoSize === "small" ?  11:16,color:theme.primarycolorstatic}]}>3.97 SAR / Day</Text>
         				</View>
 						:null}
 						{props.chipsInfoState === "Neutral"?
@@ -66,7 +70,7 @@ const BudgetCard = (props) => {
 							bottom={props.chipsInfoSize === "small" ? 0:2}
 							/>
 							:null}
-          					<Text style={[styles.label, styles.labelLayout,{ontSize:props.chipsInfoSize === "small" ?  11:16}]}>3.97 SAR / Day</Text>
+          					<Text style={[styles.label, styles.labelLayout,{ontSize:props.chipsInfoSize === "small" ?  11:16,color:theme.primarycolorstatic}]}>3.97 SAR / Day</Text>
         				</View>
 						:null}
 						{props.chipsInfoState === "Success"?
@@ -78,14 +82,14 @@ const BudgetCard = (props) => {
 							bottom={props.chipsInfoSize === "small" ? 0:2}
 							/>
 							:null}
-          					<Text style={[styles.label, styles.labelLayout,{ontSize:props.chipsInfoSize === "small" ?  11:16}]}>3.97 SAR / Day</Text>
+          					<Text style={[styles.label, styles.labelLayout,{ontSize:props.chipsInfoSize === "small" ?  11:16,color:theme.primarycolorstatic}]}>3.97 SAR / Day</Text>
         				</View>
 						:null}
 						{props.BudgetCardstatusType ==="On Track"?
         				<View style={styles.budgetStatus}>
           					<View style={styles.text1}>
                                 <Check/>
-            						<Text style={[styles.enterYourUsername, styles.dateTypo]}>{props.onTrack}</Text>
+            						<Text style={[styles.enterYourUsername, styles.dateTypo,{color:theme.secondarycolor10}]}>{props.onTrack}</Text>
           					</View>
         				</View>
 						:null}
@@ -114,8 +118,8 @@ const BudgetCard = (props) => {
                     size={150}
                     width={15}
                     fill={fillPercentage}
-                    tintColor="#00847f"
-                    backgroundColor="#99CECC"
+                    tintColor={fillPercentage === 100 ? "#FF0000" : theme.secondarycolor360}
+                    backgroundColor={theme.strokecolor360tint}
                     rotation={0}
 					lineCap={"round"}
                 >
@@ -124,12 +128,12 @@ const BudgetCard = (props) => {
                             <View style={styles.totalSpendingParent}>
                                 <Text style={[styles.totalSpending, styles.text3Typo]}>Left to Spend</Text>
                                 <View style={styles.parent}>
-                                    <Text style={[styles.text2, styles.sarTypo]}>28,160.00</Text>
-                                    <Text style={[styles.sar, styles.sarTypo]}>SAR</Text>
+                                    <Text style={[styles.text2, styles.sarTypo,{color:theme.primarycolor}]}>28,160.00</Text>
+                                    <Text style={[styles.sar, styles.sarTypo,{color:theme.primarycolor2_100}]}>SAR</Text>
                                 </View>
                                 <View style={styles.group}>
-                                    <Text style={[styles.text3, styles.text3Typo]}>of 60,000.00</Text>
-                                    <Text style={[styles.sar, styles.sarTypo]}>SAR</Text>
+                                    <Text style={[styles.text3, styles.text3Typo,{color:theme.primarycolor2_100}]}>of 60,000.00</Text>
+                                    <Text style={[styles.sar, styles.sarTypo,{color:theme.primarycolor2_100}]}>SAR</Text>
                                 </View>
                             </View>
                         </View>
@@ -166,7 +170,7 @@ const styles = StyleSheet.create({
   	},
   	date: {
     		height: 19,
-    		color: "#000",
+    		// color: "#000",
     		textAlign: "left",
     		fontFamily: "Univers Next for HSBC",
     		lineHeight: 20,
@@ -186,7 +190,7 @@ const styles = StyleSheet.create({
   	label: {
     		textAlign: "left",
     		fontFamily: "Univers Next for HSBC",
-    		color: "#000"
+    		// color: "#000"
   	},
   	chipsinfo: {
     		borderRadius: 4,
@@ -261,14 +265,14 @@ chipsinfoSuccess: {
   	enterYourUsername: {
     		fontSize: 13,
     		lineHeight: 17,
-    		color: "#00847f",
+    		// color: "#00847f",
     		textAlign: "left",
     		fontFamily: "Univers Next for HSBC"
   	},
 	  Overspent: {
 		fontSize: 13,
 		lineHeight: 17,
-		color: "red",
+		 color: "red",
 		textAlign: "left",
 		fontFamily: "Univers Next for HSBC"
   },
@@ -367,7 +371,7 @@ chipsinfoSuccess: {
   	},
   	budgetCard: {
     		borderRadius: 8,
-    		backgroundColor: "#f2f3f4",
+    		// backgroundColor: "#f2f3f4",
     		width: "100%",
     		overflow: "hidden",
     		justifyContent: "space-between",

@@ -96,7 +96,10 @@ export const lightTheme = {
   strokecolor3tint:"#E5B2B5", //strokeredtint
   strokecolor15tint:"#FFCF70", //strokeambertint
   strokecolor6tint:"#99CECC", //strokegreentint
-  strokeneutraltint:"#ACBDCE"
+  strokeneutraltint:"#ACBDCE",
+  //
+  secondarycolor360:"#00847F70",
+  strokecolor360tint:"#99CECC",
 
   };
   

@@ -100,6 +100,10 @@ export const darkTheme = {
    strokecolor3tint:"#E5B2B5",
    strokecolor15tint:"#FFCF70",
    strokecolor6tint:"#99CECC",
-   strokeneutraltint:"#ACBDCE"
+   strokeneutraltint:"#ACBDCE",
+
+   secondarycolor360:"#00B8B5",
+   strokecolor360tint:"#00847F60",
+
   };
   
