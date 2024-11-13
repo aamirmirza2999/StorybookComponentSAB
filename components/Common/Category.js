@@ -599,7 +599,7 @@ const StackedListItemBody = ({
 					globalStyles.Ctstatus,
 					globalStyles.CtlabelTypo,
 					{ color: getStatusColor() },
-					{marginTop: actuatedNormalize(5)}
+					{marginTop: actuatedNormalize(0)}
 				  ]}>
 				  {stackedListItemBodystatusStatus}
 				</Text>
