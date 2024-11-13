@@ -47,9 +47,9 @@ const TextDivider = (props) => {
                {props.textDividerLink?
                 <LinkButton
                 label={props.Link}
-                enableLeftIcon={props.linkbuttonIconleft}
-                enableRightIcon={props.linkbuttonIconright}
-                type={props.linkbuttonsize}
+                linkbuttoneIconLeft={props.linkbuttonIconleft}
+                linkbuttonIconRight={props.linkbuttonIconright}
+                linkbuttonType={props.linkbuttonsize}
                 />
                 :null}
                 </View>
