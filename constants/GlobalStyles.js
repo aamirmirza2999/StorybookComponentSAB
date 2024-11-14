@@ -2042,7 +2042,7 @@ welcomeBackFlexBox: {
     alignSelf: 'stretch',
   },
   Ctstatus: {
-    height: spacingS,
+    // height: spacingS,
     alignSelf: 'stretch',
   },
   status1: {
@@ -2120,7 +2120,9 @@ welcomeBackFlexBox: {
           fontFamily: Fonts.HSBC,
           // color: "#767676",
           textAlign: "right",
-          marginTop: actuatedNormalize(5)
+          marginTop: I18nManager.isRTL
+          ? actuatedNormalize(-3)
+          : actuatedNormalize(5),
           },
         typebalance: {
           // flex: 1,
