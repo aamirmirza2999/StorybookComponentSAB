@@ -23,7 +23,7 @@ const BudgetCard = (props) => {
 
         				</View>
 						{props.chipsInfoState === "Error"?
-        				<View style={[styles.chipsinfoError,{ paddingVertical: props.chipsInfoSize === "small" ? 2 : 8 }]}>
+        				<View style={[styles.chipsinfoError,{ paddingVertical: props.chipsInfoSize === "small" ? 2 : 8 ,backgroundColor:theme.ragcolor3tint}]}>
 							{props.chipsInfoShowIcon === true?
 							<Cancel
 							
@@ -38,7 +38,7 @@ const BudgetCard = (props) => {
         				</View>
 						:null}
 						{props.chipsInfoState === "Warning"?
-        				<View style={[styles.chipsinfoWarning,{ paddingVertical: props.chipsInfoSize === "small" ? 2 : 8 }]}>
+        				<View style={[styles.chipsinfoWarning,{ paddingVertical: props.chipsInfoSize === "small" ? 2 : 8 ,backgroundColor:theme.ragcolor15tint}]}>
 							{props.chipsInfoShowIcon === true?
 							<Warning
 							width={props.chipsInfoSize === "small" ? 20:24}
@@ -50,7 +50,7 @@ const BudgetCard = (props) => {
         				</View>
 						:null}
 						{props.chipsInfoState === "Info"?
-        				<View style={[styles.chipsinfo,{ paddingVertical: props.chipsInfoSize === "small" ? 2 : 8 }]}>
+        				<View style={[styles.chipsinfo,{ paddingVertical: props.chipsInfoSize === "small" ? 2 : 8 ,backgroundColor:theme.ragcolor6tint}]}>
 							{props.chipsInfoShowIcon === true?
 							<InfoIcon
 							    width={props.chipsInfoSize === "small" ? 20:24}
@@ -62,7 +62,7 @@ const BudgetCard = (props) => {
         				</View>
 						:null}
 						{props.chipsInfoState === "Neutral"?
-        				<View style={[styles.chipsinfoNeutral,{paddingVertical: props.chipsInfoSize === "small" ? 2 : 8}]}>
+        				<View style={[styles.chipsinfoNeutral,{paddingVertical: props.chipsInfoSize === "small" ? 2 : 8,backgroundColor:theme.primarytextcolor2_2}]}>
 							{props.chipsInfoShowIcon === true?
 							<GreyInfo
 							width={props.chipsInfoSize === "small" ? 20:24}
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   	},
   	chipsinfo: {
     		borderRadius: 4,
-    		backgroundColor: "#ebeff4",
+    		// backgroundColor: "#ebeff4",
     		borderStyle: "solid",
     		borderColor: "#99cecc",
     		borderWidth: 0.5,
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   	},
 	  chipsinfoError: {
 		borderRadius: 4,
-		backgroundColor: "#E5B2B5",
+		// backgroundColor: "#E5B2B5",
 		borderStyle: "solid",
 		borderColor: "#E5B2B5",
 		borderWidth: 0.5,
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
   },
   chipsinfoWarning: {
 	borderRadius: 4,
-	backgroundColor: "#FFCF70",
+	// backgroundColor: "#FFCF70",
 	borderStyle: "solid",
 	borderColor: "#FFCF70",
 	borderWidth: 0.5,
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
 },
 chipsinfoNeutral: {
 	borderRadius: 4,
-	backgroundColor: "#B2B2B2",
+	// backgroundColor: "#B2B2B2",
 	borderStyle: "solid",
 	borderColor: "#D7D8D6",
 	borderWidth: 0.5,
