@@ -1,7 +1,7 @@
-import React, { Children } from "react";
+import React, { } from "react";
 import { Text, View } from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
-import { Edit, Copy, BulletPoint, TextInfoIcon, Badge, TextInfoIconDark, InfoIconRed, CopyDark, EditDark } from '../../constants/SvgLocations';
+import { Edit, Copy, BulletPoint, Badge, TextInfoIconDark, InfoIconRed, CopyDark, EditDark } from '../../constants/SvgLocations';
 import { actuatedNormalize } from "../../constants/PixelScaling";
 import { useTheme } from "../../constants/Theme/ThemeProvider";
 import { spacingM } from "../../constants/Size";
@@ -116,7 +116,7 @@ const TextComponent = (props) => {
               selectable={false}
               suppressHighlighting={true}
             >
-              {props.textText || props.children }
+              {props.textText || props.children}
             </Text>
           </>
         )}

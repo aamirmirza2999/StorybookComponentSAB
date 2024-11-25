@@ -1,28 +1,21 @@
-import {
-    Button,
-    I18nManager,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-  } from 'react-native';
-  import React, { useEffect, useState } from 'react';
-  import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
-  import { useNavigation } from '@react-navigation/native';
-  import { useTheme } from '../constants/Theme/ThemeProvider';
-  import { useTranslation } from 'react-i18next';
-  import MainHeader from '../components/Common/MainHeader';
-  import { spacingM, spacingS, spacingXS } from '../constants/Size';
 
-  const Dashboard = (props) =>{
+import React, { } from 'react';
+import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
+import { useNavigation } from '@react-navigation/native';
+import { useTheme } from '../constants/Theme/ThemeProvider';
+import { useTranslation } from 'react-i18next';
+import MainHeader from '../components/Common/MainHeader';
+import { spacingM, spacingS } from '../constants/Size';
 
-    const navigation = useNavigation();
-    const { t } = useTranslation();
-    const { theme, toggleTheme } = useTheme();
+const Dashboard = (props) => {
 
-    return (
-        <>
-         <PrimaryBgComponent
+  const navigation = useNavigation();
+  const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <>
+      <PrimaryBgComponent
         ButtonContainer={{
           paddingLeft: spacingS,
           paddingRight: spacingS,
@@ -32,23 +25,21 @@ import {
 
         BgHeader={
           <MainHeader
-          type="level0"
-          state='postlogin'
-          avatarSize={'Small'}
-          Notificationshowbadge={true}
-          NotificationCount={"2"}
-          avatarElements="Icons"
-          avatarType="Filled"
-          AccountType={t('initialLang:Premier')}
-            //changeTheme={toggleTheme}
-            //LanguageSwitchReq = {true}
-            //changeLanguage={() => changeLanguage(language == 'en' ? 'ar' : 'en')}
-           
-            />
+            type="level0"
+            state='postlogin'
+            avatarSize={'Small'}
+            Notificationshowbadge={true}
+            NotificationCount={"2"}
+            avatarElements="Icons"
+            avatarType="Filled"
+            AccountType={t('initialLang:Premier')}
+
+
+          />
         }>
       </PrimaryBgComponent>
-        </>
-    )
+    </>
+  )
 
-  }
-  export default Dashboard;
+}
+export default Dashboard;

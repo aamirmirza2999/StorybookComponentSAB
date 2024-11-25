@@ -1,296 +1,282 @@
 import { I18nManager, Dimensions, Platform } from "react-native";
-// import Colors from "./Colors";
 import Fonts from "./Fonts";
 import { actuatedNormalize } from "./PixelScaling";
-import { spacingXXS,spacingXS,spacingS,spacingM,spacingL,spacingXL ,spacingXXL,fontXSmall,fontSmall,fontSmallMedium,fontMedium,fontMediumLarge,fontLarge,fontXLarge,fontXXLarge,fontXLG,fontXXLG,lineHeightXSmall,lineHeightSmall,lineHeightSmallMedium,
-  radiusXS,radiusS,radiusM,radiusL,radiusXL,avatarHeight,avatarRightandLeft, lineHeightXXSmall, fontXXSmall,lineHeightMedium,lineHeightMediumLarge,lineHeightLarge,lineHeightXLarge,lineHeightXXLarge,lineHeightXLG,lineHeightXXLG, fontWeightBold, sizeXL,
+import {
+  spacingXXS, spacingXS, spacingS, spacingM, spacingL, spacingXL, fontXSmall, fontSmall, fontSmallMedium, fontMedium, fontMediumLarge, fontLarge, fontXLarge, fontXXLG, lineHeightXSmall, lineHeightSmall, lineHeightSmallMedium,
+  radiusXS, radiusS, radiusL, avatarHeight, avatarRightandLeft, lineHeightXXSmall, fontXXSmall, lineHeightMedium, lineHeightMediumLarge, lineHeightLarge, fontWeightBold, sizeXL,
 } from "./Size";
 
 
 const deviceHeight = Dimensions.get('window').height;
 
- export const globalStyles ={
-    svgStyle :{
-        width: '80',
-        height: '40',
-    },
-    inputLabelStyle:{
-        fontSize: '14px',
-        paddingBottom:spacingXS,
-        // flexDirection: 'row',
-        // justifyContent: 'center',
-        fontFamily:Fonts.HSBC,
-        fontSize: actuatedNormalize(14),
-        // color: Colors.primaryTextColor,
-    },
-    billDetailInputView: {
-        width: '100%',
-        ///height: "100%",
-        justifyContent: 'center',
-        height: actuatedNormalize(44),
-        fontSize: actuatedNormalize(14),
-        fontFamily: Fonts.HSBC,
-      },
-      screenInitialStyle:{
-      
-        
-      },
-      TextComponentLabelstyle:{
-        fontSize:actuatedNormalize(16),
-        fontFamily: Fonts.HSBC,
-          // color: Colors.primaryTextColor,
-          paddingBottom:spacingXS
-      },
-      TextComponentDisclaimerstyle:{
-        paddingBottom:spacingM,
-        fontSize:actuatedNormalize(14),
-        fontFamily: Fonts.HSBC,
-          // color: Colors.primaryTextColor,
-      },
-      TextInputComponenttextstyle:{
-        fontWeight:fontWeightBold,
-        fontSize:actuatedNormalize(16)
-      },
-      NoneditableInputstyle:{
-        backgroundColor:"rgba(234, 234, 234, 0.6)",
-        width: '100%'
-
-      },
-      inititalStyle:{
-        marginHorizontal:spacingS,
-        marginVertical:spacingM
-      },
-      tncTextStyle:{
-        fontFamily: Fonts.HSBC,
-        fontSize:actuatedNormalize(14),
-      },
-      DividerStyle:{
-        backgroundColor: "rgba(118, 118, 118, 0.2)",
-        height: 1,
-        overflow: "hidden",
-        alignSelf: "stretch"
-      },
-      primaryFlexBoxLarge: {
-        // margin:8,
-          paddingVertical:spacingXS,
-          borderRadius:radiusS,
-          justifyContent: "center",
-          flexDirection: "row",
-          paddingHorizontal:spacingS,
-          alignItems: "center",
-          minWidth: 128,
-          height: 48,
-          //flex: 1
-      },
-      
-    badgeNotification:{
-      borderRadius: actuatedNormalize(100),
-      backgroundColor: "#ffbb33",
-      //flex: 1,
-      width: actuatedNormalize(16),
-      height: actuatedNormalize(16),
-      marginLeft:spacingXS,
-      flexDirection:"row",
-      alignItems:"center",
-      justifyContent:"center",
-      paddingBottom:Platform.OS ==="ios" ?actuatedNormalize(0):actuatedNormalize(3),
-    },
-    badgeNotification1:{
-      top: -75,
-      left: 21,
-      borderRadius: 100,
-      backgroundColor: "#ffbb33",
-      width: actuatedNormalize(16),
-      height: actuatedNormalize(16),
-      zIndex: 2,
-      flexDirection:"row",
-      alignItems:"center",
-      justifyContent:"center",
-      paddingBottom:Platform.OS ==="ios" ?actuatedNormalize(0):actuatedNormalize(3),
-    },
-    badgeTxt:{
-      fontSize: fontXXSmall,
-      lineHeight: lineHeightXXSmall,
-      fontFamily: Fonts.HSBC,
-      color: "#000",
-      textAlign: "center",
-      alignSelf:"center"
-    },
-    primaryFlexBoxSmall: {
-      borderRadius:radiusS,
-      paddingHorizontal:spacingS,
-      paddingVertical:actuatedNormalize(7),
-      justifyContent: "center",
-      flexDirection: "row",
-      alignItems: "center",
-      minWidth: 60
+export const globalStyles = {
+  svgStyle: {
+    width: '80',
+    height: '40',
   },
-    primaryTextLarge: {
-      textAlign: "center",
-      fontWeight: fontWeightBold,
-      lineHeight:lineHeightLarge,
-      fontSize:fontMediumLarge,
-      fontFamily:Fonts.HSBC,
+  inputLabelStyle: {
+    fontSize: '14px',
+    paddingBottom: spacingXS,
+    fontFamily: Fonts.HSBC,
+    fontSize: actuatedNormalize(14),
+  },
+  billDetailInputView: {
+    width: '100%',
+    justifyContent: 'center',
+    height: actuatedNormalize(44),
+    fontSize: actuatedNormalize(14),
+    fontFamily: Fonts.HSBC,
+  },
+  screenInitialStyle: {
+
+
+  },
+  TextComponentLabelstyle: {
+    fontSize: actuatedNormalize(16),
+    fontFamily: Fonts.HSBC,
+    paddingBottom: spacingXS
+  },
+  TextComponentDisclaimerstyle: {
+    paddingBottom: spacingM,
+    fontSize: actuatedNormalize(14),
+    fontFamily: Fonts.HSBC,
+  },
+  TextInputComponenttextstyle: {
+    fontWeight: fontWeightBold,
+    fontSize: actuatedNormalize(16)
+  },
+  NoneditableInputstyle: {
+    backgroundColor: "rgba(234, 234, 234, 0.6)",
+    width: '100%'
+
+  },
+  inititalStyle: {
+    marginHorizontal: spacingS,
+    marginVertical: spacingM
+  },
+  tncTextStyle: {
+    fontFamily: Fonts.HSBC,
+    fontSize: actuatedNormalize(14),
+  },
+  DividerStyle: {
+    backgroundColor: "rgba(118, 118, 118, 0.2)",
+    height: 1,
+    overflow: "hidden",
+    alignSelf: "stretch"
+  },
+  primaryFlexBoxLarge: {
+    paddingVertical: spacingXS,
+    borderRadius: radiusS,
+    justifyContent: "center",
+    flexDirection: "row",
+    paddingHorizontal: spacingS,
+    alignItems: "center",
+    minWidth: 128,
+    height: 48,
+  },
+
+  badgeNotification: {
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: "#ffbb33",
+    width: actuatedNormalize(16),
+    height: actuatedNormalize(16),
+    marginLeft: spacingXS,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: Platform.OS === "ios" ? actuatedNormalize(0) : actuatedNormalize(3),
+  },
+  badgeNotification1: {
+    top: -75,
+    left: 21,
+    borderRadius: 100,
+    backgroundColor: "#ffbb33",
+    width: actuatedNormalize(16),
+    height: actuatedNormalize(16),
+    zIndex: 2,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: Platform.OS === "ios" ? actuatedNormalize(0) : actuatedNormalize(3),
+  },
+  badgeTxt: {
+    fontSize: fontXXSmall,
+    lineHeight: lineHeightXXSmall,
+    fontFamily: Fonts.HSBC,
+    color: "#000",
+    textAlign: "center",
+    alignSelf: "center"
+  },
+  primaryFlexBoxSmall: {
+    borderRadius: radiusS,
+    paddingHorizontal: spacingS,
+    paddingVertical: actuatedNormalize(7),
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    minWidth: 60
+  },
+  primaryTextLarge: {
+    textAlign: "center",
+    fontWeight: fontWeightBold,
+    lineHeight: lineHeightLarge,
+    fontSize: fontMediumLarge,
+    fontFamily: Fonts.HSBC,
   },
   primaryTextSmall: {
-    fontSize:fontSmallMedium,
-    lineHeight:lineHeightSmallMedium,
-    fontFamily:Fonts.HSBC,
+    fontSize: fontSmallMedium,
+    lineHeight: lineHeightSmallMedium,
+    fontFamily: Fonts.HSBC,
     textAlign: "center",
-},
-secondaryFlexBoxLarge: {
-  flexDirection:"row",
-  justifyContent:"center",
-  alignItems:"center",
-  borderRadius:radiusS,
-  borderStyle:"solid",
-  borderWidth: 1,
-  paddingHorizontal:spacingS,
-  paddingVertical:spacingXS,
-  minWidth: 128,
-  height: 48,
-},
-secondaryFlexBoxSmall: {
-  flexDirection:"row",
-  justifyContent:"center",
-  alignItems:"center",
-  borderRadius:radiusS,
-  borderStyle:"solid",
-  borderWidth: 1,
-  paddingHorizontal:spacingS,
- paddingVertical:spacingXXS
-},
-preloginRedButton:{
-  paddingHorizontal:spacingL,
-  paddingVertical:actuatedNormalize(9),
-  justifyContent: "center",
-  alignItems: "center"
-},
-quickActionButtonBox:{
-  borderRadius:radiusS,
-  alignSelf:"center",
-  alignItems: "center",
-  justifyContent: "center",
-  paddingHorizontal:spacingXXS,
-  paddingVertical:spacingXS,
-  overflow: "hidden",
-  height: 116,
-  gap: 8,
-},
-quickActionButtonTxt:{
-    alignSelf: "stretch",
-    width:actuatedNormalize(110),
-    fontSize:fontMedium,
-    //paddingBottom:spacingXS,
-    lineHeight:lineHeightMedium,
-    fontFamily:Fonts.HSBC,
-    textAlign: "center",
-    //marginTop:spacingXS
-},
-quickActionButtonBox1:{
-  borderRadius:radiusS,
-  overflow: "hidden",
-  flexDirection: "row",
-  paddingHorizontal:spacingS,
-  paddingVertical:spacingXS,
-  alignItems: "center",
-  alignSelf:"center",
-},
-quickActionButtonTxt1:{
-  fontSize:fontMedium,
-  lineHeight: lineHeightMedium,
-  textAlign: "left",
-  marginLeft:spacingXS,
-  fontFamily:Fonts.HSBC,
-},
-quickActionButtonBox2:{
-  margin:8,
-  width: 48,
-  height: 48,
-  borderRadius: radiusS,
-  flexDirection: "row",
-  alignItems: "flex-start",
-  justifyContent: "center",
-  paddingHorizontal:spacingXS,
-  paddingVertical:spacingXXS,
-  alignItems:"center",
-},
-quickActionButtonTxt2:{
- // alignSelf: "stretch",
-fontSize:fontSmall,
-lineHeight:lineHeightSmall,
-fontFamily:Fonts.HSBC,
-textAlign: "center"
-},
-quickActionButtonBox3:{
-  margin:8,
-  width: 48,
-  height: 48,
-  borderRadius: radiusS,
-  flexDirection: "row",
-  borderColor: "#db0011",
-  borderWidth: 1,
-  alignItems: "flex-start",
-  justifyContent: "center",
-  paddingHorizontal:spacingXS,
-  paddingVertical:spacingXXS,
-  alignItems:"center",
-},
-
-quickActionButtonTxt3:{
-  // alignSelf: "stretch",
- fontSize:fontSmall,
- lineHeight:lineHeightSmall,
- fontFamily:Fonts.HSBC,
- textAlign: "center",
- fontWeight:fontWeightBold,
- },
-linkTextsmall:{
-  fontSize:fontMedium,
-lineHeight:lineHeightSmall,
-fontFamily:Fonts.HSBC,
-textAlign: "left"
-},
-linkTextlarge:{
-  fontSize:fontLarge,
-lineHeight:lineHeightLarge,
-fontFamily:Fonts.HSBC,
-textAlign: "left"
-},
-   //Paginator
-   activeDot: {
-    width:actuatedNormalize(16),
-    height: actuatedNormalize(3),
-    borderRadius: actuatedNormalize(100),
-    paddingHorizontal:spacingXS
   },
-    
-  subactiveDot: {
-    width:actuatedNormalize(40),
+  secondaryFlexBoxLarge: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: radiusS,
+    borderStyle: "solid",
+    borderWidth: 1,
+    paddingHorizontal: spacingS,
+    paddingVertical: spacingXS,
+    minWidth: 128,
+    height: 48,
+  },
+  secondaryFlexBoxSmall: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: radiusS,
+    borderStyle: "solid",
+    borderWidth: 1,
+    paddingHorizontal: spacingS,
+    paddingVertical: spacingXXS
+  },
+  preloginRedButton: {
+    paddingHorizontal: spacingL,
+    paddingVertical: actuatedNormalize(9),
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  quickActionButtonBox: {
+    borderRadius: radiusS,
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: spacingXXS,
+    paddingVertical: spacingXS,
+    overflow: "hidden",
+    height: 116,
+    gap: 8,
+  },
+  quickActionButtonTxt: {
+    alignSelf: "stretch",
+    width: actuatedNormalize(110),
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+    textAlign: "center",
+  },
+  quickActionButtonBox1: {
+    borderRadius: radiusS,
+    overflow: "hidden",
+    flexDirection: "row",
+    paddingHorizontal: spacingS,
+    paddingVertical: spacingXS,
+    alignItems: "center",
+    alignSelf: "center",
+  },
+  quickActionButtonTxt1: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    textAlign: "left",
+    marginLeft: spacingXS,
+    fontFamily: Fonts.HSBC,
+  },
+  quickActionButtonBox2: {
+    margin: 8,
+    width: 48,
+    height: 48,
+    borderRadius: radiusS,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "center",
+    paddingHorizontal: spacingXS,
+    paddingVertical: spacingXXS,
+    alignItems: "center",
+  },
+  quickActionButtonTxt2: {
+
+    fontSize: fontSmall,
+    lineHeight: lineHeightSmall,
+    fontFamily: Fonts.HSBC,
+    textAlign: "center"
+  },
+  quickActionButtonBox3: {
+    margin: 8,
+    width: 48,
+    height: 48,
+    borderRadius: radiusS,
+    flexDirection: "row",
+    borderColor: "#db0011",
+    borderWidth: 1,
+    alignItems: "flex-start",
+    justifyContent: "center",
+    paddingHorizontal: spacingXS,
+    paddingVertical: spacingXXS,
+    alignItems: "center",
+  },
+
+  quickActionButtonTxt3: {
+
+    fontSize: fontSmall,
+    lineHeight: lineHeightSmall,
+    fontFamily: Fonts.HSBC,
+    textAlign: "center",
+    fontWeight: fontWeightBold,
+  },
+  linkTextsmall: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightSmall,
+    fontFamily: Fonts.HSBC,
+    textAlign: "left"
+  },
+  linkTextlarge: {
+    fontSize: fontLarge,
+    lineHeight: lineHeightLarge,
+    fontFamily: Fonts.HSBC,
+    textAlign: "left"
+  },
+
+  activeDot: {
+    width: actuatedNormalize(16),
     height: actuatedNormalize(3),
     borderRadius: actuatedNormalize(100),
-    // backgroundColor: '#db0011',
-  }, 
+    paddingHorizontal: spacingXS
+  },
+
+  subactiveDot: {
+    width: actuatedNormalize(40),
+    height: actuatedNormalize(3),
+    borderRadius: actuatedNormalize(100),
+
+  },
 
   inactiveDot: {
-    width:actuatedNormalize(16),
-    height:actuatedNormalize (3),
+    width: actuatedNormalize(16),
+    height: actuatedNormalize(3),
     borderRadius: actuatedNormalize(100),
   },
   subinactiveDot: {
-    width:actuatedNormalize(16),
+    width: actuatedNormalize(16),
     height: actuatedNormalize(3),
     borderRadius: actuatedNormalize(100),
-    // backgroundColor: '#000000',
+
   },
-  // paginationContainer: {
-//   paddingVertical: 10,
-// }, 
-//Toggle
-togglelabel:{
-  fontFamily:Fonts.HSBC,
-} ,
- 
+
+  togglelabel: {
+    fontFamily: Fonts.HSBC,
+  },
+
   badgestatus: {
     flex: 1,
     width: "100%"
@@ -300,92 +286,90 @@ togglelabel:{
     justifyContent: "center",
     flex: 1,
   },
-    notificationbadgetext: {
-      lineHeight: 17,
-      fontFamily: Fonts.HSBC,
-      textAlign: "center",
-      fontSize: 12,
+  notificationbadgetext: {
+    lineHeight: 17,
+    fontFamily: Fonts.HSBC,
+    textAlign: "center",
+    fontSize: 12,
   },
   //Radio button
   iconOverflowContainerRadio1: {
-    marginTop:spacingXS,
+    marginTop: spacingXS,
     borderRadius: 5,
-    // shadowColor: "#40d3d1",
-    width:"80%",
-    borderWidth:1,
-    marginHorizontal: spacingS,
-    //  paddingBottom:ComponentBottomPadding,
 
-    
+    width: "80%",
+    borderWidth: 1,
+    marginHorizontal: spacingS,
+
+
+
   },
   iconOverflowContainerRadio2: {
-    // marginTop:20,
-    borderRadius: 5,
-    // shadowColor: "#40d3d1",
-    width:"80%",
-    borderWidth:1,
-   paddingBottom:spacingXS,
-   marginHorizontal: spacingS,
 
-    
+    borderRadius: 5,
+
+    width: "80%",
+    borderWidth: 1,
+    paddingBottom: spacingXS,
+    marginHorizontal: spacingS,
+
+
   },
   iconOverflowContainerRadio3: {
-    // backgroundColor: '#FFFFFF',
-    marginTop:spacingXS,
-     borderRadius: 5,
-    // shadowColor: "#40d3d1",
-    width:"45%",
-    borderWidth:1,
-    // marginHorizontal: inputVertical,
-    
-    
-    
+
+    marginTop: spacingXS,
+    borderRadius: 5,
+
+    width: "45%",
+    borderWidth: 1,
+
+
+
+
   },
-  Radiobtnv2:{
-    flexDirection:"row",
-    justifyContent:"space-evenly",
-    alignItems:"center"
+  Radiobtnv2: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center"
   },
-  Radiobtnerrmsg:{
+  Radiobtnerrmsg: {
     marginHorizontal: spacingS,
-    paddingBottom:spacingXS,
-    //  color: 'red'
-  },      
-  listButtonSmall:{
+    paddingBottom: spacingXS,
+
+  },
+  listButtonSmall: {
     borderRadius: radiusS,
-    //width: "100%",
+
     overflow: "hidden",
-    paddingHorizontal:spacingS,
+    paddingHorizontal: spacingS,
     paddingVertical: spacingXS,
     alignItems: "center",
-    alignSelf:"center",
+    alignSelf: "center",
     flexDirection: "row",
-    //flex: 1
+
   },
-  listButtonLarge:{
+  listButtonLarge: {
     borderRadius: radiusS,
-   // width: "100%",
     overflow: "hidden",
-    paddingHorizontal:spacingS,
+    paddingHorizontal: spacingS,
     paddingVertical: spacingXS,
- 
-   // flexDirection: "row",
-    //flex: 1
+
+
   },
-  listButtonSecondTxt:{
+  listButtonSecondTxt: {
     fontSize: 14,
     lineHeight: 18,
     fontFamily: Fonts.HSBC,
     color: "#767676",
-   // textAlign: "left",
+
   },
-  listBadgeTxt:{
+  listBadgeTxt: {
     lineHeight: 18,
     fontSize: 14,
     textAlign: "left",
     fontFamily: Fonts.HSBC,
   },
-  listBadge:{
+  listBadge: {
     marginLeft: spacingXS,
     borderRadius: 4,
     backgroundColor: "#e5f2f2",
@@ -393,589 +377,583 @@ togglelabel:{
     borderColor: "#99cecc",
     borderWidth: 0.5,
     paddingHorizontal: 8,
-    alignSelf:"stretch",
+    alignSelf: "stretch",
     paddingVertical: 2,
     marginTop: 8,
     justifyContent: "center",
-    //display: "none",
+
     alignItems: "center",
     flexDirection: "row"
   },
-  listButtonTxtSmall:{
+  listButtonTxtSmall: {
     width: actuatedNormalize(279),
     justifyContent: "center",
-    //alignItems: "flex-end",
+
     marginLeft: spacingXS,
     alignSelf: "center",
     fontSize: fontMediumLarge,
     lineHeight: lineHeightLarge,
     textAlign: "left",
-    fontFamily:Fonts.HSBC,
+    fontFamily: Fonts.HSBC,
   },
-  listButtonTxtLarge:{
+  listButtonTxtLarge: {
     width: actuatedNormalize(279),
     justifyContent: "center",
-    //alignItems: "flex-end",
+
     marginLeft: spacingXS,
-      alignSelf: "center",
-      fontSize: fontMedium,
-      lineHeight: lineHeightMedium,
-      textAlign: "left",
-      marginTop:8,
-      fontFamily:Fonts.HSBC,
+    alignSelf: "center",
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    textAlign: "left",
+    marginTop: 8,
+    fontFamily: Fonts.HSBC,
   },
-  listButtonTxtLargeHeadline:{
-    width: actuatedNormalize(279),
-    alignSelf: "stretch",
-    justifyContent: "center",
-    //alignItems: "flex-end",
-    marginLeft: spacingXS,
-      alignSelf: "center",
-      fontSize: fontMediumLarge,
-      lineHeight: lineHeightMediumLarge,
-      textAlign: "left",
-      fontFamily:Fonts.HSBC,
-      fontWeight:fontWeightBold,
-  },
-  listButtonTxtLargeHeadlineSmall:{
+  listButtonTxtLargeHeadline: {
     width: actuatedNormalize(279),
     alignSelf: "stretch",
     justifyContent: "center",
-    //alignItems: "flex-end",
+
     marginLeft: spacingXS,
-      alignSelf: "center",
-      fontSize: fontMediumLarge,
-      lineHeight: lineHeightMediumLarge,
-      textAlign: "left",
-      fontFamily:Fonts.HSBC,
+    alignSelf: "center",
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    fontWeight: fontWeightBold,
   },
-  listButtonDashboard:{
+  listButtonTxtLargeHeadlineSmall: {
+    width: actuatedNormalize(279),
+    alignSelf: "stretch",
+    justifyContent: "center",
+
+    marginLeft: spacingXS,
+    alignSelf: "center",
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  listButtonDashboard: {
     borderRadius: radiusS,
     width: "100%",
     overflow: "hidden",
-    paddingHorizontal:spacingS,
+    paddingHorizontal: spacingS,
     paddingVertical: spacingS,
     alignItems: "center",
-    justifyContent:"center",
-    alignSelf:"center",
+    justifyContent: "center",
+    alignSelf: "center",
     flexDirection: "row",
   },
-  listButtonDashboard1:{
+  listButtonDashboard1: {
     borderRadius: radiusS,
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "stretch",
     flexDirection: "row",
-    padding:spacingS,
-    //alignSelf:"flex-start",
+    padding: spacingS,
+
   },
-  listButtonTxt:{
+  listButtonTxt: {
     width: actuatedNormalize(279),
     justifyContent: "center",
-    //alignItems: "flex-end",
+
     marginLeft: spacingXS,
-      alignSelf: "center",
-      fontSize: fontMediumLarge,
-      lineHeight:lineHeightMediumLarge,
-      textAlign: "left",
-      fontFamily:Fonts.HSBC,
+    alignSelf: "center",
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
   },
-  listButtonTxt1:{
-  
+  listButtonTxt1: {
+
     justifyContent: "center",
-    //alignItems: "flex-end",
-  
-      alignSelf: "center",
-      fontSize: fontMediumLarge,
-      lineHeight: lineHeightLarge,
-      textAlign: "left",
-      fontFamily:Fonts.HSBC,
-    },
-    floatingButton:{
-      borderRadius: radiusS,
-      width:actuatedNormalize(56),
-      height:actuatedNormalize(56),
-      overflow: "hidden",
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center"
-    },
-    //Avathar
-    path3Icon: {
-      position: "absolute",
-      top: -6,
-      left: -41,
-      width: 172,
-      height: 134,
-      display: "none",
-      opacity: 0.03,
-      zIndex: 0
+
+
+    alignSelf: "center",
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightLarge,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  floatingButton: {
+    borderRadius: radiusS,
+    width: actuatedNormalize(56),
+    height: actuatedNormalize(56),
+    overflow: "hidden",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  //Avathar
+  path3Icon: {
+    position: "absolute",
+    top: -6,
+    left: -41,
+    width: 172,
+    height: 134,
+    display: "none",
+    opacity: 0.03,
+    zIndex: 0
   },
   avatar: {
-    // width: actuatedNormalize(30),
-    // height: actuatedNormalize(30),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(3):actuatedNormalize(3),
+
+    top: Platform.OS === "ios" ? actuatedNormalize(3) : actuatedNormalize(3),
     marginRight: actuatedNormalize(6)
 
-},
+  },
   jm: {
     fontSize: fontXLarge,
     lineHeight: spacingM,
     fontWeight: fontWeightBold,
     fontFamily: Fonts.HSBC,
-    // textAlign: "left",
-    zIndex: 1,
-    alignSelf:"center",
-},
 
-jm2:{
-  fontSize: fontMedium,
-  lineHeight: lineHeightMedium,
-  fontFamily: Fonts.HSBC,
-  // textAlign: "left",
-  zIndex: 1,
-  bottom:1,
-  alignSelf:"center",
-},
-jm3:{
-  fontSize: fontSmall,
-lineHeight: spacingS,
-fontFamily: Fonts.HSBC,
-alignSelf:"center",
-bottom:1
-//  textAlign: "left",
-// marginLeft:actuatedNormalize(5),
-// top:actuatedNormalize(2)
-},
-typefilledElementsinitials: {
-  borderRadius: actuatedNormalize(100),
-    // padding: spacingXS,
-    width:actuatedNormalize(30),
-    height:actuatedNormalize(30),
+    zIndex: 1,
+    alignSelf: "center",
+  },
+
+  jm2: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+
+    zIndex: 1,
+    bottom: 1,
+    alignSelf: "center",
+  },
+  jm3: {
+    fontSize: fontSmall,
+    lineHeight: spacingS,
+    fontFamily: Fonts.HSBC,
+    alignSelf: "center",
+    bottom: 1
+
+  },
+  typefilledElementsinitials: {
+    borderRadius: actuatedNormalize(100),
+
+    width: actuatedNormalize(30),
+    height: actuatedNormalize(30),
     alignItems: "center",
     justifyContent: "center",
-        marginRight:actuatedNormalize(6),
-    top:  Platform.OS ==="ios" ?actuatedNormalize(4): actuatedNormalize(4),
+    marginRight: actuatedNormalize(6),
+    top: Platform.OS === "ios" ? actuatedNormalize(4) : actuatedNormalize(4),
 
- 
-},
+
+  },
 
   Addbeneavatar: {
-  borderRadius: radiusS,
-  overflow: "hidden",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
-  marginLeft:avatarRightandLeft,
-  marginRight:avatarRightandLeft,
-  height:avatarHeight,
-  top:10
-  },
-  splitavatar:{
     borderRadius: radiusS,
-  // borderColor: "#000000",
-  borderWidth:1,
-  overflow: "hidden",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
-  marginLeft:avatarRightandLeft,
-  marginRight:avatarRightandLeft,
-  height:avatarHeight
+    overflow: "hidden",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: avatarRightandLeft,
+    marginRight: avatarRightandLeft,
+    height: avatarHeight,
+    top: 10
   },
-    boldTextFamily:{
-      fontFamily: Fonts.HSBC,
-    },
-    regularTextFamily:{
-      fontFamily:Fonts.HSBC,
-    },
-    lightTextFamily:{
-      fontFamily: Fonts.HSBC,
-    },
-    imageButton:{
-      borderRadius: radiusS,
-        borderStyle: "solid",
-        borderWidth: 1,
-        alignSelf:"center",
-        padding:spacingXS,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-      },
-       segmenttabStyle:{
-            borderWidth:0,
-          },
-          segmentactiveTabStyle:{
-            shadowOffset: {
-            width: 0,
-            height: 2
-            },
-            shadowRadius: 6,
-            elevation: 6,
-            shadowOpacity: 1,
-            borderRadius: radiusS,
-            paddingVertical: spacingXS,
-            paddingHorizontal: spacingS,
-            alignItems: "center",
-            justifyContent: "center",
-          },
-          segmenttabTextStyle:{
-            fontSize:fontMedium,
-            lineHeight: lineHeightMedium,
-            fontFamily:Fonts.HSBC,
-            textAlign: "center"
-          },
-          tooltipContainerStyle: {
-            borderRadius: actuatedNormalize(2),
-            padding: spacingXS,
-            backgroundColor: "#fbfcfe",
-            shadowColor: "rgba(0, 0, 0, 0.15)",
-            shadowOffset: {
-                width: actuatedNormalize(0),
-                height: actuatedNormalize(2)
-            },
-            shadowRadius: radiusS,
-            elevation: spacingXS,
-            shadowOpacity: actuatedNormalize(1),
-            // marginHorizontal:16
-        },   
-        tooltipArrowSize:{
-          width: spacingS, 
-          height: spacingXS
-        },     
-        tooltipText: {
-          fontSize: actuatedNormalize(14),
-          lineHeight: actuatedNormalize(22),
-          fontFamily: Fonts.HSBC,
-          color: "#000",
-          textAlign: "left"
-      },
-      snackbarContainer:{
-     // backgroundColor: "#e5f2f2",
-      borderStyle: "solid",
-     // borderColor: "#99cecc",
-      borderWidth: 1,
-      margin:actuatedNormalize(10),
-      paddingVertical: spacingS,
-      flexDirection: "row", 
-      paddingHorizontal: spacingS,
-      borderRadius: radiusS
-      },
-      snackbarBox:{
-        paddingTop: actuatedNormalize(3),
-        paddingBottom: spacingXXS,
-        marginLeft: spacingS,
-        flex: 1
-      },
-      snackBarLabel:{
-        alignSelf: "stretch",
-        textAlign: "left",
-        fontFamily:Fonts.HSBC,
-        lineHeight: lineHeightMedium,
-        fontSize:fontMedium
-      },
-      AccordianMenuContainer:{
-        borderRadius: radiusS,
-        paddingHorizontal: spacingS,
-        paddingVertical: spacingXS,
-        marginHorizontal:actuatedNormalize(10),
-        marginVertical:actuatedNormalize(10)
-      },
-      AccordianMenuTitleBox:{
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row"
-      },
-      AccordianTitleText:{
-        fontSize: fontMedium,
-        lineHeight:lineHeightMedium,
-        fontFamily:Fonts.HSBC,
-        textAlign: "left",
-        display: "flex",
-        marginLeft: spacingXS,
-        flex: 1,
-        alignItems: "center",
-        //alignItems: "center",
-        alignSelf: "center"
-      },
-      AccordianSubMenuConatiner:{
-        paddingLeft: spacingL,
-        paddingTop: spacingS,
-        paddingRight: spacingXS,
-        paddingBottom: spacingS
-      },
-      AccordianSubTitleText:{
-        flex: 1,
-        fontSize:fontSmall,
-        lineHeight: fontLarge,
-        fontFamily:Fonts.HSBC,
-        textAlign: "left"
+  splitavatar: {
+    borderRadius: radiusS,
 
-      },
-    
-     //EmptyStateNote
-     
+    borderWidth: 1,
+    overflow: "hidden",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: avatarRightandLeft,
+    marginRight: avatarRightandLeft,
+    height: avatarHeight
+  },
+  boldTextFamily: {
+    fontFamily: Fonts.HSBC,
+  },
+  regularTextFamily: {
+    fontFamily: Fonts.HSBC,
+  },
+  lightTextFamily: {
+    fontFamily: Fonts.HSBC,
+  },
+  imageButton: {
+    borderRadius: radiusS,
+    borderStyle: "solid",
+    borderWidth: 1,
+    alignSelf: "center",
+    padding: spacingXS,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  segmenttabStyle: {
+    borderWidth: 0,
+  },
+  segmentactiveTabStyle: {
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowRadius: 6,
+    elevation: 6,
+    shadowOpacity: 1,
+    borderRadius: radiusS,
+    paddingVertical: spacingXS,
+    paddingHorizontal: spacingS,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  segmenttabTextStyle: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+    textAlign: "center"
+  },
+  tooltipContainerStyle: {
+    borderRadius: actuatedNormalize(2),
+    padding: spacingXS,
+    backgroundColor: "#fbfcfe",
+    shadowColor: "rgba(0, 0, 0, 0.15)",
+    shadowOffset: {
+      width: actuatedNormalize(0),
+      height: actuatedNormalize(2)
+    },
+    shadowRadius: radiusS,
+    elevation: spacingXS,
+    shadowOpacity: actuatedNormalize(1),
+
+  },
+  tooltipArrowSize: {
+    width: spacingS,
+    height: spacingXS
+  },
+  tooltipText: {
+    fontSize: actuatedNormalize(14),
+    lineHeight: actuatedNormalize(22),
+    fontFamily: Fonts.HSBC,
+    color: "#000",
+    textAlign: "left"
+  },
+  snackbarContainer: {
+
+    borderStyle: "solid",
+
+    borderWidth: 1,
+    margin: actuatedNormalize(10),
+    paddingVertical: spacingS,
+    flexDirection: "row",
+    paddingHorizontal: spacingS,
+    borderRadius: radiusS
+  },
+  snackbarBox: {
+    paddingTop: actuatedNormalize(3),
+    paddingBottom: spacingXXS,
+    marginLeft: spacingS,
+    flex: 1
+  },
+  snackBarLabel: {
+    alignSelf: "stretch",
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    lineHeight: lineHeightMedium,
+    fontSize: fontMedium
+  },
+  AccordianMenuContainer: {
+    borderRadius: radiusS,
+    paddingHorizontal: spacingS,
+    paddingVertical: spacingXS,
+    marginHorizontal: actuatedNormalize(10),
+    marginVertical: actuatedNormalize(10)
+  },
+  AccordianMenuTitleBox: {
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  AccordianTitleText: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+    textAlign: "left",
+    display: "flex",
+    marginLeft: spacingXS,
+    flex: 1,
+    alignItems: "center",
+
+    alignSelf: "center"
+  },
+  AccordianSubMenuConatiner: {
+    paddingLeft: spacingL,
+    paddingTop: spacingS,
+    paddingRight: spacingXS,
+    paddingBottom: spacingS
+  },
+  AccordianSubTitleText: {
+    flex: 1,
+    fontSize: fontSmall,
+    lineHeight: fontLarge,
+    fontFamily: Fonts.HSBC,
+    textAlign: "left"
+
+  },
+
+  //EmptyStateNote
+
   wrapperFlexBox: {
-      justifyContent: "center",
-      alignItems: "center"
+    justifyContent: "center",
+    alignItems: "center"
   },
   actionTypo: {
-      textAlign: "center",
-      fontFamily: Fonts.HSBC
+    textAlign: "center",
+    fontFamily: Fonts.HSBC
   },
   ragIcon: {
-      width: actuatedNormalize(68),
-      height: actuatedNormalize(68),
-   justifyContent:"center",
-   alignItems:"center",
-   marginHorizontal:120
+    width: actuatedNormalize(68),
+    height: actuatedNormalize(68),
+    justifyContent: "center",
+    alignItems: "center",
+    marginHorizontal: 120
   },
   welcomeBack: {
-      fontWeight:fontWeightBold,
-      lineHeight: actuatedNormalize(21),
-      fontSize: spacingS,
-      fontFamily: Fonts.HSBC,
-      flex: 1,
-      marginRight:actuatedNormalize(10)
+    fontWeight: fontWeightBold,
+    lineHeight: actuatedNormalize(21),
+    fontSize: spacingS,
+    fontFamily: Fonts.HSBC,
+    flex: 1,
+    marginRight: actuatedNormalize(10)
   },
   title: {
-      flexDirection: "row",
+    flexDirection: "row",
   },
   enterYourUsername: {
-      fontSize: fontMedium,
-      lineHeight: lineHeightMedium,
-      marginTop: spacingXS,
-      alignSelf: "stretch",
-      fontFamily: Fonts.HSBC,
-      textAlign: "center"
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    marginTop: spacingXS,
+    alignSelf: "stretch",
+    fontFamily: Fonts.HSBC,
+    textAlign: "center"
   },
   content: {
-      marginTop: spacingS,
-      alignSelf: "stretch",
+    marginTop: spacingS,
+    alignSelf: "stretch",
   },
   action: {
-      lineHeight: actuatedNormalize(21),
-      fontSize: actuatedNormalize(16),
-      fontFamily: Fonts.HSBC,
+    lineHeight: actuatedNormalize(21),
+    fontSize: actuatedNormalize(16),
+    fontFamily: Fonts.HSBC,
   },
   wrapper1: {
-      // height: 24,
-      // flexDirection: "row"
+
   },
   wrapper: {
-      flexDirection: "row"
+    flexDirection: "row"
   },
   primary: {
-      paddingTop: actuatedNormalize(11),
-      paddingBottom: actuatedNormalize(13),
-      flexDirection: "row",
-      borderRadius: spacingXS,
-      flex: 1,
-      justifyContent: "center"
+    paddingTop: actuatedNormalize(11),
+    paddingBottom: actuatedNormalize(13),
+    flexDirection: "row",
+    borderRadius: spacingXS,
+    flex: 1,
+    justifyContent: "center"
   },
   mainbutton: {
-      maxWidth: actuatedNormalize(300),
-      flexDirection: "row",
-      marginTop: spacingS,
+    maxWidth: actuatedNormalize(300),
+    flexDirection: "row",
+    marginTop: spacingS,
   },
   emptystate: {
-      paddingVertical: spacingM,
-      alignItems: "center",
-      paddingHorizontal: spacingS,
-      width: "100%",
-      borderRadius: spacingXS,
-      paddingHorizontal: spacingS,
-      borderRadius: spacingXS,
-      flex: 1
+    paddingVertical: spacingM,
+    alignItems: "center",
+    paddingHorizontal: spacingS,
+    width: "100%",
+    borderRadius: spacingXS,
+    paddingHorizontal: spacingS,
+    borderRadius: spacingXS,
+    flex: 1
   },
   //emptystate end
-      tabBarLabel: {
-        lineHeight: I18nManager.isRTL? lineHeightMedium : lineHeightMedium, 
-        fontSize: fontMedium,
-        
-      },
-      container: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginHorizontal: spacingS,
-      },
-      tabBarContainer: {
-        flex: 1,
-      },
-      tabBarComponent:{
-        height: deviceHeight,
-      },
-      renderTabBarView: {
-        // marginLeft: spacingXS,
-        // marginRight: spacingXS,
-        // gap:60,
-      },
-      tabBarIndicatorStyle: {
-        height:0
-      },
-      tabBarStyle: {
-        //  backgroundColor: '#fbfcfe',
-elevation: 0,
-        shadowOpacity: 0,
+  tabBarLabel: {
+    lineHeight: I18nManager.isRTL ? lineHeightMedium : lineHeightMedium,
+    fontSize: fontMedium,
 
-      },
-      tabBarIndicatorContainerStyle: {
-         alignSelf: 'center',
-         elevation: 0,
-         shadowOpacity: 0,
-         shadowColor:"transperent",
-         
-        // bottom: -1
-        
-      },
-      TabBarView:{
-        borderRadius: radiusS,
-        height: actuatedNormalize(36),
-        alignItems: "center",
-        justifyContent:"space-evenly",
-     paddingHorizontal: spacingS,
-        width: "auto",
-        paddingVertical:spacingXS,
-        minWidth:sizeXL,
-        // gap:8
-      },
-      subTabs:{
-        flexDirection: "row-reverse",
-        justifyContent: "flex-end", 
-        marginTop: fontXXSmall, 
-         marginHorizontal: spacingXS,
-      },
-      activetab:{
-        justifyContent: "center",
-        alignItems: "center",
-        width: "auto",
-        borderRadius: spacingXS,
-        marginVertical: fontXXSmall,
+  },
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: spacingS,
+  },
+  tabBarContainer: {
+    flex: 1,
+  },
+  tabBarComponent: {
+    height: deviceHeight,
+  },
+  renderTabBarView: {
 
-      },
-      inactivetab:{
-        justifyContent: "center",
-        alignItems: "center",
-        width: "auto",
-        borderRadius:spacingXS,
-        marginHorizontal: spacingXS,
-        marginVertical: fontXXSmall,
-        height: fontXXLG,
-      },
-      activetext:{
-        textAlign: "center",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: fontMedium,
-        fontFamily: Fonts.HSBC,
-        paddingHorizontal: spacingS,
-        paddingVertical: spacingXS,
-      },
-      inactivetext:{
-        textAlign: "center",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: fontMedium,
-        fontFamily: Fonts.HSBC,
-        paddingHorizontal:spacingS,
-        paddingVertical: spacingXS,
-      },
-      //......................
-      pwdbarStyle:{
-        width: "31%",
-        height: actuatedNormalize(4),
-        marginTop:actuatedNormalize(5),
-        marginHorizontal:actuatedNormalize(3),
-        borderRadius:actuatedNormalize(5)
-      },
-      pwdpostbarStyle: {
-        width: "21.3%",
-        height: actuatedNormalize(5),
-        marginTop: actuatedNormalize(10),
-        right: actuatedNormalize(17),
-        //backgroundColor: "#DFDFDE",
-        marginHorizontal: actuatedNormalize(3)
-      },
-      pwdtextContainer: {
-        alignItems: 'center',
-        width: '100%',
-        marginTop:actuatedNormalize(10),
-        paddingRight: actuatedNormalize(25),
-      },
-      pwdmeterContainer: {
-        alignItems: 'center',
-        height: actuatedNormalize(5),
-        flexDirection: 'row',
-        width: '100%',
-        marginTop: spacingXS,
-      },
-      pwdlabel2: {
-        fontSize:fontSmall,
-       // color: "#626469",
-         lineHeight:lineHeightMedium,
-      },
-      pwdlabel: {
-        fontSize:fontSmall,
-        //color: '#000000',
-        lineHeight:lineHeightMedium,
-        letterSpacing: 0
-      },
-      pwdpostlabel2: {
-        fontSize: fontMedium,
-        marginLeft: actuatedNormalize(10),
-        //color: "#5C6F7C"
-      },
-      chipsButtonLarge:{
-        borderRadius: radiusXS,
-        borderStyle: "solid",
-        borderWidth: 0.5,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: spacingXS
-      },
-      chipsTextLarge:{
-        fontSize: fontMedium,
-        lineHeight: lineHeightMedium,
-        fontFamily: Fonts.HSBC,
-        textAlign: "left",
-        marginLeft: spacingXXS
-      },
-      chipsButtonSmall:{
-        borderRadius: radiusXS,
-        borderStyle: "solid",
-        borderWidth: 0.5,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        paddingHorizontal: spacingXS,
-        paddingVertical: actuatedNormalize(2)
-      },
-      chipsTextSmall:{
-        fontSize: fontSmall,
-        lineHeight: lineHeightSmall,
-        fontFamily: Fonts.HSBC,
-        textAlign: "left",
-        marginLeft: spacingXXS
-      },
-//............
-wrapper: {
-  borderRadius: 100,
-  borderStyle: "solid",
-  borderColor:" #00847f",
-  borderWidth: 1,
-  width: 20,
-  height: 20,
-  marginHorizontal:16,
-  bottom:-20
+  },
+  tabBarIndicatorStyle: {
+    height: 0
+  },
+  tabBarStyle: {
+
+    elevation: 0,
+    shadowOpacity: 0,
+
+  },
+  tabBarIndicatorContainerStyle: {
+    alignSelf: 'center',
+    elevation: 0,
+    shadowOpacity: 0,
+    shadowColor: "transperent",
+
+
+
+  },
+  TabBarView: {
+    borderRadius: radiusS,
+    height: actuatedNormalize(36),
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    paddingHorizontal: spacingS,
+    width: "auto",
+    paddingVertical: spacingXS,
+    minWidth: sizeXL,
+
+  },
+  subTabs: {
+    flexDirection: "row-reverse",
+    justifyContent: "flex-end",
+    marginTop: fontXXSmall,
+    marginHorizontal: spacingXS,
+  },
+  activetab: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: "auto",
+    borderRadius: spacingXS,
+    marginVertical: fontXXSmall,
+
+  },
+  inactivetab: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: "auto",
+    borderRadius: spacingXS,
+    marginHorizontal: spacingXS,
+    marginVertical: fontXXSmall,
+    height: fontXXLG,
+  },
+  activetext: {
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: fontMedium,
+    fontFamily: Fonts.HSBC,
+    paddingHorizontal: spacingS,
+    paddingVertical: spacingXS,
+  },
+  inactivetext: {
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: fontMedium,
+    fontFamily: Fonts.HSBC,
+    paddingHorizontal: spacingS,
+    paddingVertical: spacingXS,
+  },
+  //......................
+  pwdbarStyle: {
+    width: "31%",
+    height: actuatedNormalize(4),
+    marginTop: actuatedNormalize(5),
+    marginHorizontal: actuatedNormalize(3),
+    borderRadius: actuatedNormalize(5)
+  },
+  pwdpostbarStyle: {
+    width: "21.3%",
+    height: actuatedNormalize(5),
+    marginTop: actuatedNormalize(10),
+    right: actuatedNormalize(17),
+
+    marginHorizontal: actuatedNormalize(3)
+  },
+  pwdtextContainer: {
+    alignItems: 'center',
+    width: '100%',
+    marginTop: actuatedNormalize(10),
+    paddingRight: actuatedNormalize(25),
+  },
+  pwdmeterContainer: {
+    alignItems: 'center',
+    height: actuatedNormalize(5),
+    flexDirection: 'row',
+    width: '100%',
+    marginTop: spacingXS,
+  },
+  pwdlabel2: {
+    fontSize: fontSmall,
+
+    lineHeight: lineHeightMedium,
+  },
+  pwdlabel: {
+    fontSize: fontSmall,
+
+    lineHeight: lineHeightMedium,
+    letterSpacing: 0
+  },
+  pwdpostlabel2: {
+    fontSize: fontMedium,
+    marginLeft: actuatedNormalize(10),
+
+  },
+  chipsButtonLarge: {
+    borderRadius: radiusXS,
+    borderStyle: "solid",
+    borderWidth: 0.5,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: spacingXS
+  },
+  chipsTextLarge: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    fontFamily: Fonts.HSBC,
+    textAlign: "left",
+    marginLeft: spacingXXS
+  },
+  chipsButtonSmall: {
+    borderRadius: radiusXS,
+    borderStyle: "solid",
+    borderWidth: 0.5,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: spacingXS,
+    paddingVertical: actuatedNormalize(2)
+  },
+  chipsTextSmall: {
+    fontSize: fontSmall,
+    lineHeight: lineHeightSmall,
+    fontFamily: Fonts.HSBC,
+    textAlign: "left",
+    marginLeft: spacingXXS
+  },
+  //............
+  wrapper: {
+    borderRadius: 100,
+    borderStyle: "solid",
+    borderColor: " #00847f",
+    borderWidth: 1,
+    width: 20,
+    height: 20,
+    marginHorizontal: 16,
+    bottom: -20
   },
   wrapper1: {
     backgroundColor: "#00847f",
     width: 14,
     height: 14,
     borderRadius: 100
-    },
-    wrappers: {
+  },
+  wrappers: {
     borderStyle: "solid",
     borderColor: "#00847f",
     borderWidth: 1,
@@ -985,33 +963,33 @@ wrapper: {
     justifyContent: "center",
     borderRadius: 100,
     flexDirection: "row"
-    },
-    statechecked: {
-   bottom:-25,
-   left:16
-    },
-    wrapper2: {
-      borderRadius: 100,
-      backgroundColor:" rgba(118, 118, 118, 0.3)",
-      borderStyle: "solid",
-      borderColor: "#767676",
-      borderWidth: 1,
-      width: 20,
-      height: 20
-      },
-      
-// bottom button
-  bottombtn:{
-    paddingHorizontal: spacingS, 
-    paddingBottom: actuatedNormalize(27) ,
-     marginTop:actuatedNormalize(15)
-  }  ,
-  bottombtntext:{
+  },
+  statechecked: {
+    bottom: -25,
+    left: 16
+  },
+  wrapper2: {
+    borderRadius: 100,
+    backgroundColor: " rgba(118, 118, 118, 0.3)",
+    borderStyle: "solid",
+    borderColor: "#767676",
+    borderWidth: 1,
+    width: 20,
+    height: 20
+  },
+
+  // bottom button
+  bottombtn: {
+    paddingHorizontal: spacingS,
+    paddingBottom: actuatedNormalize(27),
+    marginTop: actuatedNormalize(15)
+  },
+  bottombtntext: {
     lineHeight: actuatedNormalize(16),
     fontSize: actuatedNormalize(12),
     fontFamily: Fonts.HSBC,
-  } ,
-  textview:{
+  },
+  textview: {
     flex: 1,
     flexDirection: "row",
     marginTop: actuatedNormalize(10),
@@ -1019,11 +997,11 @@ wrapper: {
     marginRight: spacingS,
 
   },
-  text:{
+  text: {
     width: "100%",
     height: actuatedNormalize(40),
   },
-  divider:{
+  divider: {
     marginLeft: actuatedNormalize(16),
     marginRight: actuatedNormalize(16),
     height: 2,
@@ -1031,7 +1009,7 @@ wrapper: {
     justifyContent: "center",
     alignItems: "center",
   },
-  sartext:{
+  sartext: {
     ...Platform.select({
       ios: {
         top: I18nManager.isRTL
@@ -1044,25 +1022,25 @@ wrapper: {
           : actuatedNormalize(2),
       },
     }),
-     marginLeft: actuatedNormalize(3.5),
+    marginLeft: actuatedNormalize(3.5),
     fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(12),
     lineHeight: 16,
     textAlign: "left",
-    flexDirection:"flex-end",
-    marginTop:actuatedNormalize(-19)
+    flexDirection: "flex-end",
+    marginTop: actuatedNormalize(-19)
 
   },
-  totalamt:{
-    fontFamily:Fonts.HSBC,
+  totalamt: {
+    fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(16),
-    lineHeight:actuatedNormalize(24),
+    lineHeight: actuatedNormalize(24),
     fontWeight: fontWeightBold,
     textAlign: "left",
-    marginTop:actuatedNormalize(-20)
+    marginTop: actuatedNormalize(-20)
 
   },
-  amount:{
+  amount: {
     marginLeft: spacingS,
     flex: 1,
     flexDirection: "row",
@@ -1070,81 +1048,81 @@ wrapper: {
     alignItems: "center",
 
   },
-  totalamount:{
+  totalamount: {
     fontFamily: Fonts.HSBC,
     fontSize: actuatedNormalize(14),
-   lineHeight: 18,
-   textAlign: "left",
-   flexDirection:"flex-start",
-   marginTop:actuatedNormalize(-17)
+    lineHeight: 18,
+    textAlign: "left",
+    flexDirection: "flex-start",
+    marginTop: actuatedNormalize(-17)
 
   },
-  overview:{
+  overview: {
     flex: 1,
     height: actuatedNormalize(25),
     justifyContent: "center",
     alignItems: "flex-start",
   },
-  firstview:{
+  firstview: {
     flex: 1,
     flexDirection: "row",
     marginLeft: spacingS,
     marginRight: spacingS,
   },
-  overalldesign:{
+  overalldesign: {
     marginTop: actuatedNormalize(20),
     height: actuatedNormalize(30),
     justifyContent: "center",
     alignItems: "center",
   },
-  animatedview:{
+  animatedview: {
     height: "auto",
     backgroundColor: "#263a52",
-    borderTopLeftRadius:actuatedNormalize(8),
+    borderTopLeftRadius: actuatedNormalize(8),
     borderTopRightRadius: actuatedNormalize(8),
- 
-  },   
+
+  },
 
   //Card Component style:
 
   sarTypo: {
     textAlign: "left",
     fontFamily: Fonts.HSBC
-},
-wrapperFlexBox1: {
+  },
+  wrapperFlexBox1: {
     alignSelf: "stretch",
     marginTop: spacingXS
-},
-wrapper1FlexBox: {
+  },
+  wrapper1FlexBox: {
     justifyContent: "flex-end",
     alignSelf: "stretch"
-},
-wrapperFlexBox: {
+  },
+  wrapperFlexBox: {
     alignItems: "flex-end",
     flexDirection: "row"
-},
+  },
 
-parentFlexBox: {
+  parentFlexBox: {
     justifyContent: "space-between",
     flexDirection: "row",
     alignSelf: "stretch"
-},
-textTypo1: {
+  },
+  textTypo1: {
     fontFamily: Fonts.HSBC,
     lineHeight: lineHeightMediumLarge,
     fontSize: fontMedium,
     textAlign: "left",
     color: "#fff"
-},
-textTypo: {
+  },
+  textTypo: {
     textAlign: "right",
     lineHeight: lineHeightLarge,
     fontFamily: Fonts.HSBC,
     color: "#fff",
     fontSize: fontMediumLarge
-},
+  },
 
-welcomeBack: {
+  welcomeBack: {
     lineHeight: lineHeightMediumLarge,
     width: actuatedNormalize(221),
     height: actuatedNormalize(42),
@@ -1153,17 +1131,17 @@ welcomeBack: {
     fontFamily: Fonts.HSBC,
     fontWeight: "700",
     fontSize: fontMediumLarge
-},
+  },
 
-label: {
+  label: {
     fontSize: fontSmall,
     lineHeight: fontMediumLarge,
     color: "#000",
     textAlign: "left",
     fontFamily: Fonts.HSBC
-},
+  },
 
-chipsinfo: {
+  chipsinfo: {
     borderRadius: radiusXS,
     backgroundColor: "#f9f2f3",
     borderStyle: "solid",
@@ -1176,71 +1154,71 @@ chipsinfo: {
     paddingVertical: actuatedNormalize(2),
     alignItems: "center",
     flexDirection: "row"
-},
+  },
 
-wrapper: {
+  wrapper: {
     marginTop: spacingXS,
     flexDirection: "row"
-},
+  },
 
-sar: {
+  sar: {
     fontSize: fontXXSmall,
     lineHeight: lineHeightXXSmall,
     color: "#fff",
     textAlign: "left",
     fontFamily: Fonts.HSBC,
-},
+  },
 
-wrapper2: {
+  wrapper2: {
     paddingHorizontal: 0,
     paddingVertical: actuatedNormalize(1),
     marginLeft: spacingXXS
-},
+  },
 
-wrapper1: {
+  wrapper1: {
     justifyContent: "flex-end",
     alignSelf: "stretch"
-},
+  },
 
 
-barParent: {
+  barParent: {
     height: actuatedNormalize(2),
     borderRadius: 100,
     // width: "100%"
-   // width: actuatedNormalize(310)
-},
-creditLimit95: {
+    // width: actuatedNormalize(310)
+  },
+  creditLimit95: {
     display: "flex",
     width: actuatedNormalize(118),
     height: actuatedNormalize(19),
     alignItems: "center"
-},
-text2: {
+  },
+  text2: {
     fontWeight: "700"
-},
-creditLimit95Parent: {
+  },
+  creditLimit95Parent: {
     height: actuatedNormalize(19),
     marginTop: spacingXS
-},
-groupParent: {
+  },
+  groupParent: {
     height: actuatedNormalize(31),
     marginTop: spacingXS
-},
-frameParent: {
+  },
+  frameParent: {
     marginTop: spacingXS,
     flex: 1,
     justifyContent: "flex-end"
-},
-typecardsLanguagearabic: {
+  },
+  typecardsLanguagearabic: {
     borderRadius: radiusL,
     height: actuatedNormalize(178),
     padding: spacingS,
     backgroundColor: "transparent",
     overflow: "hidden",
-    //flex: 1,
+
     alignSelf: "stretch"
-},
-mainAccount: {
+  },
+  mainAccount: {
     top: "0%",
     left: "0%",
     position: "absolute",
@@ -1248,234 +1226,229 @@ mainAccount: {
     fontSize: fontMedium,
     textAlign: "left",
     width: "100%"
-},
-mainAccountParent: {
+  },
+  mainAccountParent: {
     height: actuatedNormalize(44),
-   // width: 128,
+
     marginTop: spacingXS
-},
-text1Layout: {
+  },
+  text1Layout: {
     lineHeight: lineHeightMediumLarge,
     letterSpacing: 0,
     color: "#fff",
     fontFamily: Fonts.HSBC
-},
-sarParentPosition: {
+  },
+  sarParentPosition: {
     left: 0,
     position: "absolute",
     width: actuatedNormalize(128)
-},
-frameWrapper: {
+  },
+  frameWrapper: {
     top: spacingM,
     height: actuatedNormalize(20)
-},
-sarParent: {
+  },
+  sarParent: {
     top: 0,
     alignItems: "flex-end",
     justifyContent: "space-between",
     flexDirection: "row"
-},
-text1: {
+  },
+  text1: {
     fontSize: fontXLarge,
-    lineHeight:lineHeightMediumLarge,
+    lineHeight: lineHeightMediumLarge,
     fontWeight: "700",
     textAlign: "left"
-},
-accountNameAccount: {
+  },
+  accountNameAccount: {
     overflow: "hidden",
     flex: 1
-    },
-accountTypo: {
+  },
+  accountTypo: {
     lineHeight: lineHeightMedium,
     fontSize: fontMedium,
     textAlign: "left",
     color: "#fff",
     fontFamily: Fonts.HSBC
-    },
-BlockText : {
-  fontSize: fontLarge,
-  lineHeight: lineHeightLarge,
-  fontWeight: fontWeightBold,
-  fontFamily: Fonts.HSBC,
-  // color: "#000",
-  textAlign: "left",
-  paddingBottom:spacingM,
-},
-Entairebanner: {
-  flex: 1,
-  width: "100%"
-},
-buttonquickaction: {
-  borderRadius: radiusS,
-  // backgroundColor: stylesbgshades,
-  height: actuatedNormalize(132),
-  overflow: "hidden",
-  padding: spacingS,
-  justifyContent: "space-between",
-  // width: actuatedNormalize(343),
-},
-buttonquickaction2: {
-  borderRadius: radiusS,
-  // backgroundColor: stylesbgshades,
-  height: actuatedNormalize(130),
-  overflow: "hidden",
-  padding: spacingS,
-  justifyContent: "space-between",
-  width: actuatedNormalize(342),
-},
-iconoutlinecard: {
-  zIndex: 1,
-  // height: actuatedNormalize(24)
   },
-patternIcon: {
-  position: "absolute",
-  top: actuatedNormalize(-66),
-  left: actuatedNormalize(0),
-  // height: 240,
-  zIndex: 0,
-  // width: 343
+  BlockText: {
+    fontSize: fontLarge,
+    lineHeight: lineHeightLarge,
+    fontWeight: fontWeightBold,
+    fontFamily: Fonts.HSBC,
+
+    textAlign: "left",
+    paddingBottom: spacingM,
   },
-buttonquickactionInner: {
-  alignItems: "flex-end",
-  zIndex: 2,
-  flexDirection: "row",
-  alignSelf: "stretch",
-  justifyContent: "space-between"
-},
-frameWrapper : {
-  alignSelf: "stretch",
-  flex: 1
-},
-frameContainer: {
-  alignSelf: "stretch"
-},
-checkOutYour: {
-  fontSize: fontMediumLarge,
-  lineHeight: lineHeightMediumLarge,
-  fontFamily: Fonts.HSBC,
-  // color: "#000",
-  width: actuatedNormalize(310),
-  textAlign: "left",
-  height: actuatedNormalize(28)
-},
-linkButton1: {
-  fontSize: fontMedium,
-  lineHeight: lineHeightMedium,
+  Entairebanner: {
+    flex: 1,
+    width: "100%"
   },
-typesolid : {
-  borderRadius: radiusS,
-  // backgroundColor: stylesblockbg,
-  // flex: 1,
-  width: "40%",
-  height: actuatedNormalize(110),
-  padding: spacingS,
-  justifyContent: "space-between",
-  overflow: "hidden"
-}, 
-container2: {
-  position: 'relative',
-  width: '40%',
-  // flex :1,
-  borderRadius: 8,
-  height: actuatedNormalize(115), // Adjust the height as needed
-  // justifyContent: "center",
-  // alignItems: 'center',
-  overflow: 'hidden',
-  backgroundColor: "yellow",
-},
-backgroundContainer: {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  justifyContent: 'center',
-  alignItems: 'center',
-},
-overlayIcon: {
-  position: 'absolute',
-  top: actuatedNormalize(15),
-  left: actuatedNormalize(10)
-},
-rowContainer2: {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'flex-end',
-  // alignSelf: "stretch",
-  position: 'absolute',
-  bottom: 15, // Adjust based on your layout
-  left: 0,
-  right: 0,
-  // paddingHorizontal: 10,
-  // width : "90%",
-  // marginTop: actuatedNormalize(150), // Position row below the background content
-},
-Blocktext2: {
-  // height: actuatedNormalize(42),
-  flexDirection: "row",
-  justifyContent: "space-around",
-},
-textFlexBox2: {
-  alignItems: "flex-end",
-  alignSelf: "stretch"
-},
-nameWrapper: {
-  alignItems: "center",
-  justifyContent: "center",
-  flexDirection: "row",
-  alignSelf: "stretch"
-},
-blockname: {
-  fontSize: fontMediumLarge,
-  lineHeight: lineHeightMediumLarge,
-  fontWeight: fontWeightBold,
-  fontFamily: Fonts.HSBC,
-  // color: "#000",
-  textAlign: "left",
-  display: "flex",
-  width: actuatedNormalize(108),
-  overflow: "hidden"
-},
-blockname2: {
-  fontSize: fontMediumLarge,
-  lineHeight: lineHeightMediumLarge,
-  fontWeight: fontWeightBold,
-  fontFamily: Fonts.HSBC,
-  // color: "#000",
-  textAlign: "left",
-  // display: "flex",
-  // flex : 1,
-  marginLeft: actuatedNormalize(15),
-  width: actuatedNormalize(108),
-  overflow: "hidden"
-},
-textFlexBox3: {
-  alignItems: "flex-end",
-  alignSelf: "stretch"
-},
-blocknameSolid : {
-  fontSize: fontMediumLarge,
-  lineHeight: lineHeightMediumLarge,
-  fontFamily: Fonts.HSBC,
-  // color: "#000",
-  textAlign: "left",
-  display: "flex",
-  width: actuatedNormalize(108),
-  overflow: "hidden"
-},
+  buttonquickaction: {
+    borderRadius: radiusS,
+
+    height: actuatedNormalize(132),
+    overflow: "hidden",
+    padding: spacingS,
+    justifyContent: "space-between",
+
+  },
+  buttonquickaction2: {
+    borderRadius: radiusS,
+
+    height: actuatedNormalize(130),
+    overflow: "hidden",
+    padding: spacingS,
+    justifyContent: "space-between",
+    width: actuatedNormalize(342),
+  },
+  iconoutlinecard: {
+    zIndex: 1,
+
+  },
+  patternIcon: {
+    position: "absolute",
+    top: actuatedNormalize(-66),
+    left: actuatedNormalize(0),
+
+    zIndex: 0,
+
+  },
+  buttonquickactionInner: {
+    alignItems: "flex-end",
+    zIndex: 2,
+    flexDirection: "row",
+    alignSelf: "stretch",
+    justifyContent: "space-between"
+  },
+  frameWrapper: {
+    alignSelf: "stretch",
+    flex: 1
+  },
+  frameContainer: {
+    alignSelf: "stretch"
+  },
+  checkOutYour: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontFamily: Fonts.HSBC,
+
+    width: actuatedNormalize(310),
+    textAlign: "left",
+    height: actuatedNormalize(28)
+  },
+  linkButton1: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+  },
+  typesolid: {
+    borderRadius: radiusS,
+
+    width: "40%",
+    height: actuatedNormalize(110),
+    padding: spacingS,
+    justifyContent: "space-between",
+    overflow: "hidden"
+  },
+  container2: {
+    position: 'relative',
+    width: '40%',
+
+    borderRadius: 8,
+    height: actuatedNormalize(115), // Adjust the height as needed
+
+    overflow: 'hidden',
+    backgroundColor: "yellow",
+  },
+  backgroundContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  overlayIcon: {
+    position: 'absolute',
+    top: actuatedNormalize(15),
+    left: actuatedNormalize(10)
+  },
+  rowContainer2: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+
+    position: 'absolute',
+    bottom: 15, // Adjust based on your layout
+    left: 0,
+    right: 0,
+
+  },
+  Blocktext2: {
+
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  textFlexBox2: {
+    alignItems: "flex-end",
+    alignSelf: "stretch"
+  },
+  nameWrapper: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    alignSelf: "stretch"
+  },
+  blockname: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontWeight: fontWeightBold,
+    fontFamily: Fonts.HSBC,
+
+    textAlign: "left",
+    display: "flex",
+    width: actuatedNormalize(108),
+    overflow: "hidden"
+  },
+  blockname2: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontWeight: fontWeightBold,
+    fontFamily: Fonts.HSBC,
+
+    textAlign: "left",
+
+    marginLeft: actuatedNormalize(15),
+    width: actuatedNormalize(108),
+    overflow: "hidden"
+  },
+  textFlexBox3: {
+    alignItems: "flex-end",
+    alignSelf: "stretch"
+  },
+  blocknameSolid: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontFamily: Fonts.HSBC,
+
+    textAlign: "left",
+    display: "flex",
+    width: actuatedNormalize(108),
+    overflow: "hidden"
+  },
   wrapperFlexBoxRow: {
     gap: spacingXS,
     alignItems: "center",
-    flexDirection: "row",   
+    flexDirection: "row",
   },
   linkTypo: {
     textAlign: "left",
-    // color: "#000",
+
     fontFamily: Fonts.HSBC
   },
   linkTypo1: {
     textAlign: "left",
-    // color: "#000",
+
     fontFamily: Fonts.HSBC
   },
   centerFlexBox: {
@@ -1491,7 +1464,7 @@ blocknameSolid : {
     fontSize: fontMedium,
     textAlign: "left",
     fontFamily: Fonts.HSBC,
-     },
+  },
   link: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
@@ -1500,19 +1473,19 @@ blocknameSolid : {
   categorylink1: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
-    // flex: 1
+
   },
   categorylink2: {
     fontSize: fontLarge,
     lineHeight: lineHeightLarge,
     fontWeight: fontWeightBold
-    // flex: 1
+
   },
   categorylink3: {
     fontSize: fontLarge,
     lineHeight: lineHeightLarge,
     fontWeight: fontWeightBold
-    // flex: 1
+
   },
   linkSelect: {
     fontSize: fontMedium,
@@ -1525,8 +1498,8 @@ blocknameSolid : {
     textAlign: "center",
     width: actuatedNormalize(19),
     height: actuatedNormalize(19),
-    // color: "#000",
-    fontFamily:Fonts.HSBC
+
+    fontFamily: Fonts.HSBC
   },
   CtcircularViewtext: {
     fontSize: fontSmall,
@@ -1534,31 +1507,31 @@ blocknameSolid : {
     textAlign: "center",
     width: actuatedNormalize(19),
     height: actuatedNormalize(19),
-    // color: "#000",
-    fontFamily:Fonts.HSBC
+
+    fontFamily: Fonts.HSBC
   },
   cicularView: {
     borderRadius: actuatedNormalize(100),
-    // backgroundColor: "#ffbb33",
+
     width: actuatedNormalize(20),
     height: actuatedNormalize(20)
   },
   dividerStyle: {
-    // backgroundColor: "rgba(118, 118, 118, 0.2)",
+
     height: actuatedNormalize(2),
     alignSelf: "stretch",
     overflow: "hidden",
     marginTop: spacingS,
   },
   dividerStyle1: {
-    // backgroundColor: "rgba(118, 118, 118, 0.2)",
+
     height: actuatedNormalize(2),
     alignSelf: "stretch",
     overflow: "hidden",
     marginTop: spacingXS,
   },
   dividerStyle3: {
-    // backgroundColor: "rgba(118, 118, 118, 0.2)",
+
     height: actuatedNormalize(2),
     alignSelf: "stretch",
     overflow: "hidden",
@@ -1574,7 +1547,7 @@ blocknameSolid : {
     fontWeight: fontWeightBold,
     alignSelf: "stretch",
     textAlign: "left",
-    // color: "#000",
+
     fontFamily: Fonts.HSBC
   },
   categorylabeltypoHeadline: {
@@ -1583,34 +1556,34 @@ blocknameSolid : {
     fontWeight: fontWeightBold,
     alignSelf: "stretch",
     textAlign: "left",
-    // color: "#000",
+
     fontFamily: Fonts.HSBC
   },
-  labeltypoBody: {  
+  labeltypoBody: {
     alignSelf: "stretch",
     lineHeight: lineHeightMedium,
     fontSize: fontMedium,
     fontFamily: Fonts.HSBC
   },
-  categorylabeltypoBody: {  
+  categorylabeltypoBody: {
     alignSelf: "stretch",
-    // justifyContent:"center",
+
     textAlign: "left",
     lineHeight: lineHeightMedium,
     fontSize: fontMedium,
     fontFamily: Fonts.HSBC
   },
   stackedlistitembody: {
-  marginLeft: spacingXS,
-    // gap: spacingXS,
+    marginLeft: spacingXS,
+
     flex: 1,
-  
+
   },
   chipsinfoInactive: {
     borderRadius: radiusXS,
-    // backgroundColor: "#f9f2f3",
+
     borderStyle: "solid",
-    // borderColor: "#e5b2b5",
+
     borderWidth: 0.5,
     paddingHorizontal: spacingXS,
     paddingVertical: actuatedNormalize(2),
@@ -1618,36 +1591,35 @@ blocknameSolid : {
   },
   CtchipsinfoInactive: {
     borderRadius: radiusXS,
-    // backgroundColor: "#f9f2f3",
+
     borderStyle: "solid",
-    // borderColor: "#e5b2b5",
+
     borderWidth: 0.5,
-    // paddingHorizontal: spacingXS,
-    // paddingVertical: actuatedNormalize(2),
+
     flexDirection: "row"
   },
   rowFlexBox: {
     flexDirection: "row",
-    },
+  },
   CtrowFlexBox: {
     flexDirection: "row",
-    },
+  },
   flexBoxspacingS: {
     paddingVertical: spacingS,
     paddingHorizontal: spacingS,
     alignSelf: "stretch"
-  },  
+  },
   rowFlexBoxSpaceBetween: {
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    alignItems: 'center', 
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     width: '100%',
   },
   labelLightPreviewValue: {
     fontSize: fontMedium,
     lineHeight: lineHeightMedium,
     fontFamily: Fonts.HSBC,
-    // color: "#767676",
+
     textAlign: "left"
   },
   valueLightPreviewValue: {
@@ -1655,7 +1627,7 @@ blocknameSolid : {
     lineHeight: lineHeightMediumLarge,
     fontWeight: "700",
     fontFamily: Fonts.HSBC,
-    // color: "#000",
+
     textAlign: "left",
   },
   labelBulletPoint: {
@@ -1667,124 +1639,120 @@ blocknameSolid : {
     textAlign: "left"
   },
   listItemActionableSelectType: {
-     borderStyle: 'solid',
-    //  borderColor: '#00847f',
-     borderWidth: 1,
-     width: actuatedNormalize(20),
-     height: actuatedNormalize(20),
-   },
-// LastLoginblock
-lastLoginContainer: {
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "space-between",
-  // width: "83%",
-  // height: actuatedNormalize(73),
-  paddingHorizontal: actuatedNormalize(16),
-  paddingVertical: actuatedNormalize(16),
-  // marginHorizontal: actuatedNormalize(30),
-},
-userInfoSection: {
-  flexDirection: "row",
-  alignItems: "center",
-  flex: 1,
-},
-avatarSection: {
-  position: 'relative',
-  width: actuatedNormalize(40),
-  height: actuatedNormalize(40),
-  justifyContent: 'center',
-  alignItems: 'center',
-  overflow: 'hidden',  
-},
-avatarSectionDarkTheme: {
-  position: 'relative',
-  width: actuatedNormalize(48),
-  height: actuatedNormalize(48),
-  justifyContent: 'center',
-  alignItems: 'center',
-  overflow: 'hidden'
-},
-categoryavatarSectionDarkTheme: {
-  position: 'relative',
-  width: actuatedNormalize(48),
-  height: actuatedNormalize(48),
-  justifyContent: 'center',
-  alignItems: 'center',
-  overflow: 'hidden'
-},
-editIconWrapper: {
-  position: 'absolute',
-  bottom: -2,
-  right: -2,
-  // backgroundColor: 'white',
-  borderRadius: actuatedNormalize(8),
-  padding: actuatedNormalize(2),
-},
-categoryeditIconWrapper: {
-  position: 'absolute',
-  bottom: -2,
-  right: -2,
-  // backgroundColor: 'white',
-  borderRadius: actuatedNormalize(8),
-  padding: actuatedNormalize(2),
-},
-textWrapper: {
-  marginLeft: actuatedNormalize(12),
-  justifyContent: "center",
-  // paddingHorizontal:actuatedNormalize(8),
-  // borderColor:'green', borderWidth:2
-},
-// ....///
+    borderStyle: 'solid',
 
-//TextDivider
-headlineFlexBox: {
-  textAlign: "left",
-  color: "#000",
-  fontFamily: Fonts.HSBC,
-  alignSelf: "stretch",
-},
-headline: {
-  fontSize: 34,
-  lineHeight: 41,
-  fontWeight: "700",
+    borderWidth: 1,
+    width: actuatedNormalize(20),
+    height: actuatedNormalize(20),
+  },
+  // LastLoginblock
+  lastLoginContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
 
-},
-nequePorroQuisquam: {
-  fontSize: 17,
-  lineHeight: 22
-},
-typepromotionalLanguageeng: {
-  flex: 1,
-  width: "100%",
-  paddingHorizontal: 16,
-  paddingVertical: 24,
-  gap: 8,
-},
+    paddingHorizontal: actuatedNormalize(16),
+    paddingVertical: actuatedNormalize(16),
+
+  },
+  userInfoSection: {
+    flexDirection: "row",
+    alignItems: "center",
+    flex: 1,
+  },
+  avatarSection: {
+    position: 'relative',
+    width: actuatedNormalize(40),
+    height: actuatedNormalize(40),
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  avatarSectionDarkTheme: {
+    position: 'relative',
+    width: actuatedNormalize(48),
+    height: actuatedNormalize(48),
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden'
+  },
+  categoryavatarSectionDarkTheme: {
+    position: 'relative',
+    width: actuatedNormalize(48),
+    height: actuatedNormalize(48),
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden'
+  },
+  editIconWrapper: {
+    position: 'absolute',
+    bottom: -2,
+    right: -2,
+
+    borderRadius: actuatedNormalize(8),
+    padding: actuatedNormalize(2),
+  },
+  categoryeditIconWrapper: {
+    position: 'absolute',
+    bottom: -2,
+    right: -2,
+
+    borderRadius: actuatedNormalize(8),
+    padding: actuatedNormalize(2),
+  },
+  textWrapper: {
+    marginLeft: actuatedNormalize(12),
+    justifyContent: "center",
+
+  },
+
+  headlineFlexBox: {
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC,
+    alignSelf: "stretch",
+  },
+  headline: {
+    fontSize: 34,
+    lineHeight: 41,
+    fontWeight: "700",
+
+  },
+  nequePorroQuisquam: {
+    fontSize: 17,
+    lineHeight: 22
+  },
+  typepromotionalLanguageeng: {
+    flex: 1,
+    width: "100%",
+    paddingHorizontal: 16,
+    paddingVertical: 24,
+    gap: 8,
+  },
 
 
-//.......
+  //.......
 
-welcomeBackFlexBox: {
-  textAlign: "left",
-  fontFamily: Fonts.HSBC,
-  alignSelf: "stretch"
+  welcomeBackFlexBox: {
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    alignSelf: "stretch"
   },
   welcomeBackText: {
-  fontSize: 26,
-  lineHeight: 32,
-  fontWeight: "700"
+    fontSize: 26,
+    lineHeight: 32,
+    fontWeight: "700"
   },
   nametext: {
-  fontSize: 17,
-  lineHeight: 22
+    fontSize: 17,
+    lineHeight: 22
   },
   typepageTitleLanguageengl: {
-  flex: 1,
-  width: "100%",
-  paddingHorizontal: 16,
-  paddingVertical: 24,
-  gap: 8
+    flex: 1,
+    width: "100%",
+    paddingHorizontal: 16,
+    paddingVertical: 24,
+    gap: 8
   },
 
   //..........
@@ -1793,26 +1761,26 @@ welcomeBackFlexBox: {
     fontFamily: Fonts.HSBC,
     alignSelf: "stretch",
 
-    },
-    bottomsheettext: {
+  },
+  bottomsheettext: {
     fontSize: 22,
     lineHeight: 28,
     fontWeight: "700",
-    },
-    textcontent: {
+  },
+  textcontent: {
     fontSize: 15,
     lineHeight: 20
-    },
-    typebottomsheetLanguageeng: {
+  },
+  typebottomsheetLanguageeng: {
     flex: 1,
     width: "100%",
     paddingHorizontal: 16,
     paddingVertical: 24,
     gap: 8
-    },
-  textComponentStyle:{
-    flexDirection:'row',
-    alignItems:'center'  
+  },
+  textComponentStyle: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   avatarListItemAddon: {
     borderRadius: actuatedNormalize(100),
@@ -1822,7 +1790,6 @@ welcomeBackFlexBox: {
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: spacingS,
     flexDirection: 'row',
   },
   categoryavatarListItemAddon: {
@@ -1833,55 +1800,53 @@ welcomeBackFlexBox: {
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: spacingS,
     flexDirection: 'row',
   },
   avatarListItemAddonText: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
     fontFamily: Fonts.HSBC,
-    // color: '#db0011',
     textAlign: 'left',
   },
   categoryavatarListItemAddonText: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
     fontFamily: Fonts.HSBC,
-    // color: '#db0011',
+
     textAlign: 'left',
   },
   categoryavatarListItemAddonText: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
     fontFamily: Fonts.HSBC,
-    // color: '#db0011',
+
     textAlign: 'left',
   },
   avatarListItemAddon1: {
     borderRadius: actuatedNormalize(100),
-    // backgroundColor: '#fbe5e7',
+
     width: spacingXL,
     height: spacingXL,
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: spacingS,
+
     flexDirection: 'row',
   },
   categoryavatarListItemAddon1: {
     borderRadius: actuatedNormalize(100),
-    // backgroundColor: '#fbe5e7',
+
     width: spacingXL,
     height: spacingXL,
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: spacingS,
+
     flexDirection: 'row',
   },
   wrapperListItemAddon: {
     borderRadius: actuatedNormalize(100),
-    // backgroundColor: 'rgba(118, 118, 118, 0.1)',
+
     width: spacingXL,
     height: spacingXL,
     overflow: 'hidden',
@@ -1891,14 +1856,14 @@ welcomeBackFlexBox: {
     flexDirection: 'row',
   },
   PieGraphListItemAddon: {
-    // marginTop: actuatedNormalize(-10),
+
     marginLeft: actuatedNormalize(-20),
     top: '50%',
     left: '50%',
     fontSize: fontSmallMedium,
     lineHeight: lineHeightSmallMedium,
     fontFamily: Fonts.HSBC,
-    // color: '#db0011',
+
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
@@ -1908,14 +1873,13 @@ welcomeBackFlexBox: {
     position: 'absolute',
   },
   PieGraphListItemAddon1: {
-    // marginTop: actuatedNormalize(-10),
-    // marginLeft: actuatedNormalize(-20),
+
     top: -35,
     left: 8,
     fontSize: fontSmallMedium,
     lineHeight: lineHeightSmallMedium,
     fontFamily: Fonts.HSBC,
-    // color: '#db0011',
+
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
@@ -1925,14 +1889,13 @@ welcomeBackFlexBox: {
     position: 'absolute',
   },
   CtPieGraphListItemAddon: {
-    // marginTop: actuatedNormalize(-10),
-    // marginLeft: actuatedNormalize(-20),
+
     top: -35,
     left: 8,
     fontSize: fontSmallMedium,
     lineHeight: lineHeightSmallMedium,
     fontFamily: Fonts.HSBC,
-    // color: '#db0011',
+
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
@@ -1954,36 +1917,36 @@ welcomeBackFlexBox: {
   labelstackedListItemBodyType: {
     fontSize: fontMedium,
     lineHeight: lineHeightMedium,
-    // color: '#767676',
+
   },
   CtlabelstackedListItemBodyType: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMedium,
     fontWeight: "400"
-    // color: '#767676',
+
   },
   valuestackedListItemBodyType: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
     fontWeight: '700',
-    // color: '#000',
+
   },
   CtvaluestackedListItemBodyType: {
     fontSize: fontLarge,
     lineHeight: lineHeightMediumLarge,
     fontWeight: '700',
-    // color: '#000',
+
   },
   labelstackedListItemBodyLabel: {
     fontSize: fontXSmall,
     lineHeight: lineHeightXSmall,
-    // color: '#b2b2b2',
+
     alignSelf: 'stretch',
   },
   CtlabelstackedListItemBodyLabel: {
     fontSize: fontXSmall,
     lineHeight: lineHeightXSmall,
-    // color: '#b2b2b2',
+
     alignSelf: 'stretch',
   },
   labelTypo: {
@@ -2005,18 +1968,18 @@ welcomeBackFlexBox: {
     fontWeight: fontWeightBold,
   },
   stackedListItemBodyheadlineFlexBox: {
-    // color: '#000',
+
     textAlign: 'left',
     fontFamily: Fonts.HSBC,
     alignSelf: 'stretch',
   },
   CtstackedListItemBodyheadlineFlexBox: {
-    // color: '#000',
+
     textAlign: 'left',
     fontFamily: Fonts.HSBC,
     alignSelf: 'stretch',
   },
-  
+
   subTitle: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMediumLarge,
@@ -2042,7 +2005,7 @@ welcomeBackFlexBox: {
     alignSelf: 'stretch',
   },
   Ctstatus: {
-    // height: spacingS,
+
     alignSelf: 'stretch',
   },
   status1: {
@@ -2056,372 +2019,363 @@ welcomeBackFlexBox: {
   wrapperDefaultContainer: {
     gap: spacingXXS,
     alignSelf: "stretch"
-    },
-    wrapperDefaultContainer1: {
-      gap: spacingXXS,
-      alignSelf: "stretch",
-      width:'100%'
-      },
-    labelDefaultContainer: {
-      lineHeight: lineHeightMedium,
-      color: "#767676",
-      fontSize: fontMedium,
-      textAlign: "left",
-      fontFamily: Fonts.HSBC,
-      },
-      valueDefaultContainer: {
-      fontSize: fontMediumLarge,
-      lineHeight: lineHeightMediumLarge,
-      fontWeight: "700",
-      // color: "#000",
-      textAlign: "left",
-      fontFamily: Fonts.HSBC,
-      },
-      valueFlexBox: {
-        textAlign: "left",
-        fontFamily: Fonts.HSBC,
-        alignSelf: "stretch"
-      },
-      secondValueDefaultContainer: {
-        lineHeight: lineHeightMedium,
-        fontWeight: "500",
-        // display: "none",
-        color: "#767676",
-        fontSize: fontMedium,
-        textAlign: "left",
-        fontFamily: Fonts.HSBC,
-      },
-      badgenotificationList: {
-        borderRadius: actuatedNormalize(100),
-        backgroundColor: '#ffbb33',
-        width: actuatedNormalize(20),
-        height: actuatedNormalize(20),
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      CtbadgenotificationList: {
-        borderRadius: actuatedNormalize(100),
-        backgroundColor: '#ffbb33',
-        width: actuatedNormalize(24),
-        height: actuatedNormalize(24),
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      contentText: {
-        fontSize: fontSmallMedium,
-        lineHeight: lineHeightSmallMedium,
-        fontFamily: Fonts.HSBC,
-        // color: "#767676",
-        textAlign: "right"
-        },
-        CtcontentText: {
-          fontSize: fontMedium,
-          lineHeight: lineHeightSmallMedium,
-          fontFamily: Fonts.HSBC,
-          // color: "#767676",
-          textAlign: "right",
-          marginTop: I18nManager.isRTL
-          ? actuatedNormalize(-3)
-          : actuatedNormalize(5),
-          },
-        typebalance: {
-          // flex: 1,
-          // width: "100%",
-          gap: spacingXXS,
-          alignItems: "flex-end"
-        },
-        Cttypebalance: {
-          // flex: 1,
-          // width: "100%",
-          gap: spacingXXS,
-          alignItems: "flex-end"
-        },
-        wrapperFlexBoxBadgeStatusBalance: {
-          flexDirection: "row",
-          alignItems: "flex-end"
-        },
-        CtwrapperFlexBoxBadgeStatusBalance: {
-          flexDirection: "row",
-          alignItems: "flex-end"
-        },
-        contentTypoRightAligned: {
-          textAlign: "right",
-          fontFamily: Fonts.HSBC,
-        },
-        CtcontentTypoRightAligned: {
-          textAlign: "right",
-          fontFamily: Fonts.HSBC,
-        },
-        wrapperBalanceSAR: {
-          paddingHorizontal: actuatedNormalize(0),
-          paddingVertical: actuatedNormalize(1)
-        },
-        CtwrapperBalanceSAR: {
-          paddingHorizontal: actuatedNormalize(0),
-          paddingVertical: actuatedNormalize(4)
-        },
-        sarLabel: {
-          fontSize: fontXSmall,
-          lineHeight: lineHeightXSmall,
-          textAlign: "left",
-          color: "#000",
-          fontFamily: Fonts.HSBC,
-        },
-        CtsarLabel: {
-          fontSize: fontSmall,
-          lineHeight: lineHeightXSmall,
-          textAlign: "left",
-          color: "#000",
-          fontFamily: Fonts.HSBC,
-        },
-        contentBalanceStatusType: {
-          fontSize: fontSmallMedium,
-          lineHeight: lineHeightSmallMedium,
-          color: "#767676"
-        },
-        CtcontentBalanceStatusType: {
-          fontSize: fontSmallMedium,
-          lineHeight: lineHeightSmallMedium,
-          color: "#767676"
-        },
-        wrapperContentAndSar: {
-          justifyContent: 'flex-end',
-          flexDirection: 'row',
-          gap: spacingXXS,
-          alignItems: 'flex-end',
-        },
-        CtwrapperContentAndSar: {
-          justifyContent: 'flex-end',
-          flexDirection: 'row',
-          gap: spacingXXS,
-          alignItems: 'flex-end',
-        },
-        contentBalanceWithStatus: {
-          fontSize: fontLarge,
-          lineHeight: lineHeightLarge,
-          fontWeight: '700',
-          textAlign: 'right',
-          color: '#000',
-          fontFamily: Fonts.HSBC,
-        },
-        CtcontentBalanceWithStatus: {
-          fontSize: fontXLarge,
-          lineHeight: lineHeightLarge,
-          fontWeight: '700',
-          textAlign: 'right',
-          color: '#000',
-          fontFamily: Fonts.HSBC,
-        },
-        wrapperSARLabel: {
-          paddingHorizontal: actuatedNormalize(0),
-          paddingVertical: actuatedNormalize(1),
-          flexDirection: 'row',
-          alignItems: 'flex-end',
-        },
-        CtwrapperSARLabel: {
-          paddingHorizontal: actuatedNormalize(0),
-          paddingVertical: actuatedNormalize(1),
-          flexDirection: 'row',
-          alignItems: 'flex-end',
-        },
-        chipsinfoBalanceStatusType: {
-          borderRadius: spacingXXS,
-          alignItems: 'center',
-          flexDirection: 'row',
-          gap: spacingXXS,
-        },
-        CtchipsinfoBalanceStatusType: {
-          borderRadius: spacingXXS,
-          alignItems: 'center',
-          flexDirection: 'row',
-          alignSelf: "center",
-          gap: spacingXXS,
-        },
-        labelInactive: {
-          fontSize: fontSmallMedium,
-          lineHeight: lineHeightSmallMedium,
-          textAlign: 'left',
-          color: '#000',
-          fontFamily: Fonts.HSBC,
-        },
-        CtlabelInactive: {
-          fontSize: fontMedium,
-          lineHeight: lineHeightMedium,
-          textAlign: 'left',
-          color: '#000',
-          fontFamily: Fonts.HSBC,
-        },
+  },
+  wrapperDefaultContainer1: {
+    gap: spacingXXS,
+    alignSelf: "stretch",
+    width: '100%'
+  },
+  labelDefaultContainer: {
+    lineHeight: lineHeightMedium,
+    color: "#767676",
+    fontSize: fontMedium,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  valueDefaultContainer: {
+    fontSize: fontMediumLarge,
+    lineHeight: lineHeightMediumLarge,
+    fontWeight: "700",
 
-    //....textdividr
-    welcomeBackTypo: {
-      textAlign: "left",
-      fontFamily:Fonts.HSBC,
-      },
-      linkFlexBox: {
-      justifyContent: "center",
-      alignItems: "center",
-      height: 24,
-      flexDirection: "row"
-      },
-      Linktext: {
-      fontSize: 17,
-      lineHeight: 22,
-      fontWeight: "700",
-      textAlign: "left",
-      fontFamily: Fonts.HSBC,
-      flex: 1
-      },
-      welcomeBackParent: {
-      flexDirection: "row",
-      alignSelf: "stretch",
-      gap: 8
-      },
-      sublinktext: {
-      fontSize: 15,
-      lineHeight: 20,
-      textAlign: "left",
-      fontFamily:Fonts.HSBC,
-      alignSelf: "stretch"
-      },
-      typeinPageLanguageenglish: {
-      width: "100%",
-      paddingHorizontal: 16,
-      paddingVertical: 24,
-      gap: 8,
-      flex: 1
-      },
-    
-      //Text View all textdivider
-      languagearabicPosition: {
-        width: 344,
-        left: 20,
-        position: "absolute"
-        },
-        viewall: {
-        textAlign: "left",
-        },
-        wrapperFlexBoxview: {
-          paddingVertical: 4,
-          paddingHorizontal: 0,
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "row",
-          left:8
-        },
-        textLayout: {
-        lineHeight: 18,
-        fontSize: 14
-        },
-      
-        Viewheadlinetext: {
-        fontWeight: "700",
-        lineHeight: 22,
-        fontSize: 17,
-        fontFamily:Fonts.HSBC
-        },
-        iconoutlinepassword: {
-        width: 24,
-        height: 24
-        },
-        Vewallheader: {
-        gap: 8,
-        alignItems: "center",
-        flexDirection: "row",
-        alignSelf: "stretch"
-        },
-        viewalltextdivi: {
-         textAlign: "left",
-        fontFamily:Fonts.HSBC,
-        },
-        wrapperview: {
-        height: 24
-        },
-        frameParenttextdivider: {
-        justifyContent: "space-between",
-        flexDirection: "row",
-        alignSelf: "stretch",
-        },
-        languageenglish: {
-        top: 20
-        },
-        // text: {
-        // display: "flex",
-        // alignItems: "flex-end",
-        // height: 22,
-        // lineHeight: 18,
-        // fontSize: 14,
-        // flex: 1
-        // },
-       
-        texttitleactions: {
-       
-        height: 124,
-        flex: 1
-        },
-        smallFont:{
-          fontSize: fontSmall,
-		      lineHeight: lineHeightSmall,
-        },
-        extraSmallFont:{
-          fontSize: fontXSmall,
-		      lineHeight: lineHeightXSmall,
-        },
-        storyModuleContainer: {
-          // flex: 1,
-          width: actuatedNormalize(98),
-          gap: actuatedNormalize(4),
-          alignItems: "center"
-        },
-        storyStates: {
-          borderRadius: 4000,
-          flexDirection: "row",
-          padding: actuatedNormalize(6),
-          justifyContent: "center",
-          alignItems: "center"
-        },
-        iconSabStoreStoryModule: {
-          width: actuatedNormalize(86),
-          height: actuatedNormalize(86)
-        },
-        texttextFlexBox: {
-          overflow: "hidden",
-          justifyContent: "center"
-        },
-        widgetS:{
-          borderRadius: 8,
-          backgroundColor: "#730014",
-          width: "100%",
-          height: 159,
-          overflow: "hidden",
-          justifyContent: "space-between",
-          padding: 16,
-          maxWidth: 163.5,
-        },
-        widgetSName:{
-          fontSize: 17,
-          lineHeight: 22,
-          fontWeight: "700",
-          fontFamily: "Univers Next for HSBC",
-          color: "#fff",
-          textAlign: "left",
-          display: "flex",
-          paddingTop:16,
-          alignItems: "flex-end"
-        },
-        widgetSDescription:{
-          fontSize: 13,
-          lineHeight: 17,textAlign: "left",
-          color: "#fff",
-          fontFamily: "Univers Next for HSBC",
-          flex: 1
-        },
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  valueFlexBox: {
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    alignSelf: "stretch"
+  },
+  secondValueDefaultContainer: {
+    lineHeight: lineHeightMedium,
+    fontWeight: "500",
+
+    color: "#767676",
+    fontSize: fontMedium,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  badgenotificationList: {
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: '#ffbb33',
+    width: actuatedNormalize(20),
+    height: actuatedNormalize(20),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  CtbadgenotificationList: {
+    borderRadius: actuatedNormalize(100),
+    backgroundColor: '#ffbb33',
+    width: actuatedNormalize(24),
+    height: actuatedNormalize(24),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  contentText: {
+    fontSize: fontSmallMedium,
+    lineHeight: lineHeightSmallMedium,
+    fontFamily: Fonts.HSBC,
+
+    textAlign: "right"
+  },
+  CtcontentText: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightSmallMedium,
+    fontFamily: Fonts.HSBC,
+
+    textAlign: "right",
+    marginTop: I18nManager.isRTL
+      ? actuatedNormalize(-3)
+      : actuatedNormalize(5),
+  },
+  typebalance: {
+
+    gap: spacingXXS,
+    alignItems: "flex-end"
+  },
+  Cttypebalance: {
+
+    gap: spacingXXS,
+    alignItems: "flex-end"
+  },
+  wrapperFlexBoxBadgeStatusBalance: {
+    flexDirection: "row",
+    alignItems: "flex-end"
+  },
+  CtwrapperFlexBoxBadgeStatusBalance: {
+    flexDirection: "row",
+    alignItems: "flex-end"
+  },
+  contentTypoRightAligned: {
+    textAlign: "right",
+    fontFamily: Fonts.HSBC,
+  },
+  CtcontentTypoRightAligned: {
+    textAlign: "right",
+    fontFamily: Fonts.HSBC,
+  },
+  wrapperBalanceSAR: {
+    paddingHorizontal: actuatedNormalize(0),
+    paddingVertical: actuatedNormalize(1)
+  },
+  CtwrapperBalanceSAR: {
+    paddingHorizontal: actuatedNormalize(0),
+    paddingVertical: actuatedNormalize(4)
+  },
+  sarLabel: {
+    fontSize: fontXSmall,
+    lineHeight: lineHeightXSmall,
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC,
+  },
+  CtsarLabel: {
+    fontSize: fontSmall,
+    lineHeight: lineHeightXSmall,
+    textAlign: "left",
+    color: "#000",
+    fontFamily: Fonts.HSBC,
+  },
+  contentBalanceStatusType: {
+    fontSize: fontSmallMedium,
+    lineHeight: lineHeightSmallMedium,
+    color: "#767676"
+  },
+  CtcontentBalanceStatusType: {
+    fontSize: fontSmallMedium,
+    lineHeight: lineHeightSmallMedium,
+    color: "#767676"
+  },
+  wrapperContentAndSar: {
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    gap: spacingXXS,
+    alignItems: 'flex-end',
+  },
+  CtwrapperContentAndSar: {
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    gap: spacingXXS,
+    alignItems: 'flex-end',
+  },
+  contentBalanceWithStatus: {
+    fontSize: fontLarge,
+    lineHeight: lineHeightLarge,
+    fontWeight: '700',
+    textAlign: 'right',
+    color: '#000',
+    fontFamily: Fonts.HSBC,
+  },
+  CtcontentBalanceWithStatus: {
+    fontSize: fontXLarge,
+    lineHeight: lineHeightLarge,
+    fontWeight: '700',
+    textAlign: 'right',
+    color: '#000',
+    fontFamily: Fonts.HSBC,
+  },
+  wrapperSARLabel: {
+    paddingHorizontal: actuatedNormalize(0),
+    paddingVertical: actuatedNormalize(1),
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  CtwrapperSARLabel: {
+    paddingHorizontal: actuatedNormalize(0),
+    paddingVertical: actuatedNormalize(1),
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  chipsinfoBalanceStatusType: {
+    borderRadius: spacingXXS,
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: spacingXXS,
+  },
+  CtchipsinfoBalanceStatusType: {
+    borderRadius: spacingXXS,
+    alignItems: 'center',
+    flexDirection: 'row',
+    alignSelf: "center",
+    gap: spacingXXS,
+  },
+  labelInactive: {
+    fontSize: fontSmallMedium,
+    lineHeight: lineHeightSmallMedium,
+    textAlign: 'left',
+    color: '#000',
+    fontFamily: Fonts.HSBC,
+  },
+  CtlabelInactive: {
+    fontSize: fontMedium,
+    lineHeight: lineHeightMedium,
+    textAlign: 'left',
+    color: '#000',
+    fontFamily: Fonts.HSBC,
+  },
+
+  //....textdividr
+  welcomeBackTypo: {
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  linkFlexBox: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: 24,
+    flexDirection: "row"
+  },
+  Linktext: {
+    fontSize: 17,
+    lineHeight: 22,
+    fontWeight: "700",
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    flex: 1
+  },
+  welcomeBackParent: {
+    flexDirection: "row",
+    alignSelf: "stretch",
+    gap: 8
+  },
+  sublinktext: {
+    fontSize: 15,
+    lineHeight: 20,
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+    alignSelf: "stretch"
+  },
+  typeinPageLanguageenglish: {
+    width: "100%",
+    paddingHorizontal: 16,
+    paddingVertical: 24,
+    gap: 8,
+    flex: 1
+  },
+
+  //Text View all textdivider
+  languagearabicPosition: {
+    width: 344,
+    left: 20,
+    position: "absolute"
+  },
+  viewall: {
+    textAlign: "left",
+  },
+  wrapperFlexBoxview: {
+    paddingVertical: 4,
+    paddingHorizontal: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    left: 8
+  },
+  textLayout: {
+    lineHeight: 18,
+    fontSize: 14
+  },
+
+  Viewheadlinetext: {
+    fontWeight: "700",
+    lineHeight: 22,
+    fontSize: 17,
+    fontFamily: Fonts.HSBC
+  },
+  iconoutlinepassword: {
+    width: 24,
+    height: 24
+  },
+  Vewallheader: {
+    gap: 8,
+    alignItems: "center",
+    flexDirection: "row",
+    alignSelf: "stretch"
+  },
+  viewalltextdivi: {
+    textAlign: "left",
+    fontFamily: Fonts.HSBC,
+  },
+  wrapperview: {
+    height: 24
+  },
+  frameParenttextdivider: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignSelf: "stretch",
+  },
+  languageenglish: {
+    top: 20
+  },
+
+
+  texttitleactions: {
+
+    height: 124,
+    flex: 1
+  },
+  smallFont: {
+    fontSize: fontSmall,
+    lineHeight: lineHeightSmall,
+  },
+  extraSmallFont: {
+    fontSize: fontXSmall,
+    lineHeight: lineHeightXSmall,
+  },
+  storyModuleContainer: {
+
+    width: actuatedNormalize(98),
+    gap: actuatedNormalize(4),
+    alignItems: "center"
+  },
+  storyStates: {
+    borderRadius: 4000,
+    flexDirection: "row",
+    padding: actuatedNormalize(6),
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  iconSabStoreStoryModule: {
+    width: actuatedNormalize(86),
+    height: actuatedNormalize(86)
+  },
+  texttextFlexBox: {
+    overflow: "hidden",
+    justifyContent: "center"
+  },
+  widgetS: {
+    borderRadius: 8,
+    backgroundColor: "#730014",
+    width: "100%",
+    height: 159,
+    overflow: "hidden",
+    justifyContent: "space-between",
+    padding: 16,
+    maxWidth: 163.5,
+  },
+  widgetSName: {
+    fontSize: 17,
+    lineHeight: 22,
+    fontWeight: "700",
+    fontFamily: "Univers Next for HSBC",
+    color: "#fff",
+    textAlign: "left",
+    display: "flex",
+    paddingTop: 16,
+    alignItems: "flex-end"
+  },
+  widgetSDescription: {
+    fontSize: 13,
+    lineHeight: 17, textAlign: "left",
+    color: "#fff",
+    fontFamily: "Univers Next for HSBC",
+    flex: 1
+  },
   tagFlexBox: {
     alignItems: "center",
     flexDirection: "row"
   },
   tagContainer: {
     borderRadius: radiusS,
-    // backgroundColor: "#f2f3f4",
+
     width: "70%",
     height: actuatedNormalize(70),
     padding: spacingXS,
@@ -2449,17 +2403,17 @@ welcomeBackFlexBox: {
     alignSelf: "stretch",
     flexDirection: "row",
   },
-  
+
   category: {
     fontSize: fontMediumLarge,
     lineHeight: lineHeightMedium,
     fontWeight: fontWeightBold,
-    // color: "#000",
+
     flex: 1,
     textAlign: "left",
     fontFamily: Fonts.HSBC
   },
-  
+
   transfertext: {
     alignItems: "center",
     flexDirection: "row"
@@ -2467,11 +2421,10 @@ welcomeBackFlexBox: {
   transactions: {
     fontSize: fontMedium,
     lineHeight: lineHeightSmallMedium,
-    // color: "#626469",
     textAlign: "left",
     fontFamily: Fonts.HSBC
   },
-  expensecontainer:{
+  expensecontainer: {
     width: '100%',
     height: actuatedNormalize(150), // Adjust based on your design
     borderRadius: actuatedNormalize(10), // Rounded corners
@@ -2479,13 +2432,13 @@ welcomeBackFlexBox: {
   },
   expensebanner: {
     width: '100%',
-    // height: 150, // Adjust as per your design
+
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
   expensetextContainer: {
-    
+
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -2493,7 +2446,7 @@ welcomeBackFlexBox: {
     fontSize: actuatedNormalize(16),
     color: '#000',
     textAlign: 'center',
-    // marginBottom: 10,
+
     fontWeight: '600',
   },
   expenseheadingContainer: {
@@ -2524,19 +2477,19 @@ welcomeBackFlexBox: {
     marginBottom: spacingXS,
     fontWeight: '600',
   },
-catagroywrapperFlexBox: {
-    // alignItems: "center",
+  catagroywrapperFlexBox: {
+
     flexDirection: "row",
-},
-catagroysarTypo: {
+  },
+  catagroysarTypo: {
     textAlign: "left",
     fontFamily: "Univers Next for HSBC"
-},
-catagroyiconsab360transport: {
+  },
+  catagroyiconsab360transport: {
     width: actuatedNormalize(24),
     height: actuatedNormalize(24)
-},
-catagroywrapper: {
+  },
+  catagroywrapper: {
     borderRadius: actuatedNormalize(100),
     backgroundColor: "rgba(161, 90, 79, 0.1)",
     width: actuatedNormalize(48),
@@ -2544,114 +2497,114 @@ catagroywrapper: {
     overflow: "hidden",
     justifyContent: "center",
     padding: actuatedNormalize(14)
-},
-catagroylistitemaddon: {
+  },
+  catagroylistitemaddon: {
     flexDirection: "row",
     alignSelf: "center"
-},
-catagroyheadline: {
+  },
+  catagroyheadline: {
     color: "#000",
     fontWeight: "700",
     lineHeight: actuatedNormalize(18),
     fontSize: actuatedNormalize(14),
     textAlign: "left",
     alignSelf: "stretch"
-},
-catagroybodyCopy: {
+  },
+  catagroybodyCopy: {
     fontSize: actuatedNormalize(12),
     lineHeight: actuatedNormalize(16),
     color: "#767676",
     alignSelf: "stretch"
-},
-catagroystackedlistitembody: {
+  },
+  catagroystackedlistitembody: {
     gap: actuatedNormalize(4),
     flex: 1,
     alignSelf: "center"
-},
-catagroycontent: {
+  },
+  catagroycontent: {
     textAlign: "right",
     color: "#000",
     fontFamily: "Univers Next for HSBC",
     fontWeight: "700",
     lineHeight: actuatedNormalize(18),
     fontSize: actuatedNormalize(14)
-},
-catagroysar: {
+  },
+  catagroysar: {
     fontSize: actuatedNormalize(10),
     lineHeight: actuatedNormalize(13),
     color: "#000"
-},
-catagroywrapper2: {
+  },
+  catagroywrapper2: {
     paddingHorizontal: actuatedNormalize(0),
     paddingVertical: actuatedNormalize(1),
     alignItems: "flex-end",
     flexDirection: "row"
-},
-catagroywrapper1: {
+  },
+  catagroywrapper1: {
     justifyContent: "flex-end",
     alignItems: "flex-end",
     gap: actuatedNormalize(4),
     flexDirection: "row"
-},
-catagroybadgestatus: {
+  },
+  catagroybadgestatus: {
     alignItems: "flex-end",
-        // marginTop: 5,
+
     alignSelf: "center"
-},
-catagroylistitemactionsIcon: {
+  },
+  catagroylistitemactionsIcon: {
     width: actuatedNormalize(18),
     height: actuatedNormalize(18)
-},
-catagroystackedlistitemdefault: {
+  },
+  catagroystackedlistitemdefault: {
     gap: actuatedNormalize(8),
     flex: 1
-},
-catagroystackedlistitem: {
+  },
+  catagroystackedlistitem: {
     width: "100%",
     flexDirection: "row",
-    // flex: 1,
+
     alignSelf: "stretch",
-},
-horizontalbar1: {
-  // width: "50%",
-  right: "20.58%",
-  backgroundColor: "#a15a4f",
-  bottom: "0%",
-  top: "0%",
-  height: "100%",
-  position: "absolute",
-  overflow: "hidden",
-  borderRadius: actuatedNormalize(100)
+  },
+  horizontalbar1: {
+
+    right: "20.58%",
+    backgroundColor: "#a15a4f",
+    bottom: "0%",
+    top: "0%",
+    height: "100%",
+    position: "absolute",
+    overflow: "hidden",
+    borderRadius: actuatedNormalize(100)
   },
   barProgress: {
-		height: actuatedNormalize(5),
-		alignSelf: "stretch",
-		marginTop: actuatedNormalize(10)
-	},
+    height: actuatedNormalize(5),
+    alignSelf: "stretch",
+    marginTop: actuatedNormalize(10)
+  },
   horizontalbarWrapper: {
-		right: "0%",
-		bottom: "0%",
-		top: "0%",
-		height: "100%",
-		position: "absolute",
-		width: "100%"
-	},
+    right: "0%",
+    bottom: "0%",
+    top: "0%",
+    height: "100%",
+    position: "absolute",
+    width: "100%"
+  },
   horizontalbarPosition: {
-		left: "0%",
-		bottom: "0%",
-		top: "0%",
-		height: "100%",
-		position: "absolute"
-	},
+    left: "0%",
+    bottom: "0%",
+    top: "0%",
+    height: "100%",
+    position: "absolute"
+  },
   bar: {
-		backgroundColor: "#eee",
-		right: "0%",
-		bottom: "0%",
-		top: "0%",
-		height: "100%",
-		position: "absolute",
-		width: "100%",
-		overflow: "hidden",
-		borderRadius: actuatedNormalize(100)
-	},
+    backgroundColor: "#eee",
+    right: "0%",
+    bottom: "0%",
+    top: "0%",
+    height: "100%",
+    position: "absolute",
+    width: "100%",
+    overflow: "hidden",
+    borderRadius: actuatedNormalize(100)
+  },
 }

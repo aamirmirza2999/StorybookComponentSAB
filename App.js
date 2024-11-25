@@ -94,7 +94,7 @@ function App() {
 
 let AppEntryPoint = App;
 
-if (process.env.STORYBOOK_ENABLED) {
+if (true) {
   const AppEntry = require('./.ondevice').default;
   AppEntryPoint = () => (
     <ThemeProvider>

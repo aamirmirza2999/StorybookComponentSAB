@@ -1,16 +1,13 @@
-import { View,
+import {
+  View,
   TouchableOpacity,
   StyleSheet,
   Animated,
   Text,
   Dimensions,
   Platform,
-  SafeAreaView,
-  StatusBar,
-  Alert,
-  Linking,
-  NativeEventEmitter, } from 'react-native'
-  import React, { useState, useEffect } from "react";
+} from 'react-native'
+import React, { useState } from "react";
 import { actuatedNormalize } from '../../constants/PixelScaling'
 import { ifIphoneX, getBottomSpace } from "react-native-iphone-x-helper";
 import { useTheme } from '../../constants/Theme/ThemeProvider';
@@ -19,23 +16,16 @@ import Fonts from '../../constants/Fonts';
 import { I18nManager } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { HomeActive,PaymentActive,Transfer,Payment_Icon,HomeTab,Iconfilledmenu,IconOutlineMenu,Pfm360,PfmActive} from '../../constants/SvgLocations';
+import { HomeActive, PaymentActive, Transfer, Payment_Icon, HomeTab, Iconfilledmenu, IconOutlineMenu, Pfm360, PfmActive } from '../../constants/SvgLocations';
 
-const Tab=({
+const Tab = ({
   state,
   descriptors,
   navigation,
-  dimensions,
-  activeTintColor,
-  inactiveTintColor,
   dashboardMenuExpanded,
   currentActiveScreen,
-  pfmdashboard,
-  pfmStatus,
-  pfmactivating,
-  //tabMenuChanged,
   props,
-})=> {
+}) => {
   const { routes, index: activeRouteIndex } = state;
   const tabWidth = Dimensions.get("window").width / routes.length;
   const [translateValue] = useState(new Animated.Value(0));
@@ -91,7 +81,7 @@ const Tab=({
     navigation.navigate("Home");
   };
 
-   const PaymentNavigation = (screen, routeScreen) => {
+  const PaymentNavigation = (screen, routeScreen) => {
 
     navigation.navigate("Payment");
   };
@@ -103,7 +93,7 @@ const Tab=({
 
   return (
     <View style={{ flexDirection: "column" }}>
-   
+
       <View
         style={
           ([styles.container],
@@ -163,9 +153,7 @@ const Tab=({
           </View>
         </View>
 
-        {/* {console.log('routes------->>>>>',routes)}
-        {console.log('activeRouteIndex------->>>>>',activeRouteIndex)} */}
-        {/* {reduxDispatch(setTabMenuChanged(activeRouteIndex))} */}
+
 
         {routes.map((route, routeIndex) => {
           //reduxDispatch(setTabMenuChanged(routeIndex));
@@ -173,29 +161,20 @@ const Tab=({
           const isRouteActive = routeIndex === activeRouteIndex;
           // console.log("isRouteActive...", isRouteActive, "routeIndex1", routeIndex, "routeIndex2", activeRouteIndex);
           const screenName = route?.params?.screen;
-          const tintColor = isRouteActive ? "red": "black";
-          const tintIconColor = isRouteActive ?"red" :"black";
+          const tintColor = isRouteActive ? "red" : "black";
+          const tintIconColor = isRouteActive ? "red" : "black";
 
           const HomeIcon = isRouteActive ? HomeActive : HomeTab
           const PaymentIcon = isRouteActive ? PaymentActive : Payment_Icon
           const TransferIcon = isRouteActive ? Transfer : Transfer
           const MenuIcon = isRouteActive ? Iconfilledmenu : IconOutlineMenu
-          const ActiveFontEn = isRouteActive ? Fonts.HSBC : Fonts.HSBC;    
-          const PfmIcon = isRouteActive ? PfmActive : Pfm360    
-          
+          const ActiveFontEn = isRouteActive ? Fonts.HSBC : Fonts.HSBC;
+          const PfmIcon = isRouteActive ? PfmActive : Pfm360
+
           let IconName;
           let Name;
-          
-    
-          // isRouteActive && updatePositioning({ route }, routeIndex);
-          // console.log('activeRouteIndex------->>>>> ela', screenName , "ela2", routeIndex)
-          //console.log('isRouteActive------->>>>>', isRouteActive)
 
-          // if(isRouteActive){
-          //   console.log('routeIndex------->>>>>', routeIndex)
-          //   console.log('activeTab------->>>>>', activeTab)
-          //   activeTab != routeIndex ? setCurrentActiveTab(routeIndex): null;
-          // }
+
 
           return (
             <TouchableOpacity
@@ -209,8 +188,8 @@ const Tab=({
               onLongPress={() => {
                 updatePositioning({ route }, routeIndex);
               }}
-              accessibilityLabel={"Pretabbar pressed "+route.name}
-              testID={"Pretabbar pressed"+route.name}
+              accessibilityLabel={"Pretabbar pressed " + route.name}
+              testID={"Pretabbar pressed" + route.name}
             >
               {!dashboardMenuExpanded ? (
                 route.name === "Add" ? (
@@ -239,23 +218,23 @@ const Tab=({
                           height={actuatedNormalize(24)}
                           fill={tintIconColor}
                         />
-                      ) 
-                      :
-                      route.name === "Menu" ? (
-                        <MenuIcon
-                        width={actuatedNormalize(25)}
-                        height={actuatedNormalize(25)}
-                        fill={tintIconColor}
-                      />
-                      ):
-                      route.name === "PFM" ? (
-                        <PfmIcon
-                        width={actuatedNormalize(25)}
-                        height={actuatedNormalize(25)}
-                        fill={tintIconColor}
-                      />
                       )
-                      : null}
+                        :
+                        route.name === "Menu" ? (
+                          <MenuIcon
+                            width={actuatedNormalize(25)}
+                            height={actuatedNormalize(25)}
+                            fill={tintIconColor}
+                          />
+                        ) :
+                          route.name === "PFM" ? (
+                            <PfmIcon
+                              width={actuatedNormalize(25)}
+                              height={actuatedNormalize(25)}
+                              fill={tintIconColor}
+                            />
+                          )
+                            : null}
 
                     <Text
                       style={{
@@ -275,11 +254,11 @@ const Tab=({
                           : route.name === "New_Transfer"
                             ? t('initialLang:transfer')
                             : route.name === "Menu"
-                            ? t('initialLang:menu')
-                            : route.name === "PFM"
-                            ? t('initialLang:pfm')
+                              ? t('initialLang:menu')
+                              : route.name === "PFM"
+                                ? t('initialLang:pfm')
                                 : Name
-                              }
+                      }
                     </Text>
                   </>
                 )
@@ -294,7 +273,7 @@ const Tab=({
       </View>
 
       {Platform.OS === "ios" && ifIphoneX ? (
-        <View style={[styles.bottomsafeAreaView, { backgroundColor:"#ffffff", }]}></View>
+        <View style={[styles.bottomsafeAreaView, { backgroundColor: "#ffffff", }]}></View>
       ) : null}
     </View>
   )

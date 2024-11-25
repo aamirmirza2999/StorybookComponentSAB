@@ -1,16 +1,10 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import React from 'react';
-import {SabLogo} from '../../constants/SvgLocations';
-import {actuatedNormalize} from '../../constants/PixelScaling';
-import {globalStyles} from '../../constants/GlobalStyles';
-// import Colors from '../../constants/Colors';
-import BgHeader from './BgHeader';
- import { useTheme } from '../../constants/Theme/ThemeProvider';
-import ProgressHeader from './ProgressComponent';
-import {spacingS, spacingM, spacingL} from '../../constants/Size';
+import { useTheme } from '../../constants/Theme/ThemeProvider';
+import { spacingS, spacingM, spacingL } from '../../constants/Size';
 
 const PrimaryBgComponent = props => {
-   const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <View
@@ -28,14 +22,14 @@ const PrimaryBgComponent = props => {
             paddingBottom: spacingM,
             paddingTop: spacingL,
           }}>
-         
+
           {props.children}
         </View>
       </ScrollView>
       <View
         style={
           props.ButtonContainer
-          
+
         }>
         {props.PrimaryButton}
         {props.SecondaryButton}

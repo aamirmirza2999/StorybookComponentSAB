@@ -1,41 +1,29 @@
-import { View, Text } from 'react-native'
+import { View, } from 'react-native'
 import React from 'react'
-import TextComponent from '../components/Common/TextComponent'
-import { fontXLG ,lineHeightXLG,fontWeightBold,spacingXS, spacingXXL,spacingXXS, spacingS} from '../constants/Size';
-import Fonts from '../constants/Fonts';
-//import MainButton from '../components/NewButton/MainButton';
+import { spacingXXS, spacingS } from '../constants/Size';
 import { MainButton } from '../components/Common/Button';
 import Space from '../components/Common/Space';
 import { useNavigation } from '@react-navigation/native';
-const Bills=()=> {
+const Bills = () => {
   const navigation = useNavigation();
   return (
     <View
-    style={{
-      flex:1,
-      padding:spacingS,
-      backgroundColor:"#ffffff"
-    }}
-    >
-      {/* <TextComponent
-       style={{
-        fontSize: fontXLG,
-        lineHeight: lineHeightXLG,
-        fontWeight: fontWeightBold,
-        fontFamily:Fonts.HSBC,
-        color: "#000",
-        textAlign: "left",
+      style={{
+        flex: 1,
+        padding: spacingS,
+        backgroundColor: "#ffffff"
       }}
-      >Bills Screen</TextComponent> */}
-      <Space paddingVertical={spacingXXS}/>
+    >
+
+      <Space paddingVertical={spacingXXS} />
       <MainButton
-       backgroundColor={"#db0011"}
-       label={"Action"}
-       type={"large"}//large/small/stacked/inline
-       enableLeftIcon={false}
-       enableRightIcon={true}
-       enableSecondaryBtn={true}
-       onPress={()=>navigation.navigate('SuccessScreen')}
+        backgroundColor={"#db0011"}
+        label={"Action"}
+        type={"large"}//large/small/stacked/inline
+        enableLeftIcon={false}
+        enableRightIcon={true}
+        enableSecondaryBtn={true}
+        onPress={() => navigation.navigate('SuccessScreen')}
       ></MainButton>
     </View>
   )

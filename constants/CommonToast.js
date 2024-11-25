@@ -8,20 +8,20 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-// import { AntDesign, Entypo } from "@expo/vector-icons";
+
 
 const CommonToast = () => {
 
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    if(props.show){
+    if (props.show) {
       popIn()
       props.hideToast()
     }
 
-  },[props.show])
-  
+  }, [props.show])
+
   const windowHeight = Dimensions.get("window").height;
   const [status, setStatus] = useState(success);
   const popAnim = useRef(new Animated.Value(windowHeight * -1)).current;
@@ -35,7 +35,7 @@ const CommonToast = () => {
   const popIn = () => {
 
 
-    
+
 
     Animated.timing(popAnim, {
       toValue: windowHeight * 0.35 * -1,
@@ -74,11 +74,7 @@ const CommonToast = () => {
         ]}
       >
         <View style={styles.toastRow}>
-          {/* <AntDesign
-            name={status === "success" ? "checkcircleo" : "closecircleo"}
-            size={24}
-            color={status === "success" ? successColor : failColor}
-          /> */}
+
           <View style={styles.toastText}>
             <Text style={{ fontWeight: "bold", fontSize: 15 }}>
               {status === "success" ? successHeader : failHeader}
@@ -88,7 +84,7 @@ const CommonToast = () => {
             </Text>
           </View>
           <TouchableOpacity onPress={instantPopOut}>
-            {/* <Entypo name="cross" size={24} color="black" /> */}
+
           </TouchableOpacity>
         </View>
       </Animated.View>

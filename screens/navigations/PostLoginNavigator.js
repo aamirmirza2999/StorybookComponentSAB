@@ -1,25 +1,20 @@
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from '../Home';
-import PassWord from '../PassWord';
-import Transfers
- from '../Transfers';
- import New_Transfer from '../New_Transfer';
- import Paginatorscreendisplay from '../Paginatorscreendisplay';
- import RadioBtn from '../Radiobtn';
- import Bills from '../Bills';
- import SuccessScreen from '../SuccessScreen';
- import TabBar from './TabBar';
- import MainHeader from '../../components/Common/MainHeader';
- import Dashboard from '../Dashboard';
- import Menu from '../Menu'
- import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
- import Payment from '../Payment';
- import { useTranslation } from 'react-i18next';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
- function getHeaderTitle(route) {
+import New_Transfer from '../New_Transfer';
+import Bills from '../Bills';
+import SuccessScreen from '../SuccessScreen';
+import TabBar from './TabBar';
+import MainHeader from '../../components/Common/MainHeader';
+import Dashboard from '../Dashboard';
+import Menu from '../Menu'
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import Payment from '../Payment';
+import { useTranslation } from 'react-i18next';
+
+function getHeaderTitle(route) {
   const { t } = useTranslation();
   // If the focused route is not found, we need to assume it's the initial screen
   // This can happen during if there hasn't been any navigation inside the screen
@@ -27,43 +22,40 @@ import Transfers
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
 
   switch (routeName) {
-    // case 'Home':
-    //   return <MainHeader
-    //   enableLogo={true}
-    //   ></MainHeader>;
-      case 'Payment':
-        return  <MainHeader
+
+    case 'Payment':
+      return <MainHeader
         type="level1"
         Headline={true}
         HeadlineText={'Headline Payment'}
         back={false}
         showLinkButton={false}
       ></MainHeader>;
-      case 'New_Transfer':
-        return     <MainHeader
+    case 'New_Transfer':
+      return <MainHeader
         type="level1"
         Headline={true}
         HeadlineText={t('initialLang:headline')}
         back={false}
         showLinkButton={false}
       ></MainHeader>;
-      case 'Menu':
-        return    <MainHeader
-                type="level1-menu"
-                Headline={true}
-                HeadlineText={t('initialLang:headline')}
-                avatarElements="Icons"
-                avatarType="Filled"
-                avatarSize={'Small'}
-                  />;
-       case 'PFM':
-                    return     <MainHeader
-                    type="level1"
-                    Headline={true}
-                    HeadlineText={t('initialLang:headline')}
-                    back={false}
-                    showLinkButton={false}
-                  ></MainHeader>;
+    case 'Menu':
+      return <MainHeader
+        type="level1-menu"
+        Headline={true}
+        HeadlineText={t('initialLang:headline')}
+        avatarElements="Icons"
+        avatarType="Filled"
+        avatarSize={'Small'}
+      />;
+    case 'PFM':
+      return <MainHeader
+        type="level1"
+        Headline={true}
+        HeadlineText={t('initialLang:headline')}
+        back={false}
+        showLinkButton={false}
+      ></MainHeader>;
   }
 }
 
@@ -75,16 +67,16 @@ const PostLoginNavigator = () => {
       <SettingsStack.Screen
         name="Home"
         component={TabBar}
-       // options={{headerShown: false}}
-       options={({ route }) => ({
-        headerShown: true,
-        header: () => (
-          getHeaderTitle(route)
-        ),
-        //transitionPresets,
-      })}
+
+        options={({ route }) => ({
+          headerShown: true,
+          header: () => (
+            getHeaderTitle(route)
+          ),
+
+        })}
       />
-     <SettingsStack.Screen
+      <SettingsStack.Screen
         name="Payment"
         component={Payment}
         options={({ route }) => ({
@@ -92,11 +84,11 @@ const PostLoginNavigator = () => {
           header: () => (
             getHeaderTitle(route)
           ),
-          //transitionPresets,
+
         })}
       />
 
-<SettingsStack.Screen
+      <SettingsStack.Screen
         name="New_Transfer"
         component={New_Transfer}
         options={({ route }) => ({
@@ -104,10 +96,10 @@ const PostLoginNavigator = () => {
           header: () => (
             getHeaderTitle(route)
           ),
-          //transitionPresets,
+
         })}
       />
-       <SettingsStack.Screen
+      <SettingsStack.Screen
         name="Menu"
         component={Menu}
         options={({ route }) => ({
@@ -115,65 +107,49 @@ const PostLoginNavigator = () => {
           header: () => (
             getHeaderTitle(route)
           ),
-          //transitionPresets,
+
         })}
       />
-     
+
+
       <SettingsStack.Screen
-        name="Transfers"
-        component={Transfers}
-        options={{headerShown: false}}
-      />
-       <SettingsStack.Screen
         name="Bills"
         component={Bills}
         options={{
           headerShown: true,
           header: () => (
             <MainHeader
-            type={'level2'}
-            Headline={true}
-            HeadlineText={'Primary Button'}
-            back={true}
-            CloseIcon={true}
-            HeaderTitleReq={true}
+              type={'level2'}
+              Headline={true}
+              HeadlineText={'Primary Button'}
+              back={true}
+              CloseIcon={true}
+              HeaderTitleReq={true}
             ></MainHeader>
           ),
-          //transitionPresets,
+
         }}
       />
-        <SettingsStack.Screen
+      <SettingsStack.Screen
         name="SuccessScreen"
         component={SuccessScreen}
         options={{
           headerShown: true,
           header: () => (
-           <MainHeader></MainHeader>
+            <MainHeader></MainHeader>
           ),
-          //transitionPresets,
+
         }}
       />
-       <SettingsStack.Screen
-        name="Paginatorscreendisplay"
-        component={Paginatorscreendisplay}
-        options={{headerShown: false}}
-      />
-       <SettingsStack.Screen
-        name="RadioBtn"
-        component={RadioBtn}
-        options={{headerShown: false}}
-      />
-       <SettingsStack.Screen
+
+
+      <SettingsStack.Screen
         name="Dashboard"
         component={Dashboard}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
-     
-       {/* <SettingsStack.Screen
-        name="Disclaimerdesign"
-        component={Disclaimerdesign}
-        options={{headerShown: false}}
-      /> */}
+
+
     </SettingsStack.Navigator>
   );
 };

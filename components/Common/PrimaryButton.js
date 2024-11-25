@@ -1,36 +1,14 @@
-import {I18nManager, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { I18nManager, StyleSheet, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import {SabLogo} from '../../constants/SvgLocations';
-import {actuatedNormalize} from '../../constants/PixelScaling';
-import {globalStyles} from '../../constants/GlobalStyles';
-// import Colors from '../../constants/Colors';
+import { actuatedNormalize } from '../../constants/PixelScaling';
 import TextComponent from './TextComponent';
 import Fonts from '../../constants/Fonts';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 
-// const PrimaryButton = () => {
-//   return (
-//     <View
-//       style={
-//         {
-//           // marginTop: actuatedNormalize(24),
-//         }
-//       }>
-//       <SabLogo
-//         width={actuatedNormalize(globalStyles.svgStyle.width)}
-//         height={actuatedNormalize(globalStyles.svgStyle.height)}
-//         // transform={[{rotate: I18nManager.isRTL ? '180deg' : '0deg'}]}
-//       />
-//     </View>
-//   );
-// };
 
-// export default PrimaryButton;
 
 const PrimaryButton = props => {
-  console.log("props>>>>",props)
-  // const {colors} = useTheme();
-  // let theme = colors;
+  console.log("props>>>>", props)
   const { theme, toggleTheme } = useTheme();
 
   let Component = TouchableOpacity;
@@ -43,12 +21,12 @@ const PrimaryButton = props => {
       style={[
         styles.PrimaryButtonContainer,
         props.PrimaryButtonContainer,
-        {backgroundColor: !props.disabled ? theme.primarycolor3: props.PrimaryButtonBgClr},
+        { backgroundColor: !props.disabled ? theme.primarycolor3 : props.PrimaryButtonBgClr },
         props.PrimaryButtonContainer,
       ]}
       onPress={
         props.disabled
-          ? () => {}
+          ? () => { }
           : () => props.onPress()
       }
       disabled={props.disabled}>
@@ -59,38 +37,34 @@ const PrimaryButton = props => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          {/* <Email
-                              width={actuatedNormalize(20)}
-                              height={actuatedNormalize(20)}
-                              fill={this.props.theme.SABBGreen}
-                            /> */}
+
           {props.icon}
         </View>
       )}
       <TextComponent
         onPress={
           props.disabled
-            ? () => {}
+            ? () => { }
             : () => {
-               (props.onPress);
-              }
+              (props.onPress);
+            }
         }
         style={[
           styles.PrimaryButtonTxt,
           I18nManager.isRTL
             ? {
               color: props.textColor,
-                bottom:
-                  Platform.OS === 'ios'
-                    ? actuatedNormalize(3)
-                    : actuatedNormalize(2),
-              }
+              bottom:
+                Platform.OS === 'ios'
+                  ? actuatedNormalize(3)
+                  : actuatedNormalize(2),
+            }
             : {
               color: props.textColor,
 
             },
           props.PrimaryButtonTxt,
-          
+
         ]}
         {...props.labelProps}>
         {props.label}
@@ -98,7 +72,7 @@ const PrimaryButton = props => {
     </Component>
   );
 };
-// export const PrimaryButtonNew = PrimaryNew;
+
 export default PrimaryButton;
 
 
@@ -114,6 +88,6 @@ const styles = StyleSheet.create({
   PrimaryButtonTxt: {
     fontSize: actuatedNormalize(16),
     fontFamily: Fonts.Regular,
-    // textTransform: "capitalize",
+
   },
 });

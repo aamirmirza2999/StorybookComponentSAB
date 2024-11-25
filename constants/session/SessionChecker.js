@@ -4,13 +4,6 @@ import {
     hideErrorBanner,
     ApiEndpoints
 } from '../ApiImportCommon'
-// import { dispatch } from '../../navigation/NavigationService';
-// import { CommonActions } from '@react-navigation/native';
-// import {
-//     setlogoutErrorScreenShown,
-//     sessionAlertEvent,
-//     setInvalidSession
-// } from '../../redux/actions/common/CommonAction'
 
 
 export const SessionValidator = (response) => {
@@ -44,29 +37,21 @@ export const SessionValidator = (response) => {
                                     store.dispatch(
                                         sessionAlertEvent(true)
                                     )
-                                    
+
                                     setTimeout(() => {
                                         hideErrorBanner()
-    
+
                                     }, 1000)
-                                }else{
-                                    // let currentActiveScreen = store.getState().LiveChatReducer.currentActiveScreen
-                                    // let previousErrorOccuredScreen = store.getState().commonReducer.invalidSessionInfo.currentScreen
-    
-                                    // if(currentActiveScreen!==previousErrorOccuredScreen){
-                                    //     store.dispatch(setInvalidSession({
-                                    //         currentScreen: currentActiveScreen,
-                                    //         redirectToDashboard: true
-                                    //     }))
-                                    // }
+                                } else {
+
                                 }
 
-                                
 
 
-                                // if(currentActiveScreen!==previousErrorOccuredScreen)
 
-                                
+
+
+
 
 
 
@@ -101,7 +86,7 @@ const URLCheck = (response) => {
 
 
     let listApi = [
-         ApiEndpoints.dashboardSummary
+        ApiEndpoints.dashboardSummary
     ]
 
 

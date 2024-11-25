@@ -1,37 +1,30 @@
-import {
-    Button,
-    I18nManager,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-  } from 'react-native';
-  import React, { useEffect, useState } from 'react';
-  import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
-  import { useNavigation } from '@react-navigation/native';
-  import { useTheme } from '../constants/Theme/ThemeProvider';
-  import { useTranslation } from 'react-i18next';
-  import { spacingM, spacingS, spacingXS } from '../constants/Size';
 
-  const Menu = (props) =>{
+import React, { } from 'react';
+import PrimaryBgComponent from '../components/Common/PrimaryBgComponent';
+import { useNavigation } from '@react-navigation/native';
+import { useTheme } from '../constants/Theme/ThemeProvider';
+import { useTranslation } from 'react-i18next';
+import { spacingM, spacingS } from '../constants/Size';
 
-    const navigation = useNavigation();
-    const { t } = useTranslation();
-    const { theme, toggleTheme } = useTheme();
+const Menu = (props) => {
 
-    return (
-        <>
-         <PrimaryBgComponent
+  const navigation = useNavigation();
+  const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <>
+      <PrimaryBgComponent
         ButtonContainer={{
           paddingLeft: spacingS,
           paddingRight: spacingS,
           paddingBottom: spacingM,
           paddingTop: spacingM,
         }}
-        >
+      >
       </PrimaryBgComponent>
-        </>
-    )
+    </>
+  )
 
-  }
-  export default Menu;
+}
+export default Menu;

@@ -1,19 +1,18 @@
-import { MainButton,LinkButton,GroupButton,QuickButton,ListButton } from './Button';
+import { MainButton, LinkButton, GroupButton, QuickButton, ListButton } from './Button';
 import SvgIconList from '../../constants/SvgIconList';
 import { useTranslation } from 'react-i18next';
-import { AccountActionDark, Home } from '../../constants/SvgLocations';
 import { useTheme } from '../../constants/Theme/ThemeProvider';
 import CommonHelper from '../../constants/CommonHelper';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import i18n from '../../locales/i18n';
 
-export const MainButtonComponentStory = (args) =>{ 
+export const MainButtonComponentStory = (args) => {
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
@@ -24,31 +23,31 @@ export const MainButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-   
+
     if (args.enableDarktheme !== isDarkMode) {
       toggleTheme();
     }
   }, [args.enableDarktheme, isDarkMode]);
-  
+
   const { t } = useTranslation();
-  args.label=t('initialLang:action')
-  return(<MainButton {...args} />)
+  args.label = t('initialLang:action')
+  return (<MainButton {...args} />)
 };
- MainButtonComponentStory.args = {
-  backgroundColor:"#db0011",
-  enablePrimaryBtn:false,
-  enableSecondaryBtn:true,
-  type:"large",//large/small
-  enableLeftIcon:false,
-  enableRightIcon:false,
-  disablePrimaryBtn:false,
-  disableSecondaryBtn:false,
-  onPress:null,
-  lang:'en',
+MainButtonComponentStory.args = {
+  backgroundColor: "#db0011",
+  enablePrimaryBtn: false,
+  enableSecondaryBtn: true,
+  type: "large",//large/small
+  enableLeftIcon: false,
+  enableRightIcon: false,
+  disablePrimaryBtn: false,
+  disableSecondaryBtn: false,
+  onPress: null,
+  lang: 'en',
   enableDarktheme: false,
 };
 MainButtonComponentStory.argTypes = {
-  backgroundColor: {control: 'color'},
+  backgroundColor: { control: 'color' },
   type: {
     control: 'select',
     options: ['large', 'small'],
@@ -62,14 +61,14 @@ MainButtonComponentStory.argTypes = {
   },
 }
 
-export const LinkButtonComponentStory = (args) =>{
+export const LinkButtonComponentStory = (args) => {
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
@@ -80,50 +79,50 @@ export const LinkButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode';
     if (headerthemedark !== isDarkMode) {
       console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]);
 
-  args.label=t('initialLang:linkButton')
-  return( <LinkButton {...args} />)
+  args.label = t('initialLang:linkButton')
+  return (<LinkButton {...args} />)
 };
-  LinkButtonComponentStory.args = {
-    linkbuttonType:"large",//large/small
-    linkbuttoneIconLeft:true,
-    linkbuttonIconRight:true,
-    linkbuttonLink:"Link Button",
-  onPress:null,
-  lang:'en',
-  VariablemodescolorStyles:"LightMode",
+LinkButtonComponentStory.args = {
+  linkbuttonType: "large",//large/small
+  linkbuttoneIconLeft: true,
+  linkbuttonIconRight: true,
+  linkbuttonLink: "Link Button",
+  onPress: null,
+  lang: 'en',
+  VariablemodescolorStyles: "LightMode",
 };
 LinkButtonComponentStory.argTypes = {
   linkbuttonType: {
     control: 'select',
     options: ['large', 'small'],
-    
+
   },
   lang: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  VariablemodescolorStyles:{
+  VariablemodescolorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
 }
 
 
-export const GroupButtonComponentStory = (args) =>{
+export const GroupButtonComponentStory = (args) => {
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
@@ -134,37 +133,37 @@ export const GroupButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-   
+
     if (args.enableDarktheme !== isDarkMode) {
       toggleTheme();
     }
   }, [args.enableDarktheme, isDarkMode]);
-  
-  args.primaryLabel=t('initialLang:action')
-  args.secondaryLabel=t('initialLang:action')
-  args.tertiaryLabel=t('initialLang:action')
-  return(<GroupButton {...args} />)
+
+  args.primaryLabel = t('initialLang:action')
+  args.secondaryLabel = t('initialLang:action')
+  args.tertiaryLabel = t('initialLang:action')
+  return (<GroupButton {...args} />)
 };
-  GroupButtonComponentStory.args = {
-  backgroundColor:"#db0011",
-  buttonType:"stacked",//stacked/inline
-  inlineSize:"large",
-  linktype:"large",
-  enableprimary:true,
-  enableSecondary:false,
-  enableTertiary:false,
-  enableLeftIcon:true,
-  enableRightIcon:true,
-  onPressPrimary:null,
-  onPressSecondary:null,
-  onPressTertiary:null,
-  disablePrimary:true,
-  disableSecondary:false,
-  lang:'en',
+GroupButtonComponentStory.args = {
+  backgroundColor: "#db0011",
+  buttonType: "stacked",//stacked/inline
+  inlineSize: "large",
+  linktype: "large",
+  enableprimary: true,
+  enableSecondary: false,
+  enableTertiary: false,
+  enableLeftIcon: true,
+  enableRightIcon: true,
+  onPressPrimary: null,
+  onPressSecondary: null,
+  onPressTertiary: null,
+  disablePrimary: true,
+  disableSecondary: false,
+  lang: 'en',
   enableDarktheme: false,
-  };
+};
 GroupButtonComponentStory.argTypes = {
-  backgroundColor: {control: 'color'},
+  backgroundColor: { control: 'color' },
   buttonType: {
     control: 'select',
     options: ['stacked', 'inline'],
@@ -189,11 +188,11 @@ GroupButtonComponentStory.argTypes = {
 export const QuickButtonComponentStory = (args) => {
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
@@ -204,77 +203,75 @@ export const QuickButtonComponentStory = (args) => {
     }
   }, [args.lang]);
   useEffect(() => {
-    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode';
     if (headerthemedark !== isDarkMode) {
       console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]);
 
-  
-  args.label=t('initialLang:action')
-  args.quickActionButtonLabel=t('initialLang:action')
-  return(<QuickButton {...args} />)
+
+  args.label = t('initialLang:action')
+  args.quickActionButtonLabel = t('initialLang:action')
+  return (<QuickButton {...args} />)
 };
 QuickButtonComponentStory.args = {
- Icon:<SvgIconList
- icon="AccountAction"
- width={24}
- height={24}
-/>,
-buttonquickActionHideIcon:true,
-buttonquickActionText:"Button",
-buttonquickActionType:"Vertical",//Vertical/Horizontal/Vertical-Small
-buttonquickActionPictogram:false,
-quickActionButtonBadge:true,
-quickNotificationCount:"2",
-onPress:null,
-lang:'en',
-VariablemodescolorStyles:"LightMode",
+  Icon: <SvgIconList
+    icon="AccountAction"
+    width={24}
+    height={24}
+  />,
+  buttonquickActionHideIcon: true,
+  buttonquickActionText: "Button",
+  buttonquickActionType: "Vertical",//Vertical/Horizontal/Vertical-Small
+  buttonquickActionPictogram: false,
+  quickActionButtonBadge: true,
+  quickNotificationCount: "2",
+  onPress: null,
+  lang: 'en',
+  VariablemodescolorStyles: "LightMode",
 };
 QuickButtonComponentStory.argTypes = {
-  buttonquickActionType : {
+  buttonquickActionType: {
     control: 'select',
-    options: ['Vertical', 'Horizontal','Vertical-Small'],
+    options: ['Vertical', 'Horizontal', 'Vertical-Small'],
   },
-  buttonquickActionPictogram:{
+  buttonquickActionPictogram: {
     control: 'boolean',
-    if:{arg:'buttonquickActionType',eq:'Vertical'}
+    if: { arg: 'buttonquickActionType', eq: 'Vertical' }
   },
-  buttonquickActionHideIcon:{
+  buttonquickActionHideIcon: {
     control: 'boolean',
-    if:{arg:'buttonquickActionType',eq:'Vertical'},
+    if: { arg: 'buttonquickActionType', eq: 'Vertical' },
   },
-  quickActionButtonBadge:{
+  quickActionButtonBadge: {
     control: 'boolean',
-   //if:{arg:'buttonquickActionType',neq:'Vertical'},
-    // if:{arg:'buttonquickActionType',eq:'Horizontal'},
-   // if: { arg: 'buttonquickActionType', or: [{ neq: 'Vertical' }] },
-   if: { arg: 'buttonquickActionType', or: [{ eq: 'Horizontal' }, { eq: 'Vertical-Small' },{neq:'Vertical'}] },
+
+    if: { arg: 'buttonquickActionType', or: [{ eq: 'Horizontal' }, { eq: 'Vertical-Small' }, { neq: 'Vertical' }] },
   },
-  quickNotificationCount:{
+  quickNotificationCount: {
     control: 'text',
-    if:{arg:'buttonquickActionType',eq:'Horizontal'},
-    if:{arg:'buttonquickActionType',eq:'Horizontal'},
+    if: { arg: 'buttonquickActionType', eq: 'Horizontal' },
+    if: { arg: 'buttonquickActionType', eq: 'Horizontal' },
   },
   lang: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  VariablemodescolorStyles:{
+  VariablemodescolorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
 }
 
-export const ListButtonComponentStory = (args) =>{
+export const ListButtonComponentStory = (args) => {
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
-  const { theme, toggleTheme,isDarkMode } = useTheme();
+  const { theme, toggleTheme, isDarkMode } = useTheme();
   const handleChange = (newLang, setLanguage, i18n) => {
     setLanguage(newLang);
-    i18n.changeLanguage(newLang); 
-    CommonHelper.changeLanguage(newLang, setLanguage); 
+    i18n.changeLanguage(newLang);
+    CommonHelper.changeLanguage(newLang, setLanguage);
   };
   useEffect(() => {
     CommonHelper.initLanguage(setLanguage);
@@ -285,56 +282,56 @@ export const ListButtonComponentStory = (args) =>{
     }
   }, [args.lang]);
   useEffect(() => {
-    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode'; 
+    const headerthemedark = args.VariablemodescolorStyles !== 'LightMode';
     if (headerthemedark !== isDarkMode) {
       console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
       toggleTheme();
     }
-  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]); 
+  }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]);
 
-  args.label=t('initialLang:action')
-  args.listHeadlLine=t('initialLang:headline')
-  args.listBadgeText=t('initialLang:active')
-  return(<ListButton {...args} />)
+  args.label = t('initialLang:action')
+  args.listHeadlLine = t('initialLang:headline')
+  args.listBadgeText = t('initialLang:active')
+  return (<ListButton {...args} />)
 };
 ListButtonComponentStory.args = {
- buttonlistitemIcon:true,
- Icon:<SvgIconList
- icon="Home"
- width={24}
- height={24}
-/>,
- buttonlistitemType:'Big',//Big/Small/Right/Center
- buttonlistitemShowContent:true,
- listDescription:"Lorem IPsum",
- buttonlistitemBadge:true,
-onPress:null,
-lang:'en',
-VariablemodescolorStyles:"LightMode",
+  buttonlistitemIcon: true,
+  Icon: <SvgIconList
+    icon="Home"
+    width={24}
+    height={24}
+  />,
+  buttonlistitemType: 'Big',//Big/Small/Right/Center
+  buttonlistitemShowContent: true,
+  listDescription: "Lorem IPsum",
+  buttonlistitemBadge: true,
+  onPress: null,
+  lang: 'en',
+  VariablemodescolorStyles: "LightMode",
 };
 ListButtonComponentStory.argTypes = {
   buttonlistitemType: {
     control: 'select',
-    options: ['Big', 'Small','Right','Center'],
+    options: ['Big', 'Small', 'Right', 'Center'],
   },
-  buttonlistitemShowContent:{ 
+  buttonlistitemShowContent: {
     control: 'boolean',
-  if:{arg:'buttonlistitemType',eq:'Big'}
-},
-  listDescription:{
+    if: { arg: 'buttonlistitemType', eq: 'Big' }
+  },
+  listDescription: {
     control: 'text',
-    if:{arg:'buttonlistitemType',eq:'Big'},
+    if: { arg: 'buttonlistitemType', eq: 'Big' },
 
   },
-  buttonlistitemBadge:{
+  buttonlistitemBadge: {
     control: 'boolean',
-    if:{arg:'buttonlistitemType',eq:'Big'}
+    if: { arg: 'buttonlistitemType', eq: 'Big' }
   },
   lang: {
     control: 'select',
     options: ['en', 'ar'],
   },
-  VariablemodescolorStyles:{
+  VariablemodescolorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
