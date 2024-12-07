@@ -5,7 +5,7 @@ import {
   AddBene, BackArrowNew, ChangeLang, ChangeLangDark, CloseIconNew, LiveChat, AccountAction, RightArrow, InfoIconRed, WhiteInfo,
   BlackArrow, WhiteArrow, Close, SearchIcon, NotificationIcon, NotificationIconDark, AvatarIconblack, HelpIcon, SearchIconDark,
   AvatarIconDark, AccountActionDark, Home, HomeDark, DarkIconList, Blockcard, Blockgenericred, BlackRightarrow, Lightmyacounts, Lightright, Whitecard, Whiterightarrow, ProfileEditIconDark, AccountActionFill, PictoDark, PictoLight,
-  Filter, FilterDark, RadioUnSelect, AvatarIconwhite, AvatarIconDarkOutlined, TickIcon, TickIconDark, Gift, Minus, Plus, Share, DeleteRed, Check, DeleteDark, ShareDark, HahTagIcon, IconsImages, ArrowImages
+  Filter, FilterDark, RadioUnSelect, AvatarIconwhite, AvatarIconDarkOutlined, TickIcon, TickIconDark, Gift, Minus, Plus, Share, DeleteRed, Check, DeleteDark, ShareDark, HahTagIcon, IconsImages, ArrowImages, DemoPlay
 } from './SvgLocations';
 
 
@@ -444,6 +444,15 @@ const SvgIconList = ({ icon, width, height, transform, fill }) => {
           fill={fill}
         />
       );
+      case  'DemoPlay':
+        return (
+          <DemoPlay
+            width={width}
+            height={height}
+            transform={transform}
+            fill={fill}
+          />
+        );
     default:
       return null;
   }

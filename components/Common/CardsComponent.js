@@ -15,7 +15,7 @@ import { useTheme } from "../../constants/Theme/ThemeProvider";
 export const CardsComponent = (props) => {
     const { t } = useTranslation();
     const { theme, toggleTheme, isDarkMode } = useTheme();
-    console.log("card component propssssss>>>>>>>>>", props)
+    // console.log("card component propssssss>>>>>>>>>", props)
     return (
         <View
             style={{

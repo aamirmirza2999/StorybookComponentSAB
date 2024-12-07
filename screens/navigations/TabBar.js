@@ -11,7 +11,8 @@ import PFM from '../PFM';
 
 const TabSetting = createBottomTabNavigator();
 
-const TabBar = () => {
+const TabBar = ({scrollY}) => {
+  console.log("-----inside Tab ---- scrollY",scrollY)
   return (
     <TabSetting.Navigator
       tabBarOptions={{
@@ -34,11 +35,11 @@ const TabBar = () => {
     >
       <TabSetting.Screen
         name="Home"
-        component={Home}
+        component={()=><Home scrollY={scrollY}/>}
       />
       <TabSetting.Screen
         name="Payment"
-        component={Payment}
+        component={()=><Payment scrollY={scrollY}/>}
       />
       <TabSetting.Screen
         name="New_Transfer"

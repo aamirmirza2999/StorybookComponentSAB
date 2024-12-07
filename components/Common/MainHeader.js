@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import {
-  Dimensions,
+  Animated,
   View,
   StatusBar,
   Platform,
@@ -19,39 +19,100 @@ import { useNavigation } from "@react-navigation/native";
 import { LinkButton } from './Button';
 import Fonts from '../../constants/Fonts';
 import { ProfileEditIconDark } from '../../constants/SvgLocations';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-let IosSpecific = Platform.OS === "ios" ? getStatusBarHeight() : 0
-let iosMargin = Platform.OS == "ios" ? 50 : 0
-
-const deviceWidth = Dimensions.get('window').width
-const deviceheight = Dimensions.get('window').height - IosSpecific
-const svgWidth = Number(deviceWidth) + 2
-const svgHeight = Number(((deviceheight - iosMargin) / 5.4) + (deviceheight / 43) + getStatusBarHeight())
 const floatCTAStatus = false
 
 const MainHeader = (props) => {
   const { theme, toggleTheme, isDarkMode } = useTheme();
   const navigation = useNavigation();
   console.log("WHICH THEME????", theme)
+  const [isFixedHeaderVisible, setFixedHeaderVisible] = useState(false);
+  
+  // Use provided `scrollY` or fallback to a new animated value
+  const animatedScrollY = props?.scrollY || new Animated.Value(0);
 
+  // Monitor scroll position to toggle the visibility of the fixed header
+  useEffect(() => {
+    if (!props.scrollY) return;
+
+    const scrollListener = animatedScrollY.addListener(({ value }) => {
+      setFixedHeaderVisible(value > 50);
+    });
+
+    return () => {
+      animatedScrollY.removeListener(scrollListener);
+    };
+  }, [animatedScrollY, props.scrollY]);
+
+  // Interpolated styles for header animations
+  const translateY = animatedScrollY.interpolate({
+    inputRange: [0, 100],
+    outputRange: [0, -50],
+    extrapolate: 'clamp',
+  });
+
+  const opacity = animatedScrollY.interpolate({
+    inputRange: [0, 50],
+    outputRange: [1, 0],
+    extrapolate: 'clamp',
+  });
 
   return (
-    <>
-      <StatusBar
-        animated
-        backgroundColor={theme.primaryinvert}
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        translucent={true}
-      />
-      <View
-        style={[styles.mainContainer, {
+    <View style={{backgroundColor:theme.primaryinvert}}>
+    <StatusBar
+      animated
+      backgroundColor={theme.primaryinvert}
+      barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+      translucent={false}
+    />
+
+      {/* Fixed Header */}
+      {isFixedHeaderVisible && (
+        <View
+          style={{
+            height: actuatedNormalize(32),
+            justifyContent: 'center',
+            backgroundColor: theme.primaryinvert,
+            alignItems: 'center',
+            marginTop: isFixedHeaderVisible ?  Platform.OS === 'ios' ? getStatusBarHeight() + actuatedNormalize(30) : getStatusBarHeight() : 0,
+ 
+          }}
+        >
+          <TextComponent
+                    numberOfLines={1}
+                    ellipsizeMode="tail"
+                    style={{
+                      color: theme.primarycolor,
+                      fontWeight: "700",
+                      fontSize: actuatedNormalize(17),
+                      bottom: actuatedNormalize(3),
+                      fontFamily: Fonts.HSBC
+
+                    }}
+                    onPress={()=>{
+                      console.log("-------click-----");
+                      toggleTheme();
+                    }}
+                  >
+            {props.HeadlineText || 'Headline'}
+          </TextComponent>
+        </View>
+      )}
+      <Animated.View
+        style={[!isFixedHeaderVisible
+          ? styles.mainContainer // Apply mainContainer styles when the header is fixed
+          : {},{
+          transform: [{ translateY }],
+          opacity,
           backgroundColor: theme.primaryinvert,
         }]}
       >
 
-
-
-        {props.type === 'level0' ?
+         {
+          !isFixedHeaderVisible && (
+            <>
+             {props.type === 'level0' ?
           <View
             style={{
               flexDirection: 'row',
@@ -311,7 +372,7 @@ const MainHeader = (props) => {
                   </TouchableOpacity>
                 ) : null}
 
-                {props.SupportedIcon && (props.type === 'level2' || props.type === 'search') ?
+                {props.SupportedIcon && (props.type === 'level2' || props.type === 'search' || props.type === 'verification') ?
                   <TouchableOpacity
                     style={{ marginLeft: spacingXS }}
                     onPress={props.SupportedIconFunc}
@@ -459,17 +520,19 @@ const MainHeader = (props) => {
             </View>
           </>
         }
-
-        {(props.type === 'level1' || props.type === 'level1-menu' || props.type === 'level1-foryou') && (
+      {(props.type === 'level1' || props.type === 'level1-menu' || props.type === 'level1-foryou') && (
+          
           <View style={{
             flexDirection: 'row', marginBottom: spacingXS, justifyContent: 'space-between',
 
           }}>
+           
             {props.Headline ?
               <TextComponent style={[styles.HeadlineText, { color: theme.primarycolor }]}>
                 {props.HeadlineText}
               </TextComponent>
               : null}
+
             <View style={{ flexDirection: "row", }}>
               {props.SupportedIcon ?
                 <TouchableOpacity
@@ -490,8 +553,8 @@ const MainHeader = (props) => {
                   <LinkButton
                     label={props.link}
                     type={props.linkButtonsize}
-                    enableRightIcon={props.IconRight === true}
-                    enableLeftIcon={props.IconLeft === true}
+                    linkbuttonIconRight={props.IconRight === true}
+                    linkbuttoneIconLeft={props.IconLeft === true}
                     onPress={props.onLinkPress}
                   />
                 </View>
@@ -515,8 +578,6 @@ const MainHeader = (props) => {
         )}
 
 
-
-
         {props.BottomBar && Platform.OS === 'ios' ?
           <View style={{
             height:
@@ -531,8 +592,12 @@ const MainHeader = (props) => {
             {props.progressBar}
           </View>
           : null}
-      </View>
-    </>
+            </>
+          )
+         }
+
+      </Animated.View>
+    </View>
   )
 }
 
@@ -540,8 +605,9 @@ const MainHeader = (props) => {
 const styles = {
 
   mainContainer: {
+   
+    paddingTop: Platform.OS === 'ios' ? getStatusBarHeight() + actuatedNormalize(30) : getStatusBarHeight(),
 
-    paddingTop: Platform.OS == 'ios' ? getStatusBarHeight() + actuatedNormalize(30) : getStatusBarHeight(),
   },
 
   whiteContainer: {

@@ -532,3 +532,66 @@ HeaderSearchStory.argTypes = {
   }
 
 };
+
+
+//Varification -----------------------------------------------------------------------
+
+export const HeaderVarificationStory = (args) => {
+  const [language, setLanguage] = useState(args.language || 'en');
+  const { theme, toggleTheme, isDarkMode } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  args.AccountType = t('initialLang:Premier');
+
+  useEffect(() => {
+    CommonHelper.initLanguage(setLanguage);
+  }, []);
+
+  useEffect(() => {
+    if (language !== args.language) {
+      handleChange(args.language, setLanguage, i18n);
+    }
+  }, [args.language]);
+
+  useEffect(() => {
+    const headerthemedark = args.colorStyles !== 'LightMode';
+    if (headerthemedark !== isDarkMode) {
+      console.log("THEME TRIGGERED>>>", headerthemedark, isDarkMode);
+      toggleTheme();
+    }
+  }, [args.colorStyles, isDarkMode, toggleTheme]);
+
+
+  return (
+    <NavigationContainer>
+      <MainHeader
+        {...args}
+        changeTheme={toggleTheme}
+        changeLanguage={() => handleChange(language === 'en' ? 'ar' : 'en', setLanguage, i18n)}
+      />
+    </NavigationContainer>
+  );
+};
+
+HeaderVarificationStory.args = {
+
+  type: 'verification',
+  language: I18nManager.isRTL ? 'ar' : 'en',
+  state: 'Both state',
+  colorStyles: "LightMode",
+  CloseIcon:true,
+};
+
+HeaderVarificationStory.argTypes = {
+
+  language: {
+    control: 'select',
+    options: ['en', 'ar'],
+  },
+
+  colorStyles: {
+    control: 'select',
+    options: ['LightMode', 'DarkMode'],
+  }
+
+};

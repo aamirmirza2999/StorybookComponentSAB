@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, Animated } from 'react-native';
+import React, {useRef} from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -14,7 +14,7 @@ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Payment from '../Payment';
 import { useTranslation } from 'react-i18next';
 
-function getHeaderTitle(route) {
+function getHeaderTitle(route,scrollY) {
   const { t } = useTranslation();
   // If the focused route is not found, we need to assume it's the initial screen
   // This can happen during if there hasn't been any navigation inside the screen
@@ -22,7 +22,6 @@ function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
 
   switch (routeName) {
-
     case 'Payment':
       return <MainHeader
         type="level1"
@@ -30,6 +29,16 @@ function getHeaderTitle(route) {
         HeadlineText={'Headline Payment'}
         back={false}
         showLinkButton={false}
+        scrollY={scrollY}
+      ></MainHeader>;
+    case 'Payment':
+      return <MainHeader
+        type="level1"
+        Headline={true}
+        HeadlineText={'Headline Payment'}
+        back={false}
+        showLinkButton={false}
+        scrollY={scrollY}
       ></MainHeader>;
     case 'New_Transfer':
       return <MainHeader
@@ -38,6 +47,7 @@ function getHeaderTitle(route) {
         HeadlineText={t('initialLang:headline')}
         back={false}
         showLinkButton={false}
+        scrollY={scrollY}
       ></MainHeader>;
     case 'Menu':
       return <MainHeader
@@ -47,6 +57,7 @@ function getHeaderTitle(route) {
         avatarElements="Icons"
         avatarType="Filled"
         avatarSize={'Small'}
+        scrollY={scrollY}
       />;
     case 'PFM':
       return <MainHeader
@@ -55,23 +66,25 @@ function getHeaderTitle(route) {
         HeadlineText={t('initialLang:headline')}
         back={false}
         showLinkButton={false}
+        scrollY={scrollY}
       ></MainHeader>;
   }
 }
 
 const SettingsStack = createNativeStackNavigator();
 const PostLoginNavigator = () => {
-
+  const scrollY = useRef(new Animated.Value(0)).current;
+   
   return (
     <SettingsStack.Navigator initialRouteName="Home">
       <SettingsStack.Screen
         name="Home"
-        component={TabBar}
-
+        component={()=><TabBar scrollY={scrollY}/>}
+           
         options={({ route }) => ({
           headerShown: true,
           header: () => (
-            getHeaderTitle(route)
+            getHeaderTitle(route,scrollY)
           ),
 
         })}
@@ -82,7 +95,7 @@ const PostLoginNavigator = () => {
         options={({ route }) => ({
           headerShown: true,
           header: () => (
-            getHeaderTitle(route)
+            getHeaderTitle(route,null)
           ),
 
         })}
@@ -94,7 +107,7 @@ const PostLoginNavigator = () => {
         options={({ route }) => ({
           headerShown: true,
           header: () => (
-            getHeaderTitle(route)
+            getHeaderTitle(route, null)
           ),
 
         })}
@@ -105,7 +118,7 @@ const PostLoginNavigator = () => {
         options={({ route }) => ({
           headerShown: true,
           header: () => (
-            getHeaderTitle(route)
+            getHeaderTitle(route,null)
           ),
 
         })}

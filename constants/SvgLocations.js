@@ -128,4 +128,5 @@ export { default as DeleteDark } from "../assets/deletedark.svg"
 export { default as HahTagIcon } from "../assets/hash.svg"
 export { default as IconsImages } from "../assets/CombinedShape.svg"
 export { default as ArrowImages } from "../assets/sabright.svg"
+export { default as DemoPlay } from "../assets/demoplay.svg"
 
