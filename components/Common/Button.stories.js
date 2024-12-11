@@ -5,6 +5,7 @@ import { useTheme } from '../../constants/Theme/ThemeProvider';
 import CommonHelper from '../../constants/CommonHelper';
 import { useState, useEffect } from 'react';
 import i18n from '../../locales/i18n';
+import * as SvgIcons from '../../constants/SvgLocations'; // Import all SVGs
 
 export const MainButtonComponentStory = (args) => {
   const [language, setLanguage] = useState('en');
@@ -60,8 +61,9 @@ MainButtonComponentStory.argTypes = {
     control: 'boolean',
   },
 }
-
 export const LinkButtonComponentStory = (args) => {
+   
+  console.log("-----SvgIcons------",Object.keys(SvgIcons));
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en');
   const { theme, toggleTheme, isDarkMode } = useTheme();
@@ -86,8 +88,9 @@ export const LinkButtonComponentStory = (args) => {
     }
   }, [args.VariablemodescolorStyles, isDarkMode, toggleTheme]);
 
-  args.label = t('initialLang:linkButton')
-  return (<LinkButton {...args} />)
+  args.label = t('initialLang:linkButton');
+
+  return <LinkButton {...args}/>;
 };
 LinkButtonComponentStory.args = {
   linkbuttonType: "large",//large/small
@@ -97,6 +100,9 @@ LinkButtonComponentStory.args = {
   onPress: null,
   lang: 'en',
   VariablemodescolorStyles: "LightMode",
+  rightIconType: 'RightRedArrow1',
+  leftIconType: 'Plus',
+ 
 };
 LinkButtonComponentStory.argTypes = {
   linkbuttonType: {
@@ -111,7 +117,17 @@ LinkButtonComponentStory.argTypes = {
   VariablemodescolorStyles: {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
+  },
+  rightIconType: {
+    control: 'select',
+    options: ['Filter', 'Plus'],
   }
+  ,
+  leftIconType: {
+    control: 'select',
+    options: ['RightRedArrow1', 'Plus'],
+  }
+
 }
 
 

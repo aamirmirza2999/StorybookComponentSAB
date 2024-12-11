@@ -77,7 +77,6 @@ HeaderLevelOStory.args = {
   avatarinitial: "JM",
   colorStyles: "LightMode",
 
-
 };
 
 HeaderLevelOStory.argTypes = {
@@ -192,7 +191,7 @@ HeaderLevel1Story.args = {
   IconLeft: false,
   IconRight: true,
   colorStyles: "LightMode",
-
+  scroll: false,
 };
 
 HeaderLevel1Story.argTypes = {
@@ -205,6 +204,9 @@ HeaderLevel1Story.argTypes = {
     control: 'boolean'
   },
   showLinkButton: {
+    control: 'boolean'
+  },
+  scroll: {
     control: 'boolean'
   },
   linkButtonsize: {
@@ -274,6 +276,7 @@ HeaderLevel1MenuStory.args = {
   avataredit: false,
   avatarinitial: "JM",
   colorStyles: "LightMode",
+  scroll: false,
 
 };
 
@@ -290,6 +293,9 @@ HeaderLevel1MenuStory.argTypes = {
     control: 'select',
     options: ['Filled', 'Outline'],
 
+  },
+  scroll: {
+    control: 'boolean'
   },
   avatarElements: {
     control: 'select',
@@ -312,6 +318,7 @@ HeaderLevel1MenuStory.argTypes = {
     control: 'select',
     options: ['LightMode', 'DarkMode'],
   }
+  
 
 };
 
@@ -367,7 +374,7 @@ HeaderLevel1ForyouStory.args = {
   back: true,
   Search: true,
   colorStyles: "LightMode",
-
+  scroll: false,
 };
 
 HeaderLevel1ForyouStory.argTypes = {
@@ -380,6 +387,9 @@ HeaderLevel1ForyouStory.argTypes = {
     control: 'boolean'
   },
   Search: {
+    control: 'boolean'
+  },
+  scroll: {
     control: 'boolean'
   },
   colorStyles: {
@@ -516,7 +526,7 @@ HeaderSearchStory.args = {
   language: I18nManager.isRTL ? 'ar' : 'en',
   state: 'postlogin',
   colorStyles: "LightMode",
-
+ CloseIcon:true,
 };
 
 HeaderSearchStory.argTypes = {
@@ -536,7 +546,7 @@ HeaderSearchStory.argTypes = {
 
 //Varification -----------------------------------------------------------------------
 
-export const HeaderVarificationStory = (args) => {
+export const HeaderAuthentication = (args) => {
   const [language, setLanguage] = useState(args.language || 'en');
   const { theme, toggleTheme, isDarkMode } = useTheme();
   const { t, i18n } = useTranslation();
@@ -573,20 +583,33 @@ export const HeaderVarificationStory = (args) => {
   );
 };
 
-HeaderVarificationStory.args = {
+HeaderAuthentication.args = {
 
-  type: 'verification',
+  type: 'authentication',
   language: I18nManager.isRTL ? 'ar' : 'en',
-  state: 'Both state',
+  state: 'prelogin',
   colorStyles: "LightMode",
   CloseIcon:true,
+  Headline: true,
+  HeadlineText: 'Authentication',
 };
 
-HeaderVarificationStory.argTypes = {
+HeaderAuthentication.argTypes = {
 
   language: {
     control: 'select',
     options: ['en', 'ar'],
+  },
+
+  CloseIcon: {
+    control: 'boolean'
+  },
+  
+  Headline: {
+    control: 'boolean'
+  },
+  HeadlineText: {
+    control: 'text'
   },
 
   colorStyles: {

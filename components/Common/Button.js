@@ -1,4 +1,4 @@
-import React, { } from 'react'
+import React, { useMemo } from 'react'
 import { StyleSheet, View, TouchableOpacity, I18nManager, } from "react-native";
 import { globalStyles } from "../../constants/GlobalStyles";
 import TextComponent from '../Common/TextComponent';
@@ -7,7 +7,7 @@ import { actuatedNormalize } from "../../constants/PixelScaling";
 import { RightArrowBlackLarge, RightArrowBlackSmall, BlackArrow, RightRedArrow, RightRedArrow1, Split, WhiteArrow, RightArrowDarkLarge, RightRedArrowDark, RightRedArrowDark1, BlackArrowDark, } from "../../constants/SvgLocations";
 import { spacingM, spacingS } from '../../constants/Size';
 import SvgIconList from '../../constants/SvgIconList';
-
+import * as SvgIcons from '../../constants/SvgLocations'; // Import all SVGs
 export const MainButton = (props) => {
 	const { theme, isDarkMode } = useTheme();
 
@@ -214,6 +214,24 @@ export const LinkButton = (props) => {
 
 	let Component = TouchableOpacity;
 
+	 // Helper to fetch the correct SVG component
+	 const getSvgIcon = (type) => {
+		if (!type) return null; // Return null if type is invalid or undefined
+		
+		// Check if we have a dark mode version of the icon
+		const iconLight = SvgIcons[`${type}`]; // Light mode icon
+		const iconDark = SvgIcons[`${type}Dark`]; // Dark mode icon
+	
+		// Return the dark mode icon if the theme is dark, otherwise the light mode icon
+		return isDarkMode && iconDark ? iconDark : iconLight;
+	  };
+	
+	  const LeftIcon = useMemo(() => getSvgIcon(props.leftIconType), [props.leftIconType, isDarkMode]);
+  const RightIcon = useMemo(() => getSvgIcon(props.rightIconType), [props.rightIconType, isDarkMode]);
+
+
+console.log("LeftIcon:", LeftIcon, "RightIcon:", RightIcon, "----props.leftIconType--",props.leftIconType,"----props.rightIconType-",props.rightIconType);
+
 	return (
 		<Component
 			testID={props.testID ? props.testID : 'linkButton'}
@@ -227,48 +245,29 @@ export const LinkButton = (props) => {
 					alignItems: "center",
 				}}
 			>
-				{props.linkbuttoneIconLeft ?
-					isDarkMode ?
-						<RightRedArrowDark1
-							style={{
-
-								transform: [{ rotate: I18nManager.isRTL ? "360deg" : "180deg" }],
-
-								marginTop: actuatedNormalize(2)
-							}}
-						/> :
-						<RightRedArrow1
-							style={{
-
-								transform: [{ rotate: I18nManager.isRTL ? "360deg" : "180deg" }],
-
-								marginTop: actuatedNormalize(2)
-							}}
-							width={actuatedNormalize(24)}
-							height={actuatedNormalize(24)}
-						></RightRedArrow1> : null}
+				{/* Left Icon */}
+				{props.linkbuttoneIconLeft && LeftIcon && (
+          <LeftIcon
+            style={[
+              { transform: [{ rotate: I18nManager.isRTL ? '360deg' : '180deg' }] },
+            ]}
+            width={actuatedNormalize(24)}
+            height={actuatedNormalize(24)}
+          />
+        )}
 				<TextComponent
 					style={[props.linkbuttonType === "small" ? globalStyles.linkTextsmall : globalStyles.linkTextlarge, props.linkText, { color: isDarkMode ? theme.primarycolor4 : theme.primarycolor3, alignSelf: "center" }]}
 				>{props.lang === 'en' ? props.linkbuttonLink : props.label}</TextComponent>
-				{props.linkbuttonIconRight ?
-					isDarkMode ?
-						<RightRedArrowDark1
-							style={{
-								marginTop: actuatedNormalize(2),
-								transform: [{ rotate: I18nManager.isRTL ? "180deg" : "0deg" }],
-							}}
-							width={actuatedNormalize(24)}
-							height={actuatedNormalize(24)}
-						/> :
-						<RightRedArrow1
-							style={{
-								marginTop: actuatedNormalize(2),
-								transform: [{ rotate: I18nManager.isRTL ? "180deg" : "0deg" }],
-							}}
-							width={actuatedNormalize(24)}
-							height={actuatedNormalize(24)}
-						></RightRedArrow1>
-					: null}
+				{/* Right Icon */}
+				{props.linkbuttonIconRight && RightIcon && (
+          <RightIcon
+            style={[
+              { transform: [{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }] },
+            ]}
+            width={actuatedNormalize(24)}
+            height={actuatedNormalize(24)}
+          />
+        )}
 
 			</View>
 

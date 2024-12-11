@@ -1,5 +1,8 @@
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import { Preview } from "@storybook/react";
+import { ThemeProvider } from "../constants/Theme/ThemeProvider";
+import React from "react";
+import { View } from "react-native";
 
 const preview: Preview = {
   parameters: {
@@ -19,7 +22,14 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withBackgrounds],
+  decorators: [
+    (Story) => (
+      <ThemeProvider>
+          <Story />
+    </ThemeProvider>
+    ),
+    withBackgrounds,
+  ],
 };
 
 export default preview;

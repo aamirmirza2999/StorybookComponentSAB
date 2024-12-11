@@ -43,11 +43,11 @@ const TabBar = ({scrollY}) => {
       />
       <TabSetting.Screen
         name="New_Transfer"
-        component={New_Transfer}
+        component={()=><New_Transfer scrollY={scrollY}/>}
       />
       <TabSetting.Screen
         name="Menu"
-        component={Menu}
+        component={()=><Menu scrollY={scrollY}/>}
       />
       <TabSetting.Screen
         name="PFM"

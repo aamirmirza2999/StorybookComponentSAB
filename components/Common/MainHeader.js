@@ -12,7 +12,7 @@ import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper
 import { actuatedNormalize } from '../../constants/PixelScaling';
 import LogoComponent from '../../components/Common/LogoComponent';
 import SvgIconList from '../../constants/SvgIconList';
-import { spacingS, spacingXS, spacingXXS } from '../../constants/Size';
+import { fontLarge, lineHeightXXLarge, spacingS, spacingXS, spacingXXS } from '../../constants/Size';
 import TextComponent from './TextComponent';
 import Avatarcomponent from './Avatarcomponent';
 import { useNavigation } from "@react-navigation/native";
@@ -57,6 +57,8 @@ const MainHeader = (props) => {
     outputRange: [1, 0],
     extrapolate: 'clamp',
   });
+  
+
 
   return (
     <View style={{backgroundColor:theme.primaryinvert}}>
@@ -66,26 +68,52 @@ const MainHeader = (props) => {
       barStyle={isDarkMode ? 'light-content' : 'dark-content'}
       translucent={false}
     />
+      {console.log("-----------Main header----",props.scroll,"----scrollyy",props.scrollY)}
 
-      {/* Fixed Header */}
-      {isFixedHeaderVisible && (
+      {(props?.scroll ?? false) && isFixedHeaderVisible && (
         <View
           style={{
-            height: actuatedNormalize(32),
-            justifyContent: 'center',
-            backgroundColor: theme.primaryinvert,
+              minHeight: actuatedNormalize(32),
+            justifyContent: "space-between",
+           backgroundColor: theme.primaryinvert,
             alignItems: 'center',
+            flexDirection:'row',
+            paddingHorizontal: spacingS,
+            flex:1,
             marginTop: isFixedHeaderVisible ?  Platform.OS === 'ios' ? getStatusBarHeight() + actuatedNormalize(30) : getStatusBarHeight() : 0,
  
           }}
         >
-          <TextComponent
+          <View style={{ flexDirection: 'row', alignItems: 'center', flex:1 }}>
+                  {(props.type === 'level1' || props.type === 'level1-foryou') && props.back ? (
+                    <TouchableOpacity
+                      style={[styles.IconViewStyle1, props.IconViewStyle1]}
+                      onPress={props.BackarrowFun ?
+                        () => props.BackarrowFun() : () => navigation.goBack()}
+
+                    >
+                      <SvgIconList
+                        icon="BlackArrow"
+                        width={actuatedNormalize(25)}
+                        height={actuatedNormalize(25)}
+                        transform={[
+                          { scaleX: I18nManager.isRTL ? -1 : 1 }
+                        ]}
+
+                      />
+                    </TouchableOpacity>
+                  ) : null}
+                
+                </View>
+                <View style={{ flexDirection: 'row', flex:1, alignItems: 'center' , justifyContent:'center' }}>
+                <TextComponent
                     numberOfLines={1}
                     ellipsizeMode="tail"
                     style={{
                       color: theme.primarycolor,
                       fontWeight: "700",
-                      fontSize: actuatedNormalize(17),
+                      fontSize: fontLarge,
+                      lineHeight:lineHeightXXLarge,
                       bottom: actuatedNormalize(3),
                       fontFamily: Fonts.HSBC
 
@@ -97,6 +125,161 @@ const MainHeader = (props) => {
                   >
             {props.HeadlineText || 'Headline'}
           </TextComponent>
+                  </View>
+         
+          <View style={{ flexDirection: 'row', flex:1, alignItems: 'center', justifyContent: 'flex-end' }}>
+
+{floatCTAStatus ? (
+  <TouchableOpacity
+    style={{ marginLeft: spacingXXS, marginRight: spacingXXS, paddingBottom: props.state === 'postlogin' ? actuatedNormalize(5) : null }}
+    onPress={() => {
+      reduxDispatch(setCallliveChat(true))
+    }
+    }
+  >
+    <SvgIconList
+      icon="LiveChat"
+      width={actuatedNormalize(26)}
+      height={actuatedNormalize(26)}
+    />
+
+  </TouchableOpacity>
+) : null}
+{props.state === "postlogin" ? (
+  <>
+    <TouchableOpacity
+      style={[styles.IconViewStyle2, {}]}
+      onPress={props.Searchfunc}
+    >
+
+      <SvgIconList
+        icon="SearchIcon"
+        width={actuatedNormalize(24)}
+        height={actuatedNormalize(24)}
+        transform={[
+          { scaleX: I18nManager.isRTL ? -1 : 1 }
+        ]}
+      />
+
+    </TouchableOpacity>
+   {
+    props.type === 'level1' && ( <TouchableOpacity
+      style={[styles.IconViewStyle2, {
+        flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+        marginLeft: spacingXS, marginRight: spacingXS,
+        transform: [{ scaleX: I18nManager.isRTL ? 1 : 1 }],
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+      }]}
+      onPress={props.NotificationFunc}
+    >
+      <SvgIconList
+        icon="NotificationIcon"
+        width={actuatedNormalize(24)}
+        height={actuatedNormalize(24)}
+
+      />
+      {props.Notificationshowbadge ?
+        <View style={[styles.badgenotification,]}>
+          <TextComponent style={[styles.TextComponent]}>{props.NotificationCount}</TextComponent>
+        </View> : null}
+    </TouchableOpacity>)
+   }
+
+   {
+    (props.type === 'level1-foryou' && props.state === 'postlogin') && (
+      <TouchableOpacity
+      style={[styles.IconViewStyle2, {
+        flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+        marginLeft: spacingXS, marginRight: spacingXS,
+        transform: [{ scaleX: I18nManager.isRTL ? 1 : 1 }],
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+      }]}
+      onPress={props.NotificationFunc}
+    >
+      <SvgIconList
+        icon="NotificationIcon"
+        width={actuatedNormalize(24)}
+        height={actuatedNormalize(24)}
+
+      />
+    </TouchableOpacity>
+    )
+   }
+   
+
+    {props.customAvatar ? props.AvatarPicture : <TouchableOpacity
+      style={{ paddingBottom: actuatedNormalize(5), flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-end' }}
+      onPress={props.AvatarIconfunc}
+    >
+      <Avatarcomponent
+        avatarinitial={props.avatarinitial}
+        avatarSizesmall={props.avatarSize === 'Small' ? true : false}
+        avatarSizemedium={props.avatarSize === 'Medium' ? true : false}
+        avatarSizelarge={props.avatarSize === 'Large' ? true : false}
+        avatarblack={props.avatarElements === 'Icons' && props.avatarType === 'Filled' ? true : false}
+        avatarname={props.avatarElements === 'Initials' && props.avatarSize === 'Large' ? true : false}
+        avatarnamemid={props.avatarElements === 'Initials' && props.avatarSize === 'Medium' ? true : false}
+        avatarnamesmall={props.avatarElements === 'Initials' && props.avatarSize === 'Small' ? true : false}
+        avatarwhite={props.avatarElements === 'Icons' && props.avatarType === 'Outline' ? true : false}
+      />
+      {props.avatarElements === 'Icons' && props.avataredit && props.avatarSize === 'Small' ?
+        <ProfileEditIconDark
+          style={{ right: actuatedNormalize(15), top: actuatedNormalize(3) }}
+          width={10}
+          height={11}
+        />
+        : null}
+      {props.avatarElements === 'Icons' && props.avataredit && props.avatarSize === 'Medium' ?
+        <ProfileEditIconDark
+          style={{ right: actuatedNormalize(16), top: actuatedNormalize(2) }}
+          width={12}
+          height={13}
+        />
+        : null}
+      {props.avatarElements === 'Icons' && props.avataredit && props.avatarSize === 'Large' ?
+        <ProfileEditIconDark
+          style={{ right: actuatedNormalize(18), top: actuatedNormalize(2) }}
+          width={14}
+          height={15}
+        />
+        : null}
+    </TouchableOpacity>}
+  </>
+) : (
+  <>
+    {props.SupportedIcon ? (
+      <TouchableOpacity
+        style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+        onPress={props.SupportedIconFunc}
+      >
+        <SvgIconList
+          icon={props.SupportIcon}
+          width={actuatedNormalize(24)}
+          height={actuatedNormalize(24)}
+          transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+        />
+      </TouchableOpacity>
+    ) : <View style={{ width: actuatedNormalize(24), height: actuatedNormalize(24) }}></View>}
+
+    {props.LanguageIcon ? (
+      <TouchableOpacity
+        style={{ top: actuatedNormalize(3), marginLeft: spacingXS }}
+        onPress={props.changeLanguage}
+      >
+        <SvgIconList
+          icon="ChangeLang"
+          width={actuatedNormalize(24)}
+          height={actuatedNormalize(24)}
+          transform={[{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }]}
+        />
+      </TouchableOpacity>
+    ) : null}
+  </>
+)}
+
+</View>
         </View>
       )}
       <Animated.View
@@ -112,7 +295,7 @@ const MainHeader = (props) => {
          {
           !isFixedHeaderVisible && (
             <>
-             {props.type === 'level0' ?
+             {props.type === 'level0' || props.type === 'level1' ?
           <View
             style={{
               flexDirection: 'row',
@@ -124,7 +307,7 @@ const MainHeader = (props) => {
 
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
 
-              <LogoComponent enableLogo={props.type == 'level0' || props.state === 'prelogin' ? true : false} />
+              <LogoComponent enableLogo={props.type == 'level0' || props.type == 'level1' || props.state === 'prelogin' ? true : false} />
 
               {props.state === 'postlogin' ?
                 <>
@@ -287,7 +470,7 @@ const MainHeader = (props) => {
               paddingHorizontal: spacingS,
               paddingBottom: spacingS,
               minHeight: actuatedNormalize(50),
-              paddingTop: props.type === 'level2' || props.type === 'search' ? spacingS : null,
+              paddingTop: props.type === 'level2' || props.type === 'search' || props.type === 'authentication' ? spacingS : null,
               alignItems: 'center',
             }}>
               <View style={[styles.column1]}>
@@ -327,7 +510,7 @@ const MainHeader = (props) => {
 
                 </View>
               </View>
-              {(props.type === 'level2' && props.Headline) || props.type === 'search' ?
+              {(props.type === 'level2' && props.Headline) || props.type === 'search' || props.type === 'authentication' ?
                 <View style={[styles.column2, {
 
                 }, props.column2]}
@@ -372,7 +555,7 @@ const MainHeader = (props) => {
                   </TouchableOpacity>
                 ) : null}
 
-                {props.SupportedIcon && (props.type === 'level2' || props.type === 'search' || props.type === 'verification') ?
+                {props.SupportedIcon && (props.type === 'level2' || props.type === 'search' || props.type === 'authentication') ?
                   <TouchableOpacity
                     style={{ marginLeft: spacingXS }}
                     onPress={props.SupportedIconFunc}
@@ -388,7 +571,7 @@ const MainHeader = (props) => {
 
                   : null}
 
-                {props.type === 'level2' && (
+                {props.type === 'level2' || props.type === 'authentication' && (
                   props.CloseIcon ? (
                     <TouchableOpacity
                       style={styles.IconViewStyle2}
@@ -605,9 +788,7 @@ const MainHeader = (props) => {
 const styles = {
 
   mainContainer: {
-   
-    paddingTop: Platform.OS === 'ios' ? getStatusBarHeight() + actuatedNormalize(30) : getStatusBarHeight(),
-
+    paddingTop: Platform.OS === 'ios' ? getStatusBarHeight() + actuatedNormalize(30) : null,
   },
 
   whiteContainer: {

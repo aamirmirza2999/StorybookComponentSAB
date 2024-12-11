@@ -13,6 +13,8 @@ import Menu from '../Menu'
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Payment from '../Payment';
 import { useTranslation } from 'react-i18next';
+import PaymentTransfer from '../PaymentTransfer';
+import Otp from '../Otp';
 
 function getHeaderTitle(route,scrollY) {
   const { t } = useTranslation();
@@ -26,44 +28,56 @@ function getHeaderTitle(route,scrollY) {
       return <MainHeader
         type="level1"
         Headline={true}
-        HeadlineText={'Headline Payment'}
+        HeadlineText={t('initialLang:payments')}
         back={false}
+        state={'postlogin'}
         showLinkButton={false}
-        scrollY={scrollY}
-      ></MainHeader>;
-    case 'Payment':
-      return <MainHeader
-        type="level1"
-        Headline={true}
-        HeadlineText={'Headline Payment'}
-        back={false}
-        showLinkButton={false}
-        scrollY={scrollY}
+  linkButtonsize = 'small'
+  link= "Add Bill"
+  IconLeft={false}
+  IconRight= {true}
+  avatarElements="Icons"
+        avatarType="Filled"
+        avatarSize={'Small'}
+        // AccountType={t('initialLang:Premier')}
+        scrollY={0}
+        scroll={false}
       ></MainHeader>;
     case 'New_Transfer':
       return <MainHeader
         type="level1"
         Headline={true}
-        HeadlineText={t('initialLang:headline')}
+        state={'postlogin'}
+        HeadlineText={t('initialLang:transfer')}
         back={false}
         showLinkButton={false}
-        scrollY={scrollY}
+  linkButtonsize = 'small'
+  link= "Link Button"
+  IconLeft={false}
+  IconRight= {true}
+        scrollY={0}
+        scroll={false}
+        avatarElements="Icons"
+        avatarType="Filled"
+        avatarSize={'Small'}
       ></MainHeader>;
     case 'Menu':
       return <MainHeader
         type="level1-menu"
         Headline={true}
-        HeadlineText={t('initialLang:headline')}
+        HeadlineText={t('initialLang:menu')}
         avatarElements="Icons"
+        state='postlogin'
         avatarType="Filled"
         avatarSize={'Small'}
         scrollY={scrollY}
+        scroll={true}
       />;
     case 'PFM':
       return <MainHeader
         type="level1"
         Headline={true}
-        HeadlineText={t('initialLang:headline')}
+        HeadlineText={t('initialLang:pfm')}
         back={false}
         showLinkButton={false}
         scrollY={scrollY}
@@ -138,6 +152,42 @@ const PostLoginNavigator = () => {
               back={true}
               CloseIcon={true}
               HeaderTitleReq={true}
+            ></MainHeader>
+          ),
+
+        }}
+      />
+
+<SettingsStack.Screen
+        name="PaymentTransfer"
+        component={()=><PaymentTransfer scrollY={scrollY}/>}
+        options={{
+          headerShown: true,
+          header: () => (
+            <MainHeader
+              type={'level1-foryou'}
+              Headline={true}
+              HeadlineText={'Transfer'}
+              scroll={true}
+              scrollY={scrollY}            
+  back={true}
+     state={'postlogin'}
+            ></MainHeader>
+          ),
+
+        }}
+      />
+      <SettingsStack.Screen
+        name="Otp"
+        component={Otp}
+        options={{
+          headerShown: true,
+          header: () => (
+            <MainHeader
+              type={'authentication'}
+              Headline={true}
+              HeadlineText={'Authentication'}
+              CloseIcon={true}
             ></MainHeader>
           ),
 
