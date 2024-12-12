@@ -41,11 +41,11 @@ export const BlockComponentStory = (args) => {
 BlockComponentStory.args = {
   type: "Solid",//large/small
   labelText:'Sab Bank Account',
-  lableSubText:'Unpaid Bill',
+  lableSubText:'',
   onPress: null,
   lang: 'en',
   enableDarktheme: false,
-  blockIcon:'Blockcard',
+  blockIcon:'WithinSab',
 };
 BlockComponentStory.argTypes = {
   backgroundColor: { control: 'color' },

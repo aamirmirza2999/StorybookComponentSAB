@@ -35,7 +35,7 @@ const New_Transfer = ({scrollY}) => {
       scrollEventThrottle={16}
       >
         
-        <View style={{flex:1, flexDirection:'row', height:actuatedNormalize(24),justifyContent:'space-between' }}>
+        <View style={{ flexDirection:'row', height:actuatedNormalize(24),justifyContent:'space-between' }}>
        <TextComponent style={[{ color: theme.primarycolor }, GlobalStyleComponentLevel.primaryTextLarge]}  >
         {'Select Transfer Type'}
         </TextComponent>  
@@ -58,13 +58,13 @@ const New_Transfer = ({scrollY}) => {
 
        <View style={styles.gridContainer}>
   {[
-    { icon: 'Blockcard', type:'Solid', label: 'International' },
-    { icon: 'Blockcard', type:'Solid', label: 'Within SAB' },
-    { icon: 'LocalAccount', type:'Solid', label: 'Other Local Banks'},
-    { icon: 'Blockcard', type:'Solid',label: 'Between My Accounts' },
+    { icon: 'WithinSab', type:'Solid', label: 'International', isDisable:true },
+    { icon: 'HistoryInternational', type:'Solid', label: 'Within SAB', isDisable:false },
+    { icon: 'UserOtherLocalBank', type:'Solid', label: 'Other Local Banks'},
+    { icon: 'MyAccounts', type:'Solid',label: 'Between My Accounts' },
   ].map((item, index) => (
     <View style={styles.gridItem} key={index}>
-      <BlockComponent blockIcon={item.icon} type={item.type} labelText={item.label} onPress={BlockPress} lableSubText={item.lableSubText} />
+      <BlockComponent blockIcon={item.icon} type={item.type} isDisable={item.isDisable} labelText={item.label} onPress={BlockPress} lableSubText={item.lableSubText} />
     </View>
   ))}
 
@@ -75,7 +75,6 @@ const New_Transfer = ({scrollY}) => {
         }}
         style={{marginTop:spacingS}}
         thumbColor={theme.primarytextcolor3} // Thumb color
-        // ios_backgroundColor={isDarkMode ? 'green' : 'red'} // iOS fallback
         onValueChange={toggleTheme}
         value={isDarkMode}
       />
@@ -102,9 +101,10 @@ const styles = StyleSheet.create({
     marginTop:spacingS,
   },
   gridItem: {
-    width: '48%', // Ensures two items fit in one row with some spacing
+    width: '47%', // Ensures two items fit in one row with some spacing
     marginBottom: spacingXS, // Adds vertical spacing between rows
     marginHorizontal: '1%', // Adds horizontal spacing while ensuring alignment
+  
   },
 });
 

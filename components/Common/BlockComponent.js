@@ -1,27 +1,16 @@
 import React, {useMemo} from 'react';
-import {StyleSheet, View, TouchableOpacity, I18nManager} from 'react-native';
+import {StyleSheet, View, TouchableOpacity, I18nManager, useColorScheme} from 'react-native';
 import {globalStyles} from '../../constants/GlobalStyles';
 import TextComponent from '../Common/TextComponent';
 import {useTheme} from '../../constants/Theme/ThemeProvider';
 import {actuatedNormalize} from '../../constants/PixelScaling';
-import {spacingL, spacingS} from '../../constants/Size';
-import * as SvgIcons from '../../constants/SvgLocations'; // Import all SVGs
+import { spacingS, spacingXS} from '../../constants/Size';
+import {NewSvgIcons} from '../../constants/NewSvgLocation'; // Import all SVGs
 import {GlobalStyleComponentLevel} from '../GlobalStyleComponentLevel';
 
 export const BlockComponent = props => {
   const {theme, isDarkMode} = useTheme();
-  // Helper to fetch the correct SVG component
-  const getSvgIcon = type => {
-    if (!type) return null; // Return null if type is invalid or undefined
-
-    // Check if we have a dark mode version of the icon
-    const iconLight = SvgIcons[`${type}`]; // Light mode icon
-    const iconDark = SvgIcons[`${type}Dark`]; // Dark mode icon
-
-    // Return the dark mode icon if the theme is dark, otherwise the light mode icon
-    return isDarkMode && iconDark ? iconDark : iconLight;
-  };
-
+  
   // Determine the background style based on the `type` prop
   const backgroundStyle = useMemo(() => {
     if (props.type === 'Pattern') {
@@ -30,47 +19,48 @@ export const BlockComponent = props => {
     return {backgroundColor: theme.stylesblockbg}; // Default to solid background color
   }, [props.type, theme]);
 
-  const BlockIcon = useMemo(
-    () => getSvgIcon(props.blockIcon),
-    [props.blockIcon, isDarkMode],
+  const BlockIcon = useMemo(() => {
+    return NewSvgIcons[props.blockIcon] || null;
+  }, [props.blockIcon]);
+
+  const rightArrowColor = useMemo(() => 
+    props.type === 'Pattern' ? theme.primarycolor4static : theme.primarycolor, 
+    [props.type, theme]
   );
+
   let Component = TouchableOpacity;
 
   return (
     <Component
-      testID={props.testID ? props.testID : 'quickActionButton'}
+      testID={props.testID ? props.testID : 'blockActionButton'}
       accessibilityLabel={
         props.accessibilityLabel
           ? props.accessibilityLabel
-          : 'quickActionButton'
+          : 'blockActionButton'
       }
+      accessibilityRole="button"
+      accessibilityState={{ disabled: props.isDisable ?? false }}
       onPress={props.onPress}>
       <View
         style={[
           {
-            flex: 1,
             flexDirection: 'column',
             padding: spacingS,
-            height: 110,
-            borderRadius: 8,
+            width:actuatedNormalize(167),
+            height: actuatedNormalize(108),
+            borderRadius: spacingXS,
             justifyContent: 'space-between',
           },
           {...backgroundStyle},
         ]}>
         <BlockIcon
-          style={{
-            marginTop: actuatedNormalize(2),
-          }}
+        style={{color:theme.primarycolor3}}
           width={actuatedNormalize(24)}
           height={actuatedNormalize(24)}
         />
 
         <View
-          style={{
-            flexDirection: 'row',
-            height: 42,
-            justifyContent: 'space-between',
-          }}>
+          style={styleCurrent.BlockBox}>
           <View style={{justifyContent: 'flex-end'}}>
             <TextComponent
               style={[
@@ -100,26 +90,25 @@ export const BlockComponent = props => {
             ) : null}
           </View>
           <View style={{justifyContent: 'flex-end'}}>
-            {isDarkMode || props.type === 'Pattern' ? (
-              <SvgIcons.Whiterightarrow
-                style={{
-                  transform: [{rotate: I18nManager.isRTL ? '180deg' : '0deg'}],
-                }}
-                width={actuatedNormalize(24)}
-                height={actuatedNormalize(24)}
-              />
-            ) : (
-              <SvgIcons.RightArrow
-                style={{
-                  transform: [{rotate: I18nManager.isRTL ? '180deg' : '0deg'}],
-                }}
-                width={actuatedNormalize(24)}
-                height={actuatedNormalize(24)}
-              />
-            )}
+
+          <NewSvgIcons.RightArrow
+        style={{color:rightArrowColor}}
+          width={actuatedNormalize(24)}
+          height={actuatedNormalize(24)}
+        />
           </View>
         </View>
       </View>
     </Component>
   );
+};
+
+export const styleCurrent= {
+  BlockBox : {display: 'flex',
+  height: actuatedNormalize(42),
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
+  flexShrink: 0,
+  flexDirection:'row',
+  alignSelf: 'stretch',}
 };

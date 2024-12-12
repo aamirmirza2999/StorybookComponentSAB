@@ -56,12 +56,12 @@ const Payment = ({scrollY}) => {
 
        <View style={styles.gridContainer}>
   {[
-    { icon: 'Blockcard', type:'Solid', label: 'Bills',lableSubText:'0 Unpaid Bills' },
-    { icon: 'Blockcard', type:'Solid', label: 'One Time Payment' },
-    { icon: 'LocalAccount', type:'Solid', label: 'Traffic Fines'},
-    { icon: 'Blockcard', type:'Solid',label: 'MOI Services' },
-    { icon: 'LocalAccount', type:'Solid', label: 'Esal Payments'},
-    { icon: 'Blockcard', type:'Solid',label: 'Pre-paid Bills' },
+    { icon: 'BillPayment', type:'Solid', label: 'Bills',lableSubText:'0 Unpaid Bills' },
+    { icon: 'OneTimePayment', type:'Solid', label: 'One Time Payment' },
+    { icon: 'TraficFine', type:'Solid', label: 'Traffic Fines'},
+    { icon: 'MoiServices', type:'Solid',label: 'MOI Services' },
+    { icon: 'EsalPayment', type:'Solid', label: 'Esal Payments'},
+    { icon: 'WithinSab', type:'Solid',label: 'Pre-paid Bills' },
   ].map((item, index) => (
     <View style={styles.gridItem} key={index}>
       <BlockComponent blockIcon={item.icon} type={item.type} labelText={item.label} onPress={BlockPress} lableSubText={item.lableSubText} />
@@ -103,9 +103,10 @@ const styles = StyleSheet.create({
     marginTop:spacingS,
   },
   gridItem: {
-    width: '48%', // Ensures two items fit in one row with some spacing
+    width: '47%', // Ensures two items fit in one row with some spacing
     marginBottom: spacingXS, // Adds vertical spacing between rows
     marginHorizontal: '1%', // Adds horizontal spacing while ensuring alignment
+  
   },
 });
 

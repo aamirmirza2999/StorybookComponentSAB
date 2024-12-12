@@ -1,11 +1,11 @@
 import React, {Suspense} from 'react';
+import Config from 'react-native-config';
 import {LogBox, StyleSheet, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import PostLoginNavigator from './screens/navigations/PostLoginNavigator';
 import {ThemeProvider} from './constants/Theme/ThemeProvider';
 import i18n from './locales/i18n';
 import {I18nextProvider} from 'react-i18next';
-import TabBar from './screens/navigations/TabBar';
 import { store } from "./redux/store/Store"
 import { Provider } from "react-redux";
 
@@ -27,7 +27,7 @@ function App() {
         <Provider store={store}>
           <I18nextProvider i18n={i18n}>
             <Suspense fallback="loading">
-              <PostLoginNavigator />
+             <PostLoginNavigator />
             </Suspense>
           </I18nextProvider>
           </Provider>
@@ -36,16 +36,16 @@ function App() {
     </ThemeProvider>
   );
 }
-
+ 
 let AppEntryPoint = App;
 
-if (!true) {
+if (process.env.STORYBOOK_ENABLED) {
   const AppEntry = require('./.ondevice').default;
   AppEntryPoint = () => (
     <ThemeProvider>
-        <Provider store={store}>
+      <Provider store={store}>
       <AppEntry />
-      </Provider>
+      </Provider>      
     </ThemeProvider>
   );
 }

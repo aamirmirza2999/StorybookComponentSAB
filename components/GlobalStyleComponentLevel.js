@@ -21,8 +21,9 @@ blockname: {
     fontFamily: Fonts.HSBC,
     textAlign: "left",
     display: "flex",
-    width:  (108),
+    width:  actuatedNormalize(108),
     overflow: "hidden"
+    
   },
   blockSubName: {
     fontSize: fontSmall,
@@ -31,7 +32,7 @@ blockname: {
     fontFamily: Fonts.HSBC,
     textAlign: "left",
     display: "flex",
-    width:  (108),
+    width:  actuatedNormalize(108),
     overflow: "hidden"
   },
   primaryTextLarge: {

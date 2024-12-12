@@ -22,7 +22,7 @@ const config = {
   },
   resolver: {
     assetExts: assetExts.filter((ext) => ext !== "svg"),
-    sourceExts: [...sourceExts, "svg",'js', 'json', 'ts', 'tsx', 'env'],
+    sourceExts: [...sourceExts, 'svg','js', 'json', 'ts', 'tsx', 'env'],
     resolveRequest: (context, moduleName, platform) => {
       const defaultResolveResult = context.resolveRequest(
         context,

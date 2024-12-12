@@ -25,7 +25,10 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <ThemeProvider>
-          <Story />
+        <View style={{alignSelf:'center',justifyContent:'center'}}>
+        <Story />
+        </View>
+         
     </ThemeProvider>
     ),
     withBackgrounds,
